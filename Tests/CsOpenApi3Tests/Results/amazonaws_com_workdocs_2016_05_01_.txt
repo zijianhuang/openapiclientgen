@@ -2434,12 +2434,12 @@ namespace MyNS
 		/// AbortDocumentVersionUpload api/v1/documents/{DocumentId}/versions/{VersionId}
 		/// </summary>
 		/// <param name="DocumentId">The ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="VersionId">The ID of the version.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task AbortDocumentVersionUploadAsync(string DocumentId, string VersionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2468,16 +2468,16 @@ namespace MyNS
 		/// GetDocumentVersion api/v1/documents/{DocumentId}/versions/{VersionId}
 		/// </summary>
 		/// <param name="DocumentId">The ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="VersionId">The version ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="fields">A comma-separated list of values. Specify "SOURCE" to include a URL for the source document.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="includeCustomMetadata">Set this to TRUE to include custom metadata in the response.</param>
 		/// <returns>Success</returns>
@@ -2514,12 +2514,12 @@ namespace MyNS
 		/// UpdateDocumentVersion api/v1/documents/{DocumentId}/versions/{VersionId}
 		/// </summary>
 		/// <param name="DocumentId">The ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="VersionId">The version ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateDocumentVersionAsync(string DocumentId, string VersionId, UpdateDocumentVersionPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2556,8 +2556,8 @@ namespace MyNS
 		/// ActivateUser api/v1/users/{UserId}/activation
 		/// </summary>
 		/// <param name="UserId">The ID of the user.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ActivateUserResponse> ActivateUserAsync(string UserId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2588,8 +2588,8 @@ namespace MyNS
 		/// DeactivateUser api/v1/users/{UserId}/activation
 		/// </summary>
 		/// <param name="UserId">The ID of the user.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		public async Task DeactivateUserAsync(string UserId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2618,8 +2618,8 @@ namespace MyNS
 		/// AddResourcePermissions api/v1/resources/{ResourceId}/permissions
 		/// </summary>
 		/// <param name="ResourceId">The ID of the resource.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task AddResourcePermissionsAsync(string ResourceId, AddResourcePermissionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2655,20 +2655,20 @@ namespace MyNS
 		/// DescribeResourcePermissions api/v1/resources/{ResourceId}/permissions
 		/// </summary>
 		/// <param name="ResourceId">The ID of the resource.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="principalId">The ID of the principal to filter permissions by.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="limit">The maximum number of items to return with this call.
 		/// Minimum: 1
 		/// Maximum: 999
 		// </param>
 		/// <param name="marker">The marker for the next set of results. (You received this marker from a previous call)
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="Limit">Pagination limit</param>
 		/// <param name="Marker">Pagination token</param>
@@ -2706,8 +2706,8 @@ namespace MyNS
 		/// RemoveAllResourcePermissions api/v1/resources/{ResourceId}/permissions
 		/// </summary>
 		/// <param name="ResourceId">The ID of the resource.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task RemoveAllResourcePermissionsAsync(string ResourceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2736,12 +2736,12 @@ namespace MyNS
 		/// CreateComment api/v1/documents/{DocumentId}/versions/{VersionId}/comment
 		/// </summary>
 		/// <param name="DocumentId">The ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="VersionId">The ID of the document version.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task CreateCommentAsync(string DocumentId, string VersionId, CreateCommentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2777,12 +2777,12 @@ namespace MyNS
 		/// CreateCustomMetadata api/v1/resources/{ResourceId}/customMetadata
 		/// </summary>
 		/// <param name="ResourceId">The ID of the resource.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="versionid">The ID of the version, if the custom metadata is being added to a document version.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateCustomMetadataResponse> CreateCustomMetadataAsync(string ResourceId, string versionid, CreateCustomMetadataPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2825,12 +2825,12 @@ namespace MyNS
 		/// DeleteCustomMetadata api/v1/resources/{ResourceId}/customMetadata
 		/// </summary>
 		/// <param name="ResourceId">The ID of the resource, either a document or folder.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="versionId">The ID of the version, if the custom metadata is being deleted from a document version.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="keys">List of properties to remove.
 		/// Maximum items: 8
@@ -2903,8 +2903,8 @@ namespace MyNS
 		/// CreateLabels api/v1/resources/{ResourceId}/labels
 		/// </summary>
 		/// <param name="ResourceId">The ID of the resource.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateLabelsResponse> CreateLabelsAsync(string ResourceId, CreateLabelsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2947,8 +2947,8 @@ namespace MyNS
 		/// DeleteLabels api/v1/resources/{ResourceId}/labels
 		/// </summary>
 		/// <param name="ResourceId">The ID of the resource.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="labels">List of labels to delete from the resource.
 		/// Maximum items: 20
@@ -2988,8 +2988,8 @@ namespace MyNS
 		/// CreateNotificationSubscription api/v1/organizations/{OrganizationId}/subscriptions
 		/// </summary>
 		/// <param name="OrganizationId">The ID of the organization.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateNotificationSubscriptionResponse> CreateNotificationSubscriptionAsync(string OrganizationId, CreateNotificationSubscriptionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3032,12 +3032,12 @@ namespace MyNS
 		/// DescribeNotificationSubscriptions api/v1/organizations/{OrganizationId}/subscriptions
 		/// </summary>
 		/// <param name="OrganizationId">The ID of the organization.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="marker">The marker for the next set of results. (You received this marker from a previous call.)
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="limit">The maximum number of items to return with this call.
 		/// Minimum: 1
@@ -3112,31 +3112,31 @@ namespace MyNS
 		/// DescribeUsers api/v1/users
 		/// </summary>
 		/// <param name="organizationId">The ID of the organization.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="userIds">The IDs of the users.
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		// </param>
 		/// <param name="query"><p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="include">The state of the users. Specify "ALL" to include inactive users.</param>
 		/// <param name="order">The order for the results.</param>
 		/// <param name="sort">The sorting criteria.</param>
 		/// <param name="marker">The marker for the next set of results. (You received this marker from a previous call.)
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="limit">The maximum number of items to return.
 		/// Minimum: 1
 		/// Maximum: 999
 		// </param>
 		/// <param name="fields">A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="Limit">Pagination limit</param>
 		/// <param name="Marker">Pagination token</param>
@@ -3174,16 +3174,16 @@ namespace MyNS
 		/// DeleteComment api/v1/documents/{DocumentId}/versions/{VersionId}/comment/{CommentId}
 		/// </summary>
 		/// <param name="DocumentId">The ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="VersionId">The ID of the document version.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="CommentId">The ID of the comment.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteCommentAsync(string DocumentId, string VersionId, string CommentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3212,8 +3212,8 @@ namespace MyNS
 		/// DeleteDocument api/v1/documents/{DocumentId}
 		/// </summary>
 		/// <param name="DocumentId">The ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteDocumentAsync(string DocumentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3242,8 +3242,8 @@ namespace MyNS
 		/// GetDocument api/v1/documents/{DocumentId}
 		/// </summary>
 		/// <param name="DocumentId">The ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="includeCustomMetadata">Set this to <code>TRUE</code> to include custom metadata in the response.</param>
 		/// <returns>Success</returns>
@@ -3280,8 +3280,8 @@ namespace MyNS
 		/// UpdateDocument api/v1/documents/{DocumentId}
 		/// </summary>
 		/// <param name="DocumentId">The ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateDocumentAsync(string DocumentId, UpdateDocumentPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3318,12 +3318,12 @@ namespace MyNS
 		/// DeleteDocumentVersion api/v1/documentVersions/{DocumentId}/versions/{VersionId}#deletePriorVersions
 		/// </summary>
 		/// <param name="DocumentId">The ID of the document associated with the version being deleted.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="VersionId">The ID of the version being deleted.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="deletePriorVersions">Deletes all versions of a document prior to the current version.</param>
 		public async Task DeleteDocumentVersionAsync(string DocumentId, string VersionId, bool deletePriorVersions, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3353,8 +3353,8 @@ namespace MyNS
 		/// DeleteFolder api/v1/folders/{FolderId}
 		/// </summary>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteFolderAsync(string FolderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3383,8 +3383,8 @@ namespace MyNS
 		/// GetFolder api/v1/folders/{FolderId}
 		/// </summary>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="includeCustomMetadata">Set to TRUE to include custom metadata in the response.</param>
 		/// <returns>Success</returns>
@@ -3421,8 +3421,8 @@ namespace MyNS
 		/// UpdateFolder api/v1/folders/{FolderId}
 		/// </summary>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateFolderAsync(string FolderId, UpdateFolderPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3459,8 +3459,8 @@ namespace MyNS
 		/// DeleteFolderContents api/v1/folders/{FolderId}/contents
 		/// </summary>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteFolderContentsAsync(string FolderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3489,8 +3489,8 @@ namespace MyNS
 		/// DescribeFolderContents api/v1/folders/{FolderId}/contents
 		/// </summary>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="sort">The sorting criteria.</param>
 		/// <param name="order">The order for the contents of the folder.</param>
@@ -3499,13 +3499,13 @@ namespace MyNS
 		/// Maximum: 999
 		// </param>
 		/// <param name="marker">The marker for the next set of results. This marker was received from a previous call.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="type">The type of items.</param>
 		/// <param name="include">The contents to include. Specify "INITIALIZED" to include initialized documents.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="Limit">Pagination limit</param>
 		/// <param name="Marker">Pagination token</param>
@@ -3543,12 +3543,12 @@ namespace MyNS
 		/// DeleteNotificationSubscription api/v1/organizations/{OrganizationId}/subscriptions/{SubscriptionId}
 		/// </summary>
 		/// <param name="SubscriptionId">The ID of the subscription.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="OrganizationId">The ID of the organization.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteNotificationSubscriptionAsync(string SubscriptionId, string OrganizationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3578,8 +3578,8 @@ namespace MyNS
 		/// DeleteUser api/v1/users/{UserId}
 		/// </summary>
 		/// <param name="UserId">The ID of the user.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		public async Task DeleteUserAsync(string UserId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3608,8 +3608,8 @@ namespace MyNS
 		/// UpdateUser api/v1/users/{UserId}
 		/// </summary>
 		/// <param name="UserId">The ID of the user.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateUserResponse> UpdateUserAsync(string UserId, UpdateUserPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3654,20 +3654,20 @@ namespace MyNS
 		/// <param name="startTime">The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</param>
 		/// <param name="endTime">The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</param>
 		/// <param name="organizationId">The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="activityTypes">Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="resourceId">The document or folder ID for which to describe activity types.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="userId">The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="includeIndirectActivities">Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</param>
 		/// <param name="limit">The maximum number of items to return.
@@ -3675,8 +3675,8 @@ namespace MyNS
 		/// Maximum: 999
 		// </param>
 		/// <param name="marker">The marker for the next set of results.
-		/// Max length: 12288
 		/// Min length: 1
+		/// Max length: 12288
 		// </param>
 		/// <param name="Limit">Pagination limit</param>
 		/// <param name="Marker">Pagination token</param>
@@ -3714,20 +3714,20 @@ namespace MyNS
 		/// DescribeComments api/v1/documents/{DocumentId}/versions/{VersionId}/comments
 		/// </summary>
 		/// <param name="DocumentId">The ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="VersionId">The ID of the document version.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="limit">The maximum number of items to return.
 		/// Minimum: 1
 		/// Maximum: 999
 		// </param>
 		/// <param name="marker">The marker for the next set of results. This marker was received from a previous call.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="Limit">Pagination limit</param>
 		/// <param name="Marker">Pagination token</param>
@@ -3765,24 +3765,24 @@ namespace MyNS
 		/// DescribeDocumentVersions api/v1/documents/{DocumentId}/versions
 		/// </summary>
 		/// <param name="DocumentId">The ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="marker">The marker for the next set of results. (You received this marker from a previous call.)
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="limit">The maximum number of versions to return with this call.
 		/// Minimum: 1
 		/// Maximum: 999
 		// </param>
 		/// <param name="include">A comma-separated list of values. Specify "INITIALIZED" to include incomplete versions.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="fields">Specify "SOURCE" to include initialized versions and a URL for the source document.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="Limit">Pagination limit</param>
 		/// <param name="Marker">Pagination token</param>
@@ -3820,16 +3820,16 @@ namespace MyNS
 		/// DescribeGroups api/v1/groups#searchQuery
 		/// </summary>
 		/// <param name="searchQuery">A query to describe groups by group name.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="organizationId">The ID of the organization.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="marker">The marker for the next set of results. (You received this marker from a previous call.)
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="limit">The maximum number of items to return with this call.
 		/// Minimum: 1
@@ -3874,8 +3874,8 @@ namespace MyNS
 		/// Maximum: 999
 		// </param>
 		/// <param name="marker">The marker for the next set of results. (You received this marker from a previous call.)
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="Limit">Pagination limit</param>
 		/// <param name="Marker">Pagination token</param>
@@ -3946,20 +3946,20 @@ namespace MyNS
 		/// GetDocumentPath api/v1/documents/{DocumentId}/path
 		/// </summary>
 		/// <param name="DocumentId">The ID of the document.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="limit">The maximum number of levels in the hierarchy to return.
 		/// Minimum: 1
 		/// Maximum: 999
 		// </param>
 		/// <param name="fields">A comma-separated list of values. Specify <code>NAME</code> to include the names of the parent folders.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="marker">This value is not supported.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDocumentPathResponse> GetDocumentPathAsync(string DocumentId, int limit, string fields, string marker, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3995,20 +3995,20 @@ namespace MyNS
 		/// GetFolderPath api/v1/folders/{FolderId}/path
 		/// </summary>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="limit">The maximum number of levels in the hierarchy to return.
 		/// Minimum: 1
 		/// Maximum: 999
 		// </param>
 		/// <param name="fields">A comma-separated list of values. Specify "NAME" to include the names of the parent folders.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="marker">This value is not supported.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFolderPathResponse> GetFolderPathAsync(string FolderId, int limit, string fields, string marker, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4044,8 +4044,8 @@ namespace MyNS
 		/// GetResources api/v1/resources
 		/// </summary>
 		/// <param name="userId">The user ID for the resource collection. This is a required field for accessing the API operation using IAM credentials.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="collectionType">The collection type.</param>
 		/// <param name="limit">The maximum number of resources to return.
@@ -4053,8 +4053,8 @@ namespace MyNS
 		/// Maximum: 999
 		// </param>
 		/// <param name="marker">The marker for the next set of results. This marker was received from a previous call.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetResourcesResponse> GetResourcesAsync(string userId, ResourceCollectionType collectionType, int limit, string marker, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4123,12 +4123,12 @@ namespace MyNS
 		/// RemoveResourcePermission api/v1/resources/{ResourceId}/permissions/{PrincipalId}
 		/// </summary>
 		/// <param name="ResourceId">The ID of the resource.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="PrincipalId">The principal ID of the resource.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="type">The principal type of the resource.</param>
 		public async Task RemoveResourcePermissionAsync(string ResourceId, string PrincipalId, PrincipalType type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4158,8 +4158,8 @@ namespace MyNS
 		/// RestoreDocumentVersions api/v1/documentVersions/restore/{DocumentId}
 		/// </summary>
 		/// <param name="DocumentId">The ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task RestoreDocumentVersionsAsync(string DocumentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4264,8 +4264,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the parent comment.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\w+-.@]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4276,8 +4276,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the root comment in the thread.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\w+-.@]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4289,8 +4289,8 @@ namespace MyNS
 		/// <summary>
 		/// The text of the comment.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4328,8 +4328,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the new folder.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\u0020-\u202D\u202F-\uFFFF]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4341,8 +4341,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the parent folder.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\w+-.@]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4373,8 +4373,8 @@ namespace MyNS
 		/// <summary>
 		/// The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint is a URL that begins with <code>https</code>.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4404,8 +4404,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the organization.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [&\w+-.@]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4417,8 +4417,8 @@ namespace MyNS
 		/// <summary>
 		/// The login name of the user.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [\w\-+.]+(@[a-zA-Z0-9.\-]+\.[a-zA-Z]+)?
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4430,8 +4430,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The email address of the user.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4443,8 +4443,8 @@ namespace MyNS
 		/// <summary>
 		/// The given name of the user.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4455,8 +4455,8 @@ namespace MyNS
 		/// <summary>
 		/// The surname of the user.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4467,8 +4467,8 @@ namespace MyNS
 		/// <summary>
 		/// The password of the user.
 		/// Required
-		/// Max length: 32
 		/// Min length: 4
+		/// Max length: 32
 		/// Pattern: [\u0020-\u00FF]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4480,8 +4480,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The time zone ID of the user.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4510,8 +4510,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the document.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\u0020-\u202D\u202F-\uFFFF]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4522,8 +4522,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the parent folder.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\w+-.@]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4544,8 +4544,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the folder.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\u0020-\u202D\u202F-\uFFFF]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4556,8 +4556,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the parent folder.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\w+-.@]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4578,8 +4578,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The given name of the user.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4588,8 +4588,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The surname of the user.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4610,8 +4610,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The time zone ID of the user.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4686,8 +4686,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\w+-.@]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4698,8 +4698,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the document.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\u0020-\u202D\u202F-\uFFFF]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4722,8 +4722,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The content type of the document.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4738,8 +4738,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the parent folder.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\w+-.@]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4754,8 +4754,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: [\u0020-\uFFFF]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4774,8 +4774,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [&\w+-.@]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4815,8 +4815,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The marker for the next set of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [\d]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

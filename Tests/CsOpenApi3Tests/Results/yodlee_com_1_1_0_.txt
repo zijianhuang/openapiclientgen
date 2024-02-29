@@ -2032,8 +2032,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Public key uploaded by the customer while generating ApiKey.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul>
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="publicKey")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2048,8 +2048,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Public key uploaded by the customer while generating ApiKey.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul>
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="publicKey")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2293,8 +2293,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="cobrandLogin")]
@@ -2304,8 +2304,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="cobrandPassword")]
@@ -2378,8 +2378,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET cobrand/config/notifications/events</li></ul>
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2443,8 +2443,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET configs/notifications/events</li></ul>
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2537,8 +2537,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="accountName")]
@@ -2547,8 +2547,8 @@ namespace MyNS
 		public string AccountName { get; set; }
 		
 		/// <summary>
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// Pattern: ^[a-zA-Z0-9]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountNumber")]
@@ -2559,8 +2559,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="accountType")]
@@ -2590,8 +2590,8 @@ namespace MyNS
 		public string IncludeInNetWorth { get; set; }
 		
 		/// <summary>
-		/// Max length: 250
 		/// Min length: 0
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="memo")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2599,8 +2599,8 @@ namespace MyNS
 		public string Memo { get; set; }
 		
 		/// <summary>
-		/// Max length: 50
 		/// Min length: 0
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nickname")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2631,8 +2631,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET cobrand/config/notifications/events</li></ul>
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2660,8 +2660,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET configs/notifications/events</li></ul>
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5083,8 +5083,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Identifier for the field.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul>
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="id")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7173,8 +7173,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="categoryName")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7291,8 +7291,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountName")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7300,8 +7300,8 @@ namespace MyNS
 		public string AccountName { get; set; }
 		
 		/// <summary>
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// Pattern: ^[a-zA-Z0-9]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountNumber")]
@@ -7341,8 +7341,8 @@ namespace MyNS
 		public string IsEbillEnrolled { get; set; }
 		
 		/// <summary>
-		/// Max length: 250
 		/// Min length: 0
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="memo")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7350,8 +7350,8 @@ namespace MyNS
 		public string Memo { get; set; }
 		
 		/// <summary>
-		/// Max length: 50
 		/// Min length: 0
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nickname")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7407,8 +7407,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET cobrand/config/notifications/events</li></ul>
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7436,8 +7436,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET configs/notifications/events</li></ul>
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7519,8 +7519,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The dateformat of the user.This attribute is just a place holder and has no impact on any other API services.
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dateFormat")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7535,8 +7535,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The timezone of the user. This attribute is just a place holder and has no impact on any other API services.
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="timeZone")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7644,8 +7644,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 17
 		/// Min length: 3
+		/// Max length: 17
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="accountNumber")]
@@ -7915,8 +7915,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The dateformat of the user.This attribute is just a place holder and has no impact on any other API services.
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dateFormat")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7931,8 +7931,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The timezone of the user. This attribute is just a place holder and has no impact on any other API services.
-		/// Max length: 2147483647
 		/// Min length: 1
+		/// Max length: 2147483647
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="timeZone")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8041,8 +8041,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 150
 		/// Min length: 3
+		/// Max length: 150
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="loginName")]

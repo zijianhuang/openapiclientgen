@@ -60,8 +60,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientKey")]
@@ -70,8 +70,8 @@ namespace MyNS
 		public string ClientKey { get; set; }
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -80,8 +80,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 15000
 		/// Min length: 0
+		/// Max length: 15000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="jiraJwtToken")]
@@ -90,8 +90,8 @@ namespace MyNS
 		public string JiraJwtToken { get; set; }
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="url")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -626,8 +626,8 @@ namespace MyNS
 		/// <summary>
 		/// The source control branch on where the scan was performed. (Source of the branch selector on the ConfigCat Dashboard)
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="branch")]
@@ -637,8 +637,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The related commit's hash. (Appears on the ConfigCat Dashboard)
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="commitHash")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -647,8 +647,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The related commit's URL. (Appears on the ConfigCat Dashboard)
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="commitUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -672,8 +672,8 @@ namespace MyNS
 		/// <summary>
 		/// The source control repository that contains the scanned code. (Source of the repository selector on the ConfigCat Dashboard)
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="repository")]
@@ -683,8 +683,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The scanning tool's name. (Appears on the ConfigCat Dashboard)
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uploader")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -722,8 +722,8 @@ namespace MyNS
 		/// <summary>
 		/// The file's name in where the code reference has been found. (Appears on the ConfigCat Dashboard)
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="file")]
@@ -733,8 +733,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The file's url. (Used to point to the file on the repository's website)
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="fileUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -776,8 +776,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The content of the reference line.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="lineText")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1069,8 +1069,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The user attribute to compare.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="comparisonAttribute")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1079,8 +1079,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The value to compare against.
-		/// Max length: 65535
 		/// Min length: 0
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="comparisonValue")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1302,8 +1302,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientKey")]
@@ -1313,8 +1313,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 15000
 		/// Min length: 0
+		/// Max length: 15000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="jiraJwtToken")]
@@ -1329,8 +1329,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1339,8 +1339,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1355,8 +1355,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="color")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1364,8 +1364,8 @@ namespace MyNS
 		public string Color { get; set; }
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1374,8 +1374,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1500,8 +1500,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1519,8 +1519,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1529,8 +1529,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1553,8 +1553,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="comparisonAttribute")]
@@ -1564,8 +1564,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 65535
 		/// Min length: 0
+		/// Max length: 65535
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="comparisonValue")]
@@ -1574,8 +1574,8 @@ namespace MyNS
 		public string ComparisonValue { get; set; }
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1584,8 +1584,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1601,8 +1601,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A short description for the setting, shown on the Dashboard UI.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="hint")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1618,8 +1618,8 @@ namespace MyNS
 		/// <summary>
 		/// The key of the setting.
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z]+[a-zA-Z0-9_]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1632,8 +1632,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the setting, shown on the Dashboard UI.
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1698,8 +1698,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="color")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1708,8 +1708,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1734,8 +1734,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If it's set, only this branch's reports belonging to the given repository will be deleted.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="branch")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1753,8 +1753,8 @@ namespace MyNS
 		/// <summary>
 		/// The source control repository which's reports should be deleted.
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="repository")]
@@ -3851,8 +3851,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3860,8 +3860,8 @@ namespace MyNS
 		public string Description { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3875,8 +3875,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="color")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3884,8 +3884,8 @@ namespace MyNS
 		public string Color { get; set; }
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3893,8 +3893,8 @@ namespace MyNS
 		public string Description { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3974,8 +3974,8 @@ namespace MyNS
 		public CreateOrUpdateEnvironmentAccessModel[] EnvironmentAccesses { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3992,8 +3992,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4001,8 +4001,8 @@ namespace MyNS
 		public string Description { get; set; }
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4019,8 +4019,8 @@ namespace MyNS
 		public RolloutRuleModelComparator Comparator { get; set; }
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="comparisonAttribute")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4028,8 +4028,8 @@ namespace MyNS
 		public string ComparisonAttribute { get; set; }
 		
 		/// <summary>
-		/// Max length: 65535
 		/// Min length: 0
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="comparisonValue")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4037,8 +4037,8 @@ namespace MyNS
 		public string ComparisonValue { get; set; }
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4046,8 +4046,8 @@ namespace MyNS
 		public string Description { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4127,8 +4127,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="color")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4136,8 +4136,8 @@ namespace MyNS
 		public string Color { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]

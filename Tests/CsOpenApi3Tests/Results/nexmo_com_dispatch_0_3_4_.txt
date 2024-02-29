@@ -24,8 +24,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URL of the audio attachment. `messenger` supports .mp3. `whatsapp` supports .aac, .m4a, .amr, .mp3 and .opus.
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="url")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -120,8 +120,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Additional text to accompany the image. Supported by WhatsApp and MMS.
-		/// Max length: 3000
 		/// Min length: 1
+		/// Max length: 3000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="caption")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -130,8 +130,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URL of the file attachment. `messenger` supports a wide range of attachments including .zip, .csv and .pdf. `whatsapp` supports .pdf, .doc(x), .ppt(x) and .xls(x).
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="url")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -153,8 +153,8 @@ namespace MyNS
 		///
 		///**SMS**: **MMS**: or **WhatsApp** This value is not required.
 		///
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="id")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -168,8 +168,8 @@ namespace MyNS
 		///
 		///**Messenger**: or **Viber**: This value is not required.
 		///
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -211,8 +211,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Additional text to accompany the image. Supported by WhatsApp and MMS.
-		/// Max length: 3000
 		/// Min length: 1
+		/// Max length: 3000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="caption")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -221,8 +221,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URL of the image attachment. `messenger` and `mms` supports .jpg, .jpeg, .png and .gif. `viber_service_msg` supports .jpg .jpeg, and .png. `whatsapp` supports .jpg .jpeg, and .png.
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="url")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -276,8 +276,8 @@ namespace MyNS
 		///
 		///**WhatsApp**: is 4096 characters
 		///
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="text")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -370,8 +370,8 @@ namespace MyNS
 		///
 		///**whatsapp** supports .mp4 and .3gpp. Note, only H.264 video codec and AAC audio codec is supported.
 		///
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="url")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -581,8 +581,8 @@ namespace MyNS
 		///
 		///**SMS**: or **Viber**: or **WhatsApp** This value is not required.
 		///
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="id")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -594,8 +594,8 @@ namespace MyNS
 		///
 		///**Messenger**: This value is not required.
 		///
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

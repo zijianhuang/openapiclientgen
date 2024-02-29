@@ -2053,8 +2053,8 @@ namespace MyNS
 		/// BatchAssociateClientDeviceWithCoreDevice greengrass/v2/coreDevices/{coreDeviceThingName}/associateClientDevices
 		/// </summary>
 		/// <param name="coreDeviceThingName">The name of the core device. This is also the name of the IoT thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchAssociateClientDeviceWithCoreDeviceResponse> BatchAssociateClientDeviceWithCoreDeviceAsync(string coreDeviceThingName, BatchAssociateClientDeviceWithCoreDevicePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2097,8 +2097,8 @@ namespace MyNS
 		/// BatchDisassociateClientDeviceFromCoreDevice greengrass/v2/coreDevices/{coreDeviceThingName}/disassociateClientDevices
 		/// </summary>
 		/// <param name="coreDeviceThingName">The name of the core device. This is also the name of the IoT thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDisassociateClientDeviceFromCoreDeviceResponse> BatchDisassociateClientDeviceFromCoreDeviceAsync(string coreDeviceThingName, BatchDisassociateClientDeviceFromCoreDevicePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2341,8 +2341,8 @@ namespace MyNS
 		/// DeleteCoreDevice greengrass/v2/coreDevices/{coreDeviceThingName}
 		/// </summary>
 		/// <param name="coreDeviceThingName">The name of the core device. This is also the name of the IoT thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteCoreDeviceAsync(string coreDeviceThingName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2371,8 +2371,8 @@ namespace MyNS
 		/// GetCoreDevice greengrass/v2/coreDevices/{coreDeviceThingName}
 		/// </summary>
 		/// <param name="coreDeviceThingName">The name of the core device. This is also the name of the IoT thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCoreDeviceResponse> GetCoreDeviceAsync(string coreDeviceThingName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2544,8 +2544,8 @@ namespace MyNS
 		/// GetConnectivityInfo greengrass/things/{thingName}/connectivityInfo
 		/// </summary>
 		/// <param name="thingName">The name of the core device. This is also the name of the IoT thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetConnectivityInfoResponse> GetConnectivityInfoAsync(string thingName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2581,8 +2581,8 @@ namespace MyNS
 		/// UpdateConnectivityInfo greengrass/things/{thingName}/connectivityInfo
 		/// </summary>
 		/// <param name="thingName">The name of the core device. This is also the name of the IoT thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateConnectivityInfoResponse> UpdateConnectivityInfoAsync(string thingName, UpdateConnectivityInfoPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2625,8 +2625,8 @@ namespace MyNS
 		/// ListClientDevicesAssociatedWithCoreDevice greengrass/v2/coreDevices/{coreDeviceThingName}/associatedClientDevices
 		/// </summary>
 		/// <param name="coreDeviceThingName">The name of the core device. This is also the name of the IoT thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="maxResults">The maximum number of results to be returned per paginated request.
 		/// Minimum: 1
@@ -2785,8 +2785,8 @@ namespace MyNS
 		/// ListEffectiveDeployments greengrass/v2/coreDevices/{coreDeviceThingName}/effectiveDeployments
 		/// </summary>
 		/// <param name="coreDeviceThingName">The name of the core device. This is also the name of the IoT thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="maxResults">The maximum number of results to be returned per paginated request.
 		/// Minimum: 1
@@ -2827,8 +2827,8 @@ namespace MyNS
 		/// ListInstalledComponents greengrass/v2/coreDevices/{coreDeviceThingName}/installedComponents
 		/// </summary>
 		/// <param name="coreDeviceThingName">The name of the core device. This is also the name of the IoT thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="maxResults">The maximum number of results to be returned per paginated request.
 		/// Minimum: 1
@@ -3082,8 +3082,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3130,8 +3130,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the deployment.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="deploymentName")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3172,8 +3172,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent. Idempotency means that the request is successfully processed only once, even if you send the request multiple times. When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for idempotent requests for up to 8 hours.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]

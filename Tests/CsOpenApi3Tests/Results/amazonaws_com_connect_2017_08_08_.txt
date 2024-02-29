@@ -11431,12 +11431,12 @@ namespace MyNS
 		/// ActivateEvaluationForm evaluation-forms/{InstanceId}/{EvaluationFormId}/activate
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EvaluationFormId">The unique identifier for the evaluation form.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ActivateEvaluationFormResponse> ActivateEvaluationFormAsync(string InstanceId, string EvaluationFormId, ActivateEvaluationFormPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11479,8 +11479,8 @@ namespace MyNS
 		/// AssociateApprovedOrigin instance/{InstanceId}/approved-origin
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task AssociateApprovedOriginAsync(string InstanceId, AssociateApprovedOriginPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11517,8 +11517,8 @@ namespace MyNS
 		/// AssociateBot instance/{InstanceId}/bot
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task AssociateBotAsync(string InstanceId, AssociateBotPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11555,8 +11555,8 @@ namespace MyNS
 		/// DisassociateBot instance/{InstanceId}/bot
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DisassociateBotAsync(string InstanceId, DisassociateBotPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11593,8 +11593,8 @@ namespace MyNS
 		/// AssociateDefaultVocabulary default-vocabulary/{InstanceId}/{LanguageCode}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="LanguageCode">The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </param>
 		/// <returns>Success</returns>
@@ -11638,8 +11638,8 @@ namespace MyNS
 		/// AssociateInstanceStorageConfig instance/{InstanceId}/storage-config
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateInstanceStorageConfigResponse> AssociateInstanceStorageConfigAsync(string InstanceId, AssociateInstanceStorageConfigPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11682,8 +11682,8 @@ namespace MyNS
 		/// AssociateLambdaFunction instance/{InstanceId}/lambda-function
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task AssociateLambdaFunctionAsync(string InstanceId, AssociateLambdaFunctionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11720,8 +11720,8 @@ namespace MyNS
 		/// AssociateLexBot instance/{InstanceId}/lex-bot
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task AssociateLexBotAsync(string InstanceId, AssociateLexBotPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11793,8 +11793,8 @@ namespace MyNS
 		/// AssociateQueueQuickConnects queues/{InstanceId}/{QueueId}/associate-quick-connects
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QueueId">The identifier for the queue.</param>
 		/// <returns>Success</returns>
@@ -11832,8 +11832,8 @@ namespace MyNS
 		/// AssociateRoutingProfileQueues routing-profiles/{InstanceId}/{RoutingProfileId}/associate-queues
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="RoutingProfileId">The identifier of the routing profile.</param>
 		/// <returns>Success</returns>
@@ -11871,8 +11871,8 @@ namespace MyNS
 		/// AssociateSecurityKey instance/{InstanceId}/security-key
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateSecurityKeyResponse> AssociateSecurityKeyAsync(string InstanceId, AssociateSecurityKeyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11955,8 +11955,8 @@ namespace MyNS
 		/// CreateAgentStatus agent-status/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateAgentStatusResponse> CreateAgentStatusAsync(string InstanceId, CreateAgentStatusPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11999,8 +11999,8 @@ namespace MyNS
 		/// ListAgentStatuses agent-status/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page.
@@ -12046,8 +12046,8 @@ namespace MyNS
 		/// CreateContactFlow contact-flows/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateContactFlowResponse> CreateContactFlowAsync(string InstanceId, CreateContactFlowPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12090,8 +12090,8 @@ namespace MyNS
 		/// CreateContactFlowModule contact-flow-modules/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateContactFlowModuleResponse> CreateContactFlowModuleAsync(string InstanceId, CreateContactFlowModulePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12134,8 +12134,8 @@ namespace MyNS
 		/// CreateEvaluationForm evaluation-forms/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateEvaluationFormResponse> CreateEvaluationFormAsync(string InstanceId, CreateEvaluationFormPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12178,8 +12178,8 @@ namespace MyNS
 		/// ListEvaluationForms evaluation-forms/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return per page.
 		/// Minimum: 1
@@ -12222,8 +12222,8 @@ namespace MyNS
 		/// CreateHoursOfOperation hours-of-operations/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateHoursOfOperationResponse> CreateHoursOfOperationAsync(string InstanceId, CreateHoursOfOperationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12346,8 +12346,8 @@ namespace MyNS
 		/// CreateIntegrationAssociation instance/{InstanceId}/integration-associations
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateIntegrationAssociationResponse> CreateIntegrationAssociationAsync(string InstanceId, CreateIntegrationAssociationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12390,8 +12390,8 @@ namespace MyNS
 		/// ListIntegrationAssociations instance/{InstanceId}/integration-associations
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="integrationType">The integration type.</param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
@@ -12475,8 +12475,8 @@ namespace MyNS
 		/// CreatePrompt prompts/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreatePromptResponse> CreatePromptAsync(string InstanceId, CreatePromptPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12519,8 +12519,8 @@ namespace MyNS
 		/// CreateQueue queues/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateQueueResponse> CreateQueueAsync(string InstanceId, CreateQueuePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12563,8 +12563,8 @@ namespace MyNS
 		/// CreateQuickConnect quick-connects/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateQuickConnectResponse> CreateQuickConnectAsync(string InstanceId, CreateQuickConnectPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12607,8 +12607,8 @@ namespace MyNS
 		/// ListQuickConnects quick-connects/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page. The default MaxResult size is 100.
@@ -12654,8 +12654,8 @@ namespace MyNS
 		/// CreateRoutingProfile routing-profiles/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateRoutingProfileResponse> CreateRoutingProfileAsync(string InstanceId, CreateRoutingProfilePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12698,8 +12698,8 @@ namespace MyNS
 		/// CreateRule rules/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateRuleResponse> CreateRuleAsync(string InstanceId, CreateRulePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12742,8 +12742,8 @@ namespace MyNS
 		/// ListRules rules/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="publishStatus">The publish status of the rule.</param>
 		/// <param name="eventSourceName">The name of the event source.</param>
@@ -12788,8 +12788,8 @@ namespace MyNS
 		/// CreateSecurityProfile security-profiles/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateSecurityProfileResponse> CreateSecurityProfileAsync(string InstanceId, CreateSecurityProfilePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12832,8 +12832,8 @@ namespace MyNS
 		/// CreateTaskTemplate instance/{InstanceId}/task/template
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateTaskTemplateResponse> CreateTaskTemplateAsync(string InstanceId, CreateTaskTemplatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12876,8 +12876,8 @@ namespace MyNS
 		/// ListTaskTemplates instance/{InstanceId}/task/template
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken"><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important> <p>It is not expected that you set this because the value returned in the previous response is always null.</p> </important></param>
 		/// <param name="maxResults"><p>The maximum number of results to return per page.</p> <important> <p>It is not expected that you set this.</p> </important>
@@ -12886,8 +12886,8 @@ namespace MyNS
 		// </param>
 		/// <param name="status">Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</param>
 		/// <param name="name">The name of the task template.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -12965,12 +12965,12 @@ namespace MyNS
 		/// CreateUseCase instance/{InstanceId}/integration-associations/{IntegrationAssociationId}/use-cases
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="IntegrationAssociationId">The identifier for the integration association.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateUseCaseResponse> CreateUseCaseAsync(string InstanceId, string IntegrationAssociationId, CreateUseCasePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13013,12 +13013,12 @@ namespace MyNS
 		/// ListUseCases instance/{InstanceId}/integration-associations/{IntegrationAssociationId}/use-cases
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="IntegrationAssociationId">The identifier for the integration association.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page.
@@ -13061,8 +13061,8 @@ namespace MyNS
 		/// CreateUser users/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateUserResponse> CreateUserAsync(string InstanceId, CreateUserPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13105,8 +13105,8 @@ namespace MyNS
 		/// CreateUserHierarchyGroup user-hierarchy-groups/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateUserHierarchyGroupResponse> CreateUserHierarchyGroupAsync(string InstanceId, CreateUserHierarchyGroupPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13149,8 +13149,8 @@ namespace MyNS
 		/// CreateVocabulary vocabulary/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateVocabularyResponse> CreateVocabularyAsync(string InstanceId, CreateVocabularyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13193,12 +13193,12 @@ namespace MyNS
 		/// DeactivateEvaluationForm evaluation-forms/{InstanceId}/{EvaluationFormId}/deactivate
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EvaluationFormId">The unique identifier for the evaluation form.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeactivateEvaluationFormResponse> DeactivateEvaluationFormAsync(string InstanceId, string EvaluationFormId, DeactivateEvaluationFormPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13241,12 +13241,12 @@ namespace MyNS
 		/// DeleteContactEvaluation contact-evaluations/{InstanceId}/{EvaluationId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EvaluationId">A unique identifier for the contact evaluation.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteContactEvaluationAsync(string InstanceId, string EvaluationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13276,12 +13276,12 @@ namespace MyNS
 		/// DescribeContactEvaluation contact-evaluations/{InstanceId}/{EvaluationId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EvaluationId">A unique identifier for the contact evaluation.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeContactEvaluationResponse> DescribeContactEvaluationAsync(string InstanceId, string EvaluationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13317,12 +13317,12 @@ namespace MyNS
 		/// UpdateContactEvaluation contact-evaluations/{InstanceId}/{EvaluationId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EvaluationId">A unique identifier for the contact evaluation.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateContactEvaluationResponse> UpdateContactEvaluationAsync(string InstanceId, string EvaluationId, UpdateContactEvaluationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13365,8 +13365,8 @@ namespace MyNS
 		/// DeleteContactFlow contact-flows/{InstanceId}/{ContactFlowId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ContactFlowId">The identifier of the flow.
 		/// Max length: 500
@@ -13405,8 +13405,8 @@ namespace MyNS
 		/// DescribeContactFlow contact-flows/{InstanceId}/{ContactFlowId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ContactFlowId">The identifier of the flow.
 		/// Max length: 500
@@ -13445,12 +13445,12 @@ namespace MyNS
 		/// DeleteContactFlowModule contact-flow-modules/{InstanceId}/{ContactFlowModuleId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ContactFlowModuleId">The identifier of the flow module.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteContactFlowModuleResponse> DeleteContactFlowModuleAsync(string InstanceId, string ContactFlowModuleId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13486,12 +13486,12 @@ namespace MyNS
 		/// DescribeContactFlowModule contact-flow-modules/{InstanceId}/{ContactFlowModuleId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ContactFlowModuleId">The identifier of the flow module.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeContactFlowModuleResponse> DescribeContactFlowModuleAsync(string InstanceId, string ContactFlowModuleId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13527,12 +13527,12 @@ namespace MyNS
 		/// DeleteEvaluationForm evaluation-forms/{InstanceId}/{EvaluationFormId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EvaluationFormId">The unique identifier for the evaluation form.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="version">The unique identifier for the evaluation form.
 		/// Minimum: 1
@@ -13565,12 +13565,12 @@ namespace MyNS
 		/// DescribeEvaluationForm evaluation-forms/{InstanceId}/{EvaluationFormId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EvaluationFormId">A unique identifier for the contact evaluation.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="version">A version of the evaluation form.
 		/// Minimum: 1
@@ -13609,12 +13609,12 @@ namespace MyNS
 		/// UpdateEvaluationForm evaluation-forms/{InstanceId}/{EvaluationFormId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EvaluationFormId">The unique identifier for the evaluation form.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateEvaluationFormResponse> UpdateEvaluationFormAsync(string InstanceId, string EvaluationFormId, UpdateEvaluationFormPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13657,8 +13657,8 @@ namespace MyNS
 		/// DeleteHoursOfOperation hours-of-operations/{InstanceId}/{HoursOfOperationId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="HoursOfOperationId">The identifier for the hours of operation.</param>
 		/// <returns>Success</returns>
@@ -13689,8 +13689,8 @@ namespace MyNS
 		/// DescribeHoursOfOperation hours-of-operations/{InstanceId}/{HoursOfOperationId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="HoursOfOperationId">The identifier for the hours of operation.</param>
 		/// <returns>Success</returns>
@@ -13727,8 +13727,8 @@ namespace MyNS
 		/// UpdateHoursOfOperation hours-of-operations/{InstanceId}/{HoursOfOperationId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="HoursOfOperationId">The identifier of the hours of operation.</param>
 		/// <returns>Success</returns>
@@ -13766,8 +13766,8 @@ namespace MyNS
 		/// DeleteInstance instance/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteInstanceAsync(string InstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13797,8 +13797,8 @@ namespace MyNS
 		/// DescribeInstance instance/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeInstanceResponse> DescribeInstanceAsync(string InstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13834,12 +13834,12 @@ namespace MyNS
 		/// DeleteIntegrationAssociation instance/{InstanceId}/integration-associations/{IntegrationAssociationId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="IntegrationAssociationId">The identifier for the integration association.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteIntegrationAssociationAsync(string InstanceId, string IntegrationAssociationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13869,12 +13869,12 @@ namespace MyNS
 		/// DeletePrompt prompts/{InstanceId}/{PromptId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="PromptId">A unique identifier for the prompt.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeletePromptAsync(string InstanceId, string PromptId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13904,12 +13904,12 @@ namespace MyNS
 		/// DescribePrompt prompts/{InstanceId}/{PromptId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="PromptId">A unique identifier for the prompt.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePromptResponse> DescribePromptAsync(string InstanceId, string PromptId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13945,12 +13945,12 @@ namespace MyNS
 		/// UpdatePrompt prompts/{InstanceId}/{PromptId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="PromptId">A unique identifier for the prompt.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePromptResponse> UpdatePromptAsync(string InstanceId, string PromptId, UpdatePromptPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13993,8 +13993,8 @@ namespace MyNS
 		/// DeleteQueue queues/{InstanceId}/{QueueId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QueueId">The identifier for the queue.</param>
 		/// <returns>Success</returns>
@@ -14025,8 +14025,8 @@ namespace MyNS
 		/// DescribeQueue queues/{InstanceId}/{QueueId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QueueId">The identifier for the queue.</param>
 		/// <returns>Success</returns>
@@ -14063,8 +14063,8 @@ namespace MyNS
 		/// DeleteQuickConnect quick-connects/{InstanceId}/{QuickConnectId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QuickConnectId">The identifier for the quick connect.</param>
 		/// <returns>Success</returns>
@@ -14095,8 +14095,8 @@ namespace MyNS
 		/// DescribeQuickConnect quick-connects/{InstanceId}/{QuickConnectId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QuickConnectId">The identifier for the quick connect.</param>
 		/// <returns>Success</returns>
@@ -14133,8 +14133,8 @@ namespace MyNS
 		/// DeleteRoutingProfile routing-profiles/{InstanceId}/{RoutingProfileId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="RoutingProfileId">The identifier of the routing profile.</param>
 		/// <returns>Success</returns>
@@ -14165,8 +14165,8 @@ namespace MyNS
 		/// DescribeRoutingProfile routing-profiles/{InstanceId}/{RoutingProfileId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="RoutingProfileId">The identifier of the routing profile.</param>
 		/// <returns>Success</returns>
@@ -14203,12 +14203,12 @@ namespace MyNS
 		/// DeleteRule rules/{InstanceId}/{RuleId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="RuleId">A unique identifier for the rule.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteRuleAsync(string InstanceId, string RuleId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14238,12 +14238,12 @@ namespace MyNS
 		/// DescribeRule rules/{InstanceId}/{RuleId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="RuleId">A unique identifier for the rule.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeRuleResponse> DescribeRuleAsync(string InstanceId, string RuleId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14279,12 +14279,12 @@ namespace MyNS
 		/// UpdateRule rules/{InstanceId}/{RuleId}
 		/// </summary>
 		/// <param name="RuleId">A unique identifier for the rule.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateRuleAsync(string RuleId, string InstanceId, UpdateRulePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14321,8 +14321,8 @@ namespace MyNS
 		/// DeleteSecurityProfile security-profiles/{InstanceId}/{SecurityProfileId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="SecurityProfileId">The identifier for the security profle.</param>
 		/// <returns>Success</returns>
@@ -14354,8 +14354,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="SecurityProfileId">The identifier for the security profle.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeSecurityProfileResponse> DescribeSecurityProfileAsync(string SecurityProfileId, string InstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14392,8 +14392,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="SecurityProfileId">The identifier for the security profle.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateSecurityProfileAsync(string SecurityProfileId, string InstanceId, UpdateSecurityProfilePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14430,12 +14430,12 @@ namespace MyNS
 		/// DeleteTaskTemplate instance/{InstanceId}/task/template/{TaskTemplateId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TaskTemplateId">A unique identifier for the task template.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteTaskTemplateResponse> DeleteTaskTemplateAsync(string InstanceId, string TaskTemplateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14471,12 +14471,12 @@ namespace MyNS
 		/// GetTaskTemplate instance/{InstanceId}/task/template/{TaskTemplateId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TaskTemplateId">A unique identifier for the task template.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="snapshotVersion">The system generated version of a task template that is associated with a task, when the task is created.</param>
 		/// <returns>Success</returns>
@@ -14513,12 +14513,12 @@ namespace MyNS
 		/// UpdateTaskTemplate instance/{InstanceId}/task/template/{TaskTemplateId}
 		/// </summary>
 		/// <param name="TaskTemplateId">A unique identifier for the task template.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateTaskTemplateResponse> UpdateTaskTemplateAsync(string TaskTemplateId, string InstanceId, UpdateTaskTemplatePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14629,16 +14629,16 @@ namespace MyNS
 		/// DeleteUseCase instance/{InstanceId}/integration-associations/{IntegrationAssociationId}/use-cases/{UseCaseId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="IntegrationAssociationId">The identifier for the integration association.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		// </param>
 		/// <param name="UseCaseId">The identifier for the use case.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteUseCaseAsync(string InstanceId, string IntegrationAssociationId, string UseCaseId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14668,8 +14668,8 @@ namespace MyNS
 		/// DeleteUser users/{InstanceId}/{UserId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="UserId">The identifier of the user.</param>
 		/// <returns>Success</returns>
@@ -14701,8 +14701,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="UserId">The identifier of the user account.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeUserResponse> DescribeUserAsync(string UserId, string InstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14739,8 +14739,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="HierarchyGroupId">The identifier of the hierarchy group.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteUserHierarchyGroupAsync(string HierarchyGroupId, string InstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14771,8 +14771,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="HierarchyGroupId">The identifier of the hierarchy group.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeUserHierarchyGroupResponse> DescribeUserHierarchyGroupAsync(string HierarchyGroupId, string InstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14808,12 +14808,12 @@ namespace MyNS
 		/// DeleteVocabulary vocabulary-remove/{InstanceId}/{VocabularyId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="VocabularyId">The identifier of the custom vocabulary.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteVocabularyResponse> DeleteVocabularyAsync(string InstanceId, string VocabularyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14844,8 +14844,8 @@ namespace MyNS
 		/// DescribeAgentStatus agent-status/{InstanceId}/{AgentStatusId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="AgentStatusId">The identifier for the agent status.</param>
 		/// <returns>Success</returns>
@@ -14882,8 +14882,8 @@ namespace MyNS
 		/// UpdateAgentStatus agent-status/{InstanceId}/{AgentStatusId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="AgentStatusId">The identifier of the agent status.</param>
 		/// <returns>Success</returns>
@@ -14921,12 +14921,12 @@ namespace MyNS
 		/// DescribeContact contacts/{InstanceId}/{ContactId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ContactId">The identifier of the contact.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeContactResponse> DescribeContactAsync(string InstanceId, string ContactId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14962,12 +14962,12 @@ namespace MyNS
 		/// UpdateContact contacts/{InstanceId}/{ContactId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ContactId">The identifier of the contact. This is the identifier of the contact associated with the first interaction with your contact center.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateContactResponse> UpdateContactAsync(string InstanceId, string ContactId, UpdateContactPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15010,8 +15010,8 @@ namespace MyNS
 		/// DescribeInstanceAttribute instance/{InstanceId}/attribute/{AttributeType}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="AttributeType">The type of attribute.</param>
 		/// <returns>Success</returns>
@@ -15048,8 +15048,8 @@ namespace MyNS
 		/// UpdateInstanceAttribute instance/{InstanceId}/attribute/{AttributeType}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="AttributeType"><p>The type of attribute.</p> <note> <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p> </note></param>
 		/// <returns>Success</returns>
@@ -15087,12 +15087,12 @@ namespace MyNS
 		/// DescribeInstanceStorageConfig instance/{InstanceId}/storage-config/{AssociationId}#resourceType
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="AssociationId">The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="resourceType">A valid resource type.</param>
 		/// <returns>Success</returns>
@@ -15129,12 +15129,12 @@ namespace MyNS
 		/// DisassociateInstanceStorageConfig instance/{InstanceId}/storage-config/{AssociationId}#resourceType
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="AssociationId">The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="resourceType">A valid resource type.</param>
 		/// <returns>Success</returns>
@@ -15165,12 +15165,12 @@ namespace MyNS
 		/// UpdateInstanceStorageConfig instance/{InstanceId}/storage-config/{AssociationId}#resourceType
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="AssociationId">The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="resourceType">A valid resource type.</param>
 		/// <returns>Success</returns>
@@ -15314,8 +15314,8 @@ namespace MyNS
 		/// DescribeUserHierarchyStructure user-hierarchy-structure/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeUserHierarchyStructureResponse> DescribeUserHierarchyStructureAsync(string InstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15351,8 +15351,8 @@ namespace MyNS
 		/// UpdateUserHierarchyStructure user-hierarchy-structure/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateUserHierarchyStructureAsync(string InstanceId, UpdateUserHierarchyStructurePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15389,12 +15389,12 @@ namespace MyNS
 		/// DescribeVocabulary vocabulary/{InstanceId}/{VocabularyId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="VocabularyId">The identifier of the custom vocabulary.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeVocabularyResponse> DescribeVocabularyAsync(string InstanceId, string VocabularyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15430,8 +15430,8 @@ namespace MyNS
 		/// DisassociateApprovedOrigin instance/{InstanceId}/approved-origin#origin
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="origin">The domain URL of the integrated application.
 		/// Max length: 267
@@ -15464,12 +15464,12 @@ namespace MyNS
 		/// DisassociateLambdaFunction instance/{InstanceId}/lambda-function#functionArn
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance..
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="functionArn">The Amazon Resource Name (ARN) of the Lambda function being disassociated.
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DisassociateLambdaFunctionAsync(string InstanceId, string functionArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15499,8 +15499,8 @@ namespace MyNS
 		/// DisassociateLexBot instance/{InstanceId}/lex-bot#botName&lexRegion
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="botName">The name of the Amazon Lex bot. Maximum character limit of 50.
 		/// Max length: 50
@@ -15537,8 +15537,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="PhoneNumberId">A unique identifier for the phone number.</param>
 		/// <param name="instanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DisassociatePhoneNumberContactFlowAsync(string PhoneNumberId, string instanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15568,8 +15568,8 @@ namespace MyNS
 		/// DisassociateQueueQuickConnects queues/{InstanceId}/{QueueId}/disassociate-quick-connects
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QueueId">The identifier for the queue.</param>
 		/// <returns>Success</returns>
@@ -15607,8 +15607,8 @@ namespace MyNS
 		/// DisassociateRoutingProfileQueues routing-profiles/{InstanceId}/{RoutingProfileId}/disassociate-queues
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="RoutingProfileId">The identifier of the routing profile.</param>
 		/// <returns>Success</returns>
@@ -15646,12 +15646,12 @@ namespace MyNS
 		/// DisassociateSecurityKey instance/{InstanceId}/security-key/{AssociationId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="AssociationId">The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DisassociateSecurityKeyAsync(string InstanceId, string AssociationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15682,8 +15682,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="UserId">The identifier of the user account.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DismissUserContactResponse> DismissUserContactAsync(string UserId, string InstanceId, DismissUserContactPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15726,12 +15726,12 @@ namespace MyNS
 		/// GetContactAttributes contact/attributes/{InstanceId}/{InitialContactId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="InitialContactId">The identifier of the initial contact.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetContactAttributesResponse> GetContactAttributesAsync(string InstanceId, string InitialContactId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15767,8 +15767,8 @@ namespace MyNS
 		/// GetCurrentMetricData metrics/current/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -15813,8 +15813,8 @@ namespace MyNS
 		/// GetCurrentUserData metrics/userdata/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -15859,8 +15859,8 @@ namespace MyNS
 		/// GetFederationToken user/federate/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFederationTokenResponse> GetFederationTokenAsync(string InstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15896,8 +15896,8 @@ namespace MyNS
 		/// GetMetricData metrics/historical/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -15984,12 +15984,12 @@ namespace MyNS
 		/// GetPromptFile prompts/{InstanceId}/{PromptId}/file
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="PromptId">A unique identifier for the prompt.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPromptFileResponse> GetPromptFileAsync(string InstanceId, string PromptId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16100,8 +16100,8 @@ namespace MyNS
 		/// ListApprovedOrigins instance/{InstanceId}/approved-origins
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page.
@@ -16144,8 +16144,8 @@ namespace MyNS
 		/// ListBots instance/{InstanceId}/bots#lexVersion
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page.
@@ -16189,12 +16189,12 @@ namespace MyNS
 		/// ListContactEvaluations contact-evaluations/{InstanceId}#contactId
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="contactId">The identifier of the contact in this instance of Amazon Connect. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="nextToken"><p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important> <p>This is not expected to be set because the value returned in the previous response is always null.</p> </important></param>
 		/// <param name="NextToken">Pagination token</param>
@@ -16232,8 +16232,8 @@ namespace MyNS
 		/// ListContactFlowModules contact-flow-modules-summary/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page.
@@ -16277,8 +16277,8 @@ namespace MyNS
 		/// ListContactFlows contact-flows-summary/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="contactFlowTypes">The type of flow.
 		/// Maximum items: 10
@@ -16324,12 +16324,12 @@ namespace MyNS
 		/// ListContactReferences contact/references/{InstanceId}/{ContactId}#referenceTypes
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ContactId">The identifier of the initial contact.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="referenceTypes">The type of reference.
 		/// Maximum items: 6
@@ -16370,8 +16370,8 @@ namespace MyNS
 		/// ListDefaultVocabularies default-vocabulary-summary/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -16416,12 +16416,12 @@ namespace MyNS
 		/// ListEvaluationFormVersions evaluation-forms/{InstanceId}/{EvaluationFormId}/versions
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EvaluationFormId">The unique identifier for the evaluation form.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return per page.
 		/// Minimum: 1
@@ -16464,8 +16464,8 @@ namespace MyNS
 		/// ListHoursOfOperations hours-of-operations-summary/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page. The default MaxResult size is 100.
@@ -16508,8 +16508,8 @@ namespace MyNS
 		/// ListInstanceAttributes instance/{InstanceId}/attributes
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page.
@@ -16552,8 +16552,8 @@ namespace MyNS
 		/// ListInstanceStorageConfigs instance/{InstanceId}/storage-configs#resourceType
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="resourceType">A valid resource type.</param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
@@ -16597,8 +16597,8 @@ namespace MyNS
 		/// ListLambdaFunctions instance/{InstanceId}/lambda-functions
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page.
@@ -16641,8 +16641,8 @@ namespace MyNS
 		/// ListLexBots instance/{InstanceId}/lex-bots
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page. If no value is specified, the default is 10. 
@@ -16685,8 +16685,8 @@ namespace MyNS
 		/// ListPhoneNumbers phone-numbers-summary/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="phoneNumberTypes">The type of phone number.
 		/// Maximum items: 6
@@ -16777,8 +16777,8 @@ namespace MyNS
 		/// ListPrompts prompts-summary/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page. The default MaxResult size is 100.
@@ -16821,8 +16821,8 @@ namespace MyNS
 		/// ListQueueQuickConnects queues/{InstanceId}/{QueueId}/quick-connects
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QueueId">The identifier for the queue.</param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
@@ -16866,8 +16866,8 @@ namespace MyNS
 		/// ListQueues queues-summary/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="queueTypes">The type of queue.
 		/// Maximum items: 2
@@ -16913,8 +16913,8 @@ namespace MyNS
 		/// ListRoutingProfileQueues routing-profiles/{InstanceId}/{RoutingProfileId}/queues
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="RoutingProfileId">The identifier of the routing profile.</param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
@@ -16958,8 +16958,8 @@ namespace MyNS
 		/// UpdateRoutingProfileQueues routing-profiles/{InstanceId}/{RoutingProfileId}/queues
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="RoutingProfileId">The identifier of the routing profile.</param>
 		/// <returns>Success</returns>
@@ -16997,8 +16997,8 @@ namespace MyNS
 		/// ListRoutingProfiles routing-profiles-summary/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page. The default MaxResult size is 100.
@@ -17041,8 +17041,8 @@ namespace MyNS
 		/// ListSecurityKeys instance/{InstanceId}/security-keys
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page.
@@ -17086,8 +17086,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="SecurityProfileId">The identifier for the security profle.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page.
@@ -17130,8 +17130,8 @@ namespace MyNS
 		/// ListSecurityProfiles security-profiles-summary/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page. The default MaxResult size is 100.
@@ -17248,8 +17248,8 @@ namespace MyNS
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="instanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -17287,8 +17287,8 @@ namespace MyNS
 		/// ListUserHierarchyGroups user-hierarchy-groups-summary/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page. The default MaxResult size is 100.
@@ -17331,8 +17331,8 @@ namespace MyNS
 		/// ListUsers users-summary/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per page. The default MaxResult size is 100.
@@ -17416,8 +17416,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="UserId">The identifier of the user.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutUserStatusResponse> PutUserStatusAsync(string UserId, string InstanceId, PutUserStatusPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -17460,8 +17460,8 @@ namespace MyNS
 		/// ReplicateInstance instance/{InstanceId}/replicate
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ReplicateInstanceResponse> ReplicateInstanceAsync(string InstanceId, ReplicateInstancePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -17922,8 +17922,8 @@ namespace MyNS
 		/// SearchVocabularies vocabulary-summary/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -18008,8 +18008,8 @@ namespace MyNS
 		/// StartContactEvaluation contact-evaluations/{InstanceId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartContactEvaluationResponse> StartContactEvaluationAsync(string InstanceId, StartContactEvaluationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18332,12 +18332,12 @@ namespace MyNS
 		/// SubmitContactEvaluation contact-evaluations/{InstanceId}/{EvaluationId}/submit
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EvaluationId">A unique identifier for the contact evaluation.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<SubmitContactEvaluationResponse> SubmitContactEvaluationAsync(string InstanceId, string EvaluationId, SubmitContactEvaluationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18532,8 +18532,8 @@ namespace MyNS
 		/// UpdateContactFlowContent contact-flows/{InstanceId}/{ContactFlowId}/content
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ContactFlowId">The identifier of the flow.
 		/// Max length: 500
@@ -18579,8 +18579,8 @@ namespace MyNS
 		/// UpdateContactFlowMetadata contact-flows/{InstanceId}/{ContactFlowId}/metadata
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ContactFlowId">The identifier of the flow.
 		/// Max length: 500
@@ -18626,12 +18626,12 @@ namespace MyNS
 		/// UpdateContactFlowModuleContent contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/content
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ContactFlowModuleId">The identifier of the flow module.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateContactFlowModuleContentResponse> UpdateContactFlowModuleContentAsync(string InstanceId, string ContactFlowModuleId, UpdateContactFlowModuleContentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18674,12 +18674,12 @@ namespace MyNS
 		/// UpdateContactFlowModuleMetadata contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/metadata
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ContactFlowModuleId">The identifier of the flow module.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateContactFlowModuleMetadataResponse> UpdateContactFlowModuleMetadataAsync(string InstanceId, string ContactFlowModuleId, UpdateContactFlowModuleMetadataPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18722,8 +18722,8 @@ namespace MyNS
 		/// UpdateContactFlowName contact-flows/{InstanceId}/{ContactFlowId}/name
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ContactFlowId">The identifier of the flow.
 		/// Max length: 500
@@ -18809,12 +18809,12 @@ namespace MyNS
 		/// UpdateParticipantRoleConfig contact/participant-role-config/{InstanceId}/{ContactId}
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ContactId">The identifier of the contact in this instance of Amazon Connect. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateParticipantRoleConfigResponse> UpdateParticipantRoleConfigAsync(string InstanceId, string ContactId, UpdateParticipantRoleConfigPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18857,8 +18857,8 @@ namespace MyNS
 		/// UpdateQueueHoursOfOperation queues/{InstanceId}/{QueueId}/hours-of-operation
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QueueId">The identifier for the queue.</param>
 		/// <returns>Success</returns>
@@ -18896,8 +18896,8 @@ namespace MyNS
 		/// UpdateQueueMaxContacts queues/{InstanceId}/{QueueId}/max-contacts
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QueueId">The identifier for the queue.</param>
 		/// <returns>Success</returns>
@@ -18935,8 +18935,8 @@ namespace MyNS
 		/// UpdateQueueName queues/{InstanceId}/{QueueId}/name
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QueueId">The identifier for the queue.</param>
 		/// <returns>Success</returns>
@@ -18974,8 +18974,8 @@ namespace MyNS
 		/// UpdateQueueOutboundCallerConfig queues/{InstanceId}/{QueueId}/outbound-caller-config
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QueueId">The identifier for the queue.</param>
 		/// <returns>Success</returns>
@@ -19013,8 +19013,8 @@ namespace MyNS
 		/// UpdateQueueStatus queues/{InstanceId}/{QueueId}/status
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QueueId">The identifier for the queue.</param>
 		/// <returns>Success</returns>
@@ -19052,8 +19052,8 @@ namespace MyNS
 		/// UpdateQuickConnectConfig quick-connects/{InstanceId}/{QuickConnectId}/config
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QuickConnectId">The identifier for the quick connect.</param>
 		/// <returns>Success</returns>
@@ -19091,8 +19091,8 @@ namespace MyNS
 		/// UpdateQuickConnectName quick-connects/{InstanceId}/{QuickConnectId}/name
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="QuickConnectId">The identifier for the quick connect.</param>
 		/// <returns>Success</returns>
@@ -19130,8 +19130,8 @@ namespace MyNS
 		/// UpdateRoutingProfileAgentAvailabilityTimer routing-profiles/{InstanceId}/{RoutingProfileId}/agent-availability-timer
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="RoutingProfileId">The identifier of the routing profile.</param>
 		/// <returns>Success</returns>
@@ -19169,8 +19169,8 @@ namespace MyNS
 		/// UpdateRoutingProfileConcurrency routing-profiles/{InstanceId}/{RoutingProfileId}/concurrency
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="RoutingProfileId">The identifier of the routing profile.</param>
 		/// <returns>Success</returns>
@@ -19208,8 +19208,8 @@ namespace MyNS
 		/// UpdateRoutingProfileDefaultOutboundQueue routing-profiles/{InstanceId}/{RoutingProfileId}/default-outbound-queue
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="RoutingProfileId">The identifier of the routing profile.</param>
 		/// <returns>Success</returns>
@@ -19247,8 +19247,8 @@ namespace MyNS
 		/// UpdateRoutingProfileName routing-profiles/{InstanceId}/{RoutingProfileId}/name
 		/// </summary>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="RoutingProfileId">The identifier of the routing profile.</param>
 		/// <returns>Success</returns>
@@ -19287,8 +19287,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="UserId">The identifier of the user account.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateUserHierarchyAsync(string UserId, string InstanceId, UpdateUserHierarchyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19326,8 +19326,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="HierarchyGroupId">The identifier of the hierarchy group.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateUserHierarchyGroupNameAsync(string HierarchyGroupId, string InstanceId, UpdateUserHierarchyGroupNamePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19365,8 +19365,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="UserId">The identifier of the user account.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateUserIdentityInfoAsync(string UserId, string InstanceId, UpdateUserIdentityInfoPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19404,8 +19404,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="UserId">The identifier of the user account.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateUserPhoneConfigAsync(string UserId, string InstanceId, UpdateUserPhoneConfigPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19443,8 +19443,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="UserId">The identifier of the user account.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateUserRoutingProfileAsync(string UserId, string InstanceId, UpdateUserRoutingProfilePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19482,8 +19482,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="UserId">The identifier of the user account.</param>
 		/// <param name="InstanceId">The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateUserSecurityProfilesAsync(string UserId, string InstanceId, UpdateUserSecurityProfilesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19688,8 +19688,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier of the custom vocabulary. If this is empty, the default is set to none.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -19745,8 +19745,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is 140.
 		/// Required
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -19783,8 +19783,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -19841,8 +19841,8 @@ namespace MyNS
 		/// <summary>
 		/// A valid security key in PEM format.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -19874,8 +19874,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the phone number.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// Pattern: ^[\W\S_]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -19905,8 +19905,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the status.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -19916,8 +19916,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the status.
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -19996,8 +19996,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the flow module.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -20009,8 +20009,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the flow module. 
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -20022,8 +20022,8 @@ namespace MyNS
 		/// <summary>
 		/// The content of the flow module.
 		/// Required
-		/// Max length: 256000
 		/// Min length: 1
+		/// Max length: 256000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -20052,8 +20052,8 @@ namespace MyNS
 		/// <summary>
 		/// A title of the evaluation form.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -20063,8 +20063,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the evaluation form.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -20114,8 +20114,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the hours of operation.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -20125,8 +20125,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the hours of operation.
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -20181,8 +20181,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name for your instance.
-		/// Max length: 45
 		/// Min length: 1
+		/// Max length: 45
 		/// Pattern: ^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -20193,8 +20193,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the directory.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^d-[0-9a-f]{10}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -20241,8 +20241,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URL for the external application. This field is only required for the EVENT integration type.
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -20251,8 +20251,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the external application. This field is only required for the EVENT integration type.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^[a-zA-Z0-9_ -]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -20280,8 +20280,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. 
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -20292,8 +20292,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -20334,8 +20334,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the prompt.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -20345,8 +20345,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the prompt.
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -20356,8 +20356,8 @@ namespace MyNS
 		/// <summary>
 		/// The URI for the S3 bucket where the prompt is stored.
 		/// Required
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: s3://\S+/.+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -20380,8 +20380,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the queue.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -20391,8 +20391,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the queue.
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -20457,8 +20457,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the quick connect.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -20468,8 +20468,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the quick connect.
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -20513,8 +20513,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the routing profile. Must not be more than 127 characters.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -20525,8 +20525,8 @@ namespace MyNS
 		/// <summary>
 		/// Description of the routing profile. Must not be more than 250 characters.
 		/// Required
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -20579,8 +20579,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique name for the rule.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// Pattern: ^[0-9a-zA-Z._-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -20647,8 +20647,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the security profile.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: ^[ a-zA-Z0-9_@-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -20701,8 +20701,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the task template.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -20712,8 +20712,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the task template.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -20789,8 +20789,8 @@ namespace MyNS
 		/// <summary>
 		/// The name for the traffic distribution group. 
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: (^[\S].*[\S]$)|(^[\S]$)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -20802,8 +20802,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the traffic distribution group.
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// Pattern: (^[\S].*[\S]$)|(^[\S]$)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -20815,8 +20815,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance that has been replicated. You can find the <code>instanceId</code> in the ARN of the instance.
 		/// Required
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// Pattern: ^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9]{1}:[0-9]{1,20}:instance/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -20865,8 +20865,8 @@ namespace MyNS
 		/// <summary>
 		/// The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -21008,8 +21008,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique name of the custom vocabulary.
 		/// Required
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		/// Pattern: ^[0-9a-zA-Z._-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -21030,8 +21030,8 @@ namespace MyNS
 		/// <summary>
 		/// The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. The size limit is 50KB. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.
 		/// Required
-		/// Max length: 60000
 		/// Min length: 1
+		/// Max length: 60000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -21174,8 +21174,8 @@ namespace MyNS
 		/// <summary>
 		/// A title of the evaluation form.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -21185,8 +21185,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the evaluation form.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -21235,8 +21235,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the hours of operation.
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -21245,8 +21245,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the hours of operation.
-		/// Max length: 250
 		/// Min length: 0
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -21275,8 +21275,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the prompt.
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -21285,8 +21285,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the prompt.
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -21295,8 +21295,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URI for the S3 bucket where the prompt is stored.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: s3://\S+/.+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -21312,8 +21312,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the rule. You can change the name only if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> 
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// Pattern: ^[0-9a-zA-Z._-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -21387,8 +21387,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the task template.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -21397,8 +21397,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the task template.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -21463,8 +21463,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the agent status.
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -21473,8 +21473,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the agent status.
-		/// Max length: 250
 		/// Min length: 0
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -21508,8 +21508,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the contact.
-		/// Max length: 512
 		/// Min length: 0
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -21518,8 +21518,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the contact.
-		/// Max length: 4096
 		/// Min length: 0
+		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -21539,8 +21539,8 @@ namespace MyNS
 		/// <summary>
 		/// The value for the attribute. Maximum character limit is 100. 
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -21668,8 +21668,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -21919,8 +21919,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 2500
 		/// Min length: 1
+		/// Max length: 2500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -21974,8 +21974,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 131070
 		/// Min length: 1
+		/// Max length: 131070
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -22081,8 +22081,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 100000
 		/// Min length: 1
+		/// Max length: 100000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -22148,8 +22148,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -22160,8 +22160,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -22172,8 +22172,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the user account.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -22216,8 +22216,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services Region where to replicate the Amazon Connect instance.
 		/// Required
-		/// Max length: 31
 		/// Min length: 8
+		/// Max length: 31
 		/// Pattern: [a-z]{2}(-[a-z]+){1,2}(-[0-9])?
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -22238,8 +22238,8 @@ namespace MyNS
 		/// <summary>
 		/// The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.
 		/// Required
-		/// Max length: 45
 		/// Min length: 1
+		/// Max length: 45
 		/// Pattern: ^(?!d-)([\da-zA-Z]+)([-]*[\da-zA-Z])*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -22256,8 +22256,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -22268,8 +22268,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -22280,8 +22280,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -22336,8 +22336,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 100000
 		/// Min length: 1
+		/// Max length: 100000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -22351,8 +22351,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -22362,8 +22362,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 2500
 		/// Min length: 1
+		/// Max length: 2500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -22421,8 +22421,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -22432,8 +22432,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 2500
 		/// Min length: 1
+		/// Max length: 2500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -22491,8 +22491,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -22502,8 +22502,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 2500
 		/// Min length: 1
+		/// Max length: 2500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -22564,8 +22564,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -22575,8 +22575,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 2500
 		/// Min length: 1
+		/// Max length: 2500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -22634,8 +22634,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// Pattern: ^(arn:(aws|aws-us-gov):connect:[a-z]{2}-[a-z]+-[0-9]{1}:[0-9]{1,20}:instance/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -22653,8 +22653,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 2500
 		/// Min length: 1
+		/// Max length: 2500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -22690,8 +22690,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -22701,8 +22701,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 2500
 		/// Min length: 1
+		/// Max length: 2500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -22760,8 +22760,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -22771,8 +22771,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 2500
 		/// Min length: 1
+		/// Max length: 2500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -22832,8 +22832,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -22842,8 +22842,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 2500
 		/// Min length: 1
+		/// Max length: 2500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -22912,8 +22912,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 131070
 		/// Min length: 1
+		/// Max length: 131070
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -22930,8 +22930,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The starting pattern of the name of the vocabulary.
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		/// Pattern: ^[0-9a-zA-Z._-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -23029,8 +23029,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23099,8 +23099,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note> <p>You cannot provide data for both RelatedContactId and PersistentChat. </p> </note>
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -23141,8 +23141,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact in this instance of Amazon Connect. 
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23153,8 +23153,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique identifier for the evaluation form.
 		/// Required
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23177,8 +23177,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23189,8 +23189,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23201,8 +23201,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23232,8 +23232,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23244,8 +23244,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23305,8 +23305,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23350,8 +23350,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The campaign identifier of the outbound communication.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -23381,8 +23381,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23392,8 +23392,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier of the previous chat, voice, or task contact. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -23417,8 +23417,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of a task that is shown to an agent in the Contact Control Panel (CCP).
 		/// Required
-		/// Max length: 512
 		/// Min length: 0
+		/// Max length: 512
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23434,8 +23434,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the task that is shown to an agent in the Contact Control Panel (CCP).
-		/// Max length: 4096
 		/// Min length: 0
+		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -23458,8 +23458,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique identifier for the task template.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -23474,8 +23474,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -23489,8 +23489,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the contact.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23501,8 +23501,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23517,8 +23517,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23529,8 +23529,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23541,8 +23541,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23557,8 +23557,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23569,8 +23569,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23581,8 +23581,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the streaming configuration enabled. 
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23613,8 +23613,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23625,8 +23625,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23637,8 +23637,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23653,8 +23653,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23665,8 +23665,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact in this instance of Amazon Connect. 
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23682,8 +23682,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the user.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -23715,8 +23715,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23727,8 +23727,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23787,8 +23787,8 @@ namespace MyNS
 		/// <summary>
 		/// The content of the flow module.
 		/// Required
-		/// Max length: 256000
 		/// Min length: 1
+		/// Max length: 256000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23802,8 +23802,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the flow module.
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -23814,8 +23814,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the flow module.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -23855,8 +23855,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23867,8 +23867,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -23933,8 +23933,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the queue.
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -23943,8 +23943,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the queue.
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -24022,8 +24022,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the quick connect.
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -24032,8 +24032,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the quick connect.
-		/// Max length: 250
 		/// Min length: 0
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -24082,8 +24082,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the routing profile. Must not be more than 127 characters.
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -24092,8 +24092,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the routing profile. Must not be more than 250 characters.
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

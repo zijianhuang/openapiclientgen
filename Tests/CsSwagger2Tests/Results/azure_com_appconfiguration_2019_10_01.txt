@@ -734,8 +734,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
 		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
 		/// <param name="configStoreName">The name of the configuration store.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -769,8 +769,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
 		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
 		/// <param name="configStoreName">The name of the configuration store.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="requestBody">The parameters for creating a configuration store.</param>
@@ -812,8 +812,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
 		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
 		/// <param name="configStoreName">The name of the configuration store.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -841,8 +841,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
 		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
 		/// <param name="configStoreName">The name of the configuration store.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="requestBody">The parameters for updating a configuration store.</param>
@@ -884,8 +884,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
 		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
 		/// <param name="configStoreName">The name of the configuration store.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="skipToken">A skip token is used to continue retrieving items after an operation returns a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.</param>
@@ -920,8 +920,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
 		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
 		/// <param name="configStoreName">The name of the configuration store.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="requestBody">The parameters for regenerating an access key.</param>
@@ -963,8 +963,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Microsoft Azure subscription ID.</param>
 		/// <param name="resourceGroupName">The name of the resource group to which the container registry belongs.</param>
 		/// <param name="configStoreName">The name of the configuration store.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="requestBody">The parameters for retrieving a key-value.</param>

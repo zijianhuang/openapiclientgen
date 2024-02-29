@@ -1189,8 +1189,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the container registry.
 		/// Required
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		/// Pattern: ^[a-zA-Z0-9]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1824,8 +1824,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Registry> Registries_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
@@ -1861,8 +1861,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="requestBody">The parameters for creating a container registry.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -1906,8 +1906,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task Registries_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
@@ -1937,8 +1937,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="requestBody">The parameters for updating a container registry.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -1982,8 +1982,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="requestBody">The parameters specifying the image to copy and the source container registry.</param>
 		/// <returns>The request was successful; the operation has completed successfully.</returns>
@@ -2021,8 +2021,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the list of credentials retrieved and returned successfully.</returns>
 		public async Task<RegistryListCredentialsResult> Registries_ListCredentialsAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
@@ -2058,8 +2058,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the registry usages retrieved and returned successfully.</returns>
 		public async Task<RegistryUsageListResult> Registries_ListUsagesAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
@@ -2095,8 +2095,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="requestBody">Specifies name of the password which should be regenerated -- password or password2.</param>
 		/// <returns>The request was successful; the specified credential regenerated successfully.</returns>
@@ -2140,8 +2140,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<ReplicationListResult> Replications_ListAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
@@ -2177,12 +2177,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="replicationName">The name of the replication.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Replication> Replications_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string replicationName)
@@ -2218,12 +2218,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="replicationName">The name of the replication.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="requestBody">The parameters for creating a replication.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2267,12 +2267,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="replicationName">The name of the replication.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task Replications_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string replicationName)
@@ -2302,12 +2302,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="replicationName">The name of the replication.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="requestBody">The parameters for updating a replication.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2351,8 +2351,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<WebhookListResult> Webhooks_ListAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName)
@@ -2388,12 +2388,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="webhookName">The name of the webhook.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Webhook> Webhooks_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string webhookName)
@@ -2429,12 +2429,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="webhookName">The name of the webhook.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="requestBody">The parameters for creating a webhook.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2478,12 +2478,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="webhookName">The name of the webhook.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task Webhooks_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string webhookName)
@@ -2513,12 +2513,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="webhookName">The name of the webhook.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="requestBody">The parameters for updating a webhook.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2562,12 +2562,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="webhookName">The name of the webhook.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<CallbackConfig> Webhooks_GetCallbackConfigAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string webhookName)
@@ -2603,12 +2603,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="webhookName">The name of the webhook.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<EventListResult> Webhooks_ListEventsAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string webhookName)
@@ -2644,12 +2644,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="webhookName">The name of the webhook.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<EventInfo> Webhooks_PingAsync(string api_version, string subscriptionId, string resourceGroupName, string registryName, string webhookName)

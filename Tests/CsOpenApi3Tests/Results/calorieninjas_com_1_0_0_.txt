@@ -42,8 +42,8 @@ namespace MyNS
 		/// V1NutritionGetByQuery v1/nutrition
 		/// </summary>
 		/// <param name="query">Input query containing food and/or beverage words.
-		/// Max length: 1500
 		/// Min length: 0
+		/// Max length: 1500
 		// </param>
 		public async Task V1NutritionGetByQueryAsync(string query, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

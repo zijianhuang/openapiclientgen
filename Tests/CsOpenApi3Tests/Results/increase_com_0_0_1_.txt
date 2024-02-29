@@ -1480,8 +1480,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An email address that can be used to verify the cardholder via one-time passcode.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1490,8 +1490,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A phone number that can be used to verify the cardholder via one-time passcode over SMS.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="phone")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1504,8 +1504,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Why the tokenization attempt was declined. This is for logging purposes only and is not displayed to the end-user.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reason")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3545,8 +3545,8 @@ namespace MyNS
 		/// <summary>
 		/// The name you choose for the account.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -3617,8 +3617,8 @@ namespace MyNS
 		/// <summary>
 		/// Why you are disputing this Transaction.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="explanation")]
@@ -3648,8 +3648,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description you choose to give the card.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3669,8 +3669,8 @@ namespace MyNS
 		/// <summary>
 		/// The city of the billing address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
@@ -3681,8 +3681,8 @@ namespace MyNS
 		/// <summary>
 		/// The first line of the billing address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="line1")]
@@ -3692,8 +3692,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The second line of the billing address.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3703,8 +3703,8 @@ namespace MyNS
 		/// <summary>
 		/// The postal code of the billing address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="postal_code")]
@@ -3715,8 +3715,8 @@ namespace MyNS
 		/// <summary>
 		/// The US state of the billing address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -3736,8 +3736,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An email address that can be used to verify the cardholder via one-time passcode over email.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3746,8 +3746,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A phone number that can be used to verify the cardholder via one-time passcode over SMS.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="phone")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3763,8 +3763,8 @@ namespace MyNS
 		/// <summary>
 		/// A description you can use to identify the Card Profile.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -3803,8 +3803,8 @@ namespace MyNS
 		/// <summary>
 		/// A user-facing description for the card itself.
 		/// Required
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="card_description")]
@@ -3814,8 +3814,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An email address the user can contact to receive support for their card.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="contact_email")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3824,8 +3824,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A phone number the user can contact to receive support for their card.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="contact_phone")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3841,8 +3841,8 @@ namespace MyNS
 		/// <summary>
 		/// A user-facing description for whoever is issuing the card.
 		/// Required
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="issuer_name")]
@@ -3928,8 +3928,8 @@ namespace MyNS
 		/// <summary>
 		/// The currency to use for the deposit.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="currency")]
@@ -3962,8 +3962,8 @@ namespace MyNS
 		/// <summary>
 		/// The city of the check's destination.
 		/// Required
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="address_city")]
@@ -3974,8 +3974,8 @@ namespace MyNS
 		/// <summary>
 		/// The street address of the check's destination.
 		/// Required
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="address_line1")]
@@ -3985,8 +3985,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The second line of the address of the check's destination.
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="address_line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3996,8 +3996,8 @@ namespace MyNS
 		/// <summary>
 		/// The state of the check's destination.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="address_state")]
@@ -4008,8 +4008,8 @@ namespace MyNS
 		/// <summary>
 		/// The postal code of the check's destination.
 		/// Required
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="address_zip")]
@@ -4030,8 +4030,8 @@ namespace MyNS
 		/// <summary>
 		/// The descriptor that will be printed on the memo field on the check.
 		/// Required
-		/// Max length: 73
 		/// Min length: 1
+		/// Max length: 73
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="message")]
@@ -4041,8 +4041,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The descriptor that will be printed on the letter included with the check.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="note")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4052,8 +4052,8 @@ namespace MyNS
 		/// <summary>
 		/// The name that will be printed on the check.
 		/// Required
-		/// Max length: 250
 		/// Min length: 1
+		/// Max length: 250
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recipient_name")]
@@ -4080,8 +4080,8 @@ namespace MyNS
 		/// <summary>
 		/// The city of the return address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
@@ -4092,8 +4092,8 @@ namespace MyNS
 		/// <summary>
 		/// The first line of the return address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="line1")]
@@ -4103,8 +4103,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The second line of the return address.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4114,8 +4114,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the return address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -4126,8 +4126,8 @@ namespace MyNS
 		/// <summary>
 		/// The US state of the return address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -4138,8 +4138,8 @@ namespace MyNS
 		/// <summary>
 		/// The postal code of the return address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zip")]
@@ -4155,8 +4155,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description you choose to give the File.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4239,8 +4239,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Account or Account Number you wish to associate the limit with.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="model_id")]
@@ -4315,8 +4315,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the transfer's recipient.
 		/// Required
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="creditor_name")]
@@ -4326,8 +4326,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The destination account number.
-		/// Max length: 34
 		/// Min length: 1
+		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="destination_account_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4336,8 +4336,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The destination American Bankers' Association (ABA) Routing Transit Number (RTN).
-		/// Max length: 9
 		/// Min length: 9
+		/// Max length: 9
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="destination_routing_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(9)]
@@ -4353,8 +4353,8 @@ namespace MyNS
 		/// <summary>
 		/// Unstructured information that will show on the recipient's bank statement.
 		/// Required
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="remittance_information")]
@@ -4417,8 +4417,8 @@ namespace MyNS
 		/// <summary>
 		/// A message the recipient will see as part of the request.
 		/// Required
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="message_to_recipient")]
@@ -4429,8 +4429,8 @@ namespace MyNS
 		/// <summary>
 		/// The drawdown request's recipient's account number.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recipient_account_number")]
@@ -4440,8 +4440,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Line 1 of the drawdown request's recipient's address.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="recipient_address_line1")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4450,8 +4450,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Line 2 of the drawdown request's recipient's address.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="recipient_address_line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4460,8 +4460,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Line 3 of the drawdown request's recipient's address.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="recipient_address_line3")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4471,8 +4471,8 @@ namespace MyNS
 		/// <summary>
 		/// The drawdown request's recipient's name.
 		/// Required
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recipient_name")]
@@ -4483,8 +4483,8 @@ namespace MyNS
 		/// <summary>
 		/// The drawdown request's recipient's routing number.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="recipient_routing_number")]
@@ -4508,8 +4508,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The account number for the destination account.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4528,8 +4528,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The beneficiary's address line 1.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_address_line1")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4538,8 +4538,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The beneficiary's address line 2.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_address_line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4548,8 +4548,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The beneficiary's address line 3.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_address_line3")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4559,8 +4559,8 @@ namespace MyNS
 		/// <summary>
 		/// The beneficiary's name.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_name")]
@@ -4577,8 +4577,8 @@ namespace MyNS
 		/// <summary>
 		/// The message that will show on the recipient's bank statement.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="message_to_recipient")]
@@ -4594,8 +4594,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The American Bankers' Association (ABA) Routing Transit Number (RTN) for the destination account.
-		/// Max length: 9
 		/// Min length: 9
+		/// Max length: 9
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="routing_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(9)]
@@ -4619,8 +4619,8 @@ namespace MyNS
 		/// <summary>
 		/// The name you choose for the Account Number.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -4649,8 +4649,8 @@ namespace MyNS
 		/// <summary>
 		/// The name you choose for the Account.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -4691,8 +4691,8 @@ namespace MyNS
 		/// <summary>
 		/// The description you choose to give the transfer.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -4723,8 +4723,8 @@ namespace MyNS
 		/// <summary>
 		/// The account number for the destination account.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="account_number")]
@@ -4734,8 +4734,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Additional information that will be sent to the recipient.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="addendum")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4744,8 +4744,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the date of the transfer.
-		/// Max length: 6
 		/// Min length: 1
+		/// Max length: 6
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_descriptive_date")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4754,8 +4754,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The data you choose to associate with the transfer.
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_discretionary_data")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4764,8 +4764,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the transfer you wish to be shown to the recipient.
-		/// Max length: 10
 		/// Min length: 1
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_entry_description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4774,8 +4774,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name by which the recipient knows you.
-		/// Max length: 16
 		/// Min length: 1
+		/// Max length: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4796,8 +4796,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Your identifer for the transfer recipient.
-		/// Max length: 22
 		/// Min length: 1
+		/// Max length: 22
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="individual_id")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4806,8 +4806,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the transfer recipient. This value is information and not verified by the recipient's bank.
-		/// Max length: 22
 		/// Min length: 1
+		/// Max length: 22
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="individual_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4817,8 +4817,8 @@ namespace MyNS
 		/// <summary>
 		/// The American Bankers' Association (ABA) Routing Transit Number (RTN) for the destination account.
 		/// Required
-		/// Max length: 9
 		/// Min length: 9
+		/// Max length: 9
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="routing_number")]
@@ -4901,8 +4901,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The account number for the destination account.
-		/// Max length: 17
 		/// Min length: 1
+		/// Max length: 17
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4911,8 +4911,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Additional information that will be sent to the recipient. This is included in the transfer data sent to the receiving bank.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="addendum")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4929,8 +4929,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the date of the transfer, usually in the format `YYMMDD`. This is included in the transfer data sent to the receiving bank.
-		/// Max length: 6
 		/// Min length: 1
+		/// Max length: 6
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_descriptive_date")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4939,8 +4939,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The data you choose to associate with the transfer. This is included in the transfer data sent to the receiving bank.
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_discretionary_data")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4949,8 +4949,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the transfer. This is included in the transfer data sent to the receiving bank.
-		/// Max length: 10
 		/// Min length: 1
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_entry_description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4959,8 +4959,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name by which the recipient knows you. This is included in the transfer data sent to the receiving bank.
-		/// Max length: 16
 		/// Min length: 1
+		/// Max length: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4987,8 +4987,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Your identifer for the transfer recipient.
-		/// Max length: 15
 		/// Min length: 1
+		/// Max length: 15
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="individual_id")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4997,8 +4997,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the transfer recipient. This value is informational and not verified by the recipient's bank.
-		/// Max length: 22
 		/// Min length: 1
+		/// Max length: 22
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="individual_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5013,8 +5013,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The American Bankers' Association (ABA) Routing Transit Number (RTN) for the destination account.
-		/// Max length: 9
 		/// Min length: 9
+		/// Max length: 9
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="routing_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(9)]
@@ -5030,8 +5030,8 @@ namespace MyNS
 		/// <summary>
 		/// A description you choose to give the transfer. This will be saved with the transfer details, displayed in the dashboard, and returned by the API. If `individual_name` and `company_name` are not explicitly set by this API, the `statement_descriptor` will be sent in those fields to the receiving bank to help the customer recognize the transfer. You are highly encouraged to pass `individual_name` and `company_name` instead of relying on this fallback.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="statement_descriptor")]
@@ -5053,8 +5053,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description you choose to give the entity.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5123,8 +5123,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The two-letter United States Postal Service (USPS) abbreviation for the corporation's state of incorporation.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="incorporation_state")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5134,8 +5134,8 @@ namespace MyNS
 		/// <summary>
 		/// The legal name of the corporation.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -5146,8 +5146,8 @@ namespace MyNS
 		/// <summary>
 		/// The Employer Identification Number (EIN) for the corporation.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tax_identifier")]
@@ -5168,8 +5168,8 @@ namespace MyNS
 		/// <summary>
 		/// The city of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
@@ -5180,8 +5180,8 @@ namespace MyNS
 		/// <summary>
 		/// The first line of the address. This is usually the street number and street.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="line1")]
@@ -5191,8 +5191,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The second line of the address. This might be the floor or room number.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5202,8 +5202,8 @@ namespace MyNS
 		/// <summary>
 		/// The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -5214,8 +5214,8 @@ namespace MyNS
 		/// <summary>
 		/// The ZIP code of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zip")]
@@ -5229,8 +5229,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// This person's role or title within the entity.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_title")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5290,8 +5290,8 @@ namespace MyNS
 		/// <summary>
 		/// The person's legal name.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -5306,8 +5306,8 @@ namespace MyNS
 		/// <summary>
 		/// The city of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
@@ -5318,8 +5318,8 @@ namespace MyNS
 		/// <summary>
 		/// The first line of the address. This is usually the street number and street.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="line1")]
@@ -5329,8 +5329,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The second line of the address. This might be the floor or room number.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5340,8 +5340,8 @@ namespace MyNS
 		/// <summary>
 		/// The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -5352,8 +5352,8 @@ namespace MyNS
 		/// <summary>
 		/// The ZIP code of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zip")]
@@ -5382,8 +5382,8 @@ namespace MyNS
 		/// <summary>
 		/// An identification number that can be used to verify the individual's identity, such as a social security number.
 		/// Required
-		/// Max length: 200
 		/// Min length: 4
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="number")]
@@ -5426,8 +5426,8 @@ namespace MyNS
 		/// <summary>
 		/// The state that issued the provided driver's license.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -5464,8 +5464,8 @@ namespace MyNS
 		/// <summary>
 		/// The two-character ISO 3166-1 code representing the country that issued the document.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -5476,8 +5476,8 @@ namespace MyNS
 		/// <summary>
 		/// A description of the document submitted.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -5506,8 +5506,8 @@ namespace MyNS
 		/// <summary>
 		/// The country that issued the passport.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -5558,8 +5558,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the joint entity.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5603,8 +5603,8 @@ namespace MyNS
 		/// <summary>
 		/// The person's legal name.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -5619,8 +5619,8 @@ namespace MyNS
 		/// <summary>
 		/// The city of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
@@ -5631,8 +5631,8 @@ namespace MyNS
 		/// <summary>
 		/// The first line of the address. This is usually the street number and street.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="line1")]
@@ -5642,8 +5642,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The second line of the address. This might be the floor or room number.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5653,8 +5653,8 @@ namespace MyNS
 		/// <summary>
 		/// The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -5665,8 +5665,8 @@ namespace MyNS
 		/// <summary>
 		/// The ZIP code of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zip")]
@@ -5695,8 +5695,8 @@ namespace MyNS
 		/// <summary>
 		/// An identification number that can be used to verify the individual's identity, such as a social security number.
 		/// Required
-		/// Max length: 200
 		/// Min length: 4
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="number")]
@@ -5739,8 +5739,8 @@ namespace MyNS
 		/// <summary>
 		/// The state that issued the provided driver's license.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -5755,8 +5755,8 @@ namespace MyNS
 		/// <summary>
 		/// The two-character ISO 3166-1 code representing the country that issued the document.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -5767,8 +5767,8 @@ namespace MyNS
 		/// <summary>
 		/// A description of the document submitted.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -5797,8 +5797,8 @@ namespace MyNS
 		/// <summary>
 		/// The country that issued the passport.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -5859,8 +5859,8 @@ namespace MyNS
 		/// <summary>
 		/// The person's legal name.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -5875,8 +5875,8 @@ namespace MyNS
 		/// <summary>
 		/// The city of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
@@ -5887,8 +5887,8 @@ namespace MyNS
 		/// <summary>
 		/// The first line of the address. This is usually the street number and street.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="line1")]
@@ -5898,8 +5898,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The second line of the address. This might be the floor or room number.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5909,8 +5909,8 @@ namespace MyNS
 		/// <summary>
 		/// The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -5921,8 +5921,8 @@ namespace MyNS
 		/// <summary>
 		/// The ZIP code of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zip")]
@@ -5951,8 +5951,8 @@ namespace MyNS
 		/// <summary>
 		/// An identification number that can be used to verify the individual's identity, such as a social security number.
 		/// Required
-		/// Max length: 200
 		/// Min length: 4
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="number")]
@@ -5995,8 +5995,8 @@ namespace MyNS
 		/// <summary>
 		/// The state that issued the provided driver's license.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -6011,8 +6011,8 @@ namespace MyNS
 		/// <summary>
 		/// The two-character ISO 3166-1 code representing the country that issued the document.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -6023,8 +6023,8 @@ namespace MyNS
 		/// <summary>
 		/// A description of the document submitted.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -6053,8 +6053,8 @@ namespace MyNS
 		/// <summary>
 		/// The country that issued the passport.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -6153,8 +6153,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The two-letter United States Postal Service (USPS) abbreviation for the state in which the trust was formed.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="formation_state")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6170,8 +6170,8 @@ namespace MyNS
 		/// <summary>
 		/// The legal name of the trust.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -6181,8 +6181,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Employer Identification Number (EIN) for the trust. Required if `category` is equal to `irrevocable`.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tax_identifier")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6204,8 +6204,8 @@ namespace MyNS
 		/// <summary>
 		/// The city of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
@@ -6216,8 +6216,8 @@ namespace MyNS
 		/// <summary>
 		/// The first line of the address. This is usually the street number and street.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="line1")]
@@ -6227,8 +6227,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The second line of the address. This might be the floor or room number.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6238,8 +6238,8 @@ namespace MyNS
 		/// <summary>
 		/// The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -6250,8 +6250,8 @@ namespace MyNS
 		/// <summary>
 		/// The ZIP code of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zip")]
@@ -6309,8 +6309,8 @@ namespace MyNS
 		/// <summary>
 		/// The person's legal name.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -6325,8 +6325,8 @@ namespace MyNS
 		/// <summary>
 		/// The city of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
@@ -6337,8 +6337,8 @@ namespace MyNS
 		/// <summary>
 		/// The first line of the address. This is usually the street number and street.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="line1")]
@@ -6348,8 +6348,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The second line of the address. This might be the floor or room number.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6359,8 +6359,8 @@ namespace MyNS
 		/// <summary>
 		/// The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -6371,8 +6371,8 @@ namespace MyNS
 		/// <summary>
 		/// The ZIP code of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zip")]
@@ -6401,8 +6401,8 @@ namespace MyNS
 		/// <summary>
 		/// An identification number that can be used to verify the individual's identity, such as a social security number.
 		/// Required
-		/// Max length: 200
 		/// Min length: 4
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="number")]
@@ -6445,8 +6445,8 @@ namespace MyNS
 		/// <summary>
 		/// The state that issued the provided driver's license.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -6461,8 +6461,8 @@ namespace MyNS
 		/// <summary>
 		/// The two-character ISO 3166-1 code representing the country that issued the document.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -6473,8 +6473,8 @@ namespace MyNS
 		/// <summary>
 		/// A description of the document submitted.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -6503,8 +6503,8 @@ namespace MyNS
 		/// <summary>
 		/// The country that issued the passport.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -6583,8 +6583,8 @@ namespace MyNS
 		/// <summary>
 		/// The person's legal name.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -6599,8 +6599,8 @@ namespace MyNS
 		/// <summary>
 		/// The city of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
@@ -6611,8 +6611,8 @@ namespace MyNS
 		/// <summary>
 		/// The first line of the address. This is usually the street number and street.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="line1")]
@@ -6622,8 +6622,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The second line of the address. This might be the floor or room number.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6633,8 +6633,8 @@ namespace MyNS
 		/// <summary>
 		/// The two-letter United States Postal Service (USPS) abbreviation for the state of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -6645,8 +6645,8 @@ namespace MyNS
 		/// <summary>
 		/// The ZIP code of the address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zip")]
@@ -6675,8 +6675,8 @@ namespace MyNS
 		/// <summary>
 		/// An identification number that can be used to verify the individual's identity, such as a social security number.
 		/// Required
-		/// Max length: 200
 		/// Min length: 4
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="number")]
@@ -6719,8 +6719,8 @@ namespace MyNS
 		/// <summary>
 		/// The state that issued the provided driver's license.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -6735,8 +6735,8 @@ namespace MyNS
 		/// <summary>
 		/// The two-character ISO 3166-1 code representing the country that issued the document.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -6747,8 +6747,8 @@ namespace MyNS
 		/// <summary>
 		/// A description of the document submitted.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -6777,8 +6777,8 @@ namespace MyNS
 		/// <summary>
 		/// The country that issued the passport.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -6826,8 +6826,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The key that will be used to sign webhooks. If no value is passed, a random string will be used as default.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="shared_secret")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7135,8 +7135,8 @@ namespace MyNS
 		/// <summary>
 		/// The account number for the destination account.
 		/// Required
-		/// Max length: 17
 		/// Min length: 1
+		/// Max length: 17
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="account_number")]
@@ -7147,8 +7147,8 @@ namespace MyNS
 		/// <summary>
 		/// The name you choose for the Account.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -7165,8 +7165,8 @@ namespace MyNS
 		/// <summary>
 		/// The American Bankers' Association (ABA) Routing Transit Number (RTN) for the destination account.
 		/// Required
-		/// Max length: 9
 		/// Min length: 9
+		/// Max length: 9
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="routing_number")]
@@ -25999,8 +25999,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The account number of the account that sent the transfer.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="debtor_account_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26009,8 +26009,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name provided by the sender of the transfer.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="debtor_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26019,8 +26019,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The routing number of the account that sent the transfer.
-		/// Max length: 9
 		/// Min length: 9
+		/// Max length: 9
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="debtor_routing_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(9)]
@@ -26029,8 +26029,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Additional information included with the transfer.
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="remittance_information")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26097,8 +26097,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sending bank will set beneficiary_address_line1 in production. You can simulate any value here.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_address_line1")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26107,8 +26107,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sending bank will set beneficiary_address_line2 in production. You can simulate any value here.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_address_line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26117,8 +26117,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sending bank will set beneficiary_address_line3 in production. You can simulate any value here.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_address_line3")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26127,8 +26127,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sending bank will set beneficiary_name in production. You can simulate any value here.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26137,8 +26137,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sending bank will set beneficiary_reference in production. You can simulate any value here.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_reference")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26147,8 +26147,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sending bank will set originator_address_line1 in production. You can simulate any value here.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_address_line1")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26157,8 +26157,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sending bank will set originator_address_line2 in production. You can simulate any value here.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_address_line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26167,8 +26167,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sending bank will set originator_address_line3 in production. You can simulate any value here.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_address_line3")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26177,8 +26177,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sending bank will set originator_name in production. You can simulate any value here.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26187,8 +26187,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sending bank will set originator_to_beneficiary_information_line1 in production. You can simulate any value here.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_to_beneficiary_information_line1")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26197,8 +26197,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sending bank will set originator_to_beneficiary_information_line2 in production. You can simulate any value here.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_to_beneficiary_information_line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26207,8 +26207,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sending bank will set originator_to_beneficiary_information_line3 in production. You can simulate any value here.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_to_beneficiary_information_line3")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26217,8 +26217,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sending bank will set originator_to_beneficiary_information_line4 in production. You can simulate any value here.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_to_beneficiary_information_line4")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26263,8 +26263,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the date of the transfer.
-		/// Max length: 6
 		/// Min length: 1
+		/// Max length: 6
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_descriptive_date")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26273,8 +26273,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Data associated with the transfer set by the sender.
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_discretionary_data")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26283,8 +26283,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the transfer set by the sender.
-		/// Max length: 10
 		/// Min length: 1
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_entry_description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26293,8 +26293,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sender's company id.
-		/// Max length: 15
 		/// Min length: 1
+		/// Max length: 15
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_id")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26303,8 +26303,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the sender.
-		/// Max length: 16
 		/// Min length: 1
+		/// Max length: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26365,8 +26365,8 @@ namespace MyNS
 		/// <summary>
 		/// The drawdown request's beneficiary's account number.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_account_number")]
@@ -26376,8 +26376,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Line 1 of the drawdown request's beneficiary's address.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_address_line1")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26386,8 +26386,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Line 2 of the drawdown request's beneficiary's address.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_address_line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26396,8 +26396,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Line 3 of the drawdown request's beneficiary's address.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_address_line3")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26406,8 +26406,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The drawdown request's beneficiary's name.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26417,8 +26417,8 @@ namespace MyNS
 		/// <summary>
 		/// The drawdown request's beneficiary's routing number.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="beneficiary_routing_number")]
@@ -26429,8 +26429,8 @@ namespace MyNS
 		/// <summary>
 		/// The [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) code for the amount being requested. Will always be "USD".
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="currency")]
@@ -26441,8 +26441,8 @@ namespace MyNS
 		/// <summary>
 		/// A message from the drawdown request's originator.
 		/// Required
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="message_to_recipient")]
@@ -26453,8 +26453,8 @@ namespace MyNS
 		/// <summary>
 		/// The drawdown request's originator's account number.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="originator_account_number")]
@@ -26464,8 +26464,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Line 1 of the drawdown request's originator's address.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_address_line1")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26474,8 +26474,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Line 2 of the drawdown request's originator's address.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_address_line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26484,8 +26484,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Line 3 of the drawdown request's originator's address.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_address_line3")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26494,8 +26494,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The drawdown request's originator's name.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26505,8 +26505,8 @@ namespace MyNS
 		/// <summary>
 		/// The drawdown request's originator's routing number.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="originator_routing_number")]
@@ -26516,8 +26516,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Line 1 of the information conveyed from the originator of the message to the beneficiary.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_to_beneficiary_information_line1")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26526,8 +26526,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Line 2 of the information conveyed from the originator of the message to the beneficiary.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_to_beneficiary_information_line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26536,8 +26536,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Line 3 of the information conveyed from the originator of the message to the beneficiary.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_to_beneficiary_information_line3")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26546,8 +26546,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Line 4 of the information conveyed from the originator of the message to the beneficiary.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="originator_to_beneficiary_information_line4")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -26638,8 +26638,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Why the dispute was rejected. Not required for accepting disputes.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="explanation")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -29127,8 +29127,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description you choose to give the card.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -29154,8 +29154,8 @@ namespace MyNS
 		/// <summary>
 		/// The city of the billing address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
@@ -29166,8 +29166,8 @@ namespace MyNS
 		/// <summary>
 		/// The first line of the billing address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="line1")]
@@ -29177,8 +29177,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The second line of the billing address.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="line2")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -29188,8 +29188,8 @@ namespace MyNS
 		/// <summary>
 		/// The postal code of the billing address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="postal_code")]
@@ -29200,8 +29200,8 @@ namespace MyNS
 		/// <summary>
 		/// The US state of the billing address.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -29221,8 +29221,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An email address that can be used to verify the cardholder via one-time passcode over email.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -29231,8 +29231,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A phone number that can be used to verify the cardholder via one-time passcode over SMS.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="phone")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -29274,8 +29274,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name you choose for the Account Number.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -29296,8 +29296,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The new name of the Account.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -29340,8 +29340,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description you choose to give the external account.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -32795,11 +32795,11 @@ namespace MyNS
 		/// List_limits limits
 		/// </summary>
 		/// <param name="limit">Minimum: 0</param>
-		/// <param name="model_id">Max length: 200
-		/// Min length: 1
+		/// <param name="model_id">Min length: 1
+		/// Max length: 200
 		// </param>
-		/// <param name="status">Max length: 200
-		/// Min length: 1
+		/// <param name="status">Min length: 1
+		/// Max length: 200
 		// </param>
 		/// <returns>Limit List</returns>
 		public async Task<Limit_list> List_limitsAsync(string cursor, int limit, string model_id, string status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -33330,8 +33330,8 @@ namespace MyNS
 		/// List_routing_numbers routing_numbers
 		/// </summary>
 		/// <param name="limit">Minimum: 0</param>
-		/// <param name="routing_number">Max length: 9
-		/// Min length: 9
+		/// <param name="routing_number">Min length: 9
+		/// Max length: 9
 		// </param>
 		/// <returns>Routing Number List</returns>
 		public async Task<Routing_number_list> List_routing_numbersAsync(string cursor, int limit, string routing_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

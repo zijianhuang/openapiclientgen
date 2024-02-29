@@ -205,8 +205,8 @@ namespace MyNS
 		/// ConnectionType_ListByAutomationAccount subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/connectionTypes
 		/// </summary>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -240,8 +240,8 @@ namespace MyNS
 		/// ConnectionType_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/connectionTypes/{connectionTypeName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="connectionTypeName">The name of connection type.</param>
@@ -276,8 +276,8 @@ namespace MyNS
 		/// ConnectionType_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/connectionTypes/{connectionTypeName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="connectionTypeName">The parameters supplied to the create or update connection type operation.</param>
@@ -313,8 +313,8 @@ namespace MyNS
 		/// ConnectionType_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/connectionTypes/{connectionTypeName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="connectionTypeName">The name of connection type.</param>

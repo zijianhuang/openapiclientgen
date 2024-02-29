@@ -1351,8 +1351,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <returns>Data Manager Resource object.</returns>
@@ -1387,8 +1387,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="requestBody">Data manager resource details from request body.</param>
@@ -1430,8 +1430,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		public async Task DataManagers_DeleteAsync(string subscriptionId, string resourceGroupName, string dataManagerName, string api_version)
@@ -1458,8 +1458,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="requestBody">Data manager resource details from request body.</param>
@@ -1501,8 +1501,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <returns>The list of data services.</returns>
@@ -1537,8 +1537,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <returns>The data service that matches the name.</returns>
@@ -1573,8 +1573,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="filter">OData Filter options</param>
@@ -1611,8 +1611,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <returns>The job definition that matches the criteria.</returns>
@@ -1648,8 +1648,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="requestBody">Job Definition object to be created or updated.</param>
@@ -1693,8 +1693,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		public async Task JobDefinitions_DeleteAsync(string dataServiceName, string jobDefinitionName, string subscriptionId, string resourceGroupName, string dataManagerName, string api_version)
@@ -1723,8 +1723,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="filter">OData Filter options</param>
@@ -1762,8 +1762,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="expand">$expand is supported on details parameter for job, which provides details on the job stages.</param>
@@ -1801,8 +1801,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		public async Task Jobs_CancelAsync(string dataServiceName, string jobDefinitionName, string jobId, string subscriptionId, string resourceGroupName, string dataManagerName, string api_version)
@@ -1832,8 +1832,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		public async Task Jobs_ResumeAsync(string dataServiceName, string jobDefinitionName, string jobId, string subscriptionId, string resourceGroupName, string dataManagerName, string api_version)
@@ -1862,8 +1862,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="requestBody">Run time parameters for the job definition.</param>
@@ -1899,8 +1899,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="filter">OData Filter options</param>
@@ -1935,8 +1935,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <returns>The list of data store types that are supported.</returns>
@@ -1971,8 +1971,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <returns>The data store/repository type.</returns>
@@ -2006,8 +2006,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="filter">OData Filter options</param>
@@ -2043,8 +2043,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <returns>The data store/repository which matches the name given.</returns>
@@ -2079,8 +2079,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="requestBody">The data store/repository object to be created or updated.</param>
@@ -2123,8 +2123,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		public async Task DataStores_DeleteAsync(string dataStoreName, string subscriptionId, string resourceGroupName, string dataManagerName, string api_version)
@@ -2151,8 +2151,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="filter">OData Filter options</param>
@@ -2187,8 +2187,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <param name="filter">OData Filter options</param>
@@ -2223,8 +2223,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <returns>The list of public keys.</returns>
@@ -2259,8 +2259,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Subscription Id</param>
 		/// <param name="resourceGroupName">The Resource Group Name</param>
 		/// <param name="dataManagerName">The name of the DataManager Resource within the specified resource group. DataManager names must be between 3 and 24 characters in length and use any alphanumeric and underscore only
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API Version</param>
 		/// <returns>The public keys.</returns>

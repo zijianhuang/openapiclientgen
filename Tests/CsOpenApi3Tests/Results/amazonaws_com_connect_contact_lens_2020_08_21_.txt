@@ -356,8 +356,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the Amazon Connect instance.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -370,8 +370,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -392,8 +392,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 131070
 		/// Min length: 1
+		/// Max length: 131070
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

@@ -1221,8 +1221,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token that indicates the next set of results to retrieve.
-		/// Max length: 131070
 		/// Min length: 0
+		/// Max length: 131070
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1282,8 +1282,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token that indicates the next set of results to retrieve.
-		/// Max length: 131070
 		/// Min length: 0
+		/// Max length: 131070
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1341,8 +1341,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token that indicates the next set of results to retrieve.
-		/// Max length: 131070
 		/// Min length: 0
+		/// Max length: 131070
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]

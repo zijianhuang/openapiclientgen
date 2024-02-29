@@ -12485,8 +12485,8 @@ namespace MyNS
 		/// AcceptCertificateTransfer accept-certificate-transfer/{certificateId}
 		/// </summary>
 		/// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
-		/// Max length: 64
 		/// Min length: 64
+		/// Max length: 64
 		// </param>
 		/// <param name="setAsActive">Specifies whether the certificate is active.</param>
 		/// <returns>Success</returns>
@@ -12592,8 +12592,8 @@ namespace MyNS
 		/// AssociateTargetsWithJob jobs/{jobId}/targets
 		/// </summary>
 		/// <param name="jobId">The unique identifier you assigned to this job when it was created.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="namespaceId"><p>The namespace used to indicate that a job is a customer-managed job.</p> <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> <p>The <code>namespaceId</code> feature is in public preview.</p> </note></param>
 		/// <returns>Success</returns>
@@ -12637,8 +12637,8 @@ namespace MyNS
 		/// AttachPolicy target-policies/{policyName}
 		/// </summary>
 		/// <param name="policyName">The name of the policy to attach.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task AttachPolicyAsync(string policyName, AttachPolicyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12675,8 +12675,8 @@ namespace MyNS
 		/// DetachPolicy target-policies/{policyName}
 		/// </summary>
 		/// <param name="policyName">The policy to detach.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DetachPolicyAsync(string policyName, DetachPolicyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12713,8 +12713,8 @@ namespace MyNS
 		/// AttachPrincipalPolicy principal-policies/{policyName}#x-amzn-iot-principal
 		/// </summary>
 		/// <param name="policyName">The policy name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task AttachPrincipalPolicyAsync(string policyName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12739,8 +12739,8 @@ namespace MyNS
 		/// DetachPrincipalPolicy principal-policies/{policyName}#x-amzn-iot-principal
 		/// </summary>
 		/// <param name="policyName">The name of the policy to detach.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DetachPrincipalPolicyAsync(string policyName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12770,8 +12770,8 @@ namespace MyNS
 		/// AttachSecurityProfile security-profiles/{securityProfileName}/targets#securityProfileTargetArn
 		/// </summary>
 		/// <param name="securityProfileName">The security profile that is attached.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="securityProfileTargetArn">The ARN of the target (thing group) to which the security profile is attached.</param>
 		/// <returns>Success</returns>
@@ -12803,8 +12803,8 @@ namespace MyNS
 		/// DetachSecurityProfile security-profiles/{securityProfileName}/targets#securityProfileTargetArn
 		/// </summary>
 		/// <param name="securityProfileName">The security profile that is detached.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="securityProfileTargetArn">The ARN of the thing group from which the security profile is detached.</param>
 		/// <returns>Success</returns>
@@ -12841,8 +12841,8 @@ namespace MyNS
 		/// AttachThingPrincipal things/{thingName}/principals#x-amzn-principal
 		/// </summary>
 		/// <param name="thingName">The name of the thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AttachThingPrincipalResponse> AttachThingPrincipalAsync(string thingName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12873,8 +12873,8 @@ namespace MyNS
 		/// DetachThingPrincipal things/{thingName}/principals#x-amzn-principal
 		/// </summary>
 		/// <param name="thingName">The name of the thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DetachThingPrincipalResponse> DetachThingPrincipalAsync(string thingName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12910,8 +12910,8 @@ namespace MyNS
 		/// CancelAuditMitigationActionsTask audit/mitigationactions/tasks/{taskId}/cancel
 		/// </summary>
 		/// <param name="taskId">The unique identifier for the task that you want to cancel. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelAuditMitigationActionsTaskResponse> CancelAuditMitigationActionsTaskAsync(string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12942,8 +12942,8 @@ namespace MyNS
 		/// CancelAuditTask audit/tasks/{taskId}/cancel
 		/// </summary>
 		/// <param name="taskId">The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelAuditTaskResponse> CancelAuditTaskAsync(string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12974,8 +12974,8 @@ namespace MyNS
 		/// CancelCertificateTransfer cancel-certificate-transfer/{certificateId}
 		/// </summary>
 		/// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
-		/// Max length: 64
 		/// Min length: 64
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task CancelCertificateTransferAsync(string certificateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13000,8 +13000,8 @@ namespace MyNS
 		/// CancelDetectMitigationActionsTask detect/mitigationactions/tasks/{taskId}/cancel
 		/// </summary>
 		/// <param name="taskId"> The unique identifier of the task. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelDetectMitigationActionsTaskResponse> CancelDetectMitigationActionsTaskAsync(string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13032,8 +13032,8 @@ namespace MyNS
 		/// CancelJob jobs/{jobId}/cancel
 		/// </summary>
 		/// <param name="jobId">The unique identifier you assigned to this job when it was created.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="force"><p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p> <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p></param>
 		/// <returns>Success</returns>
@@ -13077,12 +13077,12 @@ namespace MyNS
 		/// CancelJobExecution things/{thingName}/jobs/{jobId}/cancel
 		/// </summary>
 		/// <param name="jobId">The ID of the job to be canceled.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="thingName">The name of the thing whose execution of the job will be canceled.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="force"><p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p> <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p></param>
 		/// <returns>Success</returns>
@@ -13226,8 +13226,8 @@ namespace MyNS
 		/// ConfirmTopicRuleDestination confirmdestination/{confirmationToken}
 		/// </summary>
 		/// <param name="confirmationToken">The token used to confirm ownership or access to the topic rule confirmation URL.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ConfirmTopicRuleDestinationResponse> ConfirmTopicRuleDestinationAsync(string confirmationToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13303,8 +13303,8 @@ namespace MyNS
 		/// CreateAuthorizer authorizer/{authorizerName}
 		/// </summary>
 		/// <param name="authorizerName">The authorizer name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateAuthorizerResponse> CreateAuthorizerAsync(string authorizerName, CreateAuthorizerPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13347,8 +13347,8 @@ namespace MyNS
 		/// DeleteAuthorizer authorizer/{authorizerName}
 		/// </summary>
 		/// <param name="authorizerName">The name of the authorizer to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAuthorizerResponse> DeleteAuthorizerAsync(string authorizerName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13384,8 +13384,8 @@ namespace MyNS
 		/// DescribeAuthorizer authorizer/{authorizerName}
 		/// </summary>
 		/// <param name="authorizerName">The name of the authorizer to describe.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAuthorizerResponse> DescribeAuthorizerAsync(string authorizerName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13421,8 +13421,8 @@ namespace MyNS
 		/// UpdateAuthorizer authorizer/{authorizerName}
 		/// </summary>
 		/// <param name="authorizerName">The authorizer name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAuthorizerResponse> UpdateAuthorizerAsync(string authorizerName, UpdateAuthorizerPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13465,8 +13465,8 @@ namespace MyNS
 		/// CreateBillingGroup billing-groups/{billingGroupName}
 		/// </summary>
 		/// <param name="billingGroupName">The name you wish to give to the billing group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateBillingGroupResponse> CreateBillingGroupAsync(string billingGroupName, CreateBillingGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13509,8 +13509,8 @@ namespace MyNS
 		/// DeleteBillingGroup billing-groups/{billingGroupName}
 		/// </summary>
 		/// <param name="billingGroupName">The name of the billing group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="expectedVersion">The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.</param>
 		/// <returns>Success</returns>
@@ -13547,8 +13547,8 @@ namespace MyNS
 		/// DescribeBillingGroup billing-groups/{billingGroupName}
 		/// </summary>
 		/// <param name="billingGroupName">The name of the billing group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeBillingGroupResponse> DescribeBillingGroupAsync(string billingGroupName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13584,8 +13584,8 @@ namespace MyNS
 		/// UpdateBillingGroup billing-groups/{billingGroupName}
 		/// </summary>
 		/// <param name="billingGroupName">The name of the billing group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateBillingGroupResponse> UpdateBillingGroupAsync(string billingGroupName, UpdateBillingGroupPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13710,8 +13710,8 @@ namespace MyNS
 		/// CreateCustomMetric custom-metric/{metricName}
 		/// </summary>
 		/// <param name="metricName"> The name of the custom metric. This will be used in the metric report submitted from the device/thing. The name can't begin with <code>aws:</code>. You can't change the name after you define it.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateCustomMetricResponse> CreateCustomMetricAsync(string metricName, CreateCustomMetricPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13754,8 +13754,8 @@ namespace MyNS
 		/// DeleteCustomMetric custom-metric/{metricName}
 		/// </summary>
 		/// <param name="metricName"> The name of the custom metric. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteCustomMetricResponse> DeleteCustomMetricAsync(string metricName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13791,8 +13791,8 @@ namespace MyNS
 		/// DescribeCustomMetric custom-metric/{metricName}
 		/// </summary>
 		/// <param name="metricName"> The name of the custom metric. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeCustomMetricResponse> DescribeCustomMetricAsync(string metricName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13828,8 +13828,8 @@ namespace MyNS
 		/// UpdateCustomMetric custom-metric/{metricName}
 		/// </summary>
 		/// <param name="metricName"> The name of the custom metric. Cannot be updated. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateCustomMetricResponse> UpdateCustomMetricAsync(string metricName, UpdateCustomMetricPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13872,8 +13872,8 @@ namespace MyNS
 		/// CreateDimension dimensions/{name}
 		/// </summary>
 		/// <param name="name">A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDimensionResponse> CreateDimensionAsync(string name, CreateDimensionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13916,8 +13916,8 @@ namespace MyNS
 		/// DeleteDimension dimensions/{name}
 		/// </summary>
 		/// <param name="name">The unique identifier for the dimension that you want to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDimensionResponse> DeleteDimensionAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13953,8 +13953,8 @@ namespace MyNS
 		/// DescribeDimension dimensions/{name}
 		/// </summary>
 		/// <param name="name">The unique identifier for the dimension.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDimensionResponse> DescribeDimensionAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13990,8 +13990,8 @@ namespace MyNS
 		/// UpdateDimension dimensions/{name}
 		/// </summary>
 		/// <param name="name">A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDimensionResponse> UpdateDimensionAsync(string name, UpdateDimensionPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14034,8 +14034,8 @@ namespace MyNS
 		/// CreateDomainConfiguration domainConfigurations/{domainConfigurationName}
 		/// </summary>
 		/// <param name="domainConfigurationName">The name of the domain configuration. This value must be unique to a region.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDomainConfigurationResponse> CreateDomainConfigurationAsync(string domainConfigurationName, CreateDomainConfigurationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14078,8 +14078,8 @@ namespace MyNS
 		/// DeleteDomainConfiguration domainConfigurations/{domainConfigurationName}
 		/// </summary>
 		/// <param name="domainConfigurationName">The name of the domain configuration to be deleted.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDomainConfigurationResponse> DeleteDomainConfigurationAsync(string domainConfigurationName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14115,8 +14115,8 @@ namespace MyNS
 		/// DescribeDomainConfiguration domainConfigurations/{domainConfigurationName}
 		/// </summary>
 		/// <param name="domainConfigurationName">The name of the domain configuration.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDomainConfigurationResponse> DescribeDomainConfigurationAsync(string domainConfigurationName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14152,8 +14152,8 @@ namespace MyNS
 		/// UpdateDomainConfiguration domainConfigurations/{domainConfigurationName}
 		/// </summary>
 		/// <param name="domainConfigurationName">The name of the domain configuration to be updated.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDomainConfigurationResponse> UpdateDomainConfigurationAsync(string domainConfigurationName, UpdateDomainConfigurationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14196,8 +14196,8 @@ namespace MyNS
 		/// CreateDynamicThingGroup dynamic-thing-groups/{thingGroupName}
 		/// </summary>
 		/// <param name="thingGroupName">The dynamic thing group name to create.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDynamicThingGroupResponse> CreateDynamicThingGroupAsync(string thingGroupName, CreateDynamicThingGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14240,8 +14240,8 @@ namespace MyNS
 		/// DeleteDynamicThingGroup dynamic-thing-groups/{thingGroupName}
 		/// </summary>
 		/// <param name="thingGroupName">The name of the dynamic thing group to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="expectedVersion">The expected version of the dynamic thing group to delete.</param>
 		/// <returns>Success</returns>
@@ -14278,8 +14278,8 @@ namespace MyNS
 		/// UpdateDynamicThingGroup dynamic-thing-groups/{thingGroupName}
 		/// </summary>
 		/// <param name="thingGroupName">The name of the dynamic thing group to update.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDynamicThingGroupResponse> UpdateDynamicThingGroupAsync(string thingGroupName, UpdateDynamicThingGroupPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14322,8 +14322,8 @@ namespace MyNS
 		/// CreateFleetMetric fleet-metric/{metricName}
 		/// </summary>
 		/// <param name="metricName">The name of the fleet metric to create.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateFleetMetricResponse> CreateFleetMetricAsync(string metricName, CreateFleetMetricPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14366,8 +14366,8 @@ namespace MyNS
 		/// DeleteFleetMetric fleet-metric/{metricName}
 		/// </summary>
 		/// <param name="metricName">The name of the fleet metric to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="expectedVersion">The expected version of the fleet metric to delete.</param>
 		/// <returns>Success</returns>
@@ -14398,8 +14398,8 @@ namespace MyNS
 		/// DescribeFleetMetric fleet-metric/{metricName}
 		/// </summary>
 		/// <param name="metricName">The name of the fleet metric to describe.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeFleetMetricResponse> DescribeFleetMetricAsync(string metricName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14435,8 +14435,8 @@ namespace MyNS
 		/// UpdateFleetMetric fleet-metric/{metricName}
 		/// </summary>
 		/// <param name="metricName">The name of the fleet metric to update.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateFleetMetricAsync(string metricName, UpdateFleetMetricPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14473,8 +14473,8 @@ namespace MyNS
 		/// CreateJob jobs/{jobId}
 		/// </summary>
 		/// <param name="jobId">A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateJobResponse> CreateJobAsync(string jobId, CreateJobPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14517,8 +14517,8 @@ namespace MyNS
 		/// DeleteJob jobs/{jobId}
 		/// </summary>
 		/// <param name="jobId"><p>The ID of the job to be deleted.</p> <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="force"><p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note> <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p> </note></param>
 		/// <param name="namespaceId"><p>The namespace used to indicate that a job is a customer-managed job.</p> <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> <p>The <code>namespaceId</code> feature is in public preview.</p> </note></param>
@@ -14550,8 +14550,8 @@ namespace MyNS
 		/// DescribeJob jobs/{jobId}
 		/// </summary>
 		/// <param name="jobId">The unique identifier you assigned to this job when it was created.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeJobResponse> DescribeJobAsync(string jobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14587,8 +14587,8 @@ namespace MyNS
 		/// UpdateJob jobs/{jobId}
 		/// </summary>
 		/// <param name="jobId">The ID of the job to be updated.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="namespaceId"><p>The namespace used to indicate that a job is a customer-managed job.</p> <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> <p>The <code>namespaceId</code> feature is in public preview.</p> </note></param>
 		/// <returns>Success</returns>
@@ -14626,8 +14626,8 @@ namespace MyNS
 		/// CreateJobTemplate job-templates/{jobTemplateId}
 		/// </summary>
 		/// <param name="jobTemplateId">A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateJobTemplateResponse> CreateJobTemplateAsync(string jobTemplateId, CreateJobTemplatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14670,8 +14670,8 @@ namespace MyNS
 		/// DeleteJobTemplate job-templates/{jobTemplateId}
 		/// </summary>
 		/// <param name="jobTemplateId">The unique identifier of the job template to delete.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteJobTemplateAsync(string jobTemplateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14701,8 +14701,8 @@ namespace MyNS
 		/// DescribeJobTemplate job-templates/{jobTemplateId}
 		/// </summary>
 		/// <param name="jobTemplateId">The unique identifier of the job template.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeJobTemplateResponse> DescribeJobTemplateAsync(string jobTemplateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14925,8 +14925,8 @@ namespace MyNS
 		/// CreateOTAUpdate otaUpdates/{otaUpdateId}
 		/// </summary>
 		/// <param name="otaUpdateId">The ID of the OTA update to be created.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateOTAUpdateResponse> CreateOTAUpdateAsync(string otaUpdateId, CreateOTAUpdatePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14969,8 +14969,8 @@ namespace MyNS
 		/// DeleteOTAUpdate otaUpdates/{otaUpdateId}
 		/// </summary>
 		/// <param name="otaUpdateId">The ID of the OTA update to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="deleteStream">When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.</param>
 		/// <param name="forceDeleteAWSJob">When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.</param>
@@ -15008,8 +15008,8 @@ namespace MyNS
 		/// GetOTAUpdate otaUpdates/{otaUpdateId}
 		/// </summary>
 		/// <param name="otaUpdateId">The OTA update ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetOTAUpdateResponse> GetOTAUpdateAsync(string otaUpdateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15045,12 +15045,12 @@ namespace MyNS
 		/// CreatePackage packages/{packageName}
 		/// </summary>
 		/// <param name="packageName">The name of the new package.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreatePackageResponse> CreatePackageAsync(string packageName, string clientToken, CreatePackagePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15093,12 +15093,12 @@ namespace MyNS
 		/// DeletePackage packages/{packageName}
 		/// </summary>
 		/// <param name="packageName">The name of the target package.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePackageResponse> DeletePackageAsync(string packageName, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15134,8 +15134,8 @@ namespace MyNS
 		/// GetPackage packages/{packageName}
 		/// </summary>
 		/// <param name="packageName">The name of the target package.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPackageResponse> GetPackageAsync(string packageName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15171,12 +15171,12 @@ namespace MyNS
 		/// UpdatePackage packages/{packageName}
 		/// </summary>
 		/// <param name="packageName">The name of the target package.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePackageResponse> UpdatePackageAsync(string packageName, string clientToken, UpdatePackagePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15219,16 +15219,16 @@ namespace MyNS
 		/// CreatePackageVersion packages/{packageName}/versions/{versionName}
 		/// </summary>
 		/// <param name="packageName">The name of the associated package.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="versionName">The name of the new package version.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreatePackageVersionResponse> CreatePackageVersionAsync(string packageName, string versionName, string clientToken, CreatePackageVersionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15271,16 +15271,16 @@ namespace MyNS
 		/// DeletePackageVersion packages/{packageName}/versions/{versionName}
 		/// </summary>
 		/// <param name="packageName">The name of the associated package.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="versionName">The name of the target package version.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePackageVersionResponse> DeletePackageVersionAsync(string packageName, string versionName, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15316,12 +15316,12 @@ namespace MyNS
 		/// GetPackageVersion packages/{packageName}/versions/{versionName}
 		/// </summary>
 		/// <param name="packageName">The name of the associated package.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="versionName">The name of the target package version.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPackageVersionResponse> GetPackageVersionAsync(string packageName, string versionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15357,16 +15357,16 @@ namespace MyNS
 		/// UpdatePackageVersion packages/{packageName}/versions/{versionName}
 		/// </summary>
 		/// <param name="packageName">The name of the associated software package.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="versionName">The name of the target package version.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePackageVersionResponse> UpdatePackageVersionAsync(string packageName, string versionName, string clientToken, UpdatePackageVersionPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15409,8 +15409,8 @@ namespace MyNS
 		/// CreatePolicy policies/{policyName}
 		/// </summary>
 		/// <param name="policyName">The policy name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreatePolicyResponse> CreatePolicyAsync(string policyName, CreatePolicyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15453,8 +15453,8 @@ namespace MyNS
 		/// DeletePolicy policies/{policyName}
 		/// </summary>
 		/// <param name="policyName">The name of the policy to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeletePolicyAsync(string policyName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15484,8 +15484,8 @@ namespace MyNS
 		/// GetPolicy policies/{policyName}
 		/// </summary>
 		/// <param name="policyName">The name of the policy.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPolicyResponse> GetPolicyAsync(string policyName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15521,8 +15521,8 @@ namespace MyNS
 		/// CreatePolicyVersion policies/{policyName}/version
 		/// </summary>
 		/// <param name="policyName">The policy name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="setAsDefault">Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</param>
 		/// <returns>Success</returns>
@@ -15566,8 +15566,8 @@ namespace MyNS
 		/// ListPolicyVersions policies/{policyName}/version
 		/// </summary>
 		/// <param name="policyName">The policy name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListPolicyVersionsResponse> ListPolicyVersionsAsync(string policyName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15603,8 +15603,8 @@ namespace MyNS
 		/// CreateProvisioningClaim provisioning-templates/{templateName}/provisioning-claim
 		/// </summary>
 		/// <param name="templateName">The name of the provisioning template to use.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateProvisioningClaimResponse> CreateProvisioningClaimAsync(string templateName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15713,8 +15713,8 @@ namespace MyNS
 		/// CreateProvisioningTemplateVersion provisioning-templates/{templateName}/versions
 		/// </summary>
 		/// <param name="templateName">The name of the provisioning template.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="setAsDefault">Sets a fleet provision template version as the default version.</param>
 		/// <returns>Success</returns>
@@ -15758,8 +15758,8 @@ namespace MyNS
 		/// ListProvisioningTemplateVersions provisioning-templates/{templateName}/versions
 		/// </summary>
 		/// <param name="templateName">The name of the provisioning template.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return at one time.
 		/// Minimum: 1
@@ -15800,8 +15800,8 @@ namespace MyNS
 		/// CreateRoleAlias role-aliases/{roleAlias}
 		/// </summary>
 		/// <param name="roleAlias">The role alias that points to a role ARN. This allows you to change the role without having to update the device.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateRoleAliasResponse> CreateRoleAliasAsync(string roleAlias, CreateRoleAliasPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15844,8 +15844,8 @@ namespace MyNS
 		/// DeleteRoleAlias role-aliases/{roleAlias}
 		/// </summary>
 		/// <param name="roleAlias">The role alias to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteRoleAliasResponse> DeleteRoleAliasAsync(string roleAlias, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15881,8 +15881,8 @@ namespace MyNS
 		/// DescribeRoleAlias role-aliases/{roleAlias}
 		/// </summary>
 		/// <param name="roleAlias">The role alias to describe.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeRoleAliasResponse> DescribeRoleAliasAsync(string roleAlias, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15918,8 +15918,8 @@ namespace MyNS
 		/// UpdateRoleAlias role-aliases/{roleAlias}
 		/// </summary>
 		/// <param name="roleAlias">The role alias to update.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRoleAliasResponse> UpdateRoleAliasAsync(string roleAlias, UpdateRoleAliasPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15962,8 +15962,8 @@ namespace MyNS
 		/// CreateScheduledAudit audit/scheduledaudits/{scheduledAuditName}
 		/// </summary>
 		/// <param name="scheduledAuditName">The name you want to give to the scheduled audit. (Max. 128 chars)
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateScheduledAuditResponse> CreateScheduledAuditAsync(string scheduledAuditName, CreateScheduledAuditPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16006,8 +16006,8 @@ namespace MyNS
 		/// DeleteScheduledAudit audit/scheduledaudits/{scheduledAuditName}
 		/// </summary>
 		/// <param name="scheduledAuditName">The name of the scheduled audit you want to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteScheduledAuditResponse> DeleteScheduledAuditAsync(string scheduledAuditName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16043,8 +16043,8 @@ namespace MyNS
 		/// DescribeScheduledAudit audit/scheduledaudits/{scheduledAuditName}
 		/// </summary>
 		/// <param name="scheduledAuditName">The name of the scheduled audit whose information you want to get.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeScheduledAuditResponse> DescribeScheduledAuditAsync(string scheduledAuditName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16080,8 +16080,8 @@ namespace MyNS
 		/// UpdateScheduledAudit audit/scheduledaudits/{scheduledAuditName}
 		/// </summary>
 		/// <param name="scheduledAuditName">The name of the scheduled audit. (Max. 128 chars)
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateScheduledAuditResponse> UpdateScheduledAuditAsync(string scheduledAuditName, UpdateScheduledAuditPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16124,8 +16124,8 @@ namespace MyNS
 		/// CreateSecurityProfile security-profiles/{securityProfileName}
 		/// </summary>
 		/// <param name="securityProfileName">The name you are giving to the security profile.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateSecurityProfileResponse> CreateSecurityProfileAsync(string securityProfileName, CreateSecurityProfilePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16168,8 +16168,8 @@ namespace MyNS
 		/// DeleteSecurityProfile security-profiles/{securityProfileName}
 		/// </summary>
 		/// <param name="securityProfileName">The name of the security profile to be deleted.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="expectedVersion">The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</param>
 		/// <returns>Success</returns>
@@ -16206,8 +16206,8 @@ namespace MyNS
 		/// DescribeSecurityProfile security-profiles/{securityProfileName}
 		/// </summary>
 		/// <param name="securityProfileName">The name of the security profile whose information you want to get.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeSecurityProfileResponse> DescribeSecurityProfileAsync(string securityProfileName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16243,8 +16243,8 @@ namespace MyNS
 		/// UpdateSecurityProfile security-profiles/{securityProfileName}
 		/// </summary>
 		/// <param name="securityProfileName">The name of the security profile you want to update.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="expectedVersion">The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.</param>
 		/// <returns>Success</returns>
@@ -16288,8 +16288,8 @@ namespace MyNS
 		/// CreateStream streams/{streamId}
 		/// </summary>
 		/// <param name="streamId">The stream ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateStreamResponse> CreateStreamAsync(string streamId, CreateStreamPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16332,8 +16332,8 @@ namespace MyNS
 		/// DeleteStream streams/{streamId}
 		/// </summary>
 		/// <param name="streamId">The stream ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteStreamResponse> DeleteStreamAsync(string streamId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16369,8 +16369,8 @@ namespace MyNS
 		/// DescribeStream streams/{streamId}
 		/// </summary>
 		/// <param name="streamId">The stream ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeStreamResponse> DescribeStreamAsync(string streamId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16406,8 +16406,8 @@ namespace MyNS
 		/// UpdateStream streams/{streamId}
 		/// </summary>
 		/// <param name="streamId">The stream ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateStreamResponse> UpdateStreamAsync(string streamId, UpdateStreamPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16450,8 +16450,8 @@ namespace MyNS
 		/// CreateThing things/{thingName}
 		/// </summary>
 		/// <param name="thingName"><p>The name of the thing to create.</p> <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateThingResponse> CreateThingAsync(string thingName, CreateThingPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16494,8 +16494,8 @@ namespace MyNS
 		/// DeleteThing things/{thingName}
 		/// </summary>
 		/// <param name="thingName">The name of the thing to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="expectedVersion">The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.</param>
 		/// <returns>Success</returns>
@@ -16532,8 +16532,8 @@ namespace MyNS
 		/// DescribeThing things/{thingName}
 		/// </summary>
 		/// <param name="thingName">The name of the thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeThingResponse> DescribeThingAsync(string thingName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16569,8 +16569,8 @@ namespace MyNS
 		/// UpdateThing things/{thingName}
 		/// </summary>
 		/// <param name="thingName"><p>The name of the thing to update.</p> <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateThingResponse> UpdateThingAsync(string thingName, UpdateThingPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16613,8 +16613,8 @@ namespace MyNS
 		/// CreateThingGroup thing-groups/{thingGroupName}
 		/// </summary>
 		/// <param name="thingGroupName">The thing group name to create.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateThingGroupResponse> CreateThingGroupAsync(string thingGroupName, CreateThingGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16657,8 +16657,8 @@ namespace MyNS
 		/// DeleteThingGroup thing-groups/{thingGroupName}
 		/// </summary>
 		/// <param name="thingGroupName">The name of the thing group to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="expectedVersion">The expected version of the thing group to delete.</param>
 		/// <returns>Success</returns>
@@ -16695,8 +16695,8 @@ namespace MyNS
 		/// DescribeThingGroup thing-groups/{thingGroupName}
 		/// </summary>
 		/// <param name="thingGroupName">The name of the thing group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeThingGroupResponse> DescribeThingGroupAsync(string thingGroupName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16732,8 +16732,8 @@ namespace MyNS
 		/// UpdateThingGroup thing-groups/{thingGroupName}
 		/// </summary>
 		/// <param name="thingGroupName">The thing group to update.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateThingGroupResponse> UpdateThingGroupAsync(string thingGroupName, UpdateThingGroupPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16776,8 +16776,8 @@ namespace MyNS
 		/// CreateThingType thing-types/{thingTypeName}
 		/// </summary>
 		/// <param name="thingTypeName">The name of the thing type.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateThingTypeResponse> CreateThingTypeAsync(string thingTypeName, CreateThingTypePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16820,8 +16820,8 @@ namespace MyNS
 		/// DeleteThingType thing-types/{thingTypeName}
 		/// </summary>
 		/// <param name="thingTypeName">The name of the thing type.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteThingTypeResponse> DeleteThingTypeAsync(string thingTypeName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16857,8 +16857,8 @@ namespace MyNS
 		/// DescribeThingType thing-types/{thingTypeName}
 		/// </summary>
 		/// <param name="thingTypeName">The name of the thing type.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeThingTypeResponse> DescribeThingTypeAsync(string thingTypeName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16894,8 +16894,8 @@ namespace MyNS
 		/// CreateTopicRule rules/{ruleName}
 		/// </summary>
 		/// <param name="ruleName">The name of the rule.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task CreateTopicRuleAsync(string ruleName, CreateTopicRulePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16932,8 +16932,8 @@ namespace MyNS
 		/// DeleteTopicRule rules/{ruleName}
 		/// </summary>
 		/// <param name="ruleName">The name of the rule.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteTopicRuleAsync(string ruleName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16963,8 +16963,8 @@ namespace MyNS
 		/// GetTopicRule rules/{ruleName}
 		/// </summary>
 		/// <param name="ruleName">The name of the rule.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTopicRuleResponse> GetTopicRuleAsync(string ruleName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -17000,8 +17000,8 @@ namespace MyNS
 		/// ReplaceTopicRule rules/{ruleName}
 		/// </summary>
 		/// <param name="ruleName">The name of the rule.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task ReplaceTopicRuleAsync(string ruleName, ReplaceTopicRulePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -17303,8 +17303,8 @@ namespace MyNS
 		/// DeleteCACertificate cacertificate/{caCertificateId}
 		/// </summary>
 		/// <param name="caCertificateId">The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)
-		/// Max length: 64
 		/// Min length: 64
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteCACertificateResponse> DeleteCACertificateAsync(string caCertificateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -17340,8 +17340,8 @@ namespace MyNS
 		/// DescribeCACertificate cacertificate/{caCertificateId}
 		/// </summary>
 		/// <param name="caCertificateId">The CA certificate identifier.
-		/// Max length: 64
 		/// Min length: 64
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeCACertificateResponse> DescribeCACertificateAsync(string caCertificateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -17377,8 +17377,8 @@ namespace MyNS
 		/// UpdateCACertificate cacertificate/{caCertificateId}
 		/// </summary>
 		/// <param name="caCertificateId">The CA certificate identifier.
-		/// Max length: 64
 		/// Min length: 64
+		/// Max length: 64
 		// </param>
 		/// <param name="newStatus"><p>The updated status of the CA certificate.</p> <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p></param>
 		/// <param name="newAutoRegistrationStatus">The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".</param>
@@ -17417,8 +17417,8 @@ namespace MyNS
 		/// DeleteCertificate certificates/{certificateId}
 		/// </summary>
 		/// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
-		/// Max length: 64
 		/// Min length: 64
+		/// Max length: 64
 		// </param>
 		/// <param name="forceDelete">Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.</param>
 		/// <returns>Success</returns>
@@ -17449,8 +17449,8 @@ namespace MyNS
 		/// DescribeCertificate certificates/{certificateId}
 		/// </summary>
 		/// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
-		/// Max length: 64
 		/// Min length: 64
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeCertificateResponse> DescribeCertificateAsync(string certificateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -17486,12 +17486,12 @@ namespace MyNS
 		/// DeleteJobExecution things/{thingName}/jobs/{jobId}/executionNumber/{executionNumber}
 		/// </summary>
 		/// <param name="jobId">The ID of the job whose execution on a particular device will be deleted.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="thingName">The name of the thing whose job execution will be deleted.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="executionNumber"><p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p> <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p></param>
 		/// <param name="force"><p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note> <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p> </note></param>
@@ -17524,8 +17524,8 @@ namespace MyNS
 		/// DeletePolicyVersion policies/{policyName}/version/{policyVersionId}
 		/// </summary>
 		/// <param name="policyName">The name of the policy.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="policyVersionId">The policy version ID.</param>
 		/// <returns>Success</returns>
@@ -17556,8 +17556,8 @@ namespace MyNS
 		/// GetPolicyVersion policies/{policyName}/version/{policyVersionId}
 		/// </summary>
 		/// <param name="policyName">The name of the policy.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="policyVersionId">The policy version ID.</param>
 		/// <returns>Success</returns>
@@ -17594,8 +17594,8 @@ namespace MyNS
 		/// SetDefaultPolicyVersion policies/{policyName}/version/{policyVersionId}
 		/// </summary>
 		/// <param name="policyName">The policy name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="policyVersionId">The policy version ID.</param>
 		/// <returns>Success</returns>
@@ -17621,8 +17621,8 @@ namespace MyNS
 		/// DeleteProvisioningTemplate provisioning-templates/{templateName}
 		/// </summary>
 		/// <param name="templateName">The name of the fleet provision template to delete.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteProvisioningTemplateResponse> DeleteProvisioningTemplateAsync(string templateName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -17658,8 +17658,8 @@ namespace MyNS
 		/// DescribeProvisioningTemplate provisioning-templates/{templateName}
 		/// </summary>
 		/// <param name="templateName">The name of the provisioning template.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeProvisioningTemplateResponse> DescribeProvisioningTemplateAsync(string templateName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -17695,8 +17695,8 @@ namespace MyNS
 		/// UpdateProvisioningTemplate provisioning-templates/{templateName}
 		/// </summary>
 		/// <param name="templateName">The name of the provisioning template.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateProvisioningTemplateResponse> UpdateProvisioningTemplateAsync(string templateName, UpdateProvisioningTemplatePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -17739,8 +17739,8 @@ namespace MyNS
 		/// DeleteProvisioningTemplateVersion provisioning-templates/{templateName}/versions/{versionId}
 		/// </summary>
 		/// <param name="templateName">The name of the provisioning template version to delete.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="versionId">The provisioning template version ID to delete.</param>
 		/// <returns>Success</returns>
@@ -17777,8 +17777,8 @@ namespace MyNS
 		/// DescribeProvisioningTemplateVersion provisioning-templates/{templateName}/versions/{versionId}
 		/// </summary>
 		/// <param name="templateName">The template name.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="versionId">The provisioning template version ID.</param>
 		/// <returns>Success</returns>
@@ -17978,8 +17978,8 @@ namespace MyNS
 		/// DeprecateThingType thing-types/{thingTypeName}/deprecate
 		/// </summary>
 		/// <param name="thingTypeName">The name of the thing type to deprecate.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeprecateThingTypeResponse> DeprecateThingTypeAsync(string thingTypeName, DeprecateThingTypePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18022,8 +18022,8 @@ namespace MyNS
 		/// DescribeAuditFinding audit/findings/{findingId}
 		/// </summary>
 		/// <param name="findingId">A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAuditFindingResponse> DescribeAuditFindingAsync(string findingId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18059,8 +18059,8 @@ namespace MyNS
 		/// DescribeAuditMitigationActionsTask audit/mitigationactions/tasks/{taskId}
 		/// </summary>
 		/// <param name="taskId">The unique identifier for the audit mitigation task.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAuditMitigationActionsTaskResponse> DescribeAuditMitigationActionsTaskAsync(string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18096,8 +18096,8 @@ namespace MyNS
 		/// StartAuditMitigationActionsTask audit/mitigationactions/tasks/{taskId}
 		/// </summary>
 		/// <param name="taskId">A unique identifier for the task. You can use this identifier to check the status of the task or to cancel it.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartAuditMitigationActionsTaskResponse> StartAuditMitigationActionsTaskAsync(string taskId, StartAuditMitigationActionsTaskPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18180,8 +18180,8 @@ namespace MyNS
 		/// DescribeAuditTask audit/tasks/{taskId}
 		/// </summary>
 		/// <param name="taskId">The ID of the audit whose information you want to get.
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAuditTaskResponse> DescribeAuditTaskAsync(string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18217,8 +18217,8 @@ namespace MyNS
 		/// DescribeDetectMitigationActionsTask detect/mitigationactions/tasks/{taskId}
 		/// </summary>
 		/// <param name="taskId"> The unique identifier of the task. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDetectMitigationActionsTaskResponse> DescribeDetectMitigationActionsTaskAsync(string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18254,8 +18254,8 @@ namespace MyNS
 		/// StartDetectMitigationActionsTask detect/mitigationactions/tasks/{taskId}
 		/// </summary>
 		/// <param name="taskId"> The unique identifier of the task. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartDetectMitigationActionsTaskResponse> StartDetectMitigationActionsTaskAsync(string taskId, StartDetectMitigationActionsTaskPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18407,8 +18407,8 @@ namespace MyNS
 		/// DescribeIndex indices/{indexName}
 		/// </summary>
 		/// <param name="indexName">The index name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeIndexResponse> DescribeIndexAsync(string indexName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18444,12 +18444,12 @@ namespace MyNS
 		/// DescribeJobExecution things/{thingName}/jobs/{jobId}
 		/// </summary>
 		/// <param name="jobId">The unique identifier you assigned to this job when it was created.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="thingName">The name of the thing on which the job execution is running.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="executionNumber">A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.</param>
 		/// <returns>Success</returns>
@@ -18486,8 +18486,8 @@ namespace MyNS
 		/// DescribeManagedJobTemplate managed-job-templates/{templateName}
 		/// </summary>
 		/// <param name="templateName">The unique name of a managed job template, which is required.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="templateVersion">An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.</param>
 		/// <returns>Success</returns>
@@ -18560,8 +18560,8 @@ namespace MyNS
 		/// DisableTopicRule rules/{ruleName}/disable
 		/// </summary>
 		/// <param name="ruleName">The name of the rule to disable.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DisableTopicRuleAsync(string ruleName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18586,8 +18586,8 @@ namespace MyNS
 		/// EnableTopicRule rules/{ruleName}/enable
 		/// </summary>
 		/// <param name="ruleName">The name of the topic rule to enable.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task EnableTopicRuleAsync(string ruleName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18612,8 +18612,8 @@ namespace MyNS
 		/// GetBehaviorModelTrainingSummaries behavior-model-training/summaries
 		/// </summary>
 		/// <param name="securityProfileName"> The name of the security profile. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="maxResults"> The maximum number of results to return at one time. The default is 10. 
 		/// Minimum: 1
@@ -18734,8 +18734,8 @@ namespace MyNS
 		/// GetEffectivePolicies effective-policies
 		/// </summary>
 		/// <param name="thingName">The thing name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEffectivePoliciesResponse> GetEffectivePoliciesAsync(string thingName, GetEffectivePoliciesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18851,8 +18851,8 @@ namespace MyNS
 		/// GetJobDocument jobs/{jobId}/job-document
 		/// </summary>
 		/// <param name="jobId">The unique identifier you assigned to this job when it was created.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetJobDocumentResponse> GetJobDocumentAsync(string jobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18988,8 +18988,8 @@ namespace MyNS
 		/// UpdatePackageConfiguration package-configuration
 		/// </summary>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePackageConfigurationResponse> UpdatePackageConfigurationAsync(string clientToken, UpdatePackageConfigurationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19179,12 +19179,12 @@ namespace MyNS
 		/// ListActiveViolations active-violations
 		/// </summary>
 		/// <param name="thingName">The name of the thing whose active violations are listed.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="securityProfileName">The name of the Device Defender security profile for which violations are listed.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="behaviorCriteriaType"> The criteria for a behavior. </param>
 		/// <param name="listSuppressedAlerts"> A list of all suppressed alerts. </param>
@@ -19307,13 +19307,13 @@ namespace MyNS
 		/// ListAuditMitigationActionsExecutions audit/mitigationactions/executions#taskId&findingId
 		/// </summary>
 		/// <param name="taskId">Specify this filter to limit results to actions for a specific audit mitigation actions task.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="actionStatus">Specify this filter to limit results to those with a specific status.</param>
 		/// <param name="findingId">Specify this filter to limit results to those that were applied to a specific audit finding.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return at one time. The default is 25.
 		/// Minimum: 1
@@ -19354,12 +19354,12 @@ namespace MyNS
 		/// ListAuditMitigationActionsTasks audit/mitigationactions/tasks#startTime&endTime
 		/// </summary>
 		/// <param name="auditTaskId">Specify this filter to limit results to tasks that were applied to results for a specific audit.
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		// </param>
 		/// <param name="findingId">Specify this filter to limit results to tasks that were applied to a specific audit finding.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="taskStatus">Specify this filter to limit results to tasks that are in a specific state.</param>
 		/// <param name="maxResults">The maximum number of results to return at one time. The default is 25.
@@ -19534,8 +19534,8 @@ namespace MyNS
 		/// Maximum: 250
 		// </param>
 		/// <param name="namePrefixFilter">Limit the results to billing groups whose names have the given prefix.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListBillingGroupsResponse> ListBillingGroupsAsync(string nextToken, int maxResults, string namePrefixFilter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19579,8 +19579,8 @@ namespace MyNS
 		// </param>
 		/// <param name="isAscendingOrder">Determines the order of the results.</param>
 		/// <param name="templateName">The name of the provisioning template.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListCACertificatesResponse> ListCACertificatesAsync(int pageSize, string marker, bool isAscendingOrder, string templateName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19616,8 +19616,8 @@ namespace MyNS
 		/// ListCertificatesByCA certificates-by-ca/{caCertificateId}
 		/// </summary>
 		/// <param name="caCertificateId">The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.
-		/// Max length: 64
 		/// Min length: 64
+		/// Max length: 64
 		// </param>
 		/// <param name="pageSize">The result page size.
 		/// Minimum: 1
@@ -19699,16 +19699,16 @@ namespace MyNS
 		/// ListDetectMitigationActionsExecutions detect/mitigationactions/executions
 		/// </summary>
 		/// <param name="taskId"> The unique identifier of the task. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="violationId"> The unique identifier of the violation. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="thingName"> The name of the thing whose mitigation actions are listed. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="startTime"> A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. </param>
 		/// <param name="endTime"> The end of the time period for which ML Detect mitigation actions executions are returned. </param>
@@ -19946,8 +19946,8 @@ namespace MyNS
 		/// ListJobExecutionsForJob jobs/{jobId}/things
 		/// </summary>
 		/// <param name="jobId">The unique identifier you assigned to this job when it was created.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="status">The status of the job.</param>
 		/// <param name="maxResults">The maximum number of results to be returned per request.
@@ -19989,8 +19989,8 @@ namespace MyNS
 		/// ListJobExecutionsForThing things/{thingName}/jobs
 		/// </summary>
 		/// <param name="thingName">The thing name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="status">An optional filter that lets you search for jobs that have the specified status.</param>
 		/// <param name="namespaceId"><p>The namespace used to indicate that a job is a customer-managed job.</p> <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> <p>The <code>namespaceId</code> feature is in public preview.</p> </note></param>
@@ -20000,8 +20000,8 @@ namespace MyNS
 		// </param>
 		/// <param name="nextToken">The token to retrieve the next set of results.</param>
 		/// <param name="jobId">The unique identifier you assigned to this job when it was created.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListJobExecutionsForThingResponse> ListJobExecutionsForThingAsync(string thingName, JobExecutionStatus status, string namespaceId, int maxResults, string nextToken, string jobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -20082,12 +20082,12 @@ namespace MyNS
 		// </param>
 		/// <param name="nextToken">The token to retrieve the next set of results.</param>
 		/// <param name="thingGroupName">A filter that limits the returned jobs to those for the specified group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="thingGroupId">A filter that limits the returned jobs to those for the specified group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="namespaceId"><p>The namespace used to indicate that a job is a customer-managed job.</p> <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> <p>The <code>namespaceId</code> feature is in public preview.</p> </note></param>
 		/// <returns>Success</returns>
@@ -20124,8 +20124,8 @@ namespace MyNS
 		/// ListManagedJobTemplates managed-job-templates
 		/// </summary>
 		/// <param name="templateName">An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="maxResults">Maximum number of entries that can be returned.
 		/// Minimum: 1
@@ -20166,13 +20166,13 @@ namespace MyNS
 		/// ListMetricValues metric-values#thingName&metricName&startTime&endTime
 		/// </summary>
 		/// <param name="thingName">The name of the thing for which security profile metric values are returned.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="metricName">The name of the security profile metric for which values are returned.</param>
 		/// <param name="dimensionName">The dimension name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="dimensionValueOperator">The dimension value operator.</param>
 		/// <param name="startTime">The start of the time period for which metric values are returned.</param>
@@ -20335,8 +20335,8 @@ namespace MyNS
 		/// ListPackageVersions packages/{packageName}/versions
 		/// </summary>
 		/// <param name="packageName">The name of the target package.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="status">The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.</param>
 		/// <param name="maxResults">The maximum number of results to return at one time.
@@ -20577,8 +20577,8 @@ namespace MyNS
 		/// ListRelatedResourcesForAuditFinding audit/relatedResources#findingId
 		/// </summary>
 		/// <param name="findingId">The finding Id.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="nextToken">A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</param>
 		/// <param name="maxResults">The maximum number of results to return at one time.
@@ -20703,12 +20703,12 @@ namespace MyNS
 		/// Maximum: 250
 		// </param>
 		/// <param name="dimensionName">A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="metricName"> The name of the custom metric. Cannot be used with <code>dimensionName</code>. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSecurityProfilesResponse> ListSecurityProfilesAsync(string nextToken, int maxResults, string dimensionName, string metricName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -20858,8 +20858,8 @@ namespace MyNS
 		/// ListTargetsForPolicy policy-targets/{policyName}
 		/// </summary>
 		/// <param name="policyName">The policy name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="marker">A marker used to get the next set of results.
 		/// Max length: 1024
@@ -20897,8 +20897,8 @@ namespace MyNS
 		/// ListTargetsForSecurityProfile security-profiles/{securityProfileName}/targets
 		/// </summary>
 		/// <param name="securityProfileName">The security profile.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="nextToken">The token for the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return at one time.
@@ -20944,12 +20944,12 @@ namespace MyNS
 		/// Maximum: 250
 		// </param>
 		/// <param name="parentGroup">A filter that limits the results to those with the specified parent group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="namePrefixFilter">A filter that limits the results to those with the specified name prefix.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="recursive">If true, return child groups as well.</param>
 		/// <returns>Success</returns>
@@ -20986,8 +20986,8 @@ namespace MyNS
 		/// ListThingGroupsForThing things/{thingName}/thing-groups
 		/// </summary>
 		/// <param name="thingName">The thing name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return at one time.
@@ -21033,8 +21033,8 @@ namespace MyNS
 		/// Maximum: 250
 		// </param>
 		/// <param name="thingName">The name of the thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListThingPrincipalsResponse> ListThingPrincipalsAsync(string nextToken, int maxResults, string thingName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -21196,8 +21196,8 @@ namespace MyNS
 		/// Maximum: 250
 		// </param>
 		/// <param name="thingTypeName">The name of the thing type.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListThingTypesResponse> ListThingTypesAsync(string nextToken, int maxResults, string thingTypeName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -21244,8 +21244,8 @@ namespace MyNS
 		/// Max length: 800
 		// </param>
 		/// <param name="thingTypeName">The name of the thing type used to search for things.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="usePrefixAttributeValue"><p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p> <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p></param>
 		/// <returns>Success</returns>
@@ -21322,8 +21322,8 @@ namespace MyNS
 		/// ListThingsInBillingGroup billing-groups/{billingGroupName}/things
 		/// </summary>
 		/// <param name="billingGroupName">The name of the billing group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return per request.
@@ -21364,8 +21364,8 @@ namespace MyNS
 		/// ListThingsInThingGroup thing-groups/{thingGroupName}/things
 		/// </summary>
 		/// <param name="thingGroupName">The thing group name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="recursive">When true, list things in this thing group and in all child groups as well.</param>
 		/// <param name="nextToken">To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.</param>
@@ -21522,12 +21522,12 @@ namespace MyNS
 		/// <param name="startTime">The start time for the alerts to be listed.</param>
 		/// <param name="endTime">The end time for the alerts to be listed.</param>
 		/// <param name="thingName">A filter to limit results to those alerts caused by the specified thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="securityProfileName">A filter to limit results to those alerts generated by the specified security profile.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="behaviorCriteriaType"> The criteria for a behavior. </param>
 		/// <param name="listSuppressedAlerts"> A list of all suppressed alerts. </param>
@@ -21571,8 +21571,8 @@ namespace MyNS
 		/// PutVerificationStateOnViolation violations/verification-state/{violationId}
 		/// </summary>
 		/// <param name="violationId">The violation ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutVerificationStateOnViolationResponse> PutVerificationStateOnViolationAsync(string violationId, PutVerificationStateOnViolationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -21738,8 +21738,8 @@ namespace MyNS
 		/// RejectCertificateTransfer reject-certificate-transfer/{certificateId}
 		/// </summary>
 		/// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
-		/// Max length: 64
 		/// Min length: 64
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task RejectCertificateTransferAsync(string certificateId, RejectCertificateTransferPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -22048,8 +22048,8 @@ namespace MyNS
 		/// TestInvokeAuthorizer authorizer/{authorizerName}/test
 		/// </summary>
 		/// <param name="authorizerName">The custom authorizer name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TestInvokeAuthorizerResponse> TestInvokeAuthorizerAsync(string authorizerName, TestInvokeAuthorizerPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -22092,12 +22092,12 @@ namespace MyNS
 		/// TransferCertificate transfer-certificate/{certificateId}#targetAwsAccount
 		/// </summary>
 		/// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
-		/// Max length: 64
 		/// Min length: 64
+		/// Max length: 64
 		// </param>
 		/// <param name="targetAwsAccount">The Amazon Web Services account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TransferCertificateResponse> TransferCertificateAsync(string certificateId, string targetAwsAccount, TransferCertificatePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -22220,8 +22220,8 @@ namespace MyNS
 		/// UpdateCertificate certificates/{certificateId}#newStatus
 		/// </summary>
 		/// <param name="certificateId">The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
-		/// Max length: 64
 		/// Min length: 64
+		/// Max length: 64
 		// </param>
 		/// <param name="newStatus"><p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p> <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p></param>
 		/// <returns>Success</returns>
@@ -22328,8 +22328,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the billing group.</p> <note> <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> </note>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="billingGroupName")]
@@ -22346,8 +22346,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the thing to be added to the billing group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="thingName")]
@@ -22368,8 +22368,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the group to which you are adding a thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="thingGroupName")]
@@ -22386,8 +22386,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the thing to add to a group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="thingName")]
@@ -22503,8 +22503,8 @@ namespace MyNS
 		/// <summary>
 		/// The authorizer name.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\w=,@-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -22559,8 +22559,8 @@ namespace MyNS
 		/// <summary>
 		///  Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -22622,8 +22622,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the token key used to extract the token from the HTTP headers.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tokenKeyName")]
@@ -22678,8 +22678,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The key used to extract the token from the HTTP headers. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tokenKeyName")]
@@ -22761,8 +22761,8 @@ namespace MyNS
 		/// <summary>
 		/// The certificate signing request (CSR).
 		/// Required
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -22803,8 +22803,8 @@ namespace MyNS
 		/// <summary>
 		/// Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. 
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -22882,8 +22882,8 @@ namespace MyNS
 		/// <summary>
 		/// Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -22915,8 +22915,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the domain.
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="domainName")]
@@ -22937,8 +22937,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: arn:aws(-cn|-us-gov|-iso-b|-iso)?:acm:[a-z]{2}-(gov-|iso-|isob-)?[a-z]{4,9}-\d{1}:\d{12}:certificate/[a-zA-Z0-9/-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="validationCertificateArn")]
@@ -23045,8 +23045,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The dynamic thing group index name.</p> <note> <p>Currently one index is supported: <code>AWS_Things</code>.</p> </note>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="indexName")]
@@ -23107,8 +23107,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The dynamic thing group index to update.</p> <note> <p>Currently one index is supported: <code>AWS_Things</code>.</p> </note>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="indexName")]
@@ -23202,8 +23202,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the index to search.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="indexName")]
@@ -23376,8 +23376,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the index to search.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -23513,8 +23513,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p> <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
-		/// Max length: 1350
 		/// Min length: 1
+		/// Max length: 1350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="documentSource")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -23585,8 +23585,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the job template used to create the job.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: ^arn:[!-~]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="jobTemplateArn")]
@@ -23773,8 +23773,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note> <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p> <p>The placeholder link is of the following form:</p> <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p> </note>
-		/// Max length: 1350
 		/// Min length: 1
+		/// Max length: 1350
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="documentSource")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -23897,8 +23897,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the IAM role that is used to apply the mitigation action.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
@@ -23948,8 +23948,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the IAM role that is used to apply the mitigation action.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(20)]
@@ -24061,8 +24061,8 @@ namespace MyNS
 		/// <summary>
 		/// The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
@@ -24119,8 +24119,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A summary of the package being created. This can be used to outline the package's contents or purpose.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: [^\p{C}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -24141,8 +24141,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The package description.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: [^\p{C}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -24153,8 +24153,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the default package version.</p> <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-zA-Z0-9-_.]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="defaultVersionName")]
@@ -24175,8 +24175,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A summary of the package version being created. This can be used to outline the package's contents or purpose.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: [^\p{C}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -24203,8 +24203,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The package version description.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: [^\p{C}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -24232,8 +24232,8 @@ namespace MyNS
 		/// <summary>
 		/// The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.
 		/// Required
-		/// Max length: 404600
 		/// Min length: 0
+		/// Max length: 404600
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -24256,8 +24256,8 @@ namespace MyNS
 		/// <summary>
 		/// The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.
 		/// Required
-		/// Max length: 404600
 		/// Min length: 0
+		/// Max length: 404600
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -24274,8 +24274,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the provisioning template.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// Pattern: ^[0-9A-Za-z_-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -24287,8 +24287,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the provisioning template.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// Pattern: [^\p{C}]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -24300,8 +24300,8 @@ namespace MyNS
 		/// <summary>
 		/// The JSON formatted contents of the provisioning template.
 		/// Required
-		/// Max length: 10240
 		/// Min length: 0
+		/// Max length: 10240
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -24320,8 +24320,8 @@ namespace MyNS
 		/// <summary>
 		/// The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="provisioningRoleArn")]
@@ -24364,8 +24364,8 @@ namespace MyNS
 		/// <summary>
 		/// The JSON formatted contents of the provisioning template.
 		/// Required
-		/// Max length: 10240
 		/// Min length: 0
+		/// Max length: 10240
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -24382,8 +24382,8 @@ namespace MyNS
 		/// <summary>
 		/// The role ARN.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
@@ -24412,8 +24412,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The role ARN.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(20)]
@@ -24632,8 +24632,8 @@ namespace MyNS
 		/// <summary>
 		/// An IAM role that allows the IoT service principal to access your S3 files.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
@@ -24673,8 +24673,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An IAM role that allows the IoT service principal assumes to access your S3 files.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(20)]
@@ -24687,8 +24687,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the thing type associated with the new thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="thingTypeName")]
@@ -24705,8 +24705,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the billing group the thing will be added to.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="billingGroupName")]
@@ -24731,8 +24731,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the thing type.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="thingTypeName")]
@@ -24775,8 +24775,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the parent thing group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="parentGroupName")]
@@ -24977,8 +24977,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(20)]
@@ -25086,8 +25086,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the provisioning template.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// Pattern: [^\p{C}]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -25110,8 +25110,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="provisioningRoleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(20)]
@@ -25173,8 +25173,8 @@ namespace MyNS
 		/// <summary>
 		/// Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -25296,8 +25296,8 @@ namespace MyNS
 		/// <summary>
 		///  Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request. 
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -25346,8 +25346,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the index to search.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="indexName")]
@@ -25403,8 +25403,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the index to search.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="indexName")]
@@ -25555,8 +25555,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the index to search.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="indexName")]
@@ -25601,8 +25601,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the index to search. The default value is <code>AWS_Things</code>.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="indexName")]
@@ -25663,8 +25663,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// Pattern: [a-zA-Z0-9\-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="taskId")]
@@ -25830,8 +25830,8 @@ namespace MyNS
 		/// <summary>
 		/// The provisioning template.
 		/// Required
-		/// Max length: 10240
 		/// Min length: 0
+		/// Max length: 10240
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -25844,8 +25844,8 @@ namespace MyNS
 		/// <summary>
 		/// The S3 bucket that contains the input file.
 		/// Required
-		/// Max length: 256
 		/// Min length: 3
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9._-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -25858,8 +25858,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: [a-zA-Z0-9!_.*'()-\/]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -25872,8 +25872,8 @@ namespace MyNS
 		/// <summary>
 		/// The IAM role ARN that grants permission the input file.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
@@ -25888,8 +25888,8 @@ namespace MyNS
 		/// <summary>
 		/// The provisioning template. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning Devices That Have Device Certificates</a> for more information.
 		/// Required
-		/// Max length: 10240
 		/// Min length: 0
+		/// Max length: 10240
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -25964,8 +25964,8 @@ namespace MyNS
 		/// <summary>
 		/// The PEM of a certificate.
 		/// Required
-		/// Max length: 65536
 		/// Min length: 1
+		/// Max length: 65536
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -25977,8 +25977,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The PEM of a certificate.
-		/// Max length: 65536
 		/// Min length: 1
+		/// Max length: 65536
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="verificationCertificate")]
@@ -26025,8 +26025,8 @@ namespace MyNS
 		/// <summary>
 		/// The PEM of a certificate.
 		/// Required
-		/// Max length: 65536
 		/// Min length: 1
+		/// Max length: 65536
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -26038,8 +26038,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The PEM of a certificate.
-		/// Max length: 65536
 		/// Min length: 1
+		/// Max length: 65536
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="caCertificatePem")]
@@ -26061,8 +26061,8 @@ namespace MyNS
 		/// <summary>
 		/// The PEM of a certificate.
 		/// Required
-		/// Max length: 65536
 		/// Min length: 1
+		/// Max length: 65536
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -26098,8 +26098,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the billing group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="billingGroupName")]
@@ -26116,8 +26116,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the thing to be removed from the billing group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="thingName")]
@@ -26138,8 +26138,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The group name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="thingGroupName")]
@@ -26156,8 +26156,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the thing to remove from the group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="thingName")]
@@ -26178,8 +26178,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The search index name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="indexName")]
@@ -26297,8 +26297,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token returned by your custom authentication service.
-		/// Max length: 6144
 		/// Min length: 1
+		/// Max length: 6144
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="token")]
@@ -26309,8 +26309,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.
-		/// Max length: 2560
 		/// Min length: 1
+		/// Max length: 2560
 		/// Pattern: [A-Za-z0-9+/]+={0,2}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tokenSignature")]
@@ -26483,8 +26483,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The thing whose group memberships will be updated.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9:_-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="thingName")]

@@ -66,8 +66,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The two character country code in ISO 3166-1 alpha-2 format
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="country")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -118,8 +118,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The two character country code in ISO 3166-1 alpha-2 format
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="country")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -183,8 +183,8 @@ namespace MyNS
 		/// <summary>
 		/// The two character country code in ISO 3166-1 alpha-2 format
 		/// Required
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -221,8 +221,8 @@ namespace MyNS
 		/// <summary>
 		/// The two character country code in ISO 3166-1 alpha-2 format
 		/// Required
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -406,8 +406,8 @@ namespace MyNS
 		///to avoid filtering on whether or not the number is assigned to an
 		///Application.
 		///</param>
-		/// <param name="country">Max length: 2
-		/// Min length: 2
+		/// <param name="country">Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="pattern">The number pattern you want to search for. Use in conjunction with `search_pattern`.</param>
 		/// <param name="search_pattern">The strategy you want to use for matching:
@@ -456,8 +456,8 @@ namespace MyNS
 		/// GetAvailableNumbers number/search
 		/// </summary>
 		/// <param name="country">The two character country code to filter on (in ISO 3166-1 alpha-2 format)
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="type">Set this parameter to filter the type of number, such as mobile or landline</param>
 		/// <param name="pattern">The number pattern you want to search for. Use in conjunction with `search_pattern`.</param>

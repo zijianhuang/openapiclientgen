@@ -5773,8 +5773,8 @@ namespace MyNS
 		/// AssociateAssets assets/{assetId}/associate
 		/// </summary>
 		/// <param name="assetId">The ID of the parent asset.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task AssociateAssetsAsync(string assetId, AssociateAssetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5814,12 +5814,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="assetId">The ID of the asset in which the asset property was created.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyId">The ID of the asset property.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task AssociateTimeSeriesToAssetPropertyAsync(string alias, string assetId, string propertyId, AssociateTimeSeriesToAssetPropertyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5856,8 +5856,8 @@ namespace MyNS
 		/// BatchAssociateProjectAssets projects/{projectId}/assets/associate
 		/// </summary>
 		/// <param name="projectId">The ID of the project to which to associate the assets.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchAssociateProjectAssetsResponse> BatchAssociateProjectAssetsAsync(string projectId, BatchAssociateProjectAssetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5900,8 +5900,8 @@ namespace MyNS
 		/// BatchDisassociateProjectAssets projects/{projectId}/assets/disassociate
 		/// </summary>
 		/// <param name="projectId">The ID of the project from which to disassociate the assets.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDisassociateProjectAssetsResponse> BatchDisassociateProjectAssetsAsync(string projectId, BatchDisassociateProjectAssetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6143,21 +6143,21 @@ namespace MyNS
 		/// </summary>
 		/// <param name="identityType">The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is required if you specify <code>identityId</code>.</param>
 		/// <param name="identityId">The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for <code>identityType</code>.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="resourceType">The type of resource (portal or project). This parameter is required if you specify <code>resourceId</code>.</param>
 		/// <param name="resourceId">The ID of the resource. This parameter is required if you specify <code>resourceType</code>.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="iamArn">The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		// </param>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults"><p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
 		/// Minimum: 1
@@ -6230,16 +6230,16 @@ namespace MyNS
 		/// ListAssets assets
 		/// </summary>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults"><p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
 		/// Minimum: 1
 		/// Maximum: 250
 		// </param>
 		/// <param name="assetModelId">The ID of the asset model by which to filter the list of assets. This parameter is required if you choose <code>ALL</code> for <code>filter</code>.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="filter"><p>The filter for the requested list of assets. Choose one of the following options:</p> <ul> <li> <p> <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code> parameter is required if you filter by <code>ALL</code>.</p> </li> <li> <p> <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.</p> </li> </ul> <p>Default: <code>ALL</code> </p></param>
 		/// <returns>Success</returns>
@@ -6309,8 +6309,8 @@ namespace MyNS
 		/// ListAssetModels asset-models
 		/// </summary>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults"><p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
 		/// Minimum: 1
@@ -6383,8 +6383,8 @@ namespace MyNS
 		/// ListBulkImportJobs jobs
 		/// </summary>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return for each paginated request.
 		/// Minimum: 1
@@ -6491,8 +6491,8 @@ namespace MyNS
 		/// ListGateways 20200301/gateways
 		/// </summary>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults"><p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
 		/// Minimum: 1
@@ -6565,8 +6565,8 @@ namespace MyNS
 		/// ListPortals portals
 		/// </summary>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults"><p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
 		/// Minimum: 1
@@ -6639,12 +6639,12 @@ namespace MyNS
 		/// DeleteAccessPolicy access-policies/{accessPolicyId}
 		/// </summary>
 		/// <param name="accessPolicyId">The ID of the access policy to be deleted.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		// </param>
 		public async Task DeleteAccessPolicyAsync(string accessPolicyId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6673,8 +6673,8 @@ namespace MyNS
 		/// DescribeAccessPolicy access-policies/{accessPolicyId}
 		/// </summary>
 		/// <param name="accessPolicyId">The ID of the access policy.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAccessPolicyResponse> DescribeAccessPolicyAsync(string accessPolicyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6710,8 +6710,8 @@ namespace MyNS
 		/// UpdateAccessPolicy access-policies/{accessPolicyId}
 		/// </summary>
 		/// <param name="accessPolicyId">The ID of the access policy.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAccessPolicyResponse> UpdateAccessPolicyAsync(string accessPolicyId, UpdateAccessPolicyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6754,12 +6754,12 @@ namespace MyNS
 		/// DeleteAsset assets/{assetId}
 		/// </summary>
 		/// <param name="assetId">The ID of the asset to delete.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		// </param>
 		public async Task DeleteAssetAsync(string assetId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6788,8 +6788,8 @@ namespace MyNS
 		/// DescribeAsset assets/{assetId}
 		/// </summary>
 		/// <param name="assetId">The ID of the asset.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="excludeProperties"> Whether or not to exclude asset properties from the response. </param>
 		/// <returns>Success</returns>
@@ -6826,8 +6826,8 @@ namespace MyNS
 		/// UpdateAsset assets/{assetId}
 		/// </summary>
 		/// <param name="assetId">The ID of the asset to update.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		public async Task UpdateAssetAsync(string assetId, UpdateAssetPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6863,12 +6863,12 @@ namespace MyNS
 		/// DeleteAssetModel asset-models/{assetModelId}
 		/// </summary>
 		/// <param name="assetModelId">The ID of the asset model to delete.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		// </param>
 		public async Task DeleteAssetModelAsync(string assetModelId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6897,8 +6897,8 @@ namespace MyNS
 		/// DescribeAssetModel asset-models/{assetModelId}
 		/// </summary>
 		/// <param name="assetModelId">The ID of the asset model.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="excludeProperties"> Whether or not to exclude asset model properties from the response. </param>
 		/// <returns>Success</returns>
@@ -6935,8 +6935,8 @@ namespace MyNS
 		/// UpdateAssetModel asset-models/{assetModelId}
 		/// </summary>
 		/// <param name="assetModelId">The ID of the asset model to update.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		public async Task UpdateAssetModelAsync(string assetModelId, UpdateAssetModelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6972,12 +6972,12 @@ namespace MyNS
 		/// DeleteDashboard dashboards/{dashboardId}
 		/// </summary>
 		/// <param name="dashboardId">The ID of the dashboard to delete.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		// </param>
 		public async Task DeleteDashboardAsync(string dashboardId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7006,8 +7006,8 @@ namespace MyNS
 		/// DescribeDashboard dashboards/{dashboardId}
 		/// </summary>
 		/// <param name="dashboardId">The ID of the dashboard.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDashboardResponse> DescribeDashboardAsync(string dashboardId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7043,8 +7043,8 @@ namespace MyNS
 		/// UpdateDashboard dashboards/{dashboardId}
 		/// </summary>
 		/// <param name="dashboardId">The ID of the dashboard to update.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDashboardResponse> UpdateDashboardAsync(string dashboardId, UpdateDashboardPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7087,8 +7087,8 @@ namespace MyNS
 		/// DeleteGateway 20200301/gateways/{gatewayId}
 		/// </summary>
 		/// <param name="gatewayId">The ID of the gateway to delete.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteGatewayAsync(string gatewayId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7118,8 +7118,8 @@ namespace MyNS
 		/// DescribeGateway 20200301/gateways/{gatewayId}
 		/// </summary>
 		/// <param name="gatewayId">The ID of the gateway device.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeGatewayResponse> DescribeGatewayAsync(string gatewayId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7155,8 +7155,8 @@ namespace MyNS
 		/// UpdateGateway 20200301/gateways/{gatewayId}
 		/// </summary>
 		/// <param name="gatewayId">The ID of the gateway to update.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateGatewayAsync(string gatewayId, UpdateGatewayPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7193,12 +7193,12 @@ namespace MyNS
 		/// DeletePortal portals/{portalId}
 		/// </summary>
 		/// <param name="portalId">The ID of the portal to delete.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		// </param>
 		public async Task DeletePortalAsync(string portalId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7227,8 +7227,8 @@ namespace MyNS
 		/// DescribePortal portals/{portalId}
 		/// </summary>
 		/// <param name="portalId">The ID of the portal.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePortalResponse> DescribePortalAsync(string portalId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7264,8 +7264,8 @@ namespace MyNS
 		/// UpdatePortal portals/{portalId}
 		/// </summary>
 		/// <param name="portalId">The ID of the portal to update.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		public async Task UpdatePortalAsync(string portalId, UpdatePortalPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7301,12 +7301,12 @@ namespace MyNS
 		/// DeleteProject projects/{projectId}
 		/// </summary>
 		/// <param name="projectId">The ID of the project.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		// </param>
 		public async Task DeleteProjectAsync(string projectId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7335,8 +7335,8 @@ namespace MyNS
 		/// DescribeProject projects/{projectId}
 		/// </summary>
 		/// <param name="projectId">The ID of the project.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeProjectResponse> DescribeProjectAsync(string projectId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7372,8 +7372,8 @@ namespace MyNS
 		/// UpdateProject projects/{projectId}
 		/// </summary>
 		/// <param name="projectId">The ID of the project to update.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateProjectResponse> UpdateProjectAsync(string projectId, UpdateProjectPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7419,12 +7419,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="assetId">The ID of the asset in which the asset property was created.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyId">The ID of the asset property.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteTimeSeriesAsync(string alias, string assetId, string propertyId, DeleteTimeSeriesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7461,12 +7461,12 @@ namespace MyNS
 		/// DescribeAssetProperty assets/{assetId}/properties/{propertyId}
 		/// </summary>
 		/// <param name="assetId">The ID of the asset.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyId">The ID of the asset property.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAssetPropertyResponse> DescribeAssetPropertyAsync(string assetId, string propertyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7502,12 +7502,12 @@ namespace MyNS
 		/// UpdateAssetProperty assets/{assetId}/properties/{propertyId}
 		/// </summary>
 		/// <param name="assetId">The ID of the asset to be updated.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyId">The ID of the asset property to be updated.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateAssetPropertyAsync(string assetId, string propertyId, UpdateAssetPropertyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7544,8 +7544,8 @@ namespace MyNS
 		/// DescribeBulkImportJob jobs/{jobId}
 		/// </summary>
 		/// <param name="jobId">The ID of the job.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeBulkImportJobResponse> DescribeBulkImportJobAsync(string jobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7654,12 +7654,12 @@ namespace MyNS
 		/// DescribeGatewayCapabilityConfiguration 20200301/gateways/{gatewayId}/capability/{capabilityNamespace}
 		/// </summary>
 		/// <param name="gatewayId">The ID of the gateway that defines the capability configuration.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="capabilityNamespace">The namespace of the capability configuration. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeGatewayCapabilityConfigurationResponse> DescribeGatewayCapabilityConfigurationAsync(string gatewayId, string capabilityNamespace, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7844,12 +7844,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="assetId">The ID of the asset in which the asset property was created.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyId">The ID of the asset property.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTimeSeriesResponse> DescribeTimeSeriesAsync(string alias, string assetId, string propertyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7885,8 +7885,8 @@ namespace MyNS
 		/// DisassociateAssets assets/{assetId}/disassociate
 		/// </summary>
 		/// <param name="assetId">The ID of the parent asset from which to disassociate the child asset.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DisassociateAssetsAsync(string assetId, DisassociateAssetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7926,12 +7926,12 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="assetId">The ID of the asset in which the asset property was created.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyId">The ID of the asset property.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DisassociateTimeSeriesFromAssetPropertyAsync(string alias, string assetId, string propertyId, DisassociateTimeSeriesFromAssetPropertyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7968,23 +7968,23 @@ namespace MyNS
 		/// GetAssetPropertyAggregates properties/aggregates#aggregateTypes&resolution&startDate&endDate
 		/// </summary>
 		/// <param name="assetId">The ID of the asset.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyId">The ID of the asset property.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyAlias">The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="aggregateTypes">The data aggregating function.
 		/// Minimum items: 1
 		// </param>
 		/// <param name="resolution">The time interval over which to aggregate data.
-		/// Max length: 3
 		/// Min length: 2
+		/// Max length: 3
 		// </param>
 		/// <param name="qualities">The quality by which to filter asset data.
 		/// Minimum items: 1
@@ -7994,8 +7994,8 @@ namespace MyNS
 		/// <param name="endDate">The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</param>
 		/// <param name="timeOrdering"><p>The chronological sorting order of the requested information.</p> <p>Default: <code>ASCENDING</code> </p></param>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults"><p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The size of the result set is equal to 1 MB.</p> </li> <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 250.</p> </li> </ul>
 		/// Minimum: 1
@@ -8034,16 +8034,16 @@ namespace MyNS
 		/// GetAssetPropertyValue properties/latest
 		/// </summary>
 		/// <param name="assetId">The ID of the asset.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyId">The ID of the asset property.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyAlias">The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAssetPropertyValueResponse> GetAssetPropertyValueAsync(string assetId, string propertyId, string propertyAlias, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8079,16 +8079,16 @@ namespace MyNS
 		/// GetAssetPropertyValueHistory properties/history
 		/// </summary>
 		/// <param name="assetId">The ID of the asset.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyId">The ID of the asset property.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyAlias">The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="startDate">The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</param>
 		/// <param name="endDate">The inclusive end of the range from which to query historical data, expressed in seconds in Unix epoch time.</param>
@@ -8098,8 +8098,8 @@ namespace MyNS
 		// </param>
 		/// <param name="timeOrdering"><p>The chronological sorting order of the requested information.</p> <p>Default: <code>ASCENDING</code> </p></param>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults"><p>The maximum number of results to return for each paginated request. A result set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The size of the result set is equal to 4 MB.</p> </li> <li> <p>The number of data points in the result set is equal to the value of <code>maxResults</code>. The maximum value of <code>maxResults</code> is 20000.</p> </li> </ul>
 		/// Minimum: 1
@@ -8138,16 +8138,16 @@ namespace MyNS
 		/// GetInterpolatedAssetPropertyValues properties/interpolated#startTimeInSeconds&endTimeInSeconds&quality&intervalInSeconds&type
 		/// </summary>
 		/// <param name="assetId">The ID of the asset.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyId">The ID of the asset property.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="propertyAlias">The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="startTimeInSeconds">The exclusive start of the range from which to interpolate data, expressed in seconds in Unix epoch time.
 		/// Minimum: 1
@@ -8171,15 +8171,15 @@ namespace MyNS
 		/// Maximum: 320000000
 		// </param>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return for each paginated request. If not specified, the default value is 10.
 		/// Minimum: 1
 		// </param>
 		/// <param name="type"><p>The interpolation type.</p> <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code> </p> <ul> <li> <p> <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a>.</p> <p>For example, you can use this operation to return the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the first interpolated value on July 2, 2021, at 9 AM, the second interpolated value on July 3, 2021, at 9 AM, and so on.</p> </li> <li> <p> <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried forward interpolation</p> <p>If no data point is found for an interval, IoT SiteWise returns the last observed data point for the previous interval and carries forward this interpolated value until a new data point is found.</p> <p>For example, you can get the state of an on-off valve every 24 hours over a duration of 7 days. If the interpolation starts July 1, 2021, at 9 AM, IoT SiteWise returns the last observed data point between July 1, 2021, at 9 AM and July 2, 2021, at 9 AM as the first interpolated value. If a data point isn't found after 9 AM on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p> </li> </ul>
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="intervalWindowInSeconds"><p>The query interval for the window, in seconds. IoT SiteWise computes each interpolated value by using data points from the timestamp of each interval, minus the window to the timestamp of each interval plus the window. If not specified, the window ranges between the start time minus the interval and the end time plus the interval.</p> <note> <ul> <li> <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the value for the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p> </li> <li> <p>If a data point isn't found during the specified query window, IoT SiteWise won't return an interpolated value for the interval. This indicates that there's a gap in the ingested data points.</p> </li> </ul> </note> <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021, at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 2, 2021 to compute the first interpolated value. Next, IoT SiteWise uses the data points from 7 AM (9 AM minus 2 hours) to 11 AM (9 AM plus 2 hours) on July 3, 2021 to compute the second interpolated value, and so on. </p>
 		/// Minimum: 1
@@ -8219,12 +8219,12 @@ namespace MyNS
 		/// ListAssetModelProperties asset-models/{assetModelId}/properties
 		/// </summary>
 		/// <param name="assetModelId">The ID of the asset model.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return for each paginated request. If not specified, the default value is 50.
 		/// Minimum: 1
@@ -8265,12 +8265,12 @@ namespace MyNS
 		/// ListAssetProperties assets/{assetId}/properties
 		/// </summary>
 		/// <param name="assetId">The ID of the asset.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return for each paginated request. If not specified, the default value is 50.
 		/// Minimum: 1
@@ -8311,13 +8311,13 @@ namespace MyNS
 		/// ListAssetRelationships assets/{assetId}/assetRelationships#traversalType
 		/// </summary>
 		/// <param name="assetId">The ID of the asset.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="traversalType"><p>The type of traversal to use to identify asset relationships. Choose the following option:</p> <ul> <li> <p> <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset. The asset that you specify in <code>assetId</code> is the first result in the list of <code>assetRelationshipSummaries</code>, and the root asset is the last result.</p> </li> </ul></param>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return for each paginated request.
 		/// Minimum: 1
@@ -8357,17 +8357,17 @@ namespace MyNS
 		/// ListAssociatedAssets assets/{assetId}/hierarchies
 		/// </summary>
 		/// <param name="assetId">The ID of the asset to query.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="hierarchyId"><p>The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for <code>traversalDirection</code>.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="traversalDirection"><p>The direction to list associated assets. Choose one of the following options:</p> <ul> <li> <p> <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.</p> </li> <li> <p> <code>PARENT</code> – The list includes the asset's parent asset.</p> </li> </ul> <p>Default: <code>CHILD</code> </p></param>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults"><p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
 		/// Minimum: 1
@@ -8407,12 +8407,12 @@ namespace MyNS
 		/// ListDashboards dashboards#projectId
 		/// </summary>
 		/// <param name="projectId">The ID of the project.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults"><p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
 		/// Minimum: 1
@@ -8452,12 +8452,12 @@ namespace MyNS
 		/// ListProjectAssets projects/{projectId}/assets
 		/// </summary>
 		/// <param name="projectId">The ID of the project.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults"><p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
 		/// Minimum: 1
@@ -8497,12 +8497,12 @@ namespace MyNS
 		/// ListProjects projects#portalId
 		/// </summary>
 		/// <param name="portalId">The ID of the portal.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults"><p>The maximum number of results to return for each paginated request.</p> <p>Default: 50</p>
 		/// Minimum: 1
@@ -8542,8 +8542,8 @@ namespace MyNS
 		/// ListTagsForResource tags#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8579,8 +8579,8 @@ namespace MyNS
 		/// TagResource tags#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8623,16 +8623,16 @@ namespace MyNS
 		/// ListTimeSeries timeseries/
 		/// </summary>
 		/// <param name="nextToken">The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return for each paginated request.
 		/// Minimum: 1
 		/// Maximum: 250
 		// </param>
 		/// <param name="assetId">The ID of the asset in which the asset property was created.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="aliasPrefix">The alias prefix of the time series.
 		/// Min length: 1
@@ -8672,8 +8672,8 @@ namespace MyNS
 		/// UntagResource tags#resourceArn&tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to untag.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <param name="tagKeys">A list of keys for tags to remove from the resource.
 		/// Minimum items: 0
@@ -8713,8 +8713,8 @@ namespace MyNS
 		/// UpdateGatewayCapabilityConfiguration 20200301/gateways/{gatewayId}/capability
 		/// </summary>
 		/// <param name="gatewayId">The ID of the gateway to be updated.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		public async Task UpdateGatewayCapabilityConfigurationAsync(string gatewayId, UpdateGatewayCapabilityConfigurationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8752,8 +8752,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8766,8 +8766,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the child asset to be associated.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8779,8 +8779,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -8795,8 +8795,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -8823,8 +8823,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -8851,8 +8851,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -8875,8 +8875,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// Pattern: [A-Za-z0-9+/=]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -8907,8 +8907,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// Pattern: [A-Za-z0-9+/=]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -8931,8 +8931,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token to be used for the next set of paginated results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// Pattern: [A-Za-z0-9+/=]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -8991,8 +8991,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9040,8 +9040,8 @@ namespace MyNS
 		/// <summary>
 		/// A friendly name for the asset.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9054,8 +9054,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the asset model from which to create the asset.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9067,8 +9067,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9085,8 +9085,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the asset.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="assetDescription")]
@@ -9102,8 +9102,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique, friendly name for the asset model.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9115,8 +9115,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the asset model.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="assetModelDescription")]
@@ -9145,8 +9145,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9168,8 +9168,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique name that helps identify the job request.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9182,8 +9182,8 @@ namespace MyNS
 		/// <summary>
 		/// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: .*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9241,8 +9241,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the project in which to create the dashboard.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9255,8 +9255,8 @@ namespace MyNS
 		/// <summary>
 		/// A friendly name for the dashboard.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9268,8 +9268,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the dashboard.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dashboardDescription")]
@@ -9281,8 +9281,8 @@ namespace MyNS
 		/// <summary>
 		/// The dashboard definition specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
 		/// Required
-		/// Max length: 204800
 		/// Min length: 0
+		/// Max length: 204800
 		/// Pattern: .+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9294,8 +9294,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9317,8 +9317,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique, friendly name for the gateway.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9359,8 +9359,8 @@ namespace MyNS
 		/// <summary>
 		/// A friendly name for the portal.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9372,8 +9372,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the portal.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="portalDescription")]
@@ -9385,8 +9385,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services administrator's contact email address.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [^@]+@[^@]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9398,8 +9398,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9417,8 +9417,8 @@ namespace MyNS
 		/// <summary>
 		/// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: .*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9442,8 +9442,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The email address that sends alarm notifications.</p> <important> <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p> </important>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [^@]+@[^@]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="notificationSenderEmail")]
@@ -9485,8 +9485,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the portal in which to create the project.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9499,8 +9499,8 @@ namespace MyNS
 		/// <summary>
 		/// A friendly name for the project.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9512,8 +9512,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the project.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="projectDescription")]
@@ -9524,8 +9524,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9570,8 +9570,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9613,8 +9613,8 @@ namespace MyNS
 		/// <summary>
 		/// A friendly name for the asset.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9626,8 +9626,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9638,8 +9638,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the asset.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="assetDescription")]
@@ -9655,8 +9655,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique, friendly name for the asset model.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9668,8 +9668,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the asset model.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="assetModelDescription")]
@@ -9698,8 +9698,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9715,8 +9715,8 @@ namespace MyNS
 		/// <summary>
 		/// A new friendly name for the dashboard.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9728,8 +9728,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A new description for the dashboard.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dashboardDescription")]
@@ -9741,8 +9741,8 @@ namespace MyNS
 		/// <summary>
 		/// The new dashboard definition, as specified in a JSON literal. For detailed information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
 		/// Required
-		/// Max length: 204800
 		/// Min length: 0
+		/// Max length: 204800
 		/// Pattern: .+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9754,8 +9754,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9771,8 +9771,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique, friendly name for the gateway.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9789,8 +9789,8 @@ namespace MyNS
 		/// <summary>
 		/// A new friendly name for the portal.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9802,8 +9802,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A new description for the portal.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="portalDescription")]
@@ -9815,8 +9815,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services administrator's contact email address.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [^@]+@[^@]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9835,8 +9835,8 @@ namespace MyNS
 		/// <summary>
 		/// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: .*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9848,8 +9848,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9860,8 +9860,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The email address that sends alarm notifications.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [^@]+@[^@]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="notificationSenderEmail")]
@@ -9906,8 +9906,8 @@ namespace MyNS
 		/// <summary>
 		/// A new friendly name for the project.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9919,8 +9919,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A new description for the project.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="projectDescription")]
@@ -9931,8 +9931,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9947,8 +9947,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9979,8 +9979,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9991,8 +9991,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unit of measure (such as Newtons or RPM) of the asset property. If you don't specify a value for this parameter, the service uses the value of the <code>assetModelProperty</code> in the asset model.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [^\u0000-\u001F\u007F]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="propertyUnit")]
@@ -10015,8 +10015,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Key ID of the customer managed key used for KMS encryption. This is required if you use <code>KMS_BASED_ENCRYPTION</code>.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKeyId")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -10096,8 +10096,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to disassociate. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -10110,8 +10110,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the child asset to disassociate.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -10123,8 +10123,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -10139,8 +10139,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// Pattern: \S{36,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -10168,8 +10168,8 @@ namespace MyNS
 		/// <summary>
 		/// The namespace of the gateway capability configuration to be updated. For example, if you configure OPC-UA sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as <code>1</code>.
 		/// Required
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: ^[a-zA-Z]+:[a-zA-Z]+:[0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -10182,8 +10182,8 @@ namespace MyNS
 		/// <summary>
 		/// The JSON document that defines the configuration for the gateway capability. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.
 		/// Required
-		/// Max length: 104857600
 		/// Min length: 1
+		/// Max length: 104857600
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="capabilityConfiguration")]

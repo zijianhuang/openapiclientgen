@@ -2334,8 +2334,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="catalogue_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2361,8 +2361,8 @@ namespace MyNS
 		public Reference Item_of { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="music_code")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2394,8 +2394,8 @@ namespace MyNS
 		public Play_events Play_events { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="publisher")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2403,8 +2403,8 @@ namespace MyNS
 		public string Publisher { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="record_label")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2412,8 +2412,8 @@ namespace MyNS
 		public string Record_label { get; set; }
 		
 		/// <summary>
-		/// Max length: 10
 		/// Min length: 4
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="recording_date")]
 		[System.ComponentModel.DataAnnotations.MinLength(4)]
@@ -2421,8 +2421,8 @@ namespace MyNS
 		public string Recording_date { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="release_title")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2433,8 +2433,8 @@ namespace MyNS
 		public string Snippet_url { get; set; }
 		
 		/// <summary>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="source_media")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2448,8 +2448,8 @@ namespace MyNS
 		public string Title { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="track_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2457,8 +2457,8 @@ namespace MyNS
 		public string Track_number { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="track_side")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4520,8 +4520,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="catalogue_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4547,8 +4547,8 @@ namespace MyNS
 		public Reference Item_of { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="music_code")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4580,8 +4580,8 @@ namespace MyNS
 		public Play_events Play_events { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="publisher")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4589,8 +4589,8 @@ namespace MyNS
 		public string Publisher { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="record_label")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4598,8 +4598,8 @@ namespace MyNS
 		public string Record_label { get; set; }
 		
 		/// <summary>
-		/// Max length: 10
 		/// Min length: 4
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="recording_date")]
 		[System.ComponentModel.DataAnnotations.MinLength(4)]
@@ -4607,8 +4607,8 @@ namespace MyNS
 		public string Recording_date { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="release_title")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4619,8 +4619,8 @@ namespace MyNS
 		public string Snippet_url { get; set; }
 		
 		/// <summary>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="source_media")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4634,8 +4634,8 @@ namespace MyNS
 		public string Title { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="track_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4643,8 +4643,8 @@ namespace MyNS
 		public string Track_number { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="track_side")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4762,8 +4762,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="catalogue_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4789,8 +4789,8 @@ namespace MyNS
 		public Reference Item_of { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="music_code")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4822,8 +4822,8 @@ namespace MyNS
 		public Play_events Play_events { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="publisher")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4831,8 +4831,8 @@ namespace MyNS
 		public string Publisher { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="record_label")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4840,8 +4840,8 @@ namespace MyNS
 		public string Record_label { get; set; }
 		
 		/// <summary>
-		/// Max length: 10
 		/// Min length: 4
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="recording_date")]
 		[System.ComponentModel.DataAnnotations.MinLength(4)]
@@ -4849,8 +4849,8 @@ namespace MyNS
 		public string Recording_date { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="release_title")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4861,8 +4861,8 @@ namespace MyNS
 		public string Snippet_url { get; set; }
 		
 		/// <summary>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="source_media")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4876,8 +4876,8 @@ namespace MyNS
 		public string Title { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="track_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4885,8 +4885,8 @@ namespace MyNS
 		public string Track_number { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="track_side")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5056,8 +5056,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="catalogue_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5083,8 +5083,8 @@ namespace MyNS
 		public Reference Item_of { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="music_code")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5116,8 +5116,8 @@ namespace MyNS
 		public Play_events Play_events { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="publisher")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5125,8 +5125,8 @@ namespace MyNS
 		public string Publisher { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="record_label")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5134,8 +5134,8 @@ namespace MyNS
 		public string Record_label { get; set; }
 		
 		/// <summary>
-		/// Max length: 10
 		/// Min length: 4
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="recording_date")]
 		[System.ComponentModel.DataAnnotations.MinLength(4)]
@@ -5143,8 +5143,8 @@ namespace MyNS
 		public string Recording_date { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="release_title")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5155,8 +5155,8 @@ namespace MyNS
 		public string Snippet_url { get; set; }
 		
 		/// <summary>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="source_media")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5170,8 +5170,8 @@ namespace MyNS
 		public string Title { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="track_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5179,8 +5179,8 @@ namespace MyNS
 		public string Track_number { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="track_side")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5984,8 +5984,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="catalogue_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6011,8 +6011,8 @@ namespace MyNS
 		public Reference Item_of { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="music_code")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6044,8 +6044,8 @@ namespace MyNS
 		public Play_events Play_events { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="publisher")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6053,8 +6053,8 @@ namespace MyNS
 		public string Publisher { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="record_label")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6062,8 +6062,8 @@ namespace MyNS
 		public string Record_label { get; set; }
 		
 		/// <summary>
-		/// Max length: 10
 		/// Min length: 4
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="recording_date")]
 		[System.ComponentModel.DataAnnotations.MinLength(4)]
@@ -6071,8 +6071,8 @@ namespace MyNS
 		public string Recording_date { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="release_title")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6083,8 +6083,8 @@ namespace MyNS
 		public string Snippet_url { get; set; }
 		
 		/// <summary>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="source_media")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6098,8 +6098,8 @@ namespace MyNS
 		public string Title { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="track_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6107,8 +6107,8 @@ namespace MyNS
 		public string Track_number { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="track_side")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6332,8 +6332,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="catalogue_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6359,8 +6359,8 @@ namespace MyNS
 		public Reference Item_of { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="music_code")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6392,8 +6392,8 @@ namespace MyNS
 		public Play_events Play_events { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="publisher")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6401,8 +6401,8 @@ namespace MyNS
 		public string Publisher { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="record_label")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6410,8 +6410,8 @@ namespace MyNS
 		public string Record_label { get; set; }
 		
 		/// <summary>
-		/// Max length: 10
 		/// Min length: 4
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="recording_date")]
 		[System.ComponentModel.DataAnnotations.MinLength(4)]
@@ -6419,8 +6419,8 @@ namespace MyNS
 		public string Recording_date { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="release_title")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6431,8 +6431,8 @@ namespace MyNS
 		public string Snippet_url { get; set; }
 		
 		/// <summary>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="source_media")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6446,8 +6446,8 @@ namespace MyNS
 		public string Title { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="track_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6455,8 +6455,8 @@ namespace MyNS
 		public string Track_number { get; set; }
 		
 		/// <summary>
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="track_side")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7198,16 +7198,16 @@ namespace MyNS
 		/// Min length: 8
 		// </param>
 		/// <param name="initial_letter">filter for subset of programmes with title beginning with initial letter librarian style (ignoring leading 'The', 'An' (Welsh), etc) 0-9 a-z
-		/// Max length: 1
 		/// Min length: 1
+		/// Max length: 1
 		// </param>
 		/// <param name="initial_letter_end">Programmes with (librarian) titles whose initial letter is equal/before given letter. Use with initial_letter_start for a range
-		/// Max length: 1
 		/// Min length: 1
+		/// Max length: 1
 		// </param>
 		/// <param name="initial_letter_start">Programmes with (librarian) titles whose initial letter is equal/after given letter. Use with initial_letter_end for range.
-		/// Max length: 1
 		/// Min length: 1
+		/// Max length: 1
 		// </param>
 		/// <param name="initial_letter_strict">filter for subset of programmes with title beginning with initial letter</param>
 		/// <param name="item">filter for subset of programmes with linked to versions which have the given item pids</param>

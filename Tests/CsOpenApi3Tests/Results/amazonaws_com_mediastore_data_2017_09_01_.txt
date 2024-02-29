@@ -216,8 +216,8 @@ namespace MyNS
 		/// DeleteObject {Path}
 		/// </summary>
 		/// <param name="Path">The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;
-		/// Max length: 900
 		/// Min length: 1
+		/// Max length: 900
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteObjectResponse> DeleteObjectAsync(string Path, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -253,8 +253,8 @@ namespace MyNS
 		/// GetObject {Path}
 		/// </summary>
 		/// <param name="Path"><p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
-		/// Max length: 900
 		/// Min length: 1
+		/// Max length: 900
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetObjectResponse> GetObjectAsync(string Path, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -290,8 +290,8 @@ namespace MyNS
 		/// PutObject {Path}
 		/// </summary>
 		/// <param name="Path"><p>The path (including the file name) where the object is stored in the container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p> <p>For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code> in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name in this path.</p> <p>If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and <code>canada</code>, in the <code>premium</code> folder. </p> <p>There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.</p> <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User Guide</a>.</p> <p>The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. </p>
-		/// Max length: 900
 		/// Min length: 1
+		/// Max length: 900
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutObjectResponse> PutObjectAsync(string Path, PutObjectPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -334,8 +334,8 @@ namespace MyNS
 		/// ListItems 
 		/// </summary>
 		/// <param name="Path">The path in the container from which to retrieve items. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;
-		/// Max length: 900
 		/// Min length: 0
+		/// Max length: 900
 		// </param>
 		/// <param name="MaxResults"><p>The maximum number of results to return per API request. For example, you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000 items match your request, the service returns no more than the first 500 items. (The service also returns a <code>NextToken</code> value that you can use to fetch the next batch of results.) The service might return fewer results than the <code>MaxResults</code> value.</p> <p>If <code>MaxResults</code> is not included in the request, the service defaults to pagination with a maximum of 1,000 results per page.</p>
 		/// Minimum: 1

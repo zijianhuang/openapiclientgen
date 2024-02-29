@@ -432,8 +432,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <returns>The request was successful.</returns>
 		public async Task<MapsAccounts> Accounts_ListByResourceGroupAsync(string api_version, string subscriptionId, string resourceGroupName)
@@ -470,8 +470,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <returns>The request was successful.</returns>
@@ -509,8 +509,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="requestBody">The new or updated parameters for the Maps Account.</param>
@@ -556,8 +556,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <returns>The Account was deleted successfully.</returns>
@@ -589,8 +589,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="requestBody">The updated parameters for the Maps Account.</param>
@@ -636,8 +636,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <returns>The request was successful.</returns>
@@ -675,8 +675,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <returns>The request was successful.</returns>
@@ -714,8 +714,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="privateAtlasName">The name of the Private Atlas instance.</param>
@@ -754,8 +754,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="privateAtlasName">The name of the Private Atlas instance.</param>
@@ -802,8 +802,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="privateAtlasName">The name of the Private Atlas instance.</param>
@@ -836,8 +836,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="privateAtlasName">The name of the Private Atlas instance.</param>
@@ -884,8 +884,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="requestBody">Which key to regenerate:  primary or secondary.</param>

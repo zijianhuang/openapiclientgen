@@ -196,8 +196,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -214,8 +214,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Chat Service Instance managed by Proxy Service. The Chat Service enables Proxy to forward SMS and channel messages to this chat instance. This is a one-to-one relationship.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="chat_instance_sid")]
@@ -268,8 +268,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Service resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -330,8 +330,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the PhoneNumber resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -390,8 +390,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the PhoneNumber resource's parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -402,8 +402,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the PhoneNumber resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^PN[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -442,8 +442,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Session resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -505,8 +505,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Service](https://www.twilio.com/docs/proxy/api/service) the session is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -517,8 +517,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Session resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -594,8 +594,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Interaction resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -624,8 +624,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the inbound [Participant](https://www.twilio.com/docs/proxy/api/participant) resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="inbound_participant_sid")]
@@ -636,8 +636,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the inbound resource; either the [Call](https://www.twilio.com/docs/voice/api/call-resource) or [Message](https://www.twilio.com/docs/sms/api/message-resource).
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="inbound_resource_sid")]
@@ -663,8 +663,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the outbound [Participant](https://www.twilio.com/docs/proxy/api/participant)).
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="outbound_participant_sid")]
@@ -675,8 +675,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the outbound resource; either the [Call](https://www.twilio.com/docs/voice/api/call-resource) or [Message](https://www.twilio.com/docs/sms/api/message-resource).
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="outbound_resource_sid")]
@@ -702,8 +702,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -714,8 +714,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="session_sid")]
@@ -726,8 +726,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Interaction resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KI[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -893,8 +893,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Participant resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -947,8 +947,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Proxy Identifier assigned to the Participant.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^PN[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="proxy_identifier_sid")]
@@ -959,8 +959,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the resource's parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -971,8 +971,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="session_sid")]
@@ -983,8 +983,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Participant resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -1007,8 +1007,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the MessageInteraction resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1037,8 +1037,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Always empty for created Message Interactions.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="inbound_participant_sid")]
@@ -1049,8 +1049,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Always empty for created Message Interactions.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="inbound_resource_sid")]
@@ -1076,8 +1076,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the outbound [Participant](https://www.twilio.com/docs/proxy/api/participant) resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="outbound_participant_sid")]
@@ -1088,8 +1088,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the outbound [Message](https://www.twilio.com/docs/sms/api/message-resource) resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="outbound_resource_sid")]
@@ -1115,8 +1115,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Participant](https://www.twilio.com/docs/proxy/api/participant) resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="participant_sid")]
@@ -1127,8 +1127,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -1139,8 +1139,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="session_sid")]
@@ -1151,8 +1151,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the MessageInteraction resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KI[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -1318,8 +1318,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the ShortCode resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1360,8 +1360,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the ShortCode resource's parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -1378,8 +1378,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the ShortCode resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^SC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -1546,8 +1546,8 @@ namespace MyNS
 		/// ListPhoneNumber v1/Services/{ServiceSid}/PhoneNumbers
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the PhoneNumber resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1591,12 +1591,12 @@ namespace MyNS
 		/// DeletePhoneNumber v1/Services/{ServiceSid}/PhoneNumbers/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the PhoneNumber resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the PhoneNumber resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeletePhoneNumberAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1625,12 +1625,12 @@ namespace MyNS
 		/// FetchPhoneNumber v1/Services/{ServiceSid}/PhoneNumbers/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the PhoneNumber resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the PhoneNumber resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Proxyv1servicephone_number> FetchPhoneNumberAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1666,8 +1666,8 @@ namespace MyNS
 		/// ListSession v1/Services/{ServiceSid}/Sessions
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1711,12 +1711,12 @@ namespace MyNS
 		/// ListInteraction v1/Services/{ServiceSid}/Sessions/{SessionSid}/Interactions
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to read the resources from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) to read the resources from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1760,16 +1760,16 @@ namespace MyNS
 		/// DeleteInteraction v1/Services/{ServiceSid}/Sessions/{SessionSid}/Interactions/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Interaction resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteInteractionAsync(string ServiceSid, string SessionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1798,16 +1798,16 @@ namespace MyNS
 		/// FetchInteraction v1/Services/{ServiceSid}/Sessions/{SessionSid}/Interactions/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Interaction resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Proxyv1servicesessioninteraction> FetchInteractionAsync(string ServiceSid, string SessionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1843,12 +1843,12 @@ namespace MyNS
 		/// ListParticipant v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1891,16 +1891,16 @@ namespace MyNS
 		/// ListMessageInteraction v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants/{ParticipantSid}/MessageInteractions
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to read the resources from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) to read the resources from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ParticipantSid">The SID of the [Participant](https://www.twilio.com/docs/proxy/api/participant) to read the resources from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1943,20 +1943,20 @@ namespace MyNS
 		/// FetchMessageInteraction v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants/{ParticipantSid}/MessageInteractions/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ParticipantSid">The SID of the [Participant](https://www.twilio.com/docs/proxy/api/participant) resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the MessageInteraction resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Proxyv1servicesessionparticipantmessage_interaction> FetchMessageInteractionAsync(string ServiceSid, string SessionSid, string ParticipantSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1992,16 +1992,16 @@ namespace MyNS
 		/// DeleteParticipant v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Participant resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteParticipantAsync(string ServiceSid, string SessionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2030,16 +2030,16 @@ namespace MyNS
 		/// FetchParticipant v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="SessionSid">The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Participant resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Proxyv1servicesessionparticipant> FetchParticipantAsync(string ServiceSid, string SessionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2075,12 +2075,12 @@ namespace MyNS
 		/// DeleteSession v1/Services/{ServiceSid}/Sessions/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Session resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteSessionAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2109,8 +2109,8 @@ namespace MyNS
 		/// FetchSession v1/Services/{ServiceSid}/Sessions/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Session resource to fetch.</param>
 		/// <returns>OK</returns>
@@ -2147,8 +2147,8 @@ namespace MyNS
 		/// ListShortCode v1/Services/{ServiceSid}/ShortCodes
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to read the resources from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -2192,12 +2192,12 @@ namespace MyNS
 		/// DeleteShortCode v1/Services/{ServiceSid}/ShortCodes/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) resource to delete the ShortCode resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the ShortCode resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteShortCodeAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2226,12 +2226,12 @@ namespace MyNS
 		/// FetchShortCode v1/Services/{ServiceSid}/ShortCodes/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to fetch the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the ShortCode resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Proxyv1serviceshort_code> FetchShortCodeAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2267,8 +2267,8 @@ namespace MyNS
 		/// DeleteService v1/Services/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

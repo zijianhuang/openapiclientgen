@@ -581,16 +581,16 @@ namespace MyNS
 		/// AssociateDeviceWithPlacement projects/{projectName}/placements/{placementName}/devices/{deviceTemplateName}
 		/// </summary>
 		/// <param name="projectName">The name of the project containing the placement in which to associate the device.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="placementName">The name of the placement in which to associate the device.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="deviceTemplateName">The device template name to associate with the device ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateDeviceWithPlacementResponse> AssociateDeviceWithPlacementAsync(string projectName, string placementName, string deviceTemplateName, AssociateDeviceWithPlacementPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -633,16 +633,16 @@ namespace MyNS
 		/// DisassociateDeviceFromPlacement projects/{projectName}/placements/{placementName}/devices/{deviceTemplateName}
 		/// </summary>
 		/// <param name="projectName">The name of the project that contains the placement.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="placementName">The name of the placement that the device should be removed from.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="deviceTemplateName">The device ID that should be removed from the placement.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateDeviceFromPlacementResponse> DisassociateDeviceFromPlacementAsync(string projectName, string placementName, string deviceTemplateName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -678,8 +678,8 @@ namespace MyNS
 		/// CreatePlacement projects/{projectName}/placements
 		/// </summary>
 		/// <param name="projectName">The name of the project in which to create the placement.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreatePlacementResponse> CreatePlacementAsync(string projectName, CreatePlacementPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -722,12 +722,12 @@ namespace MyNS
 		/// ListPlacements projects/{projectName}/placements
 		/// </summary>
 		/// <param name="projectName">The project containing the placements to be listed.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="nextToken">The token to retrieve the next set of results.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return per request. If not set, a default value of 100 is used.
 		/// Minimum: 1
@@ -807,8 +807,8 @@ namespace MyNS
 		/// ListProjects projects
 		/// </summary>
 		/// <param name="nextToken">The token to retrieve the next set of results.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return per request. If not set, a default value of 100 is used.
 		/// Minimum: 1
@@ -848,12 +848,12 @@ namespace MyNS
 		/// DeletePlacement projects/{projectName}/placements/{placementName}
 		/// </summary>
 		/// <param name="placementName">The name of the empty placement to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="projectName">The project containing the empty placement to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePlacementResponse> DeletePlacementAsync(string placementName, string projectName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -889,12 +889,12 @@ namespace MyNS
 		/// DescribePlacement projects/{projectName}/placements/{placementName}
 		/// </summary>
 		/// <param name="placementName">The name of the placement within a project.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="projectName">The project containing the placement to be described.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePlacementResponse> DescribePlacementAsync(string placementName, string projectName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -930,12 +930,12 @@ namespace MyNS
 		/// UpdatePlacement projects/{projectName}/placements/{placementName}
 		/// </summary>
 		/// <param name="placementName">The name of the placement to update.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="projectName">The name of the project containing the placement to be updated.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePlacementResponse> UpdatePlacementAsync(string placementName, string projectName, UpdatePlacementPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -978,8 +978,8 @@ namespace MyNS
 		/// DeleteProject projects/{projectName}
 		/// </summary>
 		/// <param name="projectName">The name of the empty project to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteProjectResponse> DeleteProjectAsync(string projectName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1015,8 +1015,8 @@ namespace MyNS
 		/// DescribeProject projects/{projectName}
 		/// </summary>
 		/// <param name="projectName">The name of the project to be described.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeProjectResponse> DescribeProjectAsync(string projectName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1052,8 +1052,8 @@ namespace MyNS
 		/// UpdateProject projects/{projectName}
 		/// </summary>
 		/// <param name="projectName">The name of the project to be updated.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateProjectResponse> UpdateProjectAsync(string projectName, UpdateProjectPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1096,12 +1096,12 @@ namespace MyNS
 		/// GetDevicesInPlacement projects/{projectName}/placements/{placementName}/devices
 		/// </summary>
 		/// <param name="projectName">The name of the project containing the placement.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="placementName">The name of the placement to get the devices from.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDevicesInPlacementResponse> GetDevicesInPlacementAsync(string projectName, string placementName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1252,8 +1252,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.
 		/// Required
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="deviceId")]
@@ -1268,8 +1268,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the placement to be created.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^[a-zA-Z0-9_-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1292,8 +1292,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the project to create.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^[0-9A-Za-z_-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1305,8 +1305,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional description for the project.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1351,8 +1351,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional user-defined description for the project.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]

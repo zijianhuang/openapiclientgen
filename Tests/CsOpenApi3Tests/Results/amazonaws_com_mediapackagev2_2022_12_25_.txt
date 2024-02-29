@@ -1692,8 +1692,8 @@ namespace MyNS
 		/// CreateChannel channelGroup/{ChannelGroupName}/channel
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateChannelResponse> CreateChannelAsync(string ChannelGroupName, CreateChannelPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1736,8 +1736,8 @@ namespace MyNS
 		/// ListChannels channelGroup/{ChannelGroupName}/channel
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return in the response.
 		/// Minimum: 1
@@ -1860,12 +1860,12 @@ namespace MyNS
 		/// CreateOriginEndpoint channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateOriginEndpointResponse> CreateOriginEndpointAsync(string ChannelGroupName, string ChannelName, CreateOriginEndpointPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1908,12 +1908,12 @@ namespace MyNS
 		/// ListOriginEndpoints channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return in the response.
 		/// Minimum: 1
@@ -1956,12 +1956,12 @@ namespace MyNS
 		/// DeleteChannel channelGroup/{ChannelGroupName}/channel/{ChannelName}/
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteChannelResponse> DeleteChannelAsync(string ChannelGroupName, string ChannelName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1997,12 +1997,12 @@ namespace MyNS
 		/// GetChannel channelGroup/{ChannelGroupName}/channel/{ChannelName}/
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetChannelResponse> GetChannelAsync(string ChannelGroupName, string ChannelName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2038,12 +2038,12 @@ namespace MyNS
 		/// UpdateChannel channelGroup/{ChannelGroupName}/channel/{ChannelName}/
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChannelResponse> UpdateChannelAsync(string ChannelGroupName, string ChannelName, UpdateChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2086,8 +2086,8 @@ namespace MyNS
 		/// DeleteChannelGroup channelGroup/{ChannelGroupName}
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteChannelGroupResponse> DeleteChannelGroupAsync(string ChannelGroupName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2123,8 +2123,8 @@ namespace MyNS
 		/// GetChannelGroup channelGroup/{ChannelGroupName}
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetChannelGroupResponse> GetChannelGroupAsync(string ChannelGroupName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2160,8 +2160,8 @@ namespace MyNS
 		/// UpdateChannelGroup channelGroup/{ChannelGroupName}
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChannelGroupResponse> UpdateChannelGroupAsync(string ChannelGroupName, UpdateChannelGroupPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2204,12 +2204,12 @@ namespace MyNS
 		/// DeleteChannelPolicy channelGroup/{ChannelGroupName}/channel/{ChannelName}/policy
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteChannelPolicyResponse> DeleteChannelPolicyAsync(string ChannelGroupName, string ChannelName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2245,12 +2245,12 @@ namespace MyNS
 		/// GetChannelPolicy channelGroup/{ChannelGroupName}/channel/{ChannelName}/policy
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetChannelPolicyResponse> GetChannelPolicyAsync(string ChannelGroupName, string ChannelName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2286,12 +2286,12 @@ namespace MyNS
 		/// PutChannelPolicy channelGroup/{ChannelGroupName}/channel/{ChannelName}/policy
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutChannelPolicyResponse> PutChannelPolicyAsync(string ChannelGroupName, string ChannelName, PutChannelPolicyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2334,16 +2334,16 @@ namespace MyNS
 		/// DeleteOriginEndpoint channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="OriginEndpointName">The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteOriginEndpointResponse> DeleteOriginEndpointAsync(string ChannelGroupName, string ChannelName, string OriginEndpointName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2379,16 +2379,16 @@ namespace MyNS
 		/// GetOriginEndpoint channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="OriginEndpointName">The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetOriginEndpointResponse> GetOriginEndpointAsync(string ChannelGroupName, string ChannelName, string OriginEndpointName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2424,16 +2424,16 @@ namespace MyNS
 		/// UpdateOriginEndpoint channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="OriginEndpointName">The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateOriginEndpointResponse> UpdateOriginEndpointAsync(string ChannelGroupName, string ChannelName, string OriginEndpointName, UpdateOriginEndpointPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2476,16 +2476,16 @@ namespace MyNS
 		/// DeleteOriginEndpointPolicy channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}/policy
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="OriginEndpointName">The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteOriginEndpointPolicyResponse> DeleteOriginEndpointPolicyAsync(string ChannelGroupName, string ChannelName, string OriginEndpointName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2521,16 +2521,16 @@ namespace MyNS
 		/// GetOriginEndpointPolicy channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}/policy
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="OriginEndpointName">The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetOriginEndpointPolicyResponse> GetOriginEndpointPolicyAsync(string ChannelGroupName, string ChannelName, string OriginEndpointName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2566,16 +2566,16 @@ namespace MyNS
 		/// PutOriginEndpointPolicy channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}/policy
 		/// </summary>
 		/// <param name="ChannelGroupName">The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="ChannelName">The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="OriginEndpointName">The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutOriginEndpointPolicyResponse> PutOriginEndpointPolicyAsync(string ChannelGroupName, string ChannelName, string OriginEndpointName, PutOriginEndpointPolicyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2716,8 +2716,8 @@ namespace MyNS
 		/// <summary>
 		/// The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. You can't change the name after you create the channel.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9_-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2729,8 +2729,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Enter any descriptive text that helps you to identify the channel.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2750,8 +2750,8 @@ namespace MyNS
 		/// <summary>
 		/// The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region. You can't use spaces in the name. You can't change the name after you create the channel group.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9_-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2763,8 +2763,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Enter any descriptive text that helps you to identify the channel group.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2784,8 +2784,8 @@ namespace MyNS
 		/// <summary>
 		/// The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and must be unique for your account in the AWS Region and channel. You can't use spaces in the name. You can't change the name after you create the endpoint.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9_-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2811,8 +2811,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Enter any descriptive text that helps you to identify the origin endpoint.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2880,8 +2880,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Any descriptive information that you want to add to the channel for future identification purposes.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2894,8 +2894,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Any descriptive information that you want to add to the channel group for future identification purposes.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2909,8 +2909,8 @@ namespace MyNS
 		/// <summary>
 		/// The policy to attach to the specified channel.
 		/// Required
-		/// Max length: 6144
 		/// Min length: 0
+		/// Max length: 6144
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2938,8 +2938,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Any descriptive information that you want to add to the origin endpoint for future identification purposes.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3002,8 +3002,8 @@ namespace MyNS
 		/// <summary>
 		/// The policy to attach to the specified origin endpoint.
 		/// Required
-		/// Max length: 6144
 		/// Min length: 0
+		/// Max length: 6144
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]

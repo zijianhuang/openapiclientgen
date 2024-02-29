@@ -159,8 +159,8 @@ namespace MyNS
 		/// <summary>
 		/// Email of account
 		/// Required
-		/// Max length: 150
 		/// Min length: 3
+		/// Max length: 150
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="email")]
@@ -913,8 +913,8 @@ namespace MyNS
 		/// <summary>
 		/// Title of article
 		/// Required
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="title")]
@@ -1251,8 +1251,8 @@ namespace MyNS
 		/// <summary>
 		/// Title of article
 		/// Required
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="title")]
@@ -1466,8 +1466,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Title of article
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -2315,8 +2315,8 @@ namespace MyNS
 		/// <summary>
 		/// Title of collection
 		/// Required
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="title")]
@@ -2561,8 +2561,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Title of collection
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -2897,8 +2897,8 @@ namespace MyNS
 		/// <summary>
 		/// The contents/value of the comment
 		/// Required
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="text")]
@@ -4088,8 +4088,8 @@ namespace MyNS
 		/// <summary>
 		/// The title for this project - mandatory. 3 - 1000 characters.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="title")]
@@ -4272,8 +4272,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The title for this project - mandatory. 3 - 1000 characters.
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]

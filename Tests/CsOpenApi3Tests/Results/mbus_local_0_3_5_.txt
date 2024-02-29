@@ -137,8 +137,8 @@ namespace MyNS
 		/// <param name="device">The serial device to scan - /dev/ is pre-pended to {device} by M-Bus HTTPD before scanning</param>
 		/// <param name="baudrate">Baudrate to communicate with M-Bus devices</param>
 		/// <param name="address">The slave device to get data from
-		/// Max length: 16
 		/// Min length: 1
+		/// Max length: 16
 		// </param>
 		/// <returns>OK</returns>
 		public async Task GetAsync(string device, Baudrate baudrate, string address, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -165,8 +165,8 @@ namespace MyNS
 		/// <param name="device">The serial device to scan - /dev/ is pre-pended to {device} by M-Bus HTTPD before scanning</param>
 		/// <param name="baudrate">Baudrate to communicate with M-Bus devices</param>
 		/// <param name="address">The slave device to get data from
-		/// Max length: 16
 		/// Min length: 1
+		/// Max length: 16
 		// </param>
 		/// <param name="maxframes">The slave device to get data from
 		/// Minimum: 1

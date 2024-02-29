@@ -95,8 +95,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -137,8 +137,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the question.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -176,8 +176,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -229,8 +229,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -267,8 +267,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -288,8 +288,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -316,8 +316,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the question.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -326,8 +326,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -336,8 +336,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The title of the question.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -346,8 +346,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the question.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -356,8 +356,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p> <p>This value is only available if the question has been answered.</p> <p>This value does not apply to custom lenses.</p>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -366,8 +366,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The helpful resource URL.</p> <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p> <p>For custom lenses, this is the helpful resource URL for a question and is only provided if <code>HelpfulResourceDisplayText</code> was specified for the question.</p>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -426,8 +426,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of a choice.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -436,8 +436,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The title of a choice.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -446,8 +446,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of a choice.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -517,8 +517,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of a choice.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -635,8 +635,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -647,8 +647,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -724,8 +724,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -752,8 +752,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the question.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -780,8 +780,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of a choice.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -790,8 +790,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The title of a choice.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -824,8 +824,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The full name of the lens.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -834,8 +834,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the lens.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -868,8 +868,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -904,8 +904,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -920,8 +920,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The full name of the lens.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1005,8 +1005,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1015,8 +1015,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the pillar.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1069,8 +1069,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1105,8 +1105,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1130,8 +1130,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1179,8 +1179,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1189,8 +1189,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the pillar.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1230,8 +1230,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the question.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1240,8 +1240,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The title of the question.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1262,8 +1262,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1298,8 +1298,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -1329,8 +1329,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1347,8 +1347,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -1357,8 +1357,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description for the workload.
-		/// Max length: 250
 		/// Min length: 3
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -1413,8 +1413,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -1480,8 +1480,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1596,8 +1596,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1635,8 +1635,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the question.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1645,8 +1645,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The title of the question.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1655,8 +1655,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the question.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1686,8 +1686,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of a choice.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1696,8 +1696,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The title of a choice.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1706,8 +1706,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of a choice.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1761,8 +1761,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the question.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1771,8 +1771,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The title of the question.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1781,8 +1781,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the question.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1809,8 +1809,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of a choice.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1819,8 +1819,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The title of a choice.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1829,8 +1829,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of a choice.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1891,8 +1891,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1912,8 +1912,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1946,8 +1946,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the question.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1956,8 +1956,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1966,8 +1966,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The title of the question.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2018,8 +2018,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of a choice.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2086,8 +2086,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2096,8 +2096,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the question.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2106,8 +2106,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of a choice.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2119,8 +2119,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2239,8 +2239,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2249,8 +2249,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the question.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2259,8 +2259,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of a choice.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2293,8 +2293,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2314,8 +2314,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2348,8 +2348,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the question.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2358,8 +2358,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2368,8 +2368,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The title of the question.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2384,8 +2384,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p> <p>This value is only available if the question has been answered.</p> <p>This value does not apply to custom lenses.</p>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2406,8 +2406,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of a choice.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2419,8 +2419,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p> <p>This value is only available if the question has been answered.</p> <p>This value does not apply to custom lenses.</p>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2438,8 +2438,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2480,8 +2480,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2496,8 +2496,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The full name of the lens.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2562,8 +2562,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		/// Max length: 2048
 		/// Min length: 12
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(12)]
@@ -2645,8 +2645,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2655,8 +2655,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The full name of the lens.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2668,8 +2668,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the lens.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2693,8 +2693,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2733,8 +2733,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2775,8 +2775,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -2806,8 +2806,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2824,8 +2824,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -2834,8 +2834,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2931,8 +2931,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2943,8 +2943,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -2953,8 +2953,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3011,8 +3011,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3023,8 +3023,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -3078,8 +3078,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		/// Max length: 2048
 		/// Min length: 12
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(12)]
@@ -3133,8 +3133,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3187,8 +3187,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3199,8 +3199,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		/// Max length: 2048
 		/// Min length: 12
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(12)]
@@ -3218,8 +3218,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -3228,8 +3228,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3240,8 +3240,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The full name of the lens.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3306,8 +3306,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3347,8 +3347,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		/// Max length: 2048
 		/// Min length: 12
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(12)]
@@ -3414,8 +3414,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3426,8 +3426,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3476,8 +3476,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3527,8 +3527,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3539,8 +3539,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3579,8 +3579,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3614,8 +3614,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3626,8 +3626,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
-		/// Max length: 2048
 		/// Min length: 12
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(12)]
@@ -3648,8 +3648,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -3658,8 +3658,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3762,8 +3762,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 12
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3774,8 +3774,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3802,8 +3802,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3823,8 +3823,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3835,8 +3835,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3874,8 +3874,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3895,8 +3895,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 12
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3907,8 +3907,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3928,8 +3928,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3940,8 +3940,8 @@ namespace MyNS
 		/// <summary>
 		/// The description for the workload.
 		/// Required
-		/// Max length: 250
 		/// Min length: 3
+		/// Max length: 250
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3999,8 +3999,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -4042,8 +4042,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4091,8 +4091,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 12
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4111,8 +4111,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4325,8 +4325,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4343,8 +4343,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4442,8 +4442,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4454,8 +4454,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the question.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4466,8 +4466,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of a choice.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4506,8 +4506,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4518,8 +4518,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the question.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4530,8 +4530,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of a choice.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4604,8 +4604,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4871,8 +4871,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -4881,8 +4881,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description for the workload.
-		/// Max length: 250
 		/// Min length: 3
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -4937,8 +4937,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -5010,8 +5010,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5021,8 +5021,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5037,8 +5037,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -5047,8 +5047,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5079,8 +5079,8 @@ namespace MyNS
 		/// <p>Associate a lens to a workload.</p> <p>Up to 10 lenses can be associated with a workload in a single API operation. A maximum of 20 lenses can be associated with a workload.</p> <note> <p> <b>Disclaimer</b> </p> <p>By accessing and/or applying custom lenses created by another Amazon Web Services user or account, you acknowledge that custom lenses created by other users and shared with you are Third Party Content as defined in the Amazon Web Services Customer Agreement. </p> </note>
 		/// AssociateLenses workloads/{WorkloadId}/associateLenses
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task AssociateLensesAsync(string WorkloadId, AssociateLensesPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5116,8 +5116,8 @@ namespace MyNS
 		/// Associate a profile with a workload.
 		/// AssociateProfiles workloads/{WorkloadId}/associateProfiles
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task AssociateProfilesAsync(string WorkloadId, AssociateProfilesPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5153,8 +5153,8 @@ namespace MyNS
 		/// <p>Create a lens share.</p> <p>The owner of a lens can share it with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. Lenses provided by Amazon Web Services (Amazon Web Services Official Content) cannot be shared.</p> <p> Shared access to a lens is not removed until the lens invitation is deleted.</p> <p>If you share a lens with an organization or OU, all accounts in the organization or OU are granted access to the lens.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-sharing.html">Sharing a custom lens</a> in the <i>Well-Architected Tool User Guide</i>.</p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
 		/// CreateLensShare lenses/{LensAlias}/shares
 		/// </summary>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateLensShareOutput> CreateLensShareAsync(string LensAlias, CreateLensSharePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5196,8 +5196,8 @@ namespace MyNS
 		/// List the lens shares associated with the lens.
 		/// ListLensShares lenses/{LensAlias}/shares
 		/// </summary>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="SharedWithPrefix">The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.
 		/// Max length: 100
@@ -5239,8 +5239,8 @@ namespace MyNS
 		/// <p>Create a new lens version.</p> <p>A lens can have up to 100 versions.</p> <p>Use this operation to publish a new lens version after you have imported a lens. The <code>LensAlias</code> is used to identify the lens to be published. The owner of a lens can share the lens with other Amazon Web Services accounts and users in the same Amazon Web Services Region. Only the owner of a lens can delete it. </p>
 		/// CreateLensVersion lenses/{LensAlias}/versions
 		/// </summary>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateLensVersionOutput> CreateLensVersionAsync(string LensAlias, CreateLensVersionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5282,8 +5282,8 @@ namespace MyNS
 		/// Create a milestone for an existing workload.
 		/// CreateMilestone workloads/{WorkloadId}/milestones
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateMilestoneOutput> CreateMilestoneAsync(string WorkloadId, CreateMilestonePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5491,8 +5491,8 @@ namespace MyNS
 		/// <p>Create a workload share.</p> <p>The owner of a workload can share it with other Amazon Web Services accounts and users in the same Amazon Web Services Region. Shared access to a workload is not removed until the workload invitation is deleted.</p> <p>If you share a workload with an organization or OU, all accounts in the organization or OU are granted access to the workload.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing a workload</a> in the <i>Well-Architected Tool User Guide</i>.</p>
 		/// CreateWorkloadShare workloads/{WorkloadId}/shares
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateWorkloadShareOutput> CreateWorkloadShareAsync(string WorkloadId, CreateWorkloadSharePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5534,8 +5534,8 @@ namespace MyNS
 		/// List the workload shares associated with the workload.
 		/// ListWorkloadShares workloads/{WorkloadId}/shares
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <param name="SharedWithPrefix">The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.
 		/// Max length: 100
@@ -5577,11 +5577,11 @@ namespace MyNS
 		/// <p>Delete an existing lens.</p> <p>Only the owner of a lens can delete it. After the lens is deleted, Amazon Web Services accounts and users that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads. </p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
 		/// DeleteLens lenses/{LensAlias}#ClientRequestToken&LensStatus
 		/// </summary>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
-		/// <param name="ClientRequestToken">Max length: 2048
-		/// Min length: 1
+		/// <param name="ClientRequestToken">Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="LensStatus">The status of the lens to be deleted.</param>
 		/// <returns>Success</returns>
@@ -5611,11 +5611,11 @@ namespace MyNS
 		/// <p>Delete a lens share.</p> <p>After the lens share is deleted, Amazon Web Services accounts, users, organizations, and organizational units (OUs) that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.</p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
 		/// DeleteLensShare lenses/{LensAlias}/shares/{ShareId}#ClientRequestToken
 		/// </summary>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
-		/// <param name="ClientRequestToken">Max length: 2048
-		/// Min length: 1
+		/// <param name="ClientRequestToken">Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteLensShareAsync(string ShareId, string LensAlias, string ClientRequestToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5647,8 +5647,8 @@ namespace MyNS
 		/// <param name="ProfileArn">The profile ARN.
 		/// Max length: 2084
 		// </param>
-		/// <param name="ClientRequestToken">Max length: 2048
-		/// Min length: 1
+		/// <param name="ClientRequestToken">Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteProfileAsync(string ProfileArn, string ClientRequestToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5680,8 +5680,8 @@ namespace MyNS
 		/// <param name="ProfileArn">The profile ARN.
 		/// Max length: 2084
 		// </param>
-		/// <param name="ClientRequestToken">Max length: 2048
-		/// Min length: 1
+		/// <param name="ClientRequestToken">Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteProfileShareAsync(string ShareId, string ProfileArn, string ClientRequestToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5710,11 +5710,11 @@ namespace MyNS
 		/// Delete an existing workload.
 		/// DeleteWorkload workloads/{WorkloadId}#ClientRequestToken
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
-		/// <param name="ClientRequestToken">Max length: 2048
-		/// Min length: 1
+		/// <param name="ClientRequestToken">Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteWorkloadAsync(string WorkloadId, string ClientRequestToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5743,11 +5743,11 @@ namespace MyNS
 		/// Delete a workload share.
 		/// DeleteWorkloadShare workloads/{WorkloadId}/shares/{ShareId}#ClientRequestToken
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
-		/// <param name="ClientRequestToken">Max length: 2048
-		/// Min length: 1
+		/// <param name="ClientRequestToken">Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteWorkloadShareAsync(string ShareId, string WorkloadId, string ClientRequestToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5776,8 +5776,8 @@ namespace MyNS
 		/// <p>Disassociate a lens from a workload.</p> <p>Up to 10 lenses can be disassociated from a workload in a single API operation.</p> <note> <p>The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>) cannot be removed from a workload.</p> </note>
 		/// DisassociateLenses workloads/{WorkloadId}/disassociateLenses
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DisassociateLensesAsync(string WorkloadId, DisassociateLensesPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5813,8 +5813,8 @@ namespace MyNS
 		/// Disassociate a profile from a workload.
 		/// DisassociateProfiles workloads/{WorkloadId}/disassociateProfiles
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DisassociateProfilesAsync(string WorkloadId, DisassociateProfilesPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5850,12 +5850,12 @@ namespace MyNS
 		/// <p>Export an existing lens.</p> <p>Only the owner of a lens can export it. Lenses provided by Amazon Web Services (Amazon Web Services Official Content) cannot be exported.</p> <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a> in the <i>Well-Architected Tool User Guide</i>.</p> <note> <p> <b>Disclaimer</b> </p> <p>Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals in or via your custom lenses. If your custom lens or those shared with you and used in your account do include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.</p> </note>
 		/// ExportLens lenses/{LensAlias}/export
 		/// </summary>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="LensVersion">The lens version to be exported.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ExportLensOutput> ExportLensAsync(string LensAlias, string LensVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5890,14 +5890,14 @@ namespace MyNS
 		/// Get the answer to a specific question in a workload review.
 		/// GetAnswer workloads/{WorkloadId}/lensReviews/{LensAlias}/answers/{QuestionId}
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
-		/// <param name="QuestionId">Max length: 128
-		/// Min length: 1
+		/// <param name="QuestionId">Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="MilestoneNumber">Minimum: 1
 		/// Maximum: 100
@@ -5935,14 +5935,14 @@ namespace MyNS
 		/// Update the answer to a specific question in a workload review.
 		/// UpdateAnswer workloads/{WorkloadId}/lensReviews/{LensAlias}/answers/{QuestionId}
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
-		/// <param name="QuestionId">Max length: 128
-		/// Min length: 1
+		/// <param name="QuestionId">Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAnswerOutput> UpdateAnswerAsync(string WorkloadId, string LensAlias, string QuestionId, UpdateAnswerPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6023,12 +6023,12 @@ namespace MyNS
 		/// Get an existing lens.
 		/// GetLens lenses/{LensAlias}
 		/// </summary>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="LensVersion">The lens version to be retrieved.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetLensOutput> GetLensAsync(string LensAlias, string LensVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6063,11 +6063,11 @@ namespace MyNS
 		/// Get lens review.
 		/// GetLensReview workloads/{WorkloadId}/lensReviews/{LensAlias}
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="MilestoneNumber">Minimum: 1
 		/// Maximum: 100
@@ -6105,11 +6105,11 @@ namespace MyNS
 		/// Update lens review for a particular workload.
 		/// UpdateLensReview workloads/{WorkloadId}/lensReviews/{LensAlias}
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateLensReviewOutput> UpdateLensReviewAsync(string WorkloadId, string LensAlias, UpdateLensReviewPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6151,11 +6151,11 @@ namespace MyNS
 		/// Get lens review report.
 		/// GetLensReviewReport workloads/{WorkloadId}/lensReviews/{LensAlias}/report
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="MilestoneNumber">Minimum: 1
 		/// Maximum: 100
@@ -6193,16 +6193,16 @@ namespace MyNS
 		/// Get lens version differences.
 		/// GetLensVersionDifference lenses/{LensAlias}/versionDifference
 		/// </summary>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="BaseLensVersion">The base version of the lens.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="TargetLensVersion">The lens version to target a difference for.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetLensVersionDifferenceOutput> GetLensVersionDifferenceAsync(string LensAlias, string BaseLensVersion, string TargetLensVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6237,8 +6237,8 @@ namespace MyNS
 		/// Get a milestone for an existing workload.
 		/// GetMilestone workloads/{WorkloadId}/milestones/{MilestoneNumber}
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <param name="MilestoneNumber">Minimum: 1
 		/// Maximum: 100
@@ -6280,8 +6280,8 @@ namespace MyNS
 		/// Max length: 2084
 		// </param>
 		/// <param name="ProfileVersion">The profile version.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProfileOutput> GetProfileAsync(string ProfileArn, string ProfileVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6392,8 +6392,8 @@ namespace MyNS
 		/// Get an existing workload.
 		/// GetWorkload workloads/{WorkloadId}
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWorkloadOutput> GetWorkloadAsync(string WorkloadId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6428,8 +6428,8 @@ namespace MyNS
 		/// Update an existing workload.
 		/// UpdateWorkload workloads/{WorkloadId}
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateWorkloadOutput> UpdateWorkloadAsync(string WorkloadId, UpdateWorkloadPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6511,14 +6511,14 @@ namespace MyNS
 		/// List of answers for a particular workload and lens.
 		/// ListAnswers workloads/{WorkloadId}/lensReviews/{LensAlias}/answers
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
-		/// <param name="PillarId">Max length: 64
-		/// Min length: 1
+		/// <param name="PillarId">Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="MilestoneNumber">Minimum: 1
 		/// Maximum: 100
@@ -6561,8 +6561,8 @@ namespace MyNS
 		/// List of Trusted Advisor check details by account related to the workload.
 		/// ListCheckDetails workloads/{WorkloadId}/checks
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6606,8 +6606,8 @@ namespace MyNS
 		/// List of Trusted Advisor checks summarized for all accounts related to the workload.
 		/// ListCheckSummaries workloads/{WorkloadId}/checkSummaries
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6651,14 +6651,14 @@ namespace MyNS
 		/// List lens review improvements.
 		/// ListLensReviewImprovements workloads/{WorkloadId}/lensReviews/{LensAlias}/improvements
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
-		/// <param name="PillarId">Max length: 64
-		/// Min length: 1
+		/// <param name="PillarId">Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="MilestoneNumber">Minimum: 1
 		/// Maximum: 100
@@ -6701,8 +6701,8 @@ namespace MyNS
 		/// List lens reviews for a particular workload.
 		/// ListLensReviews workloads/{WorkloadId}/lensReviews
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <param name="MilestoneNumber">Minimum: 1
 		/// Maximum: 100
@@ -6748,8 +6748,8 @@ namespace MyNS
 		// </param>
 		/// <param name="LensType">The type of lenses to be returned.</param>
 		/// <param name="LensStatus">The status of lenses to be returned.</param>
-		/// <param name="LensName">Max length: 128
-		/// Min length: 1
+		/// <param name="LensName">Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListLensesOutput> ListLensesAsync(string NextToken, int MaxResults, LensType LensType, LensStatusType LensStatus, string LensName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6784,8 +6784,8 @@ namespace MyNS
 		/// List all milestones for an existing workload.
 		/// ListMilestones workloads/{WorkloadId}/milestonesSummaries
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -6871,8 +6871,8 @@ namespace MyNS
 		/// List profile notifications.
 		/// ListProfileNotifications profileNotifications/
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <param name="MaxResults">Minimum: 1
 		/// Maximum: 50
@@ -7222,8 +7222,8 @@ namespace MyNS
 		/// Update a workload share.
 		/// UpdateWorkloadShare workloads/{WorkloadId}/shares/{ShareId}
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateWorkloadShareOutput> UpdateWorkloadShareAsync(string ShareId, string WorkloadId, UpdateWorkloadSharePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7265,11 +7265,11 @@ namespace MyNS
 		/// Upgrade lens review for a particular workload.
 		/// UpgradeLensReview workloads/{WorkloadId}/lensReviews/{LensAlias}/upgrade
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
-		/// <param name="LensAlias">Max length: 128
-		/// Min length: 1
+		/// <param name="LensAlias">Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpgradeLensReviewAsync(string WorkloadId, string LensAlias, UpgradeLensReviewPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7305,8 +7305,8 @@ namespace MyNS
 		/// Upgrade a profile.
 		/// UpgradeProfileVersion workloads/{WorkloadId}/profiles/{ProfileArn}/upgrade
 		/// </summary>
-		/// <param name="WorkloadId">Max length: 32
-		/// Min length: 32
+		/// <param name="WorkloadId">Min length: 32
+		/// Max length: 32
 		// </param>
 		/// <param name="ProfileArn">The profile ARN.
 		/// Max length: 2084
@@ -7376,8 +7376,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 12
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7388,8 +7388,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7404,8 +7404,8 @@ namespace MyNS
 		/// <summary>
 		/// The version of the lens being created.
 		/// Required
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7422,8 +7422,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7438,8 +7438,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7450,8 +7450,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7466,8 +7466,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the profile.
 		/// Required
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// Pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7480,8 +7480,8 @@ namespace MyNS
 		/// <summary>
 		/// The profile description.
 		/// Required
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// Pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7502,8 +7502,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7524,8 +7524,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 12
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7536,8 +7536,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7552,8 +7552,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7564,8 +7564,8 @@ namespace MyNS
 		/// <summary>
 		/// The description for the workload.
 		/// Required
-		/// Max length: 250
 		/// Min length: 3
+		/// Max length: 250
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7623,8 +7623,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -7666,8 +7666,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7720,8 +7720,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload, lens, or profile is shared.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 12
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7740,8 +7740,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7837,8 +7837,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The profile description.
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// Pattern: ^[A-Za-z0-9-_.,:/()@!&?#+'’\s]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -7859,8 +7859,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the workload.</p> <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -7869,8 +7869,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description for the workload.
-		/// Max length: 250
 		/// Min length: 3
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -7925,8 +7925,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -7999,8 +7999,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The alias of the lens.</p> <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> <p>Each lens is identified by its <a>LensSummary$LensAlias</a>.</p>
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8010,8 +8010,8 @@ namespace MyNS
 		/// <summary>
 		/// The JSON representation of a lens.
 		/// Required
-		/// Max length: 500000
 		/// Min length: 2
+		/// Max length: 500000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8022,8 +8022,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8067,8 +8067,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8079,8 +8079,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the question.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8091,8 +8091,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of a choice.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8130,8 +8130,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The ID used to identify a pillar, for example, <code>security</code>.</p> <p>A pillar is identified by its <a>PillarReviewSummary$PillarId</a>.</p>
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8142,8 +8142,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the question.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8154,8 +8154,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of a choice.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8188,8 +8188,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// Pattern: [0-9a-f]{32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -8299,8 +8299,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8310,8 +8310,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8324,8 +8324,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the milestone in a workload.</p> <p>Milestone names must be unique within a workload.</p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -8334,8 +8334,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> </important>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

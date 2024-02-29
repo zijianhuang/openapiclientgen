@@ -1408,8 +1408,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="datastoreStatus">The data store status.</param>
 		/// <param name="nextToken">The pagination token used to request the list of data stores on the next page.
-		/// Max length: 8192
 		/// Min length: 1
+		/// Max length: 8192
 		// </param>
 		/// <param name="maxResults">Valid Range: Minimum value of 1. Maximum value of 50.
 		/// Minimum: 1
@@ -1548,8 +1548,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="datastoreId">The data store identifier.</param>
 		/// <param name="jobId">The import job identifier.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDICOMImportJobResponse> GetDICOMImportJobAsync(string datastoreId, string jobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1691,8 +1691,8 @@ namespace MyNS
 		/// <param name="datastoreId">The data store identifier.</param>
 		/// <param name="jobStatus">The filters for listing import jobs based on status.</param>
 		/// <param name="nextToken">The pagination token used to request the list of import jobs on the next page.
-		/// Max length: 8192
 		/// Min length: 1
+		/// Max length: 8192
 		// </param>
 		/// <param name="maxResults">The max results count. The upper bound is determined by load testing.
 		/// Minimum: 1
@@ -1734,8 +1734,8 @@ namespace MyNS
 		/// <param name="datastoreId">The data store identifier.</param>
 		/// <param name="imageSetId">The image set identifier.</param>
 		/// <param name="nextToken">The pagination token used to request the list of image set versions on the next page.
-		/// Max length: 8192
 		/// Min length: 1
+		/// Max length: 8192
 		// </param>
 		/// <param name="maxResults">The max results count.
 		/// Minimum: 1
@@ -1850,8 +1850,8 @@ namespace MyNS
 		/// Maximum: 50
 		// </param>
 		/// <param name="nextToken">The token used for pagination of results returned in the response. Use the token returned from the previous request to continue results where the previous request ended.
-		/// Max length: 8192
 		/// Min length: 1
+		/// Max length: 8192
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<SearchImageSetsResponse> SearchImageSetsAsync(string datastoreId, int maxResults, string nextToken, SearchImageSetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2039,8 +2039,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The data store name.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [A-Za-z0-9._/#-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="datastoreName")]
@@ -2052,8 +2052,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique identifier for API idempotency.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [A-Za-z0-9._-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2071,8 +2071,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// ARN referencing a KMS key or KMS key alias.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: arn:aws[a-zA-Z-]{0,16}:kms:[a-z]{2}(-[a-z]{1,16}){1,3}-\d{1}:\d{12}:((key/[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12})|(alias/[a-zA-Z0-9:/_-]{1,256}))
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKeyArn")]
@@ -2135,8 +2135,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The import job name.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [A-Za-z0-9._/#-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="jobName")]
@@ -2148,8 +2148,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the IAM role that grants permission to access medical imaging resources.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2162,8 +2162,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique identifier for API idempotency.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [A-Za-z0-9._-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2176,8 +2176,8 @@ namespace MyNS
 		/// <summary>
 		/// The input prefix path for the S3 bucket that contains the DICOM files to be imported.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2190,8 +2190,8 @@ namespace MyNS
 		/// <summary>
 		/// The output prefix of the S3 bucket to upload the results of the DICOM import job.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

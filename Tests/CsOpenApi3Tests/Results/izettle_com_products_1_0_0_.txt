@@ -48,8 +48,8 @@ namespace MyNS
 		public CategoryDTO Category { get; set; }
 		
 		/// <summary>
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -67,8 +67,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -123,8 +123,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -174,8 +174,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 3500
 		/// Min length: 0
+		/// Max length: 3500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -199,8 +199,8 @@ namespace MyNS
 		public OnlinePropertiesStatus Status { get; set; }
 		
 		/// <summary>
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -241,8 +241,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 320
 		/// Min length: 0
+		/// Max length: 320
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="metaDescription")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -250,8 +250,8 @@ namespace MyNS
 		public string MetaDescription { get; set; }
 		
 		/// <summary>
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="slug")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -259,8 +259,8 @@ namespace MyNS
 		public string Slug { get; set; }
 		
 		/// <summary>
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -394,8 +394,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 30
 		/// Min length: 1
+		/// Max length: 30
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -421,8 +421,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="imageUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -431,8 +431,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="value")]
@@ -447,8 +447,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="barcode")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -459,8 +459,8 @@ namespace MyNS
 		public Price CostPrice { get; set; }
 		
 		/// <summary>
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -468,8 +468,8 @@ namespace MyNS
 		public string Description { get; set; }
 		
 		/// <summary>
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -492,8 +492,8 @@ namespace MyNS
 		public Price Price { get; set; }
 		
 		/// <summary>
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sku")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1107,8 +1107,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 30
 		/// Min length: 1
+		/// Max length: 30
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1118,8 +1118,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="value")]
@@ -1240,8 +1240,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="productName")]
@@ -1259,8 +1259,8 @@ namespace MyNS
 		public Price Amount { get; set; }
 		
 		/// <summary>
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1268,8 +1268,8 @@ namespace MyNS
 		public string Description { get; set; }
 		
 		/// <summary>
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="externalReference")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1280,8 +1280,8 @@ namespace MyNS
 		public string[] ImageLookupKeys { get; set; }
 		
 		/// <summary>
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1594,8 +1594,8 @@ namespace MyNS
 		public System.Nullable<System.Boolean> CreateWithDefaultTax { get; set; }
 		
 		/// <summary>
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1603,8 +1603,8 @@ namespace MyNS
 		public string Description { get; set; }
 		
 		/// <summary>
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="externalReference")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1619,8 +1619,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1644,8 +1644,8 @@ namespace MyNS
 		public string[] TaxRates { get; set; }
 		
 		/// <summary>
-		/// Max length: 32
 		/// Min length: 0
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="unitName")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1681,8 +1681,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: \S|\S.*\S
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1715,8 +1715,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 512
 		/// Min length: 0
+		/// Max length: 512
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -1769,8 +1769,8 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Default { get; set; }
 		
 		/// <summary>
-		/// Max length: 512
 		/// Min length: 0
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]

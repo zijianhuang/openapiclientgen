@@ -3436,8 +3436,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Network instance description.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nsDescription")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3447,8 +3447,8 @@ namespace MyNS
 		/// <summary>
 		/// Network instance name.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="nsName")]

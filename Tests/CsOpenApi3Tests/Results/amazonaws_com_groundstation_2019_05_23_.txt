@@ -2681,8 +2681,8 @@ namespace MyNS
 		/// CancelContact contact/{contactId}
 		/// </summary>
 		/// <param name="contactId">UUID of a contact.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ContactIdResponse> CancelContactAsync(string contactId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2718,8 +2718,8 @@ namespace MyNS
 		/// DescribeContact contact/{contactId}
 		/// </summary>
 		/// <param name="contactId">UUID of a contact.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeContactResponse> DescribeContactAsync(string contactId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2799,8 +2799,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Next token returned in the request of a previous <code>ListConfigs</code> call. Used to get the next page of results.
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListConfigsResponse> ListConfigsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2880,8 +2880,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Next token returned in the request of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDataflowEndpointGroupsResponse> ListDataflowEndpointGroupsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3001,8 +3001,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListMissionProfilesResponse> ListMissionProfilesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3038,8 +3038,8 @@ namespace MyNS
 		/// DeleteConfig config/{configType}/{configId}
 		/// </summary>
 		/// <param name="configId">UUID of a <code>Config</code>.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="configType">Type of a <code>Config</code>.</param>
 		/// <returns>Success</returns>
@@ -3076,8 +3076,8 @@ namespace MyNS
 		/// GetConfig config/{configType}/{configId}
 		/// </summary>
 		/// <param name="configId">UUID of a <code>Config</code>.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="configType">Type of a <code>Config</code>.</param>
 		/// <returns>Success</returns>
@@ -3114,8 +3114,8 @@ namespace MyNS
 		/// UpdateConfig config/{configType}/{configId}
 		/// </summary>
 		/// <param name="configId">UUID of a <code>Config</code>.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="configType">Type of a <code>Config</code>.</param>
 		/// <returns>Success</returns>
@@ -3159,8 +3159,8 @@ namespace MyNS
 		/// DeleteDataflowEndpointGroup dataflowEndpointGroup/{dataflowEndpointGroupId}
 		/// </summary>
 		/// <param name="dataflowEndpointGroupId">UUID of a dataflow endpoint group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DataflowEndpointGroupIdResponse> DeleteDataflowEndpointGroupAsync(string dataflowEndpointGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3196,8 +3196,8 @@ namespace MyNS
 		/// GetDataflowEndpointGroup dataflowEndpointGroup/{dataflowEndpointGroupId}
 		/// </summary>
 		/// <param name="dataflowEndpointGroupId">UUID of a dataflow endpoint group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDataflowEndpointGroupResponse> GetDataflowEndpointGroupAsync(string dataflowEndpointGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3233,8 +3233,8 @@ namespace MyNS
 		/// DeleteEphemeris ephemeris/{ephemerisId}
 		/// </summary>
 		/// <param name="ephemerisId">The AWS Ground Station ephemeris ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<EphemerisIdResponse> DeleteEphemerisAsync(string ephemerisId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3270,8 +3270,8 @@ namespace MyNS
 		/// DescribeEphemeris ephemeris/{ephemerisId}
 		/// </summary>
 		/// <param name="ephemerisId">The AWS Ground Station ephemeris ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeEphemerisResponse> DescribeEphemerisAsync(string ephemerisId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3307,8 +3307,8 @@ namespace MyNS
 		/// UpdateEphemeris ephemeris/{ephemerisId}
 		/// </summary>
 		/// <param name="ephemerisId">The AWS Ground Station ephemeris ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<EphemerisIdResponse> UpdateEphemerisAsync(string ephemerisId, UpdateEphemerisPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3351,8 +3351,8 @@ namespace MyNS
 		/// DeleteMissionProfile missionprofile/{missionProfileId}
 		/// </summary>
 		/// <param name="missionProfileId">UUID of a mission profile.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<MissionProfileIdResponse> DeleteMissionProfileAsync(string missionProfileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3388,8 +3388,8 @@ namespace MyNS
 		/// GetMissionProfile missionprofile/{missionProfileId}
 		/// </summary>
 		/// <param name="missionProfileId">UUID of a mission profile.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMissionProfileResponse> GetMissionProfileAsync(string missionProfileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3425,8 +3425,8 @@ namespace MyNS
 		/// UpdateMissionProfile missionprofile/{missionProfileId}
 		/// </summary>
 		/// <param name="missionProfileId">UUID of a mission profile.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<MissionProfileIdResponse> UpdateMissionProfileAsync(string missionProfileId, UpdateMissionProfilePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3469,8 +3469,8 @@ namespace MyNS
 		/// GetAgentConfiguration agent/{agentId}/configuration
 		/// </summary>
 		/// <param name="agentId">UUID of agent to get configuration information for.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAgentConfigurationResponse> GetAgentConfigurationAsync(string agentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3546,8 +3546,8 @@ namespace MyNS
 		/// GetSatellite satellite/{satelliteId}
 		/// </summary>
 		/// <param name="satelliteId">UUID of a satellite.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSatelliteResponse> GetSatelliteAsync(string satelliteId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3629,8 +3629,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Pagination token.
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListEphemeridesResponse> ListEphemeridesAsync(int maxResults, string nextToken, ListEphemeridesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3677,12 +3677,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Next token that can be supplied in the next call to get the next page of ground stations.
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		// </param>
 		/// <param name="satelliteId">Satellite ID to retrieve on-boarded ground stations.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListGroundStationsResponse> ListGroundStationsAsync(int maxResults, string nextToken, string satelliteId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3722,8 +3722,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Next token that can be supplied in the next call to get the next page of satellites.
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSatellitesResponse> ListSatellitesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3759,8 +3759,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">ARN of a resource.
-		/// Max length: 1024
 		/// Min length: 5
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3796,8 +3796,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">ARN of a resource tag.
-		/// Max length: 1024
 		/// Min length: 5
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3920,8 +3920,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">ARN of a resource.
-		/// Max length: 1024
 		/// Min length: 5
+		/// Max length: 1024
 		// </param>
 		/// <param name="tagKeys">Keys of a resource tag.
 		/// Minimum items: 0
@@ -3961,8 +3961,8 @@ namespace MyNS
 		/// UpdateAgentStatus agent/{agentId}
 		/// </summary>
 		/// <param name="agentId">UUID of agent to update.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAgentStatusResponse> UpdateAgentStatusAsync(string agentId, UpdateAgentStatusPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4015,8 +4015,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of a <code>Config</code>.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4128,8 +4128,8 @@ namespace MyNS
 		/// <summary>
 		/// A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4151,8 +4151,8 @@ namespace MyNS
 		/// <summary>
 		/// AWS Ground Station satellite ID for this ephemeris.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4232,8 +4232,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of a mission profile.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4369,8 +4369,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of a <code>Config</code>.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4419,8 +4419,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -4481,8 +4481,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of a mission profile.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -4559,8 +4559,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of a ground station.
-		/// Max length: 500
 		/// Min length: 4
+		/// Max length: 500
 		/// Pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="groundStation")]
@@ -4586,8 +4586,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results.
-		/// Max length: 1000
 		/// Min length: 3
+		/// Max length: 1000
 		/// Pattern: ^[A-Za-z0-9-/+_.=]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -4637,8 +4637,8 @@ namespace MyNS
 		/// <summary>
 		/// The AWS Ground Station satellite ID to list ephemeris for.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4748,8 +4748,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of a ground station.
 		/// Required
-		/// Max length: 500
 		/// Min length: 4
+		/// Max length: 500
 		/// Pattern: ^[ a-zA-Z0-9-._:=]{4,256}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4816,8 +4816,8 @@ namespace MyNS
 		/// <summary>
 		/// GUID of agent task.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

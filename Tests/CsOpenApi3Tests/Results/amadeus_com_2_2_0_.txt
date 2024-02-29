@@ -883,8 +883,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// providing the airline / carrier code
-		/// Max length: 2
 		/// Min length: 1
+		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="carrierCode")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -905,8 +905,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// the flight number as assigned by the carrier
-		/// Max length: 4
 		/// Min length: 1
+		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -936,8 +936,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// providing the airline / carrier code
-		/// Max length: 2
 		/// Min length: 1
+		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="carrierCode")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

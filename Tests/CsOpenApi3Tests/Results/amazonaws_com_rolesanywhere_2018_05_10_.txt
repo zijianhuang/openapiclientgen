@@ -903,8 +903,8 @@ namespace MyNS
 		/// ListProfiles profiles
 		/// </summary>
 		/// <param name="nextToken">A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		// </param>
 		/// <param name="pageSize">The number of resources in the paginated list. </param>
 		/// <returns>Success</returns>
@@ -974,8 +974,8 @@ namespace MyNS
 		/// ListTrustAnchors trustanchors
 		/// </summary>
 		/// <param name="nextToken">A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		// </param>
 		/// <param name="pageSize">The number of resources in the paginated list. </param>
 		/// <returns>Success</returns>
@@ -1012,8 +1012,8 @@ namespace MyNS
 		/// DeleteCrl crl/{crlId}
 		/// </summary>
 		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CrlDetailResponse> DeleteCrlAsync(string crlId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1049,8 +1049,8 @@ namespace MyNS
 		/// GetCrl crl/{crlId}
 		/// </summary>
 		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CrlDetailResponse> GetCrlAsync(string crlId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1086,8 +1086,8 @@ namespace MyNS
 		/// UpdateCrl crl/{crlId}
 		/// </summary>
 		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CrlDetailResponse> UpdateCrlAsync(string crlId, UpdateCrlPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1130,8 +1130,8 @@ namespace MyNS
 		/// DeleteProfile profile/{profileId}
 		/// </summary>
 		/// <param name="profileId">The unique identifier of the profile.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProfileDetailResponse> DeleteProfileAsync(string profileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1167,8 +1167,8 @@ namespace MyNS
 		/// GetProfile profile/{profileId}
 		/// </summary>
 		/// <param name="profileId">The unique identifier of the profile.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProfileDetailResponse> GetProfileAsync(string profileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1204,8 +1204,8 @@ namespace MyNS
 		/// UpdateProfile profile/{profileId}
 		/// </summary>
 		/// <param name="profileId">The unique identifier of the profile.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProfileDetailResponse> UpdateProfileAsync(string profileId, UpdateProfilePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1248,8 +1248,8 @@ namespace MyNS
 		/// DeleteTrustAnchor trustanchor/{trustAnchorId}
 		/// </summary>
 		/// <param name="trustAnchorId">The unique identifier of the trust anchor.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TrustAnchorDetailResponse> DeleteTrustAnchorAsync(string trustAnchorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1285,8 +1285,8 @@ namespace MyNS
 		/// GetTrustAnchor trustanchor/{trustAnchorId}
 		/// </summary>
 		/// <param name="trustAnchorId">The unique identifier of the trust anchor.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TrustAnchorDetailResponse> GetTrustAnchorAsync(string trustAnchorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1322,8 +1322,8 @@ namespace MyNS
 		/// UpdateTrustAnchor trustanchor/{trustAnchorId}
 		/// </summary>
 		/// <param name="trustAnchorId">The unique identifier of the trust anchor.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TrustAnchorDetailResponse> UpdateTrustAnchorAsync(string trustAnchorId, UpdateTrustAnchorPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1366,8 +1366,8 @@ namespace MyNS
 		/// DisableCrl crl/{crlId}/disable
 		/// </summary>
 		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CrlDetailResponse> DisableCrlAsync(string crlId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1398,8 +1398,8 @@ namespace MyNS
 		/// DisableProfile profile/{profileId}/disable
 		/// </summary>
 		/// <param name="profileId">The unique identifier of the profile.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProfileDetailResponse> DisableProfileAsync(string profileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1430,8 +1430,8 @@ namespace MyNS
 		/// DisableTrustAnchor trustanchor/{trustAnchorId}/disable
 		/// </summary>
 		/// <param name="trustAnchorId">The unique identifier of the trust anchor.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TrustAnchorDetailResponse> DisableTrustAnchorAsync(string trustAnchorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1462,8 +1462,8 @@ namespace MyNS
 		/// EnableCrl crl/{crlId}/enable
 		/// </summary>
 		/// <param name="crlId">The unique identifier of the certificate revocation list (CRL).
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CrlDetailResponse> EnableCrlAsync(string crlId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1494,8 +1494,8 @@ namespace MyNS
 		/// EnableProfile profile/{profileId}/enable
 		/// </summary>
 		/// <param name="profileId">The unique identifier of the profile.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProfileDetailResponse> EnableProfileAsync(string profileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1526,8 +1526,8 @@ namespace MyNS
 		/// EnableTrustAnchor trustanchor/{trustAnchorId}/enable
 		/// </summary>
 		/// <param name="trustAnchorId">The unique identifier of the trust anchor.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TrustAnchorDetailResponse> EnableTrustAnchorAsync(string trustAnchorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1558,8 +1558,8 @@ namespace MyNS
 		/// GetSubject subject/{subjectId}
 		/// </summary>
 		/// <param name="subjectId">The unique identifier of the subject. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<SubjectDetailResponse> GetSubjectAsync(string subjectId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1628,8 +1628,8 @@ namespace MyNS
 		/// ListCrls crls
 		/// </summary>
 		/// <param name="nextToken">A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		// </param>
 		/// <param name="pageSize">The number of resources in the paginated list. </param>
 		/// <returns>Success</returns>
@@ -1666,8 +1666,8 @@ namespace MyNS
 		/// ListSubjects subjects
 		/// </summary>
 		/// <param name="nextToken">A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		// </param>
 		/// <param name="pageSize">The number of resources in the paginated list. </param>
 		/// <returns>Success</returns>
@@ -1704,8 +1704,8 @@ namespace MyNS
 		/// ListTagsForResource ListTagsForResource#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1921,8 +1921,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the profile.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[ a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1979,8 +1979,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the trust anchor.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[ a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2034,8 +2034,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The x509 v3 specified certificate revocation list (CRL).
-		/// Max length: 300000
 		/// Min length: 1
+		/// Max length: 300000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="crlData")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2044,8 +2044,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the Crl.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[ a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -2079,8 +2079,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the profile.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[ a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -2101,8 +2101,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A session policy that applies to the trust boundary of the vended session credentials. 
-		/// Max length: 100000
 		/// Min length: 1
+		/// Max length: 100000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sessionPolicy")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2115,8 +2115,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the trust anchor.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[ a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -2148,8 +2148,8 @@ namespace MyNS
 		/// <summary>
 		/// The x509 v3 specified certificate revocation list (CRL).
 		/// Required
-		/// Max length: 300000
 		/// Min length: 1
+		/// Max length: 300000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="crlData")]
@@ -2166,8 +2166,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the certificate revocation list (CRL).
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[ a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2190,8 +2190,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: ^arn:aws(-[^:]+)?:rolesanywhere(:.*){2}(:trust-anchor.*)$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2220,8 +2220,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique identifier of the trust anchor.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: [a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2250,8 +2250,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique identifier of the trust anchor.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: [a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2268,8 +2268,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the resource.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="resourceArn")]
@@ -2296,8 +2296,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the resource.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="resourceArn")]

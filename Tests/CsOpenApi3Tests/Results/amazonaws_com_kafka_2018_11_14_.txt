@@ -5202,8 +5202,8 @@ namespace MyNS
 		///            <p>The name of the cluster.</p>
 		///         
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clusterName")]
@@ -5248,8 +5248,8 @@ namespace MyNS
 		///            <p>The version of Apache Kafka.</p>
 		///         
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="kafkaVersion")]
@@ -5368,8 +5368,8 @@ namespace MyNS
 		///            <p>The name of the cluster.</p>
 		///         
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clusterName")]

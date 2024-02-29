@@ -499,8 +499,8 @@ namespace MyNS
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
 		/// <param name="resourceGroupName">Resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <returns>The request was successful; response contains the list of Azure Dev Spaces Controllers in the resource group.</returns>
 		public async Task<ControllerList> Controllers_ListByResourceGroupAsync(string api_version, string subscriptionId, string resourceGroupName)
@@ -534,12 +534,12 @@ namespace MyNS
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
 		/// <param name="resourceGroupName">Resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="name">Name of the resource.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <returns>The request was successful; response contains the Azure Dev Spaces Controller.</returns>
 		public async Task<Controller> Controllers_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string name)
@@ -573,12 +573,12 @@ namespace MyNS
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
 		/// <param name="resourceGroupName">Resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="name">Name of the resource.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <param name="requestBody">Controller create parameters.</param>
 		/// <returns>The request was successful; response contains the created Azure Dev Spaces Controller .</returns>
@@ -620,12 +620,12 @@ namespace MyNS
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
 		/// <param name="resourceGroupName">Resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="name">Name of the resource.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <returns>The request was successful; the Azure Dev Spaces Controller is deleted.</returns>
 		public async Task Controllers_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string name)
@@ -653,12 +653,12 @@ namespace MyNS
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
 		/// <param name="resourceGroupName">Resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="name">Name of the resource.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <param name="requestBody">Parameters for updating the Azure Dev Spaces Controller.</param>
 		/// <returns>The request was successful; response contains the updated Azure Dev Spaces Controller .</returns>
@@ -700,12 +700,12 @@ namespace MyNS
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
 		/// <param name="resourceGroupName">Resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="name">Name of the resource.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <param name="requestBody">Parameters for listing connection details of Azure Dev Spaces Controller.</param>
 		/// <returns>The request was successful; response contains the list of connection details for the Azure Dev Spaces Controller .</returns>
@@ -746,8 +746,8 @@ namespace MyNS
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
 		/// <param name="resourceGroupName">Resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="location">Location of the container host.</param>
 		/// <returns>The request was successful; response contains the container host mapping.</returns>

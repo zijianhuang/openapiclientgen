@@ -107,8 +107,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Trunk resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -191,8 +191,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Trunk resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^TK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -275,8 +275,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the CredentialList resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -305,8 +305,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the CredentialList resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -317,8 +317,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Trunk the credential list in associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^TK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="trunk_sid")]
@@ -341,8 +341,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the IpAccessControlList resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -371,8 +371,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the IpAccessControlList resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -383,8 +383,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Trunk the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^TK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="trunk_sid")]
@@ -407,8 +407,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the OriginationUrl resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -449,8 +449,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the OriginationUrl resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^OU[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -467,8 +467,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Trunk that owns the Origination URL.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^TK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="trunk_sid")]
@@ -497,8 +497,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the PhoneNumber resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -560,8 +560,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the PhoneNumber resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^PN[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -572,8 +572,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the application that handles SMS messages sent to the phone number. If an `sms_application_sid` is present, we ignore all `sms_*_url` values and use those of the application.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sms_application_sid")]
@@ -620,8 +620,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Trunk that handles calls to the phone number. If a `trunk_sid` is present, we ignore all of the voice URLs and voice applications and use those set on the Trunk. Setting a `trunk_sid` will automatically delete your `voice_application_sid` and vice versa.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^TK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="trunk_sid")]
@@ -638,8 +638,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the application that handles calls to the phone number. If a `voice_application_sid` is present, we ignore all of the voice URLs and use those set on the application. Setting a `voice_application_sid` will automatically delete your `trunk_sid` and vice versa.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="voice_application_sid")]
@@ -789,8 +789,8 @@ namespace MyNS
 		/// DeleteTrunk v1/Trunks/{Sid}
 		/// </summary>
 		/// <param name="Sid">The unique string that we created to identify the Trunk resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteTrunkAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -818,8 +818,8 @@ namespace MyNS
 		/// FetchTrunk v1/Trunks/{Sid}
 		/// </summary>
 		/// <param name="Sid">The unique string that we created to identify the Trunk resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Trunkingv1trunk> FetchTrunkAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -854,8 +854,8 @@ namespace MyNS
 		/// ListCredentialList v1/Trunks/{TrunkSid}/CredentialLists
 		/// </summary>
 		/// <param name="TrunkSid">The SID of the Trunk from which to read the credential lists.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -898,12 +898,12 @@ namespace MyNS
 		/// DeleteCredentialList v1/Trunks/{TrunkSid}/CredentialLists/{Sid}
 		/// </summary>
 		/// <param name="TrunkSid">The SID of the Trunk from which to delete the credential list.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The unique string that we created to identify the CredentialList resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteCredentialListAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -931,12 +931,12 @@ namespace MyNS
 		/// FetchCredentialList v1/Trunks/{TrunkSid}/CredentialLists/{Sid}
 		/// </summary>
 		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the credential list.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The unique string that we created to identify the CredentialList resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Trunkingv1trunkcredential_list> FetchCredentialListAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -972,8 +972,8 @@ namespace MyNS
 		/// ListIpAccessControlList v1/Trunks/{TrunkSid}/IpAccessControlLists
 		/// </summary>
 		/// <param name="TrunkSid">The SID of the Trunk from which to read the IP Access Control Lists.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1017,12 +1017,12 @@ namespace MyNS
 		/// DeleteIpAccessControlList v1/Trunks/{TrunkSid}/IpAccessControlLists/{Sid}
 		/// </summary>
 		/// <param name="TrunkSid">The SID of the Trunk from which to delete the IP Access Control List.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The unique string that we created to identify the IpAccessControlList resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteIpAccessControlListAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1050,12 +1050,12 @@ namespace MyNS
 		/// FetchIpAccessControlList v1/Trunks/{TrunkSid}/IpAccessControlLists/{Sid}
 		/// </summary>
 		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the IP Access Control List.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The unique string that we created to identify the IpAccessControlList resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Trunkingv1trunkip_access_control_list> FetchIpAccessControlListAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1090,8 +1090,8 @@ namespace MyNS
 		/// ListOriginationUrl v1/Trunks/{TrunkSid}/OriginationUrls
 		/// </summary>
 		/// <param name="TrunkSid">The SID of the Trunk from which to read the OriginationUrl.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1134,12 +1134,12 @@ namespace MyNS
 		/// DeleteOriginationUrl v1/Trunks/{TrunkSid}/OriginationUrls/{Sid}
 		/// </summary>
 		/// <param name="TrunkSid">The SID of the Trunk from which to delete the OriginationUrl.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The unique string that we created to identify the OriginationUrl resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteOriginationUrlAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1167,12 +1167,12 @@ namespace MyNS
 		/// FetchOriginationUrl v1/Trunks/{TrunkSid}/OriginationUrls/{Sid}
 		/// </summary>
 		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the OriginationUrl.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The unique string that we created to identify the OriginationUrl resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Trunkingv1trunkorigination_url> FetchOriginationUrlAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1207,8 +1207,8 @@ namespace MyNS
 		/// ListPhoneNumber v1/Trunks/{TrunkSid}/PhoneNumbers
 		/// </summary>
 		/// <param name="TrunkSid">The SID of the Trunk from which to read the PhoneNumber resources.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1251,12 +1251,12 @@ namespace MyNS
 		/// DeletePhoneNumber v1/Trunks/{TrunkSid}/PhoneNumbers/{Sid}
 		/// </summary>
 		/// <param name="TrunkSid">The SID of the Trunk from which to delete the PhoneNumber resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The unique string that we created to identify the PhoneNumber resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeletePhoneNumberAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1284,12 +1284,12 @@ namespace MyNS
 		/// FetchPhoneNumber v1/Trunks/{TrunkSid}/PhoneNumbers/{Sid}
 		/// </summary>
 		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the PhoneNumber resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The unique string that we created to identify the PhoneNumber resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Trunkingv1trunkphone_number> FetchPhoneNumberAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1324,8 +1324,8 @@ namespace MyNS
 		/// FetchRecording v1/Trunks/{TrunkSid}/Recording
 		/// </summary>
 		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the recording settings.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Trunkingv1trunkrecording> FetchRecordingAsync(string TrunkSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

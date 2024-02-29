@@ -1296,12 +1296,12 @@ namespace MyNS
 		/// BatchCreateTableRows workbooks/{workbookId}/tables/{tableId}/rows/batchcreate
 		/// </summary>
 		/// <param name="workbookId"><p>The ID of the workbook where the new rows are being added.</p> <p> If a workbook with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="tableId"><p>The ID of the table where the new rows are being added.</p> <p> If a table with the specified ID could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchCreateTableRowsResult> BatchCreateTableRowsAsync(string workbookId, string tableId, BatchCreateTableRowsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1344,12 +1344,12 @@ namespace MyNS
 		/// BatchDeleteTableRows workbooks/{workbookId}/tables/{tableId}/rows/batchdelete
 		/// </summary>
 		/// <param name="workbookId"><p>The ID of the workbook where the rows are being deleted.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="tableId"><p>The ID of the table where the rows are being deleted.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDeleteTableRowsResult> BatchDeleteTableRowsAsync(string workbookId, string tableId, BatchDeleteTableRowsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1392,12 +1392,12 @@ namespace MyNS
 		/// BatchUpdateTableRows workbooks/{workbookId}/tables/{tableId}/rows/batchupdate
 		/// </summary>
 		/// <param name="workbookId"><p>The ID of the workbook where the rows are being updated.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="tableId"><p>The ID of the table where the rows are being updated.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchUpdateTableRowsResult> BatchUpdateTableRowsAsync(string workbookId, string tableId, BatchUpdateTableRowsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1440,12 +1440,12 @@ namespace MyNS
 		/// BatchUpsertTableRows workbooks/{workbookId}/tables/{tableId}/rows/batchupsert
 		/// </summary>
 		/// <param name="workbookId"><p>The ID of the workbook where the rows are being upserted.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="tableId"><p>The ID of the table where the rows are being upserted.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchUpsertTableRowsResult> BatchUpsertTableRowsAsync(string workbookId, string tableId, BatchUpsertTableRowsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1488,16 +1488,16 @@ namespace MyNS
 		/// DescribeTableDataImportJob workbooks/{workbookId}/tables/{tableId}/import/{jobId}
 		/// </summary>
 		/// <param name="workbookId"><p>The ID of the workbook into which data was imported.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="tableId"><p>The ID of the table into which data was imported.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="jobId"><p>The ID of the job that was returned by the StartTableDataImportJob request.</p> <p> If a job with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTableDataImportJobResult> DescribeTableDataImportJobAsync(string workbookId, string tableId, string jobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1573,20 +1573,20 @@ namespace MyNS
 		/// InvokeScreenAutomation workbooks/{workbookId}/apps/{appId}/screens/{screenId}/automations/{automationId}
 		/// </summary>
 		/// <param name="workbookId">The ID of the workbook that contains the screen automation.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="appId">The ID of the app that contains the screen automation.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="screenId">The ID of the screen that contains the screen automation.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="automationId">The ID of the automation action to be performed.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<InvokeScreenAutomationResult> InvokeScreenAutomationAsync(string workbookId, string appId, string screenId, string automationId, InvokeScreenAutomationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1629,16 +1629,16 @@ namespace MyNS
 		/// ListTableColumns workbooks/{workbookId}/tables/{tableId}/columns
 		/// </summary>
 		/// <param name="workbookId"><p>The ID of the workbook that contains the table whose columns are being retrieved.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="tableId"><p>The ID of the table whose columns are being retrieved.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="nextToken"><p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTableColumnsResult> ListTableColumnsAsync(string workbookId, string tableId, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1674,12 +1674,12 @@ namespace MyNS
 		/// ListTableRows workbooks/{workbookId}/tables/{tableId}/rows/list
 		/// </summary>
 		/// <param name="workbookId"><p>The ID of the workbook that contains the table whose rows are being retrieved.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="tableId"><p>The ID of the table whose rows are being retrieved.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -1724,16 +1724,16 @@ namespace MyNS
 		/// ListTables workbooks/{workbookId}/tables
 		/// </summary>
 		/// <param name="workbookId"><p>The ID of the workbook whose tables are being retrieved.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="maxResults">The maximum number of tables to return in each page of the results.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken"><p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTablesResult> ListTablesAsync(string workbookId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1769,8 +1769,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The resource's Amazon Resource Name (ARN).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResult> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1806,8 +1806,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The resource's Amazon Resource Name (ARN).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResult> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1850,12 +1850,12 @@ namespace MyNS
 		/// QueryTableRows workbooks/{workbookId}/tables/{tableId}/rows/query
 		/// </summary>
 		/// <param name="workbookId"><p>The ID of the workbook whose table rows are being queried.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="tableId"><p>The ID of the table whose rows are being queried.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -1900,12 +1900,12 @@ namespace MyNS
 		/// StartTableDataImportJob workbooks/{workbookId}/tables/{tableId}/import
 		/// </summary>
 		/// <param name="workbookId"><p>The ID of the workbook where the rows are being imported.</p> <p> If a workbook with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="tableId"><p>The ID of the table where the rows are being imported.</p> <p> If a table with the specified id could not be found, this API throws ResourceNotFoundException. </p>
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartTableDataImportJobResult> StartTableDataImportJobAsync(string workbookId, string tableId, StartTableDataImportJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1948,8 +1948,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The resource's Amazon Resource Name (ARN).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="tagKeys">A list of tag keys to remove from the resource.
 		/// Maximum items: 100
@@ -2001,8 +2001,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p> The request token for performing the batch create operation. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the operation again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		/// Max length: 64
 		/// Min length: 32
+		/// Max length: 64
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
@@ -2029,8 +2029,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p> The request token for performing the delete action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		/// Max length: 64
 		/// Min length: 32
+		/// Max length: 64
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
@@ -2057,8 +2057,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		/// Max length: 64
 		/// Min length: 32
+		/// Max length: 64
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
@@ -2081,8 +2081,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		/// Max length: 64
 		/// Min length: 32
+		/// Max length: 64
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
@@ -2098,8 +2098,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the workbook that contains the screen.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2112,8 +2112,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the app that contains the screen.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2126,8 +2126,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the screen.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2154,8 +2154,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -2176,8 +2176,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The row ID for the automation if the automation is defined inside a block with source or list. 
-		/// Max length: 77
 		/// Min length: 77
+		/// Max length: 77
 		/// Pattern: row:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="rowId")]
@@ -2188,8 +2188,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p> The request token for performing the automation action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will return the response of the previous call rather than performing the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
-		/// Max length: 64
 		/// Min length: 32
+		/// Max length: 64
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
@@ -2223,8 +2223,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -2268,8 +2268,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p> This parameter is optional. If a nextToken is not specified, the API returns the first page of data. </p> <p> Pagination tokens expire after 1 hour. If you use a token that was returned more than an hour back, the API will throw ValidationException. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -2319,8 +2319,8 @@ namespace MyNS
 		/// <summary>
 		/// <p> The request token for performing the update action. Request tokens help to identify duplicate requests. If a call times out or fails due to a transient error like a failed network connection, you can retry the call with the same request token. The service ensures that if the first call using that request token is successfully performed, the second call will not perform the action again. </p> <p> Note that request tokens are valid only for a few minutes. You cannot use request tokens to dedupe requests spanning hours or days. </p>
 		/// Required
-		/// Max length: 64
 		/// Min length: 32
+		/// Max length: 64
 		/// Pattern: ^(?!\s*$).+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

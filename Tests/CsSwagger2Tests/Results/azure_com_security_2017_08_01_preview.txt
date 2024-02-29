@@ -1354,8 +1354,8 @@ namespace MyNS
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<PricingList> Pricings_ListByResourceGroupAsync(Pricings_ListByResourceGroupApi_version api_version, string subscriptionId, string resourceGroupName)
@@ -1388,8 +1388,8 @@ namespace MyNS
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="pricingName">name of the pricing configuration</param>
 		/// <returns>OK</returns>
@@ -1423,8 +1423,8 @@ namespace MyNS
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="pricingName">name of the pricing configuration</param>
 		/// <param name="requestBody">Pricing object</param>

@@ -293,12 +293,12 @@ namespace MyNS
 		/// DeleteThingShadow things/{thingName}/shadow
 		/// </summary>
 		/// <param name="thingName">The name of the thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="name">The name of the shadow.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteThingShadowResponse> DeleteThingShadowAsync(string thingName, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -334,12 +334,12 @@ namespace MyNS
 		/// GetThingShadow things/{thingName}/shadow
 		/// </summary>
 		/// <param name="thingName">The name of the thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="name">The name of the shadow.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetThingShadowResponse> GetThingShadowAsync(string thingName, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -375,12 +375,12 @@ namespace MyNS
 		/// UpdateThingShadow things/{thingName}/shadow
 		/// </summary>
 		/// <param name="thingName">The name of the thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="name">The name of the shadow.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateThingShadowResponse> UpdateThingShadowAsync(string thingName, string name, UpdateThingShadowPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -457,8 +457,8 @@ namespace MyNS
 		/// ListNamedShadowsForThing api/things/shadow/ListNamedShadowsForThing/{thingName}
 		/// </summary>
 		/// <param name="thingName">The name of the thing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="nextToken">The token to retrieve the next set of results.</param>
 		/// <param name="pageSize">The result page size.

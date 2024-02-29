@@ -3689,8 +3689,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the alert.
 		/// Required
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		/// Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3778,8 +3778,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the detector.
 		/// Required
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		/// Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3791,8 +3791,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the detector.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3811,8 +3811,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the KMS key to use to encrypt your data.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3853,8 +3853,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the dataset.
 		/// Required
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		/// Pattern: ^[a-zA-Z0-9][a-zA-Z0-9\-_]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3866,8 +3866,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the dataset you are creating.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4081,8 +4081,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		/// Max length: 3000
 		/// Min length: 1
+		/// Max length: 3000
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4243,8 +4243,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		/// Max length: 3000
 		/// Min length: 1
+		/// Max length: 3000
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4308,8 +4308,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the result of the previous request is truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
-		/// Max length: 3000
 		/// Min length: 1
+		/// Max length: 3000
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4342,8 +4342,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
-		/// Max length: 3000
 		/// Min length: 1
+		/// Max length: 3000
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4397,8 +4397,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		/// Max length: 3000
 		/// Min length: 1
+		/// Max length: 3000
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4445,8 +4445,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		/// Max length: 3000
 		/// Min length: 1
+		/// Max length: 3000
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4506,8 +4506,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Specify the pagination token that's returned by a previous request to retrieve the next page of results.
-		/// Max length: 3000
 		/// Min length: 1
+		/// Max length: 3000
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4541,8 +4541,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the result of the previous request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
-		/// Max length: 3000
 		/// Min length: 1
+		/// Max length: 3000
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4685,8 +4685,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of an AWS KMS encryption key.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: arn:aws.*:kms:.*:[0-9]{12}:key/[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4697,8 +4697,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The updated detector description.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4738,8 +4738,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The dataset's description.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

@@ -3711,8 +3711,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the application.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3837,8 +3837,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the runtime environment.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3960,8 +3960,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the application to update.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]

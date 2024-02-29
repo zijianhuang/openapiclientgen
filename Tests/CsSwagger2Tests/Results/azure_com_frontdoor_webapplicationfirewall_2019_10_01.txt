@@ -829,8 +829,8 @@ namespace MyNS
 		/// Policies_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/FrontDoorWebApplicationFirewallPolicies
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
@@ -863,8 +863,8 @@ namespace MyNS
 		/// Policies_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/FrontDoorWebApplicationFirewallPolicies/{policyName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <param name="policyName">The name of the Web Application Firewall Policy.
 		/// Max length: 128
@@ -900,8 +900,8 @@ namespace MyNS
 		/// Policies_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/FrontDoorWebApplicationFirewallPolicies/{policyName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <param name="policyName">The name of the Web Application Firewall Policy.
 		/// Max length: 128
@@ -945,8 +945,8 @@ namespace MyNS
 		/// Policies_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/FrontDoorWebApplicationFirewallPolicies/{policyName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <param name="policyName">The name of the Web Application Firewall Policy.
 		/// Max length: 128

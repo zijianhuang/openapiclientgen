@@ -2771,8 +2771,8 @@ namespace MyNS
 		/// CreateAddon clusters/{name}/addons
 		/// </summary>
 		/// <param name="name">The name of the cluster to create the add-on for.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateAddonResponse> CreateAddonAsync(string name, CreateAddonPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2815,8 +2815,8 @@ namespace MyNS
 		/// ListAddons clusters/{name}/addons
 		/// </summary>
 		/// <param name="name">The name of the cluster.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="maxResults">The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When you use this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListAddonsRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListAddonsRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
 		/// Minimum: 1
@@ -3096,8 +3096,8 @@ namespace MyNS
 		/// DeleteAddon clusters/{name}/addons/{addonName}
 		/// </summary>
 		/// <param name="name">The name of the cluster to delete the add-on from.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="addonName">The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</param>
 		/// <param name="preserve">Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.</param>
@@ -3135,8 +3135,8 @@ namespace MyNS
 		/// DescribeAddon clusters/{name}/addons/{addonName}
 		/// </summary>
 		/// <param name="name">The name of the cluster.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="addonName">The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</param>
 		/// <returns>Success</returns>
@@ -3886,8 +3886,8 @@ namespace MyNS
 		/// UpdateAddon clusters/{name}/addons/{addonName}/update
 		/// </summary>
 		/// <param name="name">The name of the cluster.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="addonName">The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.</param>
 		/// <returns>Success</returns>
@@ -4143,8 +4143,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note> <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p> </note>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="serviceAccountRoleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4182,8 +4182,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique name to give to your cluster.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^[0-9A-Za-z][A-Za-z0-9\-_]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4591,8 +4591,8 @@ namespace MyNS
 		/// <summary>
 		/// Define a unique name for this cluster for your Region.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^[0-9A-Za-z][A-Za-z0-9\-_]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4644,8 +4644,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note> <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p> </note>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="serviceAccountRoleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

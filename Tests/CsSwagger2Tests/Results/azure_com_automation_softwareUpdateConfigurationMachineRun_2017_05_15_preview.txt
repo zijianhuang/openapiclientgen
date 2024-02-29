@@ -236,8 +236,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="api_version">Client Api Version.</param>
@@ -274,8 +274,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="softwareUpdateConfigurationMachineRunId">The Id of the software update configuration machine run.</param>

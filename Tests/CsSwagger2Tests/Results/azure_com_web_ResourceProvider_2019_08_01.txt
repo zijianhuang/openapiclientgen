@@ -64,8 +64,8 @@ namespace MyNS
 		public string[] Resources { get; set; }
 		
 		/// <summary>
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		/// Pattern:  ^[-\w\._\(\)]+[^\.]$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="targetResourceGroup")]
@@ -1705,8 +1705,8 @@ namespace MyNS
 		/// Move subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/moveResources
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -1741,8 +1741,8 @@ namespace MyNS
 		/// Validate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/validate
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -1784,8 +1784,8 @@ namespace MyNS
 		/// ValidateMove subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/validateMoveResources
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>

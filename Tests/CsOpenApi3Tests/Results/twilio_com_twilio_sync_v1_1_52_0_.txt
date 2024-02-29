@@ -24,8 +24,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -84,8 +84,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Service resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -126,8 +126,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Document resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -180,8 +180,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -192,8 +192,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Document resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ET[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -222,8 +222,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Document Permission resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -234,8 +234,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Sync Document to which the Document Permission applies.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ET[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="document_sid")]
@@ -264,8 +264,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -294,8 +294,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync List resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -342,8 +342,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -354,8 +354,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Sync List resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ES[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -384,8 +384,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the List Item resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -432,8 +432,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Sync List that contains the List Item.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ES[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="list_sid")]
@@ -450,8 +450,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -474,8 +474,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync List Permission resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -492,8 +492,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Sync List to which the Permission applies.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ES[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="list_sid")]
@@ -516,8 +516,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -546,8 +546,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync Map resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -594,8 +594,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -606,8 +606,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Sync Map resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^MP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -636,8 +636,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Map Item resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -684,8 +684,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Sync Map that contains the Map Item.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^MP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="map_sid")]
@@ -702,8 +702,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -726,8 +726,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync Map Permission resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -750,8 +750,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Sync Map to which the Permission applies.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^MP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="map_sid")]
@@ -768,8 +768,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -798,8 +798,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync Stream resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -840,8 +840,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -852,8 +852,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Sync Stream resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^TO[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -888,8 +888,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Stream Message resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^TZ[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]

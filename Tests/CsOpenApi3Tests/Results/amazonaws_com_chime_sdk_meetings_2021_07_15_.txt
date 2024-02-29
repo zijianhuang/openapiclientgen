@@ -1450,8 +1450,8 @@ namespace MyNS
 		/// ListTagsForResource tags#arn
 		/// </summary>
 		/// <param name="arn">The ARN of the resource.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1722,8 +1722,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.</p> <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.</p>
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1757,8 +1757,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique identifier for the client request. Use a different token for different meetings.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1771,8 +1771,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1782,8 +1782,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Reserved.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1793,8 +1793,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The external meeting ID.</p> <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1816,8 +1816,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// When specified, replicates the media from the primary meeting to the new meeting.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1878,8 +1878,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique identifier for the client request. Use a different token for different meetings.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1892,8 +1892,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The Region in which to create the meeting.</p> <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1903,8 +1903,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Reserved.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1914,8 +1914,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The external meeting ID.</p> <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1949,8 +1949,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// When specified, replicates the media from the primary meeting to the new meeting.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -2047,8 +2047,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the resource.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: ^arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2084,8 +2084,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the resource that you're removing tags from.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: ^arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

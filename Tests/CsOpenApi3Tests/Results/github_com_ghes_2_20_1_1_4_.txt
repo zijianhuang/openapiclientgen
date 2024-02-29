@@ -12029,8 +12029,8 @@ namespace MyNS
 		/// <summary>
 		/// SHA for the reference
 		/// Required
-		/// Max length: 40
 		/// Min length: 40
+		/// Max length: 40
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sha")]

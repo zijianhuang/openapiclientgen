@@ -434,8 +434,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="EventSource">The Amazon Resource Name (ARN) of the Amazon Kinesis stream.</param>
 		/// <param name="FunctionName">The name of the AWS Lambda function.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="Marker">Optional string. An opaque pagination token returned from a previous <code>ListEventSources</code> operation. If present, specifies to continue the list from where the returning call left off. </param>
 		/// <param name="MaxItems">Optional integer. Specifies the maximum number of event sources to return in response. This value must be greater than 0.
@@ -476,8 +476,8 @@ namespace MyNS
 		/// DeleteFunction 2014-11-13/functions/{FunctionName}
 		/// </summary>
 		/// <param name="FunctionName">The Lambda function to delete.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task DeleteFunctionAsync(string FunctionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -506,8 +506,8 @@ namespace MyNS
 		/// GetFunction 2014-11-13/functions/{FunctionName}
 		/// </summary>
 		/// <param name="FunctionName">The Lambda function name.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFunctionResponse> GetFunctionAsync(string FunctionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -604,8 +604,8 @@ namespace MyNS
 		/// GetFunctionConfiguration 2014-11-13/functions/{FunctionName}/configuration
 		/// </summary>
 		/// <param name="FunctionName">The name of the Lambda function for which you want to retrieve the configuration information.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<FunctionConfiguration> GetFunctionConfigurationAsync(string FunctionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -641,14 +641,14 @@ namespace MyNS
 		/// UpdateFunctionConfiguration 2014-11-13/functions/{FunctionName}/configuration
 		/// </summary>
 		/// <param name="FunctionName">The name of the Lambda function.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="Role">The Amazon Resource Name (ARN) of the IAM role that Lambda will assume when it executes your function. </param>
 		/// <param name="Handler">The function that Lambda calls to begin executing your function. For Node.js, it is the <i>module-name.export</i> value in your function. </param>
 		/// <param name="Description">A short user-defined function description. Lambda does not use this value. Assign a meaningful description as you see fit.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <param name="Timeout">The function execution time at which Lambda should terminate the function. Because the execution time has cost implications, we recommend you set this value based on your expected execution time. The default is 3 seconds. 
 		/// Minimum: 1
@@ -687,8 +687,8 @@ namespace MyNS
 		/// Invoke 2014-11-13/functions/{FunctionName}/invoke-async/
 		/// </summary>
 		/// <param name="FunctionName">The Lambda function name.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task InvokeAsync(string FunctionName, InvokePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -762,16 +762,16 @@ namespace MyNS
 		/// UploadFunction 2014-11-13/functions/{FunctionName}#Runtime&Role&Handler&Mode
 		/// </summary>
 		/// <param name="FunctionName">The name you want to assign to the function you are uploading. The function names appear in the console and are returned in the <a>ListFunctions</a> API. Function names are used to specify functions to other AWS Lambda APIs, such as <a>InvokeAsync</a>. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="Runtime">The runtime environment for the Lambda function you are uploading. Currently, Lambda supports only "nodejs" as the runtime.</param>
 		/// <param name="Role">The Amazon Resource Name (ARN) of the IAM role that Lambda assumes when it executes your function to access any other Amazon Web Services (AWS) resources. </param>
 		/// <param name="Handler">The function that Lambda calls to begin execution. For Node.js, it is the <i>module-name</i>.<i>export</i> value in your function. </param>
 		/// <param name="Mode">How the Lambda function will be invoked. Lambda supports only the "event" mode. </param>
 		/// <param name="Description">A short, user-defined function description. Lambda does not use this value. Assign a meaningful description as you see fit.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <param name="Timeout">The function execution time at which Lambda should terminate the function. Because the execution time has cost implications, we recommend you set this value based on your expected execution time. The default is 3 seconds. 
 		/// Minimum: 1
@@ -825,8 +825,8 @@ namespace MyNS
 		/// <summary>
 		/// The Lambda function to invoke when AWS Lambda detects an event on the stream.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-zA-Z0-9-_]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

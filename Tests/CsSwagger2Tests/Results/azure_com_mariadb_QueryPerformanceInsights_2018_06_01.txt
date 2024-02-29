@@ -389,8 +389,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="queryIds">The query identifiers</param>
@@ -429,8 +429,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="queryId">The Query-Store query identifier.</param>
@@ -469,8 +469,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <returns>OK</returns>
@@ -508,8 +508,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="queryStatisticId">The Query Statistic identifier.</param>
@@ -548,8 +548,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <returns>OK</returns>
@@ -587,8 +587,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="waitStatisticsId">The Wait Statistic identifier.</param>

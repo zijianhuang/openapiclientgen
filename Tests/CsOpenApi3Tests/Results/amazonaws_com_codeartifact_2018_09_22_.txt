@@ -1590,20 +1590,20 @@ namespace MyNS
 		/// AssociateExternalConnection v1/repository/external-connection#domain&repository&external-connection
 		/// </summary>
 		/// <param name="domain">The name of the domain that contains the repository.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository to which the external connection is added. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="external_connection"><p> The name of the external connection to add to the repository. The following values are supported: </p> <ul> <li> <p> <code>public:npmjs</code> - for the npm public repository. </p> </li> <li> <p> <code>public:nuget-org</code> - for the NuGet Gallery. </p> </li> <li> <p> <code>public:pypi</code> - for the Python Package Index. </p> </li> <li> <p> <code>public:maven-central</code> - for Maven Central. </p> </li> <li> <p> <code>public:maven-googleandroid</code> - for the Google Android repository. </p> </li> <li> <p> <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. </p> </li> <li> <p> <code>public:maven-commonsware</code> - for the CommonsWare Android repository. </p> </li> <li> <p> <code>public:maven-clojars</code> - for the Clojars repository. </p> </li> </ul>
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateExternalConnectionResult> AssociateExternalConnectionAsync(string domain, string domain_owner, string repository, string external_connection, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1634,20 +1634,20 @@ namespace MyNS
 		/// DisassociateExternalConnection v1/repository/external-connection#domain&repository&external-connection
 		/// </summary>
 		/// <param name="domain">The name of the domain that contains the repository from which to remove the external repository. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository">The name of the repository from which the external connection will be removed. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="external_connection">The name of the external connection to be removed from the repository. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateExternalConnectionResult> DisassociateExternalConnectionAsync(string domain, string domain_owner, string repository, string external_connection, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1683,29 +1683,29 @@ namespace MyNS
 		/// CopyPackageVersions v1/package/versions/copy#domain&source-repository&destination-repository&format&package
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the source and destination repositories. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="source_repository"> The name of the repository that contains the package versions to be copied. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="destination_repository"> The name of the repository into which package versions are copied. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format"> The format of the package versions to be copied. </param>
 		/// <param name="_namespace"><p>The namespace of the package versions to be copied. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when copying Maven package versions. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package"> The name of the package that contains the versions to be copied. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CopyPackageVersionsResult> CopyPackageVersionsAsync(string domain, string domain_owner, string source_repository, string destination_repository, PackageFormat format, string _namespace, string package, CopyPackageVersionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1748,8 +1748,8 @@ namespace MyNS
 		/// CreateDomain v1/domain#domain
 		/// </summary>
 		/// <param name="domain"> The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDomainResult> CreateDomainAsync(string domain, CreateDomainPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1792,12 +1792,12 @@ namespace MyNS
 		/// DeleteDomain v1/domain#domain
 		/// </summary>
 		/// <param name="domain"> The name of the domain to delete. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDomainResult> DeleteDomainAsync(string domain, string domain_owner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1833,12 +1833,12 @@ namespace MyNS
 		/// DescribeDomain v1/domain#domain
 		/// </summary>
 		/// <param name="domain"> A string that specifies the name of the requested domain. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDomainResult> DescribeDomainAsync(string domain, string domain_owner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1874,16 +1874,16 @@ namespace MyNS
 		/// CreateRepository v1/repository#domain&repository
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the created repository. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository to create. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateRepositoryResult> CreateRepositoryAsync(string domain, string domain_owner, string repository, CreateRepositoryPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1926,16 +1926,16 @@ namespace MyNS
 		/// DeleteRepository v1/repository#domain&repository
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the repository to delete. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository to delete. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteRepositoryResult> DeleteRepositoryAsync(string domain, string domain_owner, string repository, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1971,16 +1971,16 @@ namespace MyNS
 		/// DescribeRepository v1/repository#domain&repository
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the repository to describe. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> A string that specifies the name of the requested repository. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeRepositoryResult> DescribeRepositoryAsync(string domain, string domain_owner, string repository, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2016,16 +2016,16 @@ namespace MyNS
 		/// UpdateRepository v1/repository#domain&repository
 		/// </summary>
 		/// <param name="domain"> The name of the domain associated with the repository to update. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository to update. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRepositoryResult> UpdateRepositoryAsync(string domain, string domain_owner, string repository, UpdateRepositoryPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2068,16 +2068,16 @@ namespace MyNS
 		/// DeleteDomainPermissionsPolicy v1/domain/permissions/policy#domain
 		/// </summary>
 		/// <param name="domain"> The name of the domain associated with the resource policy to be deleted. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="policy_revision"> The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDomainPermissionsPolicyResult> DeleteDomainPermissionsPolicyAsync(string domain, string domain_owner, string policy_revision, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2113,12 +2113,12 @@ namespace MyNS
 		/// GetDomainPermissionsPolicy v1/domain/permissions/policy#domain
 		/// </summary>
 		/// <param name="domain"> The name of the domain to which the resource policy is attached. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDomainPermissionsPolicyResult> GetDomainPermissionsPolicyAsync(string domain, string domain_owner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2154,25 +2154,25 @@ namespace MyNS
 		/// DeletePackage v1/package#domain&repository&format&package
 		/// </summary>
 		/// <param name="domain">The name of the domain that contains the package to delete.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository">The name of the repository that contains the package to delete.
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format">The format of the requested package to delete.</param>
 		/// <param name="_namespace"><p>The namespace of the package to delete. The package component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>.</p> </li> <li> <p> Python and NuGet packages do not contain corresponding components, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package">The name of the package to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePackageResult> DeletePackageAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2208,25 +2208,25 @@ namespace MyNS
 		/// DescribePackage v1/package#domain&repository&format&package
 		/// </summary>
 		/// <param name="domain">The name of the domain that contains the repository that contains the package.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository">The name of the repository that contains the requested package. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format">A format that specifies the type of the requested package.</param>
 		/// <param name="_namespace"><p>The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when requesting Maven packages. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package">The name of the requested package.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePackageResult> DescribePackageAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2262,25 +2262,25 @@ namespace MyNS
 		/// PutPackageOriginConfiguration v1/package#domain&repository&format&package
 		/// </summary>
 		/// <param name="domain">The name of the domain that contains the repository that contains the package.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository">The name of the repository that contains the package.
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format">A format that specifies the type of the package to be updated.</param>
 		/// <param name="_namespace"><p>The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package">The name of the package to be updated.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutPackageOriginConfigurationResult> PutPackageOriginConfigurationAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, PutPackageOriginConfigurationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2323,25 +2323,25 @@ namespace MyNS
 		/// DeletePackageVersions v1/package/versions/delete#domain&repository&format&package
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the package to delete. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository that contains the package versions to delete. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format"> The format of the package versions to delete. </param>
 		/// <param name="_namespace"><p>The namespace of the package versions to be deleted. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package"> The name of the package with the versions to delete. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePackageVersionsResult> DeletePackageVersionsAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, DeletePackageVersionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2384,20 +2384,20 @@ namespace MyNS
 		/// DeleteRepositoryPermissionsPolicy v1/repository/permissions/policies#domain&repository
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the repository associated with the resource policy to be deleted. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository that is associated with the resource policy to be deleted 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="policy_revision"> The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteRepositoryPermissionsPolicyResult> DeleteRepositoryPermissionsPolicyAsync(string domain, string domain_owner, string repository, string policy_revision, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2433,29 +2433,29 @@ namespace MyNS
 		/// DescribePackageVersion v1/package/version#domain&repository&format&package&version
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the repository that contains the package version. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository that contains the package version. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format"> A format that specifies the type of the requested package version. </param>
 		/// <param name="_namespace"><p>The namespace of the requested package version. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package"> The name of the requested package version. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="version"> A string that contains the package version (for example, <code>3.5.2</code>). 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePackageVersionResult> DescribePackageVersionAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2491,25 +2491,25 @@ namespace MyNS
 		/// DisposePackageVersions v1/package/versions/dispose#domain&repository&format&package
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the repository you want to dispose. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository that contains the package versions you want to dispose. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format"> A format that specifies the type of package versions you want to dispose. </param>
 		/// <param name="_namespace"><p>The namespace of the package versions to be disposed. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package"> The name of the package with the versions you want to dispose. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisposePackageVersionsResult> DisposePackageVersionsAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, DisposePackageVersionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2552,12 +2552,12 @@ namespace MyNS
 		/// GetAuthorizationToken v1/authorization-token#domain
 		/// </summary>
 		/// <param name="domain"> The name of the domain that is in scope for the generated authorization token. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="duration">The time, in seconds, that the generated authorization token is valid. Valid values are <code>0</code> and any number between <code>900</code> (15 minutes) and <code>43200</code> (12 hours). A value of <code>0</code> will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.
 		/// Minimum: 0
@@ -2592,37 +2592,37 @@ namespace MyNS
 		/// GetPackageVersionAsset v1/package/version/asset#domain&repository&format&package&version&asset
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the repository that contains the package version with the requested asset. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The repository that contains the package version with the requested asset. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format"> A format that specifies the type of the package version with the requested asset file. </param>
 		/// <param name="_namespace"><p>The namespace of the package version with the requested asset file. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package"> The name of the package that contains the requested asset. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="version"> A string that contains the package version (for example, <code>3.5.2</code>). 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="asset"> The name of the requested asset. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="revision"> The name of the package version revision that contains the requested asset. 
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPackageVersionAssetResult> GetPackageVersionAssetAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, string version, string asset, string revision, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2658,29 +2658,29 @@ namespace MyNS
 		/// GetPackageVersionReadme v1/package/version/readme#domain&repository&format&package&version
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the repository that contains the package version with the requested readme file. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The repository that contains the package with the requested readme file. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format"> A format that specifies the type of the package version with the requested readme file. </param>
 		/// <param name="_namespace"><p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package"> The name of the package version that contains the requested readme file. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="version"> A string that contains the package version (for example, <code>3.5.2</code>). 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPackageVersionReadmeResult> GetPackageVersionReadmeAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2716,16 +2716,16 @@ namespace MyNS
 		/// GetRepositoryEndpoint v1/repository/endpoint#domain&repository&format
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the repository. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format"> Returns which endpoint of a repository to return. A repository has one endpoint for each package format. </param>
 		/// <returns>Success</returns>
@@ -2762,16 +2762,16 @@ namespace MyNS
 		/// GetRepositoryPermissionsPolicy v1/repository/permissions/policy#domain&repository
 		/// </summary>
 		/// <param name="domain"> The name of the domain containing the repository whose associated resource policy is to be retrieved. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository whose associated resource policy is to be retrieved. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRepositoryPermissionsPolicyResult> GetRepositoryPermissionsPolicyAsync(string domain, string domain_owner, string repository, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2807,16 +2807,16 @@ namespace MyNS
 		/// PutRepositoryPermissionsPolicy v1/repository/permissions/policy#domain&repository
 		/// </summary>
 		/// <param name="domain"> The name of the domain containing the repository to set the resource policy on. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository to set the resource policy on. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutRepositoryPermissionsPolicyResult> PutRepositoryPermissionsPolicyAsync(string domain, string domain_owner, string repository, PutRepositoryPermissionsPolicyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2901,37 +2901,37 @@ namespace MyNS
 		/// ListPackageVersionAssets v1/package/version/assets#domain&repository&format&package&version
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the repository associated with the package version assets. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository that contains the package that contains the requested package version assets. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format"> The format of the package that contains the requested package version assets. </param>
 		/// <param name="_namespace"><p>The namespace of the package version that contains the requested package version assets. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package"> The name of the package that contains the requested package version assets. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="version"> A string that contains the package version (for example, <code>3.5.2</code>). 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="max_results"> The maximum number of results to return per page. 
 		/// Minimum: 1
 		/// Maximum: 1000
 		// </param>
 		/// <param name="next_token"> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. 
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -2964,33 +2964,33 @@ namespace MyNS
 		/// ListPackageVersionDependencies v1/package/version/dependencies#domain&repository&format&package&version
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the repository that contains the requested package version dependencies. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository that contains the requested package version. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format"> The format of the package with the requested dependencies. </param>
 		/// <param name="_namespace"><p>The namespace of the package version with the requested dependencies. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package"> The name of the package versions' package. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="version"> A string that contains the package version (for example, <code>3.5.2</code>). 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="next_token"> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. 
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListPackageVersionDependenciesResult> ListPackageVersionDependenciesAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, string version, string next_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3021,25 +3021,25 @@ namespace MyNS
 		/// ListPackageVersions v1/package/versions#domain&repository&format&package
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the repository that contains the requested package versions. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository that contains the requested package versions. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format"> The format of the package versions you want to list. </param>
 		/// <param name="_namespace"><p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package"> The name of the package for which you want to request package versions. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="status"> A string that filters the requested package versions by status. </param>
 		/// <param name="sortBy"> How to sort the requested list of package versions. </param>
@@ -3048,8 +3048,8 @@ namespace MyNS
 		/// Maximum: 1000
 		// </param>
 		/// <param name="next_token"> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. 
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		// </param>
 		/// <param name="originType">The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</param>
 		/// <param name="maxResults">Pagination limit</param>
@@ -3083,33 +3083,33 @@ namespace MyNS
 		/// ListPackages v1/packages#domain&repository
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the repository that contains the requested packages. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The name of the repository that contains the requested packages. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format">The format used to filter requested packages. Only packages from the provided format will be returned.</param>
 		/// <param name="_namespace"><p>The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called <code>--namespace</code> and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p> <p>Each package format uses namespace as follows:</p> <ul> <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package_prefix"> A prefix used to filter requested packages. Only packages with names that start with <code>packagePrefix</code> are returned. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="max_results"> The maximum number of results to return per page. 
 		/// Minimum: 1
 		/// Maximum: 1000
 		// </param>
 		/// <param name="next_token"> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. 
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		// </param>
 		/// <param name="publish">The value of the <code>Publish</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</param>
 		/// <param name="upstream">The value of the <code>Upstream</code> package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>.</param>
@@ -3144,16 +3144,16 @@ namespace MyNS
 		/// ListRepositories v1/repositories
 		/// </summary>
 		/// <param name="repository_prefix"> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned.
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="max_results"> The maximum number of results to return per page. 
 		/// Minimum: 1
 		/// Maximum: 1000
 		// </param>
 		/// <param name="next_token"> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. 
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -3186,28 +3186,28 @@ namespace MyNS
 		/// ListRepositoriesInDomain v1/domain/repositories#domain
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the returned list of repositories. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="administrator_account"> Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository_prefix"> A prefix used to filter returned repositories. Only repositories with names that start with <code>repositoryPrefix</code> are returned. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="max_results"> The maximum number of results to return per page. 
 		/// Minimum: 1
 		/// Maximum: 1000
 		// </param>
 		/// <param name="next_token"> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. 
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -3240,8 +3240,8 @@ namespace MyNS
 		/// ListTagsForResource v1/tags#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource to get tags for.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResult> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3272,33 +3272,33 @@ namespace MyNS
 		/// PublishPackageVersion v1/package/version/publish#domain&repository&format&package&version&asset&x-amz-content-sha256
 		/// </summary>
 		/// <param name="domain">The name of the domain that contains the repository that contains the package version to publish.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner">The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository">The name of the repository that the package version will be published to.
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format"><p>A format that specifies the type of the package version with the requested asset file.</p> <p>The only supported value is <code>generic</code>.</p></param>
 		/// <param name="_namespace">The namespace of the package version to publish.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package">The name of the package version to publish.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="version">The package version to publish (for example, <code>3.5.2</code>).
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="asset">The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</code> 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="unfinished"><p>Specifies whether the package version should remain in the <code>unfinished</code> state. If omitted, the package version status will be set to <code>Published</code> (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package version status</a> in the <i>CodeArtifact User Guide</i>).</p> <p>Valid values: <code>unfinished</code> </p></param>
 		/// <returns>Success</returns>
@@ -3382,8 +3382,8 @@ namespace MyNS
 		/// TagResource v1/tag#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResult> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3426,8 +3426,8 @@ namespace MyNS
 		/// UntagResource v1/untag#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource that you want to remove tags from.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResult> UntagResourceAsync(string resourceArn, UntagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3470,25 +3470,25 @@ namespace MyNS
 		/// UpdatePackageVersionsStatus v1/package/versions/update_status#domain&repository&format&package
 		/// </summary>
 		/// <param name="domain"> The name of the domain that contains the repository that contains the package versions with a status to be updated. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="domain_owner"> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="repository"> The repository that contains the package versions with the status you want to update. 
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <param name="format"> A format that specifies the type of the package with the statuses to update. </param>
 		/// <param name="_namespace"><p>The namespace of the package version to be updated. The package version component that specifies its namespace depends on its type. For example:</p> <ul> <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="package"> The name of the package with the version statuses to update. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePackageVersionsStatusResult> UpdatePackageVersionsStatusAsync(string domain, string domain_owner, string repository, PackageFormat format, string _namespace, string package, UpdatePackageVersionsStatusPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3562,8 +3562,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p> The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an <code>encryptionKey</code>, your IAM role must have <code>kms:DescribeKey</code> and <code>kms:CreateGrant</code> permissions on the encryption key that is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax">DescribeKey</a> in the <i>Key Management Service API Reference</i> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">Key Management Service API Permissions Reference</a> in the <i>Key Management Service Developer Guide</i>. </p> <important> <p> CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer Guide</i>. </p> </important>
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: \S+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="encryptionKey")]
@@ -3706,8 +3706,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: \S+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="policyRevision")]
@@ -3719,8 +3719,8 @@ namespace MyNS
 		/// <summary>
 		///  A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository. 
 		/// Required
-		/// Max length: 7168
 		/// Min length: 1
+		/// Max length: 7168
 		/// Pattern: [\P{C}\s]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3745,8 +3745,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. 
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// Pattern: \S+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -3774,8 +3774,8 @@ namespace MyNS
 		/// <summary>
 		///  The name of the domain on which to set the resource policy. 
 		/// Required
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		/// Pattern: [a-z][a-z0-9\-]{0,48}[a-z0-9]
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3787,8 +3787,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="domainOwner")]
@@ -3799,8 +3799,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: \S+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="policyRevision")]
@@ -3812,8 +3812,8 @@ namespace MyNS
 		/// <summary>
 		///  A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain. 
 		/// Required
-		/// Max length: 7168
 		/// Min length: 1
+		/// Max length: 7168
 		/// Pattern: [\P{C}\s]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

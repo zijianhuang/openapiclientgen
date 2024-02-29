@@ -2350,8 +2350,8 @@ namespace MyNS
 		/// CreateBackendEnvironment apps/{appId}/backendenvironments
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateBackendEnvironmentResult> CreateBackendEnvironmentAsync(string appId, CreateBackendEnvironmentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2394,12 +2394,12 @@ namespace MyNS
 		/// ListBackendEnvironments apps/{appId}/backendenvironments
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="environmentName"> The name of the backend environment 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="nextToken"> A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. 
 		/// Max length: 2000
@@ -2442,8 +2442,8 @@ namespace MyNS
 		/// CreateBranch apps/{appId}/branches
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateBranchResult> CreateBranchAsync(string appId, CreateBranchPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2486,8 +2486,8 @@ namespace MyNS
 		/// ListBranches apps/{appId}/branches
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="nextToken"> A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. 
 		/// Max length: 2000
@@ -2530,12 +2530,12 @@ namespace MyNS
 		/// CreateDeployment apps/{appId}/branches/{branchName}/deployments
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="branchName"> The name for the branch, for the job. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDeploymentResult> CreateDeploymentAsync(string appId, string branchName, CreateDeploymentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2578,8 +2578,8 @@ namespace MyNS
 		/// CreateDomainAssociation apps/{appId}/domains
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDomainAssociationResult> CreateDomainAssociationAsync(string appId, CreateDomainAssociationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2622,8 +2622,8 @@ namespace MyNS
 		/// ListDomainAssociations apps/{appId}/domains
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="nextToken"> A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. 
 		/// Max length: 2000
@@ -2666,8 +2666,8 @@ namespace MyNS
 		/// CreateWebhook apps/{appId}/webhooks
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateWebhookResult> CreateWebhookAsync(string appId, CreateWebhookPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2710,8 +2710,8 @@ namespace MyNS
 		/// ListWebhooks apps/{appId}/webhooks
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="nextToken"> A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. 
 		/// Max length: 2000
@@ -2754,8 +2754,8 @@ namespace MyNS
 		/// DeleteApp apps/{appId}
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAppResult> DeleteAppAsync(string appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2791,8 +2791,8 @@ namespace MyNS
 		/// GetApp apps/{appId}
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAppResult> GetAppAsync(string appId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2828,8 +2828,8 @@ namespace MyNS
 		/// UpdateApp apps/{appId}
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppResult> UpdateAppAsync(string appId, UpdateAppPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2872,12 +2872,12 @@ namespace MyNS
 		/// DeleteBackendEnvironment apps/{appId}/backendenvironments/{environmentName}
 		/// </summary>
 		/// <param name="appId"> The unique ID of an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="environmentName"> The name of a backend environment of an Amplify app. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteBackendEnvironmentResult> DeleteBackendEnvironmentAsync(string appId, string environmentName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2913,12 +2913,12 @@ namespace MyNS
 		/// GetBackendEnvironment apps/{appId}/backendenvironments/{environmentName}
 		/// </summary>
 		/// <param name="appId"> The unique id for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="environmentName"> The name for the backend environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetBackendEnvironmentResult> GetBackendEnvironmentAsync(string appId, string environmentName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2954,12 +2954,12 @@ namespace MyNS
 		/// DeleteBranch apps/{appId}/branches/{branchName}
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="branchName"> The name for the branch. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteBranchResult> DeleteBranchAsync(string appId, string branchName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2995,12 +2995,12 @@ namespace MyNS
 		/// GetBranch apps/{appId}/branches/{branchName}
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="branchName"> The name for the branch. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetBranchResult> GetBranchAsync(string appId, string branchName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3036,12 +3036,12 @@ namespace MyNS
 		/// UpdateBranch apps/{appId}/branches/{branchName}
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="branchName"> The name for the branch. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateBranchResult> UpdateBranchAsync(string appId, string branchName, UpdateBranchPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3084,8 +3084,8 @@ namespace MyNS
 		/// DeleteDomainAssociation apps/{appId}/domains/{domainName}
 		/// </summary>
 		/// <param name="appId"> The unique id for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="domainName"> The name of the domain. 
 		/// Max length: 64
@@ -3124,8 +3124,8 @@ namespace MyNS
 		/// GetDomainAssociation apps/{appId}/domains/{domainName}
 		/// </summary>
 		/// <param name="appId"> The unique id for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="domainName"> The name of the domain. 
 		/// Max length: 64
@@ -3164,8 +3164,8 @@ namespace MyNS
 		/// UpdateDomainAssociation apps/{appId}/domains/{domainName}
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="domainName"> The name of the domain. 
 		/// Max length: 64
@@ -3211,12 +3211,12 @@ namespace MyNS
 		/// DeleteJob apps/{appId}/branches/{branchName}/jobs/{jobId}
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="branchName"> The name for the branch, for the job. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="jobId"> The unique ID for the job. 
 		/// Max length: 255
@@ -3255,12 +3255,12 @@ namespace MyNS
 		/// GetJob apps/{appId}/branches/{branchName}/jobs/{jobId}
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="branchName"> The branch name for the job. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="jobId"> The unique ID for the job. 
 		/// Max length: 255
@@ -3414,8 +3414,8 @@ namespace MyNS
 		/// GenerateAccessLogs apps/{appId}/accesslogs
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GenerateAccessLogsResult> GenerateAccessLogsAsync(string appId, GenerateAccessLogsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3494,12 +3494,12 @@ namespace MyNS
 		/// ListArtifacts apps/{appId}/branches/{branchName}/jobs/{jobId}/artifacts
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="branchName"> The name of a branch that is part of an Amplify app. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="jobId"> The unique ID for a job. 
 		/// Max length: 255
@@ -3545,12 +3545,12 @@ namespace MyNS
 		/// ListJobs apps/{appId}/branches/{branchName}/jobs
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="branchName"> The name for a branch. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="nextToken"> A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. 
 		/// Max length: 2000
@@ -3593,12 +3593,12 @@ namespace MyNS
 		/// StartJob apps/{appId}/branches/{branchName}/jobs
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="branchName"> The branch name for the job. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartJobResult> StartJobAsync(string appId, string branchName, StartJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3641,8 +3641,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn"> The Amazon Resource Name (ARN) to use to list tags. 
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3678,8 +3678,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn"> The Amazon Resource Name (ARN) to use to tag a resource. 
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3722,12 +3722,12 @@ namespace MyNS
 		/// StartDeployment apps/{appId}/branches/{branchName}/deployments/start
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="branchName"> The name for the branch, for the job. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartDeploymentResult> StartDeploymentAsync(string appId, string branchName, StartDeploymentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3770,12 +3770,12 @@ namespace MyNS
 		/// StopJob apps/{appId}/branches/{branchName}/jobs/{jobId}/stop
 		/// </summary>
 		/// <param name="appId"> The unique ID for an Amplify app. 
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="branchName"> The name for the branch, for the job. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="jobId"> The unique id for the job. 
 		/// Max length: 255
@@ -3814,8 +3814,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn"> The Amazon Resource Name (ARN) to use to untag a resource. 
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys"> The tag keys to use to untag a resource. 
 		/// Minimum items: 1
@@ -3857,8 +3857,8 @@ namespace MyNS
 		/// <summary>
 		///  The name for an Amplify app. 
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3896,8 +3896,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The AWS Identity and Access Management (IAM) service role for an Amplify app. 
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iamServiceRoleArn")]
@@ -3918,8 +3918,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p> <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accessToken")]
@@ -3976,8 +3976,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The build specification (build spec) file for an Amplify app build. 
-		/// Max length: 25000
 		/// Min length: 1
+		/// Max length: 25000
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="buildSpec")]
@@ -3988,8 +3988,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The custom HTTP headers for an Amplify app.
-		/// Max length: 25000
 		/// Min length: 0
+		/// Max length: 25000
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="customHeaders")]
@@ -4057,8 +4057,8 @@ namespace MyNS
 		/// <summary>
 		///  The name for the backend environment. 
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4070,8 +4070,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The AWS CloudFormation stack name of a backend environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="stackName")]
@@ -4082,8 +4082,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The name of deployment artifacts. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="deploymentArtifacts")]
@@ -4099,8 +4099,8 @@ namespace MyNS
 		/// <summary>
 		///  The name for the branch. 
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4184,8 +4184,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The build specification (build spec) file for an Amplify app build. 
-		/// Max length: 25000
 		/// Min length: 1
+		/// Max length: 25000
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="buildSpec")]
@@ -4196,8 +4196,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The content Time to Live (TTL) for the website in seconds. 
-		/// Max length: 32
 		/// Min length: 0
+		/// Max length: 32
 		/// Pattern: \d*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ttl")]
@@ -4234,8 +4234,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. 
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="backendEnvironmentArn")]
@@ -4309,8 +4309,8 @@ namespace MyNS
 		/// <summary>
 		///  The name for a branch that is part of an Amplify app. 
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4336,8 +4336,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The name for an Amplify app. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -4364,8 +4364,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The AWS Identity and Access Management (IAM) service role for an Amplify app. 
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iamServiceRoleArn")]
@@ -4416,8 +4416,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The build specification (build spec) file for an Amplify app build. 
-		/// Max length: 25000
 		/// Min length: 1
+		/// Max length: 25000
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="buildSpec")]
@@ -4428,8 +4428,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The custom HTTP headers for an Amplify app.
-		/// Max length: 25000
 		/// Min length: 0
+		/// Max length: 25000
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="customHeaders")]
@@ -4478,8 +4478,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p> <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accessToken")]
@@ -4594,8 +4594,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The build specification (build spec) file for an Amplify app build. 
-		/// Max length: 25000
 		/// Min length: 1
+		/// Max length: 25000
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="buildSpec")]
@@ -4606,8 +4606,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The content Time to Live (TTL) for the website in seconds. 
-		/// Max length: 32
 		/// Min length: 0
+		/// Max length: 32
 		/// Pattern: \d*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ttl")]
@@ -4644,8 +4644,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. 
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="backendEnvironmentArn")]
@@ -4694,8 +4694,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The name for a branch that is part of an Amplify app. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: \(\?s\).\+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="branchName")]

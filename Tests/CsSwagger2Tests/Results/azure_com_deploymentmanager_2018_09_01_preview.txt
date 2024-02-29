@@ -827,8 +827,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="artifactSourceName">The name of the artifact source.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -863,8 +863,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="artifactSourceName">The name of the artifact source.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -899,8 +899,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="artifactSourceName">The name of the artifact source.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -928,8 +928,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="rolloutName">The rollout name.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -965,8 +965,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="rolloutName">The rollout name.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -1002,8 +1002,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="rolloutName">The rollout name.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -1032,8 +1032,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="rolloutName">The rollout name.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -1068,8 +1068,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="rolloutName">The rollout name.</param>
 		/// <param name="skipSucceeded">If true, will skip all succeeded steps so far in the rollout. If false, will execute the entire rollout again regardless of the current state of individual resources. Defaults to false if not specified.</param>
@@ -1104,8 +1104,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serviceTopologyName">The name of the service topology .</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -1169,8 +1169,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serviceTopologyName">The name of the service topology .</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -1198,8 +1198,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serviceTopologyName">The name of the service topology .</param>
 		/// <param name="serviceName">The name of the service resource.</param>
@@ -1235,8 +1235,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serviceTopologyName">The name of the service topology .</param>
 		/// <param name="serviceName">The name of the service resource.</param>
@@ -1272,8 +1272,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serviceTopologyName">The name of the service topology .</param>
 		/// <param name="serviceName">The name of the service resource.</param>
@@ -1302,8 +1302,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serviceTopologyName">The name of the service topology .</param>
 		/// <param name="serviceName">The name of the service resource.</param>
@@ -1340,8 +1340,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serviceTopologyName">The name of the service topology .</param>
 		/// <param name="serviceName">The name of the service resource.</param>
@@ -1378,8 +1378,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serviceTopologyName">The name of the service topology .</param>
 		/// <param name="serviceName">The name of the service resource.</param>
@@ -1409,8 +1409,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="stepName">The name of the deployment step.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -1445,8 +1445,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="stepName">The name of the deployment step.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -1481,8 +1481,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="stepName">The name of the deployment step.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>

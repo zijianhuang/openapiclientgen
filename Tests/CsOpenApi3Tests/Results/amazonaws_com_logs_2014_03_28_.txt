@@ -840,8 +840,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filterPattern")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1253,8 +1253,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filterPattern")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2253,8 +2253,8 @@ namespace MyNS
 		/// <summary>
 		/// A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="filterPattern")]

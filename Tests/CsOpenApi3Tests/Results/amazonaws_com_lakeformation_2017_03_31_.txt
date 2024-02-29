@@ -4722,8 +4722,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4785,8 +4785,8 @@ namespace MyNS
 		/// <summary>
 		/// A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.
 		/// Required
-		/// Max length: 100000
 		/// Min length: 4
+		/// Max length: 100000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4829,8 +4829,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4851,8 +4851,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4874,8 +4874,8 @@ namespace MyNS
 		/// <summary>
 		/// The transaction to cancel.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\p{L}\p{N}\p{P}]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4892,8 +4892,8 @@ namespace MyNS
 		/// <summary>
 		/// The transaction to commit.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\p{L}\p{N}\p{P}]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4949,8 +4949,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4960,8 +4960,8 @@ namespace MyNS
 		/// <summary>
 		/// The key-name for the LF-tag.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^([\p{L}\p{Z}\p{N}_.:\/=+\-@%]*)$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4989,8 +4989,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the catalog to which the table belongs.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4999,8 +4999,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A database in the Glue Data Catalog.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5009,8 +5009,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A table in the database.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5019,8 +5019,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name given by the user to the data filter cell.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5033,8 +5033,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5044,8 +5044,8 @@ namespace MyNS
 		/// <summary>
 		/// The key-name for the LF-tag to delete.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^([\p{L}\p{Z}\p{N}_.:\/=+\-@%]*)$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5061,8 +5061,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Glue data catalog that contains the governed table. Defaults to the current account ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5072,8 +5072,8 @@ namespace MyNS
 		/// <summary>
 		/// The database that contains the governed table.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5084,8 +5084,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the governed table.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5096,8 +5096,8 @@ namespace MyNS
 		/// <summary>
 		/// ID of the transaction that the writes occur in.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\p{L}\p{N}\p{P}]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5150,8 +5150,8 @@ namespace MyNS
 		/// <summary>
 		/// The transaction for which to return status.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\p{L}\p{N}\p{P}]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5167,8 +5167,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The transaction to extend.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\p{L}\p{N}\p{P}]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -5184,8 +5184,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the catalog to which the table belongs.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5196,8 +5196,8 @@ namespace MyNS
 		/// <summary>
 		/// A database in the Glue Data Catalog.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5208,8 +5208,8 @@ namespace MyNS
 		/// <summary>
 		/// A table in the database.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5220,8 +5220,8 @@ namespace MyNS
 		/// <summary>
 		/// The name given by the user to the data filter cell.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5235,8 +5235,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5249,8 +5249,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5286,8 +5286,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5297,8 +5297,8 @@ namespace MyNS
 		/// <summary>
 		/// The key-name for the LF-tag.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^([\p{L}\p{Z}\p{N}_.:\/=+\-@%]*)$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5315,8 +5315,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the plan query operation.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5331,8 +5331,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the plan query operation.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5346,8 +5346,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5402,8 +5402,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The catalog containing the governed table. Defaults to the caller’s account.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5413,8 +5413,8 @@ namespace MyNS
 		/// <summary>
 		/// The database containing the governed table.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5425,8 +5425,8 @@ namespace MyNS
 		/// <summary>
 		/// The governed table for which to retrieve objects.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5436,8 +5436,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\p{L}\p{N}\p{P}]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -5454,8 +5454,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p> <ul> <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li> <li> <p>The logical operators supported are: AND</p> </li> <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li> </ul>
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5601,8 +5601,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the plan query operation for which to get results.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5649,8 +5649,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the plan query operation.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5664,8 +5664,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5784,8 +5784,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5819,8 +5819,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5862,8 +5862,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Indicates that related permissions should be included in the results.
-		/// Max length: 5
 		/// Min length: 1
+		/// Max length: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5940,8 +5940,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Catalog ID of the table.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5951,8 +5951,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the database where the table is present.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5963,8 +5963,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the table.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5999,8 +5999,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The catalog for which to list transactions. Defaults to the account ID of the caller.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6036,8 +6036,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6124,8 +6124,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6186,8 +6186,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6280,8 +6280,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6317,8 +6317,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6430,8 +6430,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6441,8 +6441,8 @@ namespace MyNS
 		/// <summary>
 		/// The key-name for the LF-tag for which to add or delete values.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^([\p{L}\p{Z}\p{N}_.:\/=+\-@%]*)$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6506,8 +6506,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The catalog containing the governed table to update. Defaults to the caller’s account ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6517,8 +6517,8 @@ namespace MyNS
 		/// <summary>
 		/// The database containing the governed table to update.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -6529,8 +6529,8 @@ namespace MyNS
 		/// <summary>
 		/// The governed table to update.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -6540,8 +6540,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The transaction at which to do the write.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\p{L}\p{N}\p{P}]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -6568,8 +6568,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Catalog ID of the table.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6579,8 +6579,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the database where the table is present.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -6591,8 +6591,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the table for which to enable the storage optimizer.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]

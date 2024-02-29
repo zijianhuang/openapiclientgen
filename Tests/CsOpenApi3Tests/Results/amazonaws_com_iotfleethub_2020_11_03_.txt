@@ -406,8 +406,8 @@ namespace MyNS
 		/// ListApplications applications
 		/// </summary>
 		/// <param name="nextToken">A token used to get the next set of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListApplicationsResponse> ListApplicationsAsync(string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -443,12 +443,12 @@ namespace MyNS
 		/// DeleteApplication applications/{applicationId}
 		/// </summary>
 		/// <param name="applicationId">The unique Id of the web application.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="clientToken">A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task DeleteApplicationAsync(string applicationId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -477,8 +477,8 @@ namespace MyNS
 		/// DescribeApplication applications/{applicationId}
 		/// </summary>
 		/// <param name="applicationId">The unique Id of the web application.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeApplicationResponse> DescribeApplicationAsync(string applicationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -514,8 +514,8 @@ namespace MyNS
 		/// UpdateApplication applications/{applicationId}
 		/// </summary>
 		/// <param name="applicationId">The unique Id of the web application.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		public async Task UpdateApplicationAsync(string applicationId, UpdateApplicationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -663,8 +663,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the web application.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^[ -~]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -676,8 +676,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional description of the web application.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: ^[ -~]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="applicationDescription")]
@@ -688,8 +688,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -701,8 +701,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The ARN of the role that the web application assumes when it interacts with AWS IoT Core.</p> <note> <p>The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i> </code>.</p> </note>
 		/// Required
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: ^arn:[!-~]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -724,8 +724,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the web application.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^[ -~]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="applicationName")]
@@ -736,8 +736,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional description of the web application.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: ^[ -~]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="applicationDescription")]
@@ -748,8 +748,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]

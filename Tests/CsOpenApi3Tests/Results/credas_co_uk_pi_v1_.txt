@@ -1633,8 +1633,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="forename")]
@@ -1643,8 +1643,8 @@ namespace MyNS
 		public string Forename { get; set; }
 		
 		/// <summary>
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="middleName")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1655,8 +1655,8 @@ namespace MyNS
 		public CredasApiModelsRegistrationsKeyValueItem[] Parameters { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="referenceId")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1678,8 +1678,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="surname")]
@@ -2001,8 +2001,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 10
 		/// Min length: 1
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="diallingCode")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2013,8 +2013,8 @@ namespace MyNS
 		public System.Nullable<System.Boolean> DuplicateAcknowledgement { get; set; }
 		
 		/// <summary>
-		/// Max length: 250
 		/// Min length: 0
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="emailAddress")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2023,8 +2023,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="forename")]
@@ -2033,8 +2033,8 @@ namespace MyNS
 		public string Forename { get; set; }
 		
 		/// <summary>
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="middleName")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2045,8 +2045,8 @@ namespace MyNS
 		public CredasApiModelsRegistrationsKeyValueItem[] Parameters { get; set; }
 		
 		/// <summary>
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="phoneNumber")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2057,8 +2057,8 @@ namespace MyNS
 		public System.Nullable<System.Boolean> ProvideWebJourneyLink { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="referenceId")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2093,8 +2093,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="surname")]
@@ -2760,8 +2760,8 @@ namespace MyNS
 		public CredasApiModelsPropertyRegisterPropertyRegisterCheckResponse ProofOfOwnershipCheck { get; set; }
 		
 		/// <summary>
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="referenceId")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3531,8 +3531,8 @@ namespace MyNS
 		public System.Nullable<CredasApiModelsRegistrationsUpdateContactDetailsRequestDeliveryMethod> DeliveryMethod { get; set; }
 		
 		/// <summary>
-		/// Max length: 10
 		/// Min length: 1
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="diallingCode")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3540,8 +3540,8 @@ namespace MyNS
 		public string DiallingCode { get; set; }
 		
 		/// <summary>
-		/// Max length: 250
 		/// Min length: 0
+		/// Max length: 250
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3550,8 +3550,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="forename")]
@@ -3560,8 +3560,8 @@ namespace MyNS
 		public string Forename { get; set; }
 		
 		/// <summary>
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="middleName")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3569,8 +3569,8 @@ namespace MyNS
 		public string MiddleName { get; set; }
 		
 		/// <summary>
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="phoneNumber")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3579,8 +3579,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="surname")]
@@ -3657,8 +3657,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="referenceId")]
@@ -3667,8 +3667,8 @@ namespace MyNS
 		public string ReferenceId { get; set; }
 		
 		/// <summary>
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="user")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3695,8 +3695,8 @@ namespace MyNS
 		public string RegistrationId { get; set; }
 		
 		/// <summary>
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="user")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3847,8 +3847,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="referenceId")]

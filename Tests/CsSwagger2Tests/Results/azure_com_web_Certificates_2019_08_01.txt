@@ -123,8 +123,8 @@ namespace MyNS
 		/// Certificates_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/certificates
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -158,8 +158,8 @@ namespace MyNS
 		/// Certificates_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/certificates/{name}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="name">Name of the certificate.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -194,8 +194,8 @@ namespace MyNS
 		/// Certificates_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/certificates/{name}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="name">Name of the certificate.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -238,8 +238,8 @@ namespace MyNS
 		/// Certificates_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/certificates/{name}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="name">Name of the certificate.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -268,8 +268,8 @@ namespace MyNS
 		/// Certificates_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/certificates/{name}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="name">Name of the certificate.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>

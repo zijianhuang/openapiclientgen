@@ -1629,8 +1629,8 @@ namespace MyNS
 		/// ApplicationDefinitions_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applicationDefinitions
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -1663,12 +1663,12 @@ namespace MyNS
 		/// ApplicationDefinitions_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applicationDefinitions/{applicationDefinitionName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="applicationDefinitionName">The name of the managed application definition.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -1701,12 +1701,12 @@ namespace MyNS
 		/// ApplicationDefinitions_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applicationDefinitions/{applicationDefinitionName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="applicationDefinitionName">The name of the managed application definition.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -1747,12 +1747,12 @@ namespace MyNS
 		/// ApplicationDefinitions_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applicationDefinitions/{applicationDefinitionName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="applicationDefinitionName">The name of the managed application definition to delete.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -1779,8 +1779,8 @@ namespace MyNS
 		/// Applications_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applications
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -1813,12 +1813,12 @@ namespace MyNS
 		/// Applications_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applications/{applicationName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="applicationName">The name of the managed application.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -1851,12 +1851,12 @@ namespace MyNS
 		/// Applications_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applications/{applicationName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="applicationName">The name of the managed application.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -1897,12 +1897,12 @@ namespace MyNS
 		/// Applications_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applications/{applicationName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="applicationName">The name of the managed application.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -1928,12 +1928,12 @@ namespace MyNS
 		/// Applications_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applications/{applicationName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="applicationName">The name of the managed application.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -1974,12 +1974,12 @@ namespace MyNS
 		/// Applications_RefreshPermissions subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/applications/{applicationName}/refreshPermissions
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="applicationName">The name of the managed application.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -2005,8 +2005,8 @@ namespace MyNS
 		/// JitRequests_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/jitRequests
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -2039,8 +2039,8 @@ namespace MyNS
 		/// JitRequests_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/jitRequests/{jitRequestName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="jitRequestName">The name of the JIT request.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -2074,8 +2074,8 @@ namespace MyNS
 		/// JitRequests_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/jitRequests/{jitRequestName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="jitRequestName">The name of the JIT request.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -2117,8 +2117,8 @@ namespace MyNS
 		/// JitRequests_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/jitRequests/{jitRequestName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="jitRequestName">The name of the JIT request.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -2146,8 +2146,8 @@ namespace MyNS
 		/// JitRequests_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Solutions/jitRequests/{jitRequestName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="jitRequestName">The name of the JIT request.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>

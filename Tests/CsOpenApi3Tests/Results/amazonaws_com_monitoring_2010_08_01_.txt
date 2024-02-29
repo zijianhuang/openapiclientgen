@@ -2649,12 +2649,12 @@ namespace MyNS
 		/// GET_DeleteAnomalyDetector #Action=DeleteAnomalyDetector
 		/// </summary>
 		/// <param name="Namespace">The namespace associated with the anomaly detection model to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="MetricName">The metric name associated with the anomaly detection model to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="Dimensions">The metric dimensions associated with the anomaly detection model to delete.
 		/// Maximum items: 30
@@ -2748,8 +2748,8 @@ namespace MyNS
 		/// GET_DeleteMetricStream #Action=DeleteMetricStream
 		/// </summary>
 		/// <param name="Name">The name of the metric stream to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteMetricStreamAsync(string Name, GET_DeleteMetricStreamAction Action, GET_DeleteMetricStreamVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2779,8 +2779,8 @@ namespace MyNS
 		/// GET_DescribeAlarmHistory #Action=DescribeAlarmHistory
 		/// </summary>
 		/// <param name="AlarmName">The name of the alarm.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="AlarmTypes">Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</param>
 		/// <param name="HistoryItemType">The type of alarm histories to retrieve.</param>
@@ -2823,22 +2823,22 @@ namespace MyNS
 		/// Maximum items: 100
 		// </param>
 		/// <param name="AlarmNamePrefix"><p>An alarm name prefix. If you specify this parameter, you receive information about all alarms that have names that start with this prefix.</p> <p>If this parameter is specified, you cannot specify <code>AlarmNames</code>.</p>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="AlarmTypes">Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you omit this parameter, only metric alarms are returned.</param>
 		/// <param name="ChildrenOfAlarmName"><p>If you use this parameter and specify the name of a composite alarm, the operation returns information about the "children" alarms of the alarm you specify. These are the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not returned.</p> <p>If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note> <p>Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA), and <code>StateUpdatedTimestamp</code> information are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p> </note>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="ParentsOfAlarmName"><p>If you use this parameter and specify the name of a metric or composite alarm, the operation returns information about the "parent" alarms of the alarm you specify. These are the composite alarms that have <code>AlarmRule</code> parameters that reference the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p> <p>If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.</p> <note> <p>Only the Alarm Name and ARN are returned by this operation when you use this parameter. To get complete information about these alarms, perform another <code>DescribeAlarms</code> operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.</p> </note>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="StateValue">Specify this parameter to receive information only about alarms that are currently in the state that you specify.</param>
 		/// <param name="ActionPrefix">Use this parameter to filter the results of the operation to only those alarms that use a certain alarm action. For example, you could specify the ARN of an SNS topic to find all alarms that send notifications to that topic.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="MaxRecords">The maximum number of alarm descriptions to retrieve.
 		/// Minimum: 1
@@ -2873,12 +2873,12 @@ namespace MyNS
 		/// GET_DescribeAlarmsForMetric #Action=DescribeAlarmsForMetric
 		/// </summary>
 		/// <param name="MetricName">The name of the metric.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="Namespace">The namespace of the metric.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="Statistic">The statistic for the metric, other than percentiles. For percentile statistics, use <code>ExtendedStatistics</code>.</param>
 		/// <param name="ExtendedStatistic">The percentile statistic for the metric. Specify a value between p0.0 and p100.</param>
@@ -2921,12 +2921,12 @@ namespace MyNS
 		/// Minimum: 1
 		// </param>
 		/// <param name="Namespace">Limits the results to only the anomaly detection models that are associated with the specified namespace.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="MetricName">Limits the results to only the anomaly detection models that are associated with the specified metric name. If there are multiple metrics with this name in different namespaces that have anomaly detection models, they're all returned.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="Dimensions">Limits the results to only the anomaly detection models that are associated with the specified metric dimensions. If there are multiple metrics that have these dimensions and have anomaly detection models associated, they're all returned.
 		/// Maximum items: 30
@@ -3138,8 +3138,8 @@ namespace MyNS
 		/// GET_GetInsightRuleReport #Action=GetInsightRuleReport
 		/// </summary>
 		/// <param name="RuleName">The name of the rule that you want to see data from.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="StartTime">The start time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</param>
 		/// <param name="EndTime">The end time of the data to use in the report. When used in a raw HTTP Query API, it is formatted as <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example, <code>2019-07-01T23:59:59</code>.</param>
@@ -3149,8 +3149,8 @@ namespace MyNS
 		/// <param name="MaxContributorCount">The maximum number of contributors to include in the report. The range is 1 to 100. If you omit this, the default of 10 is used.</param>
 		/// <param name="Metrics"><p>Specifies which metrics to use for aggregation of contributor values for the report. You can specify one or more of the following metrics:</p> <ul> <li> <p> <code>UniqueContributors</code> -- the number of unique contributors for each data point.</p> </li> <li> <p> <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the contributor might change for each data point in the graph.</p> <p>If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most occurrences in that period. If the rule aggregates by SUM, the top contributor is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>, during that period.</p> </li> <li> <p> <code>SampleCount</code> -- the number of data points matched by the rule.</p> </li> <li> <p> <code>Sum</code> -- the sum of the values from all contributors during the time period represented by that data point.</p> </li> <li> <p> <code>Minimum</code> -- the minimum value from a single observation during the time period represented by that data point.</p> </li> <li> <p> <code>Maximum</code> -- the maximum value from a single observation during the time period represented by that data point.</p> </li> <li> <p> <code>Average</code> -- the average value from all contributors during the time period represented by that data point.</p> </li> </ul></param>
 		/// <param name="OrderBy">Determines what statistic to use to rank the contributors. Valid values are SUM and MAXIMUM.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_GetInsightRuleReportAsync(string RuleName, System.DateTimeOffset StartTime, System.DateTimeOffset EndTime, int Period, int MaxContributorCount, string[] Metrics, string OrderBy, GET_GetInsightRuleReportAction Action, GET_GetInsightRuleReportVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3214,12 +3214,12 @@ namespace MyNS
 		/// GET_GetMetricStatistics #Action=GetMetricStatistics
 		/// </summary>
 		/// <param name="Namespace">The namespace of the metric, with or without spaces.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="MetricName">The name of the metric, with or without spaces.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="Dimensions">The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension. CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that were used when the metrics were created. For an example, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
 		/// Maximum items: 30
@@ -3266,8 +3266,8 @@ namespace MyNS
 		/// GET_GetMetricStream #Action=GetMetricStream
 		/// </summary>
 		/// <param name="Name">The name of the metric stream to retrieve information about.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_GetMetricStreamAsync(string Name, GET_GetMetricStreamAction Action, GET_GetMetricStreamVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3355,8 +3355,8 @@ namespace MyNS
 		/// GET_ListManagedInsightRules #Action=ListManagedInsightRules
 		/// </summary>
 		/// <param name="ResourceARN"> The ARN of an Amazon Web Services resource that has managed Contributor Insights rules. 
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="NextToken"> Include this value to get the next set of rules if the value was returned by the previous operation. </param>
 		/// <param name="MaxResults"> The maximum number of results to return in one operation. If you omit this parameter, the default number is used. The default number is <code>100</code>. 
@@ -3423,12 +3423,12 @@ namespace MyNS
 		/// GET_ListMetrics #Action=ListMetrics
 		/// </summary>
 		/// <param name="Namespace">The metric namespace to filter against. Only the namespace that matches exactly will be returned.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="MetricName">The name of the metric to filter against. Only the metrics with names that match exactly will be returned.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="Dimensions">The dimensions to filter against. Only the dimensions that match exactly will be returned.
 		/// Maximum items: 10
@@ -3437,8 +3437,8 @@ namespace MyNS
 		/// <param name="RecentlyActive"><p>To filter the results to show only metrics that have had data points published in the past three hours, specify this parameter with a value of <code>PT3H</code>. This is the only valid value for this parameter.</p> <p>The results that are returned are an approximation of the value you specify. There is a low probability that the returned results include metrics with last published data as much as 40 minutes more than the specified time interval.</p></param>
 		/// <param name="IncludeLinkedAccounts"><p>If you are using this operation in a monitoring account, specify <code>true</code> to include metrics from source accounts in the returned data.</p> <p>The default is <code>false</code>.</p></param>
 		/// <param name="OwningAccount">When you use this operation in a monitoring account, use this field to return metrics only from one source account. To do so, specify that source account ID in this field, and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_ListMetricsAsync(string Namespace, string MetricName, DimensionFilter[] Dimensions, string NextToken, RecentlyActive RecentlyActive, bool IncludeLinkedAccounts, string OwningAccount, GET_ListMetricsAction Action, GET_ListMetricsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3468,8 +3468,8 @@ namespace MyNS
 		/// GET_ListTagsForResource #Action=ListTagsForResource
 		/// </summary>
 		/// <param name="ResourceARN"><p>The ARN of the CloudWatch resource that you want to view tags for.</p> <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_ListTagsForResourceAsync(string ResourceARN, GET_ListTagsForResourceAction Action, GET_ListTagsForResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3499,12 +3499,12 @@ namespace MyNS
 		/// GET_PutAnomalyDetector #Action=PutAnomalyDetector
 		/// </summary>
 		/// <param name="Namespace">The namespace of the metric to create the anomaly detection model for.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="MetricName">The name of the metric to create the anomaly detection model for.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="Dimensions">The metric dimensions to create the anomaly detection model for.
 		/// Maximum items: 30
@@ -3547,16 +3547,16 @@ namespace MyNS
 		/// Maximum items: 5
 		// </param>
 		/// <param name="AlarmDescription">The description for the composite alarm.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		// </param>
 		/// <param name="AlarmName">The name for the composite alarm. This name must be unique within the Region.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="AlarmRule"><p>An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For each alarm that you reference, you designate a function that specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You can use operators (AND, OR and NOT) to combine multiple functions in a single expression. You can use parenthesis to logically group the functions in your expression.</p> <p>You can use either alarm names or ARNs to reference the other alarms that are to be evaluated.</p> <p>Functions can include the following:</p> <ul> <li> <p> <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in ALARM state.</p> </li> <li> <p> <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in OK state.</p> </li> <li> <p> <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm is in INSUFFICIENT_DATA state.</p> </li> <li> <p> <code>TRUE</code> always evaluates to TRUE.</p> </li> <li> <p> <code>FALSE</code> always evaluates to FALSE.</p> </li> </ul> <p>TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure, and for testing your alarm actions.</p> <p>Alarm names specified in <code>AlarmRule</code> can be surrounded with double-quotes ("), but do not have to be.</p> <p>The following are some examples of <code>AlarmRule</code>:</p> <ul> <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies that the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh and DiskReadOpsTooHigh alarms are in ALARM state.</p> </li> <li> <p> <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code> specifies that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state and DeploymentInProgress is not in ALARM state. This example reduces alarm noise during a known deployment window.</p> </li> <li> <p> <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code> goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state, and if NetworkOutTooHigh is in OK state. This provides another example of using a composite alarm to prevent noise. This rule ensures that you are not notified with an alarm action on high CPU or disk usage if a known network problem is also occurring.</p> </li> </ul> <p>The <code>AlarmRule</code> can specify as many as 100 "children" alarms. The <code>AlarmRule</code> expression can have as many as 500 elements. Elements are child alarms, TRUE or FALSE statements, and parentheses.</p>
-		/// Max length: 10240
 		/// Min length: 1
+		/// Max length: 10240
 		// </param>
 		/// <param name="InsufficientDataActions"><p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p> <p>Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> </p>
 		/// Maximum items: 5
@@ -3566,8 +3566,8 @@ namespace MyNS
 		// </param>
 		/// <param name="Tags"><p>A list of key-value pairs to associate with the composite alarm. You can associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p></param>
 		/// <param name="ActionsSuppressor"> Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state. <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN) from an existing alarm. 
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		// </param>
 		/// <param name="ActionsSuppressorWaitPeriod"><p> The maximum time in seconds that the composite alarm waits for the suppressor alarm to go into the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important> <p> <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p> </important></param>
 		/// <param name="ActionsSuppressorExtensionPeriod"><p> The maximum time in seconds that the composite alarm waits after suppressor alarm goes out of the <code>ALARM</code> state. After this time, the composite alarm performs its actions. </p> <important> <p> <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code> is specified. </p> </important></param>
@@ -3628,16 +3628,16 @@ namespace MyNS
 		/// GET_PutInsightRule #Action=PutInsightRule
 		/// </summary>
 		/// <param name="RuleName">A unique name for the rule.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="RuleState">The state of the rule. Valid values are ENABLED and DISABLED.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="RuleDefinition">The definition of the rule, as a JSON object. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.
-		/// Max length: 8192
 		/// Min length: 1
+		/// Max length: 8192
 		// </param>
 		/// <param name="Tags"><p>A list of key-value pairs to associate with the Contributor Insights rule. You can associate as many as 50 tags with a rule.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.</p> <p>To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code> permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> <p>If you are using this operation to update an existing Contributor Insights rule, any tags you specify in this parameter are ignored. To change the tags of an existing rule, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p></param>
 		/// <returns>Success</returns>
@@ -3696,12 +3696,12 @@ namespace MyNS
 		/// GET_PutMetricAlarm #Action=PutMetricAlarm
 		/// </summary>
 		/// <param name="AlarmName"><p>The name for the alarm. This name must be unique within the Region.</p> <p>The name must contain only UTF-8 characters, and can't contain ASCII control characters</p>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="AlarmDescription">The description for the alarm.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		// </param>
 		/// <param name="ActionsEnabled">Indicates whether actions should be executed during any changes to the alarm state. The default is <code>TRUE</code>.</param>
 		/// <param name="OKActions"><p>The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p> <p> <b>EC2 actions:</b> </p> <ul> <li> <p> <code>arn:aws:automate:<i>region</i>:ec2:stop</code> </p> </li> <li> <p> <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> </p> </li> <li> <p> <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> </p> </li> <li> <p> <code>arn:aws:automate:<i>region</i>:ec2:recover</code> </p> </li> <li> <p> <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> </p> </li> <li> <p> <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> </p> </li> <li> <p> <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> </p> </li> <li> <p> <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code> </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p> <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p> <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p> <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code> </p> </li> <li> <p> <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code> </p> </li> </ul>
@@ -3714,12 +3714,12 @@ namespace MyNS
 		/// Maximum items: 5
 		// </param>
 		/// <param name="MetricName"><p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="Namespace">The namespace for the metric associated specified in <code>MetricName</code>.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="Statistic">The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</param>
 		/// <param name="ExtendedStatistic">The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</param>
@@ -3739,18 +3739,18 @@ namespace MyNS
 		/// <param name="Threshold"><p>The value against which the specified statistic is compared.</p> <p>This parameter is required for alarms based on static thresholds, but should not be used for alarms based on anomaly detection models.</p></param>
 		/// <param name="ComparisonOperator"><p> The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</p> <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p></param>
 		/// <param name="TreatMissingData"><p> Sets how this alarm is to handle missing data points. If <code>TreatMissingData</code> is omitted, the default behavior of <code>missing</code> is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note> <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p> </note>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="EvaluateLowSampleCountPercentile"><p> Used only for alarms based on percentiles. If you specify <code>ignore</code>, the alarm state does not change during periods with too few data points to be statistically significant. If you specify <code>evaluate</code> or omit this parameter, the alarm is always evaluated and possibly changes state no matter how many data points are available. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate | ignore</code> </p>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="Metrics"><p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a metric math expression. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p> <p>Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p> <p>One item in the <code>Metrics</code> array is the expression that the alarm watches. You designate this expression by setting <code>ReturnData</code> to true for this object in the array. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.</p> <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p></param>
 		/// <param name="Tags"><p>A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p></param>
 		/// <param name="ThresholdMetricId"><p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p> <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p> <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_PutMetricAlarmAsync(
@@ -3805,8 +3805,8 @@ namespace MyNS
 		/// GET_PutMetricData #Action=PutMetricData
 		/// </summary>
 		/// <param name="Namespace"><p>The namespace for the metric data. You can use ASCII characters for the namespace, except for control characters which are not supported.</p> <p>To avoid conflicts with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code> </p>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="MetricData">The data for the metric. The array can include no more than 1000 metrics per call.</param>
 		/// <returns>Success</returns>
@@ -3837,22 +3837,22 @@ namespace MyNS
 		/// GET_PutMetricStream #Action=PutMetricStream
 		/// </summary>
 		/// <param name="Name"><p>If you are creating a new metric stream, this is the name for the new stream. The name must be different than the names of other metric streams in this account and Region.</p> <p>If you are updating a metric stream, specify the name of that stream here.</p> <p>Valid characters are A-Z, a-z, 0-9, "-" and "_".</p>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="IncludeFilters"><p>If you specify this parameter, the stream sends only the metrics from the metric namespaces that you specify here.</p> <p>You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same operation.</p></param>
 		/// <param name="ExcludeFilters"><p>If you specify this parameter, the stream sends metrics from all metric namespaces except for the namespaces that you specify here.</p> <p>You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same operation.</p></param>
 		/// <param name="FirehoseArn">The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric stream.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="RoleArn"><p>The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the following permissions:</p> <ul> <li> <p>firehose:PutRecord</p> </li> <li> <p>firehose:PutRecordBatch</p> </li> </ul>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="OutputFormat">The output format for the stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>. For more information about metric stream output formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html"> Metric streams output formats</a>.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="Tags"><p>A list of key-value pairs to associate with the metric stream. You can associate as many as 50 tags with a metric stream.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags you specify in this parameter are ignored. To change the tags of an existing metric stream, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p></param>
 		/// <param name="StatisticsConfigurations"><p>By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use this parameter to have the metric stream also send additional statistics in the stream. This array can have up to 100 members.</p> <p>For each entry in this array, you specify one or more metrics and the list of additional statistics to stream for those metrics. The additional statistics that you can stream depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code> is <code>json</code>, you can stream any additional statistic that is supported by CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html"> CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95, p99.9, and so on.</p></param>
@@ -3885,17 +3885,17 @@ namespace MyNS
 		/// GET_SetAlarmState #Action=SetAlarmState
 		/// </summary>
 		/// <param name="AlarmName">The name of the alarm.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="StateValue">The value of the state.</param>
 		/// <param name="StateReason">The reason that this alarm is set to this specific state, in text format.
-		/// Max length: 1023
 		/// Min length: 0
+		/// Max length: 1023
 		// </param>
 		/// <param name="StateReasonData"><p>The reason that this alarm is set to this specific state, in JSON format.</p> <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses the information in this field to take the correct action.</p>
-		/// Max length: 4000
 		/// Min length: 0
+		/// Max length: 4000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_SetAlarmStateAsync(string AlarmName, StateValue StateValue, string StateReason, string StateReasonData, GET_SetAlarmStateAction Action, GET_SetAlarmStateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3981,8 +3981,8 @@ namespace MyNS
 		/// GET_TagResource #Action=TagResource
 		/// </summary>
 		/// <param name="ResourceARN"><p>The ARN of the CloudWatch resource that you're adding tags to.</p> <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="Tags">The list of key-value pairs to associate with the alarm.</param>
 		/// <returns>Success</returns>
@@ -4013,8 +4013,8 @@ namespace MyNS
 		/// GET_UntagResource #Action=UntagResource
 		/// </summary>
 		/// <param name="ResourceARN"><p>The ARN of the CloudWatch resource that you're removing tags from.</p> <p>The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i> </code> </p> <p>The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code> </p> <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"> Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.</p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="TagKeys">The list of tag keys to remove from the resource.</param>
 		/// <returns>Success</returns>

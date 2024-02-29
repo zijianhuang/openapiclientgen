@@ -6488,8 +6488,8 @@ namespace MyNS
 		/// <summary>
 		/// Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -6523,8 +6523,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Describes the contents of the component.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6533,8 +6533,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The change description of the component. Describes what change has been made in this version, or what makes this version different from other versions of this component.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="changeDescription")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6561,8 +6561,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Component <code>data</code> contains inline YAML document content for the component. Alternatively, you can specify the <code>uri</code> of a YAML document file stored in Amazon S3. However, you cannot specify both properties.
-		/// Max length: 16000
 		/// Min length: 1
+		/// Max length: 16000
 		/// Pattern: [^\x00]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="data")]
@@ -6579,8 +6579,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the KMS key that is used to encrypt this component.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKeyId")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6596,8 +6596,8 @@ namespace MyNS
 		/// <summary>
 		/// The idempotency token of the component.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -6629,8 +6629,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the container recipe.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6665,8 +6665,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Dockerfile template used to build your image as an inline data blob.
-		/// Max length: 16000
 		/// Min length: 1
+		/// Max length: 16000
 		/// Pattern: [^\x00]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="dockerfileTemplateData")]
@@ -6689,8 +6689,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Specifies the operating system version for the base image.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="imageOsVersionOverride")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6700,8 +6700,8 @@ namespace MyNS
 		/// <summary>
 		/// The base image for the container recipe.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="parentImage")]
@@ -6717,8 +6717,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The working directory for use during build and test workflows.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workingDirectory")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6735,8 +6735,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Identifies which KMS key is used to encrypt the container image.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKeyId")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6746,8 +6746,8 @@ namespace MyNS
 		/// <summary>
 		/// The client token used to make this request idempotent.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -6791,8 +6791,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the distribution configuration.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6816,8 +6816,8 @@ namespace MyNS
 		/// <summary>
 		/// The idempotency token of the distribution configuration.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -6884,8 +6884,8 @@ namespace MyNS
 		/// <summary>
 		/// The idempotency token used to make this request idempotent.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -6935,8 +6935,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the image pipeline.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7010,8 +7010,8 @@ namespace MyNS
 		/// <summary>
 		/// The idempotency token used to make this request idempotent.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -7074,8 +7074,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the image recipe.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7105,8 +7105,8 @@ namespace MyNS
 		/// <summary>
 		/// The base image of the image recipe. The value of the string can be the ARN of the base image or an AMI ID. The format for the ARN follows this example: <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="parentImage")]
@@ -7128,8 +7128,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The working directory used during build and test workflows.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workingDirectory")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7145,8 +7145,8 @@ namespace MyNS
 		/// <summary>
 		/// The idempotency token used to make this request idempotent.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -7180,8 +7180,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the infrastructure configuration.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7197,8 +7197,8 @@ namespace MyNS
 		/// <summary>
 		/// The instance profile to associate with the instance used to customize your Amazon EC2 AMI.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[\w+=,.@-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7216,8 +7216,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="subnetId")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7232,8 +7232,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="keyPair")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7275,8 +7275,8 @@ namespace MyNS
 		/// <summary>
 		/// The idempotency token used to make this request idempotent.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -7327,8 +7327,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the component. Describes the contents of the component.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7337,8 +7337,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="changeDescription")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7371,8 +7371,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The data of the component. Used to specify the data inline. Either <code>data</code> or <code>uri</code> can be used to specify the data within the component.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="data")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7387,8 +7387,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the KMS key that should be used to encrypt this component.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKeyId")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7404,8 +7404,8 @@ namespace MyNS
 		/// <summary>
 		/// The idempotency token of the component.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -7420,8 +7420,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the base image that is created by the import process.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -7441,8 +7441,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description for the base image that is created by the import process.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7468,8 +7468,8 @@ namespace MyNS
 		/// <summary>
 		/// The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon EC2 VM import process. Image Builder retrieves information from the import process to pull in the AMI that is created from the VM source as the base image for your recipe.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="vmImportTaskId")]
@@ -7486,8 +7486,8 @@ namespace MyNS
 		/// <summary>
 		/// Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -7520,8 +7520,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7565,8 +7565,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7604,8 +7604,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7637,8 +7637,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7680,8 +7680,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7713,8 +7713,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7756,8 +7756,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7789,8 +7789,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7828,8 +7828,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7848,8 +7848,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7891,8 +7891,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7936,8 +7936,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7975,8 +7975,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8010,8 +8010,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8043,8 +8043,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the NextToken from a previously truncated response.
-		/// Max length: 65535
 		/// Min length: 1
+		/// Max length: 65535
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8078,8 +8078,8 @@ namespace MyNS
 		/// <summary>
 		/// The policy to apply.
 		/// Required
-		/// Max length: 30000
 		/// Min length: 1
+		/// Max length: 30000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="policy")]
@@ -8104,8 +8104,8 @@ namespace MyNS
 		/// <summary>
 		/// The policy to apply to the container recipe.
 		/// Required
-		/// Max length: 30000
 		/// Min length: 1
+		/// Max length: 30000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="policy")]
@@ -8130,8 +8130,8 @@ namespace MyNS
 		/// <summary>
 		/// The policy to apply.
 		/// Required
-		/// Max length: 30000
 		/// Min length: 1
+		/// Max length: 30000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="policy")]
@@ -8156,8 +8156,8 @@ namespace MyNS
 		/// <summary>
 		/// The policy to apply.
 		/// Required
-		/// Max length: 30000
 		/// Min length: 1
+		/// Max length: 30000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="policy")]
@@ -8182,8 +8182,8 @@ namespace MyNS
 		/// <summary>
 		/// The idempotency token used to make this request idempotent.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -8207,8 +8207,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the distribution configuration.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8226,8 +8226,8 @@ namespace MyNS
 		/// <summary>
 		/// The idempotency token of the distribution configuration.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -8251,8 +8251,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the image pipeline.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8320,8 +8320,8 @@ namespace MyNS
 		/// <summary>
 		/// The idempotency token used to make this request idempotent.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -8384,8 +8384,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the infrastructure configuration.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8401,8 +8401,8 @@ namespace MyNS
 		/// <summary>
 		/// The instance profile to associate with the instance used to customize your Amazon EC2 AMI.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[\w+=,.@-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8420,8 +8420,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The subnet ID to place the instance used to customize your Amazon EC2 AMI in.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="subnetId")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8436,8 +8436,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The key pair of the infrastructure configuration. You can use this to log on to and debug the instance used to create your image.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="keyPair")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8461,8 +8461,8 @@ namespace MyNS
 		/// <summary>
 		/// The idempotency token used to make this request idempotent.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]

@@ -152,15 +152,15 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
 		// </param>
 		/// <param name="accountName">Cosmos DB database account name.
-		/// Max length: 50
 		/// Min length: 3
+		/// Max length: 50
 		// </param>
 		/// <returns>Successfully retrieved private endpoint connections.</returns>
 		public async Task<PrivateEndpointConnectionListResult> PrivateEndpointConnections_ListByDatabaseAccountAsync(string subscriptionId, string resourceGroupName, string api_version, string accountName)
@@ -194,15 +194,15 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
 		// </param>
 		/// <param name="accountName">Cosmos DB database account name.
-		/// Max length: 50
 		/// Min length: 3
+		/// Max length: 50
 		// </param>
 		/// <param name="privateEndpointConnectionName">The name of the private endpoint connection.</param>
 		/// <returns>Successfully retrieved a specified private endpoint connection.</returns>
@@ -237,15 +237,15 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
 		// </param>
 		/// <param name="accountName">Cosmos DB database account name.
-		/// Max length: 50
 		/// Min length: 3
+		/// Max length: 50
 		// </param>
 		/// <param name="privateEndpointConnectionName">The name of the private endpoint connection.</param>
 		/// <returns>Successfully approved or rejected private endpoint connection.</returns>
@@ -287,15 +287,15 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
 		// </param>
 		/// <param name="accountName">Cosmos DB database account name.
-		/// Max length: 50
 		/// Min length: 3
+		/// Max length: 50
 		// </param>
 		/// <param name="privateEndpointConnectionName">The name of the private endpoint connection.</param>
 		public async Task PrivateEndpointConnections_DeleteAsync(string subscriptionId, string resourceGroupName, string api_version, string accountName, string privateEndpointConnectionName)

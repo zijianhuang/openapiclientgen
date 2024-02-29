@@ -927,8 +927,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -984,8 +984,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -1024,8 +1024,8 @@ namespace MyNS
 		/// Countries Get
 		/// Countries_get_v1_countries__country_id__get v1/countries/{country_id}
 		/// </summary>
-		/// <param name="country_id">Max length: 2
-		/// Min length: 2
+		/// <param name="country_id">Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="page">Paginate through results.
 		/// Minimum: 0
@@ -1091,8 +1091,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -1187,8 +1187,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -1283,8 +1283,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -1379,8 +1379,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -1474,8 +1474,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -1640,8 +1640,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -1726,8 +1726,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -1783,8 +1783,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -1823,8 +1823,8 @@ namespace MyNS
 		/// Countries Get
 		/// Countries_get_v2_countries__country_id__get v2/countries/{country_id}
 		/// </summary>
-		/// <param name="country_id">Max length: 2
-		/// Min length: 2
+		/// <param name="country_id">Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="page">Paginate through results.
 		/// Minimum: 0
@@ -1890,8 +1890,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -1986,8 +1986,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -2082,8 +2082,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -2388,8 +2388,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -2516,8 +2516,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -2670,8 +2670,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -2744,8 +2744,8 @@ namespace MyNS
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
 		///        
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.

@@ -536,8 +536,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -574,8 +574,8 @@ namespace MyNS
 		public string Links { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -595,8 +595,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -616,8 +616,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Call.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="call_sid")]
@@ -664,8 +664,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -676,8 +676,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Call.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="call_sid")]
@@ -742,8 +742,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -754,8 +754,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Call.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="call_sid")]
@@ -827,8 +827,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -854,8 +854,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Call.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="call_sid")]
@@ -971,8 +971,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -995,8 +995,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Call.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="call_sid")]
@@ -1112,8 +1112,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1124,8 +1124,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Conference.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CF[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conference_sid")]
@@ -1169,8 +1169,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Call SID of the participant whose actions ended the conference.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ended_by")]
@@ -1259,8 +1259,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1274,8 +1274,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique SID identifier of the call that generated the Participant resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="call_sid")]
@@ -1301,8 +1301,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Conference.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CF[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="conference_sid")]
@@ -1391,8 +1391,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// SID for this participant.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CP[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="participant_sid")]
@@ -1430,8 +1430,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account SID associated with this room.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1517,8 +1517,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique identifier for the room.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RM[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="room_sid")]
@@ -1769,8 +1769,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account SID associated with the room.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1835,8 +1835,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique identifier for the participant.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^PA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="participant_sid")]
@@ -1859,8 +1859,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique identifier for the room.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RM[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="room_sid")]
@@ -2287,8 +2287,8 @@ namespace MyNS
 		/// <param name="MixerRegion">Twilio region where the conference media was mixed.</param>
 		/// <param name="Tags">Tags applied by Twilio for common potential configuration, quality, or performance issues.</param>
 		/// <param name="Subaccount">Account SID for the subaccount whose resources you wish to retrieve.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="DetectedIssues">Potential configuration, behavior, or performance issues detected during the conference.</param>
 		/// <param name="EndReason">Conference end reason; e.g. last participant left, modified by API, etc.</param>
@@ -2334,8 +2334,8 @@ namespace MyNS
 		/// FetchConference v1/Conferences/{ConferenceSid}
 		/// </summary>
 		/// <param name="ConferenceSid">The unique SID identifier of the Conference.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Insightsv1conference> FetchConferenceAsync(string ConferenceSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2371,8 +2371,8 @@ namespace MyNS
 		/// ListConferenceParticipant v1/Conferences/{ConferenceSid}/Participants
 		/// </summary>
 		/// <param name="ConferenceSid">The unique SID identifier of the Conference.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ParticipantSid">The unique SID identifier of the Participant.</param>
 		/// <param name="Label">User-specified label for a participant.</param>
@@ -2419,12 +2419,12 @@ namespace MyNS
 		/// FetchConferenceParticipant v1/Conferences/{ConferenceSid}/Participants/{ParticipantSid}
 		/// </summary>
 		/// <param name="ConferenceSid">The unique SID identifier of the Conference.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ParticipantSid">The unique SID identifier of the Participant.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Events">Conference events generated by application or participant activity; e.g. `hold`, `mute`, etc.</param>
 		/// <param name="Metrics">Object. Contains participant call quality metrics.</param>
@@ -2619,8 +2619,8 @@ namespace MyNS
 		/// FetchAccountSettings v1/Voice/Settings
 		/// </summary>
 		/// <param name="SubaccountSid">The unique SID identifier of the Subaccount.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Insightsv1account_settings> FetchAccountSettingsAsync(string SubaccountSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2672,8 +2672,8 @@ namespace MyNS
 		/// <param name="ProcessingState">A Processing State of the Call Summaries. One of `completed`, `partial` or `all`.</param>
 		/// <param name="SortBy">A Sort By criterion for the returned list of Call Summaries. One of `start_time` or `end_time`.</param>
 		/// <param name="Subaccount">A unique SID identifier of a Subaccount.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="AbnormalSession">A boolean flag indicating an abnormal session where the last SIP response was not 200 OK.</param>
 		/// <param name="AnsweredBy">An Answered By value for the calls based on `Answering Machine Detection (AMD)`. One of `unknown`, `machine_start`, `machine_end_beep`, `machine_end_silence`, `machine_end_other`, `human` or `fax`.</param>
@@ -2752,8 +2752,8 @@ namespace MyNS
 		/// FetchAnnotation v1/Voice/{CallSid}/Annotation
 		/// </summary>
 		/// <param name="CallSid">The unique SID identifier of the Call.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Insightsv1callannotation> FetchAnnotationAsync(string CallSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2789,8 +2789,8 @@ namespace MyNS
 		/// ListEvent v1/Voice/{CallSid}/Events
 		/// </summary>
 		/// <param name="CallSid">The unique SID identifier of the Call.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Edge">The Edge of this Event. One of `unknown_edge`, `carrier_edge`, `sip_edge`, `sdk_edge` or `client_edge`.</param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
@@ -2835,8 +2835,8 @@ namespace MyNS
 		/// ListMetric v1/Voice/{CallSid}/Metrics
 		/// </summary>
 		/// <param name="CallSid">The unique SID identifier of the Call.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Edge">The Edge of this Metric. One of `unknown_edge`, `carrier_edge`, `sip_edge`, `sdk_edge` or `client_edge`.</param>
 		/// <param name="Direction">The Direction of this Metric. One of `unknown`, `inbound`, `outbound` or `both`.</param>
@@ -2882,8 +2882,8 @@ namespace MyNS
 		/// FetchSummary v1/Voice/{CallSid}/Summary
 		/// </summary>
 		/// <param name="CallSid">The unique SID identifier of the Call.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ProcessingState">The Processing State of this Call Summary. One of `complete`, `partial` or `all`.</param>
 		/// <returns>OK</returns>
@@ -2918,8 +2918,8 @@ namespace MyNS
 		/// <summary>
 		/// FetchCall v1/Voice/{Sid}
 		/// </summary>
-		/// <param name="Sid">Max length: 34
-		/// Min length: 34
+		/// <param name="Sid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Insightsv1call> FetchCallAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

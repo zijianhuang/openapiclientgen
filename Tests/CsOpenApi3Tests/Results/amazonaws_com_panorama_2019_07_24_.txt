@@ -2783,16 +2783,16 @@ namespace MyNS
 		/// ListApplicationInstances application-instances
 		/// </summary>
 		/// <param name="deviceId">The application instances' device ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="maxResults">The maximum number of application instances to return in one page of results.
 		/// Minimum: 0
 		/// Maximum: 25
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="statusFilter">Only include instances with a specific status.</param>
 		/// <param name="MaxResults">Pagination limit</param>
@@ -2871,16 +2871,16 @@ namespace MyNS
 		/// ListDevicesJobs jobs
 		/// </summary>
 		/// <param name="DeviceId">Filter results by the job's target device ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="MaxResults">The maximum number of device jobs to return in one page of results.
 		/// Minimum: 0
 		/// Maximum: 25
 		// </param>
 		/// <param name="NextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDevicesJobsResponse> ListDevicesJobsAsync(string DeviceId, int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2960,8 +2960,8 @@ namespace MyNS
 		/// Maximum: 25
 		// </param>
 		/// <param name="NextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListNodeFromTemplateJobsResponse> ListNodeFromTemplateJobsAsync(int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3041,8 +3041,8 @@ namespace MyNS
 		/// Maximum: 25
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -3124,8 +3124,8 @@ namespace MyNS
 		/// Maximum: 25
 		// </param>
 		/// <param name="NextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListPackageImportJobsResponse> ListPackageImportJobsAsync(int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3161,8 +3161,8 @@ namespace MyNS
 		/// DeleteDevice devices/{DeviceId}
 		/// </summary>
 		/// <param name="DeviceId">The device's ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDeviceResponse> DeleteDeviceAsync(string DeviceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3198,8 +3198,8 @@ namespace MyNS
 		/// DescribeDevice devices/{DeviceId}
 		/// </summary>
 		/// <param name="DeviceId">The device's ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDeviceResponse> DescribeDeviceAsync(string DeviceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3235,8 +3235,8 @@ namespace MyNS
 		/// UpdateDeviceMetadata devices/{DeviceId}
 		/// </summary>
 		/// <param name="DeviceId">The device's ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDeviceMetadataResponse> UpdateDeviceMetadataAsync(string DeviceId, UpdateDeviceMetadataPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3280,8 +3280,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ForceDelete">Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</param>
 		/// <param name="PackageId">The package's ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePackageResponse> DeletePackageAsync(bool ForceDelete, string PackageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3317,24 +3317,24 @@ namespace MyNS
 		/// DeregisterPackageVersion packages/{PackageId}/versions/{PackageVersion}/patch/{PatchVersion}
 		/// </summary>
 		/// <param name="OwnerAccount">An owner account.
-		/// Max length: 12
 		/// Min length: 1
+		/// Max length: 12
 		// </param>
 		/// <param name="PackageId">A package ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="PackageVersion">A package version.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="PatchVersion">A patch version.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="UpdatedLatestPatchVersion">If the version was marked latest, the new version to maker as latest.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeregisterPackageVersionResponse> DeregisterPackageVersionAsync(string OwnerAccount, string PackageId, string PackageVersion, string PatchVersion, string UpdatedLatestPatchVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3370,16 +3370,16 @@ namespace MyNS
 		/// RegisterPackageVersion packages/{PackageId}/versions/{PackageVersion}/patch/{PatchVersion}
 		/// </summary>
 		/// <param name="PackageId">A package ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="PackageVersion">A package version.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="PatchVersion">A patch version.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<RegisterPackageVersionResponse> RegisterPackageVersionAsync(string PackageId, string PackageVersion, string PatchVersion, RegisterPackageVersionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3422,8 +3422,8 @@ namespace MyNS
 		/// DescribeApplicationInstance application-instances/{ApplicationInstanceId}
 		/// </summary>
 		/// <param name="ApplicationInstanceId">The application instance's ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeApplicationInstanceResponse> DescribeApplicationInstanceAsync(string ApplicationInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3459,8 +3459,8 @@ namespace MyNS
 		/// RemoveApplicationInstance application-instances/{ApplicationInstanceId}
 		/// </summary>
 		/// <param name="ApplicationInstanceId">An application instance ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<RemoveApplicationInstanceResponse> RemoveApplicationInstanceAsync(string ApplicationInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3496,8 +3496,8 @@ namespace MyNS
 		/// DescribeApplicationInstanceDetails application-instances/{ApplicationInstanceId}/details
 		/// </summary>
 		/// <param name="ApplicationInstanceId">The application instance's ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeApplicationInstanceDetailsResponse> DescribeApplicationInstanceDetailsAsync(string ApplicationInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3533,8 +3533,8 @@ namespace MyNS
 		/// DescribeDeviceJob jobs/{JobId}
 		/// </summary>
 		/// <param name="JobId">The job's ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDeviceJobResponse> DescribeDeviceJobAsync(string JobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3570,12 +3570,12 @@ namespace MyNS
 		/// DescribeNode nodes/{NodeId}
 		/// </summary>
 		/// <param name="NodeId">The node's ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="OwnerAccount">The account ID of the node's owner.
-		/// Max length: 12
 		/// Min length: 1
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeNodeResponse> DescribeNodeAsync(string NodeId, string OwnerAccount, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3611,8 +3611,8 @@ namespace MyNS
 		/// DescribeNodeFromTemplateJob packages/template-job/{JobId}
 		/// </summary>
 		/// <param name="JobId">The job's ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeNodeFromTemplateJobResponse> DescribeNodeFromTemplateJobAsync(string JobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3648,8 +3648,8 @@ namespace MyNS
 		/// DescribePackage packages/metadata/{PackageId}
 		/// </summary>
 		/// <param name="PackageId">The package's ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePackageResponse> DescribePackageAsync(string PackageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3685,8 +3685,8 @@ namespace MyNS
 		/// DescribePackageImportJob packages/import-jobs/{JobId}
 		/// </summary>
 		/// <param name="JobId">The job's ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePackageImportJobResponse> DescribePackageImportJobAsync(string JobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3722,20 +3722,20 @@ namespace MyNS
 		/// DescribePackageVersion packages/metadata/{PackageId}/versions/{PackageVersion}
 		/// </summary>
 		/// <param name="OwnerAccount">The version's owner account.
-		/// Max length: 12
 		/// Min length: 1
+		/// Max length: 12
 		// </param>
 		/// <param name="PackageId">The version's ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="PackageVersion">The version's version.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="PatchVersion">The version's patch version.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePackageVersionResponse> DescribePackageVersionAsync(string OwnerAccount, string PackageId, string PackageVersion, string PatchVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3771,16 +3771,16 @@ namespace MyNS
 		/// ListApplicationInstanceDependencies application-instances/{ApplicationInstanceId}/package-dependencies
 		/// </summary>
 		/// <param name="ApplicationInstanceId">The application instance's ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="maxResults">The maximum number of application instance dependencies to return in one page of results.
 		/// Minimum: 0
 		/// Maximum: 25
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -3818,16 +3818,16 @@ namespace MyNS
 		/// ListApplicationInstanceNodeInstances application-instances/{ApplicationInstanceId}/node-instances
 		/// </summary>
 		/// <param name="ApplicationInstanceId">The node instances' application instance ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="maxResults">The maximum number of node instances to return in one page of results.
 		/// Minimum: 0
 		/// Maximum: 25
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -3871,8 +3871,8 @@ namespace MyNS
 		// </param>
 		/// <param name="NameFilter">Filter based on device's name. Prefixes supported.</param>
 		/// <param name="NextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="SortBy">The target column to be sorted on. Default column sort is CREATED_TIME.</param>
 		/// <param name="SortOrder">The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</param>
@@ -3955,24 +3955,24 @@ namespace MyNS
 		/// Maximum: 25
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="ownerAccount">Search for nodes by the account ID of the nodes' owner.
-		/// Max length: 12
 		/// Min length: 1
+		/// Max length: 12
 		// </param>
 		/// <param name="packageName">Search for nodes by name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="packageVersion">Search for nodes by version.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="patchVersion">Search for nodes by patch version.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -4010,8 +4010,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The resource's ARN.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4047,8 +4047,8 @@ namespace MyNS
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The resource's ARN.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4091,8 +4091,8 @@ namespace MyNS
 		/// SignalApplicationInstanceNodeInstances application-instances/{ApplicationInstanceId}/node-signals
 		/// </summary>
 		/// <param name="ApplicationInstanceId">An application instance ID.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<SignalApplicationInstanceNodeInstancesResponse> SignalApplicationInstanceNodeInstancesAsync(string ApplicationInstanceId, SignalApplicationInstanceNodeInstancesPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4135,8 +4135,8 @@ namespace MyNS
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
 		/// <param name="ResourceArn">The resource's ARN.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys">Tag keys to remove.
 		/// Minimum items: 1
@@ -4177,8 +4177,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of an application instance to replace with the new instance.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z0-9\-\_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4190,8 +4190,8 @@ namespace MyNS
 		/// <summary>
 		/// A device's ID.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z0-9\-\_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4203,8 +4203,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the application instance.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4229,8 +4229,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A name for the application instance.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z0-9\-\_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4241,8 +4241,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of a runtime role for the application instance.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^arn:[a-z0-9][-.a-z0-9]{0,62}:iam::[0-9]{12}:role/.+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4320,8 +4320,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the node.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4333,8 +4333,8 @@ namespace MyNS
 		/// <summary>
 		/// A name for the node.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^[a-zA-Z0-9\-\_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4347,8 +4347,8 @@ namespace MyNS
 		/// <summary>
 		/// An output package name for the node.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^[a-zA-Z0-9\-\_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4361,8 +4361,8 @@ namespace MyNS
 		/// <summary>
 		/// An output package version for the node.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^([0-9]+)\.([0-9]+)$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4395,8 +4395,8 @@ namespace MyNS
 		/// <summary>
 		/// A name for the package.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^[a-zA-Z0-9\-\_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4419,8 +4419,8 @@ namespace MyNS
 		/// <summary>
 		/// A client token for the package import job.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9\-\_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4480,8 +4480,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the device.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4502,8 +4502,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An owner account.
-		/// Max length: 12
 		/// Min length: 1
+		/// Max length: 12
 		/// Pattern: ^[0-9a-z\_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4518,8 +4518,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the device.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4531,8 +4531,8 @@ namespace MyNS
 		/// <summary>
 		/// A name for the device.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z0-9\-\_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

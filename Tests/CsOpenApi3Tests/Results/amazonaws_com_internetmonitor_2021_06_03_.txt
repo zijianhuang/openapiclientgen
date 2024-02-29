@@ -1025,8 +1025,8 @@ namespace MyNS
 		/// DeleteMonitor v20210603/Monitors/{MonitorName}
 		/// </summary>
 		/// <param name="MonitorName">The name of the monitor to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteMonitorOutput> DeleteMonitorAsync(string MonitorName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1062,8 +1062,8 @@ namespace MyNS
 		/// GetMonitor v20210603/Monitors/{MonitorName}
 		/// </summary>
 		/// <param name="MonitorName">The name of the monitor.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMonitorOutput> GetMonitorAsync(string MonitorName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1099,8 +1099,8 @@ namespace MyNS
 		/// UpdateMonitor v20210603/Monitors/{MonitorName}
 		/// </summary>
 		/// <param name="MonitorName">The name of the monitor. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMonitorOutput> UpdateMonitorAsync(string MonitorName, UpdateMonitorPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1143,12 +1143,12 @@ namespace MyNS
 		/// GetHealthEvent v20210603/Monitors/{MonitorName}/HealthEvents/{EventId}
 		/// </summary>
 		/// <param name="MonitorName">The name of the monitor.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="EventId">The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetHealthEventOutput> GetHealthEventAsync(string MonitorName, string EventId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1184,8 +1184,8 @@ namespace MyNS
 		/// ListHealthEvents v20210603/Monitors/{MonitorName}/HealthEvents
 		/// </summary>
 		/// <param name="MonitorName">The name of the monitor.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="StartTime">The time when a health event started.</param>
 		/// <param name="EndTime">The time when a health event ended. If the health event is still ongoing, then the end time is not set.</param>
@@ -1229,8 +1229,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) for a resource.
-		/// Max length: 512
 		/// Min length: 20
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceOutput> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1266,8 +1266,8 @@ namespace MyNS
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) for a tag that you add to a resource. Tags are supported only for monitors in Amazon CloudWatch Internet Monitor.
-		/// Max length: 512
 		/// Min length: 20
+		/// Max length: 512
 		// </param>
 		public async Task TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1303,8 +1303,8 @@ namespace MyNS
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) for a tag you remove a resource from.
-		/// Max length: 512
 		/// Min length: 20
+		/// Max length: 512
 		// </param>
 		/// <param name="tagKeys">Tag keys that you remove from a resource.
 		/// Minimum items: 0
@@ -1339,8 +1339,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the monitor. 
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [a-zA-Z0-9_.-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

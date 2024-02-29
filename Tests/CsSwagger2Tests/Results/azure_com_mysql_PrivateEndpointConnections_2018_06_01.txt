@@ -166,8 +166,8 @@ namespace MyNS
 		/// PrivateEndpointConnections_ListByServer subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/privateEndpointConnections
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.
@@ -205,8 +205,8 @@ namespace MyNS
 		/// PrivateEndpointConnections_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="privateEndpointConnectionName">The name of the private endpoint connection.</param>
@@ -245,8 +245,8 @@ namespace MyNS
 		/// PrivateEndpointConnections_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.
@@ -291,8 +291,8 @@ namespace MyNS
 		/// PrivateEndpointConnections_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers/{serverName}/privateEndpointConnections/{privateEndpointConnectionName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.
@@ -331,8 +331,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="requestBody">Parameters supplied to the Update private endpoint connection Tags operation.</param>

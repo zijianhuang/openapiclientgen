@@ -411,8 +411,8 @@ namespace MyNS
 		/// DeleteReportDefinition reportDefinition/{reportId}
 		/// </summary>
 		/// <param name="reportId">Required. ID of the report to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteReportDefinitionResult> DeleteReportDefinitionAsync(string reportId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -448,8 +448,8 @@ namespace MyNS
 		/// GetReportDefinition reportDefinition/{reportId}
 		/// </summary>
 		/// <param name="reportId">ID of the report to retrieve.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReportDefinitionResult> GetReportDefinitionAsync(string reportId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -485,8 +485,8 @@ namespace MyNS
 		/// UpdateReportDefinition reportDefinition/{reportId}
 		/// </summary>
 		/// <param name="reportId">Required. ID of the report to update.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateReportDefinitionResult> UpdateReportDefinitionAsync(string reportId, UpdateReportDefinitionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -569,8 +569,8 @@ namespace MyNS
 		/// ListReportDefinitions reportDefinition
 		/// </summary>
 		/// <param name="nextToken">The token value from a previous call to access the next page of results.
-		/// Max length: 102400
 		/// Min length: 1
+		/// Max length: 102400
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return.
 		/// Minimum: 1
@@ -652,8 +652,8 @@ namespace MyNS
 		/// <summary>
 		/// Required. Description of the report.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -729,8 +729,8 @@ namespace MyNS
 		/// <summary>
 		/// Required. ID of the report. You can choose any valid string matching the pattern for the ID.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[0-9A-Za-z\.\-_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -743,8 +743,8 @@ namespace MyNS
 		/// <summary>
 		/// Required. Description of the report.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

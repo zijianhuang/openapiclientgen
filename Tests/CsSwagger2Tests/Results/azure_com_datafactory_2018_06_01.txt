@@ -3566,8 +3566,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -3600,12 +3600,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -3638,12 +3638,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Factory resource definition.</param>
@@ -3684,12 +3684,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -3716,12 +3716,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The parameters for updating a factory.</param>
@@ -3762,12 +3762,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Data flow debug session definition with debug content.</param>
@@ -3808,12 +3808,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Data flow debug session definition</param>
@@ -3854,12 +3854,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -3892,16 +3892,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="dataFlowName">The data flow name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -3934,16 +3934,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="dataFlowName">The data flow name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Data flow resource definition.</param>
@@ -3984,16 +3984,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="dataFlowName">The data flow name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -4020,12 +4020,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -4058,16 +4058,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="datasetName">The dataset name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -4100,16 +4100,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="datasetName">The dataset name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Dataset resource definition.</param>
@@ -4150,16 +4150,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="datasetName">The dataset name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -4186,12 +4186,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Data flow debug session definition for deletion</param>
@@ -4226,12 +4226,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Data flow debug command definition.</param>
@@ -4272,12 +4272,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Data Plane user access policy definition.</param>
@@ -4318,12 +4318,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The exposure control request.</param>
@@ -4364,12 +4364,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Get GitHub access token request definition.</param>
@@ -4410,12 +4410,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -4448,16 +4448,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -4490,16 +4490,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Integration runtime resource definition.</param>
@@ -4540,16 +4540,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -4576,16 +4576,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The parameters for updating an integration runtime.</param>
@@ -4626,16 +4626,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -4668,16 +4668,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The parameters for getting a SSIS object metadata.</param>
@@ -4718,16 +4718,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -4760,16 +4760,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The linked integration runtime properties.</param>
@@ -4810,16 +4810,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -4852,16 +4852,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -4894,20 +4894,20 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="nodeName">The integration runtime node name.
-		/// Max length: 150
 		/// Min length: 1
+		/// Max length: 150
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -4940,20 +4940,20 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="nodeName">The integration runtime node name.
-		/// Max length: 150
 		/// Min length: 1
+		/// Max length: 150
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -4980,20 +4980,20 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="nodeName">The integration runtime node name.
-		/// Max length: 150
 		/// Min length: 1
+		/// Max length: 150
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The parameters for updating an integration runtime node.</param>
@@ -5034,20 +5034,20 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="nodeName">The integration runtime node name.
-		/// Max length: 150
 		/// Min length: 1
+		/// Max length: 150
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5080,16 +5080,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5122,16 +5122,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The parameters for regenerating integration runtime authentication key.</param>
@@ -5172,16 +5172,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">The data factory name for the linked integration runtime.</param>
@@ -5216,16 +5216,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5258,16 +5258,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5294,16 +5294,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5330,16 +5330,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="integrationRuntimeName">The integration runtime name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5366,12 +5366,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5404,16 +5404,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="linkedServiceName">The linked service name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5446,16 +5446,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="linkedServiceName">The linked service name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Linked service resource definition.</param>
@@ -5496,16 +5496,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="linkedServiceName">The linked service name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5532,12 +5532,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="runId">The pipeline run identifier.</param>
 		/// <param name="api_version">The API version.</param>
@@ -5571,12 +5571,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="runId">The pipeline run identifier.</param>
 		/// <param name="isRecursive">If true, cancel all the Child pipelines that are triggered by the current pipeline.</param>
@@ -5605,12 +5605,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="runId">The pipeline run identifier.</param>
 		/// <param name="api_version">The API version.</param>
@@ -5652,12 +5652,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5690,16 +5690,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="pipelineName">The pipeline name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5732,16 +5732,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="pipelineName">The pipeline name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Pipeline resource definition.</param>
@@ -5782,16 +5782,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="pipelineName">The pipeline name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5818,16 +5818,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="pipelineName">The pipeline name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="referencePipelineRunId">The pipeline run identifier. If run ID is specified the parameters of the specified run will be used to create a new run.</param>
@@ -5871,12 +5871,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -5909,12 +5909,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Parameters to filter the pipeline run.</param>
@@ -5955,12 +5955,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Parameters to filter the pipeline run.</param>
@@ -6001,12 +6001,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -6039,16 +6039,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -6081,16 +6081,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Trigger resource definition.</param>
@@ -6131,16 +6131,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -6167,16 +6167,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger event subscription state.</returns>
@@ -6209,16 +6209,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>OK.</returns>
@@ -6251,20 +6251,20 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="rerunTriggerName">The rerun trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <param name="requestBody">Rerun tumbling window trigger action parameters.</param>
@@ -6305,20 +6305,20 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="rerunTriggerName">The rerun trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger has been canceled successfully.</returns>
@@ -6345,20 +6345,20 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="rerunTriggerName">The rerun trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger has been started successfully.</returns>
@@ -6385,20 +6385,20 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="rerunTriggerName">The rerun trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger has been stopped successfully.</returns>
@@ -6425,16 +6425,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger has been started successfully.</returns>
@@ -6461,16 +6461,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger has been stopped successfully.</returns>
@@ -6497,16 +6497,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger is subscribed to events.</returns>
@@ -6539,16 +6539,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="runId">The pipeline run identifier.</param>
 		/// <param name="api_version">The API version.</param>
@@ -6576,16 +6576,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The resource group name.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="factoryName">The factory name.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="triggerName">The trigger name.
-		/// Max length: 260
 		/// Min length: 1
+		/// Max length: 260
 		// </param>
 		/// <param name="api_version">The API version.</param>
 		/// <returns>Trigger is unsubscribed from events.</returns>

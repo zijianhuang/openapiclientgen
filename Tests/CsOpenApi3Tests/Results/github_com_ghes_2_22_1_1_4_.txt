@@ -6903,8 +6903,8 @@ namespace MyNS
 		/// <summary>
 		/// The SHA of the commit to which the analysis you are uploading relates.
 		/// Required
-		/// Max length: 40
 		/// Min length: 40
+		/// Max length: 40
 		/// Pattern: ^[0-9a-fA-F]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -12943,8 +12943,8 @@ namespace MyNS
 		/// <summary>
 		/// SHA for the reference
 		/// Required
-		/// Max length: 40
 		/// Min length: 40
+		/// Max length: 40
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="sha")]
@@ -54482,8 +54482,8 @@ namespace MyNS
 		/// <summary>
 		/// The SHA of the commit to which the analysis you are uploading relates.
 		/// Required
-		/// Max length: 40
 		/// Min length: 40
+		/// Max length: 40
 		/// Pattern: ^[0-9a-fA-F]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -55080,8 +55080,8 @@ namespace MyNS
 		/// <summary>
 		/// A custom webhook event name.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="event_type")]

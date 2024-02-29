@@ -315,8 +315,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of a database hosted on an RDS DB instance.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -336,8 +336,8 @@ namespace MyNS
 		/// <summary>
 		/// The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -348,8 +348,8 @@ namespace MyNS
 		/// <summary>
 		/// The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.
 		/// Required
-		/// Max length: 128
 		/// Min length: 8
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -460,8 +460,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of a database hosted on an Amazon Redshift cluster.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-z0-9]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -474,8 +474,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of an Amazon Redshift cluster.
 		/// Required
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		/// Pattern: [a-z0-9-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -497,8 +497,8 @@ namespace MyNS
 		/// <summary>
 		/// A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -509,8 +509,8 @@ namespace MyNS
 		/// <summary>
 		/// A password to be used by Amazon ML to connect to a database on an Amazon Redshift cluster. The password should have sufficient permissions to execute a <code>RedshiftSelectSqlQuery</code> query. The password should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
 		/// Required
-		/// Max length: 64
 		/// Min length: 8
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1206,8 +1206,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. 
-		/// Max length: 110
 		/// Min length: 1
+		/// Max length: 110
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1252,8 +1252,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1277,8 +1277,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1848,8 +1848,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename. 
-		/// Max length: 110
 		/// Min length: 1
+		/// Max length: 110
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

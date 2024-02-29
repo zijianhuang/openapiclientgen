@@ -7020,8 +7020,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon resource number (ARN) of the resource to list tags of.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7057,8 +7057,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource to apply a tag to.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7224,8 +7224,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) for the resource to remove tags from.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <param name="tagKeys">The tag keys to remove from the resource.
 		/// Minimum items: 0
@@ -7507,8 +7507,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services account ID of the member account to be associated.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^\d{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7652,8 +7652,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the filter.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7671,8 +7671,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -7682,8 +7682,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The reason for creating the filter.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reason")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8069,8 +8069,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Number (ARN) of the filter to be deleted.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
@@ -8109,8 +8109,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^\d{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8127,8 +8127,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services account ID of the member account to disassociate.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^\d{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8154,8 +8154,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The idempotency token for the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8180,8 +8180,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The idempotency token for the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8191,8 +8191,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services account ID of the Amazon Inspector delegated administrator.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^\d{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8221,8 +8221,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services account ID of the member account to retrieve information on.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^\d{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8261,8 +8261,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		/// Max length: 1000000
 		/// Min length: 0
+		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8296,8 +8296,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		/// Max length: 1000000
 		/// Min length: 0
+		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8365,8 +8365,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		/// Max length: 1000000
 		/// Min length: 0
+		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8431,8 +8431,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		/// Max length: 1000000
 		/// Min length: 0
+		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8466,8 +8466,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		/// Max length: 1000000
 		/// Min length: 0
+		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8513,8 +8513,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		/// Max length: 1000000
 		/// Min length: 0
+		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8579,8 +8579,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		/// Max length: 1000000
 		/// Min length: 0
+		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8748,8 +8748,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		/// Max length: 1000000
 		/// Min length: 0
+		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8839,8 +8839,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-		/// Max length: 1000000
 		/// Min length: 0
+		/// Max length: 1000000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8935,8 +8935,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the filter.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8946,8 +8946,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Number (ARN) of the filter to update.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="filterArn")]
@@ -8963,8 +8963,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the filter.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8973,8 +8973,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The reason the filter was updated.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reason")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

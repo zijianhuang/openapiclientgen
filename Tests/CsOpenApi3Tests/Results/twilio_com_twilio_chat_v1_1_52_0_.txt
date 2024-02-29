@@ -37,8 +37,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Credential resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -73,8 +73,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Credential resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CR[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -116,8 +116,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Service resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -146,8 +146,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The channel role assigned to a channel creator when they join a new channel. See the [Roles endpoint](https://www.twilio.com/docs/chat/api/roles) for more details.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="default_channel_creator_role_sid")]
@@ -158,8 +158,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The channel role assigned to users when they are added to a channel. See the [Roles endpoint](https://www.twilio.com/docs/chat/api/roles) for more details.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="default_channel_role_sid")]
@@ -170,8 +170,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The service role assigned to users when they are added to the service. See the [Roles endpoint](https://www.twilio.com/docs/chat/api/roles) for more details.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="default_service_role_sid")]
@@ -230,8 +230,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Service resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -278,8 +278,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Channel resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -338,8 +338,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -350,8 +350,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Channel resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -396,8 +396,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Invite resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -408,8 +408,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resource belongs to.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channel_sid")]
@@ -444,8 +444,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Role](https://www.twilio.com/docs/api/chat/rest/roles) assigned to the resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="role_sid")]
@@ -456,8 +456,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -468,8 +468,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Invite resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IN[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -492,8 +492,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Member resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -504,8 +504,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) for the member.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channel_sid")]
@@ -546,8 +546,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Role](https://www.twilio.com/docs/api/chat/rest/roles) assigned to the member.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="role_sid")]
@@ -558,8 +558,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -570,8 +570,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Member resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^MB[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -594,8 +594,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Message resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -618,8 +618,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the Message resource belongs to.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channel_sid")]
@@ -654,8 +654,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -666,8 +666,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Message resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IM[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -678,8 +678,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Channel](https://www.twilio.com/docs/chat/api/channels) that the message was sent to.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="to")]
@@ -708,8 +708,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Role resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -744,8 +744,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -756,8 +756,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Role resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -796,8 +796,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the User resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -862,8 +862,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Role](https://www.twilio.com/docs/api/chat/rest/roles) assigned to the user.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="role_sid")]
@@ -874,8 +874,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -886,8 +886,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the User resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^US[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -910,8 +910,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the User Channel resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -922,8 +922,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resource belongs to.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channel_sid")]
@@ -946,8 +946,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of a [Member](https://www.twilio.com/docs/api/chat/rest/members) that represents the User on the Channel.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^MB[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="member_sid")]
@@ -958,8 +958,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -1115,8 +1115,8 @@ namespace MyNS
 		/// DeleteCredential v1/Credentials/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Credential resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteCredentialAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1144,8 +1144,8 @@ namespace MyNS
 		/// FetchCredential v1/Credentials/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Credential resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1credential> FetchCredentialAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1220,8 +1220,8 @@ namespace MyNS
 		/// ListChannel v1/Services/{ServiceSid}/Channels
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Type">The visibility of the Channels to read. Can be: `public` or `private` and defaults to `public`.</param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
@@ -1265,8 +1265,8 @@ namespace MyNS
 		/// ListInvite v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ChannelSid">The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resources to read belong to.</param>
 		/// <param name="Identity">The [User](https://www.twilio.com/docs/api/chat/rest/v1/user)'s `identity` value of the resources to read. See [access tokens](https://www.twilio.com/docs/api/chat/guides/create-tokens) for more details.</param>
@@ -1311,13 +1311,13 @@ namespace MyNS
 		/// DeleteInvite v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ChannelSid">The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resource to delete belongs to.</param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Invite resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteInviteAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1345,13 +1345,13 @@ namespace MyNS
 		/// FetchInvite v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ChannelSid">The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resource to fetch belongs to.</param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Invite resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1servicechannelinvite> FetchInviteAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1386,8 +1386,8 @@ namespace MyNS
 		/// ListMember v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the members to read belong to. Can be the Channel resource's `sid` or `unique_name` value.</param>
 		/// <param name="Identity">The [User](https://www.twilio.com/docs/api/chat/rest/v1/user)'s `identity` value of the resources to read. See [access tokens](https://www.twilio.com/docs/api/chat/guides/create-tokens) for more details.</param>
@@ -1432,13 +1432,13 @@ namespace MyNS
 		/// DeleteMember v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message belongs to.  Can be the Channel's `sid` or `unique_name`.</param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Member resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteMemberAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1466,13 +1466,13 @@ namespace MyNS
 		/// FetchMember v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the member to fetch belongs to. Can be the Channel resource's `sid` or `unique_name` value.</param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Member resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1servicechannelmember> FetchMemberAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1507,12 +1507,12 @@ namespace MyNS
 		/// ListMessage v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message to read belongs to. Can be the Channel's `sid` or `unique_name`.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Order">The sort order of the returned messages. Can be: `asc` (ascending) or `desc` (descending) with `asc` as the default.</param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
@@ -1556,16 +1556,16 @@ namespace MyNS
 		/// DeleteMessage v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message to delete belongs to.  Can be the Channel resource's `sid` or `unique_name`.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Message resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteMessageAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1593,16 +1593,16 @@ namespace MyNS
 		/// FetchMessage v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ChannelSid">The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message to fetch belongs to. Can be the Channel's `sid` or `unique_name`.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Message resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1servicechannelmessage> FetchMessageAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1637,8 +1637,8 @@ namespace MyNS
 		/// DeleteChannel v1/Services/{ServiceSid}/Channels/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Channel resource to delete.</param>
 		public async Task DeleteChannelAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1667,8 +1667,8 @@ namespace MyNS
 		/// FetchChannel v1/Services/{ServiceSid}/Channels/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Channel resource to fetch.</param>
 		/// <returns>OK</returns>
@@ -1704,8 +1704,8 @@ namespace MyNS
 		/// ListRole v1/Services/{ServiceSid}/Roles
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1748,12 +1748,12 @@ namespace MyNS
 		/// DeleteRole v1/Services/{ServiceSid}/Roles/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Role resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteRoleAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1781,12 +1781,12 @@ namespace MyNS
 		/// FetchRole v1/Services/{ServiceSid}/Roles/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Role resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1servicerole> FetchRoleAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1821,8 +1821,8 @@ namespace MyNS
 		/// ListUser v1/Services/{ServiceSid}/Users
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1865,8 +1865,8 @@ namespace MyNS
 		/// DeleteUser v1/Services/{ServiceSid}/Users/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the User resource to delete.</param>
 		public async Task DeleteUserAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1895,8 +1895,8 @@ namespace MyNS
 		/// FetchUser v1/Services/{ServiceSid}/Users/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the User resource to fetch.</param>
 		/// <returns>OK</returns>
@@ -1933,8 +1933,8 @@ namespace MyNS
 		/// ListUserChannel v1/Services/{ServiceSid}/Users/{UserSid}/Channels
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="UserSid">The SID of the [User](https://www.twilio.com/docs/api/chat/rest/users) to read the User Channel resources from.</param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
@@ -1978,8 +1978,8 @@ namespace MyNS
 		/// DeleteService v1/Services/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2007,8 +2007,8 @@ namespace MyNS
 		/// FetchService v1/Services/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Chatv1service> FetchServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

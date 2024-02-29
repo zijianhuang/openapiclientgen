@@ -973,8 +973,8 @@ namespace MyNS
 		/// CreateSchedule schedules/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the schedule that you are creating.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateScheduleOutput> CreateScheduleAsync(string Name, CreateSchedulePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1017,16 +1017,16 @@ namespace MyNS
 		/// DeleteSchedule schedules/{Name}
 		/// </summary>
 		/// <param name="clientToken"> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="groupName">The name of the schedule group associated with this schedule. If you omit this, the default schedule group is used.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="Name">The name of the schedule to delete.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteScheduleOutput> DeleteScheduleAsync(string clientToken, string groupName, string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1062,12 +1062,12 @@ namespace MyNS
 		/// GetSchedule schedules/{Name}
 		/// </summary>
 		/// <param name="groupName">The name of the schedule group associated with this schedule. If you omit this, EventBridge Scheduler assumes that the schedule is associated with the default group.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="Name">The name of the schedule to retrieve.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetScheduleOutput> GetScheduleAsync(string groupName, string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1103,8 +1103,8 @@ namespace MyNS
 		/// UpdateSchedule schedules/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the schedule that you are updating.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateScheduleOutput> UpdateScheduleAsync(string Name, UpdateSchedulePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1147,8 +1147,8 @@ namespace MyNS
 		/// CreateScheduleGroup schedule-groups/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the schedule group that you are creating.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateScheduleGroupOutput> CreateScheduleGroupAsync(string Name, CreateScheduleGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1191,12 +1191,12 @@ namespace MyNS
 		/// DeleteScheduleGroup schedule-groups/{Name}
 		/// </summary>
 		/// <param name="clientToken"> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="Name">The name of the schedule group to delete.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteScheduleGroupOutput> DeleteScheduleGroupAsync(string clientToken, string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1232,8 +1232,8 @@ namespace MyNS
 		/// GetScheduleGroup schedule-groups/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the schedule group to retrieve.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetScheduleGroupOutput> GetScheduleGroupAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1273,12 +1273,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="NamePrefix">The name prefix that you can use to return a filtered list of your schedule groups.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="NextToken">The token returned by a previous call to retrieve the next set of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListScheduleGroupsOutput> ListScheduleGroupsAsync(int MaxResults, string NamePrefix, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1314,20 +1314,20 @@ namespace MyNS
 		/// ListSchedules schedules
 		/// </summary>
 		/// <param name="ScheduleGroup">If specified, only lists the schedules whose associated schedule group matches the given filter.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="MaxResults">If specified, limits the number of results returned by this operation. The operation also returns a <code>NextToken</code> which you can use in a subsequent operation to retrieve the next set of results.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="NamePrefix">Schedule name prefix to return the filtered list of resources.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="NextToken">The token returned by a previous call to retrieve the next set of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="State">If specified, only lists the schedules whose current state matches the given filter.</param>
 		/// <returns>Success</returns>
@@ -1364,8 +1364,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The ARN of the EventBridge Scheduler resource for which you want to view tags.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceOutput> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1401,8 +1401,8 @@ namespace MyNS
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the schedule group that you are adding tags to.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceOutput> TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1445,8 +1445,8 @@ namespace MyNS
 		/// UntagResource tags/{ResourceArn}#TagKeys
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the schedule group from which you are removing tags.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <param name="TagKeys">The list of tag keys to remove from the resource.
 		/// Minimum items: 0
@@ -1493,8 +1493,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1505,8 +1505,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description you specify for the schedule.
-		/// Max length: 512
 		/// Min length: 0
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1529,8 +1529,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the schedule group to associate with this schedule. If you omit this, the default schedule group is used.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[0-9a-zA-Z-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1541,8 +1541,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) for the customer managed KMS key that EventBridge Scheduler will use to encrypt and decrypt your data.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: ^arn:aws(-[a-z]+)?:kms:[a-z0-9\-]+:\d{12}:(key|alias)\/[0-9a-zA-Z-_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1554,8 +1554,8 @@ namespace MyNS
 		/// <summary>
 		/// <p> The expression that defines when the schedule runs. The following formats are supported. </p> <ul> <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li> <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li> </ul> <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p> <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p> <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p> <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1565,8 +1565,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The timezone in which the scheduling expression is evaluated.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1649,8 +1649,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1661,8 +1661,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description you specify for the schedule.
-		/// Max length: 512
 		/// Min length: 0
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1685,8 +1685,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the schedule group with which the schedule is associated. You must provide this value in order for EventBridge Scheduler to find the schedule you want to update. If you omit this value, EventBridge Scheduler assumes the group is associated to the default group.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[0-9a-zA-Z-_.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1697,8 +1697,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN for the customer managed KMS key that that you want EventBridge Scheduler to use to encrypt and decrypt your data.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: ^arn:aws(-[a-z]+)?:kms:[a-z0-9\-]+:\d{12}:(key|alias)\/[0-9a-zA-Z-_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1710,8 +1710,8 @@ namespace MyNS
 		/// <summary>
 		/// <p> The expression that defines when the schedule runs. The following formats are supported. </p> <ul> <li> <p> <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> </p> </li> <li> <p> <code>rate</code> expression - <code>rate(value unit)</code> </p> </li> <li> <p> <code>cron</code> expression - <code>cron(fields)</code> </p> </li> </ul> <p> You can use <code>at</code> expressions to create one-time schedules that invoke a target once, at the time and in the time zone, that you specify. You can use <code>rate</code> and <code>cron</code> expressions to create recurring schedules. Rate-based schedules are useful when you want to invoke a target at regular intervals, such as every 15 minutes or every five days. Cron-based schedules are useful when you want to invoke a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month. </p> <p> A <code>cron</code> expression consists of six fields separated by white spaces: <code>(minutes hours day_of_month month day_of_week year)</code>. </p> <p> A <code>rate</code> expression consists of a <i>value</i> as a positive integer, and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> </p> <p> For more information and examples, see <a href="https://docs.aws.amazon.com/scheduler/latest/UserGuide/schedule-types.html">Schedule types on EventBridge Scheduler</a> in the <i>EventBridge Scheduler User Guide</i>. </p>
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1721,8 +1721,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The timezone in which the scheduling expression is evaluated.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1799,8 +1799,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

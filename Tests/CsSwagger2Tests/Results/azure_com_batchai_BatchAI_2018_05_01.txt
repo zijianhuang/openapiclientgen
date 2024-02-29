@@ -2841,8 +2841,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -2876,8 +2876,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -2919,8 +2919,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -2948,8 +2948,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -2991,8 +2991,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 files can be returned.
 		/// Minimum: 1
@@ -3030,12 +3030,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="clusterName">The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3069,12 +3069,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="clusterName">The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3116,12 +3116,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="clusterName">The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3149,12 +3149,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="clusterName">The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3196,12 +3196,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="clusterName">The name of the cluster within the specified resource group. Cluster names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3235,8 +3235,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 files can be returned.
 		/// Minimum: 1
@@ -3274,12 +3274,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="experimentName">The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3313,12 +3313,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="experimentName">The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3352,12 +3352,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="experimentName">The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3385,12 +3385,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="experimentName">The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 files can be returned.
 		/// Minimum: 1
@@ -3428,16 +3428,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="experimentName">The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="jobName">The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3471,16 +3471,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="experimentName">The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="jobName">The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3522,16 +3522,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="experimentName">The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="jobName">The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3559,16 +3559,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="experimentName">The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="jobName">The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="outputdirectoryid">Id of the job output directory. This is the OutputDirectory-->id parameter that is given by the user during Create Job.</param>
 		/// <param name="directory">The path to the directory.</param>
@@ -3612,16 +3612,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="experimentName">The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="jobName">The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3655,16 +3655,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="experimentName">The name of the experiment. Experiment names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="jobName">The name of the job within the specified resource group. Job names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3692,8 +3692,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 files can be returned.
 		/// Minimum: 1
@@ -3731,12 +3731,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="fileServerName">The name of the file server within the specified resource group. File server names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3770,12 +3770,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="fileServerName">The name of the file server within the specified resource group. File server names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>
@@ -3817,12 +3817,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
 		/// <param name="workspaceName">The name of the workspace. Workspace names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="fileServerName">The name of the file server within the specified resource group. File server names can only contain a combination of alphanumeric characters along with dash (-) and underscore (_). The name must be from 1 through 64 characters long.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Specifies the version of API used for this request.</param>
 		/// <param name="subscriptionId">The subscriptionID for the Azure user.</param>

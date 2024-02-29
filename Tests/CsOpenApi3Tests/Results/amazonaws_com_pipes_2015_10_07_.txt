@@ -2019,8 +2019,8 @@ namespace MyNS
 		/// CreatePipe v1/pipes/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the pipe.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreatePipeResponse> CreatePipeAsync(string Name, CreatePipePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2063,8 +2063,8 @@ namespace MyNS
 		/// DeletePipe v1/pipes/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the pipe.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePipeResponse> DeletePipeAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2100,8 +2100,8 @@ namespace MyNS
 		/// DescribePipe v1/pipes/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the pipe.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePipeResponse> DescribePipeAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2137,8 +2137,8 @@ namespace MyNS
 		/// UpdatePipe v1/pipes/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the pipe.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePipeResponse> UpdatePipeAsync(string Name, UpdatePipePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2187,20 +2187,20 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="NamePrefix">A value that will return a subset of the pipes associated with this account. For example, <code>"NamePrefix": "ABC"</code> will return all endpoints with "ABC" in the name.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="NextToken">If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken error.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="SourcePrefix">The prefix matching the pipe source.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		// </param>
 		/// <param name="TargetPrefix">The prefix matching the pipe target.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListPipesResponse> ListPipesAsync(PipeState CurrentState, RequestedPipeState DesiredState, int Limit, string NamePrefix, string NextToken, string SourcePrefix, string TargetPrefix, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2236,8 +2236,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the pipe for which you want to view tags.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2273,8 +2273,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the pipe.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2317,8 +2317,8 @@ namespace MyNS
 		/// StartPipe v1/pipes/{Name}/start
 		/// </summary>
 		/// <param name="Name">The name of the pipe.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartPipeResponse> StartPipeAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2349,8 +2349,8 @@ namespace MyNS
 		/// StopPipe v1/pipes/{Name}/stop
 		/// </summary>
 		/// <param name="Name">The name of the pipe.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopPipeResponse> StopPipeAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2381,8 +2381,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the pipe.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		// </param>
 		/// <param name="tagKeys">The list of tag keys to remove from the pipe.
 		/// Minimum items: 0
@@ -2423,8 +2423,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the pipe.
-		/// Max length: 512
 		/// Min length: 0
+		/// Max length: 512
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2441,8 +2441,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the enrichment resource.
-		/// Max length: 1600
 		/// Min length: 0
+		/// Max length: 1600
 		/// Pattern: ^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2460,8 +2460,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the role that allows the pipe to send data to the target.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: ^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z0-9+=,.@\-_/]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2474,8 +2474,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the source resource.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: ^smk://(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9]):[0-9]{1,5}|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2500,8 +2500,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the target resource.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: ^arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2601,8 +2601,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the pipe.
-		/// Max length: 512
 		/// Min length: 0
+		/// Max length: 512
 		/// Pattern: ^.*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2619,8 +2619,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the enrichment resource.
-		/// Max length: 1600
 		/// Min length: 0
+		/// Max length: 1600
 		/// Pattern: ^$|arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2638,8 +2638,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the role that allows the pipe to send data to the target.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: ^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z0-9+=,.@\-_/]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2657,8 +2657,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the target resource.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: ^arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\-]+):([a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1})?:(\d{12})?:(.+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

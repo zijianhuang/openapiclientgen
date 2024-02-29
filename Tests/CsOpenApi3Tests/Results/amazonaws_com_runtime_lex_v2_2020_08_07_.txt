@@ -785,16 +785,16 @@ namespace MyNS
 		/// DeleteSession bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}
 		/// </summary>
 		/// <param name="botId">The identifier of the bot that contains the session data.
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		// </param>
 		/// <param name="botAliasId">The alias identifier in use for the bot that contains the session data.</param>
 		/// <param name="localeId">The locale where the session is in use.
 		/// Min length: 1
 		// </param>
 		/// <param name="sessionId">The identifier of the session to delete.
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSessionResponse> DeleteSessionAsync(string botId, string botAliasId, string localeId, string sessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -830,16 +830,16 @@ namespace MyNS
 		/// GetSession bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}
 		/// </summary>
 		/// <param name="botId">The identifier of the bot that contains the session data.
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		// </param>
 		/// <param name="botAliasId">The alias identifier in use for the bot that contains the session data.</param>
 		/// <param name="localeId">The locale where the session is in use.
 		/// Min length: 1
 		// </param>
 		/// <param name="sessionId">The identifier of the session to return.
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSessionResponse> GetSessionAsync(string botId, string botAliasId, string localeId, string sessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -875,16 +875,16 @@ namespace MyNS
 		/// PutSession bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}
 		/// </summary>
 		/// <param name="botId">The identifier of the bot that receives the session data.
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		// </param>
 		/// <param name="botAliasId">The alias identifier of the bot that receives the session data.</param>
 		/// <param name="localeId">The locale where the session is in use.
 		/// Min length: 1
 		// </param>
 		/// <param name="sessionId">The identifier of the session that receives the session data.
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutSessionResponse> PutSessionAsync(string botId, string botAliasId, string localeId, string sessionId, PutSessionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -927,16 +927,16 @@ namespace MyNS
 		/// RecognizeText bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/text
 		/// </summary>
 		/// <param name="botId">The identifier of the bot that processes the request.
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		// </param>
 		/// <param name="botAliasId">The alias identifier in use for the bot that processes the request.</param>
 		/// <param name="localeId">The locale where the session is in use.
 		/// Min length: 1
 		// </param>
 		/// <param name="sessionId">The identifier of the user session that is having the conversation.
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<RecognizeTextResponse> RecognizeTextAsync(string botId, string botAliasId, string localeId, string sessionId, RecognizeTextPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -979,16 +979,16 @@ namespace MyNS
 		/// RecognizeUtterance bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/utterance#Content-Type
 		/// </summary>
 		/// <param name="botId">The identifier of the bot that should receive the request.
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		// </param>
 		/// <param name="botAliasId">The alias identifier in use for the bot that should receive the request.</param>
 		/// <param name="localeId">The locale where the session is in use.
 		/// Min length: 1
 		// </param>
 		/// <param name="sessionId">The identifier of the session in use.
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<RecognizeUtteranceResponse> RecognizeUtteranceAsync(string botId, string botAliasId, string localeId, string sessionId, RecognizeUtterancePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1081,8 +1081,8 @@ namespace MyNS
 		/// <summary>
 		/// The text that the user entered. Amazon Lex V2 interprets this text.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="text")]

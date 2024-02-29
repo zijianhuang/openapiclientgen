@@ -35,8 +35,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the broadcast service.
-		/// Max length: 1200
 		/// Min length: 0
+		/// Max length: 1200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -64,8 +64,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the broadcast service.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -111,8 +111,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the file including the extension.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z0-9][a-zA-Z0-9 \._]*[a-zA-Z0-9]$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -176,8 +176,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the folder.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z0-9][a-zA-Z0-9 \._]*[a-zA-Z0-9]$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

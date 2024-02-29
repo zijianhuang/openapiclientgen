@@ -956,8 +956,8 @@ namespace MyNS
 		/// BatchCreateRumMetricDefinitions rummetrics/{AppMonitorName}/metrics
 		/// </summary>
 		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that is to send the metrics.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchCreateRumMetricDefinitionsResponse> BatchCreateRumMetricDefinitionsAsync(string AppMonitorName, BatchCreateRumMetricDefinitionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1000,8 +1000,8 @@ namespace MyNS
 		/// UpdateRumMetricDefinition rummetrics/{AppMonitorName}/metrics
 		/// </summary>
 		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that sends these metrics.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRumMetricDefinitionResponse> UpdateRumMetricDefinitionAsync(string AppMonitorName, UpdateRumMetricDefinitionPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1044,13 +1044,13 @@ namespace MyNS
 		/// BatchDeleteRumMetricDefinitions rummetrics/{AppMonitorName}/metrics#destination&metricDefinitionIds
 		/// </summary>
 		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that is sending these metrics.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="destination">Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</param>
 		/// <param name="destinationArn"><p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p> <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="metricDefinitionIds">An array of structures which define the metrics that you want to stop sending.</param>
 		/// <returns>Success</returns>
@@ -1087,13 +1087,13 @@ namespace MyNS
 		/// BatchGetRumMetricDefinitions rummetrics/{AppMonitorName}/metrics#destination
 		/// </summary>
 		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that is sending the metrics.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="destination">The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</param>
 		/// <param name="destinationArn"><p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p> <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="maxResults"><p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p> <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
 		/// Minimum: 1
@@ -1176,8 +1176,8 @@ namespace MyNS
 		/// DeleteAppMonitor appmonitor/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the app monitor to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAppMonitorResponse> DeleteAppMonitorAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1213,8 +1213,8 @@ namespace MyNS
 		/// GetAppMonitor appmonitor/{Name}
 		/// </summary>
 		/// <param name="Name">The app monitor to retrieve information for.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAppMonitorResponse> GetAppMonitorAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1250,8 +1250,8 @@ namespace MyNS
 		/// UpdateAppMonitor appmonitor/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the app monitor to update.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppMonitorResponse> UpdateAppMonitorAsync(string Name, UpdateAppMonitorPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1294,13 +1294,13 @@ namespace MyNS
 		/// DeleteRumMetricsDestination rummetrics/{AppMonitorName}/metricsdestination#destination
 		/// </summary>
 		/// <param name="AppMonitorName">The name of the app monitor that is sending metrics to the destination that you want to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="destination">The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</param>
 		/// <param name="destinationArn">This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteRumMetricsDestinationResponse> DeleteRumMetricsDestinationAsync(string AppMonitorName, MetricDestination destination, string destinationArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1336,8 +1336,8 @@ namespace MyNS
 		/// GetAppMonitorData appmonitor/{Name}/data
 		/// </summary>
 		/// <param name="Name">The name of the app monitor that collected the data that you want to retrieve.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1417,8 +1417,8 @@ namespace MyNS
 		/// ListRumMetricsDestinations rummetrics/{AppMonitorName}/metricsdestination
 		/// </summary>
 		/// <param name="AppMonitorName">The name of the app monitor associated with the destinations that you want to retrieve.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="maxResults"><p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p> <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
 		/// Minimum: 1
@@ -1461,8 +1461,8 @@ namespace MyNS
 		/// PutRumMetricsDestination rummetrics/{AppMonitorName}/metricsdestination
 		/// </summary>
 		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that will send the metrics.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutRumMetricsDestinationResponse> PutRumMetricsDestinationAsync(string AppMonitorName, PutRumMetricsDestinationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1580,8 +1580,8 @@ namespace MyNS
 		/// PutRumEvents appmonitors/{Id}/
 		/// </summary>
 		/// <param name="Id">The ID of the app monitor that is sending this data.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutRumEventsResponse> PutRumEventsAsync(string Id, PutRumEventsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1671,8 +1671,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p> <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1703,8 +1703,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p> <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1724,8 +1724,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the metric definition to update.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1780,8 +1780,8 @@ namespace MyNS
 		/// <summary>
 		/// The top-level internet domain name for which your application has administrative authority.
 		/// Required
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		/// Pattern: ^(localhost)|^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|^(?![-.])([A-Za-z0-9-\.\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))|^(\*\.)(?![-.])([A-Za-z0-9-\.\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1794,8 +1794,8 @@ namespace MyNS
 		/// <summary>
 		/// A name for the app monitor.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^(?!\.)[\.\-_#A-Za-z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1873,8 +1873,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The top-level internet domain name for which your application has administrative authority.
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		/// Pattern: ^(localhost)|^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$|^(?![-.])([A-Za-z0-9-\.\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))|^(\*\.)(?![-.])([A-Za-z0-9-\.\-]{0,63})((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))\.(?![-])[A-Za-z-0-9]{1,63}((?![-])([a-zA-Z0-9]{1}|^[a-zA-Z0-9]{0,1}))
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1978,8 +1978,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This parameter specifies the ARN of the Evidently experiment that will receive the extended metrics.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2023,8 +2023,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique identifier for this batch of RUM event data.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

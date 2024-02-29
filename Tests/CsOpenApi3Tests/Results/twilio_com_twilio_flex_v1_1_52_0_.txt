@@ -40,8 +40,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Channel resource and owns this Workflow.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -64,8 +64,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Flex Flow.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^FO[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="flex_flow_sid")]
@@ -76,8 +76,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Channel resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -88,8 +88,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the TaskRouter Task. Only valid when integration type is `task`. `null` for integration types `studio` & `external`
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WT[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="task_sid")]
@@ -106,8 +106,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the chat user.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^US[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="user_sid")]
@@ -124,8 +124,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Configuration resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -166,8 +166,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the chat service this user belongs to.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="chat_service_instance_sid")]
@@ -244,8 +244,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Flex service instance.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="flex_service_instance_sid")]
@@ -280,8 +280,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Messaging service instance.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^MG[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messaging_service_instance_sid")]
@@ -355,8 +355,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The TaskRouter SID of the offline activity.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="taskrouter_offline_activity_sid")]
@@ -373,8 +373,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the TaskRouter Target TaskQueue.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WQ[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="taskrouter_target_taskqueue_sid")]
@@ -385,8 +385,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the TaskRouter target Workflow.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WW[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="taskrouter_target_workflow_sid")]
@@ -415,8 +415,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the TaskRouter Workspace.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="taskrouter_workspace_sid")]
@@ -463,8 +463,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Flow resource and owns this Workflow.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -478,8 +478,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the chat service.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="chat_service_sid")]
@@ -541,8 +541,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Flex Flow resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^FO[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -606,8 +606,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -642,8 +642,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the assessment
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^FM[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="assessment_sid")]
@@ -702,8 +702,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -720,8 +720,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the assessment.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^FM[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="assessment_sid")]
@@ -819,8 +819,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -849,8 +849,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The sid of this questionnaire
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^GM[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="questionnaire_sid")]
@@ -876,8 +876,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -888,8 +888,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the category
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^FY[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="category_sid")]
@@ -915,8 +915,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -963,8 +963,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the question
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^GE[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="question_sid")]
@@ -1155,8 +1155,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1194,8 +1194,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Flex Insights resource and owns this resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1238,8 +1238,8 @@ namespace MyNS
 		public object Channel { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^HQ[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="interaction_context_sid")]
@@ -1260,8 +1260,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string created by Twilio to identify an Interaction resource, prefixed with KD.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KD[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -1293,8 +1293,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string created by Twilio to identify an Interaction resource, prefixed with KD.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KD[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="interaction_sid")]
@@ -1308,8 +1308,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string created by Twilio to identify an Interaction Channel resource, prefixed with UO.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^UO[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -1388,8 +1388,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Channel SID for this Invite.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^UO[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channel_sid")]
@@ -1400,8 +1400,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Interaction SID for this Channel.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KD[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="interaction_sid")]
@@ -1419,8 +1419,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string created by Twilio to identify an Interaction Channel Invite resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KG[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -1440,8 +1440,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Channel Sid for this Participant.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^UO[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channel_sid")]
@@ -1452,8 +1452,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Interaction Sid for this channel.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KD[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="interaction_sid")]
@@ -1464,8 +1464,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string created by Twilio to identify an Interaction Channel Participant resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^UT[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -1544,8 +1544,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the WebChannel resource and owns this Workflow.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1568,8 +1568,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Flex Flow.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^FO[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="flex_flow_sid")]
@@ -1580,8 +1580,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the WebChannel resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -1867,8 +1867,8 @@ namespace MyNS
 		/// DeleteChannel v1/Channels/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the Flex chat channel resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteChannelAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1896,8 +1896,8 @@ namespace MyNS
 		/// FetchChannel v1/Channels/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the Flex chat channel resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Flexv1channel> FetchChannelAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2006,8 +2006,8 @@ namespace MyNS
 		/// DeleteFlexFlow v1/FlexFlows/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the Flex Flow resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteFlexFlowAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2035,8 +2035,8 @@ namespace MyNS
 		/// FetchFlexFlow v1/FlexFlows/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the Flex Flow resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Flexv1flex_flow> FetchFlexFlowAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2239,8 +2239,8 @@ namespace MyNS
 		/// DeleteInsightsQuestionnairesCategory v1/Insights/QualityManagement/Categories/{CategorySid}
 		/// </summary>
 		/// <param name="CategorySid">The SID of the category to be deleted
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteInsightsQuestionnairesCategoryAsync(string CategorySid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2311,8 +2311,8 @@ namespace MyNS
 		/// DeleteInsightsQuestionnaires v1/Insights/QualityManagement/Questionnaires/{QuestionnaireSid}
 		/// </summary>
 		/// <param name="QuestionnaireSid">The SID of the questionnaire
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteInsightsQuestionnairesAsync(string QuestionnaireSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2341,8 +2341,8 @@ namespace MyNS
 		/// FetchInsightsQuestionnaires v1/Insights/QualityManagement/Questionnaires/{QuestionnaireSid}
 		/// </summary>
 		/// <param name="QuestionnaireSid">The SID of the questionnaire
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Flexv1insights_questionnaires> FetchInsightsQuestionnairesAsync(string QuestionnaireSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2419,8 +2419,8 @@ namespace MyNS
 		/// DeleteInsightsQuestionnairesQuestion v1/Insights/QualityManagement/Questions/{QuestionSid}
 		/// </summary>
 		/// <param name="QuestionSid">The SID of the question
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteInsightsQuestionnairesQuestionAsync(string QuestionSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2612,8 +2612,8 @@ namespace MyNS
 		/// ListInteractionChannel v1/Interactions/{InteractionSid}/Channels
 		/// </summary>
 		/// <param name="InteractionSid">The unique string created by Twilio to identify an Interaction resource, prefixed with KD.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -2657,12 +2657,12 @@ namespace MyNS
 		/// ListInteractionChannelInvite v1/Interactions/{InteractionSid}/Channels/{ChannelSid}/Invites
 		/// </summary>
 		/// <param name="InteractionSid">The Interaction SID for this Channel.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ChannelSid">The Channel SID for this Participant.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -2706,12 +2706,12 @@ namespace MyNS
 		/// ListInteractionChannelParticipant v1/Interactions/{InteractionSid}/Channels/{ChannelSid}/Participants
 		/// </summary>
 		/// <param name="InteractionSid">The Interaction Sid for this channel.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ChannelSid">The Channel Sid for this Participant.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -2755,12 +2755,12 @@ namespace MyNS
 		/// FetchInteractionChannel v1/Interactions/{InteractionSid}/Channels/{Sid}
 		/// </summary>
 		/// <param name="InteractionSid">The unique string created by Twilio to identify an Interaction resource, prefixed with KD.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The unique string created by Twilio to identify an Interaction Channel resource, prefixed with UO.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Flexv1interactioninteraction_channel> FetchInteractionChannelAsync(string InteractionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2795,8 +2795,8 @@ namespace MyNS
 		/// FetchInteraction v1/Interactions/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the Interaction resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Flexv1interaction> FetchInteractionAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2871,8 +2871,8 @@ namespace MyNS
 		/// DeleteWebChannel v1/WebChannels/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the WebChannel resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteWebChannelAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2900,8 +2900,8 @@ namespace MyNS
 		/// FetchWebChannel v1/WebChannels/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the WebChannel resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Flexv1web_channel> FetchWebChannelAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

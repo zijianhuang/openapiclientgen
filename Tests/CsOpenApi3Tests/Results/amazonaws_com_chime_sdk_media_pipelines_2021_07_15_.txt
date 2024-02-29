@@ -2845,8 +2845,8 @@ namespace MyNS
 		/// DeleteMediaCapturePipeline sdk-media-capture-pipelines/{mediaPipelineId}
 		/// </summary>
 		/// <param name="mediaPipelineId">The ID of the media pipeline being deleted. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		public async Task DeleteMediaCapturePipelineAsync(string mediaPipelineId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2875,8 +2875,8 @@ namespace MyNS
 		/// GetMediaCapturePipeline sdk-media-capture-pipelines/{mediaPipelineId}
 		/// </summary>
 		/// <param name="mediaPipelineId">The ID of the pipeline that you want to get.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMediaCapturePipelineResponse> GetMediaCapturePipelineAsync(string mediaPipelineId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3020,8 +3020,8 @@ namespace MyNS
 		/// DeleteMediaPipeline sdk-media-pipelines/{mediaPipelineId}
 		/// </summary>
 		/// <param name="mediaPipelineId">The ID of the media pipeline to delete.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		public async Task DeleteMediaPipelineAsync(string mediaPipelineId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3050,8 +3050,8 @@ namespace MyNS
 		/// GetMediaPipeline sdk-media-pipelines/{mediaPipelineId}
 		/// </summary>
 		/// <param name="mediaPipelineId">The ID of the pipeline that you want to get.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMediaPipelineResponse> GetMediaPipelineAsync(string mediaPipelineId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3129,8 +3129,8 @@ namespace MyNS
 		/// ListTagsForResource tags#arn
 		/// </summary>
 		/// <param name="arn">The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's region, resource ID, and pipeline ID.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3279,8 +3279,8 @@ namespace MyNS
 		/// <summary>
 		/// ARN of the source from which the media artifacts are captured.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3301,8 +3301,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the sink type.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3314,8 +3314,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media pipeline request.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3380,8 +3380,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique identifier for the client request. The token makes the API request idempotent. Use a unique token for each media concatenation pipeline request.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3407,8 +3407,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the pipeline's configuration.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3454,8 +3454,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique identifier for the media insights pipeline request.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3504,8 +3504,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the media insights pipeline configuration.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: ^[0-9a-zA-Z._-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3518,8 +3518,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the role used by the service to access Amazon Web Services resources, including <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s behalf.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3555,8 +3555,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique identifier for the media insights pipeline configuration request.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3605,8 +3605,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token assigned to the client making the request.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3632,8 +3632,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the role used by the service to access Amazon Web Services resources.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3681,8 +3681,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the media pipeline associated with any tags. The ARN consists of the pipeline's endpoint region, resource ID, and pipeline ID.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3718,8 +3718,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the pipeline that you want to untag.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

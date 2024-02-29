@@ -27,8 +27,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The resource name of an Amazon Connect campaign.
-		/// Max length: 500
 		/// Min length: 20
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="arn")]
 		[System.ComponentModel.DataAnnotations.MinLength(20)]
@@ -37,8 +37,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Identifier representing a Campaign
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="id")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -191,8 +191,8 @@ namespace MyNS
 		/// <summary>
 		/// The resource name of an Amazon Connect campaign.
 		/// Required
-		/// Max length: 500
 		/// Min length: 20
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
@@ -203,8 +203,8 @@ namespace MyNS
 		/// <summary>
 		/// Amazon Connect Instance Id
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="connectInstanceId")]
@@ -223,8 +223,8 @@ namespace MyNS
 		/// <summary>
 		/// Identifier representing a Campaign
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -235,8 +235,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of an Amazon Connect Campaign name.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -297,8 +297,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the contact flow for the outbound call.
 		/// Required
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="connectContactFlowId")]
@@ -309,8 +309,8 @@ namespace MyNS
 		/// <summary>
 		/// The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.
 		/// Required
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="connectQueueId")]
@@ -320,8 +320,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="connectSourcePhoneNumber")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -405,8 +405,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Identifier representing a Campaign
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="campaignId")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -443,8 +443,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Identifier representing a Campaign
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="campaignId")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -484,8 +484,8 @@ namespace MyNS
 		/// <summary>
 		/// Amazon Connect Instance Id
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="connectInstanceId")]
@@ -504,8 +504,8 @@ namespace MyNS
 		/// <summary>
 		/// Service linked role arn
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="serviceLinkedRoleArn")]
@@ -538,8 +538,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// KMS key id/arn for encryption config.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="keyArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -583,8 +583,8 @@ namespace MyNS
 		/// <summary>
 		/// Amazon Connect Instance Id
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="connectInstanceId")]
@@ -664,8 +664,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -684,8 +684,8 @@ namespace MyNS
 		/// <summary>
 		/// The resource name of an Amazon Connect campaign.
 		/// Required
-		/// Max length: 500
 		/// Min length: 20
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="arn")]
@@ -696,8 +696,8 @@ namespace MyNS
 		/// <summary>
 		/// Amazon Connect Instance Id
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="connectInstanceId")]
@@ -708,8 +708,8 @@ namespace MyNS
 		/// <summary>
 		/// Identifier representing a Campaign
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -720,8 +720,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of an Amazon Connect Campaign name.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -749,8 +749,8 @@ namespace MyNS
 		/// <summary>
 		/// Amazon Connect Instance Id
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="value")]
@@ -829,8 +829,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Client provided parameter used for idempotency. Its value must be unique for each request.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -876,8 +876,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Client provided parameter used for idempotency. Its value must be unique for each request.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -910,8 +910,8 @@ namespace MyNS
 		/// <summary>
 		/// Client provided parameter used for idempotency. Its value must be unique for each request.
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -930,8 +930,8 @@ namespace MyNS
 		/// <summary>
 		/// The phone number of the customer, in E.164 format.
 		/// Required
-		/// Max length: 20
 		/// Min length: 0
+		/// Max length: 20
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="phoneNumber")]
@@ -1028,8 +1028,8 @@ namespace MyNS
 		/// <summary>
 		/// Amazon Connect Instance Id
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="connectInstanceId")]
@@ -1048,8 +1048,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of an Amazon Connect Campaign name.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1263,8 +1263,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1409,8 +1409,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of an Amazon Connect Campaign name.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1435,8 +1435,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier of the contact flow for the outbound call.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="connectContactFlowId")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1445,8 +1445,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="connectSourcePhoneNumber")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1517,8 +1517,8 @@ namespace MyNS
 		/// Deletes a campaign from the specified Amazon Connect account.
 		/// DeleteCampaign campaigns/{id}
 		/// </summary>
-		/// <param name="id">Max length: 256
-		/// Min length: 0
+		/// <param name="id">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteCampaignAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1547,8 +1547,8 @@ namespace MyNS
 		/// Describes the specific campaign.
 		/// DescribeCampaign campaigns/{id}
 		/// </summary>
-		/// <param name="id">Max length: 256
-		/// Min length: 0
+		/// <param name="id">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeCampaignResponse> DescribeCampaignAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1583,8 +1583,8 @@ namespace MyNS
 		/// Deletes a connect instance config from the specified AWS account.
 		/// DeleteConnectInstanceConfig connect-instance/{connectInstanceId}/config
 		/// </summary>
-		/// <param name="connectInstanceId">Max length: 256
-		/// Min length: 0
+		/// <param name="connectInstanceId">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteConnectInstanceConfigAsync(string connectInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1613,8 +1613,8 @@ namespace MyNS
 		/// Get the specific Connect instance config.
 		/// GetConnectInstanceConfig connect-instance/{connectInstanceId}/config
 		/// </summary>
-		/// <param name="connectInstanceId">Max length: 256
-		/// Min length: 0
+		/// <param name="connectInstanceId">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetConnectInstanceConfigResponse> GetConnectInstanceConfigAsync(string connectInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1649,8 +1649,8 @@ namespace MyNS
 		/// Delete the Connect Campaigns onboarding job for the specified Amazon Connect instance.
 		/// DeleteInstanceOnboardingJob connect-instance/{connectInstanceId}/onboarding
 		/// </summary>
-		/// <param name="connectInstanceId">Max length: 256
-		/// Min length: 0
+		/// <param name="connectInstanceId">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteInstanceOnboardingJobAsync(string connectInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1679,8 +1679,8 @@ namespace MyNS
 		/// Get the specific instance onboarding job status.
 		/// GetInstanceOnboardingJobStatus connect-instance/{connectInstanceId}/onboarding
 		/// </summary>
-		/// <param name="connectInstanceId">Max length: 256
-		/// Min length: 0
+		/// <param name="connectInstanceId">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetInstanceOnboardingJobStatusResponse> GetInstanceOnboardingJobStatusAsync(string connectInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1715,8 +1715,8 @@ namespace MyNS
 		/// Onboard the specific Amazon Connect instance to Connect Campaigns.
 		/// StartInstanceOnboardingJob connect-instance/{connectInstanceId}/onboarding
 		/// </summary>
-		/// <param name="connectInstanceId">Max length: 256
-		/// Min length: 0
+		/// <param name="connectInstanceId">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartInstanceOnboardingJobResponse> StartInstanceOnboardingJobAsync(string connectInstanceId, StartInstanceOnboardingJobPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1758,8 +1758,8 @@ namespace MyNS
 		/// Get state of a campaign for the specified Amazon Connect account.
 		/// GetCampaignState campaigns/{id}/state
 		/// </summary>
-		/// <param name="id">Max length: 256
-		/// Min length: 0
+		/// <param name="id">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCampaignStateResponse> GetCampaignStateAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1876,8 +1876,8 @@ namespace MyNS
 		/// List tags for a resource.
 		/// ListTagsForResource tags/{arn}
 		/// </summary>
-		/// <param name="arn">Max length: 500
-		/// Min length: 20
+		/// <param name="arn">Min length: 20
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1912,8 +1912,8 @@ namespace MyNS
 		/// Tag a resource.
 		/// TagResource tags/{arn}
 		/// </summary>
-		/// <param name="arn">Max length: 500
-		/// Min length: 20
+		/// <param name="arn">Min length: 20
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task TagResourceAsync(string arn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1949,8 +1949,8 @@ namespace MyNS
 		/// Pauses a campaign for the specified Amazon Connect account.
 		/// PauseCampaign campaigns/{id}/pause
 		/// </summary>
-		/// <param name="id">Max length: 256
-		/// Min length: 0
+		/// <param name="id">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task PauseCampaignAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1974,8 +1974,8 @@ namespace MyNS
 		/// Creates dials requests for the specified campaign Amazon Connect account. This API is idempotent.
 		/// PutDialRequestBatch campaigns/{id}/dial-requests
 		/// </summary>
-		/// <param name="id">Max length: 256
-		/// Min length: 0
+		/// <param name="id">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutDialRequestBatchResponse> PutDialRequestBatchAsync(string id, PutDialRequestBatchPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2017,8 +2017,8 @@ namespace MyNS
 		/// Stops a campaign for the specified Amazon Connect account.
 		/// ResumeCampaign campaigns/{id}/resume
 		/// </summary>
-		/// <param name="id">Max length: 256
-		/// Min length: 0
+		/// <param name="id">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task ResumeCampaignAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2042,8 +2042,8 @@ namespace MyNS
 		/// Starts a campaign for the specified Amazon Connect account.
 		/// StartCampaign campaigns/{id}/start
 		/// </summary>
-		/// <param name="id">Max length: 256
-		/// Min length: 0
+		/// <param name="id">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task StartCampaignAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2067,8 +2067,8 @@ namespace MyNS
 		/// Stops a campaign for the specified Amazon Connect account.
 		/// StopCampaign campaigns/{id}/stop
 		/// </summary>
-		/// <param name="id">Max length: 256
-		/// Min length: 0
+		/// <param name="id">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task StopCampaignAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2092,8 +2092,8 @@ namespace MyNS
 		/// Untag a resource.
 		/// UntagResource tags/{arn}#tagKeys
 		/// </summary>
-		/// <param name="arn">Max length: 500
-		/// Min length: 20
+		/// <param name="arn">Min length: 20
+		/// Max length: 500
 		// </param>
 		/// <param name="tagKeys">Minimum items: 0
 		/// Maximum items: 50
@@ -2125,8 +2125,8 @@ namespace MyNS
 		/// Updates the dialer config of a campaign. This API is idempotent.
 		/// UpdateCampaignDialerConfig campaigns/{id}/dialer-config
 		/// </summary>
-		/// <param name="id">Max length: 256
-		/// Min length: 0
+		/// <param name="id">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateCampaignDialerConfigAsync(string id, UpdateCampaignDialerConfigPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2162,8 +2162,8 @@ namespace MyNS
 		/// Updates the name of a campaign. This API is idempotent.
 		/// UpdateCampaignName campaigns/{id}/name
 		/// </summary>
-		/// <param name="id">Max length: 256
-		/// Min length: 0
+		/// <param name="id">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateCampaignNameAsync(string id, UpdateCampaignNamePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2199,8 +2199,8 @@ namespace MyNS
 		/// Updates the outbound call config of a campaign. This API is idempotent.
 		/// UpdateCampaignOutboundCallConfig campaigns/{id}/outbound-call-config
 		/// </summary>
-		/// <param name="id">Max length: 256
-		/// Min length: 0
+		/// <param name="id">Min length: 0
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateCampaignOutboundCallConfigAsync(string id, UpdateCampaignOutboundCallConfigPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2239,8 +2239,8 @@ namespace MyNS
 		/// <summary>
 		/// Amazon Connect Instance Id
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="connectInstanceId")]
@@ -2259,8 +2259,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of an Amazon Connect Campaign name.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -2310,8 +2310,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier of the contact flow for the outbound call.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="connectContactFlowId")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2320,8 +2320,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="connectQueueId")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2330,8 +2330,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="connectSourcePhoneNumber")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2368,8 +2368,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// KMS key id/arn for encryption config.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="keyArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2413,8 +2413,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2494,8 +2494,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of an Amazon Connect Campaign name.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -2515,8 +2515,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier of the contact flow for the outbound call.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="connectContactFlowId")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2525,8 +2525,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="connectSourcePhoneNumber")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]

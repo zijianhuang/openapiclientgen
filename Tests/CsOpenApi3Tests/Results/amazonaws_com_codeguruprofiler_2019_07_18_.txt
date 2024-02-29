@@ -1380,8 +1380,8 @@ namespace MyNS
 		/// AddNotificationChannels profilingGroups/{profilingGroupName}/notificationConfiguration
 		/// </summary>
 		/// <param name="profilingGroupName">The name of the profiling group that we are setting up notifications for.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AddNotificationChannelsResponse> AddNotificationChannelsAsync(string profilingGroupName, AddNotificationChannelsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1424,8 +1424,8 @@ namespace MyNS
 		/// GetNotificationConfiguration profilingGroups/{profilingGroupName}/notificationConfiguration
 		/// </summary>
 		/// <param name="profilingGroupName">The name of the profiling group we want to get the notification configuration for.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetNotificationConfigurationResponse> GetNotificationConfigurationAsync(string profilingGroupName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1462,12 +1462,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="endTime"> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </param>
 		/// <param name="period"> The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="profilingGroupName"> The name of the profiling group associated with the the frame metrics used to return the time series values. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="startTime"> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </param>
 		/// <param name="targetResolution"><p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li> <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes </p> </li> </ul></param>
@@ -1512,8 +1512,8 @@ namespace MyNS
 		/// ConfigureAgent profilingGroups/{profilingGroupName}/configureAgent
 		/// </summary>
 		/// <param name="profilingGroupName"> The name of the profiling group for which the configured agent is collecting profiling data. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ConfigureAgentResponse> ConfigureAgentAsync(string profilingGroupName, ConfigureAgentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1556,8 +1556,8 @@ namespace MyNS
 		/// CreateProfilingGroup profilingGroups#clientToken
 		/// </summary>
 		/// <param name="clientToken"> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task CreateProfilingGroupAsync(string clientToken, CreateProfilingGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1593,8 +1593,8 @@ namespace MyNS
 		/// DeleteProfilingGroup profilingGroups/{profilingGroupName}
 		/// </summary>
 		/// <param name="profilingGroupName">The name of the profiling group to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		public async Task DeleteProfilingGroupAsync(string profilingGroupName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1623,8 +1623,8 @@ namespace MyNS
 		/// DescribeProfilingGroup profilingGroups/{profilingGroupName}
 		/// </summary>
 		/// <param name="profilingGroupName"> The name of the profiling group to get information about. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeProfilingGroupResponse> DescribeProfilingGroupAsync(string profilingGroupName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1660,8 +1660,8 @@ namespace MyNS
 		/// UpdateProfilingGroup profilingGroups/{profilingGroupName}
 		/// </summary>
 		/// <param name="profilingGroupName">The name of the profiling group to update.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateProfilingGroupResponse> UpdateProfilingGroupAsync(string profilingGroupName, UpdateProfilingGroupPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1709,8 +1709,8 @@ namespace MyNS
 		/// Maximum: 1000
 		// </param>
 		/// <param name="nextToken"><p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFindingsReportAccountSummaryResponse> GetFindingsReportAccountSummaryAsync(bool dailyReportsOnly, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1746,8 +1746,8 @@ namespace MyNS
 		/// GetPolicy profilingGroups/{profilingGroupName}/policy
 		/// </summary>
 		/// <param name="profilingGroupName">The name of the profiling group.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPolicyResponse> GetPolicyAsync(string profilingGroupName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1788,12 +1788,12 @@ namespace MyNS
 		/// Maximum: 10000
 		// </param>
 		/// <param name="period"><p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p> <pre><code> &lt;p&gt; To get the latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;. &lt;/p&gt; </code></pre>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="profilingGroupName">The name of the profiling group to get.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="startTime"><p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p> <pre><code> &lt;p&gt; If you specify &lt;code&gt;startTime&lt;/code&gt;, then you must also specify &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not both. &lt;/p&gt; </code></pre></param>
 		/// <returns>Success</returns>
@@ -1832,8 +1832,8 @@ namespace MyNS
 		/// <param name="endTime"> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </param>
 		/// <param name="locale"><p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p> <ul> <li> <p> <code>de-DE</code> - German, Germany </p> </li> <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li> <li> <p> <code>en-US</code> - English, United States </p> </li> <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li> <li> <p> <code>fr-FR</code> - French, France </p> </li> <li> <p> <code>it-IT</code> - Italian, Italy </p> </li> <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li> <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li> <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li> <li> <p> <code>zh-CN</code> - Chinese, China </p> </li> <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li> </ul></param>
 		/// <param name="profilingGroupName"> The name of the profiling group to get analysis data about. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="startTime"> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </param>
 		/// <returns>Success</returns>
@@ -1876,12 +1876,12 @@ namespace MyNS
 		/// Maximum: 1000
 		// </param>
 		/// <param name="nextToken"><p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="profilingGroupName">The name of the profiling group from which to search for analysis data.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="startTime"> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </param>
 		/// <returns>Success</returns>
@@ -1923,14 +1923,14 @@ namespace MyNS
 		/// Maximum: 1000
 		// </param>
 		/// <param name="nextToken"><p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="orderBy">The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. </param>
 		/// <param name="period"><p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li> <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes </p> </li> </ul></param>
 		/// <param name="profilingGroupName">The name of the profiling group.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="startTime">The start time of the time range from which to list the profiles.</param>
 		/// <returns>Success</returns>
@@ -1972,8 +1972,8 @@ namespace MyNS
 		/// Maximum: 1000
 		// </param>
 		/// <param name="nextToken"><p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListProfilingGroupsResponse> ListProfilingGroupsAsync(bool includeDescription, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2077,12 +2077,12 @@ namespace MyNS
 		/// PostAgentProfile profilingGroups/{profilingGroupName}/agentProfile#Content-Type
 		/// </summary>
 		/// <param name="profileToken"> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="profilingGroupName"> The name of the profiling group with the aggregated profile that receives the submitted profiling data. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		public async Task PostAgentProfileAsync(string profileToken, string profilingGroupName, PostAgentProfilePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2119,8 +2119,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="actionGroup"> Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </param>
 		/// <param name="profilingGroupName">The name of the profiling group to grant access to.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutPermissionResponse> PutPermissionAsync(ActionGroup actionGroup, string profilingGroupName, PutPermissionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2164,8 +2164,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="channelId">The id of the channel that we want to stop receiving notifications.</param>
 		/// <param name="profilingGroupName">The name of the profiling group we want to change notification configuration for.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<RemoveNotificationChannelResponse> RemoveNotificationChannelAsync(string channelId, string profilingGroupName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2202,8 +2202,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="actionGroup"> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </param>
 		/// <param name="profilingGroupName">The name of the profiling group.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="revisionId"> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </param>
 		/// <returns>Success</returns>
@@ -2241,8 +2241,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="anomalyInstanceId">The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.</param>
 		/// <param name="profilingGroupName">The name of the profiling group that is associated with the analysis data.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		public async Task SubmitFeedbackAsync(string anomalyInstanceId, string profilingGroupName, SubmitFeedbackPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2333,8 +2333,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="fleetInstanceId")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2366,8 +2366,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the profiling group to create.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[\w-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

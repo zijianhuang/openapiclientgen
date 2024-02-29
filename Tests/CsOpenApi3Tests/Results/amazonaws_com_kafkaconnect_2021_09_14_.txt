@@ -2075,8 +2075,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A summary description of the connector.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="connectorDescription")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2086,8 +2086,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the connector.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="connectorName")]
@@ -2217,8 +2217,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A summary description of the custom plugin.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2236,8 +2236,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the custom plugin.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -2258,8 +2258,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A summary description of the worker configuration.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2269,8 +2269,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the worker configuration.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]

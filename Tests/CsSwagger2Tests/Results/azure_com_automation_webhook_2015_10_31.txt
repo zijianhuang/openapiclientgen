@@ -273,8 +273,8 @@ namespace MyNS
 		/// Webhook_ListByAutomationAccount subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/webhooks
 		/// </summary>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="filter">The filter to apply on the operation.</param>
@@ -309,8 +309,8 @@ namespace MyNS
 		/// Webhook_GenerateUri subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/webhooks/generateUri
 		/// </summary>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -343,8 +343,8 @@ namespace MyNS
 		/// Webhook_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/webhooks/{webhookName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="webhookName">The webhook name.</param>
@@ -379,8 +379,8 @@ namespace MyNS
 		/// Webhook_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/webhooks/{webhookName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="webhookName">The webhook name.</param>
@@ -423,8 +423,8 @@ namespace MyNS
 		/// Webhook_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/webhooks/{webhookName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="webhookName">The webhook name.</param>
@@ -453,8 +453,8 @@ namespace MyNS
 		/// Webhook_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/webhooks/{webhookName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="webhookName">The webhook name.</param>

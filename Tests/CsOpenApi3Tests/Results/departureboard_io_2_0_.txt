@@ -41,8 +41,8 @@ namespace MyNS
 		/// GetArrivalsAndDeparturesByCRS getArrivalsAndDeparturesByCRS/{CRS}
 		/// </summary>
 		/// <param name="CRS">The CRS (Computer Reservation System) for the Station you wish to get departure and arrival information for, e.g. KGX for London Kings Cross.
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		// </param>
 		/// <param name="apiKey">The National Rail OpenLDBWS API Key to use for looking up service information. You must register with National Rail to obtain this key and whitelist it with us. See https://api.departureboard.io/docs/registration for more information.</param>
 		/// <param name="numServices">The number of arriving and departing services to return. This is a maximum value, less may be returned if there is not a sufficient amount of services arriving to or departing from this station within the time window specified.</param>
@@ -84,8 +84,8 @@ namespace MyNS
 		/// GetArrivalsByCRS getArrivalsByCRS/{CRS}
 		/// </summary>
 		/// <param name="CRS">The CRS (Computer Reservation System) for the Station you wish to get arrival information for, e.g. KGX for London Kings Cross.
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		// </param>
 		/// <param name="apiKey">The National Rail OpenLDBWS API Key to use for looking up service information. You must register with National Rail to obtain this key and whitelist it with us. See https://api.departureboard.io/docs/registration for more information.</param>
 		/// <param name="numServices">The number of arriving train services to return. This is a maximum value, less may be returned if there is not a sufficient amount of services running to this station within the time window specified.</param>
@@ -126,8 +126,8 @@ namespace MyNS
 		/// GetDeparturesByCRS getDeparturesByCRS/{CRS}
 		/// </summary>
 		/// <param name="CRS">The CRS (Computer Reservation System) for the station you wish to get departure information for, e.g. KGX for London Kings Cross.
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		// </param>
 		/// <param name="apiKey">The National Rail OpenLDBWS API Key to use for looking up service information. You must register with National Rail to obtain this key and whitelist it with us. See https://api.departureboard.io/docs/registration for more information.</param>
 		/// <param name="numServices">The number of departing services to return. This is a maximum value, less may be returned if there is not a sufficient amount of services running from the selected station within the time window specified.</param>
@@ -168,8 +168,8 @@ namespace MyNS
 		/// GetFastestDeparturesByCRS getFastestDeparturesByCRS/{CRS}
 		/// </summary>
 		/// <param name="CRS">The CRS (Computer Reservation System) for the station you wish to get departure information for, e.g. KGX for London Kings Cross.
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		// </param>
 		/// <param name="apiKey">The National Rail OpenLDBWS API Key to use for looking up service information. You must register with National Rail to obtain this key and whitelist it with us. See https://api.departureboard.io/docs/registration for more information.</param>
 		/// <param name="filterList">The CRS (Computer Reservation System) codes to show the fastest departing services to. Up to 20 destination stations can be specified. These should be split by a comma, for example HAY,EAL,PAD.</param>
@@ -209,8 +209,8 @@ namespace MyNS
 		/// GetNextDeparturesByCRS getNextDeparturesByCRS/{CRS}
 		/// </summary>
 		/// <param name="CRS">The CRS (Computer Reservation System) for the station you wish to get departure information for, e.g. KGX for London Kings Cross.
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		// </param>
 		/// <param name="apiKey">The National Rail OpenLDBWS API Key to use for looking up service information. You must register with National Rail to obtain this key and whitelist it with us. See https://api.departureboard.io/docs/registration for more information.</param>
 		/// <param name="filterList">The CRS (Computer Reservation System) codes to show departing services to. Up to 20 destination stations can be specified. These should be split by a comma, for example HAY,EAL,PAD.</param>

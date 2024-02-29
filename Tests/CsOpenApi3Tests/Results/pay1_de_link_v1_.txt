@@ -24,8 +24,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// customer additional address line
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="addressAddition")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -34,8 +34,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// customer city
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// Pattern: ^[^\u0000\\!=<>?+;"*\d]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="city")]
@@ -46,8 +46,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// customer company name
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="company")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -56,8 +56,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// customer country code (2 letter ISO-3166 code)
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// Pattern: [A-Z]{2}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -68,8 +68,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// customer first name
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="firstName")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -78,8 +78,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// customer last name
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="lastName")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -88,8 +88,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// customer state code
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// Pattern: [A-Z]{2}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="state")]
@@ -100,8 +100,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// customer street name
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="street")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -110,8 +110,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// customer postcode
-		/// Max length: 10
 		/// Min length: 2
+		/// Max length: 10
 		/// Pattern: [0-9A-Za-z_.\-/]{2,10}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="zip")]
@@ -140,8 +140,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// item description
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -151,8 +151,8 @@ namespace MyNS
 		/// <summary>
 		/// item number
 		/// Required
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// Pattern: [0-9A-Za-z(){} +\-_#/:\[\]]{1,32}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -231,8 +231,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// id that should be put on the invoice
-		/// Max length: 20
 		/// Min length: 0
+		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="invoiceId")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -241,8 +241,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// short text that should be put after the invoice
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="invoiceText")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -286,8 +286,8 @@ namespace MyNS
 		/// <summary>
 		/// currency code
 		/// Required
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="currency")]
@@ -297,8 +297,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// free format description of the payment
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -307,8 +307,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// email the invoice should be delivered to
-		/// Max length: 254
 		/// Min length: 4
+		/// Max length: 254
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
 		[System.ComponentModel.DataAnnotations.MinLength(4)]
@@ -1053,8 +1053,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// currency code
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="currency")]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -1071,8 +1071,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// customer email for invoices or payment notification
-		/// Max length: 254
 		/// Min length: 4
+		/// Max length: 254
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
 		[System.ComponentModel.DataAnnotations.MinLength(4)]
@@ -1099,8 +1099,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// link id
-		/// Max length: 32
 		/// Min length: 32
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="id")]
 		[System.ComponentModel.DataAnnotations.MinLength(32)]
@@ -1194,8 +1194,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// payment reference number, has to be unique per merchant and mode
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reference")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

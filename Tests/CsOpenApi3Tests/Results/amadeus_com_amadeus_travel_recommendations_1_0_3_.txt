@@ -270,8 +270,8 @@ namespace MyNS
 		///
 		///City codes follow [IATA standard](http://www.iata.org/publications/Pages/code-search.aspx)</param>
 		/// <param name="travelerCountryCode">Origin country of the traveler following [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code format (e.g. US)
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="destinationCountryCodes">List of country the traveler want to visit, separated with comma.
 		///

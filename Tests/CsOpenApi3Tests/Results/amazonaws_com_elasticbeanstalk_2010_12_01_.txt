@@ -3253,8 +3253,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="EnvironmentId">This specifies the ID of the environment with the in-progress update that you want to cancel.</param>
 		/// <param name="EnvironmentName">This specifies the name of the environment with the in-progress update that you want to cancel.
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_AbortEnvironmentUpdateAsync(string EnvironmentId, string EnvironmentName, GET_AbortEnvironmentUpdateAction Action, GET_AbortEnvironmentUpdateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3314,12 +3314,12 @@ namespace MyNS
 		/// GET_AssociateEnvironmentOperationsRole #Action=AssociateEnvironmentOperationsRole
 		/// </summary>
 		/// <param name="EnvironmentName">The name of the environment to which to set the operations role.
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="OperationsRole">The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_AssociateEnvironmentOperationsRoleAsync(string EnvironmentName, string OperationsRole, GET_AssociateEnvironmentOperationsRoleAction Action, GET_AssociateEnvironmentOperationsRoleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3349,8 +3349,8 @@ namespace MyNS
 		/// GET_CheckDNSAvailability #Action=CheckDNSAvailability
 		/// </summary>
 		/// <param name="CNAMEPrefix">The prefix used when this CNAME is reserved.
-		/// Max length: 63
 		/// Min length: 4
+		/// Max length: 63
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_CheckDNSAvailabilityAsync(string CNAMEPrefix, GET_CheckDNSAvailabilityAction Action, GET_CheckDNSAvailabilityVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3380,12 +3380,12 @@ namespace MyNS
 		/// GET_ComposeEnvironments #Action=ComposeEnvironments
 		/// </summary>
 		/// <param name="ApplicationName">The name of the application to which the specified source bundles belong.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="GroupName">The name of the group to which the target environments belong. Specify a group name only if the environment name defined in each target environment's manifest ends with a + (plus) character. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.
-		/// Max length: 19
 		/// Min length: 1
+		/// Max length: 19
 		// </param>
 		/// <param name="VersionLabels">A list of version labels, specifying one or more application source bundles that belong to the target application. Each source bundle must include an environment manifest that specifies the name of the environment and the name of the solution stack to use, and optionally can specify environment links to create.</param>
 		/// <returns>Success</returns>
@@ -3416,8 +3416,8 @@ namespace MyNS
 		/// GET_CreateApplication #Action=CreateApplication
 		/// </summary>
 		/// <param name="ApplicationName">The name of the application. Must be unique within your account.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="Description">Your description of the application.
 		/// Max length: 200
@@ -3452,12 +3452,12 @@ namespace MyNS
 		/// GET_CreateApplicationVersion #Action=CreateApplicationVersion
 		/// </summary>
 		/// <param name="ApplicationName"> The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="VersionLabel"><p>A label identifying this version.</p> <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="Description">A description of this application version.
 		/// Max length: 200
@@ -3496,12 +3496,12 @@ namespace MyNS
 		/// GET_CreateConfigurationTemplate #Action=CreateConfigurationTemplate
 		/// </summary>
 		/// <param name="ApplicationName">The name of the Elastic Beanstalk application to associate with this configuration template.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TemplateName"><p>The name of the configuration template.</p> <p>Constraint: This name must be unique per application.</p>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="SolutionStackName"><p>The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>. A solution stack specifies the operating system, runtime, and application server for a configuration template. It also determines the set of configuration options as well as the possible and default values. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <p>You must specify <code>SolutionStackName</code> if you don't specify <code>PlatformArn</code>, <code>EnvironmentId</code>, or <code>SourceConfiguration</code>.</p> <p>Use the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html"> <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available solution stacks.</p></param>
 		/// <param name="PlatformArn"><p>The Amazon Resource Name (ARN) of the custom platform. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note> <p>If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.</p> </note></param>
@@ -3540,41 +3540,41 @@ namespace MyNS
 		/// GET_CreateEnvironment #Action=CreateEnvironment
 		/// </summary>
 		/// <param name="ApplicationName">The name of the application that is associated with this environment.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EnvironmentName"><p>A unique name for the environment.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p> <p>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</p>
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="GroupName">The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.
-		/// Max length: 19
 		/// Min length: 1
+		/// Max length: 19
 		// </param>
 		/// <param name="Description">Your description for this environment.
 		/// Max length: 200
 		// </param>
 		/// <param name="CNAMEPrefix">If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string to the environment name.
-		/// Max length: 63
 		/// Min length: 4
+		/// Max length: 63
 		// </param>
 		/// <param name="Tier">Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.</param>
 		/// <param name="Tags">Specifies the tags applied to resources in the environment.</param>
 		/// <param name="VersionLabel"><p>The name of the application version to deploy.</p> <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TemplateName"><p>The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note> <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p> </note>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="SolutionStackName"><p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note> <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> </note></param>
 		/// <param name="PlatformArn"><p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note> <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p> </note></param>
 		/// <param name="OptionSettings">If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</param>
 		/// <param name="OptionsToRemove">A list of custom user-defined configuration options to remove from the configuration set for this new environment.</param>
 		/// <param name="OperationsRole">The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_CreateEnvironmentAsync(
@@ -3624,8 +3624,8 @@ namespace MyNS
 		/// <param name="PlatformVersion">The number, such as 1.0.2, for the new platform version.</param>
 		/// <param name="PlatformDefinitionBundle">The location of the platform definition archive in Amazon S3.</param>
 		/// <param name="EnvironmentName">The name of the builder environment.
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="OptionSettings">The configuration option settings to apply to the builder environment.</param>
 		/// <param name="Tags"><p>Specifies the tags applied to the new platform version.</p> <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p></param>
@@ -3706,8 +3706,8 @@ namespace MyNS
 		/// GET_DeleteApplication #Action=DeleteApplication
 		/// </summary>
 		/// <param name="ApplicationName">The name of the application to delete.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TerminateEnvByForce">When set to true, running environments will be terminated before deleting the application.</param>
 		/// <returns>Success</returns>
@@ -3738,12 +3738,12 @@ namespace MyNS
 		/// GET_DeleteApplicationVersion #Action=DeleteApplicationVersion
 		/// </summary>
 		/// <param name="ApplicationName">The name of the application to which the version belongs.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="VersionLabel">The label of the version to delete.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="DeleteSourceBundle">Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</param>
 		/// <returns>Success</returns>
@@ -3774,12 +3774,12 @@ namespace MyNS
 		/// GET_DeleteConfigurationTemplate #Action=DeleteConfigurationTemplate
 		/// </summary>
 		/// <param name="ApplicationName">The name of the application to delete the configuration template from.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TemplateName">The name of the configuration template to delete.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteConfigurationTemplateAsync(string ApplicationName, string TemplateName, GET_DeleteConfigurationTemplateAction Action, GET_DeleteConfigurationTemplateVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3809,12 +3809,12 @@ namespace MyNS
 		/// GET_DeleteEnvironmentConfiguration #Action=DeleteEnvironmentConfiguration
 		/// </summary>
 		/// <param name="ApplicationName">The name of the application the environment is associated with.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EnvironmentName">The name of the environment to delete the draft configuration from.
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteEnvironmentConfigurationAsync(string ApplicationName, string EnvironmentName, GET_DeleteEnvironmentConfigurationAction Action, GET_DeleteEnvironmentConfigurationVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3921,8 +3921,8 @@ namespace MyNS
 		/// GET_DescribeApplicationVersions #Action=DescribeApplicationVersions
 		/// </summary>
 		/// <param name="ApplicationName">Specify an application name to show only application versions for that application.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="VersionLabels">Specify a version label to show a specific application version.</param>
 		/// <param name="MaxRecords"><p>For a paginated request. Specify a maximum number of application versions to include in each response.</p> <p>If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single response.</p>
@@ -3986,16 +3986,16 @@ namespace MyNS
 		/// GET_DescribeConfigurationOptions #Action=DescribeConfigurationOptions
 		/// </summary>
 		/// <param name="ApplicationName">The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TemplateName">The name of the configuration template whose configuration options you want to describe.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EnvironmentName">The name of the environment whose configuration options you want to describe.
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="SolutionStackName">The name of the solution stack whose configuration options you want to describe.</param>
 		/// <param name="PlatformArn">The ARN of the custom platform.</param>
@@ -4028,16 +4028,16 @@ namespace MyNS
 		/// GET_DescribeConfigurationSettings #Action=DescribeConfigurationSettings
 		/// </summary>
 		/// <param name="ApplicationName">The application for the environment or configuration template.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TemplateName"><p>The name of the configuration template to describe.</p> <p> Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error. </p>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EnvironmentName"><p>The name of the environment to describe.</p> <p> Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeConfigurationSettingsAsync(string ApplicationName, string TemplateName, string EnvironmentName, GET_DescribeConfigurationSettingsAction Action, GET_DescribeConfigurationSettingsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4067,8 +4067,8 @@ namespace MyNS
 		/// GET_DescribeEnvironmentHealth #Action=DescribeEnvironmentHealth
 		/// </summary>
 		/// <param name="EnvironmentName"><p>Specify the environment by name.</p> <p>You must specify either this or an EnvironmentName, or both.</p>
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="EnvironmentId"><p>Specify the environment by ID.</p> <p>You must specify either this or an EnvironmentName, or both.</p></param>
 		/// <param name="AttributeNames">Specify the response elements to return. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns the name of the environment.</param>
@@ -4101,8 +4101,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="EnvironmentId">The environment ID of the target environment.</param>
 		/// <param name="EnvironmentName">The name of the target environment.
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="NextToken">The pagination token returned by a previous request.</param>
 		/// <param name="MaxItems">The maximum number of items to return for a single request.
@@ -4168,8 +4168,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="EnvironmentId"><p>The ID of the environment to retrieve AWS resource usage data.</p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p></param>
 		/// <param name="EnvironmentName"><p>The name of the environment to retrieve AWS resource usage data.</p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeEnvironmentResourcesAsync(string EnvironmentId, string EnvironmentName, GET_DescribeEnvironmentResourcesAction Action, GET_DescribeEnvironmentResourcesVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4199,12 +4199,12 @@ namespace MyNS
 		/// GET_DescribeEnvironments #Action=DescribeEnvironments
 		/// </summary>
 		/// <param name="ApplicationName">If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="VersionLabel">If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EnvironmentIds">If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</param>
 		/// <param name="EnvironmentNames">If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</param>
@@ -4243,21 +4243,21 @@ namespace MyNS
 		/// GET_DescribeEvents #Action=DescribeEvents
 		/// </summary>
 		/// <param name="ApplicationName">If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="VersionLabel">If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TemplateName">If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EnvironmentId">If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</param>
 		/// <param name="EnvironmentName">If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="PlatformArn">The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</param>
 		/// <param name="RequestId">If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.</param>
@@ -4297,14 +4297,14 @@ namespace MyNS
 		/// GET_DescribeInstancesHealth #Action=DescribeInstancesHealth
 		/// </summary>
 		/// <param name="EnvironmentName">Specify the AWS Elastic Beanstalk environment by name.
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="EnvironmentId">Specify the AWS Elastic Beanstalk environment by ID.</param>
 		/// <param name="AttributeNames">Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.</param>
 		/// <param name="NextToken">Specify the pagination token returned by a previous call.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeInstancesHealthAsync(string EnvironmentName, string EnvironmentId, InstancesHealthAttribute[] AttributeNames, string NextToken, GET_DescribeInstancesHealthAction Action, GET_DescribeInstancesHealthVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4362,8 +4362,8 @@ namespace MyNS
 		/// GET_DisassociateEnvironmentOperationsRole #Action=DisassociateEnvironmentOperationsRole
 		/// </summary>
 		/// <param name="EnvironmentName">The name of the environment from which to disassociate the operations role.
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DisassociateEnvironmentOperationsRoleAsync(string EnvironmentName, GET_DisassociateEnvironmentOperationsRoleAction Action, GET_DisassociateEnvironmentOperationsRoleVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4535,8 +4535,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="EnvironmentId"><p>The ID of the environment to rebuild.</p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p></param>
 		/// <param name="EnvironmentName"><p>The name of the environment to rebuild.</p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_RebuildEnvironmentAsync(string EnvironmentId, string EnvironmentName, GET_RebuildEnvironmentAction Action, GET_RebuildEnvironmentVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4567,8 +4567,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="EnvironmentId"><p>The ID of the environment of the requested data.</p> <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p></param>
 		/// <param name="EnvironmentName"><p>The name of the environment of the requested data.</p> <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="InfoType">The type of information to request.</param>
 		/// <returns>Success</returns>
@@ -4600,8 +4600,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="EnvironmentId"><p>The ID of the environment to restart the server for.</p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p></param>
 		/// <param name="EnvironmentName"><p>The name of the environment to restart the server for.</p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_RestartAppServerAsync(string EnvironmentId, string EnvironmentName, GET_RestartAppServerAction Action, GET_RestartAppServerVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4632,8 +4632,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="EnvironmentId"><p>The ID of the data's environment.</p> <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p> <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p></param>
 		/// <param name="EnvironmentName"><p>The name of the data's environment.</p> <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="InfoType">The type of information to retrieve.</param>
 		/// <returns>Success</returns>
@@ -4665,13 +4665,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="SourceEnvironmentId"><p>The ID of the source environment.</p> <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p></param>
 		/// <param name="SourceEnvironmentName"><p>The name of the source environment.</p> <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>. </p>
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="DestinationEnvironmentId"><p>The ID of the destination environment.</p> <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p></param>
 		/// <param name="DestinationEnvironmentName"><p>The name of the destination environment.</p> <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_SwapEnvironmentCNAMEsAsync(string SourceEnvironmentId, string SourceEnvironmentName, string DestinationEnvironmentId, string DestinationEnvironmentName, GET_SwapEnvironmentCNAMEsAction Action, GET_SwapEnvironmentCNAMEsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4702,8 +4702,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="EnvironmentId"><p>The ID of the environment to terminate.</p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p></param>
 		/// <param name="EnvironmentName"><p>The name of the environment to terminate.</p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="TerminateResources"><p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p> <ul> <li> <p> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p> </li> <li> <p> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p> </li> </ul> <p> For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a> </p> <p> Default: <code>true</code> </p> <p> Valid Values: <code>true</code> | <code>false</code> </p></param>
 		/// <param name="ForceTerminate">Terminates the target environment even if another environment in the same group is dependent on it.</param>
@@ -4735,8 +4735,8 @@ namespace MyNS
 		/// GET_UpdateApplication #Action=UpdateApplication
 		/// </summary>
 		/// <param name="ApplicationName">The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="Description"><p>A new description for the application.</p> <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
 		/// Max length: 200
@@ -4769,8 +4769,8 @@ namespace MyNS
 		/// GET_UpdateApplicationResourceLifecycle #Action=UpdateApplicationResourceLifecycle
 		/// </summary>
 		/// <param name="ApplicationName">The name of the application.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="ResourceLifecycleConfig">The lifecycle configuration.</param>
 		/// <returns>Success</returns>
@@ -4801,12 +4801,12 @@ namespace MyNS
 		/// GET_UpdateApplicationVersion #Action=UpdateApplicationVersion
 		/// </summary>
 		/// <param name="ApplicationName"><p>The name of the application associated with this version.</p> <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="VersionLabel"><p>The name of the version to update.</p> <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="Description">A new description for this version.
 		/// Max length: 200
@@ -4839,12 +4839,12 @@ namespace MyNS
 		/// GET_UpdateConfigurationTemplate #Action=UpdateConfigurationTemplate
 		/// </summary>
 		/// <param name="ApplicationName"><p>The name of the application associated with the configuration template to update.</p> <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TemplateName"><p>The name of the configuration template to update.</p> <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="Description">A new description for the configuration.
 		/// Max length: 200
@@ -4879,29 +4879,29 @@ namespace MyNS
 		/// GET_UpdateEnvironment #Action=UpdateEnvironment
 		/// </summary>
 		/// <param name="ApplicationName">The name of the application with which the environment is associated.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EnvironmentId"><p>The ID of the environment to update.</p> <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p> <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p></param>
 		/// <param name="EnvironmentName"><p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p> <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="GroupName">The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name or environment ID parameters. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.
-		/// Max length: 19
 		/// Min length: 1
+		/// Max length: 19
 		// </param>
 		/// <param name="Description">If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.
 		/// Max length: 200
 		// </param>
 		/// <param name="Tier"><p>This specifies the tier to use to update the environment.</p> <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error. </p></param>
 		/// <param name="VersionLabel">If this parameter is specified, AWS Elastic Beanstalk deploys the named application version to the environment. If no such application version is found, returns an <code>InvalidParameterValue</code> error. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TemplateName">If this parameter is specified, AWS Elastic Beanstalk deploys this configuration template to the environment. If no such configuration template is found, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="SolutionStackName">This specifies the platform version that the environment will run after the environment is updated.</param>
 		/// <param name="PlatformArn">The ARN of the platform, if used.</param>
@@ -4965,16 +4965,16 @@ namespace MyNS
 		/// GET_ValidateConfigurationSettings #Action=ValidateConfigurationSettings
 		/// </summary>
 		/// <param name="ApplicationName">The name of the application that the configuration template or environment belongs to.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TemplateName"><p>The name of the configuration template to validate the settings against.</p> <p>Condition: You cannot specify both this and an environment name.</p>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="EnvironmentName"><p>The name of the environment to validate the settings against.</p> <p>Condition: You cannot specify both this and a configuration template name.</p>
-		/// Max length: 40
 		/// Min length: 4
+		/// Max length: 40
 		// </param>
 		/// <param name="OptionSettings">A list of the options and desired values to evaluate.</param>
 		/// <returns>Success</returns>

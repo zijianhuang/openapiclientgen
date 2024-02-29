@@ -439,8 +439,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:aws[0-9a-zA-Z_\-:\/]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -453,8 +453,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the organizational unit.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:aws[0-9a-zA-Z_\-:\/]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -471,8 +471,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:aws[0-9a-zA-Z_\-:\/]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -485,8 +485,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the organizational unit.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:aws[0-9a-zA-Z_\-:\/]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -503,8 +503,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -536,8 +536,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the organizational unit.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:aws[0-9a-zA-Z_\-:\/]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

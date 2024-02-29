@@ -188,8 +188,8 @@ namespace MyNS
 		/// SourceControlSyncJobStreams_ListBySyncJob subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls/{sourceControlName}/sourceControlSyncJobs/{sourceControlSyncJobId}/streams
 		/// </summary>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="sourceControlName">The source control name.</param>
@@ -226,8 +226,8 @@ namespace MyNS
 		/// SourceControlSyncJobStreams_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls/{sourceControlName}/sourceControlSyncJobs/{sourceControlSyncJobId}/streams/{streamId}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of an Azure Resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="automationAccountName">The name of the automation account.</param>
 		/// <param name="sourceControlName">The source control name.</param>

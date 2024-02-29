@@ -82,8 +82,8 @@ namespace MyNS
 		/// <summary>
 		/// An internally generated unique identifier for a domain.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -94,8 +94,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -250,8 +250,8 @@ namespace MyNS
 		/// <summary>
 		/// Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-z][a-z0-9_]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -662,8 +662,8 @@ namespace MyNS
 		/// <summary>
 		/// Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-z][a-z0-9_]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -676,8 +676,8 @@ namespace MyNS
 		/// <summary>
 		/// The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// Required
-		/// Max length: 10240
 		/// Min length: 1
+		/// Max length: 10240
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -925,8 +925,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-z][a-z0-9_]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -961,8 +961,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-z][a-z0-9_]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -997,8 +997,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-z][a-z0-9_]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1033,8 +1033,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-z][a-z0-9_]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1272,8 +1272,8 @@ namespace MyNS
 		/// <summary>
 		/// Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-z][a-z0-9_]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1861,8 +1861,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1900,8 +1900,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1931,8 +1931,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1962,8 +1962,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1992,8 +1992,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2023,8 +2023,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2069,8 +2069,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2099,8 +2099,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2129,8 +2129,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2275,8 +2275,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2339,8 +2339,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2362,8 +2362,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2415,8 +2415,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2446,8 +2446,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2488,8 +2488,8 @@ namespace MyNS
 		/// Indexes the search suggestions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters">Configuring Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_BuildSuggesters #Action=BuildSuggesters
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_BuildSuggestersAsync(string DomainName, GET_BuildSuggestersAction Action, GET_BuildSuggestersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2519,8 +2519,8 @@ namespace MyNS
 		/// GET_CreateDomain #Action=CreateDomain
 		/// </summary>
 		/// <param name="DomainName">A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_CreateDomainAsync(string DomainName, GET_CreateDomainAction Action, GET_CreateDomainVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2549,8 +2549,8 @@ namespace MyNS
 		/// Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code> field to define language-specific text processing options. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_DefineAnalysisScheme #Action=DefineAnalysisScheme
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DefineAnalysisSchemeAsync(string DomainName, GET_DefineAnalysisSchemeAnalysisScheme AnalysisScheme, GET_DefineAnalysisSchemeAction Action, GET_DefineAnalysisSchemeVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2579,8 +2579,8 @@ namespace MyNS
 		/// Configures an <code><a>Expression</a></code> for the search domain. Used to create new expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_DefineExpression #Action=DefineExpression
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DefineExpressionAsync(string DomainName, GET_DefineExpressionExpression Expression, GET_DefineExpressionAction Action, GET_DefineExpressionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2609,8 +2609,8 @@ namespace MyNS
 		/// Configures an <code><a>IndexField</a></code> for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the <code><a>IndexFieldType</a></code>. If the field exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_DefineIndexField #Action=DefineIndexField
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="IndexField">The index field and field options you want to configure. </param>
 		/// <returns>Success</returns>
@@ -2640,8 +2640,8 @@ namespace MyNS
 		/// Configures a suggester for a domain. A suggester enables you to display possible matches before users finish typing their queries. When you configure a suggester, you must specify the name of the text field you want to search for possible matches and a unique name for the suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_DefineSuggester #Action=DefineSuggester
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DefineSuggesterAsync(string DomainName, GET_DefineSuggesterSuggester Suggester, GET_DefineSuggesterAction Action, GET_DefineSuggesterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2670,12 +2670,12 @@ namespace MyNS
 		/// Deletes an analysis scheme. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_DeleteAnalysisScheme #Action=DeleteAnalysisScheme
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="AnalysisSchemeName">The name of the analysis scheme you want to delete.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteAnalysisSchemeAsync(string DomainName, string AnalysisSchemeName, GET_DeleteAnalysisSchemeAction Action, GET_DeleteAnalysisSchemeVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2705,8 +2705,8 @@ namespace MyNS
 		/// GET_DeleteDomain #Action=DeleteDomain
 		/// </summary>
 		/// <param name="DomainName">The name of the domain you want to permanently delete.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteDomainAsync(string DomainName, GET_DeleteDomainAction Action, GET_DeleteDomainVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2735,12 +2735,12 @@ namespace MyNS
 		/// Removes an <code><a>Expression</a></code> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_DeleteExpression #Action=DeleteExpression
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="ExpressionName">The name of the <code><a>Expression</a></code> to delete.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteExpressionAsync(string DomainName, string ExpressionName, GET_DeleteExpressionAction Action, GET_DeleteExpressionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2769,12 +2769,12 @@ namespace MyNS
 		/// Removes an <code><a>IndexField</a></code> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_DeleteIndexField #Action=DeleteIndexField
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="IndexFieldName">The name of the index field your want to remove from the domain's indexing options.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteIndexFieldAsync(string DomainName, string IndexFieldName, GET_DeleteIndexFieldAction Action, GET_DeleteIndexFieldVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2803,12 +2803,12 @@ namespace MyNS
 		/// Deletes a suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_DeleteSuggester #Action=DeleteSuggester
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="SuggesterName">Specifies the name of the suggester you want to delete.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteSuggesterAsync(string DomainName, string SuggesterName, GET_DeleteSuggesterAction Action, GET_DeleteSuggesterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2838,8 +2838,8 @@ namespace MyNS
 		/// GET_DescribeAnalysisSchemes #Action=DescribeAnalysisSchemes
 		/// </summary>
 		/// <param name="DomainName">The name of the domain you want to describe.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="AnalysisSchemeNames">The analysis schemes you want to describe.</param>
 		/// <param name="Deployed">Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</param>
@@ -2871,8 +2871,8 @@ namespace MyNS
 		/// GET_DescribeAvailabilityOptions #Action=DescribeAvailabilityOptions
 		/// </summary>
 		/// <param name="DomainName">The name of the domain you want to describe.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="Deployed">Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</param>
 		/// <returns>Success</returns>
@@ -2903,8 +2903,8 @@ namespace MyNS
 		/// GET_DescribeDomainEndpointOptions #Action=DescribeDomainEndpointOptions
 		/// </summary>
 		/// <param name="DomainName">A string that represents the name of a domain.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="Deployed">Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.</param>
 		/// <returns>Success</returns>
@@ -2963,8 +2963,8 @@ namespace MyNS
 		/// GET_DescribeExpressions #Action=DescribeExpressions
 		/// </summary>
 		/// <param name="DomainName">The name of the domain you want to describe.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="ExpressionNames">Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.</param>
 		/// <param name="Deployed">Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</param>
@@ -2996,8 +2996,8 @@ namespace MyNS
 		/// GET_DescribeIndexFields #Action=DescribeIndexFields
 		/// </summary>
 		/// <param name="DomainName">The name of the domain you want to describe.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="FieldNames">A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.</param>
 		/// <param name="Deployed">Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</param>
@@ -3028,8 +3028,8 @@ namespace MyNS
 		/// Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and replication count. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_DescribeScalingParameters #Action=DescribeScalingParameters
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DescribeScalingParametersAsync(string DomainName, GET_DescribeScalingParametersAction Action, GET_DescribeScalingParametersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3059,8 +3059,8 @@ namespace MyNS
 		/// GET_DescribeServiceAccessPolicies #Action=DescribeServiceAccessPolicies
 		/// </summary>
 		/// <param name="DomainName">The name of the domain you want to describe.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="Deployed">Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</param>
 		/// <returns>Success</returns>
@@ -3091,8 +3091,8 @@ namespace MyNS
 		/// GET_DescribeSuggesters #Action=DescribeSuggesters
 		/// </summary>
 		/// <param name="DomainName">The name of the domain you want to describe.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="SuggesterNames">The suggesters you want to describe.</param>
 		/// <param name="Deployed">Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.</param>
@@ -3123,8 +3123,8 @@ namespace MyNS
 		/// Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose <a>OptionStatus</a> is <code>RequiresIndexDocuments</code>.
 		/// GET_IndexDocuments #Action=IndexDocuments
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_IndexDocumentsAsync(string DomainName, GET_IndexDocumentsAction Action, GET_IndexDocumentsVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3202,8 +3202,8 @@ namespace MyNS
 		/// Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_UpdateAvailabilityOptions #Action=UpdateAvailabilityOptions
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="MultiAZ">You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. </param>
 		/// <returns>Success</returns>
@@ -3234,8 +3234,8 @@ namespace MyNS
 		/// GET_UpdateDomainEndpointOptions #Action=UpdateDomainEndpointOptions
 		/// </summary>
 		/// <param name="DomainName">A string that represents the name of a domain.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="DomainEndpointOptions">Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. </param>
 		/// <returns>Success</returns>
@@ -3265,8 +3265,8 @@ namespace MyNS
 		/// Configures scaling parameters for a domain. A domain's scaling parameters specify the desired search instance type and replication count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// GET_UpdateScalingParameters #Action=UpdateScalingParameters
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_UpdateScalingParametersAsync(string DomainName, GET_UpdateScalingParametersScalingParameters ScalingParameters, GET_UpdateScalingParametersAction Action, GET_UpdateScalingParametersVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3295,8 +3295,8 @@ namespace MyNS
 		/// Configures the access rules that control access to the domain's document and search endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank"> Configuring Access for an Amazon CloudSearch Domain</a>.
 		/// GET_UpdateServiceAccessPolicies #Action=UpdateServiceAccessPolicies
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="AccessPolicies">The access rules you want to configure. These rules replace any existing rules. </param>
 		/// <returns>Success</returns>
@@ -3371,8 +3371,8 @@ namespace MyNS
 		/// <summary>
 		/// Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-z][a-z0-9_]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3536,8 +3536,8 @@ namespace MyNS
 		/// <summary>
 		/// Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-z][a-z0-9_]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3550,8 +3550,8 @@ namespace MyNS
 		/// <summary>
 		/// The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		/// Required
-		/// Max length: 10240
 		/// Min length: 1
+		/// Max length: 10240
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3733,8 +3733,8 @@ namespace MyNS
 		/// <summary>
 		/// Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-z][a-z0-9_]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

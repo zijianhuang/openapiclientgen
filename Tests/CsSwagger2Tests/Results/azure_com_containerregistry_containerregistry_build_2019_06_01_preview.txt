@@ -2375,8 +2375,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2412,8 +2412,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="filter">The runs filter to apply on the operation. Arithmetic operators are not supported. The allowed string function is 'contains'. All logical operators except 'Not', 'Has', 'All' are allowed.</param>
@@ -2451,8 +2451,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="runId">The run ID.</param>
@@ -2489,8 +2489,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="runId">The run ID.</param>
@@ -2535,8 +2535,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="runId">The run ID.</param>
@@ -2567,8 +2567,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="runId">The run ID.</param>
@@ -2605,8 +2605,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="requestBody">The parameters of a run that needs to scheduled.</param>
@@ -2650,8 +2650,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2687,8 +2687,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="taskRunName">The run request name.</param>
@@ -2725,8 +2725,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="taskRunName">The name of task run.</param>
@@ -2771,8 +2771,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="taskRunName">The task run name.</param>
@@ -2803,8 +2803,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="taskRunName">The task run name.</param>
@@ -2849,8 +2849,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2886,13 +2886,13 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="taskName">The name of the container registry task.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Task_> Tasks_GetAsync(string subscriptionId, string resourceGroupName, string registryName, string api_version, string taskName)
@@ -2927,13 +2927,13 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="taskName">The name of the container registry task.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="requestBody">The parameters for creating a task.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -2976,13 +2976,13 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="taskName">The name of the container registry task.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task Tasks_DeleteAsync(string subscriptionId, string resourceGroupName, string registryName, string api_version, string taskName)
@@ -3011,13 +3011,13 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="taskName">The name of the container registry task.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="requestBody">The parameters for updating a task.</param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
@@ -3060,13 +3060,13 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="registryName">The name of the container registry.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="taskName">The name of the container registry task.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>The request was successful; the request was well-formed and received properly.</returns>
 		public async Task<Task_> Tasks_GetDetailsAsync(string subscriptionId, string resourceGroupName, string registryName, string api_version, string taskName)

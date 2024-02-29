@@ -10963,8 +10963,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the data catalog used in Athena query execution.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -10975,8 +10975,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the database used in the Athena query execution.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: .*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -10989,8 +10989,8 @@ namespace MyNS
 		/// <summary>
 		/// The SQL query statements, to be executed.
 		/// Required
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// Pattern: [\s\S]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -11002,8 +11002,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the workgroup in which the Athena query is being started.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9._-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -11086,8 +11086,8 @@ namespace MyNS
 		/// <summary>
 		/// The Redshift cluster Identifier.
 		/// Required
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		/// Pattern: .*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -11100,8 +11100,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Redshift database used in Redshift query execution.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: .*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -11114,8 +11114,8 @@ namespace MyNS
 		/// <summary>
 		/// The database user name used in Redshift query execution.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -11128,8 +11128,8 @@ namespace MyNS
 		/// <summary>
 		/// The SQL query statements to be executed.
 		/// Required
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// Pattern: [\s\S]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

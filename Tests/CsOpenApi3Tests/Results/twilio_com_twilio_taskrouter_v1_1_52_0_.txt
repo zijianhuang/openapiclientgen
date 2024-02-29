@@ -156,8 +156,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Workspace resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -186,8 +186,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Activity that will be used when new Workers are created in the Workspace.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="default_activity_sid")]
@@ -231,8 +231,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Workspace resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -249,8 +249,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Activity that will be assigned to a Worker when a Task reservation times out without a response.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="timeout_activity_sid")]
@@ -273,8 +273,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Activity resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -312,8 +312,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Activity resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -330,8 +330,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the Activity.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -348,8 +348,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Event resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -360,8 +360,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the resource that triggered the event.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="actor_sid")]
@@ -414,8 +414,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the object the event is most relevant to, such as a TaskSid, ReservationSid, or a  WorkerSid.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="resource_sid")]
@@ -438,8 +438,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Event resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^EV[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -468,8 +468,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the Event.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -486,8 +486,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Task resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -549,8 +549,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Task resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WT[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -561,8 +561,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the TaskChannel.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^TC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="task_channel_sid")]
@@ -591,8 +591,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the TaskQueue.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WQ[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="task_queue_sid")]
@@ -627,8 +627,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workflow that is controlling the Task.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WW[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workflow_sid")]
@@ -639,8 +639,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the Task.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -657,8 +657,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the TaskReservation resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -690,8 +690,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the TaskReservation resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WR[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -702,8 +702,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the reserved Task resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WT[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="task_sid")]
@@ -726,8 +726,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the reserved Worker resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="worker_sid")]
@@ -738,8 +738,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that this task is contained within.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -756,8 +756,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Task Channel resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -798,8 +798,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Task Channel resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^TC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -822,8 +822,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the Task Channel.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -840,8 +840,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the TaskQueue resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -858,8 +858,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Activity to assign Workers when a task is assigned for them.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="assignment_activity_sid")]
@@ -906,8 +906,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Activity to assign Workers once a task is reserved for them.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reservation_activity_sid")]
@@ -918,8 +918,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the TaskQueue resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WQ[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -945,8 +945,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the TaskQueue.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -963,8 +963,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the TaskQueue resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1012,8 +1012,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the TaskQueue.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -1030,8 +1030,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the TaskQueue resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1102,8 +1102,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the TaskQueue from which these statistics were calculated.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WQ[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="task_queue_sid")]
@@ -1168,8 +1168,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the TaskQueue.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -1186,8 +1186,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the TaskQueue resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1210,8 +1210,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Task SID of the Task waiting in the TaskQueue the longest. Calculation is based on the time when the Task entered the TaskQueue.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WT[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="longest_relative_task_sid_in_queue")]
@@ -1228,8 +1228,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the longest waiting Task.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WT[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="longest_task_waiting_sid")]
@@ -1240,8 +1240,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the TaskQueue from which these statistics were calculated.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WQ[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="task_queue_sid")]
@@ -1288,8 +1288,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the TaskQueue.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -1306,8 +1306,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the TaskQueue resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1330,8 +1330,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the TaskQueue from which these statistics were calculated.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WQ[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="task_queue_sid")]
@@ -1348,8 +1348,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the TaskQueue.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -1366,8 +1366,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the TaskQueue resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1390,8 +1390,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the TaskQueue from which these statistics were calculated.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WQ[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="task_queue_sid")]
@@ -1402,8 +1402,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the TaskQueues.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -1420,8 +1420,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Worker resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1438,8 +1438,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Worker's current Activity.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="activity_sid")]
@@ -1492,8 +1492,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Worker resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -1510,8 +1510,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the Worker.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -1528,8 +1528,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Worker resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1576,8 +1576,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the WorkerChannel resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -1588,8 +1588,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the TaskChannel.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^TC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="task_channel_sid")]
@@ -1612,8 +1612,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Worker that contains the WorkerChannel.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="worker_sid")]
@@ -1624,8 +1624,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the WorkerChannel.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -1642,8 +1642,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Worker resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1666,8 +1666,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Worker that contains the WorkerChannel.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="worker_sid")]
@@ -1678,8 +1678,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the WorkerChannel.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -1696,8 +1696,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the WorkerReservation resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1729,8 +1729,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the WorkerReservation resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WR[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -1741,8 +1741,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the reserved Task resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WT[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="task_sid")]
@@ -1765,8 +1765,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the reserved Worker resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WK[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="worker_sid")]
@@ -1777,8 +1777,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that this worker is contained within.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -1795,8 +1795,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Worker resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1825,8 +1825,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the Worker.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -1843,8 +1843,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Worker resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1915,8 +1915,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the Workers.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -1933,8 +1933,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Worker resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1963,8 +1963,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the Workers.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -1981,8 +1981,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Workflow resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -2041,8 +2041,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Workflow resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WW[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -2065,8 +2065,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the Workflow.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -2083,8 +2083,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Workflow resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -2209,8 +2209,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Returns the list of Tasks that are being controlled by the Workflow with the specified Sid value.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WW[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workflow_sid")]
@@ -2221,8 +2221,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the Workflow.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -2239,8 +2239,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Workflow resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -2257,8 +2257,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the longest waiting Task.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WT[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="longest_task_waiting_sid")]
@@ -2293,8 +2293,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Returns the list of Tasks that are being controlled by the Workflow with the specified SID value.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WW[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workflow_sid")]
@@ -2305,8 +2305,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the Workflow.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -2323,8 +2323,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Workflow resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -2353,8 +2353,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Returns the list of Tasks that are being controlled by the Workflow with the specified SID value.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WW[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workflow_sid")]
@@ -2365,8 +2365,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace that contains the Workflow.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -2383,8 +2383,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Workspace resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -2509,8 +2509,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -2527,8 +2527,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Workspace resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -2551,8 +2551,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the longest waiting Task.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WT[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="longest_task_waiting_sid")]
@@ -2593,8 +2593,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -2611,8 +2611,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Workspace resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -2641,8 +2641,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Workspace.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^WS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspace_sid")]
@@ -2807,8 +2807,8 @@ namespace MyNS
 		/// DeleteWorkspace v1/Workspaces/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the Workspace resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteWorkspaceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2836,8 +2836,8 @@ namespace MyNS
 		/// FetchWorkspace v1/Workspaces/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the Workspace resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspace> FetchWorkspaceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2872,8 +2872,8 @@ namespace MyNS
 		/// ListActivity v1/Workspaces/{WorkspaceSid}/Activities
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Activity resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="FriendlyName">The `friendly_name` of the Activity resources to read.</param>
 		/// <param name="Available">Whether return only Activity resources that are available or unavailable. A value of `true` returns only available activities. Values of '1' or `yes` also indicate `true`. All other values represent `false` and return activities that are unavailable.</param>
@@ -2918,12 +2918,12 @@ namespace MyNS
 		/// DeleteActivity v1/Workspaces/{WorkspaceSid}/Activities/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Activity resources to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Activity resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteActivityAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2951,12 +2951,12 @@ namespace MyNS
 		/// FetchActivity v1/Workspaces/{WorkspaceSid}/Activities/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Activity resources to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Activity resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceactivity> FetchActivityAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2991,8 +2991,8 @@ namespace MyNS
 		/// FetchWorkspaceCumulativeStatistics v1/Workspaces/{WorkspaceSid}/CumulativeStatistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="EndDate">Only include usage that occurred on or before this date, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
@@ -3032,37 +3032,37 @@ namespace MyNS
 		/// ListEvent v1/Workspaces/{WorkspaceSid}/Events
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Events to read. Returns only the Events that pertain to the specified Workspace.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="EndDate">Only include Events that occurred on or before this date, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
 		/// <param name="EventType">The type of Events to read. Returns only Events of the type specified.</param>
 		/// <param name="Minutes">The period of events to read in minutes. Returns only Events that occurred since this many minutes in the past. The default is `15` minutes. Task Attributes for Events occuring more 43,200 minutes ago will be redacted.</param>
 		/// <param name="ReservationSid">The SID of the Reservation with the Events to read. Returns only Events that pertain to the specified Reservation.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="StartDate">Only include Events from on or after this date and time, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. Task Attributes for Events older than 30 days will be redacted.</param>
 		/// <param name="TaskQueueSid">The SID of the TaskQueue with the Events to read. Returns only the Events that pertain to the specified TaskQueue.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="TaskSid">The SID of the Task with the Events to read. Returns only the Events that pertain to the specified Task.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="WorkerSid">The SID of the Worker with the Events to read. Returns only the Events that pertain to the specified Worker.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="WorkflowSid">The SID of the Workflow with the Events to read. Returns only the Events that pertain to the specified Workflow.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="TaskChannel">The TaskChannel with the Events to read. Returns only the Events that pertain to the specified TaskChannel.</param>
 		/// <param name="Sid">The SID of the Event resource to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -3121,12 +3121,12 @@ namespace MyNS
 		/// FetchEvent v1/Workspaces/{WorkspaceSid}/Events/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Event to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Event resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceevent> FetchEventAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3161,8 +3161,8 @@ namespace MyNS
 		/// FetchWorkspaceRealTimeStatistics v1/Workspaces/{WorkspaceSid}/RealTimeStatistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="TaskChannel">Only calculate real-time statistics on this TaskChannel. Can be the TaskChannel's SID or its `unique_name`, such as `voice`, `sms`, or `default`.</param>
 		/// <returns>OK</returns>
@@ -3198,8 +3198,8 @@ namespace MyNS
 		/// FetchWorkspaceStatistics v1/Workspaces/{WorkspaceSid}/Statistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
@@ -3239,8 +3239,8 @@ namespace MyNS
 		/// ListTaskChannel v1/Workspaces/{WorkspaceSid}/TaskChannels
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Task Channel to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -3283,8 +3283,8 @@ namespace MyNS
 		/// DeleteTaskChannel v1/Workspaces/{WorkspaceSid}/TaskChannels/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Task Channel to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Task Channel resource to delete.</param>
 		public async Task DeleteTaskChannelAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3313,8 +3313,8 @@ namespace MyNS
 		/// FetchTaskChannel v1/Workspaces/{WorkspaceSid}/TaskChannels/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Task Channel to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Task Channel resource to fetch.</param>
 		/// <returns>OK</returns>
@@ -3350,14 +3350,14 @@ namespace MyNS
 		/// ListTaskQueue v1/Workspaces/{WorkspaceSid}/TaskQueues
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="FriendlyName">The `friendly_name` of the TaskQueue resources to read.</param>
 		/// <param name="EvaluateWorkerAttributes">The attributes of the Workers to read. Returns the TaskQueues with Workers that match the attributes specified in this parameter.</param>
 		/// <param name="WorkerSid">The SID of the Worker with the TaskQueue resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Ordering">Sorting parameter for TaskQueues</param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
@@ -3401,8 +3401,8 @@ namespace MyNS
 		/// ListTaskQueuesStatistics v1/Workspaces/{WorkspaceSid}/TaskQueues/Statistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueues to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="EndDate">Only calculate statistics from this date and time and earlier, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
 		/// <param name="FriendlyName">The `friendly_name` of the TaskQueue statistics to read.</param>
@@ -3451,12 +3451,12 @@ namespace MyNS
 		/// DeleteTaskQueue v1/Workspaces/{WorkspaceSid}/TaskQueues/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the TaskQueue resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteTaskQueueAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3484,12 +3484,12 @@ namespace MyNS
 		/// FetchTaskQueue v1/Workspaces/{WorkspaceSid}/TaskQueues/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the TaskQueue resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspacetask_queue> FetchTaskQueueAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3524,12 +3524,12 @@ namespace MyNS
 		/// FetchTaskQueueCumulativeStatistics v1/Workspaces/{WorkspaceSid}/TaskQueues/{TaskQueueSid}/CumulativeStatistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="TaskQueueSid">The SID of the TaskQueue for which to fetch statistics.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="EndDate">Only calculate statistics from this date and time and earlier, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default is 15 minutes.</param>
@@ -3569,12 +3569,12 @@ namespace MyNS
 		/// FetchTaskQueueRealTimeStatistics v1/Workspaces/{WorkspaceSid}/TaskQueues/{TaskQueueSid}/RealTimeStatistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="TaskQueueSid">The SID of the TaskQueue for which to fetch statistics.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="TaskChannel">The TaskChannel for which to fetch statistics. Can be the TaskChannel's SID or its `unique_name`, such as `voice`, `sms`, or `default`.</param>
 		/// <returns>OK</returns>
@@ -3610,12 +3610,12 @@ namespace MyNS
 		/// FetchTaskQueueStatistics v1/Workspaces/{WorkspaceSid}/TaskQueues/{TaskQueueSid}/Statistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskQueue to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="TaskQueueSid">The SID of the TaskQueue for which to fetch statistics.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="EndDate">Only calculate statistics from this date and time and earlier, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default is 15 minutes.</param>
@@ -3655,19 +3655,19 @@ namespace MyNS
 		/// ListTask v1/Workspaces/{WorkspaceSid}/Tasks
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Tasks to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Priority">The priority value of the Tasks to read. Returns the list of all Tasks in the Workspace with the specified priority.</param>
 		/// <param name="AssignmentStatus">The `assignment_status` of the Tasks you want to read. Can be: `pending`, `reserved`, `assigned`, `canceled`, `wrapping`, or `completed`. Returns all Tasks in the Workspace with the specified `assignment_status`.</param>
 		/// <param name="WorkflowSid">The SID of the Workflow with the Tasks to read. Returns the Tasks controlled by the Workflow identified by this SID.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="WorkflowName">The friendly name of the Workflow with the Tasks to read. Returns the Tasks controlled by the Workflow identified by this friendly name.</param>
 		/// <param name="TaskQueueSid">The SID of the TaskQueue with the Tasks to read. Returns the Tasks waiting in the TaskQueue identified by this SID.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="TaskQueueName">The `friendly_name` of the TaskQueue with the Tasks to read. Returns the Tasks waiting in the TaskQueue identified by this friendly name.</param>
 		/// <param name="EvaluateTaskAttributes">The attributes of the Tasks to read. Returns the Tasks that match the attributes specified in this parameter.</param>
@@ -3714,12 +3714,12 @@ namespace MyNS
 		/// DeleteTask v1/Workspaces/{WorkspaceSid}/Tasks/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Task to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Task resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteTaskAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3747,12 +3747,12 @@ namespace MyNS
 		/// FetchTask v1/Workspaces/{WorkspaceSid}/Tasks/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Task to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Task resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspacetask> FetchTaskAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3787,17 +3787,17 @@ namespace MyNS
 		/// ListTaskReservation v1/Workspaces/{WorkspaceSid}/Tasks/{TaskSid}/Reservations
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskReservation resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="TaskSid">The SID of the reserved Task resource with the TaskReservation resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ReservationStatus">Returns the list of reservations for a task with a specified ReservationStatus.  Can be: `pending`, `accepted`, `rejected`, or `timeout`.</param>
 		/// <param name="WorkerSid">The SID of the reserved Worker resource to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -3840,16 +3840,16 @@ namespace MyNS
 		/// FetchTaskReservation v1/Workspaces/{WorkspaceSid}/Tasks/{TaskSid}/Reservations/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the TaskReservation resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="TaskSid">The SID of the reserved Task resource with the TaskReservation resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the TaskReservation resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspacetasktask_reservation> FetchTaskReservationAsync(string WorkspaceSid, string TaskSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3884,21 +3884,21 @@ namespace MyNS
 		/// ListWorker v1/Workspaces/{WorkspaceSid}/Workers
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Workers to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ActivityName">The `activity_name` of the Worker resources to read.</param>
 		/// <param name="ActivitySid">The `activity_sid` of the Worker resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Available">Whether to return only Worker resources that are available or unavailable. Can be `true`, `1`, or `yes` to return Worker resources that are available, and `false`, or any value returns the Worker resources that are not available.</param>
 		/// <param name="FriendlyName">The `friendly_name` of the Worker resources to read.</param>
 		/// <param name="TargetWorkersExpression">Filter by Workers that would match an expression. In addition to fields in the workers' attributes, the expression can include the following worker fields: `sid`, `friendly_name`, `activity_sid`, or `activity_name`</param>
 		/// <param name="TaskQueueName">The `friendly_name` of the TaskQueue that the Workers to read are eligible for.</param>
 		/// <param name="TaskQueueSid">The SID of the TaskQueue that the Workers to read are eligible for.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Ordering">Sorting parameter for Workers</param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
@@ -3942,8 +3942,8 @@ namespace MyNS
 		/// FetchWorkersCumulativeStatistics v1/Workspaces/{WorkspaceSid}/Workers/CumulativeStatistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="EndDate">Only calculate statistics from this date and time and earlier, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
@@ -3982,8 +3982,8 @@ namespace MyNS
 		/// FetchWorkersRealTimeStatistics v1/Workspaces/{WorkspaceSid}/Workers/RealTimeStatistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="TaskChannel">Only calculate real-time statistics on this TaskChannel. Can be the TaskChannel's SID or its `unique_name`, such as `voice`, `sms`, or `default`.</param>
 		/// <returns>OK</returns>
@@ -4019,15 +4019,15 @@ namespace MyNS
 		/// FetchWorkerStatistics v1/Workspaces/{WorkspaceSid}/Workers/Statistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Worker to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
 		/// <param name="EndDate">Only calculate statistics from this date and time and earlier, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
 		/// <param name="TaskQueueSid">The SID of the TaskQueue for which to fetch Worker statistics.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="TaskQueueName">The `friendly_name` of the TaskQueue for which to fetch Worker statistics.</param>
 		/// <param name="FriendlyName">Only include Workers with `friendly_name` values that match this parameter.</param>
@@ -4065,12 +4065,12 @@ namespace MyNS
 		/// DeleteWorker v1/Workspaces/{WorkspaceSid}/Workers/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Worker to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Worker resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteWorkerAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4098,12 +4098,12 @@ namespace MyNS
 		/// FetchWorker v1/Workspaces/{WorkspaceSid}/Workers/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Worker to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Worker resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceworker> FetchWorkerAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4138,12 +4138,12 @@ namespace MyNS
 		/// ListWorkerChannel v1/Workspaces/{WorkspaceSid}/Workers/{WorkerSid}/Channels
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerChannels to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="WorkerSid">The SID of the Worker with the WorkerChannels to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -4186,12 +4186,12 @@ namespace MyNS
 		/// FetchWorkerChannel v1/Workspaces/{WorkspaceSid}/Workers/{WorkerSid}/Channels/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerChannel to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="WorkerSid">The SID of the Worker with the WorkerChannel to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the WorkerChannel to fetch.</param>
 		/// <returns>OK</returns>
@@ -4227,12 +4227,12 @@ namespace MyNS
 		/// ListWorkerReservation v1/Workspaces/{WorkspaceSid}/Workers/{WorkerSid}/Reservations
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerReservation resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="WorkerSid">The SID of the reserved Worker resource with the WorkerReservation resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="ReservationStatus">Returns the list of reservations for a worker with a specified ReservationStatus. Can be: `pending`, `accepted`, `rejected`, `timeout`, `canceled`, or `rescinded`.</param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
@@ -4276,16 +4276,16 @@ namespace MyNS
 		/// FetchWorkerReservation v1/Workspaces/{WorkspaceSid}/Workers/{WorkerSid}/Reservations/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerReservation resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="WorkerSid">The SID of the reserved Worker resource with the WorkerReservation resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the WorkerReservation resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceworkerworker_reservation> FetchWorkerReservationAsync(string WorkspaceSid, string WorkerSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4320,12 +4320,12 @@ namespace MyNS
 		/// FetchWorkerInstanceStatistics v1/Workspaces/{WorkspaceSid}/Workers/{WorkerSid}/Statistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the WorkerChannel to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="WorkerSid">The SID of the Worker with the WorkerChannel to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
@@ -4364,8 +4364,8 @@ namespace MyNS
 		/// ListWorkflow v1/Workspaces/{WorkspaceSid}/Workflows
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="FriendlyName">The `friendly_name` of the Workflow resources to read.</param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
@@ -4409,12 +4409,12 @@ namespace MyNS
 		/// DeleteWorkflow v1/Workspaces/{WorkspaceSid}/Workflows/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Workflow resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteWorkflowAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4442,12 +4442,12 @@ namespace MyNS
 		/// FetchWorkflow v1/Workspaces/{WorkspaceSid}/Workflows/{Sid}
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Workflow resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Taskrouterv1workspaceworkflow> FetchWorkflowAsync(string WorkspaceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4482,12 +4482,12 @@ namespace MyNS
 		/// FetchWorkflowCumulativeStatistics v1/Workspaces/{WorkspaceSid}/Workflows/{WorkflowSid}/CumulativeStatistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="WorkflowSid">Returns the list of Tasks that are being controlled by the Workflow with the specified Sid value.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="EndDate">Only include usage that occurred on or before this date, specified in GMT as an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time.</param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
@@ -4527,12 +4527,12 @@ namespace MyNS
 		/// FetchWorkflowRealTimeStatistics v1/Workspaces/{WorkspaceSid}/Workflows/{WorkflowSid}/RealTimeStatistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="WorkflowSid">Returns the list of Tasks that are being controlled by the Workflow with the specified SID value.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="TaskChannel">Only calculate real-time statistics on this TaskChannel. Can be the TaskChannel's SID or its `unique_name`, such as `voice`, `sms`, or `default`.</param>
 		/// <returns>OK</returns>
@@ -4568,12 +4568,12 @@ namespace MyNS
 		/// FetchWorkflowStatistics v1/Workspaces/{WorkspaceSid}/Workflows/{WorkflowSid}/Statistics
 		/// </summary>
 		/// <param name="WorkspaceSid">The SID of the Workspace with the Workflow to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="WorkflowSid">Returns the list of Tasks that are being controlled by the Workflow with the specified SID value.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Minutes">Only calculate statistics since this many minutes in the past. The default 15 minutes. This is helpful for displaying statistics for the last 15 minutes, 240 minutes (4 hours), and 480 minutes (8 hours) to see trends.</param>
 		/// <param name="StartDate">Only calculate statistics from this date and time and later, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>

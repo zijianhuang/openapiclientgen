@@ -323,8 +323,8 @@ namespace MyNS
 		public HorizontalAlign H_align { get; set; } = HorizontalAlign.L;
 		
 		/// <summary>
-		/// Max length: 5
 		/// Min length: 5
+		/// Max length: 5
 		/// </summary>
 		[System.ComponentModel.DefaultValue("en_US")]
 		[System.Runtime.Serialization.DataMember(Name="locale")]
@@ -741,8 +741,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 2083
 		/// Min length: 1
+		/// Max length: 2083
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="results")]

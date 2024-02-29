@@ -372,8 +372,8 @@ namespace MyNS
 		/// EnterpriseKnowledgeGraph_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
@@ -414,12 +414,12 @@ namespace MyNS
 		/// EnterpriseKnowledgeGraph_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the EnterpriseKnowledgeGraph resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -452,12 +452,12 @@ namespace MyNS
 		/// EnterpriseKnowledgeGraph_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the EnterpriseKnowledgeGraph resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -498,12 +498,12 @@ namespace MyNS
 		/// EnterpriseKnowledgeGraph_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the EnterpriseKnowledgeGraph resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -530,12 +530,12 @@ namespace MyNS
 		/// EnterpriseKnowledgeGraph_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the EnterpriseKnowledgeGraph resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>

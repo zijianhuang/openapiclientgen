@@ -3269,8 +3269,8 @@ namespace MyNS
 		/// AssociateAssessmentReportEvidenceFolder assessments/{assessmentId}/associateToAssessmentReport
 		/// </summary>
 		/// <param name="assessmentId"> The identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateAssessmentReportEvidenceFolderResponse> AssociateAssessmentReportEvidenceFolderAsync(string assessmentId, AssociateAssessmentReportEvidenceFolderPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3313,8 +3313,8 @@ namespace MyNS
 		/// BatchAssociateAssessmentReportEvidence assessments/{assessmentId}/batchAssociateToAssessmentReport
 		/// </summary>
 		/// <param name="assessmentId"> The identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchAssociateAssessmentReportEvidenceResponse> BatchAssociateAssessmentReportEvidenceAsync(string assessmentId, BatchAssociateAssessmentReportEvidencePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3357,8 +3357,8 @@ namespace MyNS
 		/// BatchCreateDelegationByAssessment assessments/{assessmentId}/delegations
 		/// </summary>
 		/// <param name="assessmentId"> The identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchCreateDelegationByAssessmentResponse> BatchCreateDelegationByAssessmentAsync(string assessmentId, BatchCreateDelegationByAssessmentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3401,8 +3401,8 @@ namespace MyNS
 		/// BatchDeleteDelegationByAssessment assessments/{assessmentId}/delegations
 		/// </summary>
 		/// <param name="assessmentId"> The identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDeleteDelegationByAssessmentResponse> BatchDeleteDelegationByAssessmentAsync(string assessmentId, BatchDeleteDelegationByAssessmentPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3445,8 +3445,8 @@ namespace MyNS
 		/// BatchDisassociateAssessmentReportEvidence assessments/{assessmentId}/batchDisassociateFromAssessmentReport
 		/// </summary>
 		/// <param name="assessmentId"> The identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDisassociateAssessmentReportEvidenceResponse> BatchDisassociateAssessmentReportEvidenceAsync(string assessmentId, BatchDisassociateAssessmentReportEvidencePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3489,16 +3489,16 @@ namespace MyNS
 		/// BatchImportEvidenceToAssessmentControl assessments/{assessmentId}/controlSets/{controlSetId}/controls/{controlId}/evidence
 		/// </summary>
 		/// <param name="assessmentId"> The identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="controlSetId"> The identifier for the control set. 
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="controlId"> The identifier for the control. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchImportEvidenceToAssessmentControlResponse> BatchImportEvidenceToAssessmentControlAsync(string assessmentId, string controlSetId, string controlId, BatchImportEvidenceToAssessmentControlPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3582,8 +3582,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="status"> The current status of the assessment.</param>
 		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -3663,8 +3663,8 @@ namespace MyNS
 		/// CreateAssessmentReport assessments/{assessmentId}/reports
 		/// </summary>
 		/// <param name="assessmentId"> The identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateAssessmentReportResponse> CreateAssessmentReportAsync(string assessmentId, CreateAssessmentReportPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3747,8 +3747,8 @@ namespace MyNS
 		/// DeleteAssessment assessments/{assessmentId}
 		/// </summary>
 		/// <param name="assessmentId"> The identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAssessmentResponse> DeleteAssessmentAsync(string assessmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3784,8 +3784,8 @@ namespace MyNS
 		/// GetAssessment assessments/{assessmentId}
 		/// </summary>
 		/// <param name="assessmentId">The unique identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAssessmentResponse> GetAssessmentAsync(string assessmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3821,8 +3821,8 @@ namespace MyNS
 		/// UpdateAssessment assessments/{assessmentId}
 		/// </summary>
 		/// <param name="assessmentId"> The unique identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAssessmentResponse> UpdateAssessmentAsync(string assessmentId, UpdateAssessmentPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3865,8 +3865,8 @@ namespace MyNS
 		/// DeleteAssessmentFramework assessmentFrameworks/{frameworkId}
 		/// </summary>
 		/// <param name="frameworkId"> The identifier for the custom framework. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAssessmentFrameworkResponse> DeleteAssessmentFrameworkAsync(string frameworkId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3902,8 +3902,8 @@ namespace MyNS
 		/// GetAssessmentFramework assessmentFrameworks/{frameworkId}
 		/// </summary>
 		/// <param name="frameworkId"> The identifier for the framework. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAssessmentFrameworkResponse> GetAssessmentFrameworkAsync(string frameworkId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3939,8 +3939,8 @@ namespace MyNS
 		/// UpdateAssessmentFramework assessmentFrameworks/{frameworkId}
 		/// </summary>
 		/// <param name="frameworkId"> The unique identifier for the framework. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAssessmentFrameworkResponse> UpdateAssessmentFrameworkAsync(string frameworkId, UpdateAssessmentFrameworkPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3983,8 +3983,8 @@ namespace MyNS
 		/// DeleteAssessmentFrameworkShare assessmentFrameworkShareRequests/{requestId}#requestType
 		/// </summary>
 		/// <param name="requestId">The unique identifier for the share request to be deleted.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="requestType">Specifies whether the share request is a sent request or a received request.</param>
 		/// <returns>Success</returns>
@@ -4021,12 +4021,12 @@ namespace MyNS
 		/// DeleteAssessmentReport assessments/{assessmentId}/reports/{assessmentReportId}
 		/// </summary>
 		/// <param name="assessmentId"> The unique identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="assessmentReportId"> The unique identifier for the assessment report. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAssessmentReportResponse> DeleteAssessmentReportAsync(string assessmentId, string assessmentReportId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4062,8 +4062,8 @@ namespace MyNS
 		/// DeleteControl controls/{controlId}
 		/// </summary>
 		/// <param name="controlId"> The unique identifier for the control. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteControlResponse> DeleteControlAsync(string controlId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4099,8 +4099,8 @@ namespace MyNS
 		/// GetControl controls/{controlId}
 		/// </summary>
 		/// <param name="controlId"> The identifier for the control. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetControlResponse> GetControlAsync(string controlId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4136,8 +4136,8 @@ namespace MyNS
 		/// UpdateControl controls/{controlId}
 		/// </summary>
 		/// <param name="controlId"> The identifier for the control. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateControlResponse> UpdateControlAsync(string controlId, UpdateControlPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4248,8 +4248,8 @@ namespace MyNS
 		/// DisassociateAssessmentReportEvidenceFolder assessments/{assessmentId}/disassociateFromAssessmentReport
 		/// </summary>
 		/// <param name="assessmentId"> The unique identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateAssessmentReportEvidenceFolderResponse> DisassociateAssessmentReportEvidenceFolderAsync(string assessmentId, DisassociateAssessmentReportEvidenceFolderPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4325,12 +4325,12 @@ namespace MyNS
 		/// GetAssessmentReportUrl assessments/{assessmentId}/reports/{assessmentReportId}/url
 		/// </summary>
 		/// <param name="assessmentReportId"> The unique identifier for the assessment report. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="assessmentId"> The unique identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAssessmentReportUrlResponse> GetAssessmentReportUrlAsync(string assessmentReportId, string assessmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4366,20 +4366,20 @@ namespace MyNS
 		/// GetChangeLogs assessments/{assessmentId}/changelogs
 		/// </summary>
 		/// <param name="assessmentId">The unique identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="controlSetId"> The unique identifier for the control set. 
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="controlId"> The unique identifier for the control. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -4419,8 +4419,8 @@ namespace MyNS
 		/// GetDelegations delegations
 		/// </summary>
 		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -4460,20 +4460,20 @@ namespace MyNS
 		/// GetEvidence assessments/{assessmentId}/controlSets/{controlSetId}/evidenceFolders/{evidenceFolderId}/evidence/{evidenceId}
 		/// </summary>
 		/// <param name="assessmentId"> The unique identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="controlSetId"> The unique identifier for the control set. 
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="evidenceFolderId"> The unique identifier for the folder that the evidence is stored in. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="evidenceId"> The unique identifier for the evidence. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEvidenceResponse> GetEvidenceAsync(string assessmentId, string controlSetId, string evidenceFolderId, string evidenceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4509,20 +4509,20 @@ namespace MyNS
 		/// GetEvidenceByEvidenceFolder assessments/{assessmentId}/controlSets/{controlSetId}/evidenceFolders/{evidenceFolderId}/evidence
 		/// </summary>
 		/// <param name="assessmentId"> The identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="controlSetId"> The identifier for the control set. 
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="evidenceFolderId"> The unique identifier for the folder that the evidence is stored in. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -4562,8 +4562,8 @@ namespace MyNS
 		/// GetEvidenceFileUploadUrl evidenceFileUploadUrl#fileName
 		/// </summary>
 		/// <param name="fileName">The file that you want to upload. For a list of supported file formats, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEvidenceFileUploadUrlResponse> GetEvidenceFileUploadUrlAsync(string fileName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4599,16 +4599,16 @@ namespace MyNS
 		/// GetEvidenceFolder assessments/{assessmentId}/controlSets/{controlSetId}/evidenceFolders/{evidenceFolderId}
 		/// </summary>
 		/// <param name="assessmentId"> The unique identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="controlSetId"> The unique identifier for the control set. 
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="evidenceFolderId"> The unique identifier for the folder that the evidence is stored in. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEvidenceFolderResponse> GetEvidenceFolderAsync(string assessmentId, string controlSetId, string evidenceFolderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4644,12 +4644,12 @@ namespace MyNS
 		/// GetEvidenceFoldersByAssessment assessments/{assessmentId}/evidenceFolders
 		/// </summary>
 		/// <param name="assessmentId"> The unique identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -4689,20 +4689,20 @@ namespace MyNS
 		/// GetEvidenceFoldersByAssessmentControl assessments/{assessmentId}/evidenceFolders-by-assessment-control/{controlSetId}/{controlId}
 		/// </summary>
 		/// <param name="assessmentId"> The identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="controlSetId"> The identifier for the control set. 
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="controlId"> The identifier for the control. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -4775,8 +4775,8 @@ namespace MyNS
 		/// GetInsightsByAssessment insights/assessments/{assessmentId}
 		/// </summary>
 		/// <param name="assessmentId">The unique identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetInsightsByAssessmentResponse> GetInsightsByAssessmentAsync(string assessmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4912,16 +4912,16 @@ namespace MyNS
 		/// ListAssessmentControlInsightsByControlDomain insights/controls-by-assessment#controlDomainId&assessmentId
 		/// </summary>
 		/// <param name="controlDomainId">The unique identifier for the control domain. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="assessmentId">The unique identifier for the active assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="nextToken">The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -4962,8 +4962,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="requestType"> Specifies whether the share request is a sent request or a received request.</param>
 		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -5004,8 +5004,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="frameworkType"> The type of framework, such as a standard framework or a custom framework. </param>
 		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -5045,8 +5045,8 @@ namespace MyNS
 		/// ListAssessmentReports assessmentReports
 		/// </summary>
 		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -5086,8 +5086,8 @@ namespace MyNS
 		/// ListControlDomainInsights insights/control-domains
 		/// </summary>
 		/// <param name="nextToken">The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -5127,12 +5127,12 @@ namespace MyNS
 		/// ListControlDomainInsightsByAssessment insights/control-domains-by-assessment#assessmentId
 		/// </summary>
 		/// <param name="assessmentId">The unique identifier for the active assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="nextToken">The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -5172,12 +5172,12 @@ namespace MyNS
 		/// ListControlInsightsByControlDomain insights/controls#controlDomainId
 		/// </summary>
 		/// <param name="controlDomainId">The unique identifier for the control domain. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="nextToken">The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -5218,8 +5218,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="controlType"> The type of control, such as a standard control or a custom control. </param>
 		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -5260,8 +5260,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="source"> The control mapping data source that the keywords apply to. </param>
 		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -5301,8 +5301,8 @@ namespace MyNS
 		/// ListNotifications notifications
 		/// </summary>
 		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
 		/// Minimum: 1
@@ -5342,8 +5342,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the resource. 
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5379,8 +5379,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the resource. 
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5503,8 +5503,8 @@ namespace MyNS
 		/// StartAssessmentFrameworkShare assessmentFrameworks/{frameworkId}/shareRequests
 		/// </summary>
 		/// <param name="frameworkId"> The unique identifier for the custom framework to be shared. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartAssessmentFrameworkShareResponse> StartAssessmentFrameworkShareAsync(string frameworkId, StartAssessmentFrameworkSharePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5547,8 +5547,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the specified resource. 
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys"> The name or key of the tag. 
 		/// Minimum items: 1
@@ -5588,16 +5588,16 @@ namespace MyNS
 		/// UpdateAssessmentControl assessments/{assessmentId}/controlSets/{controlSetId}/controls/{controlId}
 		/// </summary>
 		/// <param name="assessmentId"> The unique identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="controlSetId"> The unique identifier for the control set. 
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="controlId"> The unique identifier for the control. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAssessmentControlResponse> UpdateAssessmentControlAsync(string assessmentId, string controlSetId, string controlId, UpdateAssessmentControlPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5640,12 +5640,12 @@ namespace MyNS
 		/// UpdateAssessmentControlSetStatus assessments/{assessmentId}/controlSets/{controlSetId}/status
 		/// </summary>
 		/// <param name="assessmentId"> The unique identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="controlSetId"> The unique identifier for the control set. 
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAssessmentControlSetStatusResponse> UpdateAssessmentControlSetStatusAsync(string assessmentId, string controlSetId, UpdateAssessmentControlSetStatusPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5688,8 +5688,8 @@ namespace MyNS
 		/// UpdateAssessmentFrameworkShare assessmentFrameworkShareRequests/{requestId}
 		/// </summary>
 		/// <param name="requestId"> The unique identifier for the share request. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAssessmentFrameworkShareResponse> UpdateAssessmentFrameworkShareAsync(string requestId, UpdateAssessmentFrameworkSharePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5732,8 +5732,8 @@ namespace MyNS
 		/// UpdateAssessmentStatus assessments/{assessmentId}/status
 		/// </summary>
 		/// <param name="assessmentId"> The unique identifier for the assessment. 
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAssessmentStatusResponse> UpdateAssessmentStatusAsync(string assessmentId, UpdateAssessmentStatusPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5858,8 +5858,8 @@ namespace MyNS
 		/// <summary>
 		///  The identifier for the folder that the evidence is stored in. 
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5876,8 +5876,8 @@ namespace MyNS
 		/// <summary>
 		///  The identifier for the folder that the evidence is stored in. 
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5938,8 +5938,8 @@ namespace MyNS
 		/// <summary>
 		///  The identifier for the folder that the evidence is stored in. 
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5984,8 +5984,8 @@ namespace MyNS
 		/// <summary>
 		///  The name of the assessment to be created. 
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: ^[^\\]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6032,8 +6032,8 @@ namespace MyNS
 		/// <summary>
 		///  The identifier for the framework that the assessment will be created from. 
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6076,8 +6076,8 @@ namespace MyNS
 		/// <summary>
 		///  The name of the new custom framework. 
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: ^[^\\]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6089,8 +6089,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  An optional description for the new custom framework. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// Pattern: ^[\w\W\s\S]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -6132,8 +6132,8 @@ namespace MyNS
 		/// <summary>
 		///  The name of the new assessment report. 
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: ^[a-zA-Z0-9-_\.]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6155,8 +6155,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A SQL statement that represents an evidence finder query.</p> <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p> <p>To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a> of evidence finder must be <code>ENABLED</code>. </p> <p> For examples and help resolving <code>queryStatement</code> validation exceptions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting evidence finder issues</a> in the <i>Audit Manager User Guide.</i> </p>
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		/// Pattern: \(\?s\).*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="queryStatement")]
@@ -6172,8 +6172,8 @@ namespace MyNS
 		/// <summary>
 		///  The name of the control. 
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: ^[^\\]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6245,8 +6245,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The name of the assessment to be updated. 
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: ^[^\\]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="assessmentName")]
@@ -6312,8 +6312,8 @@ namespace MyNS
 		/// <summary>
 		///  The name of the framework to be updated. 
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: ^[^\\]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6325,8 +6325,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The description of the updated framework. 
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// Pattern: ^[\w\W\s\S]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -6362,8 +6362,8 @@ namespace MyNS
 		/// <summary>
 		///  The name of the updated control. 
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: ^[^\\]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6429,8 +6429,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The identifier for the administrator account. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^[0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="adminAccountId")]
@@ -6446,8 +6446,8 @@ namespace MyNS
 		/// <summary>
 		///  The unique identifier for the folder that the evidence is stored in. 
 		/// Required
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// Pattern: ^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6475,8 +6475,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The KMS key details. 
-		/// Max length: 2048
 		/// Min length: 7
+		/// Max length: 2048
 		/// Pattern: ^arn:.*:kms:.*|DEFAULT
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKey")]
@@ -6487,8 +6487,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The delegated administrator account for Audit Manager. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^[0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="delegatedAdminAccount")]
@@ -6504,8 +6504,8 @@ namespace MyNS
 		/// <summary>
 		///  The identifier for the delegated administrator account. 
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^[0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6522,8 +6522,8 @@ namespace MyNS
 		/// <summary>
 		///  The Amazon Web Services account of the recipient. 
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^[0-9]{12}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6635,8 +6635,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to. 
-		/// Max length: 2048
 		/// Min length: 4
+		/// Max length: 2048
 		/// Pattern: ^arn:.*:sns:.*|NONE
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="snsTopic")]
@@ -6659,8 +6659,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The KMS key details. 
-		/// Max length: 2048
 		/// Min length: 7
+		/// Max length: 2048
 		/// Pattern: ^arn:.*:kms:.*|DEFAULT
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKey")]
@@ -6721,8 +6721,8 @@ namespace MyNS
 		/// <summary>
 		///  The relative path of the Amazon S3 bucket that the assessment report is stored in. 
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^(S|s)3:\/\/[a-zA-Z0-9\-\.\(\)\'\*\_\!\/]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

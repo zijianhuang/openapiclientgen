@@ -2583,8 +2583,8 @@ namespace MyNS
 		/// <param name="HealthCheckPort">The port the load balancer uses when performing health checks on targets. If the protocol is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>, which is the port on which each target receives traffic from the load balancer. If the protocol is GENEVE, the default is port 80.</param>
 		/// <param name="HealthCheckEnabled">Indicates whether health checks are enabled. If the target type is <code>lambda</code>, health checks are disabled by default but can be enabled. If the target type is <code>instance</code>, <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot be disabled.</param>
 		/// <param name="HealthCheckPath"><p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="HealthCheckIntervalSeconds">The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.
 		/// Minimum: 5
@@ -3247,8 +3247,8 @@ namespace MyNS
 		/// <param name="HealthCheckProtocol">The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</param>
 		/// <param name="HealthCheckPort">The port the load balancer uses when performing health checks on targets.</param>
 		/// <param name="HealthCheckPath"><p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="HealthCheckEnabled">Indicates whether health checks are enabled.</param>
 		/// <param name="HealthCheckIntervalSeconds">The approximate amount of time, in seconds, between health checks of an individual target.

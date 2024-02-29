@@ -1250,8 +1250,8 @@ namespace MyNS
 		/// <summary>
 		/// The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [A-Za-z0-9\-_ ]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1299,8 +1299,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note> <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p> </note>
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[\w:/-]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1342,8 +1342,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.
 		/// Required
-		/// Max length: 320
 		/// Min length: 1
+		/// Max length: 320
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1490,8 +1490,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An enumeration token that, when provided in a request, returns the next batch of the results.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[\w:/-]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1549,8 +1549,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the Chatbot topic to unsubscribe from the notification rule.
 		/// Required
-		/// Max length: 320
 		/// Min length: 1
+		/// Max length: 320
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1574,8 +1574,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the notification rule.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [A-Za-z0-9\-_ ]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

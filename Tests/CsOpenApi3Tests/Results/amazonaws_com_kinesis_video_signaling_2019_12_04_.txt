@@ -257,8 +257,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. 
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -270,8 +270,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique identifier for the viewer. Must be unique within the signaling channel.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9_.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -288,8 +288,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional user ID to be associated with the credentials.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9_.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -305,8 +305,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the signaling channel by which Alexa and the master peer communicate.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -319,8 +319,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique identifier for the sender client.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9_.-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -333,8 +333,8 @@ namespace MyNS
 		/// <summary>
 		/// The base64-encoded SDP offer content.
 		/// Required
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		/// Pattern: [a-zA-Z0-9+/=]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

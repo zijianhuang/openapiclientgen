@@ -2925,8 +2925,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="Arn">The Amazon Resource Name (ARN) of the tile operation.</param>
 		/// <param name="ExecutionRoleArn">The Amazon Resource Name (ARN) of the IAM role that you specify.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="ImageAssets">The particular assets or bands to tile.
 		/// Minimum items: 1
@@ -3020,8 +3020,8 @@ namespace MyNS
 		/// Maximum: 20
 		// </param>
 		/// <param name="NextToken">If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
-		/// Max length: 8192
 		/// Min length: 0
+		/// Max length: 8192
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRasterDataCollectionsOutput> ListRasterDataCollectionsAsync(int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3057,8 +3057,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource you want to tag.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3094,8 +3094,8 @@ namespace MyNS
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource you want to tag.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string ResourceArn, TagResourcePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3381,8 +3381,8 @@ namespace MyNS
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource you want to untag.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys">Keys of the tags you want to remove.
 		/// Minimum items: 1
@@ -3433,8 +3433,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique token that guarantees that the call to this API is idempotent.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(36)]
@@ -3444,8 +3444,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the IAM role that you specified for the job.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3492,8 +3492,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique token that guarantees that the call to this API is idempotent.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(36)]
@@ -3503,8 +3503,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3544,8 +3544,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
-		/// Max length: 8192
 		/// Min length: 0
+		/// Max length: 8192
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3597,8 +3597,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
-		/// Max length: 8192
 		/// Min length: 0
+		/// Max length: 8192
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3639,8 +3639,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
-		/// Max length: 8192
 		/// Min length: 0
+		/// Max length: 8192
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3677,8 +3677,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique token that guarantees that the call to this API is idempotent.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(36)]
@@ -3688,8 +3688,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the IAM role that you specified for the job.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3717,8 +3717,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Key Management Service key ID for server-side encryption.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3728,8 +3728,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Earth Observation job.
 		/// Required
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3790,8 +3790,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique token that guarantees that the call to this API is idempotent.
-		/// Max length: 64
 		/// Min length: 36
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(36)]
@@ -3801,8 +3801,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the IAM role that you specified for the job.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:(aws[a-z-]*):iam::([0-9]{12}):role/[a-zA-Z0-9+=,.@_/-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3830,8 +3830,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Key Management Service key ID for server-side encryption.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3841,8 +3841,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Vector Enrichment job.
 		/// Required
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]

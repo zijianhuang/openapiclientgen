@@ -1134,8 +1134,8 @@ namespace MyNS
 		public SecretType Type { get; set; }
 		
 		/// <summary>
-		/// Max length: 65536
 		/// Min length: 1
+		/// Max length: 65536
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="value")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2502,8 +2502,8 @@ namespace MyNS
 		public SecretFilterBody[] Filters { get; set; }
 		
 		/// <summary>
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="notes")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2524,8 +2524,8 @@ namespace MyNS
 		public SecretType Type { get; set; }
 		
 		/// <summary>
-		/// Max length: 65536
 		/// Min length: 1
+		/// Max length: 65536
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="value")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2542,8 +2542,8 @@ namespace MyNS
 		public SecretFilterType Type { get; set; }
 		
 		/// <summary>
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="value")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2613,8 +2613,8 @@ namespace MyNS
 		public SecretFilterBody[] Filters { get; set; }
 		
 		/// <summary>
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="notes")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2632,8 +2632,8 @@ namespace MyNS
 		public string SecretName { get; set; }
 		
 		/// <summary>
-		/// Max length: 65536
 		/// Min length: 1
+		/// Max length: 65536
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="value")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

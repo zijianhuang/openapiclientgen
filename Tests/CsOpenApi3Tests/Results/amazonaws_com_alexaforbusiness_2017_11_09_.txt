@@ -758,8 +758,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique, user-specified identifier for the request that ensures idempotency.
 		/// Required
-		/// Max length: 150
 		/// Min length: 10
+		/// Max length: 150
 		/// Pattern: [a-zA-Z0-9][a-zA-Z0-9_-]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

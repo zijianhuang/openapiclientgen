@@ -24,8 +24,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Alert resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -96,8 +96,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the resource for which the alert was generated.  For instance, if your server failed to respond to an HTTP request during the flow of a particular call, this value would be the SID of the server.  This value is empty if the alert was not generated for a particular resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="resource_sid")]
@@ -108,8 +108,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the service or resource that generated the alert. Can be `null`.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -120,8 +120,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Alert resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^NO[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -169,8 +169,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Alert resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -253,8 +253,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the resource for which the alert was generated.  For instance, if your server failed to respond to an HTTP request during the flow of a particular call, this value would be the SID of the server.  This value is empty if the alert was not generated for a particular resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="resource_sid")]
@@ -277,8 +277,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the service or resource that generated the alert. Can be `null`.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -289,8 +289,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Alert resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^NO[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -313,8 +313,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Event resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -325,8 +325,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the actor that caused the event, if available. Can be `null`.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^US[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="actor_sid")]
@@ -373,8 +373,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the resource that was affected.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="resource_sid")]
@@ -391,8 +391,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Event resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AE[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -486,8 +486,8 @@ namespace MyNS
 		/// FetchAlert v1/Alerts/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the Alert resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Monitorv1alert_instance> FetchAlertAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -523,13 +523,13 @@ namespace MyNS
 		/// ListEvent v1/Events
 		/// </summary>
 		/// <param name="ActorSid">Only include events initiated by this Actor. Useful for auditing actions taken by specific users or API credentials.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="EventType">Only include events of this [Event Type](https://www.twilio.com/docs/usage/monitor-events#event-types).</param>
 		/// <param name="ResourceSid">Only include events that refer to this resource. Useful for discovering the history of a specific resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="SourceIpAddress">Only include events that originated from this IP address. Useful for tracking suspicious activity originating from the API or the Twilio Console.</param>
 		/// <param name="StartDate">Only include events that occurred on or after this date. Specify the date in GMT and [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
@@ -575,8 +575,8 @@ namespace MyNS
 		/// FetchEvent v1/Events/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the Event resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Monitorv1event> FetchEventAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

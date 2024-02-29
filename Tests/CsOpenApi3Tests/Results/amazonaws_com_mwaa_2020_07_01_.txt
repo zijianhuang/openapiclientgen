@@ -900,8 +900,8 @@ namespace MyNS
 		/// CreateCliToken clitoken/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateCliTokenResponse> CreateCliTokenAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -932,8 +932,8 @@ namespace MyNS
 		/// CreateEnvironment environments/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateEnvironmentOutput> CreateEnvironmentAsync(string Name, CreateEnvironmentPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -976,8 +976,8 @@ namespace MyNS
 		/// DeleteEnvironment environments/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteEnvironmentOutput> DeleteEnvironmentAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1013,8 +1013,8 @@ namespace MyNS
 		/// GetEnvironment environments/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEnvironmentOutput> GetEnvironmentAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1050,8 +1050,8 @@ namespace MyNS
 		/// UpdateEnvironment environments/{Name}
 		/// </summary>
 		/// <param name="Name">The name of your Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateEnvironmentOutput> UpdateEnvironmentAsync(string Name, UpdateEnvironmentPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1094,8 +1094,8 @@ namespace MyNS
 		/// CreateWebLoginToken webtoken/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateWebLoginTokenResponse> CreateWebLoginTokenAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1130,8 +1130,8 @@ namespace MyNS
 		/// Maximum: 25
 		// </param>
 		/// <param name="NextToken">Retrieves the next page of the results.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListEnvironmentsOutput> ListEnvironmentsAsync(int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1167,8 +1167,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceOutput> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1204,8 +1204,8 @@ namespace MyNS
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceOutput> TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1248,8 +1248,8 @@ namespace MyNS
 		/// PublishMetrics metrics/environments/{EnvironmentName}
 		/// </summary>
 		/// <param name="EnvironmentName"> <b>Internal only</b>. The name of the environment.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PublishMetricsOutput> PublishMetricsAsync(string EnvironmentName, PublishMetricsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1292,8 +1292,8 @@ namespace MyNS
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		// </param>
 		/// <param name="tagKeys">The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>. 
 		/// Minimum items: 0
@@ -1340,8 +1340,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// Pattern: ^[0-9a-z.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1353,8 +1353,8 @@ namespace MyNS
 		/// <summary>
 		/// The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1366,8 +1366,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1377,8 +1377,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon Web Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web Services services and resources used by your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: ^arn:aws(-[a-z]+)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1390,8 +1390,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can use an Amazon Web Services owned CMK, or a Customer managed CMK (advanced). For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA environment</a>.
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: ^(((arn:aws(-[a-z]+)?:kms:[a-z]{2}-[a-z]+-\d:\d+:)?key\/)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}|(arn:aws(-[a-z]+)?:kms:[a-z]{2}-[a-z]+-\d:\d+:)?alias/.+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1432,8 +1432,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a plugins.zip file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1442,8 +1442,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the <code>plugins.zip</code> version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1454,8 +1454,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The version of the <code>requirements.txt</code> file on your Amazon S3 bucket. You must specify a version each time a requirements.txt file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1464,8 +1464,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1485,8 +1485,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: ^arn:aws(-[a-z]+)?:s3:::[a-z0-9.\-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1498,8 +1498,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p> <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p> <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p> <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1508,8 +1508,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1532,8 +1532,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only.
-		/// Max length: 9
 		/// Min length: 1
+		/// Max length: 9
 		/// Pattern: (MON|TUE|WED|THU|FRI|SAT|SUN):([01]\d|2[0-3]):(00|30)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1583,8 +1583,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The Apache Airflow version for your environment. To upgrade your environment, specify a newer version of Apache Airflow supported by Amazon MWAA.</p> <p>Before you upgrade an environment, make sure your requirements, DAGs, plugins, and other resources used in your workflows are compatible with the new Apache Airflow version. For more information about updating your resources, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/upgrading-environment.html">Upgrading an Amazon MWAA environment</a>.</p> <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>.</p>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// Pattern: ^[0-9a-z.]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1595,8 +1595,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1607,8 +1607,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1617,8 +1617,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: ^arn:aws(-[a-z]+)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1657,8 +1657,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a <code>plugins.zip</code> file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1667,8 +1667,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1679,8 +1679,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The version of the requirements.txt file on your Amazon S3 bucket. You must specify a version each time a <code>requirements.txt</code> file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1689,8 +1689,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a file version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1709,8 +1709,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: ^arn:aws(-[a-z]+)?:s3:::[a-z0-9.\-]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1721,8 +1721,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p> The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p> <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p> <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p> <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1731,8 +1731,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1749,8 +1749,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only.
-		/// Max length: 9
 		/// Min length: 1
+		/// Max length: 9
 		/// Pattern: (MON|TUE|WED|THU|FRI|SAT|SUN):([01]\d|2[0-3]):(00|30)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

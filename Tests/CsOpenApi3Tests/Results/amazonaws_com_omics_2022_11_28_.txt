@@ -5431,12 +5431,12 @@ namespace MyNS
 		/// AbortMultipartReadSetUpload sequencestore/{sequenceStoreId}/upload/{uploadId}/abort
 		/// </summary>
 		/// <param name="sequenceStoreId"> The sequence store ID for the store involved in the multipart upload. 
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="uploadId"> The ID for the multipart upload. 
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AbortMultipartReadSetUploadResponse> AbortMultipartReadSetUploadAsync(string sequenceStoreId, string uploadId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5472,8 +5472,8 @@ namespace MyNS
 		/// BatchDeleteReadSet sequencestore/{sequenceStoreId}/readset/batch/delete
 		/// </summary>
 		/// <param name="sequenceStoreId">The read sets' sequence store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDeleteReadSetResponse> BatchDeleteReadSetAsync(string sequenceStoreId, BatchDeleteReadSetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5584,8 +5584,8 @@ namespace MyNS
 		/// CancelRun run/{id}/cancel
 		/// </summary>
 		/// <param name="id">The run's ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		// </param>
 		public async Task CancelRunAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5677,12 +5677,12 @@ namespace MyNS
 		/// CompleteMultipartReadSetUpload sequencestore/{sequenceStoreId}/upload/{uploadId}/complete
 		/// </summary>
 		/// <param name="sequenceStoreId"> The sequence store ID for the store involved in the multipart upload. 
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="uploadId"> The ID for the multipart upload. 
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CompleteMultipartReadSetUploadResponse> CompleteMultipartReadSetUploadAsync(string sequenceStoreId, string uploadId, CompleteMultipartReadSetUploadPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5765,8 +5765,8 @@ namespace MyNS
 		/// CreateMultipartReadSetUpload sequencestore/{sequenceStoreId}/upload
 		/// </summary>
 		/// <param name="sequenceStoreId"> The sequence store ID for the store that is the destination of the multipart uploads. 
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateMultipartReadSetUploadResponse> CreateMultipartReadSetUploadAsync(string sequenceStoreId, CreateMultipartReadSetUploadPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5882,12 +5882,12 @@ namespace MyNS
 		/// ListRunGroups runGroup
 		/// </summary>
 		/// <param name="name">The run groups' name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="startingToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="maxResults">The maximum number of run groups to return in one page of results.
 		/// Minimum: 1
@@ -6040,16 +6040,16 @@ namespace MyNS
 		/// ListWorkflows workflow
 		/// </summary>
 		/// <param name="type">The workflows' type.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="name">The workflows' name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="startingToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="maxResults">The maximum number of workflows to return in one page of results.
 		/// Minimum: 1
@@ -6199,12 +6199,12 @@ namespace MyNS
 		/// DeleteReference referencestore/{referenceStoreId}/reference/{id}
 		/// </summary>
 		/// <param name="id">The reference's ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="referenceStoreId">The reference's store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteReferenceResponse> DeleteReferenceAsync(string id, string referenceStoreId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6240,8 +6240,8 @@ namespace MyNS
 		/// DeleteReferenceStore referencestore/{id}
 		/// </summary>
 		/// <param name="id">The store's ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteReferenceStoreResponse> DeleteReferenceStoreAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6277,8 +6277,8 @@ namespace MyNS
 		/// GetReferenceStore referencestore/{id}
 		/// </summary>
 		/// <param name="id">The store's ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReferenceStoreResponse> GetReferenceStoreAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6314,8 +6314,8 @@ namespace MyNS
 		/// DeleteRun run/{id}
 		/// </summary>
 		/// <param name="id">The run's ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		// </param>
 		public async Task DeleteRunAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6344,8 +6344,8 @@ namespace MyNS
 		/// GetRun run/{id}
 		/// </summary>
 		/// <param name="id">The run's ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		// </param>
 		/// <param name="export">The run's export format.
 		/// Minimum items: 0
@@ -6385,8 +6385,8 @@ namespace MyNS
 		/// DeleteRunGroup runGroup/{id}
 		/// </summary>
 		/// <param name="id">The run group's ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		// </param>
 		public async Task DeleteRunGroupAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6415,8 +6415,8 @@ namespace MyNS
 		/// GetRunGroup runGroup/{id}
 		/// </summary>
 		/// <param name="id">The group's ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRunGroupResponse> GetRunGroupAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6452,8 +6452,8 @@ namespace MyNS
 		/// UpdateRunGroup runGroup/{id}
 		/// </summary>
 		/// <param name="id">The group's ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		// </param>
 		public async Task UpdateRunGroupAsync(string id, UpdateRunGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6489,8 +6489,8 @@ namespace MyNS
 		/// DeleteSequenceStore sequencestore/{id}
 		/// </summary>
 		/// <param name="id">The sequence store's ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSequenceStoreResponse> DeleteSequenceStoreAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6526,8 +6526,8 @@ namespace MyNS
 		/// GetSequenceStore sequencestore/{id}
 		/// </summary>
 		/// <param name="id">The store's ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSequenceStoreResponse> GetSequenceStoreAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6673,8 +6673,8 @@ namespace MyNS
 		/// DeleteWorkflow workflow/{id}
 		/// </summary>
 		/// <param name="id">The workflow's ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		// </param>
 		public async Task DeleteWorkflowAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6703,12 +6703,12 @@ namespace MyNS
 		/// GetWorkflow workflow/{id}
 		/// </summary>
 		/// <param name="id">The workflow's ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		// </param>
 		/// <param name="type">The workflow's type.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="export">The export format for the workflow.
 		/// Minimum items: 0
@@ -6748,8 +6748,8 @@ namespace MyNS
 		/// UpdateWorkflow workflow/{id}
 		/// </summary>
 		/// <param name="id">The workflow's ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		// </param>
 		public async Task UpdateWorkflowAsync(string id, UpdateWorkflowPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6785,12 +6785,12 @@ namespace MyNS
 		/// GetReadSet sequencestore/{sequenceStoreId}/readset/{id}#partNumber
 		/// </summary>
 		/// <param name="id">The read set's ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="sequenceStoreId">The read set's sequence store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="file">The file to retrieve.</param>
 		/// <param name="partNumber">The part number to retrieve.
@@ -6831,12 +6831,12 @@ namespace MyNS
 		/// GetReadSetActivationJob sequencestore/{sequenceStoreId}/activationjob/{id}
 		/// </summary>
 		/// <param name="id">The job's ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="sequenceStoreId">The job's sequence store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReadSetActivationJobResponse> GetReadSetActivationJobAsync(string id, string sequenceStoreId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6872,12 +6872,12 @@ namespace MyNS
 		/// GetReadSetExportJob sequencestore/{sequenceStoreId}/exportjob/{id}
 		/// </summary>
 		/// <param name="sequenceStoreId">The job's sequence store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="id">The job's ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReadSetExportJobResponse> GetReadSetExportJobAsync(string sequenceStoreId, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6913,12 +6913,12 @@ namespace MyNS
 		/// GetReadSetImportJob sequencestore/{sequenceStoreId}/importjob/{id}
 		/// </summary>
 		/// <param name="id">The job's ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="sequenceStoreId">The job's sequence store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReadSetImportJobResponse> GetReadSetImportJobAsync(string id, string sequenceStoreId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6954,12 +6954,12 @@ namespace MyNS
 		/// GetReadSetMetadata sequencestore/{sequenceStoreId}/readset/{id}/metadata
 		/// </summary>
 		/// <param name="id">The read set's ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="sequenceStoreId">The read set's sequence store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReadSetMetadataResponse> GetReadSetMetadataAsync(string id, string sequenceStoreId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6995,12 +6995,12 @@ namespace MyNS
 		/// GetReference referencestore/{referenceStoreId}/reference/{id}#partNumber
 		/// </summary>
 		/// <param name="id">The reference's ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="referenceStoreId">The reference's store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="partNumber">The part number to retrieve.
 		/// Minimum: 1
@@ -7041,12 +7041,12 @@ namespace MyNS
 		/// GetReferenceImportJob referencestore/{referenceStoreId}/importjob/{id}
 		/// </summary>
 		/// <param name="id">The job's ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="referenceStoreId">The job's reference store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReferenceImportJobResponse> GetReferenceImportJobAsync(string id, string referenceStoreId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7082,12 +7082,12 @@ namespace MyNS
 		/// GetReferenceMetadata referencestore/{referenceStoreId}/reference/{id}/metadata
 		/// </summary>
 		/// <param name="id">The reference's ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="referenceStoreId">The reference's reference store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReferenceMetadataResponse> GetReferenceMetadataAsync(string id, string referenceStoreId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7123,12 +7123,12 @@ namespace MyNS
 		/// GetRunTask run/{id}/task/{taskId}
 		/// </summary>
 		/// <param name="id">The task's ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		// </param>
 		/// <param name="taskId">The task's ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRunTaskResponse> GetRunTaskAsync(string id, string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7168,8 +7168,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAnnotationImportJobsResponse> ListAnnotationImportJobsAsync(int maxResults, string nextToken, ListAnnotationImportJobsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7216,8 +7216,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAnnotationStoresResponse> ListAnnotationStoresAsync(int maxResults, string nextToken, ListAnnotationStoresPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7260,16 +7260,16 @@ namespace MyNS
 		/// ListMultipartReadSetUploads sequencestore/{sequenceStoreId}/uploads
 		/// </summary>
 		/// <param name="sequenceStoreId"> The Sequence Store ID used for the multipart uploads. 
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="maxResults"> The maximum number of multipart uploads returned in a page. 
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken"> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. 
-		/// Max length: 6144
 		/// Min length: 1
+		/// Max length: 6144
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListMultipartReadSetUploadsResponse> ListMultipartReadSetUploadsAsync(string sequenceStoreId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7300,16 +7300,16 @@ namespace MyNS
 		/// ListReadSetActivationJobs sequencestore/{sequenceStoreId}/activationjobs
 		/// </summary>
 		/// <param name="sequenceStoreId">The read set's sequence store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="maxResults">The maximum number of read set activation jobs to return in one page of results.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 6144
 		/// Min length: 1
+		/// Max length: 6144
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReadSetActivationJobsResponse> ListReadSetActivationJobsAsync(string sequenceStoreId, int maxResults, string nextToken, ListReadSetActivationJobsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7352,16 +7352,16 @@ namespace MyNS
 		/// ListReadSetExportJobs sequencestore/{sequenceStoreId}/exportjobs
 		/// </summary>
 		/// <param name="sequenceStoreId">The jobs' sequence store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="maxResults">The maximum number of jobs to return in one page of results.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 6144
 		/// Min length: 1
+		/// Max length: 6144
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReadSetExportJobsResponse> ListReadSetExportJobsAsync(string sequenceStoreId, int maxResults, string nextToken, ListReadSetExportJobsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7408,12 +7408,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 6144
 		/// Min length: 1
+		/// Max length: 6144
 		// </param>
 		/// <param name="sequenceStoreId">The jobs' sequence store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReadSetImportJobsResponse> ListReadSetImportJobsAsync(int maxResults, string nextToken, string sequenceStoreId, ListReadSetImportJobsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7456,20 +7456,20 @@ namespace MyNS
 		/// ListReadSetUploadParts sequencestore/{sequenceStoreId}/upload/{uploadId}/parts
 		/// </summary>
 		/// <param name="sequenceStoreId"> The Sequence Store ID used for the multipart uploads. 
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="uploadId"> The ID for the initiated multipart upload. 
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="maxResults"> The maximum number of read set upload parts returned in a page. 
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken"> Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. 
-		/// Max length: 6144
 		/// Min length: 1
+		/// Max length: 6144
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReadSetUploadPartsResponse> ListReadSetUploadPartsAsync(string sequenceStoreId, string uploadId, int maxResults, string nextToken, ListReadSetUploadPartsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7512,16 +7512,16 @@ namespace MyNS
 		/// ListReadSets sequencestore/{sequenceStoreId}/readsets
 		/// </summary>
 		/// <param name="sequenceStoreId">The jobs' sequence store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="maxResults">The maximum number of read sets to return in one page of results.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 6144
 		/// Min length: 1
+		/// Max length: 6144
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReadSetsResponse> ListReadSetsAsync(string sequenceStoreId, int maxResults, string nextToken, ListReadSetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7568,12 +7568,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 6144
 		/// Min length: 1
+		/// Max length: 6144
 		// </param>
 		/// <param name="referenceStoreId">The job's reference store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReferenceImportJobsResponse> ListReferenceImportJobsAsync(int maxResults, string nextToken, string referenceStoreId, ListReferenceImportJobsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7620,8 +7620,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 6144
 		/// Min length: 1
+		/// Max length: 6144
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReferenceStoresResponse> ListReferenceStoresAsync(int maxResults, string nextToken, ListReferenceStoresPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7664,16 +7664,16 @@ namespace MyNS
 		/// ListReferences referencestore/{referenceStoreId}/references
 		/// </summary>
 		/// <param name="referenceStoreId">The references' reference store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="maxResults">The maximum number of references to return in one page of results.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 6144
 		/// Min length: 1
+		/// Max length: 6144
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReferencesResponse> ListReferencesAsync(string referenceStoreId, int maxResults, string nextToken, ListReferencesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7716,16 +7716,16 @@ namespace MyNS
 		/// ListRunTasks run/{id}/task
 		/// </summary>
 		/// <param name="id">The run's ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		// </param>
 		/// <param name="status">Filter the list by status.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="startingToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="maxResults">The maximum number of run tasks to return in one page of results.
 		/// Minimum: 1
@@ -7765,24 +7765,24 @@ namespace MyNS
 		/// ListRuns run
 		/// </summary>
 		/// <param name="name">Filter the list by run name.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="runGroupId">Filter the list by run group ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		// </param>
 		/// <param name="startingToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="maxResults">The maximum number of runs to return in one page of results.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="status"> The status of a run. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRunsResponse> ListRunsAsync(string name, string runGroupId, string startingToken, int maxResults, RunStatus status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7855,8 +7855,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 6144
 		/// Min length: 1
+		/// Max length: 6144
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSequenceStoresResponse> ListSequenceStoresAsync(int maxResults, string nextToken, ListSequenceStoresPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7899,8 +7899,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The resource's ARN.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7936,8 +7936,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The resource's ARN.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7977,8 +7977,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListVariantImportJobsResponse> ListVariantImportJobsAsync(int maxResults, string nextToken, ListVariantImportJobsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8025,8 +8025,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListVariantStoresResponse> ListVariantStoresAsync(int maxResults, string nextToken, ListVariantStoresPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8109,8 +8109,8 @@ namespace MyNS
 		/// StartReadSetActivationJob sequencestore/{sequenceStoreId}/activationjob
 		/// </summary>
 		/// <param name="sequenceStoreId">The read set's sequence store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartReadSetActivationJobResponse> StartReadSetActivationJobAsync(string sequenceStoreId, StartReadSetActivationJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8153,8 +8153,8 @@ namespace MyNS
 		/// StartReadSetExportJob sequencestore/{sequenceStoreId}/exportjob
 		/// </summary>
 		/// <param name="sequenceStoreId">The read set's sequence store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartReadSetExportJobResponse> StartReadSetExportJobAsync(string sequenceStoreId, StartReadSetExportJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8197,8 +8197,8 @@ namespace MyNS
 		/// StartReadSetImportJob sequencestore/{sequenceStoreId}/importjob
 		/// </summary>
 		/// <param name="sequenceStoreId">The read set's sequence store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartReadSetImportJobResponse> StartReadSetImportJobAsync(string sequenceStoreId, StartReadSetImportJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8241,8 +8241,8 @@ namespace MyNS
 		/// StartReferenceImportJob referencestore/{referenceStoreId}/importjob
 		/// </summary>
 		/// <param name="referenceStoreId">The job's reference store ID.
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartReferenceImportJobResponse> StartReferenceImportJobAsync(string referenceStoreId, StartReferenceImportJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8325,8 +8325,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The resource's ARN.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="tagKeys">Keys of tags to remove.
 		/// Minimum items: 0
@@ -8359,12 +8359,12 @@ namespace MyNS
 		/// UploadReadSetPart sequencestore/{sequenceStoreId}/upload/{uploadId}/part#partSource&partNumber
 		/// </summary>
 		/// <param name="sequenceStoreId"> The Sequence Store ID used for the multipart upload. 
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="uploadId"> The ID for the initiated multipart upload. 
-		/// Max length: 36
 		/// Min length: 10
+		/// Max length: 36
 		// </param>
 		/// <param name="partSource"> The source file for an upload part. </param>
 		/// <param name="partNumber"> The number of the part being uploaded. 
@@ -8455,8 +8455,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the store.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8519,8 +8519,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  An idempotency token that can be used to avoid triggering multiple multipart uploads. 
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -8540,8 +8540,8 @@ namespace MyNS
 		/// <summary>
 		///  The source's subject ID. 
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8554,8 +8554,8 @@ namespace MyNS
 		/// <summary>
 		///  The source's sample ID. 
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8567,8 +8567,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  Where the source originated. 
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="generatedFrom")]
@@ -8580,8 +8580,8 @@ namespace MyNS
 		/// <summary>
 		///  The ARN of the reference. 
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: arn:.+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8594,8 +8594,8 @@ namespace MyNS
 		/// <summary>
 		///  The name of the read set. 
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8607,8 +8607,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The description of the read set. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -8630,8 +8630,8 @@ namespace MyNS
 		/// <summary>
 		/// A name for the store.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8643,8 +8643,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the store.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -8667,8 +8667,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// To ensure that requests don't run multiple times, specify a unique token for each request.
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -8693,8 +8693,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A name for the group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -8739,8 +8739,8 @@ namespace MyNS
 		/// <summary>
 		/// To ensure that requests don't run multiple times, specify a unique ID for each request.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8766,8 +8766,8 @@ namespace MyNS
 		/// <summary>
 		/// A name for the store.
 		/// Required
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8779,8 +8779,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the store.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -8803,8 +8803,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// To ensure that requests don't run multiple times, specify a unique token for each request.
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -8853,8 +8853,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the store.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8896,8 +8896,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A name for the workflow.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -8908,8 +8908,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the workflow.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -8920,8 +8920,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An engine for the workflow.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="engine")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8936,8 +8936,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URI of a definition for the workflow.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="definitionUri")]
@@ -8948,8 +8948,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The path of the main definition file for the workflow.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="main")]
@@ -8982,8 +8982,8 @@ namespace MyNS
 		/// <summary>
 		/// To ensure that requests don't run multiple times, specify a unique ID for each request.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8995,8 +8995,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The computational accelerator specified to run the workflow. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accelerators")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -9009,8 +9009,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the store.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -9023,8 +9023,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A name for the group.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -9075,8 +9075,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the store.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -9089,8 +9089,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A name for the workflow.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -9101,8 +9101,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the workflow.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -9384,8 +9384,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The run's workflow ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		/// Pattern: [0-9]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workflowId")]
@@ -9396,8 +9396,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The run's workflows type.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workflowType")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -9406,8 +9406,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The run's ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		/// Pattern: [0-9]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="runId")]
@@ -9419,8 +9419,8 @@ namespace MyNS
 		/// <summary>
 		/// A service role for the run.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: arn:.+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9432,8 +9432,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A name for the run.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -9444,8 +9444,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The run's group ID.
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		/// Pattern: [0-9]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="runGroupId")]
@@ -9480,8 +9480,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An output URI for the run.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="outputUri")]
@@ -9492,8 +9492,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A log level for the run.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="logLevel")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -9509,8 +9509,8 @@ namespace MyNS
 		/// <summary>
 		/// To ensure that requests don't run multiple times, specify a unique ID for each request.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9619,8 +9619,8 @@ namespace MyNS
 		/// <summary>
 		/// A destination annotation store for the job.
 		/// Required
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		/// Pattern: ([a-z]){1}([a-z0-9_]){2,254}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9633,8 +9633,8 @@ namespace MyNS
 		/// <summary>
 		/// A service role for the job.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9688,8 +9688,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// To ensure that jobs don't run multiple times, specify a unique token for each job.
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9727,8 +9727,8 @@ namespace MyNS
 		/// <summary>
 		/// A service role for the job.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9740,8 +9740,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// To ensure that jobs don't run multiple times, specify a unique token for each job.
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9769,8 +9769,8 @@ namespace MyNS
 		/// <summary>
 		/// A service role for the job.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9782,8 +9782,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// To ensure that jobs don't run multiple times, specify a unique token for each job.
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9811,8 +9811,8 @@ namespace MyNS
 		/// <summary>
 		/// A service role for the job.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9824,8 +9824,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// To ensure that jobs don't run multiple times, specify a unique token for each job.
-		/// Max length: 127
 		/// Min length: 1
+		/// Max length: 127
 		/// Pattern: [\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -9853,8 +9853,8 @@ namespace MyNS
 		/// <summary>
 		/// The destination variant store for the job.
 		/// Required
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		/// Pattern: ([a-z]){1}([a-z0-9_]){2,254}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9867,8 +9867,8 @@ namespace MyNS
 		/// <summary>
 		/// A service role for the job.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

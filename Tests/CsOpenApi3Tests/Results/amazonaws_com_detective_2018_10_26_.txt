@@ -1862,8 +1862,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Customized message text to include in the invitation email message to the invited member accounts.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1963,8 +1963,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^[0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2016,8 +2016,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2039,8 +2039,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2062,8 +2062,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2095,8 +2095,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2118,8 +2118,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2178,8 +2178,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The account ID of the member account to try to enable.</p> <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^[0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

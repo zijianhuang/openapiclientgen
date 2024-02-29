@@ -1271,8 +1271,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="NextToken"><p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListGamesResult> ListGamesAsync(int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1308,8 +1308,8 @@ namespace MyNS
 		/// CreateSnapshot game/{GameName}/snapshot
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateSnapshotResult> CreateSnapshotAsync(string GameName, CreateSnapshotPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1352,16 +1352,16 @@ namespace MyNS
 		/// ListSnapshots game/{GameName}/snapshot
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="MaxResults"><p>The maximum number of results to return.</p> <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="NextToken"><p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSnapshotsResult> ListSnapshotsAsync(string GameName, int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1397,8 +1397,8 @@ namespace MyNS
 		/// CreateStage game/{GameName}/stage
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateStageResult> CreateStageAsync(string GameName, CreateStagePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1441,16 +1441,16 @@ namespace MyNS
 		/// ListStages game/{GameName}/stage
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="MaxResults"><p>The maximum number of results to return.</p> <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="NextToken"><p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListStagesResult> ListStagesAsync(string GameName, int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1486,8 +1486,8 @@ namespace MyNS
 		/// DeleteGame game/{GameName}
 		/// </summary>
 		/// <param name="GameName">The name of the game to delete.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteGameResult> DeleteGameAsync(string GameName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1523,8 +1523,8 @@ namespace MyNS
 		/// GetGame game/{GameName}
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetGameResult> GetGameAsync(string GameName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1560,8 +1560,8 @@ namespace MyNS
 		/// UpdateGame game/{GameName}
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateGameResult> UpdateGameAsync(string GameName, UpdateGamePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1604,12 +1604,12 @@ namespace MyNS
 		/// DeleteStage game/{GameName}/stage/{StageName}
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="StageName">The name of the stage to delete.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteStageResult> DeleteStageAsync(string GameName, string StageName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1645,12 +1645,12 @@ namespace MyNS
 		/// GetStage game/{GameName}/stage/{StageName}
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="StageName">The name of the stage.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetStageResult> GetStageAsync(string GameName, string StageName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1686,12 +1686,12 @@ namespace MyNS
 		/// UpdateStage game/{GameName}/stage/{StageName}
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="StageName">The name of the stage.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateStageResult> UpdateStageAsync(string GameName, string StageName, UpdateStagePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1734,16 +1734,16 @@ namespace MyNS
 		/// DisconnectPlayer runtime/game/{GameName}/stage/{StageName}/player/{PlayerId}/disconnect
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="PlayerId">The unique identifier representing a player.
-		/// Max length: 44
 		/// Min length: 1
+		/// Max length: 44
 		// </param>
 		/// <param name="StageName">The name of the stage.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisconnectPlayerResult> DisconnectPlayerAsync(string GameName, string PlayerId, string StageName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1774,12 +1774,12 @@ namespace MyNS
 		/// ExportSnapshot game/{GameName}/snapshot/{SnapshotId}/export
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="SnapshotId">The identifier of the snapshot to export.
-		/// Max length: 36
 		/// Min length: 33
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ExportSnapshotResult> ExportSnapshotAsync(string GameName, string SnapshotId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1815,12 +1815,12 @@ namespace MyNS
 		/// GetExtension extension/{Namespace}/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the extension.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="Namespace">The namespace (qualifier) of the extension.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetExtensionResult> GetExtensionAsync(string Name, string Namespace, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1856,16 +1856,16 @@ namespace MyNS
 		/// GetExtensionVersion extension/{Namespace}/{Name}/version/{ExtensionVersion}
 		/// </summary>
 		/// <param name="ExtensionVersion">The version of the extension.
-		/// Max length: 20
 		/// Min length: 0
+		/// Max length: 20
 		// </param>
 		/// <param name="Name">The name of the extension.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="Namespace">The namespace (qualifier) of the extension.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetExtensionVersionResult> GetExtensionVersionAsync(string ExtensionVersion, string Name, string Namespace, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1901,8 +1901,8 @@ namespace MyNS
 		/// GetGameConfiguration game/{GameName}/configuration
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="Sections">The list of sections to return.
 		/// Minimum items: 1
@@ -1942,8 +1942,8 @@ namespace MyNS
 		/// ImportGameConfiguration game/{GameName}/configuration
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ImportGameConfigurationResult> ImportGameConfigurationAsync(string GameName, ImportGameConfigurationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1986,8 +1986,8 @@ namespace MyNS
 		/// UpdateGameConfiguration game/{GameName}/configuration
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateGameConfigurationResult> UpdateGameConfigurationAsync(string GameName, UpdateGameConfigurationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2030,13 +2030,13 @@ namespace MyNS
 		/// GetGeneratedCodeJob game/{GameName}/snapshot/{SnapshotId}/generated-sdk-code-job/{JobId}
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="JobId">The identifier of the code generation job.</param>
 		/// <param name="SnapshotId">The identifier of the snapshot for the code generation job.
-		/// Max length: 36
 		/// Min length: 33
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetGeneratedCodeJobResult> GetGeneratedCodeJobAsync(string GameName, string JobId, string SnapshotId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2072,16 +2072,16 @@ namespace MyNS
 		/// GetPlayerConnectionStatus runtime/game/{GameName}/stage/{StageName}/player/{PlayerId}/connection
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="PlayerId">The unique identifier representing a player.
-		/// Max length: 44
 		/// Min length: 1
+		/// Max length: 44
 		// </param>
 		/// <param name="StageName">The name of the stage.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPlayerConnectionStatusResult> GetPlayerConnectionStatusAsync(string GameName, string PlayerId, string StageName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2117,16 +2117,16 @@ namespace MyNS
 		/// GetSnapshot game/{GameName}/snapshot/{SnapshotId}
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="Sections">The list of game configuration sections to be described.
 		/// Minimum items: 1
 		/// Maximum items: 100
 		// </param>
 		/// <param name="SnapshotId">The identifier of the snapshot.
-		/// Max length: 36
 		/// Min length: 33
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSnapshotResult> GetSnapshotAsync(string GameName, string[] Sections, string SnapshotId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2162,12 +2162,12 @@ namespace MyNS
 		/// UpdateSnapshot game/{GameName}/snapshot/{SnapshotId}
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="SnapshotId">The identifier of the snapshot.
-		/// Max length: 36
 		/// Min length: 33
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateSnapshotResult> UpdateSnapshotAsync(string GameName, string SnapshotId, UpdateSnapshotPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2210,16 +2210,16 @@ namespace MyNS
 		/// GetStageDeployment game/{GameName}/stage/{StageName}/deployment
 		/// </summary>
 		/// <param name="DeploymentId"> The identifier of the stage deployment. <code>StartStageDeployment</code> returns the identifier that you use here. 
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="StageName">The name of the stage.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetStageDeploymentResult> GetStageDeploymentAsync(string DeploymentId, string GameName, string StageName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2255,12 +2255,12 @@ namespace MyNS
 		/// StartStageDeployment game/{GameName}/stage/{StageName}/deployment
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="StageName">The name of the stage to deploy the snapshot onto.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartStageDeploymentResult> StartStageDeploymentAsync(string GameName, string StageName, StartStageDeploymentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2307,16 +2307,16 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="Name">The name of the extension.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="Namespace">The namespace (qualifier) of the extension.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="NextToken"><p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListExtensionVersionsResult> ListExtensionVersionsAsync(int MaxResults, string Name, string Namespace, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2356,8 +2356,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="NextToken"><p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListExtensionsResult> ListExtensionsAsync(int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2393,20 +2393,20 @@ namespace MyNS
 		/// ListGeneratedCodeJobs game/{GameName}/snapshot/{SnapshotId}/generated-sdk-code-jobs
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="MaxResults"><p>The maximum number of results to return.</p> <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="NextToken"><p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="SnapshotId">The identifier of the snapshot.
-		/// Max length: 36
 		/// Min length: 33
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListGeneratedCodeJobsResult> ListGeneratedCodeJobsAsync(string GameName, int MaxResults, string NextToken, string SnapshotId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2442,20 +2442,20 @@ namespace MyNS
 		/// ListStageDeployments game/{GameName}/stage/{StageName}/deployments
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="MaxResults"><p>The maximum number of results to return.</p> <p> Use this parameter with NextToken to get results as a set of sequential pages. </p>
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="NextToken"><p>The token that indicates the start of the next sequential page of results.</p> <p> Use the token that is returned with a previous call to this operation. To start at the beginning of the result set, do not specify a value. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="StageName">The name of the stage.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListStageDeploymentsResult> ListStageDeploymentsAsync(string GameName, int MaxResults, string NextToken, string StageName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2491,8 +2491,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the GameSparks resource.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResult> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2528,8 +2528,8 @@ namespace MyNS
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource to add the tags to.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResult> TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2572,12 +2572,12 @@ namespace MyNS
 		/// StartGeneratedCodeJob game/{GameName}/snapshot/{SnapshotId}/generated-sdk-code-job
 		/// </summary>
 		/// <param name="GameName">The name of the game.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="SnapshotId">The identifier of the snapshot for which to generate code.
-		/// Max length: 36
 		/// Min length: 33
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartGeneratedCodeJobResult> StartGeneratedCodeJobAsync(string GameName, string SnapshotId, StartGeneratedCodeJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2620,8 +2620,8 @@ namespace MyNS
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource to remove the tags from.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys">The keys of the tags to remove.
 		/// Minimum items: 1
@@ -2662,8 +2662,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A client-defined token. With an active client token in the request, this action is idempotent. 
-		/// Max length: 126
 		/// Min length: 33
+		/// Max length: 126
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(33)]
@@ -2672,8 +2672,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the game.
-		/// Max length: 250
 		/// Min length: 0
+		/// Max length: 250
 		/// Pattern: ^\S(.*\S)?$|^$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2685,8 +2685,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the game.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// Pattern: ^[a-zA-Z0-9_-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2708,8 +2708,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the snapshot.
-		/// Max length: 250
 		/// Min length: 0
+		/// Max length: 250
 		/// Pattern: ^\S(.*\S)?$|^$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2724,8 +2724,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A client-defined token. With an active client token in the request, this action is idempotent. 
-		/// Max length: 126
 		/// Min length: 33
+		/// Max length: 126
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(33)]
@@ -2734,8 +2734,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the stage.
-		/// Max length: 250
 		/// Min length: 0
+		/// Max length: 250
 		/// Pattern: ^\S(.*\S)?$|^$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2747,8 +2747,8 @@ namespace MyNS
 		/// <summary>
 		///  The Amazon Resource Name (ARN) of the role to run the game with. This role can be a game-defined role or the default role that GameSparks created. 
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2761,8 +2761,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the stage.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// Pattern: ^[a-zA-Z0-9_-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2784,8 +2784,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the game.
-		/// Max length: 250
 		/// Min length: 0
+		/// Max length: 250
 		/// Pattern: ^\S(.*\S)?$|^$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2800,8 +2800,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the stage.
-		/// Max length: 250
 		/// Min length: 0
+		/// Max length: 250
 		/// Pattern: ^\S(.*\S)?$|^$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2812,8 +2812,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the role to use for the game snapshots deployed to this stage.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/.+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2863,8 +2863,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the snapshot.
-		/// Max length: 250
 		/// Min length: 0
+		/// Max length: 250
 		/// Pattern: ^\S(.*\S)?$|^$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2879,8 +2879,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A client-defined token. With an active client token in the request, this action is idempotent. 
-		/// Max length: 126
 		/// Min length: 33
+		/// Max length: 126
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(33)]
@@ -2890,8 +2890,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier of the snapshot to deploy.
 		/// Required
-		/// Max length: 36
 		/// Min length: 33
+		/// Max length: 36
 		/// Pattern: ^Snapshot_\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3,6}Z$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

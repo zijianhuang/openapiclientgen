@@ -1494,8 +1494,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// Pattern: ^[0-9A-Za-z-_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1694,8 +1694,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// Pattern: ^[0-9A-Za-z-_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3279,8 +3279,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// Pattern: ^[0-9A-Za-z-_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4189,8 +4189,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 6250000
 		/// Min length: 1
+		/// Max length: 6250000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="content")]
@@ -4287,8 +4287,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 6250000
 		/// Min length: 1
+		/// Max length: 6250000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="content")]
@@ -4362,8 +4362,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// Pattern: ^[0-9A-Za-z-_]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

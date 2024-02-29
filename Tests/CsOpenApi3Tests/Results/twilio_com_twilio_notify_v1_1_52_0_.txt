@@ -78,8 +78,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Credential resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -114,8 +114,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Credential resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CR[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -141,8 +141,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -159,8 +159,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Credential](https://www.twilio.com/docs/notify/api/credential-resource) to use for APN Bindings.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CR[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="apn_credential_sid")]
@@ -225,8 +225,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Credential](https://www.twilio.com/docs/notify/api/credential-resource) to use for FCM Bindings.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CR[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="fcm_credential_sid")]
@@ -243,8 +243,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Credential](https://www.twilio.com/docs/notify/api/credential-resource) to use for GCM Bindings.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CR[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="gcm_credential_sid")]
@@ -267,8 +267,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Messaging Service](https://www.twilio.com/docs/sms/quickstart#messaging-services) to use for SMS Bindings. In order to send SMS notifications this parameter has to be set.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^MG[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messaging_service_sid")]
@@ -279,8 +279,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Service resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -303,8 +303,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Binding resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -327,8 +327,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Credential](https://www.twilio.com/docs/notify/api/credential-resource) resource to be used to send notifications to this Binding. If present, this overrides the Credential specified in the Service resource. Applicable only to `apn`, `fcm`, and `gcm` type Bindings.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CR[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="credential_sid")]
@@ -375,8 +375,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -387,8 +387,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Binding resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^BS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -417,8 +417,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Notification resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -498,8 +498,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) the resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -510,8 +510,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Notification resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^NT[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -614,8 +614,8 @@ namespace MyNS
 		/// DeleteCredential v1/Credentials/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Credential resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteCredentialAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -643,8 +643,8 @@ namespace MyNS
 		/// FetchCredential v1/Credentials/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Credential resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Notifyv1credential> FetchCredentialAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -720,8 +720,8 @@ namespace MyNS
 		/// ListBinding v1/Services/{ServiceSid}/Bindings
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) to read the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="StartDate">Only include usage that has occurred on or after this date. Specify the date in GMT and format as `YYYY-MM-DD`.</param>
 		/// <param name="EndDate">Only include usage that occurred on or before this date. Specify the date in GMT and format as `YYYY-MM-DD`.</param>
@@ -768,12 +768,12 @@ namespace MyNS
 		/// DeleteBinding v1/Services/{ServiceSid}/Bindings/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) to delete the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Binding resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteBindingAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -801,12 +801,12 @@ namespace MyNS
 		/// FetchBinding v1/Services/{ServiceSid}/Bindings/{Sid}
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the [Service](https://www.twilio.com/docs/notify/api/service-resource) to fetch the resource from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Binding resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Notifyv1servicebinding> FetchBindingAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -841,8 +841,8 @@ namespace MyNS
 		/// DeleteService v1/Services/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -870,8 +870,8 @@ namespace MyNS
 		/// FetchService v1/Services/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Service resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Notifyv1service> FetchServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

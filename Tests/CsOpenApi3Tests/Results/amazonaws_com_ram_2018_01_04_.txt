@@ -3384,8 +3384,8 @@ namespace MyNS
 		/// <summary>
 		/// Specifies the name of the customer managed permission. The name must be unique within the Amazon Web Services Region.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// Pattern: [\w.-]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

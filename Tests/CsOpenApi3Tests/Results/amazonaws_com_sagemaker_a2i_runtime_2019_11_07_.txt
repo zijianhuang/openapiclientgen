@@ -345,8 +345,8 @@ namespace MyNS
 		/// DeleteHumanLoop human-loops/{HumanLoopName}
 		/// </summary>
 		/// <param name="HumanLoopName">The name of the human loop that you want to delete.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteHumanLoopResponse> DeleteHumanLoopAsync(string HumanLoopName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -382,8 +382,8 @@ namespace MyNS
 		/// DescribeHumanLoop human-loops/{HumanLoopName}
 		/// </summary>
 		/// <param name="HumanLoopName">The name of the human loop that you want information about.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeHumanLoopResponse> DescribeHumanLoopAsync(string HumanLoopName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -547,8 +547,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the human loop.
 		/// Required
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		/// Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -605,8 +605,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the human loop that you want to stop.
 		/// Required
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		/// Pattern: ^[a-z0-9](-*[a-z0-9])*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

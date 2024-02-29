@@ -448,8 +448,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -487,8 +487,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -527,8 +527,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -574,8 +574,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -608,8 +608,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -647,8 +647,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -687,8 +687,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -726,8 +726,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -766,8 +766,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -813,8 +813,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -844,8 +844,8 @@ namespace MyNS
 		/// PrivateLinkScopes_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -882,8 +882,8 @@ namespace MyNS
 		/// PrivateLinkScopes_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes/{scopeName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -921,8 +921,8 @@ namespace MyNS
 		/// PrivateLinkScopes_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes/{scopeName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -968,8 +968,8 @@ namespace MyNS
 		/// PrivateLinkScopes_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes/{scopeName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -1001,8 +1001,8 @@ namespace MyNS
 		/// PrivateLinkScopes_UpdateTags subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes/{scopeName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1

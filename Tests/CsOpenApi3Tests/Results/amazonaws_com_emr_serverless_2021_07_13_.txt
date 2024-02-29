@@ -1317,12 +1317,12 @@ namespace MyNS
 		/// CancelJobRun applications/{applicationId}/jobruns/{jobRunId}
 		/// </summary>
 		/// <param name="applicationId">The ID of the application on which the job run will be canceled.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="jobRunId">The ID of the job run to cancel.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelJobRunResponse> CancelJobRunAsync(string applicationId, string jobRunId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1358,12 +1358,12 @@ namespace MyNS
 		/// GetJobRun applications/{applicationId}/jobruns/{jobRunId}
 		/// </summary>
 		/// <param name="applicationId">The ID of the application on which the job run is submitted.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="jobRunId">The ID of the job run.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetJobRunResponse> GetJobRunAsync(string applicationId, string jobRunId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1439,8 +1439,8 @@ namespace MyNS
 		/// ListApplications applications
 		/// </summary>
 		/// <param name="nextToken">The token for the next set of application results.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="maxResults">The maximum number of applications that can be listed.
 		/// Minimum: 1
@@ -1484,8 +1484,8 @@ namespace MyNS
 		/// DeleteApplication applications/{applicationId}
 		/// </summary>
 		/// <param name="applicationId">The ID of the application that will be deleted.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteApplicationResponse> DeleteApplicationAsync(string applicationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1521,8 +1521,8 @@ namespace MyNS
 		/// GetApplication applications/{applicationId}
 		/// </summary>
 		/// <param name="applicationId">The ID of the application that will be described.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetApplicationResponse> GetApplicationAsync(string applicationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1558,8 +1558,8 @@ namespace MyNS
 		/// UpdateApplication applications/{applicationId}
 		/// </summary>
 		/// <param name="applicationId">The ID of the application to update.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateApplicationResponse> UpdateApplicationAsync(string applicationId, UpdateApplicationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1602,12 +1602,12 @@ namespace MyNS
 		/// GetDashboardForJobRun applications/{applicationId}/jobruns/{jobRunId}/dashboard
 		/// </summary>
 		/// <param name="applicationId">The ID of the application.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="jobRunId">The ID of the job run.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDashboardForJobRunResponse> GetDashboardForJobRunAsync(string applicationId, string jobRunId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1643,12 +1643,12 @@ namespace MyNS
 		/// ListJobRuns applications/{applicationId}/jobruns
 		/// </summary>
 		/// <param name="applicationId">The ID of the application for which to list the job run.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="nextToken">The token for the next set of job run results.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="maxResults">The maximum number of job runs that can be listed.
 		/// Minimum: 1
@@ -1694,8 +1694,8 @@ namespace MyNS
 		/// StartJobRun applications/{applicationId}/jobruns
 		/// </summary>
 		/// <param name="applicationId">The ID of the application on which to run the job.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartJobRunResponse> StartJobRunAsync(string applicationId, StartJobRunPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1738,8 +1738,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.
-		/// Max length: 1024
 		/// Min length: 60
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1775,8 +1775,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.
-		/// Max length: 1024
 		/// Min length: 60
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1819,8 +1819,8 @@ namespace MyNS
 		/// StartApplication applications/{applicationId}/start
 		/// </summary>
 		/// <param name="applicationId">The ID of the application to start.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartApplicationResponse> StartApplicationAsync(string applicationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1851,8 +1851,8 @@ namespace MyNS
 		/// StopApplication applications/{applicationId}/stop
 		/// </summary>
 		/// <param name="applicationId">The ID of the application to stop.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopApplicationResponse> StopApplicationAsync(string applicationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1883,8 +1883,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.
-		/// Max length: 1024
 		/// Min length: 60
+		/// Max length: 1024
 		// </param>
 		/// <param name="tagKeys">The keys of the tags to be removed.
 		/// Minimum items: 1
@@ -1925,8 +1925,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the application.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [A-Za-z0-9._/#-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1938,8 +1938,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon EMR release associated with the application.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [A-Za-z0-9._/-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1952,8 +1952,8 @@ namespace MyNS
 		/// <summary>
 		/// The type of application you want to start, such as Spark or Hive.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="type")]
@@ -1964,8 +1964,8 @@ namespace MyNS
 		/// <summary>
 		/// The client idempotency token of the application to create. Its value must be unique for each request.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [A-Za-z0-9._-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2083,8 +2083,8 @@ namespace MyNS
 		/// <summary>
 		/// The client idempotency token of the application to update. Its value must be unique for each request.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [A-Za-z0-9._-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2144,8 +2144,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [A-Za-z0-9._/-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="releaseLabel")]
@@ -2208,8 +2208,8 @@ namespace MyNS
 		/// <summary>
 		/// The client idempotency token of the job run to start. Its value must be unique for each request.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [A-Za-z0-9._-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2222,8 +2222,8 @@ namespace MyNS
 		/// <summary>
 		/// The execution role ARN for the job run.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2262,8 +2262,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The optional job run name. This doesn't have to be unique.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]

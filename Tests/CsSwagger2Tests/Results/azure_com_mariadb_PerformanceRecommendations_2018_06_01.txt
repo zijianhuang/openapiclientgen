@@ -257,8 +257,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <returns>OK</returns>
@@ -296,8 +296,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="advisorName">The advisor name for recommendation action.</param>
@@ -336,8 +336,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="advisorName">The advisor name for recommendation action.</param>
@@ -371,8 +371,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="advisorName">The advisor name for recommendation action.</param>
@@ -412,8 +412,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="advisorName">The advisor name for recommendation action.</param>

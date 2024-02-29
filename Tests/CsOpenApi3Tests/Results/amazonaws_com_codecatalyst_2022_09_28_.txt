@@ -2057,12 +2057,12 @@ namespace MyNS
 		/// CreateDevEnvironment v1/spaces/{spaceName}/projects/{projectName}/devEnvironments
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		public async Task CreateDevEnvironmentAsync(string spaceName, string projectName, CreateDevEnvironmentPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2098,12 +2098,12 @@ namespace MyNS
 		/// ListDevEnvironments v1/spaces/{spaceName}/projects/{projectName}/devEnvironments
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -2148,8 +2148,8 @@ namespace MyNS
 		/// CreateProject v1/spaces/{spaceName}/projects
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		public async Task CreateProjectAsync(string spaceName, CreateProjectPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2185,8 +2185,8 @@ namespace MyNS
 		/// ListProjects v1/spaces/{spaceName}/projects
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -2231,16 +2231,16 @@ namespace MyNS
 		/// CreateSourceRepository v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories/{name}
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="name">The name of the source repository. For more information about name requirements, see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/source-quotas.html">Quotas for source repositories</a>.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		public async Task CreateSourceRepositoryAsync(string spaceName, string projectName, string name, CreateSourceRepositoryPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2276,16 +2276,16 @@ namespace MyNS
 		/// DeleteSourceRepository v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories/{name}
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="name">The name of the source repository.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSourceRepositoryResponse> DeleteSourceRepositoryAsync(string spaceName, string projectName, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2321,16 +2321,16 @@ namespace MyNS
 		/// GetSourceRepository v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories/{name}
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="name">The name of the source repository.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSourceRepositoryResponse> GetSourceRepositoryAsync(string spaceName, string projectName, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2366,20 +2366,20 @@ namespace MyNS
 		/// CreateSourceRepositoryBranch v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories/{sourceRepositoryName}/branches/{name}
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="sourceRepositoryName">The name of the repository where you want to create a branch.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="name">The name for the branch you're creating.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		public async Task CreateSourceRepositoryBranchAsync(string spaceName, string projectName, string sourceRepositoryName, string name, CreateSourceRepositoryBranchPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2415,8 +2415,8 @@ namespace MyNS
 		/// DeleteAccessToken v1/accessTokens/{id}
 		/// </summary>
 		/// <param name="id">The ID of the personal access token to delete. You can find the IDs of all PATs associated with your Amazon Web Services Builder ID in a space by calling <a>ListAccessTokens</a>.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAccessTokenResponse> DeleteAccessTokenAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2452,12 +2452,12 @@ namespace MyNS
 		/// DeleteDevEnvironment v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="id">The system-generated unique ID of the Dev Environment you want to delete. To retrieve a list of Dev Environment IDs, use <a>ListDevEnvironments</a>.</param>
 		/// <returns>Success</returns>
@@ -2494,12 +2494,12 @@ namespace MyNS
 		/// GetDevEnvironment v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="id">The system-generated unique ID of the Dev Environment for which you want to view information. To retrieve a list of Dev Environment IDs, use <a>ListDevEnvironments</a>.</param>
 		/// <returns>Success</returns>
@@ -2536,12 +2536,12 @@ namespace MyNS
 		/// UpdateDevEnvironment v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="id">The system-generated unique ID of the Dev Environment. </param>
 		/// <returns>Success</returns>
@@ -2585,12 +2585,12 @@ namespace MyNS
 		/// DeleteProject v1/spaces/{spaceName}/projects/{name}
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="name">The name of the project in the space. To retrieve a list of project names, use <a>ListProjects</a>.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteProjectResponse> DeleteProjectAsync(string spaceName, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2626,12 +2626,12 @@ namespace MyNS
 		/// GetProject v1/spaces/{spaceName}/projects/{name}
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="name">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProjectResponse> GetProjectAsync(string spaceName, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2667,12 +2667,12 @@ namespace MyNS
 		/// UpdateProject v1/spaces/{spaceName}/projects/{name}
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="name">The name of the project.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateProjectResponse> UpdateProjectAsync(string spaceName, string name, UpdateProjectPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2715,8 +2715,8 @@ namespace MyNS
 		/// DeleteSpace v1/spaces/{name}
 		/// </summary>
 		/// <param name="name">The name of the space. To retrieve a list of space names, use <a>ListSpaces</a>.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSpaceResponse> DeleteSpaceAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2752,8 +2752,8 @@ namespace MyNS
 		/// GetSpace v1/spaces/{name}
 		/// </summary>
 		/// <param name="name">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSpaceResponse> GetSpaceAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2789,8 +2789,8 @@ namespace MyNS
 		/// UpdateSpace v1/spaces/{name}
 		/// </summary>
 		/// <param name="name">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateSpaceResponse> UpdateSpaceAsync(string name, UpdateSpacePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2833,16 +2833,16 @@ namespace MyNS
 		/// GetSourceRepositoryCloneUrls v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories/{sourceRepositoryName}/cloneUrls
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="sourceRepositoryName">The name of the source repository.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSourceRepositoryCloneUrlsResponse> GetSourceRepositoryCloneUrlsAsync(string spaceName, string projectName, string sourceRepositoryName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2878,8 +2878,8 @@ namespace MyNS
 		/// GetSubscription v1/spaces/{spaceName}/subscription
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSubscriptionResponse> GetSubscriptionAsync(string spaceName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2915,12 +2915,12 @@ namespace MyNS
 		/// GetUserDetails userDetails
 		/// </summary>
 		/// <param name="id">The system-generated unique ID of the user. 
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="userName">The name of the user as displayed in Amazon CodeCatalyst.
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetUserDetailsResponse> GetUserDetailsAsync(string id, string userName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2956,12 +2956,12 @@ namespace MyNS
 		/// ListDevEnvironmentSessions v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{devEnvironmentId}/sessions
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="devEnvironmentId">The system-generated unique ID of the Dev Environment.</param>
 		/// <param name="maxResults">Pagination limit</param>
@@ -3007,8 +3007,8 @@ namespace MyNS
 		/// ListEventLogs v1/spaces/{spaceName}/eventLogs
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -3053,12 +3053,12 @@ namespace MyNS
 		/// ListSourceRepositories v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -3103,16 +3103,16 @@ namespace MyNS
 		/// ListSourceRepositoryBranches v1/spaces/{spaceName}/projects/{projectName}/sourceRepositories/{sourceRepositoryName}/branches
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="sourceRepositoryName">The name of the source repository.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -3198,12 +3198,12 @@ namespace MyNS
 		/// StartDevEnvironment v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}/start
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="id">The system-generated unique ID of the Dev Environment. </param>
 		/// <returns>Success</returns>
@@ -3247,12 +3247,12 @@ namespace MyNS
 		/// StartDevEnvironmentSession v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}/session
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="id">The system-generated unique ID of the Dev Environment.</param>
 		/// <returns>Success</returns>
@@ -3296,12 +3296,12 @@ namespace MyNS
 		/// StopDevEnvironment v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}/stop
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="id">The system-generated unique ID of the Dev Environment. </param>
 		/// <returns>Success</returns>
@@ -3333,17 +3333,17 @@ namespace MyNS
 		/// StopDevEnvironmentSession v1/spaces/{spaceName}/projects/{projectName}/devEnvironments/{id}/session/{sessionId}
 		/// </summary>
 		/// <param name="spaceName">The name of the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="projectName">The name of the project in the space.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="id">The system-generated unique ID of the Dev Environment. To obtain this ID, use <a>ListDevEnvironments</a>.</param>
 		/// <param name="sessionId">The system-generated unique ID of the Dev Environment session. This ID is returned by <a>StartDevEnvironmentSession</a>.
-		/// Max length: 96
 		/// Min length: 1
+		/// Max length: 96
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopDevEnvironmentSessionResponse> StopDevEnvironmentSessionAsync(string spaceName, string projectName, string id, string sessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3414,8 +3414,8 @@ namespace MyNS
 		/// <summary>
 		/// The friendly name of the personal access token.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -3443,8 +3443,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token returned from a call to this API to indicate the next batch of results to return, if any.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3463,8 +3463,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3473,8 +3473,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The user-defined alias for a Dev Environment.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="alias")]
@@ -3556,8 +3556,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token returned from a call to this API to indicate the next batch of results to return, if any.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3580,8 +3580,8 @@ namespace MyNS
 		/// <summary>
 		/// The friendly name of the project that will be displayed to users.
 		/// Required
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		/// Pattern: [a-zA-Z0-9]+(?:[-_\. ][a-zA-Z0-9]+)*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3593,8 +3593,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// Pattern: [a-zA-Z0-9]+(?:[-_a-zA-Z0-9.,;:/\+=?&$%    ])*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -3609,8 +3609,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token returned from a call to this API to indicate the next batch of results to return, if any.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3638,8 +3638,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the source repository.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3662,8 +3662,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The user-specified alias for the Dev Environment. Changing this value will not cause a restart.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// Pattern: $|^[a-zA-Z0-9]+(?:[-_\.][a-zA-Z0-9]+)*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="alias")]
@@ -3699,8 +3699,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3732,8 +3732,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the project.
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// Pattern: [a-zA-Z0-9]+(?:[-_a-zA-Z0-9.,;:/\+=?&$%    ])*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -3748,8 +3748,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the space.
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// Pattern: [a-zA-Z0-9]+(?:[-_a-zA-Z0-9.,;:/\+=?&$%    ])*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -3764,8 +3764,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token returned from a call to this API to indicate the next batch of results to return, if any.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3809,8 +3809,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token returned from a call to this API to indicate the next batch of results to return, if any.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3832,8 +3832,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token returned from a call to this API to indicate the next batch of results to return, if any.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3855,8 +3855,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token returned from a call to this API to indicate the next batch of results to return, if any.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3878,8 +3878,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token returned from a call to this API to indicate the next batch of results to return, if any.
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

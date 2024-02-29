@@ -188,8 +188,8 @@ namespace MyNS
 		/// <summary>
 		/// The application ID or the application name.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -200,8 +200,8 @@ namespace MyNS
 		/// <summary>
 		/// The environment ID or the environment name.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -212,8 +212,8 @@ namespace MyNS
 		/// <summary>
 		/// The configuration profile ID or the configuration profile name.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]

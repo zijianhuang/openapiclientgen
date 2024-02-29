@@ -162,8 +162,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A 34 character string that uniquely identifies this Sink.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^DG[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -257,8 +257,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -293,8 +293,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A 34 character string that uniquely identifies this Subscription.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^DF[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -305,8 +305,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the sink that events selected by this subscription should be sent to. Sink must be active for the subscription to be created.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^DG[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sink_sid")]
@@ -329,8 +329,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -347,8 +347,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Subscription.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^DF[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="subscription_sid")]
@@ -583,8 +583,8 @@ namespace MyNS
 		/// DeleteSink v1/Sinks/{Sid}
 		/// </summary>
 		/// <param name="Sid">A 34 character string that uniquely identifies this Sink.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteSinkAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -613,8 +613,8 @@ namespace MyNS
 		/// FetchSink v1/Sinks/{Sid}
 		/// </summary>
 		/// <param name="Sid">A 34 character string that uniquely identifies this Sink.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Eventsv1sink> FetchSinkAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -650,8 +650,8 @@ namespace MyNS
 		/// CreateSinkTest v1/Sinks/{Sid}/Test
 		/// </summary>
 		/// <param name="Sid">A 34 character string that uniquely identifies the Sink to be Tested.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task CreateSinkTestAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -675,8 +675,8 @@ namespace MyNS
 		/// ListSubscription v1/Subscriptions
 		/// </summary>
 		/// <param name="SinkSid">The SID of the sink that the list of Subscriptions should be filtered by.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -720,8 +720,8 @@ namespace MyNS
 		/// DeleteSubscription v1/Subscriptions/{Sid}
 		/// </summary>
 		/// <param name="Sid">A 34 character string that uniquely identifies this Subscription.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteSubscriptionAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -750,8 +750,8 @@ namespace MyNS
 		/// FetchSubscription v1/Subscriptions/{Sid}
 		/// </summary>
 		/// <param name="Sid">A 34 character string that uniquely identifies this Subscription.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Eventsv1subscription> FetchSubscriptionAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -787,8 +787,8 @@ namespace MyNS
 		/// ListSubscribedEvent v1/Subscriptions/{SubscriptionSid}/SubscribedEvents
 		/// </summary>
 		/// <param name="SubscriptionSid">The unique SID identifier of the Subscription.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -832,8 +832,8 @@ namespace MyNS
 		/// DeleteSubscribedEvent v1/Subscriptions/{SubscriptionSid}/SubscribedEvents/{Type}
 		/// </summary>
 		/// <param name="SubscriptionSid">The unique SID identifier of the Subscription.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Type">Type of event being subscribed to.</param>
 		public async Task DeleteSubscribedEventAsync(string SubscriptionSid, string Type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -863,8 +863,8 @@ namespace MyNS
 		/// FetchSubscribedEvent v1/Subscriptions/{SubscriptionSid}/SubscribedEvents/{Type}
 		/// </summary>
 		/// <param name="SubscriptionSid">The unique SID identifier of the Subscription.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Type">Type of event being subscribed to.</param>
 		/// <returns>OK</returns>

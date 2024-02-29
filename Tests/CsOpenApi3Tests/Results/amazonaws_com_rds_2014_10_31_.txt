@@ -11297,24 +11297,24 @@ namespace MyNS
 		/// GET_CreateBlueGreenDeployment #Action=CreateBlueGreenDeployment
 		/// </summary>
 		/// <param name="BlueGreenDeploymentName"><p>The name of the blue/green deployment.</p> <p>Constraints:</p> <ul> <li> <p>Can't be the same as an existing blue/green deployment name in the same account and Amazon Web Services Region.</p> </li> </ul>
-		/// Max length: 60
 		/// Min length: 1
+		/// Max length: 60
 		// </param>
 		/// <param name="Source"><p>The Amazon Resource Name (ARN) of the source production database.</p> <p>Specify the database that you want to clone. The blue/green deployment creates this database in the green environment. You can make updates to the database in the green environment, such as an engine version upgrade. When you are ready, you can switch the database in the green environment to be the production database.</p>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="TargetEngineVersion"><p>The engine version of the database in the green environment.</p> <p>Specify the engine version to upgrade to in the green environment.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="TargetDBParameterGroupName"><p>The DB parameter group associated with the DB instance in the green environment.</p> <p>To test parameter changes, specify a DB parameter group that is different from the one associated with the source DB instance.</p>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="TargetDBClusterParameterGroupName"><p>The DB cluster parameter group associated with the Aurora DB cluster in the green environment.</p> <p>To test parameter changes, specify a DB cluster parameter group that is different from the one associated with the source DB cluster.</p>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="Tags">Tags to assign to the blue/green deployment.</param>
 		/// <returns>Success</returns>
@@ -11345,36 +11345,36 @@ namespace MyNS
 		/// GET_CreateCustomDBEngineVersion #Action=CreateCustomDBEngineVersion
 		/// </summary>
 		/// <param name="Engine">The database engine to use for your custom engine version (CEV). The only supported value is <code>custom-oracle-ee</code>.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		// </param>
 		/// <param name="EngineVersion">The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.
-		/// Max length: 60
 		/// Min length: 1
+		/// Max length: 60
 		// </param>
 		/// <param name="DatabaseInstallationFilesS3BucketName">The name of an Amazon S3 bucket that contains database installation files for your CEV. For example, a valid bucket name is <code>my-custom-installation-files</code>.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="DatabaseInstallationFilesS3Prefix">The Amazon S3 directory that contains the database installation files for your CEV. For example, a valid bucket name is <code>123456789012/cev1</code>. If this setting isn't specified, no prefix is assumed.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="ImageId">The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a> operation.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="KMSKeyId"><p>The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for RDS Custom, but optional for Amazon RDS.</p> <p>If you have an existing symmetric encryption KMS key in your account, you can use it with RDS Custom. No further action is necessary. If you don't already have a symmetric encryption KMS key in your account, follow the instructions in <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html#create-symmetric-cmk"> Creating a symmetric encryption KMS key</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p> <p>You can choose the same symmetric encryption key when you create a CEV and a DB instance, or choose different keys.</p>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="Description">An optional description of your CEV.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="Manifest"><p>The CEV manifest, which is a JSON document that describes the installation .zip files stored in Amazon S3. Specify the name/value pairs in a file or a quoted string. RDS Custom applies the patches in the order in which they are listed.</p> <p>The following JSON fields are valid:</p> <dl> <dt>MediaImportTemplateVersion</dt> <dd> <p>Version of the CEV manifest. The date is in the format <code>YYYY-MM-DD</code>.</p> </dd> <dt>databaseInstallationFileNames</dt> <dd> <p>Ordered list of installation files for the CEV.</p> </dd> <dt>opatchFileNames</dt> <dd> <p>Ordered list of OPatch installers used for the Oracle DB engine.</p> </dd> <dt>psuRuPatchFileNames</dt> <dd> <p>The PSU and RU patches for this CEV.</p> </dd> <dt>OtherPatchFileNames</dt> <dd> <p>The patches that are not in the list of PSU and RU patches. Amazon RDS applies these patches after applying the PSU and RU patches.</p> </dd> </dl> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.preparing.manifest"> Creating the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.</p>
-		/// Max length: 51000
 		/// Min length: 1
+		/// Max length: 51000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_CreateCustomDBEngineVersionAsync(string Engine, string EngineVersion, string DatabaseInstallationFilesS3BucketName, string DatabaseInstallationFilesS3Prefix, string ImageId, string KMSKeyId, string Description, string Manifest, string[] Tags, GET_CreateCustomDBEngineVersionAction Action, GET_CreateCustomDBEngineVersionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11962,12 +11962,12 @@ namespace MyNS
 		/// GET_CreateDBProxyEndpoint #Action=CreateDBProxyEndpoint
 		/// </summary>
 		/// <param name="DBProxyName">The name of the DB proxy associated with the DB proxy endpoint that you create.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <param name="DBProxyEndpointName">The name of the DB proxy endpoint to create.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <param name="VpcSubnetIds">The VPC subnet IDs for the DB proxy endpoint that you create. You can specify a different set of subnet IDs than for the original DB proxy.</param>
 		/// <param name="VpcSecurityGroupIds">The VPC security group IDs for the DB proxy endpoint that you create. You can specify a different set of security group IDs than for the original DB proxy. The default is the default security group for the VPC.</param>
@@ -12189,8 +12189,8 @@ namespace MyNS
 		/// GET_DeleteBlueGreenDeployment #Action=DeleteBlueGreenDeployment
 		/// </summary>
 		/// <param name="BlueGreenDeploymentIdentifier"><p>The unique identifier of the blue/green deployment to delete. This parameter isn't case-sensitive.</p> <p>Constraints: </p> <ul> <li> <p>Must match an existing blue/green deployment identifier.</p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="DeleteTarget">Specifies whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</param>
 		/// <returns>Success</returns>
@@ -12221,12 +12221,12 @@ namespace MyNS
 		/// GET_DeleteCustomDBEngineVersion #Action=DeleteCustomDBEngineVersion
 		/// </summary>
 		/// <param name="Engine">The database engine. The only supported engines are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		// </param>
 		/// <param name="EngineVersion">The custom engine version (CEV) for your DB instance. This option is required for RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.
-		/// Max length: 60
 		/// Min length: 1
+		/// Max length: 60
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteCustomDBEngineVersionAsync(string Engine, string EngineVersion, GET_DeleteCustomDBEngineVersionAction Action, GET_DeleteCustomDBEngineVersionVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12515,8 +12515,8 @@ namespace MyNS
 		/// GET_DeleteDBProxyEndpoint #Action=DeleteDBProxyEndpoint
 		/// </summary>
 		/// <param name="DBProxyEndpointName">The name of the DB proxy endpoint to delete.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteDBProxyEndpointAsync(string DBProxyEndpointName, GET_DeleteDBProxyEndpointAction Action, GET_DeleteDBProxyEndpointVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12772,8 +12772,8 @@ namespace MyNS
 		/// GET_DescribeBlueGreenDeployments #Action=DescribeBlueGreenDeployments
 		/// </summary>
 		/// <param name="BlueGreenDeploymentIdentifier"><p>The blue/green deployment identifier. If you specify this parameter, the response only includes information about the specific blue/green deployment. This parameter isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match an existing blue/green deployment identifier.</p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="Filters"><p>A filter that specifies one or more blue/green deployments to describe.</p> <p>Valid Values:</p> <ul> <li> <p> <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers for blue/green deployments. The results list only includes information about the blue/green deployments with the specified identifiers.</p> </li> <li> <p> <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green deployments. The results list only includes information about the blue/green deployments with the specified names.</p> </li> <li> <p> <code>source</code> - Accepts source databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified source databases.</p> </li> <li> <p> <code>target</code> - Accepts target databases for a blue/green deployment. The results list only includes information about the blue/green deployments with the specified target databases.</p> </li> </ul></param>
 		/// <param name="Marker">An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code> request. If you specify this parameter, the response only includes records beyond the marker, up to the value specified by <code>MaxRecords</code>.</param>
@@ -13327,12 +13327,12 @@ namespace MyNS
 		/// GET_DescribeDBProxyEndpoints #Action=DescribeDBProxyEndpoints
 		/// </summary>
 		/// <param name="DBProxyName">The name of the DB proxy whose endpoints you want to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with all your DB proxies.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <param name="DBProxyEndpointName">The name of a DB proxy endpoint to describe. If you omit this parameter, the output includes information about all DB proxy endpoints associated with the specified proxy.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <param name="Filters">This parameter is not currently supported.</param>
 		/// <param name="Marker">An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</param>
@@ -14114,12 +14114,12 @@ namespace MyNS
 		/// GET_FailoverGlobalCluster #Action=FailoverGlobalCluster
 		/// </summary>
 		/// <param name="GlobalClusterIdentifier"><p>Identifier of the Aurora global database (<a>GlobalCluster</a>) that should be failed over. The identifier is the unique key assigned by the user when the Aurora global database was created. In other words, it's the name of the Aurora global database that you want to fail over.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing <a>GlobalCluster</a> (Aurora global database).</p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="TargetDbClusterIdentifier">Identifier of the secondary Aurora DB cluster that you want to promote to primary for the Aurora global database (<a>GlobalCluster</a>.) Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_FailoverGlobalClusterAsync(string GlobalClusterIdentifier, string TargetDbClusterIdentifier, GET_FailoverGlobalClusterAction Action, GET_FailoverGlobalClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -14267,16 +14267,16 @@ namespace MyNS
 		/// GET_ModifyCustomDBEngineVersion #Action=ModifyCustomDBEngineVersion
 		/// </summary>
 		/// <param name="Engine">The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		// </param>
 		/// <param name="EngineVersion">The custom engine version (CEV) that you want to modify. This option is required for RDS Custom for Oracle, but optional for Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.
-		/// Max length: 60
 		/// Min length: 1
+		/// Max length: 60
 		// </param>
 		/// <param name="Description">An optional description of your CEV.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="Status"><p>The availability status to be assigned to the CEV. Valid values are as follows:</p> <dl> <dt>available</dt> <dd> <p>You can use this CEV to create a new RDS Custom DB instance.</p> </dd> <dt>inactive</dt> <dd> <p>You can create a new RDS Custom instance by restoring a DB snapshot with this CEV. You can't patch or create new instances with this CEV.</p> </dd> </dl> <p>You can change any status to any status. A typical reason to change status is to prevent the accidental use of a CEV, or to make a deprecated CEV eligible for use again. For example, you might change the status of your CEV from <code>available</code> to <code>inactive</code>, and from <code>inactive</code> back to <code>available</code>. To change the availability status of the CEV, it must not currently be in use by an RDS Custom instance, snapshot, or automated backup.</p></param>
 		/// <returns>Success</returns>
@@ -14560,8 +14560,8 @@ namespace MyNS
 		/// <param name="ReplicaMode"><p>A value that sets the open mode of a replica database to either mounted or read-only.</p> <note> <p>Currently, this parameter is only supported for Oracle DB instances.</p> </note> <p>Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p></param>
 		/// <param name="EnableCustomerOwnedIp"><p>Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.</p> <p>A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.</p> <p>For more information about RDS on Outposts, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For more information about CoIPs, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p></param>
 		/// <param name="AwsBackupRecoveryPointArn"><p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services Backup.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
-		/// Max length: 350
 		/// Min length: 43
+		/// Max length: 350
 		// </param>
 		/// <param name="AutomationMode">The automation mode of the RDS Custom DB instance. If <code>full</code>, the DB instance automates monitoring and instance recovery. If <code>all paused</code>, the instance pauses automation for the duration set by <code>ResumeFullAutomationModeMinutes</code>.</param>
 		/// <param name="ResumeFullAutomationModeMinutes"><p>The number of minutes to pause the automation. When the time period ends, RDS Custom resumes full automation.</p> <p>Default: <code>60</code> </p> <p>Constraints:</p> <ul> <li> <p>Must be at least 60.</p> </li> <li> <p>Must be no more than 1,440.</p> </li> </ul></param>
@@ -14724,12 +14724,12 @@ namespace MyNS
 		/// GET_ModifyDBProxyEndpoint #Action=ModifyDBProxyEndpoint
 		/// </summary>
 		/// <param name="DBProxyEndpointName">The name of the DB proxy sociated with the DB proxy endpoint that you want to modify.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <param name="NewDBProxyEndpointName">The new identifier for the <code>DBProxyEndpoint</code>. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		// </param>
 		/// <param name="VpcSecurityGroupIds">The VPC security group IDs for the DB proxy endpoint. When the DB proxy endpoint uses a different VPC than the original proxy, you also specify a different set of security group IDs than for the original proxy.</param>
 		/// <returns>Success</returns>
@@ -16276,8 +16276,8 @@ namespace MyNS
 		/// GET_SwitchoverBlueGreenDeployment #Action=SwitchoverBlueGreenDeployment
 		/// </summary>
 		/// <param name="BlueGreenDeploymentIdentifier"><p>The unique identifier of the blue/green deployment.</p> <p>Constraints:</p> <ul> <li> <p>Must match an existing blue/green deployment identifier.</p> </li> </ul>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="SwitchoverTimeout"><p>The amount of time, in seconds, for the switchover to complete.</p> <p>Default: 300</p> <p>If the switchover takes longer than the specified duration, then any changes are rolled back, and no changes are made to the environments.</p>
 		/// Minimum: 30

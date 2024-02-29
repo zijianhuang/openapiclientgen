@@ -179,8 +179,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Trial Component to associate with the metrics.
 		/// Required
-		/// Max length: 120
 		/// Min length: 1
+		/// Max length: 120
 		/// Pattern: ^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,119}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

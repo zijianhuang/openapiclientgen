@@ -772,8 +772,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Details of facility notices for visitors, such as messages about parking lot closures or floor visitation information.
-		/// Max length: 300
 		/// Min length: 0
+		/// Max length: 300
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additional_info")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]

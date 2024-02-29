@@ -1314,12 +1314,12 @@ namespace MyNS
 		/// CancelJobRun virtualclusters/{virtualClusterId}/jobruns/{jobRunId}
 		/// </summary>
 		/// <param name="jobRunId">The ID of the job run to cancel.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="virtualClusterId">The ID of the virtual cluster for which the job run will be canceled.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelJobRunResponse> CancelJobRunAsync(string jobRunId, string virtualClusterId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1355,12 +1355,12 @@ namespace MyNS
 		/// DescribeJobRun virtualclusters/{virtualClusterId}/jobruns/{jobRunId}
 		/// </summary>
 		/// <param name="jobRunId">The ID of the job run request. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="virtualClusterId">The ID of the virtual cluster for which the job run is submitted.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeJobRunResponse> DescribeJobRunAsync(string jobRunId, string virtualClusterId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1439,8 +1439,8 @@ namespace MyNS
 		/// <param name="createdBefore"> The date and time before which the job templates were created.</param>
 		/// <param name="maxResults"> The maximum number of job templates that can be listed.</param>
 		/// <param name="nextToken"> The token for the next set of job templates to return.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListJobTemplatesResponse> ListJobTemplatesAsync(System.DateTimeOffset createdAfter, System.DateTimeOffset createdBefore, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1476,8 +1476,8 @@ namespace MyNS
 		/// CreateManagedEndpoint virtualclusters/{virtualClusterId}/endpoints
 		/// </summary>
 		/// <param name="virtualClusterId">The ID of the virtual cluster for which a managed endpoint is created.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateManagedEndpointResponse> CreateManagedEndpointAsync(string virtualClusterId, CreateManagedEndpointPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1520,8 +1520,8 @@ namespace MyNS
 		/// ListManagedEndpoints virtualclusters/{virtualClusterId}/endpoints
 		/// </summary>
 		/// <param name="virtualClusterId">The ID of the virtual cluster.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="createdBefore">The date and time before which the endpoints are created.</param>
 		/// <param name="createdAfter"> The date and time after which the endpoints are created.</param>
@@ -1533,8 +1533,8 @@ namespace MyNS
 		// </param>
 		/// <param name="maxResults">The maximum number of managed endpoints that can be listed.</param>
 		/// <param name="nextToken"> The token for the next set of managed endpoints to return. 
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListManagedEndpointsResponse> ListManagedEndpointsAsync(string virtualClusterId, System.DateTimeOffset createdBefore, System.DateTimeOffset createdAfter, string[] types, EndpointState[] states, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1610,8 +1610,8 @@ namespace MyNS
 		/// ListVirtualClusters virtualclusters
 		/// </summary>
 		/// <param name="containerProviderId">The container provider ID of the virtual cluster.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="containerProviderType">The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.</param>
 		/// <param name="createdAfter">The date and time after which the virtual clusters are created.</param>
@@ -1621,8 +1621,8 @@ namespace MyNS
 		// </param>
 		/// <param name="maxResults">The maximum number of virtual clusters that can be listed.</param>
 		/// <param name="nextToken">The token for the next set of virtual clusters to return. 
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListVirtualClustersResponse> ListVirtualClustersAsync(string containerProviderId, ContainerProviderType containerProviderType, System.DateTimeOffset createdAfter, System.DateTimeOffset createdBefore, VirtualClusterState[] states, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1658,8 +1658,8 @@ namespace MyNS
 		/// DeleteJobTemplate jobtemplates/{templateId}
 		/// </summary>
 		/// <param name="templateId">The ID of the job template that will be deleted.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteJobTemplateResponse> DeleteJobTemplateAsync(string templateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1695,8 +1695,8 @@ namespace MyNS
 		/// DescribeJobTemplate jobtemplates/{templateId}
 		/// </summary>
 		/// <param name="templateId">The ID of the job template that will be described.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeJobTemplateResponse> DescribeJobTemplateAsync(string templateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1732,12 +1732,12 @@ namespace MyNS
 		/// DeleteManagedEndpoint virtualclusters/{virtualClusterId}/endpoints/{endpointId}
 		/// </summary>
 		/// <param name="endpointId">The ID of the managed endpoint.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="virtualClusterId">The ID of the endpoint's virtual cluster.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteManagedEndpointResponse> DeleteManagedEndpointAsync(string endpointId, string virtualClusterId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1773,12 +1773,12 @@ namespace MyNS
 		/// DescribeManagedEndpoint virtualclusters/{virtualClusterId}/endpoints/{endpointId}
 		/// </summary>
 		/// <param name="endpointId">This output displays ID of the managed endpoint.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="virtualClusterId">The ID of the endpoint's virtual cluster.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeManagedEndpointResponse> DescribeManagedEndpointAsync(string endpointId, string virtualClusterId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1814,8 +1814,8 @@ namespace MyNS
 		/// DeleteVirtualCluster virtualclusters/{virtualClusterId}
 		/// </summary>
 		/// <param name="virtualClusterId">The ID of the virtual cluster that will be deleted.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteVirtualClusterResponse> DeleteVirtualClusterAsync(string virtualClusterId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1851,8 +1851,8 @@ namespace MyNS
 		/// DescribeVirtualCluster virtualclusters/{virtualClusterId}
 		/// </summary>
 		/// <param name="virtualClusterId">The ID of the virtual cluster that will be described.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeVirtualClusterResponse> DescribeVirtualClusterAsync(string virtualClusterId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1888,12 +1888,12 @@ namespace MyNS
 		/// GetManagedEndpointSessionCredentials virtualclusters/{virtualClusterId}/endpoints/{endpointId}/credentials
 		/// </summary>
 		/// <param name="endpointId">The ARN of the managed endpoint for which the request is submitted. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="virtualClusterId">The ARN of the Virtual Cluster which the Managed Endpoint belongs to. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetManagedEndpointSessionCredentialsResponse> GetManagedEndpointSessionCredentialsAsync(string endpointId, string virtualClusterId, GetManagedEndpointSessionCredentialsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1936,22 +1936,22 @@ namespace MyNS
 		/// ListJobRuns virtualclusters/{virtualClusterId}/jobruns
 		/// </summary>
 		/// <param name="virtualClusterId">The ID of the virtual cluster for which to list the job run. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="createdBefore">The date and time before which the job runs were submitted.</param>
 		/// <param name="createdAfter">The date and time after which the job runs were submitted.</param>
 		/// <param name="name">The name of the job run.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="states">The states of the job run.
 		/// Maximum items: 10
 		// </param>
 		/// <param name="maxResults">The maximum number of job runs that can be listed.</param>
 		/// <param name="nextToken">The token for the next set of job runs to return.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListJobRunsResponse> ListJobRunsAsync(string virtualClusterId, System.DateTimeOffset createdBefore, System.DateTimeOffset createdAfter, string name, JobRunState[] states, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1987,8 +1987,8 @@ namespace MyNS
 		/// StartJobRun virtualclusters/{virtualClusterId}/jobruns
 		/// </summary>
 		/// <param name="virtualClusterId">The virtual cluster ID for which the job run request is submitted.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartJobRunResponse> StartJobRunAsync(string virtualClusterId, StartJobRunPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2031,8 +2031,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The ARN of tagged resources.
-		/// Max length: 500
 		/// Min length: 60
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2068,8 +2068,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The ARN of resources.
-		/// Max length: 500
 		/// Min length: 60
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2112,8 +2112,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The ARN of resources.
-		/// Max length: 500
 		/// Min length: 60
+		/// Max length: 500
 		// </param>
 		/// <param name="tagKeys">The tag keys of the resources.
 		/// Minimum items: 0
@@ -2155,8 +2155,8 @@ namespace MyNS
 		/// <summary>
 		/// The specified name of the job template.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [\.\-_/#A-Za-z0-9]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2169,8 +2169,8 @@ namespace MyNS
 		/// <summary>
 		/// The client token of the job template.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2196,8 +2196,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The KMS key ARN used to encrypt the job template.
-		/// Max length: 2048
 		/// Min length: 3
+		/// Max length: 2048
 		/// Pattern: ^(arn:(aws[a-zA-Z0-9-]*):kms:.+:(\d{12})?:key\/[(0-9a-zA-Z)-?]+|\$\{[a-zA-Z]\w*\})$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kmsKeyArn")]
@@ -2238,8 +2238,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the managed endpoint.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [\.\-_/#A-Za-z0-9]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2252,8 +2252,8 @@ namespace MyNS
 		/// <summary>
 		/// The type of the managed endpoint.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2266,8 +2266,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon EMR release version.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [\.\-_/A-Za-z0-9]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2280,8 +2280,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the execution role.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2293,8 +2293,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.
-		/// Max length: 2048
 		/// Min length: 44
+		/// Max length: 2048
 		/// Pattern: ^arn:(aws[a-zA-Z0-9-]*):acm:.+:(\d{12}):certificate/.+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="certificateArn")]
@@ -2312,8 +2312,8 @@ namespace MyNS
 		/// <summary>
 		/// The client idempotency token for this create call.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2346,8 +2346,8 @@ namespace MyNS
 		/// <summary>
 		/// The specified name of the virtual cluster.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [\.\-_/#A-Za-z0-9]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2368,8 +2368,8 @@ namespace MyNS
 		/// <summary>
 		/// The client token of the virtual cluster.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2405,8 +2405,8 @@ namespace MyNS
 		/// <summary>
 		/// The IAM Execution Role ARN that will be used by the job run. 
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2419,8 +2419,8 @@ namespace MyNS
 		/// <summary>
 		/// Type of the token requested. Currently supported and default value of this field is “TOKEN.”
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^.*\S.*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2438,8 +2438,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// String identifier used to separate sections of the execution logs uploaded to S3.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		/// Pattern: ^((?!.*-s3alias)(?!xn--.*)[a-z0-9][-a-z0-9.]*)?[a-z0-9]$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="logContext")]
@@ -2450,8 +2450,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The client idempotency token of the job run request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -2466,8 +2466,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the job run.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [\.\-_/#A-Za-z0-9]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -2479,8 +2479,8 @@ namespace MyNS
 		/// <summary>
 		/// The client idempotency token of the job run request. 
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2492,8 +2492,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The execution role ARN for the job run.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="executionRoleArn")]
@@ -2504,8 +2504,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon EMR release version to use for the job run.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [\.\-_/A-Za-z0-9]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="releaseLabel")]
@@ -2534,8 +2534,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The job template ID to be used to start the job run.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [0-9a-z]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="jobTemplateId")]

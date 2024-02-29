@@ -838,8 +838,8 @@ namespace MyNS
 		/// GetAnalysis analyses/{analysis_id}
 		/// </summary>
 		/// <param name="analysis_id">The analysis identifier.
-		/// Max length: 40
 		/// Min length: 40
+		/// Max length: 40
 		// </param>
 		/// <returns>Success. Requested data returned.</returns>
 		public async Task<Analysis> GetAnalysisAsync(string analysis_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

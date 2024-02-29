@@ -1200,8 +1200,8 @@ namespace MyNS
 		/// AssociateResource group/{groupIdentifier}/associate
 		/// </summary>
 		/// <param name="groupIdentifier">Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateResourceResponse> AssociateResourceAsync(string groupIdentifier, AssociateResourcePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1324,8 +1324,8 @@ namespace MyNS
 		/// DeleteCanary canary/{name}
 		/// </summary>
 		/// <param name="name">The name of the canary that you want to delete. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.
-		/// Max length: 21
 		/// Min length: 1
+		/// Max length: 21
 		// </param>
 		/// <param name="deleteLambda"><p>Specifies whether to also delete the Lambda functions and layers used by this canary. The default is false.</p> <p>Type: Boolean</p></param>
 		/// <returns>Success</returns>
@@ -1362,8 +1362,8 @@ namespace MyNS
 		/// GetCanary canary/{name}
 		/// </summary>
 		/// <param name="name">The name of the canary that you want details for.
-		/// Max length: 21
 		/// Min length: 1
+		/// Max length: 21
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCanaryResponse> GetCanaryAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1399,8 +1399,8 @@ namespace MyNS
 		/// UpdateCanary canary/{name}
 		/// </summary>
 		/// <param name="name"><p>The name of the canary that you want to update. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p> <p>You cannot change the name of a canary that has already been created.</p>
-		/// Max length: 21
 		/// Min length: 1
+		/// Max length: 21
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateCanaryResponse> UpdateCanaryAsync(string name, UpdateCanaryPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1443,8 +1443,8 @@ namespace MyNS
 		/// DeleteGroup group/{groupIdentifier}
 		/// </summary>
 		/// <param name="groupIdentifier">Specifies which group to delete. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteGroupResponse> DeleteGroupAsync(string groupIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1480,8 +1480,8 @@ namespace MyNS
 		/// GetGroup group/{groupIdentifier}
 		/// </summary>
 		/// <param name="groupIdentifier">Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetGroupResponse> GetGroupAsync(string groupIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1643,8 +1643,8 @@ namespace MyNS
 		/// DisassociateResource group/{groupIdentifier}/disassociate
 		/// </summary>
 		/// <param name="groupIdentifier">Specifies the group. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateResourceResponse> DisassociateResourceAsync(string groupIdentifier, DisassociateResourcePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1687,8 +1687,8 @@ namespace MyNS
 		/// GetCanaryRuns canary/{name}/runs
 		/// </summary>
 		/// <param name="name">The name of the canary that you want to see runs for.
-		/// Max length: 21
 		/// Min length: 1
+		/// Max length: 21
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1733,8 +1733,8 @@ namespace MyNS
 		/// ListAssociatedGroups resource/{resourceArn}/groups
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the canary that you want to view groups for.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1779,8 +1779,8 @@ namespace MyNS
 		/// ListGroupResources group/{groupIdentifier}/resources
 		/// </summary>
 		/// <param name="groupIdentifier">Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the <code>GroupIdentifier</code>.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1867,8 +1867,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn"><p>The ARN of the canary or group that you want to view tags for.</p> <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p> <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1904,8 +1904,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn"><p>The ARN of the canary or group that you're adding tags to.</p> <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p> <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1948,8 +1948,8 @@ namespace MyNS
 		/// StartCanary canary/{name}/start
 		/// </summary>
 		/// <param name="name">The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.
-		/// Max length: 21
 		/// Min length: 1
+		/// Max length: 21
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartCanaryResponse> StartCanaryAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1980,8 +1980,8 @@ namespace MyNS
 		/// StopCanary canary/{name}/stop
 		/// </summary>
 		/// <param name="name">The name of the canary that you want to stop. To find the names of your canaries, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">ListCanaries</a>.
-		/// Max length: 21
 		/// Min length: 1
+		/// Max length: 21
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopCanaryResponse> StopCanaryAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2012,8 +2012,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn"><p>The ARN of the canary or group that you're removing tags from.</p> <p>The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i> </code>.</p> <p>The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i> </code> </p>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys">The list of tag keys to remove from the resource.
 		/// Minimum items: 1
@@ -2055,8 +2055,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the canary that you want to associate with the specified group.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:canary:[0-9a-z_\-]{1,21}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2073,8 +2073,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.</p> <p>Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
 		/// Required
-		/// Max length: 21
 		/// Min length: 1
+		/// Max length: 21
 		/// Pattern: ^[0-9a-z_\-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2095,8 +2095,8 @@ namespace MyNS
 		/// <summary>
 		/// The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2107,8 +2107,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:PutLogEvents</code> </p> </li> </ul>
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2153,8 +2153,8 @@ namespace MyNS
 		/// <summary>
 		/// Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2249,8 +2249,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name for the group. It can include any Unicode characters.</p> <p>The names for all groups in your account, across all Regions, must be unique.</p>
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2276,8 +2276,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The ARN of the IAM role to be used to run the canary. This role must already exist, and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy. The role must also have the following permissions:</p> <ul> <li> <p> <code>s3:PutObject</code> </p> </li> <li> <p> <code>s3:GetBucketLocation</code> </p> </li> <li> <p> <code>s3:ListAllMyBuckets</code> </p> </li> <li> <p> <code>cloudwatch:PutMetricData</code> </p> </li> <li> <p> <code>logs:CreateLogGroup</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> <li> <p> <code>logs:CreateLogStream</code> </p> </li> </ul>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2288,8 +2288,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Specifies the runtime version to use for the canary. For a list of valid runtime versions and for more information about runtime versions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2340,8 +2340,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the S3 bucket can't include a period (.).
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2432,8 +2432,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		/// Max length: 252
 		/// Min length: 4
+		/// Max length: 252
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(4)]
@@ -2465,8 +2465,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeCanariesLastRun</code> operation to retrieve the next set of results.
-		/// Max length: 252
 		/// Min length: 4
+		/// Max length: 252
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(4)]
@@ -2498,8 +2498,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that indicates that there is more data available. You can use this token in a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set of results.
-		/// Max length: 252
 		/// Min length: 4
+		/// Max length: 252
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(4)]
@@ -2522,8 +2522,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the canary that you want to remove from the specified group.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: arn:(aws[a-zA-Z-]*)?:synthetics:[a-z]{2}((-gov)|(-iso(b?)))?-[a-z]+-\d{1}:\d{12}:canary:[0-9a-z_\-]{1,21}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2539,8 +2539,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that indicates that there is more data available. You can use this token in a subsequent <code>GetCanaryRuns</code> operation to retrieve the next set of results.
-		/// Max length: 252
 		/// Min length: 4
+		/// Max length: 252
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(4)]
@@ -2562,8 +2562,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: ^.+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2587,8 +2587,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: ^.+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2612,8 +2612,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: ^.+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

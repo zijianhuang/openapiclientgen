@@ -1162,8 +1162,8 @@ namespace MyNS
 		/// <param name="LanguageCode"> The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. </param>
 		/// <param name="IncludeAdditionalLanguageCodes">Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.</param>
 		/// <param name="NextToken">An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.
-		/// Max length: 4096
 		/// Min length: 0
+		/// Max length: 4096
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeVoicesOutput> DescribeVoicesAsync(Engine Engine, DescribeVoicesLanguageCode LanguageCode, bool IncludeAdditionalLanguageCodes, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1233,8 +1233,8 @@ namespace MyNS
 		/// ListLexicons v1/lexicons
 		/// </summary>
 		/// <param name="NextToken">An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.
-		/// Max length: 4096
 		/// Min length: 0
+		/// Max length: 4096
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListLexiconsOutput> ListLexiconsAsync(string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1274,8 +1274,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="NextToken">The pagination token to use in the next request to continue the listing of speech synthesis tasks. 
-		/// Max length: 4096
 		/// Min length: 0
+		/// Max length: 4096
 		// </param>
 		/// <param name="Status">Status of the speech synthesis tasks returned in a List operation</param>
 		/// <returns>Success</returns>

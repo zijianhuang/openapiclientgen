@@ -776,8 +776,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the retention rule.
-		/// Max length: 1011
 		/// Min length: 0
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -813,8 +813,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the retention rule.
-		/// Max length: 1011
 		/// Min length: 0
+		/// Max length: 1011
 		// </param>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -920,8 +920,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the retention rule.
-		/// Max length: 1011
 		/// Min length: 0
+		/// Max length: 1011
 		// </param>
 		/// <param name="tagKeys">The tag keys of the tags to unassign. All tags that have the specified tag key are unassigned.
 		/// Minimum items: 0

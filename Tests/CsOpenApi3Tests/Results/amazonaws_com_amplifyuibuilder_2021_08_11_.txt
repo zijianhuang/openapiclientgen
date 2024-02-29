@@ -3653,8 +3653,8 @@ namespace MyNS
 		/// GetCodegenJob app/{appId}/environment/{environmentName}/codegen-jobs/{id}
 		/// </summary>
 		/// <param name="appId">The unique ID of the Amplify app associated with the code generation job.
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="environmentName">The name of the backend environment that is a part of the Amplify app associated with the code generation job.</param>
 		/// <param name="id">The unique ID of the code generation job.</param>
@@ -3727,8 +3727,8 @@ namespace MyNS
 		/// ListCodegenJobs app/{appId}/environment/{environmentName}/codegen-jobs
 		/// </summary>
 		/// <param name="appId">The unique ID for the Amplify app.
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="environmentName">The name of the backend environment that is a part of the Amplify app.</param>
 		/// <param name="nextToken">The token to request the next page of results.</param>
@@ -3770,8 +3770,8 @@ namespace MyNS
 		/// StartCodegenJob app/{appId}/environment/{environmentName}/codegen-jobs
 		/// </summary>
 		/// <param name="appId">The unique ID for the Amplify app.
-		/// Max length: 20
 		/// Min length: 1
+		/// Max length: 20
 		// </param>
 		/// <param name="environmentName">The name of the backend environment that is a part of the Amplify app.</param>
 		/// <param name="clientToken">The idempotency token used to ensure that the code generation job request completes only once.</param>

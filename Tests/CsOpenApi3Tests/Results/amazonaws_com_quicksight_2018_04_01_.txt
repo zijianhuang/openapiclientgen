@@ -24530,13 +24530,13 @@ namespace MyNS
 		/// CancelIngestion accounts/{AwsAccountId}/data-sets/{DataSetId}/ingestions/{IngestionId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSetId">The ID of the dataset used in the ingestion.</param>
 		/// <param name="IngestionId">An ID for the ingestion.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelIngestionResponse> CancelIngestionAsync(string AwsAccountId, string DataSetId, string IngestionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -24573,12 +24573,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="DataSetId">The ID of the dataset used in the ingestion.</param>
 		/// <param name="IngestionId">An ID for the ingestion.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateIngestionResponse> CreateIngestionAsync(string DataSetId, string IngestionId, string AwsAccountId, CreateIngestionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -24621,13 +24621,13 @@ namespace MyNS
 		/// DescribeIngestion accounts/{AwsAccountId}/data-sets/{DataSetId}/ingestions/{IngestionId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSetId">The ID of the dataset used in the ingestion.</param>
 		/// <param name="IngestionId">An ID for the ingestion.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeIngestionResponse> DescribeIngestionAsync(string AwsAccountId, string DataSetId, string IngestionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -24663,8 +24663,8 @@ namespace MyNS
 		/// CreateAccountCustomization accounts/{AwsAccountId}/customizations
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that you want to customize Amazon QuickSight for.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="_namespace">The Amazon QuickSight namespace that you want to add customizations to.
 		/// Max length: 64
@@ -24710,8 +24710,8 @@ namespace MyNS
 		/// DeleteAccountCustomization accounts/{AwsAccountId}/customizations
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that you want to delete Amazon QuickSight customizations from in this Amazon Web Services Region.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="_namespace">The Amazon QuickSight namespace that you're deleting the customizations from.
 		/// Max length: 64
@@ -24750,8 +24750,8 @@ namespace MyNS
 		/// DescribeAccountCustomization accounts/{AwsAccountId}/customizations
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that you want to describe Amazon QuickSight customizations for.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="_namespace">The Amazon QuickSight namespace that you want to describe Amazon QuickSight customizations for.
 		/// Max length: 64
@@ -24791,8 +24791,8 @@ namespace MyNS
 		/// UpdateAccountCustomization accounts/{AwsAccountId}/customizations
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that you want to update Amazon QuickSight customizations for.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="_namespace">The namespace that you want to update Amazon QuickSight customizations for.
 		/// Max length: 64
@@ -24838,8 +24838,8 @@ namespace MyNS
 		/// CreateAccountSubscription account/{AwsAccountId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID of the account that you're using to create your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateAccountSubscriptionResponse> CreateAccountSubscriptionAsync(string AwsAccountId, CreateAccountSubscriptionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -24882,8 +24882,8 @@ namespace MyNS
 		/// DeleteAccountSubscription account/{AwsAccountId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID of the account that you want to delete.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAccountSubscriptionResponse> DeleteAccountSubscriptionAsync(string AwsAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -24919,8 +24919,8 @@ namespace MyNS
 		/// DescribeAccountSubscription account/{AwsAccountId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID associated with your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAccountSubscriptionResponse> DescribeAccountSubscriptionAsync(string AwsAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -24956,12 +24956,12 @@ namespace MyNS
 		/// CreateAnalysis accounts/{AwsAccountId}/analyses/{AnalysisId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account where you are creating an analysis.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="AnalysisId">The ID for the analysis that you're creating. This ID displays in the URL of the analysis.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateAnalysisResponse> CreateAnalysisAsync(string AwsAccountId, string AnalysisId, CreateAnalysisPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -25004,12 +25004,12 @@ namespace MyNS
 		/// DeleteAnalysis accounts/{AwsAccountId}/analyses/{AnalysisId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account where you want to delete an analysis.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="AnalysisId">The ID of the analysis that you're deleting.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="recovery_window_in_days">A value that specifies the number of days that Amazon QuickSight waits before it deletes the analysis. You can't use this parameter with the <code>ForceDeleteWithoutRecovery</code> option in the same API call. The default value is 30.
 		/// Minimum: 7
@@ -25050,12 +25050,12 @@ namespace MyNS
 		/// DescribeAnalysis accounts/{AwsAccountId}/analyses/{AnalysisId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="AnalysisId">The ID of the analysis that you're describing. The ID is part of the URL of the analysis.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAnalysisResponse> DescribeAnalysisAsync(string AwsAccountId, string AnalysisId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -25091,12 +25091,12 @@ namespace MyNS
 		/// UpdateAnalysis accounts/{AwsAccountId}/analyses/{AnalysisId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the analysis that you're updating.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="AnalysisId">The ID for the analysis that you're updating. This ID displays in the URL of the analysis.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAnalysisResponse> UpdateAnalysisAsync(string AwsAccountId, string AnalysisId, UpdateAnalysisPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -25139,12 +25139,12 @@ namespace MyNS
 		/// CreateDashboard accounts/{AwsAccountId}/dashboards/{DashboardId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account where you want to create the dashboard.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DashboardId">The ID for the dashboard, also added to the IAM policy.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDashboardResponse> CreateDashboardAsync(string AwsAccountId, string DashboardId, CreateDashboardPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -25187,12 +25187,12 @@ namespace MyNS
 		/// DeleteDashboard accounts/{AwsAccountId}/dashboards/{DashboardId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the dashboard that you're deleting.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DashboardId">The ID for the dashboard.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="version_number">The version number of the dashboard. If the version number property is provided, only the specified version of the dashboard is deleted.
 		/// Minimum: 1
@@ -25231,19 +25231,19 @@ namespace MyNS
 		/// DescribeDashboard accounts/{AwsAccountId}/dashboards/{DashboardId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the dashboard that you're describing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DashboardId">The ID for the dashboard.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="version_number">The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. 
 		/// Minimum: 1
 		// </param>
 		/// <param name="alias_name">The alias name.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDashboardResponse> DescribeDashboardAsync(string AwsAccountId, string DashboardId, int version_number, string alias_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -25279,12 +25279,12 @@ namespace MyNS
 		/// UpdateDashboard accounts/{AwsAccountId}/dashboards/{DashboardId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the dashboard that you're updating.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DashboardId">The ID for the dashboard.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDashboardResponse> UpdateDashboardAsync(string AwsAccountId, string DashboardId, UpdateDashboardPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -25327,8 +25327,8 @@ namespace MyNS
 		/// CreateDataSet accounts/{AwsAccountId}/data-sets
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDataSetResponse> CreateDataSetAsync(string AwsAccountId, CreateDataSetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -25371,8 +25371,8 @@ namespace MyNS
 		/// ListDataSets accounts/{AwsAccountId}/data-sets
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
@@ -25415,8 +25415,8 @@ namespace MyNS
 		/// CreateDataSource accounts/{AwsAccountId}/data-sources
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDataSourceResponse> CreateDataSourceAsync(string AwsAccountId, CreateDataSourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -25459,8 +25459,8 @@ namespace MyNS
 		/// ListDataSources accounts/{AwsAccountId}/data-sources
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
@@ -25503,12 +25503,12 @@ namespace MyNS
 		/// CreateFolder accounts/{AwsAccountId}/folders/{FolderId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account where you want to create the folder.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateFolderResponse> CreateFolderAsync(string AwsAccountId, string FolderId, CreateFolderPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -25551,12 +25551,12 @@ namespace MyNS
 		/// DeleteFolder accounts/{AwsAccountId}/folders/{FolderId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the folder.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteFolderResponse> DeleteFolderAsync(string AwsAccountId, string FolderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -25592,12 +25592,12 @@ namespace MyNS
 		/// DescribeFolder accounts/{AwsAccountId}/folders/{FolderId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the folder.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeFolderResponse> DescribeFolderAsync(string AwsAccountId, string FolderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -25633,12 +25633,12 @@ namespace MyNS
 		/// UpdateFolder accounts/{AwsAccountId}/folders/{FolderId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the folder to update.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateFolderResponse> UpdateFolderAsync(string AwsAccountId, string FolderId, UpdateFolderPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -25681,16 +25681,16 @@ namespace MyNS
 		/// CreateFolderMembership accounts/{AwsAccountId}/folders/{FolderId}/members/{MemberType}/{MemberId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the folder.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="MemberId">The ID of the asset (the dashboard, analysis, or dataset).
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="MemberType">The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>.</param>
 		/// <returns>Success</returns>
@@ -25722,16 +25722,16 @@ namespace MyNS
 		/// DeleteFolderMembership accounts/{AwsAccountId}/folders/{FolderId}/members/{MemberType}/{MemberId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the folder.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="FolderId">The Folder ID.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="MemberId">The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="MemberType">The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code> </param>
 		/// <returns>Success</returns>
@@ -25768,8 +25768,8 @@ namespace MyNS
 		/// CreateGroup accounts/{AwsAccountId}/namespaces/{Namespace}/groups
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace that you want the group to be a part of.
 		/// Max length: 64
@@ -25815,8 +25815,8 @@ namespace MyNS
 		/// ListGroups accounts/{AwsAccountId}/namespaces/{Namespace}/groups
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">A pagination token that can be used in a subsequent request.</param>
 		/// <param name="max_results">The maximum number of results to return.
@@ -25862,15 +25862,15 @@ namespace MyNS
 		/// CreateGroupMembership accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}
 		/// </summary>
 		/// <param name="MemberName">The name of the user that you want to add to the group membership.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="GroupName">The name of the group that you want to add the user to.
 		/// Min length: 1
 		// </param>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace that you want the user to be a part of.
 		/// Max length: 64
@@ -25904,15 +25904,15 @@ namespace MyNS
 		/// DeleteGroupMembership accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}
 		/// </summary>
 		/// <param name="MemberName">The name of the user that you want to delete from the group membership.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="GroupName">The name of the group that you want to delete the user from.
 		/// Min length: 1
 		// </param>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace of the group that you want to remove a user from.
 		/// Max length: 64
@@ -25951,15 +25951,15 @@ namespace MyNS
 		/// DescribeGroupMembership accounts/{AwsAccountId}/namespaces/{Namespace}/groups/{GroupName}/members/{MemberName}
 		/// </summary>
 		/// <param name="MemberName">The user name of the user that you want to search for.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="GroupName">The name of the group that you want to search.
 		/// Min length: 1
 		// </param>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace that includes the group you are searching within.
 		/// Max length: 64
@@ -25998,8 +25998,8 @@ namespace MyNS
 		/// CreateIAMPolicyAssignment accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments/
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account where you want to assign an IAM policy to Amazon QuickSight users or groups.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace that contains the assignment.
 		/// Max length: 64
@@ -26045,8 +26045,8 @@ namespace MyNS
 		/// CreateNamespace accounts/{AwsAccountId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that you want to create the Amazon QuickSight namespace in.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateNamespaceResponse> CreateNamespaceAsync(string AwsAccountId, CreateNamespacePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26090,8 +26090,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="DataSetId">The ID of the dataset.</param>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateRefreshScheduleResponse> CreateRefreshScheduleAsync(string DataSetId, string AwsAccountId, CreateRefreshSchedulePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26134,8 +26134,8 @@ namespace MyNS
 		/// ListRefreshSchedules accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-schedules
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSetId">The ID of the dataset.</param>
 		/// <returns>Success</returns>
@@ -26173,8 +26173,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="DataSetId">The ID of the dataset.</param>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRefreshScheduleResponse> UpdateRefreshScheduleAsync(string DataSetId, string AwsAccountId, UpdateRefreshSchedulePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26217,12 +26217,12 @@ namespace MyNS
 		/// CreateTemplate accounts/{AwsAccountId}/templates/{TemplateId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the group is in. You use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TemplateId">An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in each Amazon Web Services account.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateTemplateResponse> CreateTemplateAsync(string AwsAccountId, string TemplateId, CreateTemplatePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26265,12 +26265,12 @@ namespace MyNS
 		/// DeleteTemplate accounts/{AwsAccountId}/templates/{TemplateId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the template that you're deleting.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TemplateId">An ID for the template you want to delete.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="version_number">Specifies the version of the template that you want to delete. If you don't provide a version number, <code>DeleteTemplate</code> deletes all versions of the template. 
 		/// Minimum: 1
@@ -26309,19 +26309,19 @@ namespace MyNS
 		/// DescribeTemplate accounts/{AwsAccountId}/templates/{TemplateId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the template that you're describing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TemplateId">The ID for the template.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="version_number">(Optional) The number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the template is described.
 		/// Minimum: 1
 		// </param>
 		/// <param name="alias_name">The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTemplateResponse> DescribeTemplateAsync(string AwsAccountId, string TemplateId, int version_number, string alias_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26357,12 +26357,12 @@ namespace MyNS
 		/// UpdateTemplate accounts/{AwsAccountId}/templates/{TemplateId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the template that you're updating.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TemplateId">The ID for the template.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateTemplateResponse> UpdateTemplateAsync(string AwsAccountId, string TemplateId, UpdateTemplatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26405,16 +26405,16 @@ namespace MyNS
 		/// CreateTemplateAlias accounts/{AwsAccountId}/templates/{TemplateId}/aliases/{AliasName}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the template that you creating an alias for.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TemplateId">An ID for the template.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="AliasName">The name that you want to give to the template alias that you're creating. Don't start the alias name with the <code>$</code> character. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateTemplateAliasResponse> CreateTemplateAliasAsync(string AwsAccountId, string TemplateId, string AliasName, CreateTemplateAliasPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26457,16 +26457,16 @@ namespace MyNS
 		/// DeleteTemplateAlias accounts/{AwsAccountId}/templates/{TemplateId}/aliases/{AliasName}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the item to delete.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TemplateId">The ID for the template that the specified alias is for.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="AliasName">The name for the template alias. To delete a specific alias, you delete the version that the alias points to. You can specify the alias name, or specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteTemplateAliasResponse> DeleteTemplateAliasAsync(string AwsAccountId, string TemplateId, string AliasName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26502,16 +26502,16 @@ namespace MyNS
 		/// DescribeTemplateAlias accounts/{AwsAccountId}/templates/{TemplateId}/aliases/{AliasName}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the template alias that you're describing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TemplateId">The ID for the template.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="AliasName">The name of the template alias that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTemplateAliasResponse> DescribeTemplateAliasAsync(string AwsAccountId, string TemplateId, string AliasName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26547,16 +26547,16 @@ namespace MyNS
 		/// UpdateTemplateAlias accounts/{AwsAccountId}/templates/{TemplateId}/aliases/{AliasName}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the template alias that you're updating.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TemplateId">The ID for the template.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="AliasName">The alias of the template that you want to update. If you name a specific alias, you update the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateTemplateAliasResponse> UpdateTemplateAliasAsync(string AwsAccountId, string TemplateId, string AliasName, UpdateTemplateAliasPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26599,12 +26599,12 @@ namespace MyNS
 		/// CreateTheme accounts/{AwsAccountId}/themes/{ThemeId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account where you want to store the new theme. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ThemeId">An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region in each Amazon Web Services account.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateThemeResponse> CreateThemeAsync(string AwsAccountId, string ThemeId, CreateThemePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26647,12 +26647,12 @@ namespace MyNS
 		/// DeleteTheme accounts/{AwsAccountId}/themes/{ThemeId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the theme that you're deleting.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ThemeId">An ID for the theme that you want to delete.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="version_number"><p>The version of the theme that you want to delete. </p> <p> <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code> to delete all versions of the theme.</p>
 		/// Minimum: 1
@@ -26692,15 +26692,15 @@ namespace MyNS
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the theme that you're describing.</param>
 		/// <param name="ThemeId">The ID for the theme.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="version_number">The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.
 		/// Minimum: 1
 		// </param>
 		/// <param name="alias_name">The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeThemeResponse> DescribeThemeAsync(string AwsAccountId, string ThemeId, int version_number, string alias_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26736,12 +26736,12 @@ namespace MyNS
 		/// UpdateTheme accounts/{AwsAccountId}/themes/{ThemeId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the theme that you're updating.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ThemeId">The ID for the theme.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateThemeResponse> UpdateThemeAsync(string AwsAccountId, string ThemeId, UpdateThemePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26784,16 +26784,16 @@ namespace MyNS
 		/// CreateThemeAlias accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the theme for the new theme alias.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ThemeId">An ID for the theme alias.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="AliasName">The name that you want to give to the theme alias that you are creating. The alias name can't begin with a <code>$</code>. Alias names that start with <code>$</code> are reserved by Amazon QuickSight. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateThemeAliasResponse> CreateThemeAliasAsync(string AwsAccountId, string ThemeId, string AliasName, CreateThemeAliasPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26836,16 +26836,16 @@ namespace MyNS
 		/// DeleteThemeAlias accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the theme alias to delete.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ThemeId">The ID for the theme that the specified alias is for.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="AliasName">The unique name for the theme alias to delete.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteThemeAliasResponse> DeleteThemeAliasAsync(string AwsAccountId, string ThemeId, string AliasName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26881,16 +26881,16 @@ namespace MyNS
 		/// DescribeThemeAlias accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the theme alias that you're describing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ThemeId">The ID for the theme.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="AliasName">The name of the theme alias that you want to describe.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeThemeAliasResponse> DescribeThemeAliasAsync(string AwsAccountId, string ThemeId, string AliasName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26926,16 +26926,16 @@ namespace MyNS
 		/// UpdateThemeAlias accounts/{AwsAccountId}/themes/{ThemeId}/aliases/{AliasName}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the theme alias that you're updating.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ThemeId">The ID for the theme.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="AliasName">The name of the theme alias that you want to update.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateThemeAliasResponse> UpdateThemeAliasAsync(string AwsAccountId, string ThemeId, string AliasName, UpdateThemeAliasPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -26978,8 +26978,8 @@ namespace MyNS
 		/// CreateTopic accounts/{AwsAccountId}/topics
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that you want to create a topic in.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateTopicResponse> CreateTopicAsync(string AwsAccountId, CreateTopicPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -27022,8 +27022,8 @@ namespace MyNS
 		/// ListTopics accounts/{AwsAccountId}/topics
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the topics that you want to list.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
@@ -27066,8 +27066,8 @@ namespace MyNS
 		/// CreateTopicRefreshSchedule accounts/{AwsAccountId}/topics/{TopicId}/schedules
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TopicId">The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		/// Max length: 256
@@ -27113,8 +27113,8 @@ namespace MyNS
 		/// ListTopicRefreshSchedules accounts/{AwsAccountId}/topics/{TopicId}/schedules
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want described.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TopicId">The ID for the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		/// Max length: 256
@@ -27153,8 +27153,8 @@ namespace MyNS
 		/// CreateVPCConnection accounts/{AwsAccountId}/vpc-connections
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID of the account where you want to create a new VPC connection.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateVPCConnectionResponse> CreateVPCConnectionAsync(string AwsAccountId, CreateVPCConnectionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -27197,8 +27197,8 @@ namespace MyNS
 		/// ListVPCConnections accounts/{AwsAccountId}/vpc-connections
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID of the account that contains the VPC connections that you want to list.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
@@ -27241,8 +27241,8 @@ namespace MyNS
 		/// DeleteDataSet accounts/{AwsAccountId}/data-sets/{DataSetId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSetId">The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</param>
 		/// <returns>Success</returns>
@@ -27279,8 +27279,8 @@ namespace MyNS
 		/// DescribeDataSet accounts/{AwsAccountId}/data-sets/{DataSetId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSetId">The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</param>
 		/// <returns>Success</returns>
@@ -27317,8 +27317,8 @@ namespace MyNS
 		/// UpdateDataSet accounts/{AwsAccountId}/data-sets/{DataSetId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSetId">The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</param>
 		/// <returns>Success</returns>
@@ -27362,8 +27362,8 @@ namespace MyNS
 		/// DeleteDataSetRefreshProperties accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-properties
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSetId">The ID of the dataset.</param>
 		/// <returns>Success</returns>
@@ -27400,8 +27400,8 @@ namespace MyNS
 		/// DescribeDataSetRefreshProperties accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-properties
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSetId">The ID of the dataset.</param>
 		/// <returns>Success</returns>
@@ -27438,8 +27438,8 @@ namespace MyNS
 		/// PutDataSetRefreshProperties accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-properties
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSetId">The ID of the dataset.</param>
 		/// <returns>Success</returns>
@@ -27483,8 +27483,8 @@ namespace MyNS
 		/// DeleteDataSource accounts/{AwsAccountId}/data-sources/{DataSourceId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSourceId">The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</param>
 		/// <returns>Success</returns>
@@ -27521,8 +27521,8 @@ namespace MyNS
 		/// DescribeDataSource accounts/{AwsAccountId}/data-sources/{DataSourceId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSourceId">The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</param>
 		/// <returns>Success</returns>
@@ -27559,8 +27559,8 @@ namespace MyNS
 		/// UpdateDataSource accounts/{AwsAccountId}/data-sources/{DataSourceId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSourceId">The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </param>
 		/// <returns>Success</returns>
@@ -27607,8 +27607,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace of the group that you want to delete.
 		/// Max length: 64
@@ -27650,8 +27650,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace of the group that you want described.
 		/// Max length: 64
@@ -27693,8 +27693,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace of the group that you want to update.
 		/// Max length: 64
@@ -27740,8 +27740,8 @@ namespace MyNS
 		/// DeleteIAMPolicyAssignment accounts/{AwsAccountId}/namespace/{Namespace}/iam-policy-assignments/{AssignmentName}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID where you want to delete the IAM policy assignment.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="AssignmentName">The name of the assignment. 
 		/// Min length: 1
@@ -27783,8 +27783,8 @@ namespace MyNS
 		/// DeleteNamespace accounts/{AwsAccountId}/namespaces/{Namespace}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that you want to delete the Amazon QuickSight namespace from.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace that you want to delete.
 		/// Max length: 64
@@ -27823,8 +27823,8 @@ namespace MyNS
 		/// DescribeNamespace accounts/{AwsAccountId}/namespaces/{Namespace}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the Amazon QuickSight namespace that you want to describe.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace that you want to describe.
 		/// Max length: 64
@@ -27864,8 +27864,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="DataSetId">The ID of the dataset.</param>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ScheduleId">The ID of the refresh schedule.</param>
 		/// <returns>Success</returns>
@@ -27902,8 +27902,8 @@ namespace MyNS
 		/// DescribeRefreshSchedule accounts/{AwsAccountId}/data-sets/{DataSetId}/refresh-schedules/{ScheduleId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSetId">The ID of the dataset.</param>
 		/// <param name="ScheduleId">The ID of the refresh schedule.</param>
@@ -27941,8 +27941,8 @@ namespace MyNS
 		/// DeleteTopic accounts/{AwsAccountId}/topics/{TopicId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the topic that you want to delete.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TopicId">The ID of the topic that you want to delete. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		/// Max length: 256
@@ -27981,8 +27981,8 @@ namespace MyNS
 		/// DescribeTopic accounts/{AwsAccountId}/topics/{TopicId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TopicId">The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		/// Max length: 256
@@ -28021,8 +28021,8 @@ namespace MyNS
 		/// UpdateTopic accounts/{AwsAccountId}/topics/{TopicId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the topic that you want to update.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TopicId">The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		/// Max length: 256
@@ -28068,8 +28068,8 @@ namespace MyNS
 		/// DeleteTopicRefreshSchedule accounts/{AwsAccountId}/topics/{TopicId}/schedules/{DatasetId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TopicId">The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		/// Max length: 256
@@ -28109,8 +28109,8 @@ namespace MyNS
 		/// DescribeTopicRefreshSchedule accounts/{AwsAccountId}/topics/{TopicId}/schedules/{DatasetId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TopicId">The ID of the topic that contains the refresh schedule that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		/// Max length: 256
@@ -28150,8 +28150,8 @@ namespace MyNS
 		/// UpdateTopicRefreshSchedule accounts/{AwsAccountId}/topics/{TopicId}/schedules/{DatasetId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the topic whose refresh schedule you want to update.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TopicId">The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		/// Max length: 256
@@ -28201,8 +28201,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace. Currently, you should set this to <code>default</code>.
 		/// Max length: 64
@@ -28244,8 +28244,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace. Currently, you should set this to <code>default</code>.
 		/// Max length: 64
@@ -28287,8 +28287,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace. Currently, you should set this to <code>default</code>.
 		/// Max length: 64
@@ -28335,8 +28335,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="PrincipalId">The principal ID of the user.</param>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace. Currently, you should set this to <code>default</code>.
 		/// Max length: 64
@@ -28375,12 +28375,12 @@ namespace MyNS
 		/// DeleteVPCConnection accounts/{AwsAccountId}/vpc-connections/{VPCConnectionId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID of the account where you want to delete a VPC connection.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="VPCConnectionId">The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteVPCConnectionResponse> DeleteVPCConnectionAsync(string AwsAccountId, string VPCConnectionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28416,12 +28416,12 @@ namespace MyNS
 		/// DescribeVPCConnection accounts/{AwsAccountId}/vpc-connections/{VPCConnectionId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID of the account that contains the VPC connection that you want described.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="VPCConnectionId">The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeVPCConnectionResponse> DescribeVPCConnectionAsync(string AwsAccountId, string VPCConnectionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28457,12 +28457,12 @@ namespace MyNS
 		/// UpdateVPCConnection accounts/{AwsAccountId}/vpc-connections/{VPCConnectionId}
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID of the account that contains the VPC connection that you want to update.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="VPCConnectionId">The ID of the VPC connection that you're updating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateVPCConnectionResponse> UpdateVPCConnectionAsync(string AwsAccountId, string VPCConnectionId, UpdateVPCConnectionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28505,8 +28505,8 @@ namespace MyNS
 		/// DescribeAccountSettings accounts/{AwsAccountId}/settings
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the settings that you want to list.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAccountSettingsResponse> DescribeAccountSettingsAsync(string AwsAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28542,8 +28542,8 @@ namespace MyNS
 		/// UpdateAccountSettings accounts/{AwsAccountId}/settings
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the Amazon QuickSight settings that you want to list.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(string AwsAccountId, UpdateAccountSettingsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28586,12 +28586,12 @@ namespace MyNS
 		/// DescribeAnalysisDefinition accounts/{AwsAccountId}/analyses/{AnalysisId}/definition
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the analysis. You must be using the Amazon Web Services account that the analysis is in.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="AnalysisId">The ID of the analysis that you're describing. The ID is part of the URL of the analysis.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAnalysisDefinitionResponse> DescribeAnalysisDefinitionAsync(string AwsAccountId, string AnalysisId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28627,12 +28627,12 @@ namespace MyNS
 		/// DescribeAnalysisPermissions accounts/{AwsAccountId}/analyses/{AnalysisId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="AnalysisId">The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAnalysisPermissionsResponse> DescribeAnalysisPermissionsAsync(string AwsAccountId, string AnalysisId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28668,12 +28668,12 @@ namespace MyNS
 		/// UpdateAnalysisPermissions accounts/{AwsAccountId}/analyses/{AnalysisId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the analysis whose permissions you're updating. You must be using the Amazon Web Services account that the analysis is in.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="AnalysisId">The ID of the analysis whose permissions you're updating. The ID is part of the analysis URL.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAnalysisPermissionsResponse> UpdateAnalysisPermissionsAsync(string AwsAccountId, string AnalysisId, UpdateAnalysisPermissionsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28716,12 +28716,12 @@ namespace MyNS
 		/// DescribeAssetBundleExportJob accounts/{AwsAccountId}/asset-bundle-export-jobs/{AssetBundleExportJobId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account the export job is executed in. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="AssetBundleExportJobId">The ID of the job that you want described. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code> API call.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAssetBundleExportJobResponse> DescribeAssetBundleExportJobAsync(string AwsAccountId, string AssetBundleExportJobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28757,12 +28757,12 @@ namespace MyNS
 		/// DescribeAssetBundleImportJob accounts/{AwsAccountId}/asset-bundle-import-jobs/{AssetBundleImportJobId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account the import job was executed in. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="AssetBundleImportJobId">The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code> API call.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAssetBundleImportJobResponse> DescribeAssetBundleImportJobAsync(string AwsAccountId, string AssetBundleImportJobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28798,19 +28798,19 @@ namespace MyNS
 		/// DescribeDashboardDefinition accounts/{AwsAccountId}/dashboards/{DashboardId}/definition
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the dashboard that you're describing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DashboardId">The ID for the dashboard.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="version_number">The version number for the dashboard. If a version number isn't passed, the latest published dashboard version is described. 
 		/// Minimum: 1
 		// </param>
 		/// <param name="alias_name">The alias name.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDashboardDefinitionResponse> DescribeDashboardDefinitionAsync(string AwsAccountId, string DashboardId, int version_number, string alias_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28846,12 +28846,12 @@ namespace MyNS
 		/// DescribeDashboardPermissions accounts/{AwsAccountId}/dashboards/{DashboardId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the dashboard that you're describing permissions for.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DashboardId">The ID for the dashboard, also added to the IAM policy.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDashboardPermissionsResponse> DescribeDashboardPermissionsAsync(string AwsAccountId, string DashboardId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28887,12 +28887,12 @@ namespace MyNS
 		/// UpdateDashboardPermissions accounts/{AwsAccountId}/dashboards/{DashboardId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the dashboard whose permissions you're updating.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DashboardId">The ID for the dashboard.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDashboardPermissionsResponse> UpdateDashboardPermissionsAsync(string AwsAccountId, string DashboardId, UpdateDashboardPermissionsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28935,16 +28935,16 @@ namespace MyNS
 		/// DescribeDashboardSnapshotJob accounts/{AwsAccountId}/dashboards/{DashboardId}/snapshot-jobs/{SnapshotJobId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DashboardId">The ID of the dashboard that you have started a snapshot job for.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="SnapshotJobId">The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDashboardSnapshotJobResponse> DescribeDashboardSnapshotJobAsync(string AwsAccountId, string DashboardId, string SnapshotJobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -28980,16 +28980,16 @@ namespace MyNS
 		/// DescribeDashboardSnapshotJobResult accounts/{AwsAccountId}/dashboards/{DashboardId}/snapshot-jobs/{SnapshotJobId}/result
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DashboardId">The ID of the dashboard that you have started a snapshot job for.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="SnapshotJobId">The ID of the job to be described. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code> API call.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDashboardSnapshotJobResultResponse> DescribeDashboardSnapshotJobResultAsync(string AwsAccountId, string DashboardId, string SnapshotJobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -29025,8 +29025,8 @@ namespace MyNS
 		/// DescribeDataSetPermissions accounts/{AwsAccountId}/data-sets/{DataSetId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSetId">The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</param>
 		/// <returns>Success</returns>
@@ -29063,8 +29063,8 @@ namespace MyNS
 		/// UpdateDataSetPermissions accounts/{AwsAccountId}/data-sets/{DataSetId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSetId">The ID for the dataset whose permissions you want to update. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</param>
 		/// <returns>Success</returns>
@@ -29108,8 +29108,8 @@ namespace MyNS
 		/// DescribeDataSourcePermissions accounts/{AwsAccountId}/data-sources/{DataSourceId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSourceId">The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.</param>
 		/// <returns>Success</returns>
@@ -29146,8 +29146,8 @@ namespace MyNS
 		/// UpdateDataSourcePermissions accounts/{AwsAccountId}/data-sources/{DataSourceId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DataSourceId">The ID of the data source. This ID is unique per Amazon Web Services Region for each Amazon Web Services account. </param>
 		/// <returns>Success</returns>
@@ -29191,12 +29191,12 @@ namespace MyNS
 		/// DescribeFolderPermissions accounts/{AwsAccountId}/folders/{FolderId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the folder.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeFolderPermissionsResponse> DescribeFolderPermissionsAsync(string AwsAccountId, string FolderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -29232,12 +29232,12 @@ namespace MyNS
 		/// UpdateFolderPermissions accounts/{AwsAccountId}/folders/{FolderId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the folder to update.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateFolderPermissionsResponse> UpdateFolderPermissionsAsync(string AwsAccountId, string FolderId, UpdateFolderPermissionsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -29280,12 +29280,12 @@ namespace MyNS
 		/// DescribeFolderResolvedPermissions accounts/{AwsAccountId}/folders/{FolderId}/resolved-permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the folder.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeFolderResolvedPermissionsResponse> DescribeFolderResolvedPermissionsAsync(string AwsAccountId, string FolderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -29321,8 +29321,8 @@ namespace MyNS
 		/// DescribeIAMPolicyAssignment accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments/{AssignmentName}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the assignment that you want to describe.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="AssignmentName">The name of the assignment, also called a rule.
 		/// Min length: 1
@@ -29364,8 +29364,8 @@ namespace MyNS
 		/// UpdateIAMPolicyAssignment accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments/{AssignmentName}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the IAM policy assignment. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="AssignmentName">The name of the assignment, also called a rule. The name must be unique within the Amazon Web Services account.
 		/// Min length: 1
@@ -29414,8 +29414,8 @@ namespace MyNS
 		/// DescribeIpRestriction accounts/{AwsAccountId}/ip-restriction
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the IP rules.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeIpRestrictionResponse> DescribeIpRestrictionAsync(string AwsAccountId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -29451,8 +29451,8 @@ namespace MyNS
 		/// UpdateIpRestriction accounts/{AwsAccountId}/ip-restriction
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the IP rules.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateIpRestrictionResponse> UpdateIpRestrictionAsync(string AwsAccountId, UpdateIpRestrictionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -29495,19 +29495,19 @@ namespace MyNS
 		/// DescribeTemplateDefinition accounts/{AwsAccountId}/templates/{TemplateId}/definition
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the template. You must be using the Amazon Web Services account that the template is in.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TemplateId">The ID of the template that you're describing.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="version_number">The version number of the template.
 		/// Minimum: 1
 		// </param>
 		/// <param name="alias_name">The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTemplateDefinitionResponse> DescribeTemplateDefinitionAsync(string AwsAccountId, string TemplateId, int version_number, string alias_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -29543,12 +29543,12 @@ namespace MyNS
 		/// DescribeTemplatePermissions accounts/{AwsAccountId}/templates/{TemplateId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the template that you're describing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TemplateId">The ID for the template.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTemplatePermissionsResponse> DescribeTemplatePermissionsAsync(string AwsAccountId, string TemplateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -29584,12 +29584,12 @@ namespace MyNS
 		/// UpdateTemplatePermissions accounts/{AwsAccountId}/templates/{TemplateId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the template.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TemplateId">The ID for the template.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateTemplatePermissionsResponse> UpdateTemplatePermissionsAsync(string AwsAccountId, string TemplateId, UpdateTemplatePermissionsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -29632,12 +29632,12 @@ namespace MyNS
 		/// DescribeThemePermissions accounts/{AwsAccountId}/themes/{ThemeId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the theme that you're describing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ThemeId">The ID for the theme that you want to describe permissions for.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeThemePermissionsResponse> DescribeThemePermissionsAsync(string AwsAccountId, string ThemeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -29673,12 +29673,12 @@ namespace MyNS
 		/// UpdateThemePermissions accounts/{AwsAccountId}/themes/{ThemeId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the theme.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ThemeId">The ID for the theme.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateThemePermissionsResponse> UpdateThemePermissionsAsync(string AwsAccountId, string ThemeId, UpdateThemePermissionsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -29721,8 +29721,8 @@ namespace MyNS
 		/// DescribeTopicPermissions accounts/{AwsAccountId}/topics/{TopicId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the topic that you want described.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TopicId">The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		/// Max length: 256
@@ -29761,8 +29761,8 @@ namespace MyNS
 		/// UpdateTopicPermissions accounts/{AwsAccountId}/topics/{TopicId}/permissions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TopicId">The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		/// Max length: 256
@@ -29808,8 +29808,8 @@ namespace MyNS
 		/// DescribeTopicRefresh accounts/{AwsAccountId}/topics/{TopicId}/refresh/{RefreshId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the topic whose refresh you want to describe.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TopicId">The ID of the topic that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.
 		/// Max length: 256
@@ -29849,8 +29849,8 @@ namespace MyNS
 		/// GenerateEmbedUrlForAnonymousUser accounts/{AwsAccountId}/embed-url/anonymous-user
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the dashboard that you're embedding.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GenerateEmbedUrlForAnonymousUserResponse> GenerateEmbedUrlForAnonymousUserAsync(string AwsAccountId, GenerateEmbedUrlForAnonymousUserPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -29893,8 +29893,8 @@ namespace MyNS
 		/// GenerateEmbedUrlForRegisteredUser accounts/{AwsAccountId}/embed-url/registered-user
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the dashboard that you're embedding.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GenerateEmbedUrlForRegisteredUserResponse> GenerateEmbedUrlForRegisteredUserAsync(string AwsAccountId, GenerateEmbedUrlForRegisteredUserPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -29937,12 +29937,12 @@ namespace MyNS
 		/// GetDashboardEmbedUrl accounts/{AwsAccountId}/dashboards/{DashboardId}/embed-url#creds-type
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the dashboard that you're embedding.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DashboardId">The ID for the dashboard, also added to the Identity and Access Management (IAM) policy.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="creds_type">The authentication method that the user uses to sign in.</param>
 		/// <param name="session_lifetime">How many minutes the session is valid. The session lifetime must be 15-600 minutes.
@@ -29994,12 +29994,12 @@ namespace MyNS
 		/// GetSessionEmbedUrl accounts/{AwsAccountId}/session-embed-url
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account associated with your Amazon QuickSight subscription.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="entry_point"><p>The URL you use to access the embedded session. The entry point URL is constrained to the following paths:</p> <ul> <li> <p> <code>/start</code> </p> </li> <li> <p> <code>/start/analyses</code> </p> </li> <li> <p> <code>/start/dashboards</code> </p> </li> <li> <p> <code>/start/favorites</code> </p> </li> <li> <p> <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the Amazon QuickSight console URL of the dashboard</p> </li> <li> <p> <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon QuickSight console URL of the analysis</p> </li> </ul>
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="session_lifetime">How many minutes the session is valid. The session lifetime must be 15-600 minutes.
 		/// Minimum: 15
@@ -30040,8 +30040,8 @@ namespace MyNS
 		/// ListAnalyses accounts/{AwsAccountId}/analyses
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the analyses.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">A pagination token that can be used in a subsequent request.</param>
 		/// <param name="max_results">The maximum number of results to return.
@@ -30084,8 +30084,8 @@ namespace MyNS
 		/// ListAssetBundleExportJobs accounts/{AwsAccountId}/asset-bundle-export-jobs
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that the export jobs were executed in. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
@@ -30128,8 +30128,8 @@ namespace MyNS
 		/// ListAssetBundleImportJobs accounts/{AwsAccountId}/asset-bundle-import-jobs
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that the import jobs were executed in.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
@@ -30172,12 +30172,12 @@ namespace MyNS
 		/// ListDashboardVersions accounts/{AwsAccountId}/dashboards/{DashboardId}/versions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DashboardId">The ID for the dashboard.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
@@ -30220,8 +30220,8 @@ namespace MyNS
 		/// ListDashboards accounts/{AwsAccountId}/dashboards
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the dashboards that you're listing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
@@ -30264,12 +30264,12 @@ namespace MyNS
 		/// ListFolderMembers accounts/{AwsAccountId}/folders/{FolderId}/members
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the folder.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="FolderId">The ID of the folder.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
@@ -30310,8 +30310,8 @@ namespace MyNS
 		/// ListFolders accounts/{AwsAccountId}/folders
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the folder.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
@@ -30360,8 +30360,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace of the group that you want a list of users from.
 		/// Max length: 64
@@ -30402,8 +30402,8 @@ namespace MyNS
 		/// ListIAMPolicyAssignments accounts/{AwsAccountId}/namespaces/{Namespace}/v2/iam-policy-assignments
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains these IAM policy assignments.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="assignment_status">The status of the assignments.</param>
 		/// <param name="Namespace">The namespace for the assignments.
@@ -30450,8 +30450,8 @@ namespace MyNS
 		/// ListIAMPolicyAssignmentsForUser accounts/{AwsAccountId}/namespaces/{Namespace}/users/{UserName}/iam-policy-assignments
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the assignments.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="UserName">The name of the user.
 		/// Min length: 1
@@ -30502,8 +30502,8 @@ namespace MyNS
 		/// <param name="DataSetId">The ID of the dataset used in the ingestion.</param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
 		/// Minimum: 1
@@ -30545,8 +30545,8 @@ namespace MyNS
 		/// ListNamespaces accounts/{AwsAccountId}/namespaces
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the Amazon QuickSight namespaces that you want to list.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">A unique pagination token that can be used in a subsequent request. You will receive a pagination token in the response body of a previous <code>ListNameSpaces</code> API call if there is more data that can be returned. To receive the data, make another <code>ListNamespaces</code> API call with the returned token to retrieve the next page of data. Each token is valid for 24 hours. If you try to make a <code>ListNamespaces</code> API call with an expired token, you will receive a <code>HTTP 400 InvalidNextTokenException</code> error.</param>
 		/// <param name="max_results">The maximum number of results to return.
@@ -30664,12 +30664,12 @@ namespace MyNS
 		/// ListTemplateAliases accounts/{AwsAccountId}/templates/{TemplateId}/aliases
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the template aliases that you're listing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TemplateId">The ID for the template.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_result">The maximum number of results to be returned per request.
@@ -30712,12 +30712,12 @@ namespace MyNS
 		/// ListTemplateVersions accounts/{AwsAccountId}/templates/{TemplateId}/versions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the templates that you're listing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="TemplateId">The ID for the template.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
@@ -30760,8 +30760,8 @@ namespace MyNS
 		/// ListTemplates accounts/{AwsAccountId}/templates
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the templates that you're listing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_result">The maximum number of results to be returned per request.
@@ -30804,12 +30804,12 @@ namespace MyNS
 		/// ListThemeAliases accounts/{AwsAccountId}/themes/{ThemeId}/aliases
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the theme aliases that you're listing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ThemeId">The ID for the theme.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_result">The maximum number of results to be returned per request.
@@ -30850,12 +30850,12 @@ namespace MyNS
 		/// ListThemeVersions accounts/{AwsAccountId}/themes/{ThemeId}/versions
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the themes that you're listing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ThemeId">The ID for the theme.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
@@ -30898,8 +30898,8 @@ namespace MyNS
 		/// ListThemes accounts/{AwsAccountId}/themes
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the themes that you're listing.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">The token for the next set of results, or null if there are no more results.</param>
 		/// <param name="max_results">The maximum number of results to be returned per request.
@@ -30946,8 +30946,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace. Currently, you should set this to <code>default</code>.
 		/// Max length: 64
@@ -30993,8 +30993,8 @@ namespace MyNS
 		/// ListUsers accounts/{AwsAccountId}/namespaces/{Namespace}/users
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">A pagination token that can be used in a subsequent request.</param>
 		/// <param name="max_results">The maximum number of results to return from this request.
@@ -31040,8 +31040,8 @@ namespace MyNS
 		/// RegisterUser accounts/{AwsAccountId}/namespaces/{Namespace}/users
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="Namespace">The namespace. Currently, you should set this to <code>default</code>.
 		/// Max length: 64
@@ -31087,12 +31087,12 @@ namespace MyNS
 		/// RestoreAnalysis accounts/{AwsAccountId}/restore/analyses/{AnalysisId}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the analysis.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="AnalysisId">The ID of the analysis that you're restoring.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<RestoreAnalysisResponse> RestoreAnalysisAsync(string AwsAccountId, string AnalysisId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -31123,8 +31123,8 @@ namespace MyNS
 		/// SearchAnalyses accounts/{AwsAccountId}/search/analyses
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the analyses that you're searching for.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -31169,8 +31169,8 @@ namespace MyNS
 		/// SearchDashboards accounts/{AwsAccountId}/search/dashboards
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the user whose dashboards you're searching for. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -31215,8 +31215,8 @@ namespace MyNS
 		/// SearchDataSets accounts/{AwsAccountId}/search/data-sets
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -31261,8 +31261,8 @@ namespace MyNS
 		/// SearchDataSources accounts/{AwsAccountId}/search/data-sources
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -31307,8 +31307,8 @@ namespace MyNS
 		/// SearchFolders accounts/{AwsAccountId}/search/folders
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that contains the folder.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<SearchFoldersResponse> SearchFoldersAsync(string AwsAccountId, SearchFoldersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -31351,8 +31351,8 @@ namespace MyNS
 		/// SearchGroups accounts/{AwsAccountId}/namespaces/{Namespace}/groups-search
 		/// </summary>
 		/// <param name="AwsAccountId">The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon QuickSight account.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="next_token">A pagination token that can be used in a subsequent request.</param>
 		/// <param name="max_results">The maximum number of results to return from this request.
@@ -31405,8 +31405,8 @@ namespace MyNS
 		/// StartAssetBundleExportJob accounts/{AwsAccountId}/asset-bundle-export-jobs/export
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account to export assets from.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartAssetBundleExportJobResponse> StartAssetBundleExportJobAsync(string AwsAccountId, StartAssetBundleExportJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -31449,8 +31449,8 @@ namespace MyNS
 		/// StartAssetBundleImportJob accounts/{AwsAccountId}/asset-bundle-import-jobs/import
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account to import assets into. 
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartAssetBundleImportJobResponse> StartAssetBundleImportJobAsync(string AwsAccountId, StartAssetBundleImportJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -31493,12 +31493,12 @@ namespace MyNS
 		/// StartDashboardSnapshotJob accounts/{AwsAccountId}/dashboards/{DashboardId}/snapshot-jobs
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that the dashboard snapshot job is executed in.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DashboardId">The ID of the dashboard that you want to start a snapshot job for. 
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartDashboardSnapshotJobResponse> StartDashboardSnapshotJobAsync(string AwsAccountId, string DashboardId, StartDashboardSnapshotJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -31579,12 +31579,12 @@ namespace MyNS
 		/// UpdateDashboardPublishedVersion accounts/{AwsAccountId}/dashboards/{DashboardId}/versions/{VersionNumber}
 		/// </summary>
 		/// <param name="AwsAccountId">The ID of the Amazon Web Services account that contains the dashboard that you're updating.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="DashboardId">The ID for the dashboard.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="VersionNumber">The version number of the dashboard.
 		/// Minimum: 1
@@ -31618,8 +31618,8 @@ namespace MyNS
 		/// UpdatePublicSharingSettings accounts/{AwsAccountId}/public-sharing-settings
 		/// </summary>
 		/// <param name="AwsAccountId">The Amazon Web Services account ID associated with your Amazon QuickSight subscription.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePublicSharingSettingsResponse> UpdatePublicSharingSettingsAsync(string AwsAccountId, UpdatePublicSharingSettingsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -31824,8 +31824,8 @@ namespace MyNS
 		/// <summary>
 		/// A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon QuickSight console. 
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -31935,8 +31935,8 @@ namespace MyNS
 		/// <summary>
 		/// A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon QuickSight console.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -32026,8 +32026,8 @@ namespace MyNS
 		/// <summary>
 		/// The display name of the dashboard.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -32069,8 +32069,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the first version of the dashboard being created.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -32190,8 +32190,8 @@ namespace MyNS
 		/// <summary>
 		/// The display name of the dashboard.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -32213,8 +32213,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the first version of the dashboard being created.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -32342,8 +32342,8 @@ namespace MyNS
 		/// <summary>
 		/// The display name for the dataset.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -32502,8 +32502,8 @@ namespace MyNS
 		/// <summary>
 		/// A display name for the data source.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -32669,8 +32669,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the folder.
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -32716,8 +32716,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the folder.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -32743,8 +32743,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the group that you want to create.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -32889,8 +32889,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A display name for the template.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -32925,8 +32925,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the current template version being created. This API operation creates the first version of the template. Every time <code>UpdateTemplate</code> is called, a new version is created. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -32989,8 +32989,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the current template version that is being updated. Every time you call <code>UpdateTemplate</code>, you create a new version of the template. Each version of the template maintains a description of the version in the <code>VersionDescription</code> field.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -32999,8 +32999,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name for the template.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -33086,8 +33086,8 @@ namespace MyNS
 		/// <summary>
 		/// A display name for the theme.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -33098,8 +33098,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the theme that a custom theme will inherit from. All themes inherit from one of the starting themes defined by Amazon QuickSight. For a list of the starting themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis. 
 		/// Required
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: [\w\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -33111,8 +33111,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code> is called, a new version is created. Each version of the theme has a description of the version in the <code>VersionDescription</code> field.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -33172,8 +33172,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name for the theme.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -33183,8 +33183,8 @@ namespace MyNS
 		/// <summary>
 		/// The theme ID, defined by Amazon QuickSight, that a custom theme inherits from. All themes initially inherit from a default Amazon QuickSight theme.
 		/// Required
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: [\w\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -33196,8 +33196,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the theme version that you're updating Every time that you call <code>UpdateTheme</code>, you create a new version of the theme. Each version of the theme maintains a description of the version in <code>VersionDescription</code>.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -33359,8 +33359,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// Pattern: [\w\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -33373,8 +33373,8 @@ namespace MyNS
 		/// <summary>
 		/// The display name for the VPC connection.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -33417,8 +33417,8 @@ namespace MyNS
 		/// <summary>
 		/// The IAM role to associate with the VPC connection.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -33443,8 +33443,8 @@ namespace MyNS
 		/// <summary>
 		/// The display name for the dataset.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -33594,8 +33594,8 @@ namespace MyNS
 		/// <summary>
 		/// A display name for the data source.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -33733,8 +33733,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description for the group that you want to update.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -33822,8 +33822,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p> <ul> <li> <p>Create and update data sources</p> </li> <li> <p>Create and update datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li> <p>Subscribe to email reports</p> </li> </ul> <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9+=,.@_-]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -33863,8 +33863,8 @@ namespace MyNS
 		/// <summary>
 		/// The display name for the VPC connection.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -33907,8 +33907,8 @@ namespace MyNS
 		/// <summary>
 		/// An IAM role associated with the VPC connection.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -34343,8 +34343,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// You need to use this parameter only when you register one or more users using an assumed IAM role. You don't need to provide the session name for other scenarios, for example when you are registering an IAM user or an Amazon QuickSight user. You can register multiple users using the same IAM role if each user has a different session name. For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html"> <code>assume-role</code> </a> in the <i>CLI Reference.</i> 
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [\w+=.@-]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -34365,8 +34365,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>(Enterprise edition only) The name of the custom permissions profile that you want to assign to this user. Customized permissions allows you to control a user's access by restricting access the following operations:</p> <ul> <li> <p>Create and update data sources</p> </li> <li> <p>Create and update datasets</p> </li> <li> <p>Create and update email reports</p> </li> <li> <p>Subscribe to email reports</p> </li> </ul> <p>To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a> </code> instead.</p> <p>A set of custom permissions includes any combination of these restrictions. Currently, you need to create the profile names for custom permission sets by using the Amazon QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign the named set of permissions to a Amazon QuickSight user. </p> <p>Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon QuickSight (admin, author, reader).</p> <p>This feature is available only to Amazon QuickSight Enterprise edition subscriptions.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9+=,.@_-]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -34569,8 +34569,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.
 		/// Required
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: [\w\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -34647,8 +34647,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.
 		/// Required
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: [\w\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -34723,8 +34723,8 @@ namespace MyNS
 		/// <summary>
 		/// An ID for the dashboard snapshot job. This ID is unique to the dashboard while the job is running. This ID can be used to poll the status of a job with a <code>DescribeDashboardSnapshotJob</code> while the job runs. You can reuse this ID for another job 24 hours after the current job is completed.
 		/// Required
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: [\w\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

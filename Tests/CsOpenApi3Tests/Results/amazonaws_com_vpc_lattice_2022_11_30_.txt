@@ -2707,12 +2707,12 @@ namespace MyNS
 		/// BatchUpdateRule services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules
 		/// </summary>
 		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchUpdateRuleResponse> BatchUpdateRuleAsync(string listenerIdentifier, string serviceIdentifier, BatchUpdateRulePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2755,12 +2755,12 @@ namespace MyNS
 		/// CreateRule services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules
 		/// </summary>
 		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		public async Task CreateRuleAsync(string listenerIdentifier, string serviceIdentifier, CreateRulePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2796,20 +2796,20 @@ namespace MyNS
 		/// ListRules services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules
 		/// </summary>
 		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A pagination token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRulesResponse> ListRulesAsync(string listenerIdentifier, int maxResults, string nextToken, string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2878,8 +2878,8 @@ namespace MyNS
 		/// CreateListener services/{serviceIdentifier}/listeners
 		/// </summary>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		public async Task CreateListenerAsync(string serviceIdentifier, CreateListenerPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2919,12 +2919,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A pagination token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListListenersResponse> ListListenersAsync(int maxResults, string nextToken, string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2997,8 +2997,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A pagination token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListServicesResponse> ListServicesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3071,8 +3071,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A pagination token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListServiceNetworksResponse> ListServiceNetworksAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3152,16 +3152,16 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A pagination token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <param name="serviceNetworkIdentifier">The ID or Amazon Resource Name (ARN) of the service network.
-		/// Max length: 2048
 		/// Min length: 3
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListServiceNetworkServiceAssociationsResponse> ListServiceNetworkServiceAssociationsAsync(int maxResults, string nextToken, string serviceIdentifier, string serviceNetworkIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3241,16 +3241,16 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A pagination token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="serviceNetworkIdentifier">The ID or Amazon Resource Name (ARN) of the service network.
-		/// Max length: 2048
 		/// Min length: 3
+		/// Max length: 2048
 		// </param>
 		/// <param name="vpcIdentifier">The ID or Amazon Resource Name (ARN) of the VPC.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListServiceNetworkVpcAssociationsResponse> ListServiceNetworkVpcAssociationsAsync(int maxResults, string nextToken, string serviceNetworkIdentifier, string vpcIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3323,13 +3323,13 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A pagination token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="targetGroupType">The target group type.</param>
 		/// <param name="vpcIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTargetGroupsResponse> ListTargetGroupsAsync(int maxResults, string nextToken, TargetGroupType targetGroupType, string vpcIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3365,8 +3365,8 @@ namespace MyNS
 		/// DeleteAccessLogSubscription accesslogsubscriptions/{accessLogSubscriptionIdentifier}
 		/// </summary>
 		/// <param name="accessLogSubscriptionIdentifier">The ID or Amazon Resource Name (ARN) of the access log subscription.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		public async Task DeleteAccessLogSubscriptionAsync(string accessLogSubscriptionIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3395,8 +3395,8 @@ namespace MyNS
 		/// GetAccessLogSubscription accesslogsubscriptions/{accessLogSubscriptionIdentifier}
 		/// </summary>
 		/// <param name="accessLogSubscriptionIdentifier">The ID or Amazon Resource Name (ARN) of the access log subscription.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAccessLogSubscriptionResponse> GetAccessLogSubscriptionAsync(string accessLogSubscriptionIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3432,8 +3432,8 @@ namespace MyNS
 		/// UpdateAccessLogSubscription accesslogsubscriptions/{accessLogSubscriptionIdentifier}
 		/// </summary>
 		/// <param name="accessLogSubscriptionIdentifier">The ID or Amazon Resource Name (ARN) of the access log subscription.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAccessLogSubscriptionResponse> UpdateAccessLogSubscriptionAsync(string accessLogSubscriptionIdentifier, UpdateAccessLogSubscriptionPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3476,8 +3476,8 @@ namespace MyNS
 		/// DeleteAuthPolicy authpolicy/{resourceIdentifier}
 		/// </summary>
 		/// <param name="resourceIdentifier">The ID or Amazon Resource Name (ARN) of the resource.
-		/// Max length: 200
 		/// Min length: 17
+		/// Max length: 200
 		// </param>
 		public async Task DeleteAuthPolicyAsync(string resourceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3506,8 +3506,8 @@ namespace MyNS
 		/// GetAuthPolicy authpolicy/{resourceIdentifier}
 		/// </summary>
 		/// <param name="resourceIdentifier">The ID or Amazon Resource Name (ARN) of the service network or service.
-		/// Max length: 200
 		/// Min length: 17
+		/// Max length: 200
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAuthPolicyResponse> GetAuthPolicyAsync(string resourceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3543,8 +3543,8 @@ namespace MyNS
 		/// PutAuthPolicy authpolicy/{resourceIdentifier}
 		/// </summary>
 		/// <param name="resourceIdentifier">The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.
-		/// Max length: 200
 		/// Min length: 17
+		/// Max length: 200
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutAuthPolicyResponse> PutAuthPolicyAsync(string resourceIdentifier, PutAuthPolicyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3587,12 +3587,12 @@ namespace MyNS
 		/// DeleteListener services/{serviceIdentifier}/listeners/{listenerIdentifier}
 		/// </summary>
 		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		public async Task DeleteListenerAsync(string listenerIdentifier, string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3621,12 +3621,12 @@ namespace MyNS
 		/// GetListener services/{serviceIdentifier}/listeners/{listenerIdentifier}
 		/// </summary>
 		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetListenerResponse> GetListenerAsync(string listenerIdentifier, string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3662,12 +3662,12 @@ namespace MyNS
 		/// UpdateListener services/{serviceIdentifier}/listeners/{listenerIdentifier}
 		/// </summary>
 		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateListenerResponse> UpdateListenerAsync(string listenerIdentifier, string serviceIdentifier, UpdateListenerPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3710,8 +3710,8 @@ namespace MyNS
 		/// DeleteResourcePolicy resourcepolicy/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
-		/// Max length: 200
 		/// Min length: 20
+		/// Max length: 200
 		// </param>
 		public async Task DeleteResourcePolicyAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3740,8 +3740,8 @@ namespace MyNS
 		/// GetResourcePolicy resourcepolicy/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the service network or service.
-		/// Max length: 200
 		/// Min length: 20
+		/// Max length: 200
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetResourcePolicyResponse> GetResourcePolicyAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3777,8 +3777,8 @@ namespace MyNS
 		/// PutResourcePolicy resourcepolicy/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.
-		/// Max length: 200
 		/// Min length: 20
+		/// Max length: 200
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutResourcePolicyResponse> PutResourcePolicyAsync(string resourceArn, PutResourcePolicyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3821,16 +3821,16 @@ namespace MyNS
 		/// DeleteRule services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules/{ruleIdentifier}
 		/// </summary>
 		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="ruleIdentifier">The ID or Amazon Resource Name (ARN) of the rule.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		public async Task DeleteRuleAsync(string listenerIdentifier, string ruleIdentifier, string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3859,16 +3859,16 @@ namespace MyNS
 		/// GetRule services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules/{ruleIdentifier}
 		/// </summary>
 		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="ruleIdentifier">The ID or Amazon Resource Name (ARN) of the listener rule.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRuleResponse> GetRuleAsync(string listenerIdentifier, string ruleIdentifier, string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3904,16 +3904,16 @@ namespace MyNS
 		/// UpdateRule services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules/{ruleIdentifier}
 		/// </summary>
 		/// <param name="listenerIdentifier">The ID or Amazon Resource Name (ARN) of the listener.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="ruleIdentifier">The ID or Amazon Resource Name (ARN) of the rule.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRuleResponse> UpdateRuleAsync(string listenerIdentifier, string ruleIdentifier, string serviceIdentifier, UpdateRulePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3956,8 +3956,8 @@ namespace MyNS
 		/// DeleteService services/{serviceIdentifier}
 		/// </summary>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteServiceResponse> DeleteServiceAsync(string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3993,8 +3993,8 @@ namespace MyNS
 		/// GetService services/{serviceIdentifier}
 		/// </summary>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServiceResponse> GetServiceAsync(string serviceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4030,8 +4030,8 @@ namespace MyNS
 		/// UpdateService services/{serviceIdentifier}
 		/// </summary>
 		/// <param name="serviceIdentifier">The ID or Amazon Resource Name (ARN) of the service.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateServiceResponse> UpdateServiceAsync(string serviceIdentifier, UpdateServicePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4074,8 +4074,8 @@ namespace MyNS
 		/// DeleteServiceNetwork servicenetworks/{serviceNetworkIdentifier}
 		/// </summary>
 		/// <param name="serviceNetworkIdentifier">The Amazon Resource Name (ARN) or ID of the service network.
-		/// Max length: 2048
 		/// Min length: 3
+		/// Max length: 2048
 		// </param>
 		public async Task DeleteServiceNetworkAsync(string serviceNetworkIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4104,8 +4104,8 @@ namespace MyNS
 		/// GetServiceNetwork servicenetworks/{serviceNetworkIdentifier}
 		/// </summary>
 		/// <param name="serviceNetworkIdentifier">The ID or Amazon Resource Name (ARN) of the service network.
-		/// Max length: 2048
 		/// Min length: 3
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServiceNetworkResponse> GetServiceNetworkAsync(string serviceNetworkIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4141,8 +4141,8 @@ namespace MyNS
 		/// UpdateServiceNetwork servicenetworks/{serviceNetworkIdentifier}
 		/// </summary>
 		/// <param name="serviceNetworkIdentifier">The ID or Amazon Resource Name (ARN) of the service network.
-		/// Max length: 2048
 		/// Min length: 3
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateServiceNetworkResponse> UpdateServiceNetworkAsync(string serviceNetworkIdentifier, UpdateServiceNetworkPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4185,8 +4185,8 @@ namespace MyNS
 		/// DeleteServiceNetworkServiceAssociation servicenetworkserviceassociations/{serviceNetworkServiceAssociationIdentifier}
 		/// </summary>
 		/// <param name="serviceNetworkServiceAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteServiceNetworkServiceAssociationResponse> DeleteServiceNetworkServiceAssociationAsync(string serviceNetworkServiceAssociationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4222,8 +4222,8 @@ namespace MyNS
 		/// GetServiceNetworkServiceAssociation servicenetworkserviceassociations/{serviceNetworkServiceAssociationIdentifier}
 		/// </summary>
 		/// <param name="serviceNetworkServiceAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServiceNetworkServiceAssociationResponse> GetServiceNetworkServiceAssociationAsync(string serviceNetworkServiceAssociationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4259,8 +4259,8 @@ namespace MyNS
 		/// DeleteServiceNetworkVpcAssociation servicenetworkvpcassociations/{serviceNetworkVpcAssociationIdentifier}
 		/// </summary>
 		/// <param name="serviceNetworkVpcAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteServiceNetworkVpcAssociationResponse> DeleteServiceNetworkVpcAssociationAsync(string serviceNetworkVpcAssociationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4296,8 +4296,8 @@ namespace MyNS
 		/// GetServiceNetworkVpcAssociation servicenetworkvpcassociations/{serviceNetworkVpcAssociationIdentifier}
 		/// </summary>
 		/// <param name="serviceNetworkVpcAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServiceNetworkVpcAssociationResponse> GetServiceNetworkVpcAssociationAsync(string serviceNetworkVpcAssociationIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4333,8 +4333,8 @@ namespace MyNS
 		/// UpdateServiceNetworkVpcAssociation servicenetworkvpcassociations/{serviceNetworkVpcAssociationIdentifier}
 		/// </summary>
 		/// <param name="serviceNetworkVpcAssociationIdentifier">The ID or Amazon Resource Name (ARN) of the association.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateServiceNetworkVpcAssociationResponse> UpdateServiceNetworkVpcAssociationAsync(string serviceNetworkVpcAssociationIdentifier, UpdateServiceNetworkVpcAssociationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4377,8 +4377,8 @@ namespace MyNS
 		/// DeleteTargetGroup targetgroups/{targetGroupIdentifier}
 		/// </summary>
 		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteTargetGroupResponse> DeleteTargetGroupAsync(string targetGroupIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4414,8 +4414,8 @@ namespace MyNS
 		/// GetTargetGroup targetgroups/{targetGroupIdentifier}
 		/// </summary>
 		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTargetGroupResponse> GetTargetGroupAsync(string targetGroupIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4451,8 +4451,8 @@ namespace MyNS
 		/// UpdateTargetGroup targetgroups/{targetGroupIdentifier}
 		/// </summary>
 		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateTargetGroupResponse> UpdateTargetGroupAsync(string targetGroupIdentifier, UpdateTargetGroupPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4495,8 +4495,8 @@ namespace MyNS
 		/// DeregisterTargets targetgroups/{targetGroupIdentifier}/deregistertargets
 		/// </summary>
 		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeregisterTargetsResponse> DeregisterTargetsAsync(string targetGroupIdentifier, DeregisterTargetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4543,12 +4543,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A pagination token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="resourceIdentifier">The ID or Amazon Resource Name (ARN) of the service network or service.
-		/// Max length: 200
 		/// Min length: 17
+		/// Max length: 200
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAccessLogSubscriptionsResponse> ListAccessLogSubscriptionsAsync(int maxResults, string nextToken, string resourceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4584,8 +4584,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
-		/// Max length: 1224
 		/// Min length: 0
+		/// Max length: 1224
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4621,8 +4621,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
-		/// Max length: 1224
 		/// Min length: 0
+		/// Max length: 1224
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4669,12 +4669,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A pagination token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTargetsResponse> ListTargetsAsync(int maxResults, string nextToken, string targetGroupIdentifier, ListTargetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4717,8 +4717,8 @@ namespace MyNS
 		/// RegisterTargets targetgroups/{targetGroupIdentifier}/registertargets
 		/// </summary>
 		/// <param name="targetGroupIdentifier">The ID or Amazon Resource Name (ARN) of the target group.
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<RegisterTargetsResponse> RegisterTargetsAsync(string targetGroupIdentifier, RegisterTargetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4761,8 +4761,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
-		/// Max length: 1224
 		/// Min length: 0
+		/// Max length: 1224
 		// </param>
 		/// <param name="tagKeys">The tag keys of the tags to remove.
 		/// Minimum items: 0
@@ -4827,8 +4827,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -4848,8 +4848,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the rule. The name must be unique within the listener. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		/// Required
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		/// Pattern: ^(?!rule-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4899,8 +4899,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -4912,8 +4912,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4926,8 +4926,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID or Amazon Resource Name (ARN) of the service network or service.
 		/// Required
-		/// Max length: 200
 		/// Min length: 17
+		/// Max length: 200
 		/// Pattern: ^((((sn)|(svc))-[0-9a-z]{17})|(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:((servicenetwork/sn)|(service/svc))-[0-9a-z]{17}))$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4949,8 +4949,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -4970,8 +4970,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		/// Required
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		/// Pattern: ^(?!listener-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5026,8 +5026,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the certificate.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// Pattern: ^(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:certificate/[0-9a-z-]+)?$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="certificateArn")]
@@ -5038,8 +5038,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -5050,8 +5050,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The custom domain name of the service.
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="customDomainName")]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -5061,8 +5061,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		/// Required
-		/// Max length: 40
 		/// Min length: 3
+		/// Max length: 40
 		/// Pattern: ^(?!svc-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5090,8 +5090,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -5103,8 +5103,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the service network. The name must be unique to the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		/// Required
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		/// Pattern: ^(?!servicenetwork-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5126,8 +5126,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -5139,8 +5139,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID or Amazon Resource Name (ARN) of the service.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 17
+		/// Max length: 2048
 		/// Pattern: ^((svc-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:service/svc-[0-9a-z]{17}))$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5153,8 +5153,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 3
+		/// Max length: 2048
 		/// Pattern: ^((sn-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:servicenetwork/sn-[0-9a-z]{17}))$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5176,8 +5176,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -5199,8 +5199,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 3
+		/// Max length: 2048
 		/// Pattern: ^((sn-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:servicenetwork/sn-[0-9a-z]{17}))$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5219,8 +5219,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the VPC.
 		/// Required
-		/// Max length: 50
 		/// Min length: 5
+		/// Max length: 50
 		/// Pattern: ^vpc-(([0-9a-z]{8})|([0-9a-z]{17}))$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5236,8 +5236,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -5255,8 +5255,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		/// Required
-		/// Max length: 128
 		/// Min length: 3
+		/// Max length: 128
 		/// Pattern: ^(?!tg-)(?![-])(?!.*[-]$)(?!.*[-]{2})[a-z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5309,8 +5309,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the access log destination.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5327,8 +5327,8 @@ namespace MyNS
 		/// <summary>
 		/// The auth policy. The policy string in JSON must not contain newlines or blank lines.
 		/// Required
-		/// Max length: 10000
 		/// Min length: 0
+		/// Max length: 10000
 		/// Pattern: ^.*\S.*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5367,8 +5367,8 @@ namespace MyNS
 		/// <summary>
 		/// An IAM policy. The policy string in JSON must not contain newlines or blank lines.
 		/// Required
-		/// Max length: 10000
 		/// Min length: 1
+		/// Max length: 10000
 		/// Pattern: ^.*\S.*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5432,8 +5432,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the certificate. 
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// Pattern: ^(arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:certificate/[0-9a-z-]+)?$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="certificateArn")]

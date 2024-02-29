@@ -520,8 +520,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Token for the next set of results.
-		/// Max length: 16384
 		/// Min length: 1
+		/// Max length: 16384
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -546,8 +546,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Token for the next set of results.
-		/// Max length: 16384
 		/// Min length: 1
+		/// Max length: 16384
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

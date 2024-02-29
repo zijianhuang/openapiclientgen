@@ -995,12 +995,12 @@ namespace MyNS
 		/// CancelJournalKinesisStream ledgers/{name}/journal-kinesis-streams/{streamId}
 		/// </summary>
 		/// <param name="name">The name of the ledger.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="streamId">The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.
-		/// Max length: 22
 		/// Min length: 22
+		/// Max length: 22
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelJournalKinesisStreamResponse> CancelJournalKinesisStreamAsync(string name, string streamId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1036,12 +1036,12 @@ namespace MyNS
 		/// DescribeJournalKinesisStream ledgers/{name}/journal-kinesis-streams/{streamId}
 		/// </summary>
 		/// <param name="name">The name of the ledger.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="streamId">The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.
-		/// Max length: 22
 		/// Min length: 22
+		/// Max length: 22
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeJournalKinesisStreamResponse> DescribeJournalKinesisStreamAsync(string name, string streamId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1121,8 +1121,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="next_token">A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListLedgers</code> call, then you should use that value as input here.
-		/// Max length: 1024
 		/// Min length: 4
+		/// Max length: 1024
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1160,8 +1160,8 @@ namespace MyNS
 		/// DeleteLedger ledgers/{name}
 		/// </summary>
 		/// <param name="name">The name of the ledger that you want to delete.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteLedgerAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1191,8 +1191,8 @@ namespace MyNS
 		/// DescribeLedger ledgers/{name}
 		/// </summary>
 		/// <param name="name">The name of the ledger that you want to describe.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeLedgerResponse> DescribeLedgerAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1228,8 +1228,8 @@ namespace MyNS
 		/// UpdateLedger ledgers/{name}
 		/// </summary>
 		/// <param name="name">The name of the ledger.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateLedgerResponse> UpdateLedgerAsync(string name, UpdateLedgerPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1272,12 +1272,12 @@ namespace MyNS
 		/// DescribeJournalS3Export ledgers/{name}/journal-s3-exports/{exportId}
 		/// </summary>
 		/// <param name="name">The name of the ledger.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="exportId">The UUID (represented in Base62-encoded text) of the journal export job to describe.
-		/// Max length: 22
 		/// Min length: 22
+		/// Max length: 22
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeJournalS3ExportResponse> DescribeJournalS3ExportAsync(string name, string exportId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1313,8 +1313,8 @@ namespace MyNS
 		/// ExportJournalToS3 ledgers/{name}/journal-s3-exports
 		/// </summary>
 		/// <param name="name">The name of the ledger.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ExportJournalToS3Response> ExportJournalToS3Async(string name, ExportJournalToS3PostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1357,16 +1357,16 @@ namespace MyNS
 		/// ListJournalS3ExportsForLedger ledgers/{name}/journal-s3-exports
 		/// </summary>
 		/// <param name="name">The name of the ledger.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="max_results">The maximum number of results to return in a single <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results returned might be fewer.)
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="next_token">A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input here.
-		/// Max length: 1024
 		/// Min length: 4
+		/// Max length: 1024
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1404,8 +1404,8 @@ namespace MyNS
 		/// GetBlock ledgers/{name}/block
 		/// </summary>
 		/// <param name="name">The name of the ledger.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetBlockResponse> GetBlockAsync(string name, GetBlockPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1448,8 +1448,8 @@ namespace MyNS
 		/// GetDigest ledgers/{name}/digest
 		/// </summary>
 		/// <param name="name">The name of the ledger.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDigestResponse> GetDigestAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1480,8 +1480,8 @@ namespace MyNS
 		/// GetRevision ledgers/{name}/revision
 		/// </summary>
 		/// <param name="name">The name of the ledger.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRevisionResponse> GetRevisionAsync(string name, GetRevisionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1524,16 +1524,16 @@ namespace MyNS
 		/// ListJournalKinesisStreamsForLedger ledgers/{name}/journal-kinesis-streams
 		/// </summary>
 		/// <param name="name">The name of the ledger.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="max_results">The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="next_token">A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.
-		/// Max length: 1024
 		/// Min length: 4
+		/// Max length: 1024
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1571,8 +1571,8 @@ namespace MyNS
 		/// StreamJournalToKinesis ledgers/{name}/journal-kinesis-streams
 		/// </summary>
 		/// <param name="name">The name of the ledger.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StreamJournalToKinesisResponse> StreamJournalToKinesisAsync(string name, StreamJournalToKinesisPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1619,8 +1619,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="next_token">A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.
-		/// Max length: 1024
 		/// Min length: 4
+		/// Max length: 1024
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1658,8 +1658,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn"><p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
-		/// Max length: 1600
 		/// Min length: 20
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1695,8 +1695,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn"><p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
-		/// Max length: 1600
 		/// Min length: 20
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1739,8 +1739,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn"><p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
-		/// Max length: 1600
 		/// Min length: 20
+		/// Max length: 1600
 		// </param>
 		/// <param name="tagKeys">The list of tag keys to remove.
 		/// Minimum items: 0
@@ -1780,8 +1780,8 @@ namespace MyNS
 		/// UpdateLedgerPermissionsMode ledgers/{name}/permissions-mode
 		/// </summary>
 		/// <param name="name">The name of the ledger.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateLedgerPermissionsModeResponse> UpdateLedgerPermissionsModeAsync(string name, UpdateLedgerPermissionsModePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1826,8 +1826,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region.</p> <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 		/// Required
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1914,8 +1914,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p> <ul> <li> <p>Write objects into your Amazon S3 bucket.</p> </li> <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
 		/// Required
-		/// Max length: 1600
 		/// Min length: 20
+		/// Max length: 1600
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1989,8 +1989,8 @@ namespace MyNS
 		/// <summary>
 		/// The UUID (represented in Base62-encoded text) of the document to be verified.
 		/// Required
-		/// Max length: 22
 		/// Min length: 22
+		/// Max length: 22
 		/// Pattern: ^[A-Za-z-0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2027,8 +2027,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal stream requests.</p>
 		/// Required
-		/// Max length: 1600
 		/// Min length: 20
+		/// Max length: 1600
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2067,8 +2067,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p> <p>Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same naming constraints as ledger names, as defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 		/// Required
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

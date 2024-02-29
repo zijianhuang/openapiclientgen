@@ -867,8 +867,8 @@ namespace MyNS
 		/// DeleteSuiteDefinition suiteDefinitions/{suiteDefinitionId}
 		/// </summary>
 		/// <param name="suiteDefinitionId">Suite definition ID of the test suite to be deleted.
-		/// Max length: 36
 		/// Min length: 12
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSuiteDefinitionResponse> DeleteSuiteDefinitionAsync(string suiteDefinitionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -904,12 +904,12 @@ namespace MyNS
 		/// GetSuiteDefinition suiteDefinitions/{suiteDefinitionId}
 		/// </summary>
 		/// <param name="suiteDefinitionId">Suite definition ID of the test suite to get.
-		/// Max length: 36
 		/// Min length: 12
+		/// Max length: 36
 		// </param>
 		/// <param name="suiteDefinitionVersion">Suite definition version of the test suite to get.
-		/// Max length: 255
 		/// Min length: 2
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSuiteDefinitionResponse> GetSuiteDefinitionAsync(string suiteDefinitionId, string suiteDefinitionVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -945,8 +945,8 @@ namespace MyNS
 		/// UpdateSuiteDefinition suiteDefinitions/{suiteDefinitionId}
 		/// </summary>
 		/// <param name="suiteDefinitionId">Suite definition ID of the test suite to be updated.
-		/// Max length: 36
 		/// Min length: 12
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateSuiteDefinitionResponse> UpdateSuiteDefinitionAsync(string suiteDefinitionId, UpdateSuiteDefinitionPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -989,16 +989,16 @@ namespace MyNS
 		/// GetEndpoint endpoint
 		/// </summary>
 		/// <param name="thingArn">The thing ARN of the device. This is an optional parameter.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="certificateArn">The certificate ARN of the device. This is an optional parameter.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="deviceRoleArn">The device role ARN of the device. This is an optional parameter.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="authenticationMethod">The authentication method used during the device connection.</param>
 		/// <returns>Success</returns>
@@ -1035,12 +1035,12 @@ namespace MyNS
 		/// GetSuiteRun suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}
 		/// </summary>
 		/// <param name="suiteDefinitionId">Suite definition ID for the test suite run.
-		/// Max length: 36
 		/// Min length: 12
+		/// Max length: 36
 		// </param>
 		/// <param name="suiteRunId">Suite run ID for the test suite run.
-		/// Max length: 36
 		/// Min length: 12
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSuiteRunResponse> GetSuiteRunAsync(string suiteDefinitionId, string suiteRunId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1076,12 +1076,12 @@ namespace MyNS
 		/// GetSuiteRunReport suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}/report
 		/// </summary>
 		/// <param name="suiteDefinitionId">Suite definition ID of the test suite.
-		/// Max length: 36
 		/// Min length: 12
+		/// Max length: 36
 		// </param>
 		/// <param name="suiteRunId">Suite run ID of the test suite run.
-		/// Max length: 36
 		/// Min length: 12
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSuiteRunReportResponse> GetSuiteRunReportAsync(string suiteDefinitionId, string suiteRunId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1117,12 +1117,12 @@ namespace MyNS
 		/// ListSuiteRuns suiteRuns
 		/// </summary>
 		/// <param name="suiteDefinitionId">Lists the test suite runs of the specified test suite based on suite definition ID.
-		/// Max length: 36
 		/// Min length: 12
+		/// Max length: 36
 		// </param>
 		/// <param name="suiteDefinitionVersion">Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.
-		/// Max length: 255
 		/// Min length: 2
+		/// Max length: 255
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return at once.
 		/// Minimum: 1
@@ -1165,8 +1165,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The resource ARN of the IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1202,8 +1202,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1246,8 +1246,8 @@ namespace MyNS
 		/// StartSuiteRun suiteDefinitions/{suiteDefinitionId}/suiteRuns
 		/// </summary>
 		/// <param name="suiteDefinitionId">Suite definition ID of the test suite.
-		/// Max length: 36
 		/// Min length: 12
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartSuiteRunResponse> StartSuiteRunAsync(string suiteDefinitionId, StartSuiteRunPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1290,12 +1290,12 @@ namespace MyNS
 		/// StopSuiteRun suiteDefinitions/{suiteDefinitionId}/suiteRuns/{suiteRunId}/stop
 		/// </summary>
 		/// <param name="suiteDefinitionId">Suite definition ID of the test suite run to be stopped.
-		/// Max length: 36
 		/// Min length: 12
+		/// Max length: 36
 		// </param>
 		/// <param name="suiteRunId">Suite run ID of the test suite run to be stopped.
-		/// Max length: 36
 		/// Min length: 12
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopSuiteRunResponse> StopSuiteRunAsync(string suiteDefinitionId, string suiteRunId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1326,8 +1326,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The resource ARN of an IoT Device Advisor resource. This can be SuiteDefinition ARN or SuiteRun ARN.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys">List of tag keys to remove from the IoT Device Advisor resource.
 		/// Minimum items: 0
@@ -1460,8 +1460,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Suite definition version of the test suite.
-		/// Max length: 255
 		/// Min length: 2
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="suiteDefinitionVersion")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]

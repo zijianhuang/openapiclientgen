@@ -1528,8 +1528,8 @@ namespace MyNS
 		/// CancelQuantumTask quantum-task/{quantumTaskArn}/cancel
 		/// </summary>
 		/// <param name="quantumTaskArn">The ARN of the task to cancel.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelQuantumTaskResponse> CancelQuantumTaskAsync(string quantumTaskArn, CancelQuantumTaskPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1638,8 +1638,8 @@ namespace MyNS
 		/// GetDevice device/{deviceArn}
 		/// </summary>
 		/// <param name="deviceArn">The ARN of the device to retrieve.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDeviceResponse> GetDeviceAsync(string deviceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1709,8 +1709,8 @@ namespace MyNS
 		/// GetQuantumTask quantum-task/{quantumTaskArn}
 		/// </summary>
 		/// <param name="quantumTaskArn">the ARN of the task to retrieve.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetQuantumTaskResponse> GetQuantumTaskAsync(string quantumTaskArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1984,8 +1984,8 @@ namespace MyNS
 		/// <summary>
 		/// The client token associated with the request.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -2014,8 +2014,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique token that guarantees that the call to this API is idempotent.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -2058,8 +2058,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Amazon Braket job.
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// Pattern: ^[a-zA-Z0-9](-*[a-zA-Z0-9]){0,50}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2171,8 +2171,8 @@ namespace MyNS
 		/// <summary>
 		/// The client token associated with the request.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -2183,8 +2183,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the device to run the task on.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="deviceArn")]
@@ -2194,8 +2194,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The parameters for the device to run the task on.
-		/// Max length: 48000
 		/// Min length: 1
+		/// Max length: 48000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="deviceParameters")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2204,8 +2204,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for an Amazon Braket job that associates it with the quantum task.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="jobToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2215,8 +2215,8 @@ namespace MyNS
 		/// <summary>
 		/// The S3 bucket to store task result files in.
 		/// Required
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="outputS3Bucket")]
@@ -2227,8 +2227,8 @@ namespace MyNS
 		/// <summary>
 		/// The key prefix for the location in the S3 bucket to store task results in.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="outputS3KeyPrefix")]

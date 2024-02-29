@@ -102,8 +102,8 @@ namespace MyNS
 		public bool CallbackOnModify { get; set; }
 		
 		/// <summary>
-		/// Max length: 800
 		/// Min length: 0
+		/// Max length: 800
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -138,8 +138,8 @@ namespace MyNS
 		public string Frequency { get; set; }
 		
 		/// <summary>
-		/// Max length: 80
 		/// Min length: 0
+		/// Max length: 80
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -183,8 +183,8 @@ namespace MyNS
 		public object Custom { get; set; }
 		
 		/// <summary>
-		/// Max length: 80
 		/// Min length: 0
+		/// Max length: 80
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -223,8 +223,8 @@ namespace MyNS
 		public bool CallbackOnModify { get; set; }
 		
 		/// <summary>
-		/// Max length: 800
 		/// Min length: 0
+		/// Max length: 800
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -259,8 +259,8 @@ namespace MyNS
 		public KeyView[] Keys { get; set; }
 		
 		/// <summary>
-		/// Max length: 80
 		/// Min length: 0
+		/// Max length: 80
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -289,8 +289,8 @@ namespace MyNS
 		public System.Nullable<System.Boolean> CallbackOnModify { get; set; }
 		
 		/// <summary>
-		/// Max length: 800
 		/// Min length: 0
+		/// Max length: 800
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="callbackUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -313,8 +313,8 @@ namespace MyNS
 		public string Key { get; set; }
 		
 		/// <summary>
-		/// Max length: 80
 		/// Min length: 0
+		/// Max length: 80
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]

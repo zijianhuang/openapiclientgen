@@ -400,8 +400,8 @@ namespace MyNS
 		/// DeleteRecord FeatureGroup/{FeatureGroupName}#RecordIdentifierValueAsString&EventTime
 		/// </summary>
 		/// <param name="FeatureGroupName">The name or Amazon Resource Name (ARN) of the feature group to delete the record from. 
-		/// Max length: 150
 		/// Min length: 1
+		/// Max length: 150
 		// </param>
 		/// <param name="RecordIdentifierValueAsString">The value for the <code>RecordIdentifier</code> that uniquely identifies the record, in string format. 
 		/// Max length: 358400
@@ -442,8 +442,8 @@ namespace MyNS
 		/// GetRecord FeatureGroup/{FeatureGroupName}#RecordIdentifierValueAsString
 		/// </summary>
 		/// <param name="FeatureGroupName">The name or Amazon Resource Name (ARN) of the feature group from which you want to retrieve a record.
-		/// Max length: 150
 		/// Min length: 1
+		/// Max length: 150
 		// </param>
 		/// <param name="RecordIdentifierValueAsString">The value that corresponds to <code>RecordIdentifier</code> type and uniquely identifies the record in the <code>FeatureGroup</code>. 
 		/// Max length: 358400
@@ -486,8 +486,8 @@ namespace MyNS
 		/// PutRecord FeatureGroup/{FeatureGroupName}
 		/// </summary>
 		/// <param name="FeatureGroupName">The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.
-		/// Max length: 150
 		/// Min length: 1
+		/// Max length: 150
 		// </param>
 		/// <returns>Success</returns>
 		public async Task PutRecordAsync(string FeatureGroupName, PutRecordPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

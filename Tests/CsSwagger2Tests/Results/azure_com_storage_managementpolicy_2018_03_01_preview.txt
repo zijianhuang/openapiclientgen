@@ -87,12 +87,12 @@ namespace MyNS
 		/// ManagementPolicies_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -130,12 +130,12 @@ namespace MyNS
 		/// ManagementPolicies_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -181,12 +181,12 @@ namespace MyNS
 		/// ManagementPolicies_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="accountName">The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1

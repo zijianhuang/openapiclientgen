@@ -975,8 +975,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
@@ -1021,8 +1021,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
@@ -1063,8 +1063,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
@@ -1109,8 +1109,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
@@ -1151,8 +1151,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
@@ -1192,8 +1192,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
@@ -1232,8 +1232,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
@@ -1280,8 +1280,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
@@ -1320,8 +1320,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
@@ -1360,8 +1360,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>

@@ -1833,8 +1833,8 @@ namespace MyNS
 		/// DeleteNetwork v1/networks/{networkArn}
 		/// </summary>
 		/// <param name="clientToken">Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="networkArn">The Amazon Resource Name (ARN) of the network.</param>
 		/// <returns>Success</returns>
@@ -1905,8 +1905,8 @@ namespace MyNS
 		/// DeleteNetworkSite v1/network-sites/{networkSiteArn}
 		/// </summary>
 		/// <param name="clientToken">Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="networkSiteArn">The Amazon Resource Name (ARN) of the network site.</param>
 		/// <returns>Success</returns>
@@ -2570,8 +2570,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2594,8 +2594,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2689,8 +2689,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource. 
-		/// Max length: 100000
 		/// Min length: 1
+		/// Max length: 100000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="cpiSecretKey")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2699,8 +2699,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The CPI user ID of the CPI user who is certifying the coordinates of the network resource. 
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="cpiUserId")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2709,8 +2709,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="cpiUserPassword")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2719,8 +2719,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The CPI user name of the CPI user who is certifying the coordinates of the radio unit.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="cpiUsername")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2758,8 +2758,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2768,8 +2768,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the network.
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2779,8 +2779,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the network. You can't change the name after you create the network.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[0-9a-zA-Z-]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2814,8 +2814,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2824,8 +2824,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the site.
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2845,8 +2845,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the site. You can't change the name after you create the site.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[0-9a-zA-Z-]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2884,8 +2884,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3101,8 +3101,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The reason for the return. Providing a reason for a return is optional.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="returnReason")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3176,8 +3176,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3186,8 +3186,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description.
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3210,8 +3210,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

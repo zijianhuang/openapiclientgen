@@ -8841,8 +8841,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A custom description of the allow list. The description can contain as many as 512 characters.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: ^[\s\S]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -8854,8 +8854,8 @@ namespace MyNS
 		/// <summary>
 		/// A custom name for the allow list. The name can contain as many as 128 characters.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9206,8 +9206,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A custom description of the allow list. The description can contain as many as 512 characters.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: ^[\s\S]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -9219,8 +9219,8 @@ namespace MyNS
 		/// <summary>
 		/// A custom name for the allow list. The name can contain as many as 128 characters.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

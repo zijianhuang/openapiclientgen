@@ -566,8 +566,8 @@ namespace MyNS
 		/// <summary>
 		/// The Disk's label is for display purposes only.
 		///
-		/// Max length: 48
 		/// Min length: 1
+		/// Max length: 48
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -686,8 +686,8 @@ namespace MyNS
 		/// <summary>
 		/// Your credit card number. No spaces or dashes allowed.
 		/// Required
-		/// Max length: 24
 		/// Min length: 14
+		/// Max length: 24
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="card_number")]
@@ -699,8 +699,8 @@ namespace MyNS
 		/// CVV (Card Verification Value) of the credit card, typically found on the back of the card.
 		///
 		/// Required
-		/// Max length: 4
 		/// Min length: 3
+		/// Max length: 4
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="cvv")]
@@ -734,8 +734,8 @@ namespace MyNS
 		///the future. An expiration date set in the past is invalid.
 		///
 		/// Required
-		/// Max length: 4
 		/// Min length: 4
+		/// Max length: 4
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="expiry_year")]
@@ -838,8 +838,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, user-defined string referring to the Managed Database.
-		/// Max length: 32
 		/// Min length: 3
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -1100,8 +1100,8 @@ namespace MyNS
 		///* Must be unique among other backup labels for this Database.
 		///
 		/// Required
-		/// Max length: 30
 		/// Min length: 1
+		/// Max length: 30
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -2181,8 +2181,8 @@ namespace MyNS
 		///* Must meet a password strength score requirement that is calculated internally by the API.
 		///If the strength requirement is not met, you will receive a `Password does not meet strength requirement` error.
 		///
-		/// Max length: 128
 		/// Min length: 7
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="root_pass")]
 		[System.ComponentModel.DataAnnotations.MinLength(7)]
@@ -2244,8 +2244,8 @@ namespace MyNS
 		/// <summary>
 		/// A description for this Domain. This is for display purposes only.
 		///
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2255,8 +2255,8 @@ namespace MyNS
 		/// <summary>
 		/// The domain this Domain represents. Domain labels cannot be longer than 63 characters and must conform to [RFC1035](https://tools.ietf.org/html/rfc1035). Domains must be unique on Linode's platform, including across different Linode accounts; there cannot be two Domains representing the same domain.
 		///
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		/// Pattern: \A(\*\.)?([a-zA-Z0-9-_]{1,63}\.)+([a-zA-Z]{2,3}\.)?([a-zA-Z]{2,16}|xn--[a-zA-Z0-9]+)\Z
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="domain")]
@@ -2283,8 +2283,8 @@ namespace MyNS
 		/// <summary>
 		/// The group this Domain belongs to.  This is for display purposes only.
 		///
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="group")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2440,8 +2440,8 @@ namespace MyNS
 		///`PTR`: See our guide on how to [Configure Your Linode for Reverse DNS
 		///(rDNS)](/docs/guides/configure-rdns/).
 		///
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3413,8 +3413,8 @@ namespace MyNS
 		///  * Must be between 3 and 32 characters.
 		///  * Must be unique.
 		///
-		/// Max length: 32
 		/// Min length: 3
+		/// Max length: 32
 		/// Pattern: ^[a-zA-Z]((?!--|__|..)[a-zA-Z0-9-_.])+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -3516,8 +3516,8 @@ namespace MyNS
 		/// <summary>
 		/// Used to describe this rule. For display purposes only.
 		///
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3527,8 +3527,8 @@ namespace MyNS
 		/// <summary>
 		/// Used to identify this rule. For display purposes only.
 		///
-		/// Max length: 32
 		/// Min length: 3
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -4461,8 +4461,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A detailed description of this Image.
-		/// Max length: 65000
 		/// Min length: 1
+		/// Max length: 65000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4843,8 +4843,8 @@ namespace MyNS
 		///    response will return the code points using up to 193 1 byte
 		///    characters.
 		///
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5231,8 +5231,8 @@ namespace MyNS
 		///  * May only consist of alphanumeric characters, dashes (`-`), underscores (`_`) or periods (`.`).
 		///  * Cannot have two dashes (`--`), underscores (`__`) or periods (`..`) in a row.
 		///
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z]((?!--|__|..)[a-zA-Z0-9-_.])+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -5642,8 +5642,8 @@ namespace MyNS
 		/// <summary>
 		/// The Config's label is for display purposes only.
 		///
-		/// Max length: 48
 		/// Min length: 1
+		/// Max length: 48
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5756,8 +5756,8 @@ namespace MyNS
 		///
 		///Must be unique among the Linode's interfaces.
 		///
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: /[a-z0-9-]+/
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -6295,8 +6295,8 @@ namespace MyNS
 		/// <summary>
 		/// This Client's unique label. This is for display purposes only.
 		///
-		/// Max length: 32
 		/// Min length: 3
+		/// Max length: 32
 		/// Pattern: [a-zA-Z0-9-_]{3,32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -6589,8 +6589,8 @@ namespace MyNS
 		/// <summary>
 		/// A grouping for this Contact. This is for display purposes only.
 		///
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="group")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -6607,8 +6607,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of this Contact.
 		///
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [a-zA-Z0-9-_ ]{2,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -6669,8 +6669,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique label for this Credential. This is for display purposes only.
 		///
-		/// Max length: 75
 		/// Min length: 2
+		/// Max length: 75
 		/// Pattern: [a-zA-Z0-9-_ \.]{2,75}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -6845,8 +6845,8 @@ namespace MyNS
 		///
 		///The default `null` value corresponds to the root user.
 		///
-		/// Max length: 32
 		/// Min length: 0
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="user")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6870,8 +6870,8 @@ namespace MyNS
 		///
 		///URL fragments/anchors such as `#monitor` are **not** preserved.
 		///
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="address")]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -6881,8 +6881,8 @@ namespace MyNS
 		/// <summary>
 		/// What to expect to find in the response body for the Service to be considered up.
 		///
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="body")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6892,8 +6892,8 @@ namespace MyNS
 		/// <summary>
 		/// The group of ManagedContacts who should be notified or consulted with when an Issue is detected.
 		///
-		/// Max length: 50
 		/// Min length: 0
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="consultation_group")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6923,8 +6923,8 @@ namespace MyNS
 		/// <summary>
 		/// The label for this Service. This is for display purposes only.
 		///
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		/// Pattern: [a-zA-Z0-9-_ \.]{3,64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -7067,8 +7067,8 @@ namespace MyNS
 		/// <summary>
 		/// This NodeBalancer's label. These must be unique on your Account.
 		///
-		/// Max length: 32
 		/// Min length: 3
+		/// Max length: 32
 		/// Pattern: [a-zA-Z0-9-_]{3,32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -7489,8 +7489,8 @@ namespace MyNS
 		/// <summary>
 		/// The label for this node.  This is for display purposes only.
 		///
-		/// Max length: 32
 		/// Min length: 3
+		/// Max length: 32
 		/// Pattern: [a-zA-Z0-9-_.]{3,32}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -7802,8 +7802,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of this application.  This will be presented to users when they are asked to grant it access to their Account.
 		///
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8429,8 +8429,8 @@ namespace MyNS
 		/// <summary>
 		/// This token's label.  This is for display purposes only, but can be used to more easily track what you're using each token for.
 		///
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8811,8 +8811,8 @@ namespace MyNS
 		/// <summary>
 		/// A label for the SSH Key.
 		///
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8857,8 +8857,8 @@ namespace MyNS
 		/// <summary>
 		/// The security question response.
 		///
-		/// Max length: 17
 		/// Min length: 3
+		/// Max length: 17
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="response")]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -9080,8 +9080,8 @@ namespace MyNS
 		/// <summary>
 		/// The StackScript's label is for display purposes only.
 		///
-		/// Max length: 128
 		/// Min length: 3
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -9294,8 +9294,8 @@ namespace MyNS
 		/// <summary>
 		/// The full details of the issue or question.
 		///
-		/// Max length: 65000
 		/// Min length: 1
+		/// Max length: 65000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -9346,8 +9346,8 @@ namespace MyNS
 		/// <summary>
 		/// The summary or title for this Ticket.
 		///
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="summary")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -9490,8 +9490,8 @@ namespace MyNS
 		/// The full details of the issue or question.
 		///
 		/// Required
-		/// Max length: 65000
 		/// Min length: 1
+		/// Max length: 65000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -9563,8 +9563,8 @@ namespace MyNS
 		/// The summary or title for this SupportTicket.
 		///
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="summary")]
@@ -9736,8 +9736,8 @@ namespace MyNS
 		/// <summary>
 		/// The User's username. This is used for logging in, and may also be displayed alongside actions the User performs (for example, in Events or public StackScripts).
 		///
-		/// Max length: 32
 		/// Min length: 3
+		/// Max length: 32
 		/// Pattern: ^[a-zA-Z0-9]((?![_-]{2,})[a-zA-Z0-9-_])+[a-zA-Z0-9]$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="username")]
@@ -9824,8 +9824,8 @@ namespace MyNS
 		/// <summary>
 		/// The Volume's label is for display purposes only.
 		///
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// Pattern: ^[a-zA-Z]((?!--|__)[a-zA-Z0-9-_])+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -24680,8 +24680,8 @@ namespace MyNS
 		/// The Promo Code.
 		///
 		/// Required
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="promo_code")]
@@ -24860,8 +24860,8 @@ namespace MyNS
 		/// The new domain for the clone. Domain labels cannot be longer than 63 characters and must conform to [RFC1035](https://tools.ietf.org/html/rfc1035). Domains must be unique on Linode's platform, including across different Linode accounts; there cannot be two Domains representing the same domain.
 		///
 		/// Required
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		/// Pattern: \A(\*\.)?([a-zA-Z0-9-_]{1,63}\.)+([a-zA-Z]{2,3}\.)?([a-zA-Z]{2,16}|xn--[a-zA-Z0-9]+)\Z
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -25100,8 +25100,8 @@ namespace MyNS
 		/// <summary>
 		/// The label for the new snapshot.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -25194,8 +25194,8 @@ namespace MyNS
 		///* Can only be provided when cloning to a new Linode.
 		///* Defaults to "linode".
 		///
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="label")]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -26854,8 +26854,8 @@ namespace MyNS
 		/// The new Tag.
 		///
 		/// Required
-		/// Max length: 50
 		/// Min length: 3
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -26932,8 +26932,8 @@ namespace MyNS
 		/// The Volume's label, which is also used in the `filesystem_path` of the resulting volume.
 		///
 		/// Required
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// Pattern: ^[a-zA-Z]((?!--|__)[a-zA-Z0-9-_])+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

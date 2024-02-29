@@ -103,8 +103,8 @@ namespace MyNS
 		/// <summary>
 		/// A string specifying a versioned base URL that MUST adhere to the rules in section Base URL
 		/// Required
-		/// Max length: 65536
 		/// Min length: 1
+		/// Max length: 65536
 		/// Pattern: .+/v[0-1](\.[0-9]+)*/?$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1383,8 +1383,8 @@ namespace MyNS
 		/// <summary>
 		/// a string containing the link’s URL.
 		/// Required
-		/// Max length: 65536
 		/// Min length: 1
+		/// Max length: 65536
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="href")]
@@ -1931,8 +1931,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URL of the reference.
-		/// Max length: 65536
 		/// Min length: 1
+		/// Max length: 65536
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="url")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

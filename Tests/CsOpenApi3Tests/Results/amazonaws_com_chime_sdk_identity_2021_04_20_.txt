@@ -1307,8 +1307,8 @@ namespace MyNS
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1346,8 +1346,8 @@ namespace MyNS
 		/// CreateAppInstanceAdmin app-instances/{appInstanceArn}/admins
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task CreateAppInstanceAdminAsync(string appInstanceArn, CreateAppInstanceAdminPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1383,16 +1383,16 @@ namespace MyNS
 		/// ListAppInstanceAdmins app-instances/{appInstanceArn}/admins
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="max_results">The maximum number of administrators that you want to return.
 		/// Minimum: 1
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token returned from previous API requests until the number of administrators is reached.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1496,8 +1496,8 @@ namespace MyNS
 		/// DeleteAppInstance app-instances/{appInstanceArn}
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task DeleteAppInstanceAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1526,8 +1526,8 @@ namespace MyNS
 		/// DescribeAppInstance app-instances/{appInstanceArn}
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceResponse> DescribeAppInstanceAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1563,8 +1563,8 @@ namespace MyNS
 		/// UpdateAppInstance app-instances/{appInstanceArn}
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppInstanceResponse> UpdateAppInstanceAsync(string appInstanceArn, UpdateAppInstancePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1607,12 +1607,12 @@ namespace MyNS
 		/// DeleteAppInstanceAdmin app-instances/{appInstanceArn}/admins/{appInstanceAdminArn}
 		/// </summary>
 		/// <param name="appInstanceAdminArn">The ARN of the <code>AppInstance</code>'s administrator.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task DeleteAppInstanceAdminAsync(string appInstanceAdminArn, string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1641,12 +1641,12 @@ namespace MyNS
 		/// DescribeAppInstanceAdmin app-instances/{appInstanceArn}/admins/{appInstanceAdminArn}
 		/// </summary>
 		/// <param name="appInstanceAdminArn">The ARN of the <code>AppInstanceAdmin</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceAdminResponse> DescribeAppInstanceAdminAsync(string appInstanceAdminArn, string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1682,8 +1682,8 @@ namespace MyNS
 		/// DeleteAppInstanceBot app-instance-bots/{appInstanceBotArn}
 		/// </summary>
 		/// <param name="appInstanceBotArn">The ARN of the <code>AppInstanceBot</code> being deleted.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task DeleteAppInstanceBotAsync(string appInstanceBotArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1712,8 +1712,8 @@ namespace MyNS
 		/// DescribeAppInstanceBot app-instance-bots/{appInstanceBotArn}
 		/// </summary>
 		/// <param name="appInstanceBotArn">The ARN of the <code>AppInstanceBot</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceBotResponse> DescribeAppInstanceBotAsync(string appInstanceBotArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1749,8 +1749,8 @@ namespace MyNS
 		/// UpdateAppInstanceBot app-instance-bots/{appInstanceBotArn}
 		/// </summary>
 		/// <param name="appInstanceBotArn">The ARN of the <code>AppInstanceBot</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppInstanceBotResponse> UpdateAppInstanceBotAsync(string appInstanceBotArn, UpdateAppInstanceBotPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1793,8 +1793,8 @@ namespace MyNS
 		/// DeleteAppInstanceUser app-instance-users/{appInstanceUserArn}
 		/// </summary>
 		/// <param name="appInstanceUserArn">The ARN of the user request being deleted.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task DeleteAppInstanceUserAsync(string appInstanceUserArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1823,8 +1823,8 @@ namespace MyNS
 		/// DescribeAppInstanceUser app-instance-users/{appInstanceUserArn}
 		/// </summary>
 		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceUserResponse> DescribeAppInstanceUserAsync(string appInstanceUserArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1860,8 +1860,8 @@ namespace MyNS
 		/// UpdateAppInstanceUser app-instance-users/{appInstanceUserArn}
 		/// </summary>
 		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppInstanceUserResponse> UpdateAppInstanceUserAsync(string appInstanceUserArn, UpdateAppInstanceUserPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1904,12 +1904,12 @@ namespace MyNS
 		/// DeregisterAppInstanceUserEndpoint app-instance-users/{appInstanceUserArn}/endpoints/{endpointId}
 		/// </summary>
 		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="endpointId">The unique identifier of the <code>AppInstanceUserEndpoint</code>.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		// </param>
 		public async Task DeregisterAppInstanceUserEndpointAsync(string appInstanceUserArn, string endpointId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1938,12 +1938,12 @@ namespace MyNS
 		/// DescribeAppInstanceUserEndpoint app-instance-users/{appInstanceUserArn}/endpoints/{endpointId}
 		/// </summary>
 		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
-		/// Max length: 1600
 		/// Min length: 0
+		/// Max length: 1600
 		// </param>
 		/// <param name="endpointId">The unique identifier of the <code>AppInstanceUserEndpoint</code>.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceUserEndpointResponse> DescribeAppInstanceUserEndpointAsync(string appInstanceUserArn, string endpointId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1979,12 +1979,12 @@ namespace MyNS
 		/// UpdateAppInstanceUserEndpoint app-instance-users/{appInstanceUserArn}/endpoints/{endpointId}
 		/// </summary>
 		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="endpointId">The unique identifier of the <code>AppInstanceUserEndpoint</code>.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppInstanceUserEndpointResponse> UpdateAppInstanceUserEndpointAsync(string appInstanceUserArn, string endpointId, UpdateAppInstanceUserEndpointPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2027,8 +2027,8 @@ namespace MyNS
 		/// GetAppInstanceRetentionSettings app-instances/{appInstanceArn}/retention-settings
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAppInstanceRetentionSettingsResponse> GetAppInstanceRetentionSettingsAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2064,8 +2064,8 @@ namespace MyNS
 		/// PutAppInstanceRetentionSettings app-instances/{appInstanceArn}/retention-settings
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutAppInstanceRetentionSettingsResponse> PutAppInstanceRetentionSettingsAsync(string appInstanceArn, PutAppInstanceRetentionSettingsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2108,16 +2108,16 @@ namespace MyNS
 		/// ListAppInstanceBots app-instance-bots#app-instance-arn
 		/// </summary>
 		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="max_results">The maximum number of requests to return.
 		/// Minimum: 1
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token passed by previous API calls until all requested bots are returned.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -2155,16 +2155,16 @@ namespace MyNS
 		/// ListAppInstanceUserEndpoints app-instance-users/{appInstanceUserArn}/endpoints
 		/// </summary>
 		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="max_results">The maximum number of endpoints that you want to return.
 		/// Minimum: 1
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token passed by previous API calls until all requested endpoints are returned.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -2202,8 +2202,8 @@ namespace MyNS
 		/// RegisterAppInstanceUserEndpoint app-instance-users/{appInstanceUserArn}/endpoints
 		/// </summary>
 		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task RegisterAppInstanceUserEndpointAsync(string appInstanceUserArn, RegisterAppInstanceUserEndpointPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2239,16 +2239,16 @@ namespace MyNS
 		/// ListAppInstanceUsers app-instance-users#app-instance-arn
 		/// </summary>
 		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="max_results">The maximum number of requests that you want returned.
 		/// Minimum: 1
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token passed by previous API calls until all requested users are returned.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -2286,8 +2286,8 @@ namespace MyNS
 		/// ListTagsForResource tags#arn
 		/// </summary>
 		/// <param name="arn">The ARN of the resource.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2323,8 +2323,8 @@ namespace MyNS
 		/// PutAppInstanceUserExpirationSettings app-instance-users/{appInstanceUserArn}/expiration-settings
 		/// </summary>
 		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutAppInstanceUserExpirationSettingsResponse> PutAppInstanceUserExpirationSettingsAsync(string appInstanceUserArn, PutAppInstanceUserExpirationSettingsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2435,8 +2435,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the <code>AppInstance</code>.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2448,8 +2448,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2461,8 +2461,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2489,8 +2489,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the administrator of the current <code>AppInstance</code>.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		/// Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2507,8 +2507,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the <code>AppInstance</code> request.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		/// Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2520,8 +2520,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The user's name.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2532,8 +2532,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The request metadata. Limited to a 1KB string in UTF-8.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2545,8 +2545,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2588,8 +2588,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the <code>AppInstance</code> request.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		/// Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2602,8 +2602,8 @@ namespace MyNS
 		/// <summary>
 		/// The user ID of the <code>AppInstance</code>.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [A-Za-z0-9]([A-Za-z0-9\:\-\_\.\@]{0,62}[A-Za-z0-9])?
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2616,8 +2616,8 @@ namespace MyNS
 		/// <summary>
 		/// The user's name.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2629,8 +2629,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The request's metadata. Limited to a 1KB string in UTF-8.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2642,8 +2642,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2686,8 +2686,8 @@ namespace MyNS
 		/// <summary>
 		/// The name that you want to change.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2700,8 +2700,8 @@ namespace MyNS
 		/// <summary>
 		/// The metadata that you want to change.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2718,8 +2718,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the <code>AppInstanceBot</code>.
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2732,8 +2732,8 @@ namespace MyNS
 		/// <summary>
 		/// The metadata of the <code>AppInstanceBot</code>.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2763,8 +2763,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the <code>AppInstanceUser</code>.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2777,8 +2777,8 @@ namespace MyNS
 		/// <summary>
 		/// The metadata of the <code>AppInstanceUser</code>.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2794,8 +2794,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the <code>AppInstanceUserEndpoint</code>.
-		/// Max length: 1600
 		/// Min length: 0
+		/// Max length: 1600
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2835,8 +2835,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the <code>AppInstanceUserEndpoint</code>.
-		/// Max length: 1600
 		/// Min length: 0
+		/// Max length: 1600
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2856,8 +2856,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the resource to which the endpoint belongs.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		/// Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2878,8 +2878,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique ID assigned to the request. Use different tokens to register other endpoints.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2939,8 +2939,8 @@ namespace MyNS
 		/// <summary>
 		/// The resource ARN.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		/// Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2976,8 +2976,8 @@ namespace MyNS
 		/// <summary>
 		/// The resource ARN.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		/// Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

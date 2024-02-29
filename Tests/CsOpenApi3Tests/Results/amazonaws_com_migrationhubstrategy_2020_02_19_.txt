@@ -2631,8 +2631,8 @@ namespace MyNS
 		/// GetApplicationComponentDetails get-applicationcomponent-details/{applicationComponentId}
 		/// </summary>
 		/// <param name="applicationComponentId"> The ID of the application component. The ID is unique within an AWS account.
-		/// Max length: 44
 		/// Min length: 0
+		/// Max length: 44
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetApplicationComponentDetailsResponse> GetApplicationComponentDetailsAsync(string applicationComponentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2668,8 +2668,8 @@ namespace MyNS
 		/// GetApplicationComponentStrategies get-applicationcomponent-strategies/{applicationComponentId}
 		/// </summary>
 		/// <param name="applicationComponentId"> The ID of the application component. The ID is unique within an AWS account.
-		/// Max length: 44
 		/// Min length: 0
+		/// Max length: 44
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetApplicationComponentStrategiesResponse> GetApplicationComponentStrategiesAsync(string applicationComponentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2705,8 +2705,8 @@ namespace MyNS
 		/// GetAssessment get-assessment/{id}
 		/// </summary>
 		/// <param name="id"> The <code>assessmentid</code> returned by <a>StartAssessment</a>.
-		/// Max length: 52
 		/// Min length: 0
+		/// Max length: 52
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAssessmentResponse> GetAssessmentAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2742,8 +2742,8 @@ namespace MyNS
 		/// GetImportFileTask get-import-file-task/{id}
 		/// </summary>
 		/// <param name="id"> The ID of the import file task. This ID is returned in the response of <a>StartImportFileTask</a>. 
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetImportFileTaskResponse> GetImportFileTaskAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2878,8 +2878,8 @@ namespace MyNS
 		/// GetRecommendationReportDetails get-recommendation-report-details/{id}
 		/// </summary>
 		/// <param name="id"> The recommendation report generation task <code>id</code> returned by <a>StartRecommendationReportGeneration</a>. 
-		/// Max length: 52
 		/// Min length: 0
+		/// Max length: 52
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRecommendationReportDetailsResponse> GetRecommendationReportDetailsAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2916,12 +2916,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="maxResults"> The maximum number of items to include in the response. The maximum value is 100. </param>
 		/// <param name="nextToken"> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. 
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="serverId"> The ID of the server. 
-		/// Max length: 27
 		/// Min length: 1
+		/// Max length: 27
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServerDetailsResponse> GetServerDetailsAsync(int maxResults, string nextToken, string serverId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2957,8 +2957,8 @@ namespace MyNS
 		/// GetServerStrategies get-server-strategies/{serverId}
 		/// </summary>
 		/// <param name="serverId"> The ID of the server. 
-		/// Max length: 27
 		/// Min length: 1
+		/// Max length: 27
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServerStrategiesResponse> GetServerStrategiesAsync(string serverId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3037,8 +3037,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="maxResults"> The maximum number of items to include in the response. The maximum value is 100. </param>
 		/// <param name="nextToken"> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. 
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListCollectorsResponse> ListCollectorsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3075,8 +3075,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="maxResults"> The total number of items to return. The maximum value is 100. </param>
 		/// <param name="nextToken"> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. 
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListImportFileTaskResponse> ListImportFileTaskAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3441,8 +3441,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  Specify the value based on the application component criteria type. For example, if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and <code>filterValue</code> is set to <code>server1</code>, then <a>ListApplicationComponents</a> returns all the application components running on server1. 
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filterValue")]
@@ -3465,8 +3465,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. 
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -3487,8 +3487,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  Specifies the filter value, which is based on the type of server criteria. For example, if <code>serverCriteria</code> is <code>OS_NAME</code>, and the <code>filterValue</code> is equal to <code>WindowsServer</code>, then <code>ListServers</code> returns all of the servers matching the OS name <code>WindowsServer</code>. 
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filterValue")]
@@ -3511,8 +3511,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. 
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -3601,8 +3601,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with <code>migrationhub-strategy-</code>. 
-		/// Max length: 63
 		/// Min length: 0
+		/// Max length: 63
 		/// Pattern: [0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="s3bucketForAnalysisData")]
@@ -3613,8 +3613,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The S3 bucket where all the reports generated by the service are stored. The bucket name must begin with <code>migrationhub-strategy-</code>. 
-		/// Max length: 63
 		/// Min length: 0
+		/// Max length: 63
 		/// Pattern: [0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="s3bucketForReportData")]
@@ -3630,8 +3630,8 @@ namespace MyNS
 		/// <summary>
 		///  The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.
 		/// Required
-		/// Max length: 63
 		/// Min length: 0
+		/// Max length: 63
 		/// Pattern: [0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3656,8 +3656,8 @@ namespace MyNS
 		/// <summary>
 		///  A descriptive name for the request. 
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// Pattern: [a-zA-Z0-9_-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3669,8 +3669,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  The S3 bucket where Strategy Recommendations uploads import results. The bucket name is required to begin with migrationhub-strategy-. 
-		/// Max length: 63
 		/// Min length: 0
+		/// Max length: 63
 		/// Pattern: [0-9a-z]+[0-9a-z\.\-]*[0-9a-z]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="s3bucketForReportData")]
@@ -3682,8 +3682,8 @@ namespace MyNS
 		/// <summary>
 		///  The Amazon S3 key name of the import file. 
 		/// Required
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3716,8 +3716,8 @@ namespace MyNS
 		/// <summary>
 		///  The <code>assessmentId</code> returned by <a>StartAssessment</a>. 
 		/// Required
-		/// Max length: 52
 		/// Min length: 0
+		/// Max length: 52
 		/// Pattern: [0-9a-z-:]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3740,8 +3740,8 @@ namespace MyNS
 		/// <summary>
 		///  The ID of the application component. The ID is unique within an AWS account. 
 		/// Required
-		/// Max length: 44
 		/// Min length: 0
+		/// Max length: 44
 		/// Pattern: [0-9a-zA-Z-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3765,8 +3765,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  Database credentials. 
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="secretsManagerKey")]
@@ -3883,8 +3883,8 @@ namespace MyNS
 		/// <summary>
 		///  The ID of the server. 
 		/// Required
-		/// Max length: 27
 		/// Min length: 1
+		/// Max length: 27
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

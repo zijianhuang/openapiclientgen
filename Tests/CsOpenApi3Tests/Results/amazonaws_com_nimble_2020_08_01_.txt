@@ -4800,8 +4800,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A human-readable description of the launch profile.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4831,8 +4831,8 @@ namespace MyNS
 		/// <summary>
 		/// The name for the launch profile.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -4906,8 +4906,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4927,8 +4927,8 @@ namespace MyNS
 		/// <summary>
 		/// A friendly name for a streaming image resource.
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -4968,8 +4968,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the streaming image.
-		/// Max length: 22
 		/// Min length: 0
+		/// Max length: 22
 		/// Pattern: ^[a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="streamingImageId")]
@@ -5050,8 +5050,8 @@ namespace MyNS
 		/// <summary>
 		/// The IAM role that studio admins will assume when logging in to the Nimble Studio portal.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="adminRoleArn")]
@@ -5062,8 +5062,8 @@ namespace MyNS
 		/// <summary>
 		/// A friendly name for the studio.
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="displayName")]
@@ -5080,8 +5080,8 @@ namespace MyNS
 		/// <summary>
 		/// The studio name that is used in the URL of the Nimble Studio portal when accessed by Nimble Studio users.
 		/// Required
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		/// Pattern: ^[a-z0-9]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5100,8 +5100,8 @@ namespace MyNS
 		/// <summary>
 		/// The IAM role that studio users will assume when logging in to the Nimble Studio portal.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="userRoleArn")]
@@ -5131,8 +5131,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5158,8 +5158,8 @@ namespace MyNS
 		/// <summary>
 		/// The name for the studio component.
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -5169,8 +5169,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. 
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="runtimeRoleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5189,8 +5189,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="secureInitializationRoleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5239,8 +5239,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A human-readable description of the launch profile.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5255,8 +5255,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name for the launch profile.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5331,8 +5331,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5341,8 +5341,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A friendly name for a streaming image resource.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5355,8 +5355,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="adminRoleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5365,8 +5365,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A friendly name for the studio.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="displayName")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5375,8 +5375,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="userRoleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5395,8 +5395,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5421,8 +5421,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name for the studio component.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5431,8 +5431,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services resources at anytime while the instance is running. 
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="runtimeRoleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5451,8 +5451,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An IAM role attached to Studio Component when the system initialization script runs which give the studio component access to Amazon Web Services resources when the system initialization script runs.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="secureInitializationRoleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]

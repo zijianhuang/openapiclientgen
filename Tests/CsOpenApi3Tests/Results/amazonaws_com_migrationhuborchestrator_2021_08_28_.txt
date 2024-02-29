@@ -1836,8 +1836,8 @@ namespace MyNS
 		/// DeleteWorkflow migrationworkflow/{id}
 		/// </summary>
 		/// <param name="id">The ID of the migration workflow you want to delete.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		public async Task DeleteWorkflowAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1866,8 +1866,8 @@ namespace MyNS
 		/// GetWorkflow migrationworkflow/{id}
 		/// </summary>
 		/// <param name="id">The ID of the migration workflow.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMigrationWorkflowResponse> GetWorkflowAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1903,8 +1903,8 @@ namespace MyNS
 		/// UpdateWorkflow migrationworkflow/{id}
 		/// </summary>
 		/// <param name="id">The ID of the migration workflow.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMigrationWorkflowResponse> UpdateWorkflowAsync(string id, UpdateWorkflowPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1947,16 +1947,16 @@ namespace MyNS
 		/// DeleteWorkflowStep workflowstep/{id}#stepGroupId&workflowId
 		/// </summary>
 		/// <param name="id">The ID of the step you want to delete.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="stepGroupId">The ID of the step group that contains the step you want to delete.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="workflowId">The ID of the migration workflow.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteWorkflowStepResponse> DeleteWorkflowStepAsync(string id, string stepGroupId, string workflowId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1992,12 +1992,12 @@ namespace MyNS
 		/// DeleteWorkflowStepGroup workflowstepgroup/{id}#workflowId
 		/// </summary>
 		/// <param name="workflowId">The ID of the migration workflow.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="id">The ID of the step group you want to delete.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		public async Task DeleteWorkflowStepGroupAsync(string workflowId, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2026,12 +2026,12 @@ namespace MyNS
 		/// GetWorkflowStepGroup workflowstepgroup/{id}#workflowId
 		/// </summary>
 		/// <param name="id">The ID of the step group.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="workflowId">The ID of the migration workflow.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWorkflowStepGroupResponse> GetWorkflowStepGroupAsync(string id, string workflowId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2067,12 +2067,12 @@ namespace MyNS
 		/// UpdateWorkflowStepGroup workflowstepgroup/{id}#workflowId
 		/// </summary>
 		/// <param name="workflowId">The ID of the migration workflow.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="id">The ID of the step group.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		public async Task UpdateWorkflowStepGroupAsync(string workflowId, string id, UpdateWorkflowStepGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2108,8 +2108,8 @@ namespace MyNS
 		/// GetTemplate migrationworkflowtemplate/{id}
 		/// </summary>
 		/// <param name="id">The ID of the template.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMigrationWorkflowTemplateResponse> GetTemplateAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2145,16 +2145,16 @@ namespace MyNS
 		/// GetTemplateStep templatestep/{id}#templateId&stepGroupId
 		/// </summary>
 		/// <param name="id">The ID of the step.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="templateId">The ID of the template.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="stepGroupId">The ID of the step group.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTemplateStepResponse> GetTemplateStepAsync(string id, string templateId, string stepGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2190,12 +2190,12 @@ namespace MyNS
 		/// GetTemplateStepGroup templates/{templateId}/stepgroups/{id}
 		/// </summary>
 		/// <param name="templateId">The ID of the template.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="id">The ID of the step group.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTemplateStepGroupResponse> GetTemplateStepGroupAsync(string templateId, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2231,16 +2231,16 @@ namespace MyNS
 		/// GetWorkflowStep workflowstep/{id}#workflowId&stepGroupId
 		/// </summary>
 		/// <param name="workflowId">The ID of the migration workflow.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="stepGroupId">desThe ID of the step group.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="id">The ID of the step.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWorkflowStepResponse> GetWorkflowStepAsync(string workflowId, string stepGroupId, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2280,8 +2280,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The pagination token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListPluginsResponse> ListPluginsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2396,12 +2396,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The pagination token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="templateId">The ID of the template.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTemplateStepGroupsResponse> ListTemplateStepGroupsAsync(int maxResults, string nextToken, string templateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2441,16 +2441,16 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The pagination token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="templateId">The ID of the template.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="stepGroupId">The ID of the step group.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTemplateStepsResponse> ListTemplateStepsAsync(int maxResults, string nextToken, string templateId, string stepGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2490,12 +2490,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The pagination token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="name">The name of the template.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListMigrationWorkflowTemplatesResponse> ListTemplatesAsync(int maxResults, string nextToken, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2531,16 +2531,16 @@ namespace MyNS
 		/// ListWorkflowStepGroups workflowstepgroups#workflowId
 		/// </summary>
 		/// <param name="nextToken">The pagination token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="maxResults">The maximum number of results that can be returned.
 		/// Minimum: 0
 		/// Maximum: 100
 		// </param>
 		/// <param name="workflowId">The ID of the migration workflow.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListWorkflowStepGroupsResponse> ListWorkflowStepGroupsAsync(string nextToken, int maxResults, string workflowId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2576,20 +2576,20 @@ namespace MyNS
 		/// ListWorkflowSteps workflow/{workflowId}/workflowstepgroups/{stepGroupId}/workflowsteps
 		/// </summary>
 		/// <param name="nextToken">The pagination token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="maxResults">The maximum number of results that can be returned.
 		/// Minimum: 0
 		/// Maximum: 100
 		// </param>
 		/// <param name="workflowId">The ID of the migration workflow.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="stepGroupId">The ID of the step group.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListWorkflowStepsResponse> ListWorkflowStepsAsync(string nextToken, int maxResults, string workflowId, string stepGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2629,16 +2629,16 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The pagination token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="templateId">The ID of the template.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="adsApplicationConfigurationName">The name of the application configured in Application Discovery Service.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="status">The status of the migration workflow.</param>
 		/// <param name="name">The name of the migration workflow.</param>
@@ -2676,16 +2676,16 @@ namespace MyNS
 		/// RetryWorkflowStep retryworkflowstep/{id}#workflowId&stepGroupId
 		/// </summary>
 		/// <param name="workflowId">The ID of the migration workflow.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="stepGroupId">The ID of the step group.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="id">The ID of the step.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<RetryWorkflowStepResponse> RetryWorkflowStepAsync(string workflowId, string stepGroupId, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2716,8 +2716,8 @@ namespace MyNS
 		/// StartWorkflow migrationworkflow/{id}/start
 		/// </summary>
 		/// <param name="id">The ID of the migration workflow.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartMigrationWorkflowResponse> StartWorkflowAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2748,8 +2748,8 @@ namespace MyNS
 		/// StopWorkflow migrationworkflow/{id}/stop
 		/// </summary>
 		/// <param name="id">The ID of the migration workflow.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopMigrationWorkflowResponse> StopWorkflowAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2818,8 +2818,8 @@ namespace MyNS
 		/// UpdateWorkflowStep workflowstep/{id}
 		/// </summary>
 		/// <param name="id">The ID of the step.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateWorkflowStepResponse> UpdateWorkflowStepAsync(string id, UpdateWorkflowStepPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2864,8 +2864,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the migration workflow.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: [-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2877,8 +2877,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the migration workflow.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// Pattern: [-a-zA-Z0-9_.+, ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -2890,8 +2890,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the template.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: [-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2904,8 +2904,8 @@ namespace MyNS
 		/// <summary>
 		/// The configuration ID of the application configured in Application Discovery Service.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: [-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2942,8 +2942,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the step.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: [-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2956,8 +2956,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the step group.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: [a-zA-Z0-9-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2970,8 +2970,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the migration workflow.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: [a-zA-Z0-9-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2991,8 +2991,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the step.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// Pattern: [-a-zA-Z0-9_.+, ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -3057,8 +3057,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the migration workflow that will contain the step group.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: [a-zA-Z0-9-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3071,8 +3071,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the step group.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: [-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3084,8 +3084,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the step group.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// Pattern: [-a-zA-Z0-9_.+, ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -3112,8 +3112,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the migration workflow.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: [-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -3124,8 +3124,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the migration workflow.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// Pattern: [-a-zA-Z0-9_.+, ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -3152,8 +3152,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the step group.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: [-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -3164,8 +3164,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the step group.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// Pattern: [-a-zA-Z0-9_.+, ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -3205,8 +3205,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the step group.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: [a-zA-Z0-9-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3219,8 +3219,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the migration workflow.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: [a-zA-Z0-9-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3232,8 +3232,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the step.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: [-a-zA-Z0-9_.+]+[-a-zA-Z0-9_.+ ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -3244,8 +3244,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the step.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// Pattern: [-a-zA-Z0-9_.+, ]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]

@@ -291,8 +291,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of the network analyzer configuration.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: [a-zA-Z0-9-_]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1186,8 +1186,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The S3 URI points to a firmware update image that is to be used with a FUOTA task.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1196,8 +1196,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The firmware update role that is to be used with a FUOTA task.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1700,8 +1700,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of the network analyzer configuration.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: [a-zA-Z0-9-_]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3712,8 +3712,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of the network analyzer configuration.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: [a-zA-Z0-9-_]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4848,8 +4848,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4867,8 +4867,8 @@ namespace MyNS
 		/// <summary>
 		/// The S3 URI points to a firmware update image that is to be used with a FUOTA task.
 		/// Required
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4879,8 +4879,8 @@ namespace MyNS
 		/// <summary>
 		/// The firmware update role that is to be used with a FUOTA task.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5039,8 +5039,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the network analyzer configuration.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: [a-zA-Z0-9-_]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5082,8 +5082,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -6218,8 +6218,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -6263,8 +6263,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -6384,8 +6384,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The S3 URI points to a firmware update image that is to be used with a FUOTA task.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6394,8 +6394,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The firmware update role that is to be used with a FUOTA task.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8413,8 +8413,8 @@ namespace MyNS
 		/// Deletes a network analyzer configuration.
 		/// DeleteNetworkAnalyzerConfiguration network-analyzer-configurations/{ConfigurationName}
 		/// </summary>
-		/// <param name="ConfigurationName">Max length: 1024
-		/// Min length: 1
+		/// <param name="ConfigurationName">Min length: 1
+		/// Max length: 1024
 		// </param>
 		public async Task DeleteNetworkAnalyzerConfigurationAsync(string ConfigurationName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8442,8 +8442,8 @@ namespace MyNS
 		/// Get network analyzer configuration.
 		/// GetNetworkAnalyzerConfiguration network-analyzer-configurations/{ConfigurationName}
 		/// </summary>
-		/// <param name="ConfigurationName">Max length: 1024
-		/// Min length: 1
+		/// <param name="ConfigurationName">Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetNetworkAnalyzerConfigurationResponse> GetNetworkAnalyzerConfigurationAsync(string ConfigurationName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8478,8 +8478,8 @@ namespace MyNS
 		/// Update network analyzer configuration.
 		/// UpdateNetworkAnalyzerConfiguration network-analyzer-configurations/{ConfigurationName}
 		/// </summary>
-		/// <param name="ConfigurationName">Max length: 1024
-		/// Min length: 1
+		/// <param name="ConfigurationName">Min length: 1
+		/// Max length: 1024
 		// </param>
 		public async Task UpdateNetworkAnalyzerConfigurationAsync(string ConfigurationName, UpdateNetworkAnalyzerConfigurationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10195,8 +10195,8 @@ namespace MyNS
 		/// ListTagsForResource tags#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource for which you want to list tags.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -10232,8 +10232,8 @@ namespace MyNS
 		/// TagResource tags#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource to add tags to.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10507,8 +10507,8 @@ namespace MyNS
 		/// UntagResource tags#resourceArn&tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource to remove tags from.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <param name="tagKeys">A list of the keys of the tags to remove from the resource.
 		/// Minimum items: 0
@@ -10550,8 +10550,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -10641,8 +10641,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the certificate to associate with the wireless gateway.
 		/// Required
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -10759,8 +10759,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the IAM Role that authorizes the destination.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -10780,8 +10780,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -10820,8 +10820,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -10919,8 +10919,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -10938,8 +10938,8 @@ namespace MyNS
 		/// <summary>
 		/// The S3 URI points to a firmware update image that is to be used with a FUOTA task.
 		/// Required
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -10950,8 +10950,8 @@ namespace MyNS
 		/// <summary>
 		/// The firmware update role that is to be used with a FUOTA task.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -11072,8 +11072,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -11171,8 +11171,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the network analyzer configuration.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: [a-zA-Z0-9-_]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -11224,8 +11224,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -11296,8 +11296,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -11367,8 +11367,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -11483,8 +11483,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -11569,8 +11569,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the new resource.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -11585,8 +11585,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -11646,8 +11646,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the IAM Role that authorizes the destination.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(20)]
@@ -11702,8 +11702,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The S3 URI points to a firmware update image that is to be used with a FUOTA task.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -11712,8 +11712,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The firmware update role that is to be used with a FUOTA task.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -12610,8 +12610,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -12669,8 +12669,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9-_]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

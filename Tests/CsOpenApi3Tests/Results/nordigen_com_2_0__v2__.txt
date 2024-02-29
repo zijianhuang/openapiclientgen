@@ -585,8 +585,8 @@ namespace MyNS
 		/// <summary>
 		/// Creditor account type identifier
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="account")]
@@ -633,8 +633,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Creditor account address street
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="address_street")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -643,8 +643,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Creditor account BICFI Identifier
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="agent")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -653,8 +653,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Creditor account agent name
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="agent_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -664,8 +664,8 @@ namespace MyNS
 		/// <summary>
 		/// Creditor account currency
 		/// Required
-		/// Max length: 3
 		/// Min length: 1
+		/// Max length: 3
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="currency")]
@@ -684,8 +684,8 @@ namespace MyNS
 		/// <summary>
 		/// Creditor account name
 		/// Required
-		/// Max length: 70
 		/// Min length: 1
+		/// Max length: 70
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -695,8 +695,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Creditor account address post code
-		/// Max length: 30
 		/// Min length: 1
+		/// Max length: 30
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="post_code")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -801,8 +801,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Debtor account type identifier
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -811,8 +811,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Debtor account address country
-		/// Max length: 2
 		/// Min length: 1
+		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="address_country")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -821,8 +821,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Debtor account address street
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="address_street")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -831,8 +831,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Debtor account currency
-		/// Max length: 3
 		/// Min length: 1
+		/// Max length: 3
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="currency")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -842,8 +842,8 @@ namespace MyNS
 		/// <summary>
 		/// Debtor account name
 		/// Required
-		/// Max length: 70
 		/// Min length: 1
+		/// Max length: 70
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -853,8 +853,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Debtor account post code
-		/// Max length: 30
 		/// Min length: 1
+		/// Max length: 30
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="post_code")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -873,8 +873,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Debtor account type identifier
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="type_number")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1123,8 +1123,8 @@ namespace MyNS
 		/// <summary>
 		/// Instructed amount currency
 		/// Required
-		/// Max length: 3
 		/// Min length: 1
+		/// Max length: 3
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="currency")]
@@ -1780,8 +1780,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Payment Custom Payment ID
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="custom_payment_id")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1843,8 +1843,8 @@ namespace MyNS
 		/// <summary>
 		/// Redirect URL to your application after payment is done
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="redirect")]
@@ -2048,8 +2048,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Payment Custom Payment ID
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="custom_payment_id")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2115,8 +2115,8 @@ namespace MyNS
 		/// <summary>
 		/// Redirect URL to your application after payment is done
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="redirect")]
@@ -2262,8 +2262,8 @@ namespace MyNS
 		/// <summary>
 		/// redirect URL to your application after end-user authorization with ASPSP
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="redirect")]
@@ -2279,8 +2279,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// additional ID to identify the end user
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reference")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2297,8 +2297,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A two-letter country code (ISO 639-1)
-		/// Max length: 5
 		/// Min length: 1
+		/// Max length: 5
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="user_language")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

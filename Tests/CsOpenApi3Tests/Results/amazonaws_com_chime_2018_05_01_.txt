@@ -6923,8 +6923,8 @@ namespace MyNS
 		/// BatchCreateChannelMembership channels/{channelArn}/memberships#operation=batch-create
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel to which you're adding users.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchCreateChannelMembershipResponse> BatchCreateChannelMembershipAsync(string channelArn, BatchCreateChannelMembershipOperation operation, BatchCreateChannelMembershipPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7281,8 +7281,8 @@ namespace MyNS
 		/// ListAccounts accounts
 		/// </summary>
 		/// <param name="name">Amazon Chime account name prefix with which to filter results.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="user_email">User email address with which to filter results.</param>
 		/// <param name="next_token">The token to use to retrieve the next page of results.</param>
@@ -7363,8 +7363,8 @@ namespace MyNS
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -7402,8 +7402,8 @@ namespace MyNS
 		/// CreateAppInstanceAdmin app-instances/{appInstanceArn}/admins
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task CreateAppInstanceAdminAsync(string appInstanceArn, CreateAppInstanceAdminPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7439,16 +7439,16 @@ namespace MyNS
 		/// ListAppInstanceAdmins app-instances/{appInstanceArn}/admins
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="max_results">The maximum number of administrators that you want to return.
 		/// Minimum: 1
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token returned from previous API requests until the number of administrators is reached.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -7702,8 +7702,8 @@ namespace MyNS
 		/// CreateChannelBan channels/{channelArn}/bans
 		/// </summary>
 		/// <param name="channelArn">The ARN of the ban request.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task CreateChannelBanAsync(string channelArn, CreateChannelBanPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7739,16 +7739,16 @@ namespace MyNS
 		/// ListChannelBans channels/{channelArn}/bans
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="max_results">The maximum number of bans that you want returned.
 		/// Minimum: 1
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token passed by previous API calls until all requested bans are returned.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -7786,8 +7786,8 @@ namespace MyNS
 		/// CreateChannelMembership channels/{channelArn}/memberships
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel to which you're adding users.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task CreateChannelMembershipAsync(string channelArn, CreateChannelMembershipPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7823,8 +7823,8 @@ namespace MyNS
 		/// ListChannelMemberships channels/{channelArn}/memberships
 		/// </summary>
 		/// <param name="channelArn">The maximum number of channel memberships that you want returned.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="type">The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned.</param>
 		/// <param name="max_results">The maximum number of channel memberships that you want returned.
@@ -7832,8 +7832,8 @@ namespace MyNS
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token passed by previous API calls until all requested channel memberships are returned.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -7871,8 +7871,8 @@ namespace MyNS
 		/// CreateChannelModerator channels/{channelArn}/moderators
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task CreateChannelModeratorAsync(string channelArn, CreateChannelModeratorPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7908,16 +7908,16 @@ namespace MyNS
 		/// ListChannelModerators channels/{channelArn}/moderators
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="max_results">The maximum number of moderators that you want returned.
 		/// Minimum: 1
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token passed by previous API calls until all requested moderators are returned.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -8241,8 +8241,8 @@ namespace MyNS
 		/// CreateProxySession voice-connectors/{voiceConnectorId}/proxy-sessions
 		/// </summary>
 		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task CreateProxySessionAsync(string voiceConnectorId, CreateProxySessionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8278,8 +8278,8 @@ namespace MyNS
 		/// ListProxySessions voice-connectors/{voiceConnectorId}/proxy-sessions
 		/// </summary>
 		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="status">The proxy session status.</param>
 		/// <param name="next_token">The token to use to retrieve the next page of results.
@@ -8945,8 +8945,8 @@ namespace MyNS
 		/// DeleteAppInstance app-instances/{appInstanceArn}
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task DeleteAppInstanceAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8975,8 +8975,8 @@ namespace MyNS
 		/// DescribeAppInstance app-instances/{appInstanceArn}
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceResponse> DescribeAppInstanceAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9012,8 +9012,8 @@ namespace MyNS
 		/// UpdateAppInstance app-instances/{appInstanceArn}
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppInstanceResponse> UpdateAppInstanceAsync(string appInstanceArn, UpdateAppInstancePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9056,12 +9056,12 @@ namespace MyNS
 		/// DeleteAppInstanceAdmin app-instances/{appInstanceArn}/admins/{appInstanceAdminArn}
 		/// </summary>
 		/// <param name="appInstanceAdminArn">The ARN of the <code>AppInstance</code>'s administrator.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task DeleteAppInstanceAdminAsync(string appInstanceAdminArn, string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9090,12 +9090,12 @@ namespace MyNS
 		/// DescribeAppInstanceAdmin app-instances/{appInstanceArn}/admins/{appInstanceAdminArn}
 		/// </summary>
 		/// <param name="appInstanceAdminArn">The ARN of the <code>AppInstanceAdmin</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceAdminResponse> DescribeAppInstanceAdminAsync(string appInstanceAdminArn, string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9131,8 +9131,8 @@ namespace MyNS
 		/// DeleteAppInstanceStreamingConfigurations app-instances/{appInstanceArn}/streaming-configurations
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the streaming configurations being deleted.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task DeleteAppInstanceStreamingConfigurationsAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9161,8 +9161,8 @@ namespace MyNS
 		/// GetAppInstanceStreamingConfigurations app-instances/{appInstanceArn}/streaming-configurations
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAppInstanceStreamingConfigurationsResponse> GetAppInstanceStreamingConfigurationsAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9198,8 +9198,8 @@ namespace MyNS
 		/// PutAppInstanceStreamingConfigurations app-instances/{appInstanceArn}/streaming-configurations
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutAppInstanceStreamingConfigurationsResponse> PutAppInstanceStreamingConfigurationsAsync(string appInstanceArn, PutAppInstanceStreamingConfigurationsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9242,8 +9242,8 @@ namespace MyNS
 		/// DeleteAppInstanceUser app-instance-users/{appInstanceUserArn}
 		/// </summary>
 		/// <param name="appInstanceUserArn">The ARN of the user request being deleted.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task DeleteAppInstanceUserAsync(string appInstanceUserArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9272,8 +9272,8 @@ namespace MyNS
 		/// DescribeAppInstanceUser app-instance-users/{appInstanceUserArn}
 		/// </summary>
 		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAppInstanceUserResponse> DescribeAppInstanceUserAsync(string appInstanceUserArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9309,8 +9309,8 @@ namespace MyNS
 		/// UpdateAppInstanceUser app-instance-users/{appInstanceUserArn}
 		/// </summary>
 		/// <param name="appInstanceUserArn">The ARN of the <code>AppInstanceUser</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppInstanceUserResponse> UpdateAppInstanceUserAsync(string appInstanceUserArn, UpdateAppInstanceUserPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9416,8 +9416,8 @@ namespace MyNS
 		/// DeleteChannel channels/{channelArn}
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel being deleted.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task DeleteChannelAsync(string channelArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9446,8 +9446,8 @@ namespace MyNS
 		/// DescribeChannel channels/{channelArn}
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelResponse> DescribeChannelAsync(string channelArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9483,8 +9483,8 @@ namespace MyNS
 		/// UpdateChannel channels/{channelArn}
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChannelResponse> UpdateChannelAsync(string channelArn, UpdateChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9527,12 +9527,12 @@ namespace MyNS
 		/// DeleteChannelBan channels/{channelArn}/bans/{memberArn}
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel from which the <code>AppInstanceUser</code> was banned.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="memberArn">The ARN of the <code>AppInstanceUser</code> that you want to reinstate.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task DeleteChannelBanAsync(string channelArn, string memberArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9561,12 +9561,12 @@ namespace MyNS
 		/// DescribeChannelBan channels/{channelArn}/bans/{memberArn}
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel from which the user is banned.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="memberArn">The ARN of the member being banned.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelBanResponse> DescribeChannelBanAsync(string channelArn, string memberArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9602,12 +9602,12 @@ namespace MyNS
 		/// DeleteChannelMembership channels/{channelArn}/memberships/{memberArn}
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel from which you want to remove the user.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="memberArn">The ARN of the member that you're removing from the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task DeleteChannelMembershipAsync(string channelArn, string memberArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9636,12 +9636,12 @@ namespace MyNS
 		/// DescribeChannelMembership channels/{channelArn}/memberships/{memberArn}
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="memberArn">The ARN of the member.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelMembershipResponse> DescribeChannelMembershipAsync(string channelArn, string memberArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9677,12 +9677,12 @@ namespace MyNS
 		/// DeleteChannelMessage channels/{channelArn}/messages/{messageId}
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="messageId">The ID of the message being deleted.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteChannelMessageAsync(string channelArn, string messageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9711,12 +9711,12 @@ namespace MyNS
 		/// GetChannelMessage channels/{channelArn}/messages/{messageId}
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="messageId">The ID of the message.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetChannelMessageResponse> GetChannelMessageAsync(string channelArn, string messageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9752,12 +9752,12 @@ namespace MyNS
 		/// UpdateChannelMessage channels/{channelArn}/messages/{messageId}
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="messageId">The ID string of the message being updated.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChannelMessageResponse> UpdateChannelMessageAsync(string channelArn, string messageId, UpdateChannelMessagePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9800,12 +9800,12 @@ namespace MyNS
 		/// DeleteChannelModerator channels/{channelArn}/moderators/{channelModeratorArn}
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="channelModeratorArn">The ARN of the moderator being deleted.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task DeleteChannelModeratorAsync(string channelArn, string channelModeratorArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9834,12 +9834,12 @@ namespace MyNS
 		/// DescribeChannelModerator channels/{channelArn}/moderators/{channelModeratorArn}
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="channelModeratorArn">The ARN of the channel moderator.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelModeratorResponse> DescribeChannelModeratorAsync(string channelArn, string channelModeratorArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -10197,12 +10197,12 @@ namespace MyNS
 		/// DeleteProxySession voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		/// </summary>
 		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="proxySessionId">The proxy session ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteProxySessionAsync(string voiceConnectorId, string proxySessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10231,12 +10231,12 @@ namespace MyNS
 		/// GetProxySession voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		/// </summary>
 		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="proxySessionId">The proxy session ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProxySessionResponse> GetProxySessionAsync(string voiceConnectorId, string proxySessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -10272,12 +10272,12 @@ namespace MyNS
 		/// UpdateProxySession voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		/// </summary>
 		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="proxySessionId">The proxy session ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task UpdateProxySessionAsync(string voiceConnectorId, string proxySessionId, UpdateProxySessionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11088,8 +11088,8 @@ namespace MyNS
 		/// DeleteVoiceConnectorProxy voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		/// </summary>
 		/// <param name="voiceConnectorId">The Amazon Chime Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteVoiceConnectorProxyAsync(string voiceConnectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11118,8 +11118,8 @@ namespace MyNS
 		/// GetVoiceConnectorProxy voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		/// </summary>
 		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetVoiceConnectorProxyResponse> GetVoiceConnectorProxyAsync(string voiceConnectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11155,8 +11155,8 @@ namespace MyNS
 		/// PutVoiceConnectorProxy voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		/// </summary>
 		/// <param name="voiceConnectorId">The Amazon Chime voice connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutVoiceConnectorProxyResponse> PutVoiceConnectorProxyAsync(string voiceConnectorId, PutVoiceConnectorProxyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11437,12 +11437,12 @@ namespace MyNS
 		/// DescribeChannelMembershipForAppInstanceUser channels/{channelArn}#scope=app-instance-user-membership&app-instance-user-arn
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel to which the user belongs.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="app_instance_user_arn">The ARN of the user in a channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelMembershipForAppInstanceUserResponse> DescribeChannelMembershipForAppInstanceUserAsync(string channelArn, string app_instance_user_arn, DescribeChannelMembershipForAppInstanceUserScope scope, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11478,12 +11478,12 @@ namespace MyNS
 		/// DescribeChannelModeratedByAppInstanceUser channels/{channelArn}#scope=app-instance-user-moderated-channel&app-instance-user-arn
 		/// </summary>
 		/// <param name="channelArn">The ARN of the moderated channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="app_instance_user_arn">The ARN of the <code>AppInstanceUser</code> in the moderated channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelModeratedByAppInstanceUserResponse> DescribeChannelModeratedByAppInstanceUserAsync(string channelArn, string app_instance_user_arn, DescribeChannelModeratedByAppInstanceUserScope scope, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11740,8 +11740,8 @@ namespace MyNS
 		/// GetAppInstanceRetentionSettings app-instances/{appInstanceArn}/retention-settings
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAppInstanceRetentionSettingsResponse> GetAppInstanceRetentionSettingsAsync(string appInstanceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11777,8 +11777,8 @@ namespace MyNS
 		/// PutAppInstanceRetentionSettings app-instances/{appInstanceArn}/retention-settings
 		/// </summary>
 		/// <param name="appInstanceArn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutAppInstanceRetentionSettingsResponse> PutAppInstanceRetentionSettingsAsync(string appInstanceArn, PutAppInstanceRetentionSettingsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12530,16 +12530,16 @@ namespace MyNS
 		/// ListAppInstanceUsers app-instance-users#app-instance-arn
 		/// </summary>
 		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="max_results">The maximum number of requests that you want returned.
 		/// Minimum: 1
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token passed by previous API calls until all requested users are returned.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -12612,16 +12612,16 @@ namespace MyNS
 		/// ListChannelMembershipsForAppInstanceUser channels#scope=app-instance-user-memberships
 		/// </summary>
 		/// <param name="app_instance_user_arn">The ARN of the <code>AppInstanceUser</code>s
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="max_results">The maximum number of users that you want returned.
 		/// Minimum: 1
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token returned from previous API requests until the number of channel memberships is reached.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -12659,8 +12659,8 @@ namespace MyNS
 		/// ListChannelMessages channels/{channelArn}/messages
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="sort_order">The order in which you want messages sorted. Default is Descending, based on time created.</param>
 		/// <param name="not_before">The initial or starting time stamp for your requested messages.</param>
@@ -12670,8 +12670,8 @@ namespace MyNS
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token passed by previous API calls until all requested messages are returned.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -12709,8 +12709,8 @@ namespace MyNS
 		/// SendChannelMessage channels/{channelArn}/messages
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		public async Task SendChannelMessageAsync(string channelArn, SendChannelMessagePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12746,8 +12746,8 @@ namespace MyNS
 		/// ListChannels channels#app-instance-arn
 		/// </summary>
 		/// <param name="app_instance_arn">The ARN of the <code>AppInstance</code>.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="privacy">The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. </param>
 		/// <param name="max_results">The maximum number of channels that you want to return.
@@ -12755,8 +12755,8 @@ namespace MyNS
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token passed by previous API calls until all requested channels are returned.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -12794,16 +12794,16 @@ namespace MyNS
 		/// ListChannelsModeratedByAppInstanceUser channels#scope=app-instance-user-moderated-channels
 		/// </summary>
 		/// <param name="app_instance_user_arn">The ARN of the user in the moderated channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="max_results">The maximum number of channels in the request.
 		/// Minimum: 1
 		/// Maximum: 50
 		// </param>
 		/// <param name="next_token">The token returned from previous API requests until the number of channels moderated by the user is reached.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -12953,8 +12953,8 @@ namespace MyNS
 		/// ListTagsForResource tags#arn
 		/// </summary>
 		/// <param name="arn">The resource ARN.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13081,12 +13081,12 @@ namespace MyNS
 		/// RedactChannelMessage channels/{channelArn}/messages/{messageId}#operation=redact
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel containing the messages that you want to redact.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <param name="messageId">The ID of the message being redacted.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<RedactChannelMessageResponse> RedactChannelMessageAsync(string channelArn, string messageId, RedactChannelMessageOperation operation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13272,8 +13272,8 @@ namespace MyNS
 		/// <param name="country">The country used to filter results. Defaults to the US Format: ISO 3166-1 alpha-2.</param>
 		/// <param name="state">The state used to filter results. Required only if you provide <code>City</code>. Only applies to the US.</param>
 		/// <param name="toll_free_prefix">The toll-free prefix that you use to filter results. Only applies to the US.
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		// </param>
 		/// <param name="phone_number_type">The phone number type used to filter results. Required for non-US numbers.</param>
 		/// <param name="max_results">The maximum number of results to return in a single call.
@@ -13591,8 +13591,8 @@ namespace MyNS
 		/// UpdateChannelReadMarker channels/{channelArn}/readMarker
 		/// </summary>
 		/// <param name="channelArn">The ARN of the channel.
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChannelReadMarkerResponse> UpdateChannelReadMarkerAsync(string channelArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13948,8 +13948,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Amazon Chime account.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -13966,8 +13966,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the <code>AppInstance</code>.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -13979,8 +13979,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -13992,8 +13992,8 @@ namespace MyNS
 		/// <summary>
 		/// The <code>ClientRequestToken</code> of the <code>AppInstance</code>.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14020,8 +14020,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the administrator of the current <code>AppInstance</code>.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		/// Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14038,8 +14038,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the <code>AppInstance</code> request.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		/// Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14052,8 +14052,8 @@ namespace MyNS
 		/// <summary>
 		/// The user ID of the <code>AppInstance</code>.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [A-Za-z0-9]([A-Za-z0-9\:\-\_\.\@]{0,62}[A-Za-z0-9])?
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14066,8 +14066,8 @@ namespace MyNS
 		/// <summary>
 		/// The user's name.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14079,8 +14079,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The request's metadata. Limited to a 1KB string in UTF-8.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -14092,8 +14092,8 @@ namespace MyNS
 		/// <summary>
 		/// The token assigned to the user requesting an <code>AppInstance</code>.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14120,8 +14120,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a builder application.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -14166,8 +14166,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the channel request.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		/// Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14180,8 +14180,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the channel.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14205,8 +14205,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The metadata of the creation request. Limited to 1KB and UTF-8.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -14218,8 +14218,8 @@ namespace MyNS
 		/// <summary>
 		/// The client token for the request. An <code>Idempotency</code> token.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14246,8 +14246,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the member being banned.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		/// Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14264,8 +14264,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the member you want to add to the channel.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		/// Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14290,8 +14290,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the moderator.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 5
+		/// Max length: 1600
 		/// Pattern: arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14316,8 +14316,8 @@ namespace MyNS
 		/// <summary>
 		/// ARN of the source from which the media artifacts are captured.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14338,8 +14338,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the sink type.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14351,8 +14351,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique identifier for the client request. The token makes the API request idempotent. Use a different token for different media pipeline requests.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -14384,8 +14384,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique identifier for the client request. Use a different token for different meetings.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14397,8 +14397,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The external meeting ID.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -14407,8 +14407,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Reserved.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -14474,8 +14474,8 @@ namespace MyNS
 		/// <summary>
 		/// Token used by the Amazon Chime SDK attendee. Call the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to get a join token.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 2
+		/// Max length: 2048
 		/// Pattern: ^[a-zA-Z0-9+/]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14499,8 +14499,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique identifier for the client request. Use a different token for different meetings.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14512,8 +14512,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The external meeting ID.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -14522,8 +14522,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Reserved.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -14674,8 +14674,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The idempotency token for the request.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -14719,8 +14719,8 @@ namespace MyNS
 		/// <summary>
 		/// The SIP media application name.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -14777,8 +14777,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the SIP rule.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -14860,8 +14860,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Amazon Chime Voice Connector.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -14903,8 +14903,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Amazon Chime Voice Connector group.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -14924,8 +14924,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The new name for the specified Amazon Chime account.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -14947,8 +14947,8 @@ namespace MyNS
 		/// <summary>
 		/// The name that you want to change.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -14960,8 +14960,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The metadata that you want to change.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -14993,8 +14993,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the <code>AppInstanceUser</code>.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -15006,8 +15006,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The metadata of the <code>AppInstanceUser</code>.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -15023,8 +15023,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the channel.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -15044,8 +15044,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The metadata for the update request.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -15060,8 +15060,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The content of the message being updated.
-		/// Max length: 4096
 		/// Min length: 0
+		/// Max length: 4096
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -15072,8 +15072,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The metadata of the message being updated.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -15162,8 +15162,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The new name for the specified SIP media application.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -15187,8 +15187,8 @@ namespace MyNS
 		/// <summary>
 		/// The new name for the specified SIP rule.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -15219,8 +15219,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Amazon Chime Voice Connector.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -15262,8 +15262,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Amazon Chime Voice Connector group.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -15769,8 +15769,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The optional metadata for each message.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -15782,8 +15782,8 @@ namespace MyNS
 		/// <summary>
 		/// The <code>Idempotency</code> token for each client request.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: [-_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -15941,8 +15941,8 @@ namespace MyNS
 		/// <summary>
 		/// The resource ARN.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -16010,8 +16010,8 @@ namespace MyNS
 		/// <summary>
 		/// The resource ARN.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

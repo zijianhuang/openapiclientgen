@@ -861,8 +861,8 @@ namespace MyNS
 		/// CancelTask task/{taskId}/cancel
 		/// </summary>
 		/// <param name="taskId">The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelTaskOutput> CancelTaskAsync(string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -933,8 +933,8 @@ namespace MyNS
 		/// DescribeDevice managed-device/{managedDeviceId}/describe
 		/// </summary>
 		/// <param name="managedDeviceId">The ID of the device that you are checking the information of.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDeviceOutput> DescribeDeviceAsync(string managedDeviceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -965,8 +965,8 @@ namespace MyNS
 		/// DescribeDeviceEc2Instances managed-device/{managedDeviceId}/resources/ec2/describe
 		/// </summary>
 		/// <param name="managedDeviceId">The ID of the managed device.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDeviceEc2Output> DescribeDeviceEc2InstancesAsync(string managedDeviceId, DescribeDeviceEc2InstancesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1009,12 +1009,12 @@ namespace MyNS
 		/// DescribeExecution task/{taskId}/execution/{managedDeviceId}
 		/// </summary>
 		/// <param name="managedDeviceId">The ID of the managed device.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="taskId">The ID of the task that the action is describing.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeExecutionOutput> DescribeExecutionAsync(string managedDeviceId, string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1045,8 +1045,8 @@ namespace MyNS
 		/// DescribeTask task/{taskId}
 		/// </summary>
 		/// <param name="taskId">The ID of the task to be described.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTaskOutput> DescribeTaskAsync(string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1077,20 +1077,20 @@ namespace MyNS
 		/// ListDeviceResources managed-device/{managedDeviceId}/resources
 		/// </summary>
 		/// <param name="managedDeviceId">The ID of the managed device that you are listing the resources of.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="maxResults">The maximum number of resources per page.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A pagination token to continue to the next page of results.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="type">A structure used to filter the results by type of resource.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDeviceResourcesOutput> ListDeviceResourcesAsync(string managedDeviceId, int maxResults, string nextToken, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1126,16 +1126,16 @@ namespace MyNS
 		/// ListDevices managed-devices
 		/// </summary>
 		/// <param name="jobId">The ID of the job used to order the device.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="maxResults">The maximum number of devices to list per page.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A pagination token to continue to the next page of results.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDevicesOutput> ListDevicesAsync(string jobId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1175,13 +1175,13 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A pagination token to continue to the next page of tasks.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="state">A structure used to filter the tasks by their current state.</param>
 		/// <param name="taskId">The ID of the task.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListExecutionsOutput> ListExecutionsAsync(int maxResults, string nextToken, ExecutionState state, string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1290,8 +1290,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A pagination token to continue to the next page of tasks.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="state">A structure used to filter the list of tasks.</param>
 		/// <returns>Success</returns>
@@ -1358,8 +1358,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token ensuring that the action is called only once with the specified details.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -1378,8 +1378,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the task and its targets.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: [A-Za-z0-9 _.,!#]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]

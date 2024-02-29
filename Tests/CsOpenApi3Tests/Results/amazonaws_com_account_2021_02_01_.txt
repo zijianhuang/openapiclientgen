@@ -794,8 +794,8 @@ namespace MyNS
 		/// <summary>
 		/// Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). When you disable a Region, Amazon Web Services performs actions to deactivate that Region in your account, such as destroying IAM resources in the Region. This process takes a few minutes for most accounts, but this can take several hours. You cannot enable the Region until the disabling process is fully completed.
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -818,8 +818,8 @@ namespace MyNS
 		/// <summary>
 		/// Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). When you enable a Region, Amazon Web Services performs actions to prepare your account in that Region, such as distributing your IAM resources to the Region. This process takes a few minutes for most accounts, but it can take several hours. You cannot use the Region until this process is complete. Furthermore, you cannot disable the Region until the enabling process is fully completed.
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -874,8 +874,8 @@ namespace MyNS
 		/// <summary>
 		/// Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>). This function will return the status of whatever Region you pass into this parameter. 
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -906,8 +906,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token used to specify where to start paginating. This is the <code>NextToken</code> from a previously truncated response. For usage examples, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <i>Amazon Web Services Command Line Interface User Guide</i>.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -943,8 +943,8 @@ namespace MyNS
 		/// <summary>
 		/// Specifies an email address for the alternate contact. 
 		/// Required
-		/// Max length: 254
 		/// Min length: 1
+		/// Max length: 254
 		/// Pattern: ^[\s]*[\w+=.#|!&-]+@[\w.-]+\.[\w]+[\s]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -957,8 +957,8 @@ namespace MyNS
 		/// <summary>
 		/// Specifies a name for the alternate contact.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -969,8 +969,8 @@ namespace MyNS
 		/// <summary>
 		/// Specifies a phone number for the alternate contact.
 		/// Required
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		/// Pattern: ^[\s0-9()+-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -983,8 +983,8 @@ namespace MyNS
 		/// <summary>
 		/// Specifies a title for the alternate contact.
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]

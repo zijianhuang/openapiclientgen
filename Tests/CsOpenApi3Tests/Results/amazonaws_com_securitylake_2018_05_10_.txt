@@ -2048,12 +2048,12 @@ namespace MyNS
 		/// DeleteCustomLogSource v1/datalake/logsources/custom/{sourceName}
 		/// </summary>
 		/// <param name="sourceName">The source name of custom log source that you want to delete.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="sourceVersion">The source version for the third-party custom source. You can limit the custom source removal to the specified source version.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteCustomLogSourceResponse> DeleteCustomLogSourceAsync(string sourceName, string sourceVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2511,8 +2511,8 @@ namespace MyNS
 		/// ListTagsForResource v1/tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Amazon Security Lake resource to retrieve the tags for.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2548,8 +2548,8 @@ namespace MyNS
 		/// TagResource v1/tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Amazon Security Lake resource to add or update the tags for.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2592,8 +2592,8 @@ namespace MyNS
 		/// UntagResource v1/tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Amazon Security Lake resource to remove one or more tags from.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <param name="tagKeys">A list of one or more tag keys. For each value in the list, specify the tag key for a tag to remove from the Amazon Security Lake resource.
 		/// Minimum items: 0
@@ -2663,8 +2663,8 @@ namespace MyNS
 		/// <summary>
 		/// Specify the name for a third-party custom source. This must be a Regionally unique value.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[\\\w\-_:/.]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2676,8 +2676,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Specify the source version for the third-party custom source, to limit log collection to a specific version of custom data source.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// Pattern: ^[A-Za-z0-9\-\.\_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sourceVersion")]
@@ -2853,8 +2853,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of your Security Lake subscriber account.
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="subscriberName")]
@@ -2992,8 +2992,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the Security Lake account subscriber.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// Pattern: ^[\\\w\-_:/.@=+]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="subscriberName")]

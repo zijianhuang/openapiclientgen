@@ -623,8 +623,8 @@ namespace MyNS
 		/// Workspaces_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Databricks/workspaces
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -657,12 +657,12 @@ namespace MyNS
 		/// Workspaces_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Databricks/workspaces/{workspaceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="workspaceName">The name of the workspace.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -695,12 +695,12 @@ namespace MyNS
 		/// Workspaces_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Databricks/workspaces/{workspaceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="workspaceName">The name of the workspace.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -741,12 +741,12 @@ namespace MyNS
 		/// Workspaces_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Databricks/workspaces/{workspaceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="workspaceName">The name of the workspace.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -772,12 +772,12 @@ namespace MyNS
 		/// Workspaces_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Databricks/workspaces/{workspaceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="workspaceName">The name of the workspace.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>

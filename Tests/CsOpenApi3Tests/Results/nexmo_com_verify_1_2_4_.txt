@@ -151,8 +151,8 @@ namespace MyNS
 		/// <summary>
 		/// The verification code entered by your user.
 		/// Required
-		/// Max length: 6
 		/// Min length: 4
+		/// Max length: 6
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="code")]

@@ -5620,8 +5620,8 @@ namespace MyNS
 		/// <summary>
 		/// The code for this request. Create a URL in this format: `https://payments.fire.com/{code}` and share to your customers.
 		///
-		/// Max length: 8
 		/// Min length: 8
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="code")]
 		[System.ComponentModel.DataAnnotations.MinLength(8)]
@@ -5703,8 +5703,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The code that was returned when you created the payment request.
-		/// Max length: 8
 		/// Min length: 8
+		/// Max length: 8
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="paymentRequestCode")]
 		[System.ComponentModel.DataAnnotations.MinLength(8)]

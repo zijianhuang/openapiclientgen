@@ -4070,8 +4070,8 @@ namespace MyNS
 		/// DeleteFramework audit/frameworks/{frameworkName}
 		/// </summary>
 		/// <param name="frameworkName">The unique name of a framework.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteFrameworkAsync(string frameworkName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4101,8 +4101,8 @@ namespace MyNS
 		/// DescribeFramework audit/frameworks/{frameworkName}
 		/// </summary>
 		/// <param name="frameworkName">The unique name of a framework.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeFrameworkOutput> DescribeFrameworkAsync(string frameworkName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4138,8 +4138,8 @@ namespace MyNS
 		/// UpdateFramework audit/frameworks/{frameworkName}
 		/// </summary>
 		/// <param name="frameworkName">The unique name of a framework. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateFrameworkOutput> UpdateFrameworkAsync(string frameworkName, UpdateFrameworkPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4288,8 +4288,8 @@ namespace MyNS
 		/// DeleteReportPlan audit/report-plans/{reportPlanName}
 		/// </summary>
 		/// <param name="reportPlanName">The unique name of a report plan.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteReportPlanAsync(string reportPlanName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4319,8 +4319,8 @@ namespace MyNS
 		/// DescribeReportPlan audit/report-plans/{reportPlanName}
 		/// </summary>
 		/// <param name="reportPlanName">The unique name of a report plan.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeReportPlanOutput> DescribeReportPlanAsync(string reportPlanName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4356,8 +4356,8 @@ namespace MyNS
 		/// UpdateReportPlan audit/report-plans/{reportPlanName}
 		/// </summary>
 		/// <param name="reportPlanName">The unique name of the report plan. This name is between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateReportPlanOutput> UpdateReportPlanAsync(string reportPlanName, UpdateReportPlanPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5414,8 +5414,8 @@ namespace MyNS
 		/// ListReportJobs audit/report-jobs
 		/// </summary>
 		/// <param name="ReportPlanName">Returns only report jobs with the specified report plan name.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="CreationBefore">Returns only report jobs that were created before the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</param>
 		/// <param name="CreationAfter">Returns only report jobs that were created after the date and time specified in Unix format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents Friday, January 26, 2018 12:11:30 AM.</param>
@@ -5626,8 +5626,8 @@ namespace MyNS
 		/// StartReportJob audit/report-jobs/{reportPlanName}
 		/// </summary>
 		/// <param name="reportPlanName">The unique name of a report plan.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartReportJobOutput> StartReportJobAsync(string reportPlanName, StartReportJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5881,8 +5881,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique name of the framework. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z][_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5894,8 +5894,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional description of the framework with a maximum of 1,024 characters.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -5985,8 +5985,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique name of the report plan. The name must be between 1 and 256 characters, starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z][_a-zA-Z0-9]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5998,8 +5998,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional description of the report plan with a maximum of 1,024 characters.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -6154,8 +6154,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional description of the framework with a maximum 1,024 characters.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -6202,8 +6202,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional description of the report plan with a maximum 1,024 characters.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

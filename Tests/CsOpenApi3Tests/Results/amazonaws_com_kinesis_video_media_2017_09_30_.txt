@@ -196,8 +196,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9_.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -208,8 +208,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

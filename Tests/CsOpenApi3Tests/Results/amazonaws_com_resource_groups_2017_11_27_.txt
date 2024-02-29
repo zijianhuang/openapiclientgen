@@ -1183,8 +1183,8 @@ namespace MyNS
 		/// GetTags resources/{Arn}/tags
 		/// </summary>
 		/// <param name="Arn">The ARN of the resource group whose tags you want to retrieve.
-		/// Max length: 1600
 		/// Min length: 12
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTagsOutput> GetTagsAsync(string Arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1220,8 +1220,8 @@ namespace MyNS
 		/// Tag resources/{Arn}/tags
 		/// </summary>
 		/// <param name="Arn">The ARN of the resource group to which to add tags.
-		/// Max length: 1600
 		/// Min length: 12
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagOutput> TagAsync(string Arn, TagPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1264,8 +1264,8 @@ namespace MyNS
 		/// Untag resources/{Arn}/tags
 		/// </summary>
 		/// <param name="Arn">The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.
-		/// Max length: 1600
 		/// Min length: 12
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagOutput> UntagAsync(string Arn, UntagPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1394,8 +1394,8 @@ namespace MyNS
 		/// Maximum: 50
 		// </param>
 		/// <param name="nextToken">The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.
-		/// Max length: 8192
 		/// Min length: 0
+		/// Max length: 8192
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1677,8 +1677,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the group, which is the identifier of the group in other operations. You can't change the name of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group name must be unique within each Amazon Web Services Region in your Amazon Web Services account.
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: [a-zA-Z0-9_\.-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1734,8 +1734,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Deprecated - don't use this parameter. Use <code>Group</code> instead.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: [a-zA-Z0-9_\.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1746,8 +1746,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name or the ARN of the resource group to delete.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: (arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1762,8 +1762,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Deprecated - don't use this parameter. Use <code>Group</code> instead.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: [a-zA-Z0-9_\.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1774,8 +1774,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name or the ARN of the resource group to retrieve.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: (arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1790,8 +1790,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name or the ARN of the resource group for which you want to retrive the service configuration.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: (arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1806,8 +1806,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Don't use this parameter. Use <code>Group</code> instead.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: [a-zA-Z0-9_\.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1818,8 +1818,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name or the ARN of the resource group to query.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: (arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1859,8 +1859,8 @@ namespace MyNS
 		/// <summary>
 		/// The name or the ARN of the resource group to add resources to.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: (arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1888,8 +1888,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <important> <p> <i> <b>Deprecated - don't use this parameter. Use the <code>Group</code> request field instead.</b> </i> </p> </important>
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: [a-zA-Z0-9_\.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1900,8 +1900,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name or the ARN of the resource group
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: (arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1927,8 +1927,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.
-		/// Max length: 8192
 		/// Min length: 0
+		/// Max length: 8192
 		/// Pattern: ^[a-zA-Z0-9+/]*={0,2}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1953,8 +1953,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name or ARN of the resource group with the configuration that you want to update.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: (arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1994,8 +1994,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.
-		/// Max length: 8192
 		/// Min length: 0
+		/// Max length: 8192
 		/// Pattern: ^[a-zA-Z0-9+/]*={0,2}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2021,8 +2021,8 @@ namespace MyNS
 		/// <summary>
 		/// The name or the ARN of the resource group from which to remove the resources.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: (arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2060,8 +2060,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Don't use this parameter. Use <code>Group</code> instead.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: [a-zA-Z0-9_\.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2072,8 +2072,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name or the ARN of the resource group to modify.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: (arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2098,8 +2098,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Don't use this parameter. Use <code>Group</code> instead.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// Pattern: [a-zA-Z0-9_\.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2110,8 +2110,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name or the ARN of the resource group to query.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// Pattern: (arn:aws(-[a-z]+)*:resource-groups:[a-z]{2}(-[a-z]+)+-\d{1}:[0-9]{12}:group/)?[a-zA-Z0-9_\.-]{1,300}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

@@ -114,8 +114,8 @@ namespace MyNS
 		/// PrivateLinkResources_ListByServer subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/privateLinkResources
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.
@@ -153,8 +153,8 @@ namespace MyNS
 		/// PrivateLinkResources_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/privateLinkResources/{groupName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the server.</param>
 		/// <param name="groupName">The name of the private link resource.</param>

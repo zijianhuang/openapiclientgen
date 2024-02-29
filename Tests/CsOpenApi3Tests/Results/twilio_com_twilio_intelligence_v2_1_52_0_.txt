@@ -24,8 +24,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account the Service belongs to.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -140,8 +140,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -207,8 +207,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Service.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^GA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -219,8 +219,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A 34 character string that uniquely identifies this Transcript.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^GT[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -268,8 +268,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -286,8 +286,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Service.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^GA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -298,8 +298,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique SID identifier of the Transcript.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^GT[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -358,8 +358,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A 34 character string that identifies this Language Understanding operator sid.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^LY[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="operator_sid")]
@@ -391,8 +391,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A 34 character string that uniquely identifies this Transcript.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^GT[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="transcript_sid")]
@@ -470,8 +470,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A 34 character string that uniquely identifies this Sentence.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^GX[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -698,8 +698,8 @@ namespace MyNS
 		/// ListTranscript v2/Transcripts
 		/// </summary>
 		/// <param name="ServiceSid">The unique SID identifier of the Service.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="BeforeStartTime">Filter by before StartTime.</param>
 		/// <param name="AfterStartTime">Filter by after StartTime.</param>
@@ -750,8 +750,8 @@ namespace MyNS
 		/// DeleteTranscript v2/Transcripts/{Sid}
 		/// </summary>
 		/// <param name="Sid">A 34 character string that uniquely identifies this Transcript.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteTranscriptAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -780,8 +780,8 @@ namespace MyNS
 		/// FetchTranscript v2/Transcripts/{Sid}
 		/// </summary>
 		/// <param name="Sid">A 34 character string that uniquely identifies this Transcript.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Intelligencev2transcript> FetchTranscriptAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -817,8 +817,8 @@ namespace MyNS
 		/// FetchMedia v2/Transcripts/{Sid}/Media
 		/// </summary>
 		/// <param name="Sid">The unique SID identifier of the Transcript.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Redacted">Grant access to PII Redacted/Unredacted Media. If redaction is enabled, the default is `true` to access redacted media.</param>
 		/// <returns>OK</returns>
@@ -855,8 +855,8 @@ namespace MyNS
 		/// ListOperatorResult v2/Transcripts/{TranscriptSid}/OperatorResults
 		/// </summary>
 		/// <param name="TranscriptSid">A 34 character string that uniquely identifies this Transcript.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Redacted">Grant access to PII redacted/unredacted Language Understanding operator. If redaction is enabled, the default is True.</param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
@@ -901,12 +901,12 @@ namespace MyNS
 		/// FetchOperatorResult v2/Transcripts/{TranscriptSid}/OperatorResults/{OperatorSid}
 		/// </summary>
 		/// <param name="TranscriptSid">A 34 character string that uniquely identifies this Transcript.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="OperatorSid">A 34 character string that identifies this Language Understanding operator sid.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Redacted">Grant access to PII redacted/unredacted Language Understanding operator. If redaction is enabled, the default is True.</param>
 		/// <returns>OK</returns>
@@ -943,8 +943,8 @@ namespace MyNS
 		/// ListSentence v2/Transcripts/{TranscriptSid}/Sentences
 		/// </summary>
 		/// <param name="TranscriptSid">The unique SID identifier of the Transcript.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Redacted">Grant access to PII Redacted/Unredacted Sentences. If redaction is enabled, the default is `true` to access redacted sentences.</param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.

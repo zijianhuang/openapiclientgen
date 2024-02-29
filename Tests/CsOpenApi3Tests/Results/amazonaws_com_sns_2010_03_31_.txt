@@ -2478,8 +2478,8 @@ namespace MyNS
 		/// GET_ListTagsForResource #Action=ListTagsForResource
 		/// </summary>
 		/// <param name="ResourceArn">The ARN of the topic for which to list tags.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_ListTagsForResourceAsync(string ResourceArn, GET_ListTagsForResourceAction Action, GET_ListTagsForResourceVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2866,8 +2866,8 @@ namespace MyNS
 		/// GET_TagResource #Action=TagResource
 		/// </summary>
 		/// <param name="ResourceArn">The ARN of the topic to which to add tags.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <param name="Tags">The tags to be added to the specified topic. A tag consists of a required key and an optional value.</param>
 		/// <returns>Success</returns>
@@ -2926,8 +2926,8 @@ namespace MyNS
 		/// GET_UntagResource #Action=UntagResource
 		/// </summary>
 		/// <param name="ResourceArn">The ARN of the topic from which to remove tags.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <param name="TagKeys">The list of tag keys to remove from the specified topic.</param>
 		/// <returns>Success</returns>
@@ -2961,8 +2961,8 @@ namespace MyNS
 		/// Max length: 20
 		// </param>
 		/// <param name="OneTimePassword">The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code> call.
-		/// Max length: 8
 		/// Min length: 5
+		/// Max length: 8
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_VerifySMSSandboxPhoneNumberAsync(string PhoneNumber, string OneTimePassword, GET_VerifySMSSandboxPhoneNumberAction Action, GET_VerifySMSSandboxPhoneNumberVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

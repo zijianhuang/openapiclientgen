@@ -5012,8 +5012,8 @@ namespace MyNS
 		/// Maximum: 1000
 		// </param>
 		/// <param name="nextToken">Next pagination token to be provided for DescribeVcenterClients.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeVcenterClientsResponse> DescribeVcenterClientsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5604,8 +5604,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">List tags for resource request by ARN.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5641,8 +5641,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">Tag resource by ARN.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6394,8 +6394,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">Untag resource by ARN.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys">Untag resource by Keys.</param>
 		/// <returns>Success</returns>
@@ -6707,8 +6707,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -6720,8 +6720,8 @@ namespace MyNS
 		/// <summary>
 		/// Application ID.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^app-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6737,8 +6737,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -6750,8 +6750,8 @@ namespace MyNS
 		/// <summary>
 		/// Wave ID.
 		/// Required
-		/// Max length: 22
 		/// Min length: 22
+		/// Max length: 22
 		/// Pattern: ^wave-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6767,8 +6767,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -6792,8 +6792,8 @@ namespace MyNS
 		/// <summary>
 		/// Wave ID.
 		/// Required
-		/// Max length: 22
 		/// Min length: 22
+		/// Max length: 22
 		/// Pattern: ^wave-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6809,8 +6809,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -6822,8 +6822,8 @@ namespace MyNS
 		/// <summary>
 		/// Application ID.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^app-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6851,8 +6851,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The request to change the source server migration account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -6872,8 +6872,8 @@ namespace MyNS
 		/// <summary>
 		/// The request to change the source server migration lifecycle state by source server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6896,8 +6896,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -6908,8 +6908,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Application description.
-		/// Max length: 600
 		/// Min length: 0
+		/// Max length: 600
 		/// Pattern: ^[^\x00]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -6921,8 +6921,8 @@ namespace MyNS
 		/// <summary>
 		/// Application name.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[^\s\x00]( *[^\s\x00])*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6992,8 +6992,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Launch configuration template map auto tagging MPE ID.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="mapAutoTaggingMpeID")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7141,8 +7141,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to configure an EBS encryption key during Replication Settings template creation.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ebsEncryptionKeyArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(20)]
@@ -7152,8 +7152,8 @@ namespace MyNS
 		/// <summary>
 		/// Request to configure the Replication Server instance type during Replication Settings template creation.
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="replicationServerInstanceType")]
@@ -7176,8 +7176,8 @@ namespace MyNS
 		/// <summary>
 		/// Request to configure the Staging Area subnet ID during Replication Settings template creation.
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^subnet-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7221,8 +7221,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7233,8 +7233,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Wave description.
-		/// Max length: 600
 		/// Min length: 0
+		/// Max length: 600
 		/// Pattern: ^[^\x00]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -7246,8 +7246,8 @@ namespace MyNS
 		/// <summary>
 		/// Wave name.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[^\s\x00]( *[^\s\x00])*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7269,8 +7269,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7282,8 +7282,8 @@ namespace MyNS
 		/// <summary>
 		/// Application ID.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^app-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7299,8 +7299,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to delete Job from service by Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7312,8 +7312,8 @@ namespace MyNS
 		/// <summary>
 		/// Request to delete Job from service by Job ID.
 		/// Required
-		/// Max length: 24
 		/// Min length: 24
+		/// Max length: 24
 		/// Pattern: ^mgnjob-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7330,8 +7330,8 @@ namespace MyNS
 		/// <summary>
 		/// ID of resource to be deleted.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^lct-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7348,8 +7348,8 @@ namespace MyNS
 		/// <summary>
 		/// Request to delete Replication Configuration Template from service by Replication Configuration Template ID.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^rct-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7365,8 +7365,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to delete Source Server from service by Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7378,8 +7378,8 @@ namespace MyNS
 		/// <summary>
 		/// Request to delete Source Server from service by Server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7396,8 +7396,8 @@ namespace MyNS
 		/// <summary>
 		/// ID of resource to be deleted.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^vcc-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7413,8 +7413,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7426,8 +7426,8 @@ namespace MyNS
 		/// <summary>
 		/// Wave ID.
 		/// Required
-		/// Max length: 22
 		/// Min length: 22
+		/// Max length: 22
 		/// Pattern: ^wave-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7443,8 +7443,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to describe Job log Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7456,8 +7456,8 @@ namespace MyNS
 		/// <summary>
 		/// Request to describe Job log job ID.
 		/// Required
-		/// Max length: 24
 		/// Min length: 24
+		/// Max length: 24
 		/// Pattern: ^mgnjob-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7478,8 +7478,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to describe Job log next token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7492,8 +7492,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to describe job log items by Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7519,8 +7519,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to describe job log items by next token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7565,8 +7565,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Next pagination token returned from DescribeLaunchConfigurationTemplates.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7588,8 +7588,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to describe Replication Configuration template by next token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7612,8 +7612,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to filter Source Servers list by Accoun ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7639,8 +7639,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to filter Source Servers list by next token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7672,8 +7672,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7697,8 +7697,8 @@ namespace MyNS
 		/// <summary>
 		/// Wave ID.
 		/// Required
-		/// Max length: 22
 		/// Min length: 22
+		/// Max length: 22
 		/// Pattern: ^wave-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7714,8 +7714,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7727,8 +7727,8 @@ namespace MyNS
 		/// <summary>
 		/// Application ID.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^app-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7756,8 +7756,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to disconnect Source Server from service by Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7769,8 +7769,8 @@ namespace MyNS
 		/// <summary>
 		/// Request to disconnect Source Server from service by Server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7786,8 +7786,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to finalize Cutover by Source Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7799,8 +7799,8 @@ namespace MyNS
 		/// <summary>
 		/// Request to finalize Cutover by Source Server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7816,8 +7816,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to get Launch Configuration information by Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7829,8 +7829,8 @@ namespace MyNS
 		/// <summary>
 		/// Request to get Launch Configuration information by Source Server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7846,8 +7846,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request to get Replication Configuration by Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7859,8 +7859,8 @@ namespace MyNS
 		/// <summary>
 		/// Request to get Replication Configuration by Source Server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7876,8 +7876,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Applications list Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -7903,8 +7903,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request next token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7931,8 +7931,8 @@ namespace MyNS
 		/// <summary>
 		/// List export errors request export id.
 		/// Required
-		/// Max length: 24
 		/// Min length: 24
+		/// Max length: 24
 		/// Pattern: ^export-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7953,8 +7953,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// List export errors request next token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7982,8 +7982,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// List export request next token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8004,8 +8004,8 @@ namespace MyNS
 		/// <summary>
 		/// List import errors request import id.
 		/// Required
-		/// Max length: 24
 		/// Min length: 24
+		/// Max length: 24
 		/// Pattern: ^import-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8026,8 +8026,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// List import errors request next token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8055,8 +8055,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// List imports request next token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8085,8 +8085,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// List managed accounts request next token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8099,8 +8099,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID to return when listing source server post migration custom actions.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8126,8 +8126,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Next token to use when listing source server post migration custom actions.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8137,8 +8137,8 @@ namespace MyNS
 		/// <summary>
 		/// Source server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8180,8 +8180,8 @@ namespace MyNS
 		/// <summary>
 		/// Launch configuration template ID.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^lct-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8202,8 +8202,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Next token to use when listing template post migration custom actions.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8223,8 +8223,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8250,8 +8250,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Request next token.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8274,8 +8274,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Mark as archived by Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8287,8 +8287,8 @@ namespace MyNS
 		/// <summary>
 		/// Mark as archived by Source Server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8304,8 +8304,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Pause Replication Request account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8317,8 +8317,8 @@ namespace MyNS
 		/// <summary>
 		/// Pause Replication Request source server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8334,8 +8334,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Source server post migration custom account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8347,8 +8347,8 @@ namespace MyNS
 		/// <summary>
 		/// Source server post migration custom action ID.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [0-9a-zA-Z]$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8361,8 +8361,8 @@ namespace MyNS
 		/// <summary>
 		/// Source server post migration custom action name.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[^\s\x00]( *[^\s\x00])*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8386,8 +8386,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Source server post migration custom action description.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// Pattern: ^[0-9a-zA-Z ():/.,'-_#*; ]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -8399,8 +8399,8 @@ namespace MyNS
 		/// <summary>
 		/// Source server post migration custom action document identifier.
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="documentIdentifier")]
@@ -8448,8 +8448,8 @@ namespace MyNS
 		/// <summary>
 		/// Source server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8474,8 +8474,8 @@ namespace MyNS
 		/// <summary>
 		/// Template post migration custom action ID.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [0-9a-zA-Z]$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8488,8 +8488,8 @@ namespace MyNS
 		/// <summary>
 		/// Template post migration custom action name.
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="actionName")]
@@ -8511,8 +8511,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Template post migration custom action description.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// Pattern: ^[0-9a-zA-Z ():/.,'-_#*; ]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -8524,8 +8524,8 @@ namespace MyNS
 		/// <summary>
 		/// Template post migration custom action document identifier.
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="documentIdentifier")]
@@ -8550,8 +8550,8 @@ namespace MyNS
 		/// <summary>
 		/// Launch configuration template ID.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^lct-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8606,8 +8606,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Source server post migration account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8619,8 +8619,8 @@ namespace MyNS
 		/// <summary>
 		/// Source server post migration custom action ID to remove.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [0-9a-zA-Z]$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8633,8 +8633,8 @@ namespace MyNS
 		/// <summary>
 		/// Source server ID of the post migration custom action to remove.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8651,8 +8651,8 @@ namespace MyNS
 		/// <summary>
 		/// Template post migration custom action ID to remove.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [0-9a-zA-Z]$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8665,8 +8665,8 @@ namespace MyNS
 		/// <summary>
 		/// Launch configuration template ID of the post migration custom action to remove.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^lct-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8682,8 +8682,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Resume Replication Request account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8695,8 +8695,8 @@ namespace MyNS
 		/// <summary>
 		/// Resume Replication Request source server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8712,8 +8712,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Retry data replication for Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8725,8 +8725,8 @@ namespace MyNS
 		/// <summary>
 		/// Retry data replication for Source Server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8742,8 +8742,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Start Cutover by Account IDs
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8786,8 +8786,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Start export request s3 bucket owner.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="s3BucketOwner")]
@@ -8812,8 +8812,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Start import request client token.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8847,8 +8847,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID on which to start replication.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8860,8 +8860,8 @@ namespace MyNS
 		/// <summary>
 		/// ID of source server on which to start replication.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8877,8 +8877,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Start Test for Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8911,8 +8911,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Stop Replication Request account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8924,8 +8924,8 @@ namespace MyNS
 		/// <summary>
 		/// Stop Replication Request source server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8941,8 +8941,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Terminate Target instance by Account ID
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8975,8 +8975,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -8988,8 +8988,8 @@ namespace MyNS
 		/// <summary>
 		/// Application ID.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^app-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9005,8 +9005,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -9018,8 +9018,8 @@ namespace MyNS
 		/// <summary>
 		/// Wave ID.
 		/// Required
-		/// Max length: 22
 		/// Min length: 22
+		/// Max length: 22
 		/// Pattern: ^wave-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9035,8 +9035,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -9048,8 +9048,8 @@ namespace MyNS
 		/// <summary>
 		/// Application ID.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^app-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9061,8 +9061,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Application description.
-		/// Max length: 600
 		/// Min length: 0
+		/// Max length: 600
 		/// Pattern: ^[^\x00]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -9073,8 +9073,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Application name.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[^\s\x00]( *[^\s\x00])*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -9089,8 +9089,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update Launch configuration Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -9137,8 +9137,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Launch configuration map auto tagging MPE ID.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="mapAutoTaggingMpeID")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -9147,8 +9147,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update Launch configuration name request.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -9164,8 +9164,8 @@ namespace MyNS
 		/// <summary>
 		/// Update Launch configuration by Source Server ID request.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9250,8 +9250,8 @@ namespace MyNS
 		/// <summary>
 		/// Launch Configuration Template ID.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^lct-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9275,8 +9275,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Launch configuration template map auto tagging MPE ID.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="mapAutoTaggingMpeID")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -9367,8 +9367,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update replication configuration Account ID request.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -9418,8 +9418,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update replication configuration EBS encryption key ARN request.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ebsEncryptionKeyArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(20)]
@@ -9428,8 +9428,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update replication configuration name request.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -9448,8 +9448,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update replication configuration Replication Server instance type request.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="replicationServerInstanceType")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -9469,8 +9469,8 @@ namespace MyNS
 		/// <summary>
 		/// Update replication configuration Source Server ID request.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9482,8 +9482,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update replication configuration Staging Area subnet request.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^subnet-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="stagingAreaSubnetId")]
@@ -9516,8 +9516,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update replication configuration template ARN request.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="arn")]
 		[System.ComponentModel.DataAnnotations.MinLength(20)]
@@ -9565,8 +9565,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update replication configuration template EBS encryption key ARN request.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ebsEncryptionKeyArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(20)]
@@ -9576,8 +9576,8 @@ namespace MyNS
 		/// <summary>
 		/// Update replication configuration template template ID request.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^rct-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9589,8 +9589,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update replication configuration template Replication Server instance type request.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="replicationServerInstanceType")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -9609,8 +9609,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Update replication configuration template Staging Area subnet ID request.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^subnet-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="stagingAreaSubnetId")]
@@ -9643,8 +9643,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID on which to update replication type.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -9664,8 +9664,8 @@ namespace MyNS
 		/// <summary>
 		/// ID of source server on which to update replication type.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -9681,8 +9681,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account ID.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="accountID")]
@@ -9693,8 +9693,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Wave description.
-		/// Max length: 600
 		/// Min length: 0
+		/// Max length: 600
 		/// Pattern: ^[^\x00]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -9705,8 +9705,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Wave name.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[^\s\x00]( *[^\s\x00])*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -9718,8 +9718,8 @@ namespace MyNS
 		/// <summary>
 		/// Wave ID.
 		/// Required
-		/// Max length: 22
 		/// Min length: 22
+		/// Max length: 22
 		/// Pattern: ^wave-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

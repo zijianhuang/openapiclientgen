@@ -1908,8 +1908,8 @@ namespace MyNS
 		/// BatchGetField domains/{domainId}/fields-batch
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchGetFieldResponse> BatchGetFieldAsync(string domainId, BatchGetFieldPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1952,12 +1952,12 @@ namespace MyNS
 		/// BatchPutFieldOptions domains/{domainId}/fields/{fieldId}/options
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="fieldId">The unique identifier of a field.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchPutFieldOptionsResponse> BatchPutFieldOptionsAsync(string domainId, string fieldId, BatchPutFieldOptionsPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2000,8 +2000,8 @@ namespace MyNS
 		/// CreateCase domains/{domainId}/cases
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateCaseResponse> CreateCaseAsync(string domainId, CreateCasePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2084,8 +2084,8 @@ namespace MyNS
 		/// CreateField domains/{domainId}/fields
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateFieldResponse> CreateFieldAsync(string domainId, CreateFieldPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2128,8 +2128,8 @@ namespace MyNS
 		/// CreateLayout domains/{domainId}/layouts
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateLayoutResponse> CreateLayoutAsync(string domainId, CreateLayoutPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2172,12 +2172,12 @@ namespace MyNS
 		/// CreateRelatedItem domains/{domainId}/cases/{caseId}/related-items/
 		/// </summary>
 		/// <param name="caseId">A unique identifier of the case.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateRelatedItemResponse> CreateRelatedItemAsync(string caseId, string domainId, CreateRelatedItemPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2220,8 +2220,8 @@ namespace MyNS
 		/// CreateTemplate domains/{domainId}/templates
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateTemplateResponse> CreateTemplateAsync(string domainId, CreateTemplatePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2264,8 +2264,8 @@ namespace MyNS
 		/// DeleteDomain domains/{domainId}
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDomainResponse> DeleteDomainAsync(string domainId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2301,8 +2301,8 @@ namespace MyNS
 		/// GetDomain domains/{domainId}
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDomainResponse> GetDomainAsync(string domainId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2333,12 +2333,12 @@ namespace MyNS
 		/// GetCase domains/{domainId}/cases/{caseId}
 		/// </summary>
 		/// <param name="caseId">A unique identifier of the case.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2382,12 +2382,12 @@ namespace MyNS
 		/// UpdateCase domains/{domainId}/cases/{caseId}
 		/// </summary>
 		/// <param name="caseId">A unique identifier of the case.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateCaseResponse> UpdateCaseAsync(string caseId, string domainId, UpdateCasePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2430,8 +2430,8 @@ namespace MyNS
 		/// GetCaseEventConfiguration domains/{domainId}/case-event-configuration
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCaseEventConfigurationResponse> GetCaseEventConfigurationAsync(string domainId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2462,8 +2462,8 @@ namespace MyNS
 		/// PutCaseEventConfiguration domains/{domainId}/case-event-configuration
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutCaseEventConfigurationResponse> PutCaseEventConfigurationAsync(string domainId, PutCaseEventConfigurationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2506,12 +2506,12 @@ namespace MyNS
 		/// GetLayout domains/{domainId}/layouts/{layoutId}
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="layoutId">The unique identifier of the layout.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetLayoutResponse> GetLayoutAsync(string domainId, string layoutId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2542,12 +2542,12 @@ namespace MyNS
 		/// UpdateLayout domains/{domainId}/layouts/{layoutId}
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="layoutId">The unique identifier of the layout.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateLayoutResponse> UpdateLayoutAsync(string domainId, string layoutId, UpdateLayoutPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2590,12 +2590,12 @@ namespace MyNS
 		/// GetTemplate domains/{domainId}/templates/{templateId}
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="templateId">A unique identifier of a template.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTemplateResponse> GetTemplateAsync(string domainId, string templateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2626,12 +2626,12 @@ namespace MyNS
 		/// UpdateTemplate domains/{domainId}/templates/{templateId}
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="templateId">A unique identifier for the template.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateTemplateResponse> UpdateTemplateAsync(string domainId, string templateId, UpdateTemplatePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2674,8 +2674,8 @@ namespace MyNS
 		/// ListCasesForContact domains/{domainId}/list-cases-for-contact
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -2724,8 +2724,8 @@ namespace MyNS
 		/// Maximum: 10
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 9000
 		/// Min length: 0
+		/// Max length: 9000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDomainsResponse> ListDomainsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2756,20 +2756,20 @@ namespace MyNS
 		/// ListFieldOptions domains/{domainId}/fields/{fieldId}/options-list
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="fieldId">The unique identifier of a field.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return per page.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 9000
 		/// Min length: 0
+		/// Max length: 9000
 		// </param>
 		/// <param name="values">A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.
 		/// Minimum items: 0
@@ -2804,16 +2804,16 @@ namespace MyNS
 		/// ListFields domains/{domainId}/fields-list
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return per page.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 9000
 		/// Min length: 0
+		/// Max length: 9000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListFieldsResponse> ListFieldsAsync(string domainId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2844,16 +2844,16 @@ namespace MyNS
 		/// ListLayouts domains/{domainId}/layouts-list
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return per page.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 9000
 		/// Min length: 0
+		/// Max length: 9000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListLayoutsResponse> ListLayoutsAsync(string domainId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2884,8 +2884,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{arn}
 		/// </summary>
 		/// <param name="arn">The Amazon Resource Name (ARN)
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2921,8 +2921,8 @@ namespace MyNS
 		/// TagResource tags/{arn}
 		/// </summary>
 		/// <param name="arn">The Amazon Resource Name (ARN)
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task TagResourceAsync(string arn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2959,16 +2959,16 @@ namespace MyNS
 		/// ListTemplates domains/{domainId}/templates-list
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return per page.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 9000
 		/// Min length: 0
+		/// Max length: 9000
 		// </param>
 		/// <param name="status">A list of status values to filter on.
 		/// Minimum items: 1
@@ -3003,8 +3003,8 @@ namespace MyNS
 		/// SearchCases domains/{domainId}/cases-search
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -3049,12 +3049,12 @@ namespace MyNS
 		/// SearchRelatedItems domains/{domainId}/cases/{caseId}/related-items-search
 		/// </summary>
 		/// <param name="caseId">A unique identifier of the case.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -3099,8 +3099,8 @@ namespace MyNS
 		/// UntagResource tags/{arn}#tagKeys
 		/// </summary>
 		/// <param name="arn">The Amazon Resource Name (ARN)
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="tagKeys">List of tag keys.
 		/// Minimum items: 0
@@ -3134,12 +3134,12 @@ namespace MyNS
 		/// UpdateField domains/{domainId}/fields/{fieldId}
 		/// </summary>
 		/// <param name="domainId">The unique identifier of the Cases domain. 
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <param name="fieldId">The unique identifier of a field.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateFieldResponse> UpdateFieldAsync(string domainId, string fieldId, UpdateFieldPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3215,8 +3215,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3238,8 +3238,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique identifier of a template.
 		/// Required
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="templateId")]
@@ -3254,8 +3254,8 @@ namespace MyNS
 		/// <summary>
 		/// The name for your Cases domain. It must be unique for your Amazon Web Services account.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^.*[\S]$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3271,8 +3271,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the field.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3282,8 +3282,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the field.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^.*[\S]$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3316,8 +3316,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the layout. It must be unique for the Cases domain.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^.*[\S]$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3370,8 +3370,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A brief description of the template.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3387,8 +3387,8 @@ namespace MyNS
 		/// <summary>
 		/// A name for the template. It must be unique per domain.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^.*[\S]$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3439,8 +3439,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 9000
 		/// Min length: 0
+		/// Max length: 9000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3497,8 +3497,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the layout. It must be unique per domain.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^.*[\S]$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -3520,8 +3520,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A brief description of the template.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3536,8 +3536,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the template. It must be unique per domain.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^.*[\S]$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -3576,8 +3576,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique identifier of a contact in Amazon Connect.
 		/// Required
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="contactArn")]
@@ -3596,8 +3596,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 9000
 		/// Min length: 0
+		/// Max length: 9000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3647,8 +3647,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 9000
 		/// Min length: 0
+		/// Max length: 9000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3657,8 +3657,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A word or phrase used to perform a quick search.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="searchTerm")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3719,8 +3719,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 9000
 		/// Min length: 0
+		/// Max length: 9000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3733,8 +3733,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of a field.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3743,8 +3743,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the field.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^.*[\S]$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]

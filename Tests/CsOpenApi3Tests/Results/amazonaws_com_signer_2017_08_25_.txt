@@ -1210,8 +1210,8 @@ namespace MyNS
 		/// AddProfilePermission signing-profiles/{profileName}/permissions
 		/// </summary>
 		/// <param name="profileName">The human-readable name of the signing profile.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AddProfilePermissionResponse> AddProfilePermissionAsync(string profileName, AddProfilePermissionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1254,8 +1254,8 @@ namespace MyNS
 		/// ListProfilePermissions signing-profiles/{profileName}/permissions
 		/// </summary>
 		/// <param name="profileName">Name of the signing profile containing the cross-account permissions.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="nextToken">String for specifying the next set of paginated results.</param>
 		/// <returns>Success</returns>
@@ -1292,8 +1292,8 @@ namespace MyNS
 		/// CancelSigningProfile signing-profiles/{profileName}
 		/// </summary>
 		/// <param name="profileName">The name of the signing profile to be canceled.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task CancelSigningProfileAsync(string profileName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1323,12 +1323,12 @@ namespace MyNS
 		/// GetSigningProfile signing-profiles/{profileName}
 		/// </summary>
 		/// <param name="profileName">The name of the target signing profile.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="profileOwner">The AWS account ID of the profile owner.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSigningProfileResponse> GetSigningProfileAsync(string profileName, string profileOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1364,8 +1364,8 @@ namespace MyNS
 		/// PutSigningProfile signing-profiles/{profileName}
 		/// </summary>
 		/// <param name="profileName">The name of the signing profile to be created.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutSigningProfileResponse> PutSigningProfileAsync(string profileName, PutSigningProfilePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1444,12 +1444,12 @@ namespace MyNS
 		/// <param name="signatureTimestamp">The timestamp of the signature that validates the profile or job.</param>
 		/// <param name="platformId">The ID of a signing platform. </param>
 		/// <param name="profileVersionArn">The version of a signing profile.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="jobArn">The ARN of a signing job.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="certificateHashes"><p>A list of composite signed hashes that identify certificates.</p> <p>A certificate identifier consists of a subject certificate TBS hash (signed by the parent CA) combined with a parent CA TBS hash (signed by the parent CA’s CA). Root certificates are defined as their own CA.</p></param>
 		/// <returns>Success</returns>
@@ -1531,8 +1531,8 @@ namespace MyNS
 		/// <param name="signatureExpiresBefore">Filters results to return only signing jobs with signatures expiring before a specified timestamp.</param>
 		/// <param name="signatureExpiresAfter">Filters results to return only signing jobs with signatures expiring after a specified timestamp.</param>
 		/// <param name="jobInvoker">Filters results to return only signing jobs initiated by a specified IAM entity.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSigningJobsResponse> ListSigningJobsAsync(SigningStatus status, string platformId, string requestedBy, int maxResults, string nextToken, bool isRevoked, System.DateTimeOffset signatureExpiresBefore, System.DateTimeOffset signatureExpiresAfter, string jobInvoker, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1765,8 +1765,8 @@ namespace MyNS
 		/// RemoveProfilePermission signing-profiles/{profileName}/permissions/{statementId}#revisionId
 		/// </summary>
 		/// <param name="profileName">A human-readable name for the signing profile with permissions to be removed.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="revisionId">An identifier for the current revision of the signing profile permissions.</param>
 		/// <param name="statementId">A unique identifier for the cross-account permissions statement.</param>
@@ -1839,8 +1839,8 @@ namespace MyNS
 		/// RevokeSigningProfile signing-profiles/{profileName}/revoke
 		/// </summary>
 		/// <param name="profileName">The name of the signing profile to be revoked.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task RevokeSigningProfileAsync(string profileName, RevokeSigningProfilePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1956,8 +1956,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The version of the signing profile.
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		/// Pattern: ^[a-zA-Z0-9]{10}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="profileVersion")]
@@ -2088,8 +2088,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the signing profile.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9_]{2,}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2109,8 +2109,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The AWS account ID of the signing profile owner.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^[0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="profileOwner")]
@@ -2151,8 +2151,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// AWS account ID of the job owner.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^[0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="jobOwner")]
@@ -2164,8 +2164,8 @@ namespace MyNS
 		/// <summary>
 		/// The reason for revoking the signing job.
 		/// Required
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="reason")]
@@ -2180,8 +2180,8 @@ namespace MyNS
 		/// <summary>
 		/// The version of the signing profile to be revoked.
 		/// Required
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		/// Pattern: ^[a-zA-Z0-9]{10}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2194,8 +2194,8 @@ namespace MyNS
 		/// <summary>
 		/// The reason for revoking a signing profile.
 		/// Required
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="reason")]
@@ -2218,8 +2218,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the signing profile.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9_]{2,}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2231,8 +2231,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The AWS account ID of the profile owner.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: ^[0-9]{12}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="profileOwner")]
@@ -2244,8 +2244,8 @@ namespace MyNS
 		/// <summary>
 		/// Specifies the object digest (hash) to sign.
 		/// Required
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="payload")]

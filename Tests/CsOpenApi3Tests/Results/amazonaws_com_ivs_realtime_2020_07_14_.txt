@@ -1271,8 +1271,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource to be retrieved. The ARN must be URL-encoded.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1308,8 +1308,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource to be tagged. The ARN must be URL-encoded.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1352,8 +1352,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource to be untagged. The ARN must be URL-encoded.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="tagKeys">Array of tags to be removed. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints beyond what is documented there.
 		/// Minimum items: 0
@@ -1460,8 +1460,8 @@ namespace MyNS
 		/// <summary>
 		/// ARN of the stage to which this token is scoped.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1473,8 +1473,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name that can be specified to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i> 
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="userId")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1487,8 +1487,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Optional name that can be specified for the stage being created.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// Pattern: ^[a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1520,8 +1520,8 @@ namespace MyNS
 		/// <summary>
 		/// ARN of the stage to be deleted.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1545,8 +1545,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Description of why this participant is being disconnected.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reason")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1556,8 +1556,8 @@ namespace MyNS
 		/// <summary>
 		/// ARN of the stage to which the participant is attached.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1582,8 +1582,8 @@ namespace MyNS
 		/// <summary>
 		/// ID of a session within the stage.
 		/// Required
-		/// Max length: 16
 		/// Min length: 16
+		/// Max length: 16
 		/// Pattern: ^st-[a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1596,8 +1596,8 @@ namespace MyNS
 		/// <summary>
 		/// Stage ARN.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1614,8 +1614,8 @@ namespace MyNS
 		/// <summary>
 		/// ARN of the stage for which the information is to be retrieved.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1632,8 +1632,8 @@ namespace MyNS
 		/// <summary>
 		/// ID of a session within the stage.
 		/// Required
-		/// Max length: 16
 		/// Min length: 16
+		/// Max length: 16
 		/// Pattern: ^st-[a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1646,8 +1646,8 @@ namespace MyNS
 		/// <summary>
 		/// ARN of the stage for which the information is to be retrieved.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1672,8 +1672,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: ^[a-zA-Z0-9+/=_-]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -1693,8 +1693,8 @@ namespace MyNS
 		/// <summary>
 		/// ID of a session within the stage.
 		/// Required
-		/// Max length: 16
 		/// Min length: 16
+		/// Max length: 16
 		/// Pattern: ^st-[a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1707,8 +1707,8 @@ namespace MyNS
 		/// <summary>
 		/// Stage ARN.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1736,8 +1736,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="filterByUserId")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1755,8 +1755,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: ^[a-zA-Z0-9+/=_-]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -1768,8 +1768,8 @@ namespace MyNS
 		/// <summary>
 		/// ID of the session within the stage.
 		/// Required
-		/// Max length: 16
 		/// Min length: 16
+		/// Max length: 16
 		/// Pattern: ^st-[a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1782,8 +1782,8 @@ namespace MyNS
 		/// <summary>
 		/// Stage ARN.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1808,8 +1808,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: ^[a-zA-Z0-9+/=_-]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -1821,8 +1821,8 @@ namespace MyNS
 		/// <summary>
 		/// Stage ARN.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1847,8 +1847,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// Pattern: ^[a-zA-Z0-9+/=_-]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -1876,8 +1876,8 @@ namespace MyNS
 		/// <summary>
 		/// ARN of the stage to be updated.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^arn:aws:ivs:[a-z0-9-]+:[0-9]+:stage/[a-zA-Z0-9-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1889,8 +1889,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of the stage to be updated.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// Pattern: ^[a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]

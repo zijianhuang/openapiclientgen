@@ -677,8 +677,8 @@ namespace MyNS
 		/// ListDataIntegrations dataIntegrations
 		/// </summary>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return per page.
 		/// Minimum: 1
@@ -758,8 +758,8 @@ namespace MyNS
 		/// ListEventIntegrations eventIntegrations
 		/// </summary>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return per page.
 		/// Minimum: 1
@@ -799,8 +799,8 @@ namespace MyNS
 		/// DeleteDataIntegration dataIntegrations/{Identifier}
 		/// </summary>
 		/// <param name="Identifier">A unique identifier for the DataIntegration.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDataIntegrationResponse> DeleteDataIntegrationAsync(string Identifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -836,8 +836,8 @@ namespace MyNS
 		/// GetDataIntegration dataIntegrations/{Identifier}
 		/// </summary>
 		/// <param name="Identifier">A unique identifier.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDataIntegrationResponse> GetDataIntegrationAsync(string Identifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -873,8 +873,8 @@ namespace MyNS
 		/// UpdateDataIntegration dataIntegrations/{Identifier}
 		/// </summary>
 		/// <param name="Identifier">A unique identifier for the DataIntegration.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDataIntegrationResponse> UpdateDataIntegrationAsync(string Identifier, UpdateDataIntegrationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -917,8 +917,8 @@ namespace MyNS
 		/// DeleteEventIntegration eventIntegrations/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the event integration.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteEventIntegrationResponse> DeleteEventIntegrationAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -954,8 +954,8 @@ namespace MyNS
 		/// GetEventIntegration eventIntegrations/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the event integration. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEventIntegrationResponse> GetEventIntegrationAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -991,8 +991,8 @@ namespace MyNS
 		/// UpdateEventIntegration eventIntegrations/{Name}
 		/// </summary>
 		/// <param name="Name">The name of the event integration.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateEventIntegrationResponse> UpdateEventIntegrationAsync(string Name, UpdateEventIntegrationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1035,12 +1035,12 @@ namespace MyNS
 		/// ListDataIntegrationAssociations dataIntegrations/{Identifier}/associations
 		/// </summary>
 		/// <param name="Identifier">A unique identifier for the DataIntegration.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return per page.
 		/// Minimum: 1
@@ -1080,12 +1080,12 @@ namespace MyNS
 		/// ListEventIntegrationAssociations eventIntegrations/{Name}/associations
 		/// </summary>
 		/// <param name="Name">The name of the event integration. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return per page.
 		/// Minimum: 1
@@ -1125,8 +1125,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1162,8 +1162,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1206,8 +1206,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys">The tag keys.
 		/// Minimum items: 1
@@ -1249,8 +1249,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the DataIntegration.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z0-9\/\._\-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1262,8 +1262,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the DataIntegration.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1275,8 +1275,8 @@ namespace MyNS
 		/// <summary>
 		/// The KMS key for the DataIntegration.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1289,8 +1289,8 @@ namespace MyNS
 		/// <summary>
 		/// The URI of the data source.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// Pattern: ^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1316,8 +1316,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1368,8 +1368,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the event integration.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z0-9\/\._\-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1381,8 +1381,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the event integration.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1402,8 +1402,8 @@ namespace MyNS
 		/// <summary>
 		/// The EventBridge bus.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z0-9\/\._\-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1415,8 +1415,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1444,8 +1444,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the DataIntegration.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z0-9\/\._\-]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1456,8 +1456,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the DataIntegration.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1472,8 +1472,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the event inegration.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

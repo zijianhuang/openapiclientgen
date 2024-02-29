@@ -611,8 +611,8 @@ namespace MyNS
 		/// Domains_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -646,8 +646,8 @@ namespace MyNS
 		/// Domains_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="domainName">Name of the domain.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -682,8 +682,8 @@ namespace MyNS
 		/// Domains_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="domainName">Name of the domain.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -726,8 +726,8 @@ namespace MyNS
 		/// Domains_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="domainName">Name of the domain.</param>
 		/// <param name="forceHardDeleteDomain">Specify <code>true</code> to delete the domain immediately. The default is <code>false</code> which deletes the domain after 24 hours.</param>
@@ -757,8 +757,8 @@ namespace MyNS
 		/// Domains_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="domainName">Name of the domain.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -801,8 +801,8 @@ namespace MyNS
 		/// Domains_ListOwnershipIdentifiers subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/domainOwnershipIdentifiers
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="domainName">Name of domain.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -837,8 +837,8 @@ namespace MyNS
 		/// Domains_GetOwnershipIdentifier subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/domainOwnershipIdentifiers/{name}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="domainName">Name of domain.</param>
 		/// <param name="name">Name of identifier.</param>
@@ -874,8 +874,8 @@ namespace MyNS
 		/// Domains_CreateOrUpdateOwnershipIdentifier subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/domainOwnershipIdentifiers/{name}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="domainName">Name of domain.</param>
 		/// <param name="name">Name of identifier.</param>
@@ -919,8 +919,8 @@ namespace MyNS
 		/// Domains_DeleteOwnershipIdentifier subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/domainOwnershipIdentifiers/{name}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="domainName">Name of domain.</param>
 		/// <param name="name">Name of identifier.</param>
@@ -950,8 +950,8 @@ namespace MyNS
 		/// Domains_UpdateOwnershipIdentifier subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/domainOwnershipIdentifiers/{name}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="domainName">Name of domain.</param>
 		/// <param name="name">Name of identifier.</param>
@@ -995,8 +995,8 @@ namespace MyNS
 		/// Domains_Renew subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DomainRegistration/domains/{domainName}/renew
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="domainName">Name of the domain.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>

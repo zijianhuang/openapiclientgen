@@ -348,8 +348,8 @@ namespace MyNS
 		/// ManagementLocks_ListAtResourceGroupLevel subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/locks
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group containing the locks to get.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="filter">The filter to apply on the operation.</param>
 		/// <param name="api_version">The API version to use for the operation.</param>
@@ -383,8 +383,8 @@ namespace MyNS
 		/// ManagementLocks_GetAtResourceGroupLevel subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/locks/{lockName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the locked resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="lockName">The name of the lock to get.</param>
 		/// <param name="api_version">The API version to use for the operation.</param>
@@ -419,8 +419,8 @@ namespace MyNS
 		/// ManagementLocks_CreateOrUpdateAtResourceGroupLevel subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/locks/{lockName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group to lock.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="lockName">The lock name. The lock name can be a maximum of 260 characters. It cannot contain <, > %, &, :, \, ?, /, or any control characters.</param>
 		/// <param name="api_version">The API version to use for the operation.</param>
@@ -463,8 +463,8 @@ namespace MyNS
 		/// ManagementLocks_DeleteAtResourceGroupLevel subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/locks/{lockName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group containing the lock.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="lockName">The name of lock to delete.</param>
 		/// <param name="api_version">The API version to use for the operation.</param>
@@ -492,8 +492,8 @@ namespace MyNS
 		/// ManagementLocks_ListAtResourceLevel subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/locks
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group containing the locked resource. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceProviderNamespace">The namespace of the resource provider.</param>
 		/// <param name="parentResourcePath">The parent resource identity.</param>
@@ -531,8 +531,8 @@ namespace MyNS
 		/// ManagementLocks_GetAtResourceLevel subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/locks/{lockName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. 
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceProviderNamespace">The namespace of the resource provider.</param>
 		/// <param name="parentResourcePath">An extra path parameter needed in some services, like SQL Databases.</param>
@@ -571,8 +571,8 @@ namespace MyNS
 		/// ManagementLocks_CreateOrUpdateAtResourceLevel subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/locks/{lockName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group containing the resource to lock. 
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceProviderNamespace">The resource provider namespace of the resource to lock.</param>
 		/// <param name="parentResourcePath">The parent resource identity.</param>
@@ -619,8 +619,8 @@ namespace MyNS
 		/// ManagementLocks_DeleteAtResourceLevel subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/locks/{lockName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group containing the resource with the lock to delete. 
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceProviderNamespace">The resource provider namespace of the resource with the lock to delete.</param>
 		/// <param name="parentResourcePath">The parent resource identity.</param>

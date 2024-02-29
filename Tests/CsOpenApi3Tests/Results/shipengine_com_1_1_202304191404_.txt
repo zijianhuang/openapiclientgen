@@ -96,8 +96,8 @@ namespace MyNS
 		/// <summary>
 		/// A human readable name for the image.
 		///
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -5658,8 +5658,8 @@ namespace MyNS
 		/// <summary>
 		/// A short description of the package content. Required for shipments moving to, from, and through Mexico.
 		///
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="content_description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8622,8 +8622,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Amazon Standard Identification Number
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="asin")]
 		[System.ComponentModel.DataAnnotations.MinLength(10)]
@@ -10875,27 +10875,27 @@ namespace MyNS
 		/// <param name="label_status">Only return labels that are currently in the specified status</param>
 		/// <param name="service_code">Only return labels for a specific [carrier service](https://www.shipengine.com/docs/shipping/use-a-carrier-service/)</param>
 		/// <param name="carrier_id">Only return labels for a specific [carrier account](https://www.shipengine.com/docs/carriers/setup/)
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		// </param>
 		/// <param name="tracking_number">Only return labels with a specific tracking number
 		/// Min length: 1
 		// </param>
 		/// <param name="batch_id">Only return labels that were created in a specific [batch](https://www.shipengine.com/docs/labels/bulk/)
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		// </param>
 		/// <param name="rate_id">Rate ID
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		// </param>
 		/// <param name="shipment_id">Shipment ID
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		// </param>
 		/// <param name="warehouse_id">Only return labels that originate from a specific [warehouse](https://www.shipengine.com/docs/shipping/ship-from-a-warehouse/)
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		// </param>
 		/// <param name="created_at_start">Only return labels that were created on or after a specific date/time</param>
 		/// <param name="created_at_end">Only return labels that were created on or before a specific date/time</param>
@@ -11244,16 +11244,16 @@ namespace MyNS
 		/// List_manifests v1/manifests
 		/// </summary>
 		/// <param name="warehouse_id">Warehouse ID
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		// </param>
 		/// <param name="ship_date_start">ship date start range</param>
 		/// <param name="ship_date_end">ship date end range</param>
 		/// <param name="created_at_start">Used to create a filter for when a resource was created (ex. A shipment that was created after a certain time)</param>
 		/// <param name="created_at_end">Used to create a filter for when a resource was created, (ex. A shipment that was created before a certain time)</param>
 		/// <param name="carrier_id">Carrier ID
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		// </param>
 		/// <param name="page">Return a specific page of results. Defaults to the first page. If set to a number that's greater than the number of pages of results, an empty page is returned.
 		///
@@ -11578,12 +11578,12 @@ namespace MyNS
 		/// List_scheduled_pickups v1/pickups
 		/// </summary>
 		/// <param name="carrier_id">Carrier ID
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		// </param>
 		/// <param name="warehouse_id">Warehouse ID
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		// </param>
 		/// <param name="created_at_start">Only return scheduled pickups that were created on or after a specific date/time</param>
 		/// <param name="created_at_end">Only return scheduled pickups that were created on or before a specific date/time</param>
@@ -11973,8 +11973,8 @@ namespace MyNS
 		/// List_shipments v1/shipments
 		/// </summary>
 		/// <param name="batch_id">Batch ID
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		// </param>
 		/// <param name="tag">Search for shipments based on the custom tag added to the shipment object
 		/// Min length: 1

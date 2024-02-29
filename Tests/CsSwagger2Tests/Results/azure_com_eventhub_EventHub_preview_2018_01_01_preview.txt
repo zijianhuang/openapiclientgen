@@ -688,8 +688,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <returns>Clusters returned successfully.</returns>
@@ -722,12 +722,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="clusterName">The name of the Event Hubs Cluster.
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <returns>Event Hubs Cluster resource description returned successfully.</returns>
@@ -760,12 +760,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="clusterName">The name of the Event Hubs Cluster.
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <returns>Event Hubs Cluster successfully created or updated.</returns>
@@ -798,12 +798,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="clusterName">The name of the Event Hubs Cluster.
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <returns>Event Hubs Cluster successfully deleted.</returns>
@@ -830,12 +830,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="clusterName">The name of the Event Hubs Cluster.
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="requestBody">The properties of the Event Hubs Cluster which should be updated.</param>
@@ -876,12 +876,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="clusterName">The name of the Event Hubs Cluster.
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <returns>List of Namespace IDs in Cluster successfully delivered.</returns>
@@ -914,12 +914,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="clusterName">The name of the Event Hubs Cluster.
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <returns>Event Hubs Cluster settings configuration returned.</returns>
@@ -952,12 +952,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="clusterName">The name of the Event Hubs Cluster.
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="requestBody">Parameters for creating an Event Hubs Cluster resource.</param>
@@ -997,8 +997,8 @@ namespace MyNS
 		/// Namespaces_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1031,12 +1031,12 @@ namespace MyNS
 		/// Namespaces_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1069,12 +1069,12 @@ namespace MyNS
 		/// Namespaces_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1115,12 +1115,12 @@ namespace MyNS
 		/// Namespaces_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1147,12 +1147,12 @@ namespace MyNS
 		/// Namespaces_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1193,12 +1193,12 @@ namespace MyNS
 		/// Namespaces_ListIPFilterRules subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/ipfilterrules
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1231,12 +1231,12 @@ namespace MyNS
 		/// Namespaces_GetIpFilterRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/ipfilterrules/{ipFilterRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="ipFilterRuleName">The IP Filter Rule name.
 		/// Min length: 1
@@ -1272,12 +1272,12 @@ namespace MyNS
 		/// Namespaces_CreateOrUpdateIpFilterRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/ipfilterrules/{ipFilterRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="ipFilterRuleName">The IP Filter Rule name.
 		/// Min length: 1
@@ -1321,12 +1321,12 @@ namespace MyNS
 		/// Namespaces_DeleteIpFilterRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/ipfilterrules/{ipFilterRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="ipFilterRuleName">The IP Filter Rule name.
 		/// Min length: 1
@@ -1356,12 +1356,12 @@ namespace MyNS
 		/// Namespaces_GetNetworkRuleSet subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/networkRuleSets/default
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1394,12 +1394,12 @@ namespace MyNS
 		/// Namespaces_CreateOrUpdateNetworkRuleSet subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/networkRuleSets/default
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1440,12 +1440,12 @@ namespace MyNS
 		/// Namespaces_ListVirtualNetworkRules subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/virtualnetworkrules
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1478,12 +1478,12 @@ namespace MyNS
 		/// Namespaces_GetVirtualNetworkRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/virtualnetworkrules/{virtualNetworkRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="virtualNetworkRuleName">The Virtual Network Rule name.
 		/// Min length: 1
@@ -1519,12 +1519,12 @@ namespace MyNS
 		/// Namespaces_CreateOrUpdateVirtualNetworkRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/virtualnetworkrules/{virtualNetworkRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="virtualNetworkRuleName">The Virtual Network Rule name.
 		/// Min length: 1
@@ -1568,12 +1568,12 @@ namespace MyNS
 		/// Namespaces_DeleteVirtualNetworkRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/virtualnetworkrules/{virtualNetworkRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The Namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="virtualNetworkRuleName">The Virtual Network Rule name.
 		/// Min length: 1

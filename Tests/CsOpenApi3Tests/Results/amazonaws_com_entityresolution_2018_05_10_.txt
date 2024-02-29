@@ -1175,8 +1175,8 @@ namespace MyNS
 		/// Maximum: 25
 		// </param>
 		/// <param name="nextToken">The pagination token from the previous <code>ListSchemaMappings</code> API call.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListMatchingWorkflowsOutput> ListMatchingWorkflowsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1255,8 +1255,8 @@ namespace MyNS
 		/// Maximum: 25
 		// </param>
 		/// <param name="nextToken">The pagination token from the previous <code>ListSchemaMappings</code> API call.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSchemaMappingsOutput> ListSchemaMappingsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1292,8 +1292,8 @@ namespace MyNS
 		/// DeleteMatchingWorkflow matchingworkflows/{workflowName}
 		/// </summary>
 		/// <param name="workflowName">The name of the workflow to be retrieved.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteMatchingWorkflowOutput> DeleteMatchingWorkflowAsync(string workflowName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1329,8 +1329,8 @@ namespace MyNS
 		/// GetMatchingWorkflow matchingworkflows/{workflowName}
 		/// </summary>
 		/// <param name="workflowName">The name of the workflow.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMatchingWorkflowOutput> GetMatchingWorkflowAsync(string workflowName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1366,8 +1366,8 @@ namespace MyNS
 		/// UpdateMatchingWorkflow matchingworkflows/{workflowName}
 		/// </summary>
 		/// <param name="workflowName">The name of the workflow to be retrieved.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMatchingWorkflowOutput> UpdateMatchingWorkflowAsync(string workflowName, UpdateMatchingWorkflowPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1410,8 +1410,8 @@ namespace MyNS
 		/// DeleteSchemaMapping schemas/{schemaName}
 		/// </summary>
 		/// <param name="schemaName">The name of the schema to delete.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSchemaMappingOutput> DeleteSchemaMappingAsync(string schemaName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1447,8 +1447,8 @@ namespace MyNS
 		/// GetSchemaMapping schemas/{schemaName}
 		/// </summary>
 		/// <param name="schemaName">The name of the schema to be retrieved.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSchemaMappingOutput> GetSchemaMappingAsync(string schemaName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1484,8 +1484,8 @@ namespace MyNS
 		/// GetMatchId matchingworkflows/{workflowName}/matches
 		/// </summary>
 		/// <param name="workflowName">The name of the workflow.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMatchIdOutput> GetMatchIdAsync(string workflowName, GetMatchIdPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1529,8 +1529,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="jobId">The ID of the job.</param>
 		/// <param name="workflowName">The name of the workflow.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMatchingJobOutput> GetMatchingJobAsync(string jobId, string workflowName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1570,12 +1570,12 @@ namespace MyNS
 		/// Maximum: 25
 		// </param>
 		/// <param name="nextToken">The pagination token from the previous <code>ListSchemaMappings</code> API call.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="workflowName">The name of the workflow to be retrieved.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListMatchingJobsOutput> ListMatchingJobsAsync(int maxResults, string nextToken, string workflowName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1611,8 +1611,8 @@ namespace MyNS
 		/// StartMatchingJob matchingworkflows/{workflowName}/jobs
 		/// </summary>
 		/// <param name="workflowName">The name of the matching job to be retrieved.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartMatchingJobOutput> StartMatchingJobAsync(string workflowName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1757,8 +1757,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the workflow.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1820,8 +1820,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the workflow. There cannot be multiple <code>DataIntegrationWorkflows</code> with the same name.
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z_0-9-]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1854,8 +1854,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the schema.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1875,8 +1875,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the schema. There cannot be multiple <code>SchemaMappings</code> with the same name.
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z_0-9-]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1898,8 +1898,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the workflow.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]

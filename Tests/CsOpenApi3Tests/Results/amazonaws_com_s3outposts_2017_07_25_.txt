@@ -382,8 +382,8 @@ namespace MyNS
 		/// ListEndpoints S3Outposts/ListEndpoints
 		/// </summary>
 		/// <param name="nextToken">If a previous response from this operation included a <code>NextToken</code> value, provide that value here to retrieve the next page of results.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="maxResults">The maximum number of endpoints that will be returned in the response.
 		/// Minimum: 0
@@ -425,8 +425,8 @@ namespace MyNS
 		/// ListOutpostsWithS3 S3Outposts/ListOutpostsWithS3
 		/// </summary>
 		/// <param name="nextToken">When you can get additional results from the <code>ListOutpostsWithS3</code> call, a <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to continue listing additional Outposts.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="maxResults">The maximum number of Outposts to return. The limit is 100.
 		/// Minimum: 0
@@ -468,8 +468,8 @@ namespace MyNS
 		/// ListSharedEndpoints S3Outposts/ListSharedEndpoints#outpostId
 		/// </summary>
 		/// <param name="nextToken">If a previous response from this operation included a <code>NextToken</code> value, you can provide that value here to retrieve the next page of results.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="maxResults">The maximum number of endpoints that will be returned in the response.
 		/// Minimum: 0

@@ -5031,8 +5031,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Country code according to ISO 3166-1 alpha-2.
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="country")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]

@@ -2001,8 +2001,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the fleet.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2038,8 +2038,8 @@ namespace MyNS
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the fleet.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2286,8 +2286,8 @@ namespace MyNS
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
 		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the fleet.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys">The list of tag keys to remove from the resource.
 		/// Minimum items: 1
@@ -2569,8 +2569,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2581,8 +2581,8 @@ namespace MyNS
 		/// <summary>
 		/// The fully qualified domain name (FQDN).
 		/// Required
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		/// Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2617,8 +2617,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2636,8 +2636,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The domain name of the authorization provider. This applies only to SAML-based authorization providers.
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		/// Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2653,8 +2653,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2665,8 +2665,8 @@ namespace MyNS
 		/// <summary>
 		/// The root certificate of the CA.
 		/// Required
-		/// Max length: 8192
 		/// Min length: 1
+		/// Max length: 8192
 		/// Pattern: -{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2691,8 +2691,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique name for the fleet.
 		/// Required
-		/// Max length: 48
 		/// Min length: 1
+		/// Max length: 48
 		/// Pattern: ^[a-z0-9](?:[a-z0-9\-]{0,46}[a-z0-9])?$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2729,8 +2729,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2745,8 +2745,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2761,8 +2761,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2777,8 +2777,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2789,8 +2789,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique identifier for a registered user's device.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2805,8 +2805,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2821,8 +2821,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2833,8 +2833,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the domain.
 		/// Required
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		/// Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2851,8 +2851,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2867,8 +2867,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2883,8 +2883,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2895,8 +2895,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique identifier for the certificate authority.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2911,8 +2911,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2923,8 +2923,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the domain.
 		/// Required
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		/// Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2941,8 +2941,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2953,8 +2953,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique identifier for the authorization provider.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2969,8 +2969,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2981,8 +2981,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique identifier for the CA.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2997,8 +2997,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3008,8 +3008,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// Pattern: [\w\-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3033,8 +3033,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3044,8 +3044,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// Pattern: [\w\-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3068,8 +3068,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// Pattern: [\w\-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3105,8 +3105,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3116,8 +3116,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// Pattern: [\w\-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3141,8 +3141,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3160,8 +3160,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// Pattern: [\w\-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3177,8 +3177,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3189,8 +3189,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the domain.
 		/// Required
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		/// Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3207,8 +3207,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3219,8 +3219,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the domain.
 		/// Required
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		/// Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3237,8 +3237,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3249,8 +3249,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the user.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3265,8 +3265,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3289,8 +3289,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3333,8 +3333,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3344,8 +3344,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.
-		/// Max length: 32768
 		/// Min length: 1
+		/// Max length: 32768
 		/// Pattern: (-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}\u000D?\u000A)*-{5}BEGIN CERTIFICATE-{5}\u000D?\u000A([A-Za-z0-9/+]{64}\u000D?\u000A)*[A-Za-z0-9/+]{1,64}={0,2}\u000D?\u000A-{5}END CERTIFICATE-{5}(\u000D?\u000A)?
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3361,8 +3361,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3373,8 +3373,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the domain.
 		/// Required
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		/// Pattern: ^[a-zA-Z0-9]?((?!-)([A-Za-z0-9-]*[A-Za-z0-9])\.)+[a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3399,8 +3399,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3429,8 +3429,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the fleet.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3448,8 +3448,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.
-		/// Max length: 204800
 		/// Min length: 1
+		/// Max length: 204800
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

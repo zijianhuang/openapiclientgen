@@ -56,8 +56,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(12)]
@@ -67,8 +67,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3118,8 +3118,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4094,8 +4094,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4204,8 +4204,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="PackageID">Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</param>
 		/// <param name="DomainName">Name of the domain that you want to associate the package with.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociatePackageResponse> AssociatePackageAsync(string PackageID, string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4236,8 +4236,8 @@ namespace MyNS
 		/// AuthorizeVpcEndpointAccess 2015-01-01/es/domain/{DomainName}/authorizeVpcEndpointAccess
 		/// </summary>
 		/// <param name="DomainName">The name of the OpenSearch Service domain to provide access to.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AuthorizeVpcEndpointAccessResponse> AuthorizeVpcEndpointAccessAsync(string DomainName, AuthorizeVpcEndpointAccessPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4514,8 +4514,8 @@ namespace MyNS
 		/// DeleteElasticsearchDomain 2015-01-01/es/domain/{DomainName}
 		/// </summary>
 		/// <param name="DomainName">The name of the Elasticsearch domain that you want to permanently delete.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteElasticsearchDomainResponse> DeleteElasticsearchDomainAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4551,8 +4551,8 @@ namespace MyNS
 		/// DescribeElasticsearchDomain 2015-01-01/es/domain/{DomainName}
 		/// </summary>
 		/// <param name="DomainName">The name of the Elasticsearch domain for which you want information.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeElasticsearchDomainResponse> DescribeElasticsearchDomainAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4717,8 +4717,8 @@ namespace MyNS
 		/// DeleteVpcEndpoint 2015-01-01/es/vpcEndpoints/{VpcEndpointId}
 		/// </summary>
 		/// <param name="VpcEndpointId">The unique identifier of the endpoint to be deleted.
-		/// Max length: 256
 		/// Min length: 5
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteVpcEndpointResponse> DeleteVpcEndpointAsync(string VpcEndpointId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4754,8 +4754,8 @@ namespace MyNS
 		/// DescribeDomainAutoTunes 2015-01-01/es/domain/{DomainName}/autoTunes
 		/// </summary>
 		/// <param name="DomainName">Specifies the domain name for which you want Auto-Tune action details.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -4793,8 +4793,8 @@ namespace MyNS
 		/// DescribeDomainChangeProgress 2015-01-01/es/domain/{DomainName}/progress
 		/// </summary>
 		/// <param name="DomainName">The domain you want to get the progress information about.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="changeid">The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change. </param>
 		/// <returns>Success</returns>
@@ -4831,8 +4831,8 @@ namespace MyNS
 		/// DescribeElasticsearchDomainConfig 2015-01-01/es/domain/{DomainName}/config
 		/// </summary>
 		/// <param name="DomainName">The Elasticsearch domain that you want to get information about.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeElasticsearchDomainConfigResponse> DescribeElasticsearchDomainConfigAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4868,8 +4868,8 @@ namespace MyNS
 		/// UpdateElasticsearchDomainConfig 2015-01-01/es/domain/{DomainName}/config
 		/// </summary>
 		/// <param name="DomainName">The name of the Elasticsearch domain that you are updating. 
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateElasticsearchDomainConfigResponse> UpdateElasticsearchDomainConfigAsync(string DomainName, UpdateElasticsearchDomainConfigPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4952,8 +4952,8 @@ namespace MyNS
 		/// DescribeElasticsearchInstanceTypeLimits 2015-01-01/es/instanceTypeLimits/{ElasticsearchVersion}/{InstanceType}
 		/// </summary>
 		/// <param name="domainName"> DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for Elasticsearch <code> <a>Limits</a> </code> for existing domain. 
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="InstanceType"> The instance type for an Elasticsearch cluster for which Elasticsearch <code> <a>Limits</a> </code> are needed. </param>
 		/// <param name="ElasticsearchVersion"> Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed. </param>
@@ -5238,8 +5238,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="PackageID">Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</param>
 		/// <param name="DomainName">Name of the domain that you want to associate the package with.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DissociatePackageResponse> DissociatePackageAsync(string PackageID, string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5269,8 +5269,8 @@ namespace MyNS
 		/// Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a <code> <a>DomainName</a> </code> to get all upgrade compatible Elasticsearch versions for that specific domain.
 		/// GetCompatibleElasticsearchVersions 2015-01-01/es/compatibleVersions
 		/// </summary>
-		/// <param name="domainName">Max length: 28
-		/// Min length: 3
+		/// <param name="domainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCompatibleElasticsearchVersionsResponse> GetCompatibleElasticsearchVersionsAsync(string domainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5345,8 +5345,8 @@ namespace MyNS
 		/// Retrieves the complete history of the last 10 upgrades that were performed on the domain.
 		/// GetUpgradeHistory 2015-01-01/es/upgradeDomain/{DomainName}/history
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="maxResults">Maximum: 100</param>
 		/// <param name="MaxResults">Pagination limit</param>
@@ -5384,8 +5384,8 @@ namespace MyNS
 		/// Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.
 		/// GetUpgradeStatus 2015-01-01/es/upgradeDomain/{DomainName}/status
 		/// </summary>
-		/// <param name="DomainName">Max length: 28
-		/// Min length: 3
+		/// <param name="DomainName">Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetUpgradeStatusResponse> GetUpgradeStatusAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5496,8 +5496,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ElasticsearchVersion">Version of Elasticsearch for which list of supported elasticsearch instance types are needed. </param>
 		/// <param name="domainName">DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are querying for list of available Elasticsearch instance types when modifying existing domain. 
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="maxResults"> Set this value to limit the number of results returned. Value provided must be greater than 30 else it wont be honored. 
 		/// Maximum: 100
@@ -5577,8 +5577,8 @@ namespace MyNS
 		/// ListPackagesForDomain 2015-01-01/domain/{DomainName}/packages
 		/// </summary>
 		/// <param name="DomainName">The name of the domain for which you want to list associated packages.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="maxResults">Limits results to a maximum number of packages.
 		/// Maximum: 100
@@ -5654,8 +5654,8 @@ namespace MyNS
 		/// ListVpcEndpointAccess 2015-01-01/es/domain/{DomainName}/listVpcEndpointAccess
 		/// </summary>
 		/// <param name="DomainName">The name of the OpenSearch Service domain to retrieve access information for.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="nextToken">Provides an identifier to allow retrieval of paginated results.</param>
 		/// <returns>Success</returns>
@@ -5692,8 +5692,8 @@ namespace MyNS
 		/// ListVpcEndpointsForDomain 2015-01-01/es/domain/{DomainName}/vpcEndpoints
 		/// </summary>
 		/// <param name="DomainName">Name of the ElasticSearch domain whose VPC endpoints are to be listed.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <param name="nextToken">Provides an identifier to allow retrieval of paginated results.</param>
 		/// <returns>Success</returns>
@@ -5833,8 +5833,8 @@ namespace MyNS
 		/// RevokeVpcEndpointAccess 2015-01-01/es/domain/{DomainName}/revokeVpcEndpointAccess
 		/// </summary>
 		/// <param name="DomainName">The name of the OpenSearch Service domain.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<RevokeVpcEndpointAccessResponse> RevokeVpcEndpointAccessAsync(string DomainName, RevokeVpcEndpointAccessPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6073,8 +6073,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6091,8 +6091,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6383,8 +6383,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(12)]
@@ -6393,8 +6393,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -6411,8 +6411,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(12)]
@@ -6421,8 +6421,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -6441,8 +6441,8 @@ namespace MyNS
 		/// <summary>
 		/// Unique identifier for the package.
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6503,8 +6503,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the domain to grant access to.
 		/// Required
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		/// Pattern: arn:aws[a-z\-]*:[a-z]+:[a-z0-9\-]+:[0-9]+:domain\/[a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6524,8 +6524,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique, case-sensitive identifier to ensure idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7078,8 +7078,8 @@ namespace MyNS
 		/// <summary>
 		/// A customer-specified identifier to track this reservation.
 		/// Required
-		/// Max length: 64
 		/// Min length: 5
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7136,8 +7136,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7200,8 +7200,8 @@ namespace MyNS
 		/// <summary>
 		/// Unique identifier of the VPC endpoint to be updated.
 		/// Required
-		/// Max length: 256
 		/// Min length: 5
+		/// Max length: 256
 		/// Pattern: ^aos-[a-zA-Z0-9]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7236,8 +7236,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

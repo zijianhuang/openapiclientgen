@@ -6019,8 +6019,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6056,8 +6056,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6428,8 +6428,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		// </param>
 		/// <param name="tagKeys">A map that contains tag keys and tag values that will be unattached from the resource.</param>
 		/// <returns>Success</returns>
@@ -6620,8 +6620,8 @@ namespace MyNS
 		/// <summary>
 		/// The deployment job ARN to cancel.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6638,8 +6638,8 @@ namespace MyNS
 		/// <summary>
 		/// The simulation job ARN to cancel.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6656,8 +6656,8 @@ namespace MyNS
 		/// <summary>
 		/// The id of the batch to cancel.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6674,8 +6674,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (arn) of the world export job to cancel.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6692,8 +6692,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (arn) of the world generator job to cancel.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6716,8 +6716,8 @@ namespace MyNS
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-zA-Z0-9_\-=]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6730,8 +6730,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the fleet to deploy.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6782,8 +6782,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the fleet.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [a-zA-Z0-9_\-]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6806,8 +6806,8 @@ namespace MyNS
 		/// <summary>
 		/// The name for the robot.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [a-zA-Z0-9_\-]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6828,8 +6828,8 @@ namespace MyNS
 		/// <summary>
 		/// The Greengrass group id.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: .*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6852,8 +6852,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the robot application.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [a-zA-Z0-9_\-]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6913,8 +6913,8 @@ namespace MyNS
 		/// <summary>
 		/// The application information for the robot application.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6926,8 +6926,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// Pattern: [a-zA-Z0-9_.\-]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="currentRevisionId")]
@@ -6944,8 +6944,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A SHA256 identifier for the Docker image that you use for your robot application.
-		/// Max length: 72
 		/// Min length: 0
+		/// Max length: 72
 		/// Pattern: [Ss][Hh][Aa]256:[0-9a-fA-F]{64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="imageDigest")]
@@ -6961,8 +6961,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the simulation application.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [a-zA-Z0-9_\-]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7056,8 +7056,8 @@ namespace MyNS
 		/// <summary>
 		/// The application information for the simulation application.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7069,8 +7069,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// Pattern: [a-zA-Z0-9_.\-]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="currentRevisionId")]
@@ -7087,8 +7087,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SHA256 digest used to identify the Docker image URI used to created the simulation application.
-		/// Max length: 72
 		/// Min length: 0
+		/// Max length: 72
 		/// Pattern: [Ss][Hh][Aa]256:[0-9a-fA-F]{64}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="imageDigest")]
@@ -7103,8 +7103,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-zA-Z0-9_\-=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
@@ -7136,8 +7136,8 @@ namespace MyNS
 		/// <summary>
 		/// The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job. 
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: arn:aws:iam::\w+:role/.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7250,8 +7250,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-zA-Z0-9_\-=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
@@ -7283,8 +7283,8 @@ namespace MyNS
 		/// <summary>
 		/// The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: arn:aws:iam::\w+:role/.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7316,8 +7316,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-zA-Z0-9_\-=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
@@ -7329,8 +7329,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (arn) of the world template describing the worlds you want to create.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7376,8 +7376,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-zA-Z0-9_\-=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
@@ -7388,8 +7388,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the world template.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -7400,8 +7400,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The world template body.
-		/// Max length: 262144
 		/// Min length: 1
+		/// Max length: 262144
 		/// Pattern: [\S\s]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="templateBody")]
@@ -7439,8 +7439,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the fleet.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7457,8 +7457,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the robot.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7475,8 +7475,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the the robot application.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7488,8 +7488,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The version of the robot application to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: (\$LATEST)|[0-9]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="applicationVersion")]
@@ -7505,8 +7505,8 @@ namespace MyNS
 		/// <summary>
 		/// The application information for the simulation application to delete.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7518,8 +7518,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The version of the simulation application to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: (\$LATEST)|[0-9]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="applicationVersion")]
@@ -7535,8 +7535,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (arn) of the world template you want to delete.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7553,8 +7553,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the fleet.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7567,8 +7567,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the robot.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7585,8 +7585,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the deployment job.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7603,8 +7603,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the fleet.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7621,8 +7621,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the robot to be described.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7639,8 +7639,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the robot application.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7652,8 +7652,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The version of the robot application to describe.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: (\$LATEST)|[0-9]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="applicationVersion")]
@@ -7669,8 +7669,8 @@ namespace MyNS
 		/// <summary>
 		/// The application information for the simulation application.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7682,8 +7682,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The version of the simulation application to describe.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: (\$LATEST)|[0-9]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="applicationVersion")]
@@ -7699,8 +7699,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the simulation job to be described.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7717,8 +7717,8 @@ namespace MyNS
 		/// <summary>
 		/// The id of the batch to describe.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7735,8 +7735,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (arn) of the world you want to describe.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7753,8 +7753,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (arn) of the world export job to describe.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7771,8 +7771,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (arn) of the world generation job to describe.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7789,8 +7789,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (arn) of the world template you want to describe.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7806,8 +7806,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (arn) of the world template.
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="template")]
@@ -7818,8 +7818,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (arn) of the world generator job.
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="generationJob")]
@@ -7844,8 +7844,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [a-zA-Z0-9_.\-\/+=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -7866,8 +7866,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [a-zA-Z0-9_.\-\/+=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -7898,8 +7898,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The version qualifier of the robot application.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ALL
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="versionQualifier")]
@@ -7910,8 +7910,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [a-zA-Z0-9_.\-\/+=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -7942,8 +7942,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [a-zA-Z0-9_.\-\/+=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -7974,8 +7974,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The version qualifier of the simulation application.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ALL
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="versionQualifier")]
@@ -7986,8 +7986,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [a-zA-Z0-9_.\-\/+=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -8018,8 +8018,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [a-zA-Z0-9_.\-\/+=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -8050,8 +8050,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [a-zA-Z0-9_.\-\/+=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -8094,8 +8094,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [a-zA-Z0-9_.\-\/+=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -8126,8 +8126,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [a-zA-Z0-9_.\-\/+=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -8158,8 +8158,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [a-zA-Z0-9_.\-\/+=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -8180,8 +8180,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: [a-zA-Z0-9_.\-\/+=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -8213,8 +8213,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the fleet.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8227,8 +8227,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the robot.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8245,8 +8245,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the simulation job.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8262,8 +8262,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-zA-Z0-9_\-=]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientRequestToken")]
@@ -8313,8 +8313,8 @@ namespace MyNS
 		/// <summary>
 		/// Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-zA-Z0-9_\-=]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8327,8 +8327,8 @@ namespace MyNS
 		/// <summary>
 		/// The target fleet for the synchronization.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8345,8 +8345,8 @@ namespace MyNS
 		/// <summary>
 		/// The application information for the robot application.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8372,8 +8372,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The revision id for the robot application.
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// Pattern: [a-zA-Z0-9_.\-]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="currentRevisionId")]
@@ -8412,8 +8412,8 @@ namespace MyNS
 		/// <summary>
 		/// The application information for the simulation application.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8453,8 +8453,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The revision id for the robot application.
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// Pattern: [a-zA-Z0-9_.\-]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="currentRevisionId")]
@@ -8513,8 +8513,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (arn) of the world template to update.
 		/// Required
-		/// Max length: 1224
 		/// Min length: 1
+		/// Max length: 1224
 		/// Pattern: arn:.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8526,8 +8526,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the template.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -8538,8 +8538,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The world template body.
-		/// Max length: 262144
 		/// Min length: 1
+		/// Max length: 262144
 		/// Pattern: [\S\s]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="templateBody")]

@@ -1076,8 +1076,8 @@ namespace MyNS
 		/// <summary>
 		/// User defined name for the group
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="displayName")]
@@ -2349,17 +2349,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="clientGroupName">Client Group resource name.
-		/// Max length: 256
 		/// Min length: 3
+		/// Max length: 256
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -2393,17 +2393,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="clientGroupName">Client Group resource name.
-		/// Max length: 256
 		/// Min length: 3
+		/// Max length: 256
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -2441,17 +2441,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="clientGroupName">Client Group resource name.
-		/// Max length: 256
 		/// Min length: 3
+		/// Max length: 256
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -2485,12 +2485,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="requestBody">Request options.</param>
@@ -2531,12 +2531,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
@@ -2571,12 +2571,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="requestBody">Machine Group resource to create.</param>
@@ -2610,17 +2610,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineGroupName">Machine Group resource name.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -2654,17 +2654,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineGroupName">Machine Group resource name.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <param name="requestBody">Machine Group resource to update.</param>
 		/// <returns>The operation completed successfully.</returns>
@@ -2704,17 +2704,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineGroupName">Machine Group resource name.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		public async Task MachineGroups_DeleteAsync(string subscriptionId, string resourceGroupName, string workspaceName, string api_version, string machineGroupName)
 		{
@@ -2739,12 +2739,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="live">Specifies whether to return live resources (true) or inventory resources (false). Defaults to **true**. When retrieving live resources, the start time (`startTime`) and end time (`endTime`) of the desired interval should be included. When retrieving inventory resources, an optional timestamp (`timestamp`) parameter can be specified to return the version of each resource closest (not-after) that timestamp.</param>
@@ -2785,17 +2785,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="timestamp">UTC date and time specifying a time instance relative to which to evaluate the machine resource. When not specified, the service uses DateTime.UtcNow.</param>
 		/// <returns>The operation completed successfully.</returns>
@@ -2828,17 +2828,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -2872,17 +2872,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -2916,17 +2916,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -2960,17 +2960,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -3004,21 +3004,21 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="portName">Port resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -3052,21 +3052,21 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="portName">Port resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -3100,21 +3100,21 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="portName">Port resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -3148,21 +3148,21 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="portName">Port resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -3196,17 +3196,17 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="live">Specifies whether to return live resources (true) or inventory resources (false). Defaults to **true**. When retrieving live resources, the start time (`startTime`) and end time (`endTime`) of the desired interval should be included. When retrieving inventory resources, an optional timestamp (`timestamp`) parameter can be specified to return the version of each resource closest (not-after) that timestamp.</param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
@@ -3242,21 +3242,21 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="processName">Process resource name.
-		/// Max length: 128
 		/// Min length: 3
+		/// Max length: 128
 		// </param>
 		/// <param name="timestamp">UTC date and time specifying a time instance relative to which to evaluate a resource. When not specified, the service uses DateTime.UtcNow.</param>
 		/// <returns>The operation completed successfully.</returns>
@@ -3289,21 +3289,21 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="processName">Process resource name.
-		/// Max length: 128
 		/// Min length: 3
+		/// Max length: 128
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -3337,21 +3337,21 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="processName">Process resource name.
-		/// Max length: 128
 		/// Min length: 3
+		/// Max length: 128
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -3385,21 +3385,21 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="machineName">Machine resource name.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="processName">Process resource name.
-		/// Max length: 128
 		/// Min length: 3
+		/// Max length: 128
 		// </param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>
 		/// <param name="endTime">UTC date and time specifying the end time of an interval. When not specified the service uses DateTime.UtcNow</param>
@@ -3433,12 +3433,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription identifier.</param>
 		/// <param name="resourceGroupName">Resource group name within the specified subscriptionId.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="workspaceName">OMS workspace containing the resources of interest.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">API version.</param>
 		/// <param name="startTime">UTC date and time specifying the start time of an interval. When not specified the service uses DateTime.UtcNow - 10m</param>

@@ -1107,8 +1107,8 @@ namespace MyNS
 		/// CreateAlertManagerDefinition workspaces/{workspaceId}/alertmanager/definition
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace in which to create the alert manager definition.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task CreateAlertManagerDefinitionAsync(string workspaceId, CreateAlertManagerDefinitionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1144,12 +1144,12 @@ namespace MyNS
 		/// DeleteAlertManagerDefinition workspaces/{workspaceId}/alertmanager/definition
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace in which to delete the alert manager definition.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="clientToken">Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task DeleteAlertManagerDefinitionAsync(string workspaceId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1178,8 +1178,8 @@ namespace MyNS
 		/// DescribeAlertManagerDefinition workspaces/{workspaceId}/alertmanager/definition
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace to describe.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAlertManagerDefinitionResponse> DescribeAlertManagerDefinitionAsync(string workspaceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1215,8 +1215,8 @@ namespace MyNS
 		/// PutAlertManagerDefinition workspaces/{workspaceId}/alertmanager/definition
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace in which to update the alert manager definition.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task PutAlertManagerDefinitionAsync(string workspaceId, PutAlertManagerDefinitionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1252,8 +1252,8 @@ namespace MyNS
 		/// CreateLoggingConfiguration workspaces/{workspaceId}/logging
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace to vend logs to.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task CreateLoggingConfigurationAsync(string workspaceId, CreateLoggingConfigurationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1289,12 +1289,12 @@ namespace MyNS
 		/// DeleteLoggingConfiguration workspaces/{workspaceId}/logging
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace to vend logs to.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="clientToken">Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task DeleteLoggingConfigurationAsync(string workspaceId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1323,8 +1323,8 @@ namespace MyNS
 		/// DescribeLoggingConfiguration workspaces/{workspaceId}/logging
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace to vend logs to.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeLoggingConfigurationResponse> DescribeLoggingConfigurationAsync(string workspaceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1360,8 +1360,8 @@ namespace MyNS
 		/// UpdateLoggingConfiguration workspaces/{workspaceId}/logging
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace to vend logs to.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task UpdateLoggingConfigurationAsync(string workspaceId, UpdateLoggingConfigurationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1397,8 +1397,8 @@ namespace MyNS
 		/// CreateRuleGroupsNamespace workspaces/{workspaceId}/rulegroupsnamespaces
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace in which to create the rule group namespace.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task CreateRuleGroupsNamespaceAsync(string workspaceId, CreateRuleGroupsNamespacePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1434,12 +1434,12 @@ namespace MyNS
 		/// ListRuleGroupsNamespaces workspaces/{workspaceId}/rulegroupsnamespaces
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="name">Optional filter for rule groups namespace name. Only the rule groups namespace that begin with this value will be returned.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="nextToken">Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListRuleGroupsNamespaces request.</param>
 		/// <param name="maxResults">Maximum results to return in response (default=100, maximum=1000).
@@ -1514,8 +1514,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="nextToken">Pagination token to request the next page in a paginated list. This token is obtained from the output of the previous ListWorkspaces request.</param>
 		/// <param name="alias">Optional filter for workspace alias. Only the workspaces with aliases that begin with this value will be returned.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="maxResults">Maximum results to return in response (default=100, maximum=1000).
 		/// Minimum: 1
@@ -1555,16 +1555,16 @@ namespace MyNS
 		/// DeleteRuleGroupsNamespace workspaces/{workspaceId}/rulegroupsnamespaces/{name}
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace to delete rule group definition.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="name">The rule groups namespace name.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="clientToken">Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task DeleteRuleGroupsNamespaceAsync(string workspaceId, string name, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1593,12 +1593,12 @@ namespace MyNS
 		/// DescribeRuleGroupsNamespace workspaces/{workspaceId}/rulegroupsnamespaces/{name}
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace to describe.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="name">The rule groups namespace.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeRuleGroupsNamespaceResponse> DescribeRuleGroupsNamespaceAsync(string workspaceId, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1634,12 +1634,12 @@ namespace MyNS
 		/// PutRuleGroupsNamespace workspaces/{workspaceId}/rulegroupsnamespaces/{name}
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace in which to update the rule group namespace.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="name">The rule groups namespace name.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task PutRuleGroupsNamespaceAsync(string workspaceId, string name, PutRuleGroupsNamespacePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1675,12 +1675,12 @@ namespace MyNS
 		/// DeleteWorkspace workspaces/{workspaceId}
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace to delete.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="clientToken">Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task DeleteWorkspaceAsync(string workspaceId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1709,8 +1709,8 @@ namespace MyNS
 		/// DescribeWorkspace workspaces/{workspaceId}
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace to describe.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeWorkspaceResponse> DescribeWorkspaceAsync(string workspaceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1856,8 +1856,8 @@ namespace MyNS
 		/// UpdateWorkspaceAlias workspaces/{workspaceId}/alias
 		/// </summary>
 		/// <param name="workspaceId">The ID of the workspace being updated.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task UpdateWorkspaceAliasAsync(string workspaceId, UpdateWorkspaceAliasPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1902,8 +1902,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An identifier used to ensure the idempotency of a write request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -1926,8 +1926,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An identifier used to ensure the idempotency of a write request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -1952,8 +1952,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An identifier used to ensure the idempotency of a write request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -1978,8 +1978,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An identifier used to ensure the idempotency of a write request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -1995,8 +1995,8 @@ namespace MyNS
 		/// <summary>
 		/// The namespace name that the rule group belong to.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: .*[0-9A-Za-z][-.0-9A-Z_a-z]*.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2016,8 +2016,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An identifier used to ensure the idempotency of a write request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -2038,8 +2038,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A user-assigned workspace alias.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="alias")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2048,8 +2048,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An identifier used to ensure the idempotency of a write request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -2078,8 +2078,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An identifier used to ensure the idempotency of a write request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -2106,8 +2106,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A user-assigned workspace alias.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="alias")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2116,8 +2116,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An identifier used to ensure the idempotency of a write request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]

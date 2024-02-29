@@ -981,8 +981,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the stream for which to retrieve the media clip. </p> <p>You must specify either the StreamName or the StreamARN. </p>
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9_.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -993,8 +993,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p> <p>You must specify either the StreamName or the StreamARN. </p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1027,8 +1027,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9_.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1039,8 +1039,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1107,8 +1107,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The name of the stream for which to retrieve the HLS master playlist URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9_.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1119,8 +1119,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master playlist URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1193,8 +1193,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9_.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1205,8 +1205,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the stream from which to retrieve the images. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1288,8 +1288,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that specifies where to start paginating the next set of Images. This is the <code>GetImages:NextToken</code> from a previously truncated response.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// Pattern: [a-zA-Z0-9+/]+={0,2}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1304,8 +1304,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamARN</code> parameter.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9_.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1316,8 +1316,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter or the <code>StreamName</code> parameter.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1344,8 +1344,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamARN</code> parameter.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9_.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1356,8 +1356,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the stream from which to retrieve a fragment list. Specify either this parameter or the <code>StreamName</code> parameter.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: arn:[a-z\d-]+:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1377,8 +1377,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token to specify where to start paginating. This is the <a>ListFragmentsOutput$NextToken</a> from a previously truncated response.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		/// Pattern: [a-zA-Z0-9+/]+={0,2}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

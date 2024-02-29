@@ -129,8 +129,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique job_sid returned when the custom export was created
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^JS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="job_sid")]
@@ -207,8 +207,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The job_sid returned when the export was created
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^JS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="job_sid")]
@@ -366,8 +366,8 @@ namespace MyNS
 		/// DeleteJob v1/Exports/Jobs/{JobSid}
 		/// </summary>
 		/// <param name="JobSid">The unique string that that we created to identify the Bulk Export job
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteJobAsync(string JobSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -395,8 +395,8 @@ namespace MyNS
 		/// FetchJob v1/Exports/Jobs/{JobSid}
 		/// </summary>
 		/// <param name="JobSid">The unique string that that we created to identify the Bulk Export job
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Bulkexportsv1exportjob> FetchJobAsync(string JobSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

@@ -1319,8 +1319,8 @@ namespace MyNS
 		/// <summary>
 		/// The protocol and domain of the origin to change the status
 		/// Required
-		/// Max length: 2083
 		/// Min length: 1
+		/// Max length: 2083
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="origin")]
@@ -1361,8 +1361,8 @@ namespace MyNS
 		/// <summary>
 		/// The protocol and domain of the origin to change the status
 		/// Required
-		/// Max length: 2083
 		/// Min length: 1
+		/// Max length: 2083
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="origin")]
@@ -1387,8 +1387,8 @@ namespace MyNS
 		/// <summary>
 		/// The protocol and domain of the origin to change the status
 		/// Required
-		/// Max length: 2083
 		/// Min length: 1
+		/// Max length: 2083
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="origin")]
@@ -1413,8 +1413,8 @@ namespace MyNS
 		/// <summary>
 		/// The protocol and domain of the origin to change the status
 		/// Required
-		/// Max length: 2083
 		/// Min length: 1
+		/// Max length: 2083
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="origin")]

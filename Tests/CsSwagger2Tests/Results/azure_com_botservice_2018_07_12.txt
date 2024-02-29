@@ -1753,8 +1753,8 @@ namespace MyNS
 		/// Bots_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
@@ -1795,12 +1795,12 @@ namespace MyNS
 		/// Bots_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -1833,12 +1833,12 @@ namespace MyNS
 		/// Bots_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -1879,12 +1879,12 @@ namespace MyNS
 		/// Bots_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -1911,12 +1911,12 @@ namespace MyNS
 		/// Bots_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -1957,16 +1957,16 @@ namespace MyNS
 		/// BotConnection_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/Connections/{connectionName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="connectionName">The name of the Bot Service Connection Setting resource
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -1999,16 +1999,16 @@ namespace MyNS
 		/// BotConnection_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/Connections/{connectionName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="connectionName">The name of the Bot Service Connection Setting resource
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -2049,16 +2049,16 @@ namespace MyNS
 		/// BotConnection_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/Connections/{connectionName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="connectionName">The name of the Bot Service Connection Setting resource
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -2085,16 +2085,16 @@ namespace MyNS
 		/// BotConnection_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/Connections/{connectionName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="connectionName">The name of the Bot Service Connection Setting resource
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -2135,16 +2135,16 @@ namespace MyNS
 		/// BotConnection_ListWithSecrets subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/Connections/{connectionName}/listWithSecrets
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="connectionName">The name of the Bot Service Connection Setting resource
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -2177,12 +2177,12 @@ namespace MyNS
 		/// Channels_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/channels
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
@@ -2223,16 +2223,16 @@ namespace MyNS
 		/// Channels_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/channels/{channelName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="channelName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -2265,12 +2265,12 @@ namespace MyNS
 		/// Channels_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/channels/{channelName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="channelName">The name of the Channel resource.</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
@@ -2312,16 +2312,16 @@ namespace MyNS
 		/// Channels_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/channels/{channelName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="channelName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -2348,12 +2348,12 @@ namespace MyNS
 		/// Channels_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/channels/{channelName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="channelName">The name of the Channel resource.</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
@@ -2395,12 +2395,12 @@ namespace MyNS
 		/// Channels_ListWithKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/channels/{channelName}/listChannelWithKeys
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="channelName">The name of the Channel resource.</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
@@ -2434,12 +2434,12 @@ namespace MyNS
 		/// BotConnection_ListByBotService subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/botServices/{resourceName}/connections
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
@@ -2480,8 +2480,8 @@ namespace MyNS
 		/// EnterpriseChannels_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/enterpriseChannels
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
@@ -2522,12 +2522,12 @@ namespace MyNS
 		/// EnterpriseChannels_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/enterpriseChannels/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -2560,12 +2560,12 @@ namespace MyNS
 		/// EnterpriseChannels_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/enterpriseChannels/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -2606,12 +2606,12 @@ namespace MyNS
 		/// EnterpriseChannels_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/enterpriseChannels/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -2638,12 +2638,12 @@ namespace MyNS
 		/// EnterpriseChannels_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.BotService/enterpriseChannels/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Bot resource group in the user subscription.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceName">The name of the Bot resource.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>

@@ -1850,8 +1850,8 @@ namespace MyNS
 		/// Deployments_ListAtManagementGroupScope providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/
 		/// </summary>
 		/// <param name="groupId">The management group ID.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="filter">The filter to apply on the operation. For example, you can use $filter=provisioningState eq '{state}'.</param>
 		/// <param name="top">The number of results to get. If null is passed, returns all deployments.</param>
@@ -1885,12 +1885,12 @@ namespace MyNS
 		/// Deployments_GetAtManagementGroupScope providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}
 		/// </summary>
 		/// <param name="groupId">The management group ID.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <returns>OK - Returns information about the deployment, including provisioning status.</returns>
@@ -1923,12 +1923,12 @@ namespace MyNS
 		/// Deployments_CreateOrUpdateAtManagementGroupScope providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}
 		/// </summary>
 		/// <param name="groupId">The management group ID.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="requestBody">Additional parameters supplied to the operation.</param>
@@ -1969,12 +1969,12 @@ namespace MyNS
 		/// Deployments_DeleteAtManagementGroupScope providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}
 		/// </summary>
 		/// <param name="groupId">The management group ID.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		public async Task Deployments_DeleteAtManagementGroupScopeAsync(string groupId, string deploymentName, string api_version)
@@ -2000,12 +2000,12 @@ namespace MyNS
 		/// Deployments_CancelAtManagementGroupScope providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}/cancel
 		/// </summary>
 		/// <param name="groupId">The management group ID.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		public async Task Deployments_CancelAtManagementGroupScopeAsync(string groupId, string deploymentName, string api_version)
@@ -2030,12 +2030,12 @@ namespace MyNS
 		/// Deployments_ExportTemplateAtManagementGroupScope providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}/exportTemplate
 		/// </summary>
 		/// <param name="groupId">The management group ID.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <returns>OK - Returns the template.</returns>
@@ -2067,12 +2067,12 @@ namespace MyNS
 		/// DeploymentOperations_ListAtManagementGroupScope providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}/operations
 		/// </summary>
 		/// <param name="groupId">The management group ID.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="top">The number of results to return.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -2105,12 +2105,12 @@ namespace MyNS
 		/// DeploymentOperations_GetAtManagementGroupScope providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}/operations/{operationId}
 		/// </summary>
 		/// <param name="groupId">The management group ID.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="operationId">The ID of the operation to get.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -2143,12 +2143,12 @@ namespace MyNS
 		/// Deployments_ValidateAtManagementGroupScope providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}/validate
 		/// </summary>
 		/// <param name="groupId">The management group ID.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="requestBody">Parameters to validate.</param>
@@ -2256,8 +2256,8 @@ namespace MyNS
 		/// Deployments_GetAtTenantScope providers/Microsoft.Resources/deployments/{deploymentName}
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <returns>OK - Returns information about the deployment, including provisioning status.</returns>
@@ -2290,8 +2290,8 @@ namespace MyNS
 		/// Deployments_CreateOrUpdateAtTenantScope providers/Microsoft.Resources/deployments/{deploymentName}
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="requestBody">Additional parameters supplied to the operation.</param>
@@ -2332,8 +2332,8 @@ namespace MyNS
 		/// Deployments_DeleteAtTenantScope providers/Microsoft.Resources/deployments/{deploymentName}
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		public async Task Deployments_DeleteAtTenantScopeAsync(string deploymentName, string api_version)
@@ -2359,8 +2359,8 @@ namespace MyNS
 		/// Deployments_CancelAtTenantScope providers/Microsoft.Resources/deployments/{deploymentName}/cancel
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		public async Task Deployments_CancelAtTenantScopeAsync(string deploymentName, string api_version)
@@ -2385,8 +2385,8 @@ namespace MyNS
 		/// Deployments_ExportTemplateAtTenantScope providers/Microsoft.Resources/deployments/{deploymentName}/exportTemplate
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <returns>OK - Returns the template.</returns>
@@ -2418,8 +2418,8 @@ namespace MyNS
 		/// DeploymentOperations_ListAtTenantScope providers/Microsoft.Resources/deployments/{deploymentName}/operations
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="top">The number of results to return.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -2452,8 +2452,8 @@ namespace MyNS
 		/// DeploymentOperations_GetAtTenantScope providers/Microsoft.Resources/deployments/{deploymentName}/operations/{operationId}
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="operationId">The ID of the operation to get.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -2486,8 +2486,8 @@ namespace MyNS
 		/// Deployments_ValidateAtTenantScope providers/Microsoft.Resources/deployments/{deploymentName}/validate
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="requestBody">Parameters to validate.</param>
@@ -2651,8 +2651,8 @@ namespace MyNS
 		/// Deployments_GetAtSubscriptionScope subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -2686,8 +2686,8 @@ namespace MyNS
 		/// Deployments_CreateOrUpdateAtSubscriptionScope subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -2729,8 +2729,8 @@ namespace MyNS
 		/// Deployments_DeleteAtSubscriptionScope subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -2757,8 +2757,8 @@ namespace MyNS
 		/// Deployments_CancelAtSubscriptionScope subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}/cancel
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -2784,8 +2784,8 @@ namespace MyNS
 		/// Deployments_ExportTemplateAtSubscriptionScope subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}/exportTemplate
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -2818,8 +2818,8 @@ namespace MyNS
 		/// DeploymentOperations_ListAtSubscriptionScope subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}/operations
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="top">The number of results to return.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -2853,8 +2853,8 @@ namespace MyNS
 		/// DeploymentOperations_GetAtSubscriptionScope subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}/operations/{operationId}
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="operationId">The ID of the operation to get.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -2888,8 +2888,8 @@ namespace MyNS
 		/// Deployments_ValidateAtSubscriptionScope subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}/validate
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -2930,8 +2930,8 @@ namespace MyNS
 		/// Deployments_WhatIfAtSubscriptionScope subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}/whatIf
 		/// </summary>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3066,8 +3066,8 @@ namespace MyNS
 		/// Resources_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/resources
 		/// </summary>
 		/// <param name="resourceGroupName">The resource group with the resources to get.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="filter">The filter to apply on the operation.<br><br>The properties you can use for eq (equals) or ne (not equals) are: location, resourceType, name, resourceGroup, identity, identity/principalId, plan, plan/publisher, plan/product, plan/name, plan/version, and plan/promotionCode.<br><br>For example, to filter by a resource type, use: $filter=resourceType eq 'Microsoft.Network/virtualNetworks'<br><br>You can use substringof(value, property) in the filter. The properties you can use for substring are: name and resourceGroup.<br><br>For example, to get all resources with 'demo' anywhere in the name, use: $filter=substringof('demo', name)<br><br>You can link more than one substringof together by adding and/or operators.<br><br>You can filter by tag names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'. When you filter by a tag name and value, the tags for each resource are not returned in the results.<br><br>You can use some properties together when filtering. The combinations you can use are: substringof and/or resourceType, plan and plan/publisher and plan/name, identity and identity/principalId.</param>
 		/// <param name="expand">The $expand query parameter. You can expand createdTime and changedTime. For example, to expand both properties, use $expand=changedTime,createdTime</param>
@@ -3104,8 +3104,8 @@ namespace MyNS
 		/// Resources_MoveResources subscriptions/{subscriptionId}/resourceGroups/{sourceResourceGroupName}/moveResources
 		/// </summary>
 		/// <param name="sourceResourceGroupName">The name of the resource group containing the resources to move.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3140,8 +3140,8 @@ namespace MyNS
 		/// Resources_ValidateMoveResources subscriptions/{subscriptionId}/resourceGroups/{sourceResourceGroupName}/validateMoveResources
 		/// </summary>
 		/// <param name="sourceResourceGroupName">The name of the resource group containing the resources to validate for move.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3207,8 +3207,8 @@ namespace MyNS
 		/// ResourceGroups_Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group to get. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3241,8 +3241,8 @@ namespace MyNS
 		/// ResourceGroups_CreateOrUpdate subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group to create or update. Can include alphanumeric, underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed characters.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3284,8 +3284,8 @@ namespace MyNS
 		/// ResourceGroups_Delete subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group to delete. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3313,8 +3313,8 @@ namespace MyNS
 		/// ResourceGroups_Update subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group to update. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3355,12 +3355,12 @@ namespace MyNS
 		/// DeploymentOperations_List subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/deployments/{deploymentName}/operations
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="top">The number of results to return.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -3394,12 +3394,12 @@ namespace MyNS
 		/// DeploymentOperations_Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/deployments/{deploymentName}/operations/{operationId}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="operationId">The ID of the operation to get.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -3436,8 +3436,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.
 		/// Min length: 1
@@ -3479,8 +3479,8 @@ namespace MyNS
 		/// Deployments_ListByResourceGroup subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group with the deployments to get. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="filter">The filter to apply on the operation. For example, you can use $filter=provisioningState eq '{state}'.</param>
 		/// <param name="top">The number of results to get. If null is passed, returns all deployments.</param>
@@ -3515,12 +3515,12 @@ namespace MyNS
 		/// Deployments_Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3554,12 +3554,12 @@ namespace MyNS
 		/// Deployments_CreateOrUpdate subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group to deploy the resources to. The name is case insensitive. The resource group must already exist.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3601,12 +3601,12 @@ namespace MyNS
 		/// Deployments_Delete subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group with the deployment to delete. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3633,12 +3633,12 @@ namespace MyNS
 		/// Deployments_Cancel subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}/cancel
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3664,12 +3664,12 @@ namespace MyNS
 		/// Deployments_ExportTemplate subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}/exportTemplate
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3702,12 +3702,12 @@ namespace MyNS
 		/// Deployments_Validate subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}/validate
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group the template will be deployed to. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3748,12 +3748,12 @@ namespace MyNS
 		/// Deployments_WhatIf subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}/whatIf
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group the template will be deployed to. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -3794,8 +3794,8 @@ namespace MyNS
 		/// Resources_Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group containing the resource to get. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceProviderNamespace">The namespace of the resource provider.</param>
 		/// <param name="parentResourcePath">The parent resource identity.</param>
@@ -3832,8 +3832,8 @@ namespace MyNS
 		/// Resources_CreateOrUpdate subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group for the resource. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceProviderNamespace">The namespace of the resource provider.</param>
 		/// <param name="parentResourcePath">The parent resource identity.</param>
@@ -3878,8 +3878,8 @@ namespace MyNS
 		/// Resources_Delete subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the resource to delete. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceProviderNamespace">The namespace of the resource provider.</param>
 		/// <param name="parentResourcePath">The parent resource identity.</param>
@@ -3910,8 +3910,8 @@ namespace MyNS
 		/// Resources_Update subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group for the resource. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceProviderNamespace">The namespace of the resource provider.</param>
 		/// <param name="parentResourcePath">The parent resource identity.</param>
@@ -4301,8 +4301,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="scope">The resource scope.</param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <returns>OK - Returns information about the deployment, including provisioning status.</returns>
@@ -4336,8 +4336,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="scope">The resource scope.</param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="requestBody">Additional parameters supplied to the operation.</param>
@@ -4379,8 +4379,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="scope">The resource scope.</param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		public async Task Deployments_DeleteAtScopeAsync(string scope, string deploymentName, string api_version)
@@ -4407,8 +4407,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="scope">The resource scope.</param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		public async Task Deployments_CancelAtScopeAsync(string scope, string deploymentName, string api_version)
@@ -4434,8 +4434,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="scope">The resource scope.</param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <returns>OK - Returns the template.</returns>
@@ -4468,8 +4468,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="scope">The resource scope.</param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="top">The number of results to return.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -4503,8 +4503,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="scope">The resource scope.</param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="operationId">The ID of the operation to get.</param>
 		/// <param name="api_version">The API version to use for this operation.</param>
@@ -4538,8 +4538,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="scope">The resource scope.</param>
 		/// <param name="deploymentName">The name of the deployment.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="requestBody">Parameters to validate.</param>

@@ -674,8 +674,8 @@ namespace MyNS
 		/// Namespaces_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -708,12 +708,12 @@ namespace MyNS
 		/// Namespaces_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -746,12 +746,12 @@ namespace MyNS
 		/// Namespaces_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -792,12 +792,12 @@ namespace MyNS
 		/// Namespaces_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -824,12 +824,12 @@ namespace MyNS
 		/// Namespaces_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -870,12 +870,12 @@ namespace MyNS
 		/// Namespaces_ListAuthorizationRules subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -908,12 +908,12 @@ namespace MyNS
 		/// Namespaces_GetAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="authorizationRuleName">The authorization rule name.
 		/// Min length: 1
@@ -949,12 +949,12 @@ namespace MyNS
 		/// Namespaces_CreateOrUpdateAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="authorizationRuleName">The authorization rule name.
 		/// Min length: 1
@@ -998,12 +998,12 @@ namespace MyNS
 		/// Namespaces_DeleteAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="authorizationRuleName">The authorization rule name.
 		/// Min length: 1
@@ -1033,12 +1033,12 @@ namespace MyNS
 		/// Namespaces_ListKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules/{authorizationRuleName}/listKeys
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="authorizationRuleName">The authorization rule name.
 		/// Min length: 1
@@ -1074,12 +1074,12 @@ namespace MyNS
 		/// Namespaces_RegenerateKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules/{authorizationRuleName}/regenerateKeys
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="authorizationRuleName">The authorization rule name.
 		/// Min length: 1
@@ -1123,12 +1123,12 @@ namespace MyNS
 		/// HybridConnections_ListByNamespace subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1161,12 +1161,12 @@ namespace MyNS
 		/// HybridConnections_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="hybridConnectionName">The hybrid connection name.
 		/// Min length: 1
@@ -1202,12 +1202,12 @@ namespace MyNS
 		/// HybridConnections_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="hybridConnectionName">The hybrid connection name.
 		/// Min length: 1
@@ -1251,12 +1251,12 @@ namespace MyNS
 		/// HybridConnections_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="hybridConnectionName">The hybrid connection name.
 		/// Min length: 1
@@ -1286,12 +1286,12 @@ namespace MyNS
 		/// HybridConnections_ListAuthorizationRules subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="hybridConnectionName">The hybrid connection name.
 		/// Min length: 1
@@ -1327,12 +1327,12 @@ namespace MyNS
 		/// HybridConnections_GetAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="hybridConnectionName">The hybrid connection name.
 		/// Min length: 1
@@ -1371,12 +1371,12 @@ namespace MyNS
 		/// HybridConnections_CreateOrUpdateAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="hybridConnectionName">The hybrid connection name.
 		/// Min length: 1
@@ -1423,12 +1423,12 @@ namespace MyNS
 		/// HybridConnections_DeleteAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="hybridConnectionName">The hybrid connection name.
 		/// Min length: 1
@@ -1461,12 +1461,12 @@ namespace MyNS
 		/// HybridConnections_ListKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules/{authorizationRuleName}/listKeys
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="hybridConnectionName">The hybrid connection name.
 		/// Min length: 1
@@ -1505,12 +1505,12 @@ namespace MyNS
 		/// HybridConnections_RegenerateKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules/{authorizationRuleName}/regenerateKeys
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="hybridConnectionName">The hybrid connection name.
 		/// Min length: 1
@@ -1557,12 +1557,12 @@ namespace MyNS
 		/// WCFRelays_ListByNamespace subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client API version.</param>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1595,12 +1595,12 @@ namespace MyNS
 		/// WCFRelays_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="relayName">The relay name.
 		/// Min length: 1
@@ -1636,12 +1636,12 @@ namespace MyNS
 		/// WCFRelays_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="relayName">The relay name.
 		/// Min length: 1
@@ -1685,12 +1685,12 @@ namespace MyNS
 		/// WCFRelays_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="relayName">The relay name.
 		/// Min length: 1
@@ -1720,12 +1720,12 @@ namespace MyNS
 		/// WCFRelays_ListAuthorizationRules subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="relayName">The relay name.
 		/// Min length: 1
@@ -1761,12 +1761,12 @@ namespace MyNS
 		/// WCFRelays_GetAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="relayName">The relay name.
 		/// Min length: 1
@@ -1805,12 +1805,12 @@ namespace MyNS
 		/// WCFRelays_CreateOrUpdateAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="relayName">The relay name.
 		/// Min length: 1
@@ -1857,12 +1857,12 @@ namespace MyNS
 		/// WCFRelays_DeleteAuthorizationRule subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules/{authorizationRuleName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="relayName">The relay name.
 		/// Min length: 1
@@ -1895,12 +1895,12 @@ namespace MyNS
 		/// WCFRelays_ListKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules/{authorizationRuleName}/listKeys
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="relayName">The relay name.
 		/// Min length: 1
@@ -1939,12 +1939,12 @@ namespace MyNS
 		/// WCFRelays_RegenerateKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules/{authorizationRuleName}/regenerateKeys
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="namespaceName">The namespace name
-		/// Max length: 50
 		/// Min length: 6
+		/// Max length: 50
 		// </param>
 		/// <param name="relayName">The relay name.
 		/// Min length: 1

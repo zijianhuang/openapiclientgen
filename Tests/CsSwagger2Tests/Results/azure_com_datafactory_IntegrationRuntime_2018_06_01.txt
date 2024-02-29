@@ -629,8 +629,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The administrator user name of catalog database.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="catalogAdminUserName")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

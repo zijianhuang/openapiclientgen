@@ -752,8 +752,8 @@ namespace MyNS
 		/// DeletePipeline 2022-01-01/osis/deletePipeline/{PipelineName}
 		/// </summary>
 		/// <param name="PipelineName">The name of the pipeline to delete.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePipelineResponse> DeletePipelineAsync(string PipelineName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -789,8 +789,8 @@ namespace MyNS
 		/// GetPipeline 2022-01-01/osis/getPipeline/{PipelineName}
 		/// </summary>
 		/// <param name="PipelineName">The name of the pipeline to get information about.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPipelineResponse> GetPipelineAsync(string PipelineName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -860,8 +860,8 @@ namespace MyNS
 		/// GetPipelineChangeProgress 2022-01-01/osis/getPipelineChangeProgress/{PipelineName}
 		/// </summary>
 		/// <param name="PipelineName">The name of the pipeline.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPipelineChangeProgressResponse> GetPipelineChangeProgressAsync(string PipelineName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -929,8 +929,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">If your initial <code>ListPipelines</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListPipelines</code> operations, which returns results in the next page.
-		/// Max length: 3000
 		/// Min length: 0
+		/// Max length: 3000
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -968,8 +968,8 @@ namespace MyNS
 		/// ListTagsForResource 2022-01-01/osis/listTagsForResource/#arn
 		/// </summary>
 		/// <param name="arn">The Amazon Resource Name (ARN) of the pipeline to retrieve tags for.
-		/// Max length: 76
 		/// Min length: 46
+		/// Max length: 76
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1005,8 +1005,8 @@ namespace MyNS
 		/// StartPipeline 2022-01-01/osis/startPipeline/{PipelineName}
 		/// </summary>
 		/// <param name="PipelineName">The name of the pipeline to start.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartPipelineResponse> StartPipelineAsync(string PipelineName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1037,8 +1037,8 @@ namespace MyNS
 		/// StopPipeline 2022-01-01/osis/stopPipeline/{PipelineName}
 		/// </summary>
 		/// <param name="PipelineName">The name of the pipeline to stop.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopPipelineResponse> StopPipelineAsync(string PipelineName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1069,8 +1069,8 @@ namespace MyNS
 		/// TagResource 2022-01-01/osis/tagResource/#arn
 		/// </summary>
 		/// <param name="arn">The Amazon Resource Name (ARN) of the pipeline to tag.
-		/// Max length: 76
 		/// Min length: 46
+		/// Max length: 76
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string arn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1113,8 +1113,8 @@ namespace MyNS
 		/// UntagResource 2022-01-01/osis/untagResource/#arn
 		/// </summary>
 		/// <param name="arn">The Amazon Resource Name (ARN) of the pipeline to remove tags from.
-		/// Max length: 76
 		/// Min length: 46
+		/// Max length: 76
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string arn, UntagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1157,8 +1157,8 @@ namespace MyNS
 		/// UpdatePipeline 2022-01-01/osis/updatePipeline/{PipelineName}
 		/// </summary>
 		/// <param name="PipelineName">The name of the pipeline to update.
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePipelineResponse> UpdatePipelineAsync(string PipelineName, UpdatePipelinePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1243,8 +1243,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.
 		/// Required
-		/// Max length: 28
 		/// Min length: 3
+		/// Max length: 28
 		/// Pattern: [a-z][a-z0-9\-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1279,8 +1279,8 @@ namespace MyNS
 		/// <summary>
 		/// The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.
 		/// Required
-		/// Max length: 24000
 		/// Min length: 1
+		/// Max length: 24000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1374,8 +1374,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.
-		/// Max length: 24000
 		/// Min length: 1
+		/// Max length: 24000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1405,8 +1405,8 @@ namespace MyNS
 		/// <summary>
 		/// The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with <code>\n</code>.
 		/// Required
-		/// Max length: 24000
 		/// Min length: 1
+		/// Max length: 24000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]

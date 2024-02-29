@@ -27,8 +27,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -127,8 +127,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -144,8 +144,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -203,8 +203,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -220,8 +220,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -247,8 +247,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -267,8 +267,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -354,8 +354,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -484,8 +484,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -524,8 +524,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -561,8 +561,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1008,8 +1008,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1260,8 +1260,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -1277,8 +1277,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1297,8 +1297,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -1317,8 +1317,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1413,8 +1413,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -1433,8 +1433,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1591,8 +1591,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -1630,8 +1630,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1650,8 +1650,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -1676,8 +1676,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1693,8 +1693,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -1763,8 +1763,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1780,8 +1780,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -1815,8 +1815,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1880,8 +1880,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		/// Max length: 2048
 		/// Min length: 7
+		/// Max length: 2048
 		/// Pattern: (^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2011,8 +2011,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -2070,8 +2070,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -2209,8 +2209,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2229,8 +2229,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -2264,8 +2264,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2302,8 +2302,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the file share.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -2312,8 +2312,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the file share.
-		/// Max length: 30
 		/// Min length: 12
+		/// Max length: 30
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(12)]
@@ -2322,8 +2322,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The status of the file share.</p> <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-		/// Max length: 50
 		/// Min length: 3
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -2332,8 +2332,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -2345,8 +2345,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		/// Max length: 2048
 		/// Min length: 7
+		/// Max length: 2048
 		/// Pattern: (^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2363,8 +2363,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:(aws|aws-cn|aws-us-gov):iam::([0-9]+):role/(\S+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2375,8 +2375,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> <p>Access point ARN:</p> <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Access point alias:</p> <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> </note>
-		/// Max length: 1400
 		/// Min length: 16
+		/// Max length: 1400
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(16)]
@@ -2404,8 +2404,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The user mapped to anonymous user. Valid options are the following:</p> <ul> <li> <p> <code>RootSquash</code>: Only root is mapped to anonymous user.</p> </li> <li> <p> <code>NoSquash</code>: No one is mapped to anonymous user.</p> </li> <li> <p> <code>AllSquash</code>: Everyone is mapped to anonymous user.</p> </li> </ul>
-		/// Max length: 15
 		/// Min length: 5
+		/// Max length: 15
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(5)]
@@ -2509,8 +2509,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the file share.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -2519,8 +2519,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the file share.
-		/// Max length: 30
 		/// Min length: 12
+		/// Max length: 30
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(12)]
@@ -2529,8 +2529,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The status of the file share.</p> <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-		/// Max length: 50
 		/// Min length: 3
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -2539,8 +2539,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -2552,8 +2552,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		/// Max length: 2048
 		/// Min length: 7
+		/// Max length: 2048
 		/// Pattern: (^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2567,8 +2567,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying storage.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:(aws|aws-cn|aws-us-gov):iam::([0-9]+):role/(\S+)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2579,8 +2579,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A custom ARN for the backend storage used for storing data for file shares. It includes a resource ARN with an optional prefix concatenation. The prefix must end with a forward slash (/).</p> <note> <p>You can specify LocationARN as a bucket ARN, access point ARN or access point alias, as shown in the following examples.</p> <p>Bucket ARN:</p> <p> <code>arn:aws:s3:::my-bucket/prefix/</code> </p> <p>Access point ARN:</p> <p> <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> </p> <p>If you specify an access point, the bucket policy must be configured to delegate access control to the access point. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points-policies.html#access-points-delegating-control">Delegating access control to access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>Access point alias:</p> <p> <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> </p> </note>
-		/// Max length: 1400
 		/// Min length: 16
+		/// Max length: 1400
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(16)]
@@ -2625,8 +2625,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The authentication method of the file share. The default is <code>ActiveDirectory</code>.</p> <p>Valid Values: <code>ActiveDirectory</code> | <code>GuestAccess</code> </p>
-		/// Max length: 15
 		/// Min length: 5
+		/// Max length: 15
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(5)]
@@ -2709,8 +2709,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -2800,8 +2800,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2908,8 +2908,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		/// Max length: 2048
 		/// Min length: 7
+		/// Max length: 2048
 		/// Pattern: (^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2987,8 +2987,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		/// Max length: 2048
 		/// Min length: 7
+		/// Max length: 2048
 		/// Pattern: (^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3038,8 +3038,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -3085,8 +3085,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3150,8 +3150,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
-		/// Max length: 2048
 		/// Min length: 7
+		/// Max length: 2048
 		/// Pattern: (^arn:(aws|aws-cn|aws-us-gov):kms:([a-zA-Z0-9-]+):([0-9]+):(key|alias)/(\S+)$)|(^alias/(\S+)$)
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3184,8 +3184,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3210,8 +3210,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -3236,8 +3236,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3256,8 +3256,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -3327,8 +3327,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3356,8 +3356,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -3385,8 +3385,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3449,8 +3449,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3567,8 +3567,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -3623,8 +3623,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -3666,8 +3666,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the file share.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -3676,8 +3676,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the file share.
-		/// Max length: 30
 		/// Min length: 12
+		/// Max length: 30
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(12)]
@@ -3686,8 +3686,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The status of the file share.</p> <p>Valid Values: <code>CREATING</code> | <code>UPDATING</code> | <code>AVAILABLE</code> | <code>DELETING</code> </p>
-		/// Max length: 50
 		/// Min length: 3
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -3696,8 +3696,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -3770,8 +3770,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -3786,8 +3786,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -3871,8 +3871,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -3908,8 +3908,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used.</p> <p>Valid Values: <code>UPLOAD_BUFFER</code> | <code>CACHE_STORAGE</code> </p>
-		/// Max length: 100
 		/// Min length: 3
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -3941,8 +3941,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4165,8 +4165,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4206,8 +4206,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4226,8 +4226,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4257,8 +4257,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4288,8 +4288,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4310,8 +4310,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the file share.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4320,8 +4320,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The randomly generated ID of the notification that was sent. This ID is in UUID format.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4337,8 +4337,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the file share.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4357,8 +4357,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the file share.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4367,8 +4367,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The randomly generated ID of the notification that was sent. This ID is in UUID format.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4440,8 +4440,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4457,8 +4457,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4532,8 +4532,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4549,8 +4549,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4569,8 +4569,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4593,8 +4593,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4635,8 +4635,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4655,8 +4655,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4672,8 +4672,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4689,8 +4689,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4709,8 +4709,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4729,8 +4729,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4746,8 +4746,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4770,8 +4770,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4790,8 +4790,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4810,8 +4810,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4833,8 +4833,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4850,8 +4850,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4962,8 +4962,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -4982,8 +4982,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -4993,8 +4993,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name you configured for your gateway.
-		/// Max length: 255
 		/// Min length: 2
+		/// Max length: 255
 		/// Pattern: ^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -5023,8 +5023,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -5043,8 +5043,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5063,8 +5063,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -5083,8 +5083,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5272,8 +5272,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -5289,8 +5289,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5313,8 +5313,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -5330,8 +5330,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -5354,8 +5354,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(50)]
@@ -5371,8 +5371,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and Amazon Web Services Region.
 		/// Required
-		/// Max length: 500
 		/// Min length: 50
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]

@@ -2482,8 +2482,8 @@ namespace MyNS
 		/// DeleteAlarmModel alarm-models/{alarmModelName}
 		/// </summary>
 		/// <param name="alarmModelName">The name of the alarm model.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteAlarmModelAsync(string alarmModelName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2512,12 +2512,12 @@ namespace MyNS
 		/// DescribeAlarmModel alarm-models/{alarmModelName}
 		/// </summary>
 		/// <param name="alarmModelName">The name of the alarm model.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="version">The version of the alarm model.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAlarmModelResponse> DescribeAlarmModelAsync(string alarmModelName, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2553,8 +2553,8 @@ namespace MyNS
 		/// UpdateAlarmModel alarm-models/{alarmModelName}
 		/// </summary>
 		/// <param name="alarmModelName">The name of the alarm model.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAlarmModelResponse> UpdateAlarmModelAsync(string alarmModelName, UpdateAlarmModelPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2597,8 +2597,8 @@ namespace MyNS
 		/// DeleteDetectorModel detector-models/{detectorModelName}
 		/// </summary>
 		/// <param name="detectorModelName">The name of the detector model to be deleted.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteDetectorModelAsync(string detectorModelName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2627,12 +2627,12 @@ namespace MyNS
 		/// DescribeDetectorModel detector-models/{detectorModelName}
 		/// </summary>
 		/// <param name="detectorModelName">The name of the detector model.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="version">The version of the detector model.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDetectorModelResponse> DescribeDetectorModelAsync(string detectorModelName, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2668,8 +2668,8 @@ namespace MyNS
 		/// UpdateDetectorModel detector-models/{detectorModelName}
 		/// </summary>
 		/// <param name="detectorModelName">The name of the detector model that is updated.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDetectorModelResponse> UpdateDetectorModelAsync(string detectorModelName, UpdateDetectorModelPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2712,8 +2712,8 @@ namespace MyNS
 		/// DeleteInput inputs/{inputName}
 		/// </summary>
 		/// <param name="inputName">The name of the input to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteInputResponse> DeleteInputAsync(string inputName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2749,8 +2749,8 @@ namespace MyNS
 		/// DescribeInput inputs/{inputName}
 		/// </summary>
 		/// <param name="inputName">The name of the input.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeInputResponse> DescribeInputAsync(string inputName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2786,8 +2786,8 @@ namespace MyNS
 		/// UpdateInput inputs/{inputName}
 		/// </summary>
 		/// <param name="inputName">The name of the input you want to update.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateInputResponse> UpdateInputAsync(string inputName, UpdateInputPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2967,8 +2967,8 @@ namespace MyNS
 		/// ListAlarmModelVersions alarm-models/{alarmModelName}/versions
 		/// </summary>
 		/// <param name="alarmModelName">The name of the alarm model.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="nextToken">The token that you can use to return the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to be returned per request.
@@ -3009,8 +3009,8 @@ namespace MyNS
 		/// ListDetectorModelVersions detector-models/{detectorModelName}/versions
 		/// </summary>
 		/// <param name="detectorModelName">The name of the detector model whose versions are returned.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="nextToken">The token that you can use to return the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to be returned per request.
@@ -3091,8 +3091,8 @@ namespace MyNS
 		/// ListTagsForResource tags#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3128,8 +3128,8 @@ namespace MyNS
 		/// TagResource tags#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3212,8 +3212,8 @@ namespace MyNS
 		/// UntagResource tags#resourceArn&tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys">A list of the keys of the tags to be removed from the resource.</param>
 		/// <returns>Success</returns>
@@ -3252,8 +3252,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^[a-zA-Z0-9_-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3274,8 +3274,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
@@ -3291,8 +3291,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="key")]
@@ -3374,8 +3374,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the detector model.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^[a-zA-Z0-9_-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3403,8 +3403,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^((`[\w\- ]+`)|([\w\-]+))(\.((`[\w- ]+`)|([\w\-]+)))*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="key")]
@@ -3416,8 +3416,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the role that grants permission to AWS IoT Events to perform its operations.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
@@ -3454,8 +3454,8 @@ namespace MyNS
 		/// <summary>
 		/// The name you want to give to the input.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^[a-zA-Z][a-zA-Z0-9_]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3509,8 +3509,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]
@@ -3607,8 +3607,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the role that grants permission to AWS IoT Events to perform its operations.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="roleArn")]

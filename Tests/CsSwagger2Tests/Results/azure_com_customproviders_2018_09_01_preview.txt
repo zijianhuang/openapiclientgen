@@ -522,8 +522,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="resourceProviderName">The name of the resource provider.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <returns>OK response definition with the existing resource.</returns>
@@ -557,8 +557,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="resourceProviderName">The name of the resource provider.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="requestBody">The parameters required to create or update a custom resource provider definition.</param>
@@ -600,8 +600,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="resourceProviderName">The name of the resource provider.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <returns>OK resource deleted</returns>
@@ -629,8 +629,8 @@ namespace MyNS
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="resourceProviderName">The name of the resource provider.
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="requestBody">The updatable fields of a custom resource provider.</param>

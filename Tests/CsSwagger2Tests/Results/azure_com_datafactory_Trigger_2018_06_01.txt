@@ -344,8 +344,8 @@ namespace MyNS
 		/// <summary>
 		/// Timespan applied to the start time of a tumbling window when evaluating dependency.
 		/// Required
-		/// Max length: 15
 		/// Min length: 8
+		/// Max length: 15
 		/// Pattern: ((\d+)\.)?(\d\d):(60|([0-5][0-9])):(60|([0-5][0-9]))
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -357,8 +357,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The size of the window when evaluating the dependency. If undefined the frequency of the tumbling window will be used.
-		/// Max length: 15
 		/// Min length: 8
+		/// Max length: 15
 		/// Pattern: ((\d+)\.)?(\d\d):(60|([0-5][0-9])):(60|([0-5][0-9]))
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="size")]
@@ -511,8 +511,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Timespan applied to the start time of a tumbling window when evaluating dependency.
-		/// Max length: 15
 		/// Min length: 8
+		/// Max length: 15
 		/// Pattern: ((\d+)\.)?(\d\d):(60|([0-5][0-9])):(60|([0-5][0-9]))
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="offset")]
@@ -523,8 +523,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The size of the window when evaluating the dependency. If undefined the frequency of the tumbling window will be used.
-		/// Max length: 15
 		/// Min length: 8
+		/// Max length: 15
 		/// Pattern: ((\d+)\.)?(\d\d):(60|([0-5][0-9])):(60|([0-5][0-9]))
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="size")]

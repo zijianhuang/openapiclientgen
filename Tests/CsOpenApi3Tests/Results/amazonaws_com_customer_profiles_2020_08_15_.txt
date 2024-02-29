@@ -4470,8 +4470,8 @@ namespace MyNS
 		/// AddProfileKey domains/{DomainName}/profiles/keys
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AddProfileKeyResponse> AddProfileKeyAsync(string DomainName, AddProfileKeyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4514,12 +4514,12 @@ namespace MyNS
 		/// CreateCalculatedAttributeDefinition domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="CalculatedAttributeName">The unique name of the calculated attribute.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateCalculatedAttributeDefinitionResponse> CreateCalculatedAttributeDefinitionAsync(string DomainName, string CalculatedAttributeName, CreateCalculatedAttributeDefinitionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4562,12 +4562,12 @@ namespace MyNS
 		/// DeleteCalculatedAttributeDefinition domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="CalculatedAttributeName">The unique name of the calculated attribute.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteCalculatedAttributeDefinitionResponse> DeleteCalculatedAttributeDefinitionAsync(string DomainName, string CalculatedAttributeName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4603,12 +4603,12 @@ namespace MyNS
 		/// GetCalculatedAttributeDefinition domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="CalculatedAttributeName">The unique name of the calculated attribute.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCalculatedAttributeDefinitionResponse> GetCalculatedAttributeDefinitionAsync(string DomainName, string CalculatedAttributeName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4644,12 +4644,12 @@ namespace MyNS
 		/// UpdateCalculatedAttributeDefinition domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="CalculatedAttributeName">The unique name of the calculated attribute.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateCalculatedAttributeDefinitionResponse> UpdateCalculatedAttributeDefinitionAsync(string DomainName, string CalculatedAttributeName, UpdateCalculatedAttributeDefinitionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4692,8 +4692,8 @@ namespace MyNS
 		/// CreateDomain domains/{DomainName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDomainResponse> CreateDomainAsync(string DomainName, CreateDomainPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4736,8 +4736,8 @@ namespace MyNS
 		/// DeleteDomain domains/{DomainName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDomainResponse> DeleteDomainAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4773,8 +4773,8 @@ namespace MyNS
 		/// GetDomain domains/{DomainName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDomainResponse> GetDomainAsync(string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4810,8 +4810,8 @@ namespace MyNS
 		/// UpdateDomain domains/{DomainName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDomainResponse> UpdateDomainAsync(string DomainName, UpdateDomainPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4854,12 +4854,12 @@ namespace MyNS
 		/// CreateEventStream domains/{DomainName}/event-streams/{EventStreamName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="EventStreamName">The name of the event stream.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateEventStreamResponse> CreateEventStreamAsync(string DomainName, string EventStreamName, CreateEventStreamPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4902,12 +4902,12 @@ namespace MyNS
 		/// DeleteEventStream domains/{DomainName}/event-streams/{EventStreamName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="EventStreamName">The name of the event stream
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteEventStreamResponse> DeleteEventStreamAsync(string DomainName, string EventStreamName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4943,12 +4943,12 @@ namespace MyNS
 		/// GetEventStream domains/{DomainName}/event-streams/{EventStreamName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="EventStreamName">The name of the event stream provided during create operations.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEventStreamResponse> GetEventStreamAsync(string DomainName, string EventStreamName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4984,8 +4984,8 @@ namespace MyNS
 		/// CreateIntegrationWorkflow domains/{DomainName}/workflows/integrations
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateIntegrationWorkflowResponse> CreateIntegrationWorkflowAsync(string DomainName, CreateIntegrationWorkflowPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5028,8 +5028,8 @@ namespace MyNS
 		/// CreateProfile domains/{DomainName}/profiles
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateProfileResponse> CreateProfileAsync(string DomainName, CreateProfilePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5072,8 +5072,8 @@ namespace MyNS
 		/// UpdateProfile domains/{DomainName}/profiles
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateProfileResponse> UpdateProfileAsync(string DomainName, UpdateProfilePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5116,8 +5116,8 @@ namespace MyNS
 		/// DeleteIntegration domains/{DomainName}/integrations/delete
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteIntegrationResponse> DeleteIntegrationAsync(string DomainName, DeleteIntegrationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5160,8 +5160,8 @@ namespace MyNS
 		/// DeleteProfile domains/{DomainName}/profiles/delete
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteProfileResponse> DeleteProfileAsync(string DomainName, DeleteProfilePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5204,8 +5204,8 @@ namespace MyNS
 		/// DeleteProfileKey domains/{DomainName}/profiles/keys/delete
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteProfileKeyResponse> DeleteProfileKeyAsync(string DomainName, DeleteProfileKeyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5248,8 +5248,8 @@ namespace MyNS
 		/// DeleteProfileObject domains/{DomainName}/profiles/objects/delete
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteProfileObjectResponse> DeleteProfileObjectAsync(string DomainName, DeleteProfileObjectPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5292,12 +5292,12 @@ namespace MyNS
 		/// DeleteProfileObjectType domains/{DomainName}/object-types/{ObjectTypeName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="ObjectTypeName">The name of the profile object type.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteProfileObjectTypeResponse> DeleteProfileObjectTypeAsync(string DomainName, string ObjectTypeName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5333,12 +5333,12 @@ namespace MyNS
 		/// GetProfileObjectType domains/{DomainName}/object-types/{ObjectTypeName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="ObjectTypeName">The name of the profile object type.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProfileObjectTypeResponse> GetProfileObjectTypeAsync(string DomainName, string ObjectTypeName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5374,12 +5374,12 @@ namespace MyNS
 		/// PutProfileObjectType domains/{DomainName}/object-types/{ObjectTypeName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="ObjectTypeName">The name of the profile object type.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutProfileObjectTypeResponse> PutProfileObjectTypeAsync(string DomainName, string ObjectTypeName, PutProfileObjectTypePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5422,12 +5422,12 @@ namespace MyNS
 		/// DeleteWorkflow domains/{DomainName}/workflows/{WorkflowId}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="WorkflowId">Unique identifier for the workflow.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteWorkflowResponse> DeleteWorkflowAsync(string DomainName, string WorkflowId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5463,8 +5463,8 @@ namespace MyNS
 		/// GetWorkflow domains/{DomainName}/workflows/{WorkflowId}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="WorkflowId">Unique identifier for the workflow.</param>
 		/// <returns>Success</returns>
@@ -5501,8 +5501,8 @@ namespace MyNS
 		/// GetAutoMergingPreview domains/{DomainName}/identity-resolution-jobs/auto-merging-preview
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAutoMergingPreviewResponse> GetAutoMergingPreviewAsync(string DomainName, GetAutoMergingPreviewPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5545,13 +5545,13 @@ namespace MyNS
 		/// GetCalculatedAttributeForProfile domains/{DomainName}/profile/{ProfileId}/calculated-attributes/{CalculatedAttributeName}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="ProfileId">The unique identifier of a customer profile.</param>
 		/// <param name="CalculatedAttributeName">The unique name of the calculated attribute.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCalculatedAttributeForProfileResponse> GetCalculatedAttributeForProfileAsync(string DomainName, string ProfileId, string CalculatedAttributeName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5587,8 +5587,8 @@ namespace MyNS
 		/// GetIdentityResolutionJob domains/{DomainName}/identity-resolution-jobs/{JobId}
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="JobId">The unique identifier of the Identity Resolution Job.</param>
 		/// <returns>Success</returns>
@@ -5625,8 +5625,8 @@ namespace MyNS
 		/// GetIntegration domains/{DomainName}/integrations
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetIntegrationResponse> GetIntegrationAsync(string DomainName, GetIntegrationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5669,12 +5669,12 @@ namespace MyNS
 		/// ListIntegrations domains/{DomainName}/integrations
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="next_token">The pagination token from the previous ListIntegrations API call.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of objects returned per page.
 		/// Minimum: 1
@@ -5715,8 +5715,8 @@ namespace MyNS
 		/// PutIntegration domains/{DomainName}/integrations
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutIntegrationResponse> PutIntegrationAsync(string DomainName, PutIntegrationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5759,16 +5759,16 @@ namespace MyNS
 		/// GetMatches domains/{DomainName}/matches
 		/// </summary>
 		/// <param name="next_token">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of results to return per page.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMatchesResponse> GetMatchesAsync(string next_token, int max_results, string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5804,16 +5804,16 @@ namespace MyNS
 		/// GetSimilarProfiles domains/{DomainName}/matches
 		/// </summary>
 		/// <param name="next_token">The pagination token from the previous <code>GetSimilarProfiles</code> API call.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of objects returned per page.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSimilarProfilesResponse> GetSimilarProfilesAsync(string next_token, int max_results, string DomainName, GetSimilarProfilesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5856,8 +5856,8 @@ namespace MyNS
 		/// GetProfileObjectTypeTemplate templates/{TemplateId}
 		/// </summary>
 		/// <param name="TemplateId">A unique identifier for the object template.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProfileObjectTypeTemplateResponse> GetProfileObjectTypeTemplateAsync(string TemplateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5893,13 +5893,13 @@ namespace MyNS
 		/// GetWorkflowSteps domains/{DomainName}/workflows/{WorkflowId}/steps
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="WorkflowId">Unique identifier for the workflow.</param>
 		/// <param name="next_token">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of results to return per page.
 		/// Minimum: 1
@@ -5939,8 +5939,8 @@ namespace MyNS
 		/// ListAccountIntegrations integrations
 		/// </summary>
 		/// <param name="next_token">The pagination token from the previous ListAccountIntegrations API call.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of objects returned per page.
 		/// Minimum: 1
@@ -5988,12 +5988,12 @@ namespace MyNS
 		/// ListCalculatedAttributeDefinitions domains/{DomainName}/calculated-attributes
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="next_token">The pagination token from the previous call to ListCalculatedAttributeDefinitions.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of calculated attribute definitions returned per page.
 		/// Minimum: 1
@@ -6033,16 +6033,16 @@ namespace MyNS
 		/// ListCalculatedAttributesForProfile domains/{DomainName}/profile/{ProfileId}/calculated-attributes
 		/// </summary>
 		/// <param name="next_token">The pagination token from the previous call to ListCalculatedAttributesForProfile.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of calculated attributes returned per page.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="ProfileId">The unique identifier of a customer profile.</param>
 		/// <returns>Success</returns>
@@ -6079,8 +6079,8 @@ namespace MyNS
 		/// ListDomains domains
 		/// </summary>
 		/// <param name="next_token">The pagination token from the previous ListDomain API call.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of objects returned per page.
 		/// Minimum: 1
@@ -6120,12 +6120,12 @@ namespace MyNS
 		/// ListEventStreams domains/{DomainName}/event-streams
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="next_token">Identifies the next page of results to return.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of objects returned per page.
 		/// Minimum: 1
@@ -6167,12 +6167,12 @@ namespace MyNS
 		/// ListIdentityResolutionJobs domains/{DomainName}/identity-resolution-jobs
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="next_token">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of results to return per page.
 		/// Minimum: 1
@@ -6212,8 +6212,8 @@ namespace MyNS
 		/// ListProfileObjectTypeTemplates templates
 		/// </summary>
 		/// <param name="next_token">The pagination token from the previous ListObjectTypeTemplates API call.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of objects returned per page.
 		/// Minimum: 1
@@ -6253,12 +6253,12 @@ namespace MyNS
 		/// ListProfileObjectTypes domains/{DomainName}/object-types
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="next_token">Identifies the next page of results to return.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of objects returned per page.
 		/// Minimum: 1
@@ -6298,16 +6298,16 @@ namespace MyNS
 		/// ListProfileObjects domains/{DomainName}/profiles/objects
 		/// </summary>
 		/// <param name="next_token">The pagination token from the previous call to ListProfileObjects.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of objects returned per page.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListProfileObjectsResponse> ListProfileObjectsAsync(string next_token, int max_results, string DomainName, ListProfileObjectsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6350,8 +6350,8 @@ namespace MyNS
 		/// PutProfileObject domains/{DomainName}/profiles/objects
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutProfileObjectResponse> PutProfileObjectAsync(string DomainName, PutProfileObjectPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6394,16 +6394,16 @@ namespace MyNS
 		/// ListRuleBasedMatches domains/{DomainName}/profiles/ruleBasedMatches
 		/// </summary>
 		/// <param name="next_token">The pagination token from the previous <code>ListRuleBasedMatches</code> API call.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of <code>MatchIds</code> returned per page.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRuleBasedMatchesResponse> ListRuleBasedMatchesAsync(string next_token, int max_results, string DomainName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6518,12 +6518,12 @@ namespace MyNS
 		/// ListWorkflows domains/{DomainName}/workflows
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="next_token">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results">The maximum number of results to return per page.
 		/// Minimum: 1
@@ -6570,8 +6570,8 @@ namespace MyNS
 		/// MergeProfiles domains/{DomainName}/profiles/objects/merge
 		/// </summary>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<MergeProfilesResponse> MergeProfilesAsync(string DomainName, MergeProfilesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6614,16 +6614,16 @@ namespace MyNS
 		/// SearchProfiles domains/{DomainName}/profiles/search
 		/// </summary>
 		/// <param name="next_token">The pagination token from the previous SearchProfiles API call.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="max_results"><p>The maximum number of objects returned per page.</p> <p>The default is 20 if this parameter is not included in the request.</p>
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="DomainName">The unique name of the domain.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<SearchProfilesResponse> SearchProfilesAsync(string next_token, int max_results, string DomainName, SearchProfilesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6718,8 +6718,8 @@ namespace MyNS
 		/// <summary>
 		/// A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9_-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6743,8 +6743,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The display name of the calculated attribute.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z_][a-zA-Z_0-9-\s]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -6755,8 +6755,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the calculated attribute.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6820,8 +6820,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The display name of the calculated attribute.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z_][a-zA-Z_0-9-\s]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -6832,8 +6832,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the calculated attribute.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6876,8 +6876,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6886,8 +6886,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6974,8 +6974,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6984,8 +6984,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7064,8 +7064,8 @@ namespace MyNS
 		/// <summary>
 		/// The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7102,8 +7102,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the profile object type.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z_][a-zA-Z_0-9-]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7144,8 +7144,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique account number that you have given to the customer.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7154,8 +7154,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Any additional information relevant to the customer’s profile.
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7170,8 +7170,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the customer’s business.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7180,8 +7180,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s first name.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7190,8 +7190,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s middle name.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7200,8 +7200,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s last name.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7210,8 +7210,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s birth date. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7226,8 +7226,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s phone number, which has not been specified as a mobile, home, or business number. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7236,8 +7236,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s mobile phone number.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7246,8 +7246,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s home phone number.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7256,8 +7256,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s business phone number.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7266,8 +7266,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s email address, which has not been specified as a personal or business address. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7276,8 +7276,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s personal email address.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7286,8 +7286,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s business email address.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7326,8 +7326,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An alternative to <code>PartyType</code> which accepts any string as input.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7336,8 +7336,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An alternative to <code>Gender</code> which accepts any string as input.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7496,8 +7496,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Any additional information relevant to the customer’s profile.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7506,8 +7506,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique account number that you have given to the customer.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7522,8 +7522,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the customer’s business.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7532,8 +7532,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s first name.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7542,8 +7542,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s middle name.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7552,8 +7552,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s last name.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7562,8 +7562,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s birth date. 
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7578,8 +7578,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s phone number, which has not been specified as a mobile, home, or business number. 
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7588,8 +7588,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s mobile phone number.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7598,8 +7598,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s home phone number.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7608,8 +7608,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s business phone number.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7618,8 +7618,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s email address, which has not been specified as a personal or business address. 
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7628,8 +7628,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s personal email address.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7638,8 +7638,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer’s business email address.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7678,8 +7678,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An alternative to <code>PartyType</code> which accepts any string as input.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7688,8 +7688,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An alternative to <code>Gender</code> which accepts any string as input.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7839,8 +7839,8 @@ namespace MyNS
 		/// <summary>
 		/// The URI of the S3 bucket or any other type of data source.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7879,8 +7879,8 @@ namespace MyNS
 		/// <summary>
 		/// A searchable identifier of a customer profile.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9_-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7915,8 +7915,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique identifier of the profile object generated by the service.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7927,8 +7927,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the profile object type.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z_][a-zA-Z_0-9-]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7945,8 +7945,8 @@ namespace MyNS
 		/// <summary>
 		/// Description of the profile object type.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7956,8 +7956,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9_-]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -7977,8 +7977,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The customer-provided key to encrypt the profile object that will be created in this profile object type.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7993,8 +7993,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up. 
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8072,8 +8072,8 @@ namespace MyNS
 		/// <summary>
 		/// The URI of the S3 bucket or any other type of data source.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8087,8 +8087,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URI of the S3 bucket or any other type of data source.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8097,8 +8097,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the profile object type.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z_][a-zA-Z_0-9-]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -8162,8 +8162,8 @@ namespace MyNS
 		/// <summary>
 		/// The string indicating the search key to be used.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8174,8 +8174,8 @@ namespace MyNS
 		/// <summary>
 		/// The string based on <code>SearchKey</code> to be searched for similar profiles.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8190,8 +8190,8 @@ namespace MyNS
 		/// <summary>
 		/// The URI of the S3 bucket or any other type of data source.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8206,8 +8206,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the profile object type.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z_][a-zA-Z_0-9-]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8250,8 +8250,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the profile object type.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z_][a-zA-Z_0-9-]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8264,8 +8264,8 @@ namespace MyNS
 		/// <summary>
 		/// A string that is serialized from a JSON object.
 		/// Required
-		/// Max length: 256000
 		/// Min length: 1
+		/// Max length: 256000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -8419,8 +8419,8 @@ namespace MyNS
 		/// <summary>
 		/// A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z0-9_-]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

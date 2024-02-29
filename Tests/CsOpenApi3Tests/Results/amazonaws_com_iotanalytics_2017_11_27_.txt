@@ -2533,8 +2533,8 @@ namespace MyNS
 		/// CancelPipelineReprocessing pipelines/{pipelineName}/reprocessing/{reprocessingId}
 		/// </summary>
 		/// <param name="pipelineName">The name of pipeline for which data reprocessing is canceled.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="reprocessingId">The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</param>
 		/// <returns>Success</returns>
@@ -2713,8 +2713,8 @@ namespace MyNS
 		/// CreateDatasetContent datasets/{datasetName}/content
 		/// </summary>
 		/// <param name="datasetName">The name of the dataset.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDatasetContentResponse> CreateDatasetContentAsync(string datasetName, CreateDatasetContentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2757,12 +2757,12 @@ namespace MyNS
 		/// DeleteDatasetContent datasets/{datasetName}/content
 		/// </summary>
 		/// <param name="datasetName">The name of the dataset whose content is deleted.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="versionId">The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.
-		/// Max length: 36
 		/// Min length: 7
+		/// Max length: 36
 		// </param>
 		public async Task DeleteDatasetContentAsync(string datasetName, string versionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2791,12 +2791,12 @@ namespace MyNS
 		/// GetDatasetContent datasets/{datasetName}/content
 		/// </summary>
 		/// <param name="datasetName">The name of the dataset whose contents are retrieved.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="versionId">The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.
-		/// Max length: 36
 		/// Min length: 7
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDatasetContentResponse> GetDatasetContentAsync(string datasetName, string versionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2974,8 +2974,8 @@ namespace MyNS
 		/// DeleteChannel channels/{channelName}
 		/// </summary>
 		/// <param name="channelName">The name of the channel to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteChannelAsync(string channelName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3004,8 +3004,8 @@ namespace MyNS
 		/// DescribeChannel channels/{channelName}
 		/// </summary>
 		/// <param name="channelName">The name of the channel whose information is retrieved.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="includeStatistics">If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</param>
 		/// <returns>Success</returns>
@@ -3042,8 +3042,8 @@ namespace MyNS
 		/// UpdateChannel channels/{channelName}
 		/// </summary>
 		/// <param name="channelName">The name of the channel to be updated.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateChannelAsync(string channelName, UpdateChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3080,8 +3080,8 @@ namespace MyNS
 		/// DeleteDataset datasets/{datasetName}
 		/// </summary>
 		/// <param name="datasetName">The name of the dataset to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteDatasetAsync(string datasetName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3110,8 +3110,8 @@ namespace MyNS
 		/// DescribeDataset datasets/{datasetName}
 		/// </summary>
 		/// <param name="datasetName">The name of the dataset whose information is retrieved.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDatasetResponse> DescribeDatasetAsync(string datasetName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3147,8 +3147,8 @@ namespace MyNS
 		/// UpdateDataset datasets/{datasetName}
 		/// </summary>
 		/// <param name="datasetName">The name of the dataset to update.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateDatasetAsync(string datasetName, UpdateDatasetPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3185,8 +3185,8 @@ namespace MyNS
 		/// DeleteDatastore datastores/{datastoreName}
 		/// </summary>
 		/// <param name="datastoreName">The name of the data store to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteDatastoreAsync(string datastoreName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3215,8 +3215,8 @@ namespace MyNS
 		/// DescribeDatastore datastores/{datastoreName}
 		/// </summary>
 		/// <param name="datastoreName">The name of the data store
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="includeStatistics">If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</param>
 		/// <returns>Success</returns>
@@ -3253,8 +3253,8 @@ namespace MyNS
 		/// UpdateDatastore datastores/{datastoreName}
 		/// </summary>
 		/// <param name="datastoreName">The name of the data store to be updated.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateDatastoreAsync(string datastoreName, UpdateDatastorePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3291,8 +3291,8 @@ namespace MyNS
 		/// DeletePipeline pipelines/{pipelineName}
 		/// </summary>
 		/// <param name="pipelineName">The name of the pipeline to delete.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeletePipelineAsync(string pipelineName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3321,8 +3321,8 @@ namespace MyNS
 		/// DescribePipeline pipelines/{pipelineName}
 		/// </summary>
 		/// <param name="pipelineName">The name of the pipeline whose information is retrieved.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePipelineResponse> DescribePipelineAsync(string pipelineName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3358,8 +3358,8 @@ namespace MyNS
 		/// UpdatePipeline pipelines/{pipelineName}
 		/// </summary>
 		/// <param name="pipelineName">The name of the pipeline to update.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdatePipelineAsync(string pipelineName, UpdatePipelinePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3463,8 +3463,8 @@ namespace MyNS
 		/// ListDatasetContents datasets/{datasetName}/contents
 		/// </summary>
 		/// <param name="datasetName">The name of the dataset whose contents information you want to list.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="nextToken">The token for the next set of results.</param>
 		/// <param name="maxResults">The maximum number of results to return in this request.
@@ -3507,8 +3507,8 @@ namespace MyNS
 		/// ListTagsForResource tags#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource whose tags you want to list.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3544,8 +3544,8 @@ namespace MyNS
 		/// TagResource tags#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource whose tags you want to modify.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3621,8 +3621,8 @@ namespace MyNS
 		/// SampleChannelData channels/{channelName}/sample
 		/// </summary>
 		/// <param name="channelName">The name of the channel whose message samples are retrieved.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="maxMessages">The number of sample messages to be retrieved. The limit is 10. The default is also 10.
 		/// Minimum: 1
@@ -3664,8 +3664,8 @@ namespace MyNS
 		/// StartPipelineReprocessing pipelines/{pipelineName}/reprocessing
 		/// </summary>
 		/// <param name="pipelineName">The name of the pipeline on which to start reprocessing.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartPipelineReprocessingResponse> StartPipelineReprocessingAsync(string pipelineName, StartPipelineReprocessingPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3708,8 +3708,8 @@ namespace MyNS
 		/// UntagResource tags#resourceArn&tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource whose tags you want to remove.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys">The keys of those tags which you want to remove.
 		/// Minimum items: 1
@@ -3744,8 +3744,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the channel where the messages are sent.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: (^(?!_{2}))(^[a-zA-Z0-9_]+$)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3770,8 +3770,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the channel.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: (^(?!_{2}))(^[a-zA-Z0-9_]+$)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3830,8 +3830,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the dataset.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: (^(?!_{2}))(^[a-zA-Z0-9_]+$)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3931,8 +3931,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
-		/// Max length: 36
 		/// Min length: 7
+		/// Max length: 36
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="versionId")]
 		[System.ComponentModel.DataAnnotations.MinLength(7)]
@@ -3946,8 +3946,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the data store.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: (^(?!_{2}))(^[a-zA-Z0-9_]+$)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4038,8 +4038,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the pipeline.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: (^(?!_{2}))(^[a-zA-Z0-9_]+$)
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

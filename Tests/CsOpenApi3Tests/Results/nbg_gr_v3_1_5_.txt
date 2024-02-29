@@ -196,8 +196,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		/// Required
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -231,8 +231,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Specifies the description of the account type.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -241,8 +241,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		/// Max length: 70
 		/// Min length: 1
+		/// Max length: 70
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -267,8 +267,8 @@ namespace MyNS
 		/// <summary>
 		/// Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -279,8 +279,8 @@ namespace MyNS
 		/// <summary>
 		/// The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		///Note, the account name is not the product name or the nickname of the account.
-		/// Max length: 70
 		/// Min length: 1
+		/// Max length: 70
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -298,8 +298,8 @@ namespace MyNS
 		/// <summary>
 		/// This is secondary identification of the account, as assigned by the account servicing institution.
 		///This can be used by building societies to additionally identify accounts with a roll number(in addition to a sort code and account number combination).
-		/// Max length: 34
 		/// Min length: 1
+		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -359,8 +359,8 @@ namespace MyNS
 		/// <summary>
 		/// Unique and unambiguous identification of the servicing institution.
 		/// Required
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -456,8 +456,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -513,8 +513,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Identification assigned by an institution to identify an account. This identification is known by the account owner.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -524,8 +524,8 @@ namespace MyNS
 		/// <summary>
 		/// The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		///Note, the account name is not the product name or the nickname of the account.
-		/// Max length: 70
 		/// Min length: 1
+		/// Max length: 70
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -550,8 +550,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		/// Required
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -693,8 +693,8 @@ namespace MyNS
 		/// <summary>
 		/// A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'OBIE doesn't standardise this field
 		/// Required
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -704,8 +704,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -818,8 +818,8 @@ namespace MyNS
 		/// <summary>
 		/// High level textual error code, to help categorize the errors.
 		/// Required
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -837,8 +837,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique reference for the error instance, for audit purposes, in case of unknown/unclassified errors.
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -848,8 +848,8 @@ namespace MyNS
 		/// <summary>
 		/// Brief Error message, e.g., 'There is something wrong with the request parameters provided'
 		/// Required
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1074,8 +1074,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name by which a party is known and which is usually used to identify that party.
-		/// Max length: 70
 		/// Min length: 1
+		/// Max length: 70
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1085,8 +1085,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique and immutable identifier used to identify the customer resource. This identifier has no meaning to the account owner.
 		/// Required
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1407,8 +1407,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		/// Required
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1421,8 +1421,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A reference value provided by the PSU to the PISP while setting up the scheduled payment.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1440,8 +1440,8 @@ namespace MyNS
 		/// Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		///Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		///If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1460,8 +1460,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique and immutable identifier used to identify the scheduled payment resource. This identifier has no meaning to the account owner.
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1493,8 +1493,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		/// Required
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1566,8 +1566,8 @@ namespace MyNS
 		/// Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		///Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		///If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1576,8 +1576,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique and immutable identifier used to identify the standing order resource. This identifier has no meaning to the account owner.
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1611,8 +1611,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		/// Required
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1652,8 +1652,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique identifier for the statement resource within an servicing institution. This identifier is both unique and immutable.
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1662,8 +1662,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique reference for the statement. This reference may be optionally populated if available.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1701,8 +1701,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		/// Required
-		/// Max length: 40
 		/// Min length: 1
+		/// Max length: 40
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1769,8 +1769,8 @@ namespace MyNS
 		/// <summary>
 		/// Further details of the transaction.
 		///This is the transaction narrative, which is unstructured text.
-		/// Max length: 500
 		/// Min length: 1
+		/// Max length: 500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1779,8 +1779,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Unique reference for the transaction. This reference is optionally populated, and may as an example be the FPID in the Faster Payments context.
-		/// Max length: 210
 		/// Min length: 1
+		/// Max length: 210
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1839,8 +1839,8 @@ namespace MyNS
 		/// <summary>
 		/// Proprietary bank transaction code to identify the underlying transaction.
 		/// Required
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -1850,8 +1850,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Identification of the issuer of the proprietary bank transaction code.
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2159,8 +2159,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account's alias
-		/// Max length: 70
 		/// Min length: 1
+		/// Max length: 70
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="alias")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2185,8 +2185,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Account's description
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2257,8 +2257,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Scheduled payment's short description
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2273,8 +2273,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Debtor / Sender reference
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="senderReference")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2317,8 +2317,8 @@ namespace MyNS
 		/// <summary>
 		/// Standing order frequency
 		/// Required
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="frequency")]
@@ -2509,8 +2509,8 @@ namespace MyNS
 		/// <summary>
 		/// Expiration date (05/2022)
 		/// Required
-		/// Max length: 7
 		/// Min length: 1
+		/// Max length: 7
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="expiration")]
@@ -2535,8 +2535,8 @@ namespace MyNS
 		/// <summary>
 		/// Card number
 		/// Required
-		/// Max length: 16
 		/// Min length: 1
+		/// Max length: 16
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="number")]

@@ -7358,8 +7358,8 @@ namespace MyNS
 		/// GET_AddPartner #Action=AddPartner
 		/// </summary>
 		/// <param name="AccountId">The Amazon Web Services account ID that owns the cluster.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ClusterIdentifier">The cluster identifier of the cluster that receives data from the partner.
 		/// Max length: 63
@@ -8017,12 +8017,12 @@ namespace MyNS
 		/// GET_CreateCustomDomainAssociation #Action=CreateCustomDomainAssociation
 		/// </summary>
 		/// <param name="CustomDomainName">The custom domain name for a custom domain association.
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		// </param>
 		/// <param name="CustomDomainCertificateArn">The certificate Amazon Resource Name (ARN) for the custom domain name association.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="ClusterIdentifier">The cluster identifier that the custom domain is associated with.
 		/// Max length: 2147483647
@@ -8767,8 +8767,8 @@ namespace MyNS
 		/// GET_DeletePartner #Action=DeletePartner
 		/// </summary>
 		/// <param name="AccountId">The Amazon Web Services account ID that owns the cluster.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ClusterIdentifier">The cluster identifier of the cluster that receives data from the partner.
 		/// Max length: 63
@@ -9370,12 +9370,12 @@ namespace MyNS
 		/// GET_DescribeCustomDomainAssociations #Action=DescribeCustomDomainAssociations
 		/// </summary>
 		/// <param name="CustomDomainName">The custom domain name for the custom domain association.
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		// </param>
 		/// <param name="CustomDomainCertificateArn">The certificate Amazon Resource Name (ARN) for the custom domain association.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxRecords">The maximum records setting for the associated custom domain.</param>
 		/// <param name="Marker">The marker for the custom domain association.
@@ -9916,8 +9916,8 @@ namespace MyNS
 		/// GET_DescribePartners #Action=DescribePartners
 		/// </summary>
 		/// <param name="AccountId">The Amazon Web Services account ID that owns the cluster.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ClusterIdentifier">The cluster identifier of the cluster whose partner integration is being described.
 		/// Max length: 63
@@ -11102,12 +11102,12 @@ namespace MyNS
 		/// GET_ModifyCustomDomainAssociation #Action=ModifyCustomDomainAssociation
 		/// </summary>
 		/// <param name="CustomDomainName">The custom domain name for a changed custom domain association.
-		/// Max length: 253
 		/// Min length: 1
+		/// Max length: 253
 		// </param>
 		/// <param name="CustomDomainCertificateArn">The certificate Amazon Resource Name (ARN) for the changed custom domain association.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="ClusterIdentifier">The identifier of the cluster to change a custom domain association for.
 		/// Max length: 2147483647
@@ -11909,8 +11909,8 @@ namespace MyNS
 		/// GET_UpdatePartnerStatus #Action=UpdatePartnerStatus
 		/// </summary>
 		/// <param name="AccountId">The Amazon Web Services account ID that owns the cluster.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="ClusterIdentifier">The cluster identifier of the cluster whose partner integration status is being updated.
 		/// Max length: 63

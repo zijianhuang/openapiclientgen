@@ -516,8 +516,8 @@ namespace MyNS
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="solutionName">The name of the IoT Security solution.</param>
 		/// <returns>OK</returns>
@@ -551,8 +551,8 @@ namespace MyNS
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="solutionName">The name of the IoT Security solution.</param>
 		/// <returns>OK</returns>
@@ -586,8 +586,8 @@ namespace MyNS
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="solutionName">The name of the IoT Security solution.</param>
 		/// <param name="top">Number of results to retrieve.</param>
@@ -622,8 +622,8 @@ namespace MyNS
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="solutionName">The name of the IoT Security solution.</param>
 		/// <param name="aggregatedAlertName">Identifier of the aggregated alert.</param>
@@ -658,8 +658,8 @@ namespace MyNS
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="solutionName">The name of the IoT Security solution.</param>
 		/// <param name="aggregatedAlertName">Identifier of the aggregated alert.</param>
@@ -688,8 +688,8 @@ namespace MyNS
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="solutionName">The name of the IoT Security solution.</param>
 		/// <param name="top">Number of results to retrieve.</param>
@@ -724,8 +724,8 @@ namespace MyNS
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="solutionName">The name of the IoT Security solution.</param>
 		/// <param name="aggregatedRecommendationName">Name of the recommendation aggregated for this query.</param>

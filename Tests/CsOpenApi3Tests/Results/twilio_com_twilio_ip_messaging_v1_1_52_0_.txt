@@ -52,8 +52,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -75,8 +75,8 @@ namespace MyNS
 		public string Sandbox { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CR[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -98,8 +98,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -118,8 +118,8 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Date_updated { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="default_channel_creator_role_sid")]
@@ -129,8 +129,8 @@ namespace MyNS
 		public string Default_channel_creator_role_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="default_channel_role_sid")]
@@ -140,8 +140,8 @@ namespace MyNS
 		public string Default_channel_role_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="default_service_role_sid")]
@@ -175,8 +175,8 @@ namespace MyNS
 		public System.Nullable<System.Boolean> Read_status_enabled { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -207,8 +207,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -242,8 +242,8 @@ namespace MyNS
 		public System.Nullable<System.Int32> Messages_count { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -253,8 +253,8 @@ namespace MyNS
 		public string Service_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -292,8 +292,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -303,8 +303,8 @@ namespace MyNS
 		public string Account_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channel_sid")]
@@ -326,8 +326,8 @@ namespace MyNS
 		public string Identity { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="role_sid")]
@@ -337,8 +337,8 @@ namespace MyNS
 		public string Role_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -348,8 +348,8 @@ namespace MyNS
 		public string Service_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IN[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -368,8 +368,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -379,8 +379,8 @@ namespace MyNS
 		public string Account_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channel_sid")]
@@ -405,8 +405,8 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> Last_consumption_timestamp { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="role_sid")]
@@ -416,8 +416,8 @@ namespace MyNS
 		public string Role_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -427,8 +427,8 @@ namespace MyNS
 		public string Service_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^MB[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -447,8 +447,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -464,8 +464,8 @@ namespace MyNS
 		public string Body { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channel_sid")]
@@ -487,8 +487,8 @@ namespace MyNS
 		public System.Nullable<System.Int32> Index { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -498,8 +498,8 @@ namespace MyNS
 		public string Service_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IM[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -509,8 +509,8 @@ namespace MyNS
 		public string Sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="to")]
@@ -532,8 +532,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -555,8 +555,8 @@ namespace MyNS
 		public string[] Permissions { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -566,8 +566,8 @@ namespace MyNS
 		public string Service_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -602,8 +602,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -640,8 +640,8 @@ namespace MyNS
 		public string Links { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="role_sid")]
@@ -651,8 +651,8 @@ namespace MyNS
 		public string Role_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -662,8 +662,8 @@ namespace MyNS
 		public string Service_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^US[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -682,8 +682,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -693,8 +693,8 @@ namespace MyNS
 		public string Account_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="channel_sid")]
@@ -710,8 +710,8 @@ namespace MyNS
 		public string Links { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^MB[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="member_sid")]
@@ -721,8 +721,8 @@ namespace MyNS
 		public string Member_sid { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -858,8 +858,8 @@ namespace MyNS
 		/// <summary>
 		/// DeleteCredential v1/Credentials/{Sid}
 		/// </summary>
-		/// <param name="Sid">Max length: 34
-		/// Min length: 34
+		/// <param name="Sid">Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteCredentialAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -886,8 +886,8 @@ namespace MyNS
 		/// <summary>
 		/// FetchCredential v1/Credentials/{Sid}
 		/// </summary>
-		/// <param name="Sid">Max length: 34
-		/// Min length: 34
+		/// <param name="Sid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1credential> FetchCredentialAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -961,8 +961,8 @@ namespace MyNS
 		/// <summary>
 		/// ListChannel v1/Services/{ServiceSid}/Channels
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1004,8 +1004,8 @@ namespace MyNS
 		/// <summary>
 		/// ListInvite v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1047,11 +1047,11 @@ namespace MyNS
 		/// <summary>
 		/// DeleteInvite v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
-		/// <param name="Sid">Max length: 34
-		/// Min length: 34
+		/// <param name="Sid">Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteInviteAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1078,11 +1078,11 @@ namespace MyNS
 		/// <summary>
 		/// FetchInvite v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
-		/// <param name="Sid">Max length: 34
-		/// Min length: 34
+		/// <param name="Sid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1servicechannelinvite> FetchInviteAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1116,8 +1116,8 @@ namespace MyNS
 		/// <summary>
 		/// ListMember v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1159,11 +1159,11 @@ namespace MyNS
 		/// <summary>
 		/// DeleteMember v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
-		/// <param name="Sid">Max length: 34
-		/// Min length: 34
+		/// <param name="Sid">Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteMemberAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1190,11 +1190,11 @@ namespace MyNS
 		/// <summary>
 		/// FetchMember v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
-		/// <param name="Sid">Max length: 34
-		/// Min length: 34
+		/// <param name="Sid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1servicechannelmember> FetchMemberAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1228,11 +1228,11 @@ namespace MyNS
 		/// <summary>
 		/// ListMessage v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
-		/// <param name="ChannelSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ChannelSid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1274,14 +1274,14 @@ namespace MyNS
 		/// <summary>
 		/// DeleteMessage v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
-		/// <param name="ChannelSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ChannelSid">Min length: 34
+		/// Max length: 34
 		// </param>
-		/// <param name="Sid">Max length: 34
-		/// Min length: 34
+		/// <param name="Sid">Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteMessageAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1308,14 +1308,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchMessage v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
-		/// <param name="ChannelSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ChannelSid">Min length: 34
+		/// Max length: 34
 		// </param>
-		/// <param name="Sid">Max length: 34
-		/// Min length: 34
+		/// <param name="Sid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1servicechannelmessage> FetchMessageAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1349,8 +1349,8 @@ namespace MyNS
 		/// <summary>
 		/// DeleteChannel v1/Services/{ServiceSid}/Channels/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteChannelAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1377,8 +1377,8 @@ namespace MyNS
 		/// <summary>
 		/// FetchChannel v1/Services/{ServiceSid}/Channels/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1servicechannel> FetchChannelAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1412,8 +1412,8 @@ namespace MyNS
 		/// <summary>
 		/// ListRole v1/Services/{ServiceSid}/Roles
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1455,11 +1455,11 @@ namespace MyNS
 		/// <summary>
 		/// DeleteRole v1/Services/{ServiceSid}/Roles/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
-		/// <param name="Sid">Max length: 34
-		/// Min length: 34
+		/// <param name="Sid">Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteRoleAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1486,11 +1486,11 @@ namespace MyNS
 		/// <summary>
 		/// FetchRole v1/Services/{ServiceSid}/Roles/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
-		/// <param name="Sid">Max length: 34
-		/// Min length: 34
+		/// <param name="Sid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1servicerole> FetchRoleAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1524,8 +1524,8 @@ namespace MyNS
 		/// <summary>
 		/// ListUser v1/Services/{ServiceSid}/Users
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1567,8 +1567,8 @@ namespace MyNS
 		/// <summary>
 		/// DeleteUser v1/Services/{ServiceSid}/Users/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteUserAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1595,8 +1595,8 @@ namespace MyNS
 		/// <summary>
 		/// FetchUser v1/Services/{ServiceSid}/Users/{Sid}
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1serviceuser> FetchUserAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1630,8 +1630,8 @@ namespace MyNS
 		/// <summary>
 		/// ListUserChannel v1/Services/{ServiceSid}/Users/{UserSid}/Channels
 		/// </summary>
-		/// <param name="ServiceSid">Max length: 34
-		/// Min length: 34
+		/// <param name="ServiceSid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1673,8 +1673,8 @@ namespace MyNS
 		/// <summary>
 		/// DeleteService v1/Services/{Sid}
 		/// </summary>
-		/// <param name="Sid">Max length: 34
-		/// Min length: 34
+		/// <param name="Sid">Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1701,8 +1701,8 @@ namespace MyNS
 		/// <summary>
 		/// FetchService v1/Services/{Sid}
 		/// </summary>
-		/// <param name="Sid">Max length: 34
-		/// Min length: 34
+		/// <param name="Sid">Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1service> FetchServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

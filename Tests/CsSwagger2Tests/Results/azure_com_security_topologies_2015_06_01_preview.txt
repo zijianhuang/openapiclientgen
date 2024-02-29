@@ -217,8 +217,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="ascLocation">The location where ASC stores the data of the subscription. can be retrieved from Get locations</param>
 		/// <param name="topologyResourceName">Name of a topology resources collection.</param>

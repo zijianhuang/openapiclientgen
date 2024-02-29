@@ -39,8 +39,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 32
 		/// Min length: 0
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="password")]
@@ -53,8 +53,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="userNameOrEmailAddress")]
@@ -288,8 +288,8 @@ namespace MyNS
 		public System.Nullable<System.Int32> AccessFailedCount { get; set; }
 		
 		/// <summary>
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="authenticationSource")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -303,8 +303,8 @@ namespace MyNS
 		public System.Nullable<System.Int32> Code { get; set; }
 		
 		/// <summary>
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="concurrencyStamp")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -331,8 +331,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="emailAddress")]
@@ -341,8 +341,8 @@ namespace MyNS
 		public string EmailAddress { get; set; }
 		
 		/// <summary>
-		/// Max length: 328
 		/// Min length: 0
+		/// Max length: 328
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="emailConfirmationCode")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -393,8 +393,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -404,8 +404,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normalizedEmailAddress")]
@@ -415,8 +415,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="normalizedUserName")]
@@ -426,8 +426,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="password")]
@@ -436,8 +436,8 @@ namespace MyNS
 		public string Password { get; set; }
 		
 		/// <summary>
-		/// Max length: 328
 		/// Min length: 0
+		/// Max length: 328
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="passwordResetCode")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -448,8 +448,8 @@ namespace MyNS
 		public UserPermissionSetting[] Permissions { get; set; }
 		
 		/// <summary>
-		/// Max length: 32
 		/// Min length: 0
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="phoneNumber")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -460,8 +460,8 @@ namespace MyNS
 		public UserRole[] Roles { get; set; }
 		
 		/// <summary>
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="securityStamp")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -473,8 +473,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="surname")]
@@ -490,8 +490,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="userName")]
@@ -506,8 +506,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="claimType")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -543,8 +543,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="loginProvider")]
@@ -554,8 +554,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="providerKey")]
@@ -589,8 +589,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -651,8 +651,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -667,8 +667,8 @@ namespace MyNS
 		public System.Nullable<System.Int64> UserId { get; set; }
 		
 		/// <summary>
-		/// Max length: 2000
 		/// Min length: 0
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="value")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -688,8 +688,8 @@ namespace MyNS
 		public System.Nullable<System.Int64> Id { get; set; }
 		
 		/// <summary>
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="loginProvider")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -697,8 +697,8 @@ namespace MyNS
 		public string LoginProvider { get; set; }
 		
 		/// <summary>
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -712,8 +712,8 @@ namespace MyNS
 		public System.Nullable<System.Int64> UserId { get; set; }
 		
 		/// <summary>
-		/// Max length: 512
 		/// Min length: 0
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="value")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -748,8 +748,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 32
 		/// Min length: 0
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="theme")]
@@ -809,8 +809,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 5000
 		/// Min length: 0
+		/// Max length: 5000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -819,8 +819,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="displayName")]
@@ -833,8 +833,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 32
 		/// Min length: 0
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -853,8 +853,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="adminEmailAddress")]
@@ -863,8 +863,8 @@ namespace MyNS
 		public string AdminEmailAddress { get; set; }
 		
 		/// <summary>
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="connectionString")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -876,8 +876,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -887,8 +887,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z][a-zA-Z0-9_-]{1,}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -906,8 +906,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="userName")]
@@ -960,8 +960,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 60
 		/// Min length: 3
+		/// Max length: 60
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="title")]
@@ -998,8 +998,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="authProvider")]
@@ -1016,8 +1016,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="providerKey")]
@@ -1238,8 +1238,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 5000
 		/// Min length: 0
+		/// Max length: 5000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1248,8 +1248,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="displayName")]
@@ -1265,8 +1265,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 32
 		/// Min length: 0
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1282,8 +1282,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="tenancyName")]
@@ -1361,8 +1361,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 5000
 		/// Min length: 0
+		/// Max length: 5000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1371,8 +1371,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="displayName")]
@@ -1388,8 +1388,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 32
 		/// Min length: 0
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1441,8 +1441,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 11
 		/// Min length: 0
+		/// Max length: 11
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="mobileNumber")]
@@ -1567,8 +1567,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1578,8 +1578,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z][a-zA-Z0-9_-]{1,}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1615,8 +1615,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="emailAddress")]
@@ -1644,8 +1644,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1658,8 +1658,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="surname")]
@@ -1669,8 +1669,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="userName")]
@@ -1749,8 +1749,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="userName")]
@@ -1974,8 +1974,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 60
 		/// Min length: 3
+		/// Max length: 60
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="title")]

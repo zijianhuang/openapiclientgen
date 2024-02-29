@@ -4479,8 +4479,8 @@ namespace MyNS
 		/// Maximum: 50
 		// </param>
 		/// <param name="nextToken">The token of the next staging Account to retrieve.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListStagingAccountsResponse> ListStagingAccountsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4516,8 +4516,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the resource whose tags should be returned.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4553,8 +4553,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">ARN of the resource for which tags are to be added or updated.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5011,8 +5011,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">ARN of the resource for which tags are to be removed.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys">Array of tags to be removed.</param>
 		/// <returns>Success</returns>
@@ -5239,8 +5239,8 @@ namespace MyNS
 		/// <summary>
 		/// CloudFormation template to associate with a Source Network.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: ^[a-zA-Z][-a-zA-Z0-9]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5253,8 +5253,8 @@ namespace MyNS
 		/// <summary>
 		/// The Source Network ID to associate with CloudFormation template.
 		/// Required
-		/// Max length: 20
 		/// Min length: 20
+		/// Max length: 20
 		/// Pattern: ^sn-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5271,8 +5271,8 @@ namespace MyNS
 		/// <summary>
 		/// This defines the ARN of the source server in staging Account based on which you want to create an extended source server.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5306,8 +5306,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// S3 bucket ARN to export Source Network templates.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:.{16,2044}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="exportBucketArn")]
@@ -5409,8 +5409,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the EBS encryption key to be used during replication.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:.{16,2044}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ebsEncryptionKeyArn")]
@@ -5434,8 +5434,8 @@ namespace MyNS
 		/// <summary>
 		/// The instance type to be used for the replication server.
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="replicationServerInstanceType")]
@@ -5458,8 +5458,8 @@ namespace MyNS
 		/// <summary>
 		/// The subnet to be used by the replication staging area.
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^subnet-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5498,8 +5498,8 @@ namespace MyNS
 		/// <summary>
 		/// Account containing the VPC to protect.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5512,8 +5512,8 @@ namespace MyNS
 		/// <summary>
 		/// Region containing the VPC to protect.
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^(us(-gov)?|ap|ca|cn|eu|sa|af|me)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5532,8 +5532,8 @@ namespace MyNS
 		/// <summary>
 		/// Which VPC ID to protect.
 		/// Required
-		/// Max length: 21
 		/// Min length: 12
+		/// Max length: 21
 		/// Pattern: ^vpc-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5550,8 +5550,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Job to be deleted.
 		/// Required
-		/// Max length: 24
 		/// Min length: 24
+		/// Max length: 24
 		/// Pattern: ^drsjob-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5568,8 +5568,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Launch Configuration Template to be deleted.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^lct-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5586,8 +5586,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Recovery Instance to be deleted.
 		/// Required
-		/// Max length: 19
 		/// Min length: 10
+		/// Max length: 19
 		/// Pattern: ^i-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5604,8 +5604,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Replication Configuration Template to be deleted.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^rct-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5622,8 +5622,8 @@ namespace MyNS
 		/// <summary>
 		/// ID of the Source Network to delete.
 		/// Required
-		/// Max length: 20
 		/// Min length: 20
+		/// Max length: 20
 		/// Pattern: ^sn-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5640,8 +5640,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Source Server to be deleted.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5658,8 +5658,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Job for which Job log items will be retrieved.
 		/// Required
-		/// Max length: 24
 		/// Min length: 24
+		/// Max length: 24
 		/// Pattern: ^drsjob-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5679,8 +5679,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token of the next Job log items to retrieve.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5707,8 +5707,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token of the next Job to retrieve.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5753,8 +5753,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token of the next Launch Configuration Template to retrieve.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5781,8 +5781,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token of the next Recovery Instance to retrieve.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5819,8 +5819,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token of the next Recovery Snapshot to retrieve.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5836,8 +5836,8 @@ namespace MyNS
 		/// <summary>
 		/// Filter Recovery Snapshots by Source Server ID.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5871,8 +5871,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token of the next Replication Configuration Template to retrieve.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5909,8 +5909,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token of the next Source Networks to retrieve.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5950,8 +5950,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token of the next Source Server to retrieve.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5978,8 +5978,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Recovery Instance to disconnect.
 		/// Required
-		/// Max length: 19
 		/// Min length: 10
+		/// Max length: 19
 		/// Pattern: ^i-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -5996,8 +5996,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Source Server to disconnect.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6014,8 +6014,8 @@ namespace MyNS
 		/// <summary>
 		/// The Source Network ID to export its CloudFormation template to an S3 bucket.
 		/// Required
-		/// Max length: 20
 		/// Min length: 20
+		/// Max length: 20
 		/// Pattern: ^sn-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6032,8 +6032,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Recovery Instance whose failback replication configuration should be returned.
 		/// Required
-		/// Max length: 19
 		/// Min length: 10
+		/// Max length: 19
 		/// Pattern: ^i-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6050,8 +6050,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Source Server that we want to retrieve a Launch Configuration for.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6068,8 +6068,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Source Serve for this Replication Configuration.r
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6094,8 +6094,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token of the next extensible source server to retrieve.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6105,8 +6105,8 @@ namespace MyNS
 		/// <summary>
 		/// The Id of the staging Account to retrieve extensible source servers from.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: [0-9]{12,}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6135,8 +6135,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Source Server whose data replication should be retried.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6153,8 +6153,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Recovery Instance that we want to reverse the replication for.
 		/// Required
-		/// Max length: 19
 		/// Min length: 10
+		/// Max length: 19
 		/// Pattern: ^i-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6221,8 +6221,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Source Server to start replication for.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6267,8 +6267,8 @@ namespace MyNS
 		/// <summary>
 		/// ID of the Source Network to replicate.
 		/// Required
-		/// Max length: 20
 		/// Min length: 20
+		/// Max length: 20
 		/// Pattern: ^sn-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6285,8 +6285,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Recovery Instance we want to stop failback for.
 		/// Required
-		/// Max length: 19
 		/// Min length: 10
+		/// Max length: 19
 		/// Pattern: ^i-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6303,8 +6303,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Source Server to stop replication for.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6321,8 +6321,8 @@ namespace MyNS
 		/// <summary>
 		/// ID of the Source Network to stop replication.
 		/// Required
-		/// Max length: 20
 		/// Min length: 20
+		/// Max length: 20
 		/// Pattern: ^sn-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6362,8 +6362,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the Failback Replication Configuration.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6373,8 +6373,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Recovery Instance.
 		/// Required
-		/// Max length: 19
 		/// Min length: 10
+		/// Max length: 19
 		/// Pattern: ^i-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6420,8 +6420,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the launch configuration.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6431,8 +6431,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Source Server that we want to retrieve a Launch Configuration for.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6473,8 +6473,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// S3 bucket ARN to export Source Network templates.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:.{16,2044}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="exportBucketArn")]
@@ -6486,8 +6486,8 @@ namespace MyNS
 		/// <summary>
 		/// Launch Configuration Template ID.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^lct-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6572,8 +6572,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the EBS encryption key to be used during replication.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:.{16,2044}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ebsEncryptionKeyArn")]
@@ -6584,8 +6584,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the Replication Configuration.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6614,8 +6614,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The instance type to be used for the replication server.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="replicationServerInstanceType")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6635,8 +6635,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the Source Server for this Replication Configuration.
 		/// Required
-		/// Max length: 19
 		/// Min length: 19
+		/// Max length: 19
 		/// Pattern: ^s-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6648,8 +6648,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The subnet to be used by the replication staging area.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^subnet-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="stagingAreaSubnetId")]
@@ -6676,8 +6676,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Replication Configuration Template ARN.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:.{16,2044}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="arn")]
@@ -6732,8 +6732,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN of the EBS encryption key to be used during replication.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:.{16,2044}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ebsEncryptionKeyArn")]
@@ -6755,8 +6755,8 @@ namespace MyNS
 		/// <summary>
 		/// The Replication Configuration Template ID.
 		/// Required
-		/// Max length: 21
 		/// Min length: 21
+		/// Max length: 21
 		/// Pattern: ^rct-[0-9a-zA-Z]{17}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6768,8 +6768,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The instance type to be used for the replication server.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="replicationServerInstanceType")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6788,8 +6788,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The subnet to be used by the replication staging area.
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// Pattern: ^subnet-[0-9a-fA-F]{8,}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="stagingAreaSubnetId")]

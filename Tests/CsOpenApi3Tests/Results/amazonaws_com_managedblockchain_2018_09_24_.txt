@@ -1785,8 +1785,8 @@ namespace MyNS
 		/// CreateMember networks/{networkId}/members
 		/// </summary>
 		/// <param name="networkId">The unique identifier of the network in which the member is created.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateMemberOutput> CreateMemberAsync(string networkId, CreateMemberPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1829,8 +1829,8 @@ namespace MyNS
 		/// ListMembers networks/{networkId}/members
 		/// </summary>
 		/// <param name="networkId">The unique identifier of the network for which to list members.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="name">The optional name of the member to list.</param>
 		/// <param name="status">An optional status specifier. If provided, only members currently in this status are listed.</param>
@@ -1963,8 +1963,8 @@ namespace MyNS
 		/// CreateNode networks/{networkId}/nodes
 		/// </summary>
 		/// <param name="networkId"><p>The unique identifier of the network for the node.</p> <p>Ethereum public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p> <code>n-ethereum-mainnet</code> </p> </li> <li> <p> <code>n-ethereum-goerli</code> </p> </li> <li> <p> <code>n-ethereum-rinkeby</code> </p> </li> </ul>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateNodeOutput> CreateNodeAsync(string networkId, CreateNodePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2007,12 +2007,12 @@ namespace MyNS
 		/// ListNodes networks/{networkId}/nodes
 		/// </summary>
 		/// <param name="networkId">The unique identifier of the network for which to list nodes.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="memberId"><p>The unique identifier of the member who owns the nodes to list.</p> <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="status">An optional status specifier. If provided, only nodes currently in this status are listed.</param>
 		/// <param name="maxResults">The maximum number of nodes to list.
@@ -2058,8 +2058,8 @@ namespace MyNS
 		/// CreateProposal networks/{networkId}/proposals
 		/// </summary>
 		/// <param name="networkId"> The unique identifier of the network for which the proposal is made.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateProposalOutput> CreateProposalAsync(string networkId, CreateProposalPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2102,8 +2102,8 @@ namespace MyNS
 		/// ListProposals networks/{networkId}/proposals
 		/// </summary>
 		/// <param name="networkId"> The unique identifier of the network. 
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="maxResults"> The maximum number of proposals to return. 
 		/// Minimum: 1
@@ -2148,8 +2148,8 @@ namespace MyNS
 		/// DeleteAccessor accessors/{AccessorId}
 		/// </summary>
 		/// <param name="AccessorId">The unique identifier of the accessor.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAccessorOutput> DeleteAccessorAsync(string AccessorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2185,8 +2185,8 @@ namespace MyNS
 		/// GetAccessor accessors/{AccessorId}
 		/// </summary>
 		/// <param name="AccessorId">The unique identifier of the accessor.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAccessorOutput> GetAccessorAsync(string AccessorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2222,12 +2222,12 @@ namespace MyNS
 		/// DeleteMember networks/{networkId}/members/{memberId}
 		/// </summary>
 		/// <param name="networkId">The unique identifier of the network from which the member is removed.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="memberId">The unique identifier of the member to remove.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteMemberOutput> DeleteMemberAsync(string networkId, string memberId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2263,12 +2263,12 @@ namespace MyNS
 		/// GetMember networks/{networkId}/members/{memberId}
 		/// </summary>
 		/// <param name="networkId">The unique identifier of the network to which the member belongs.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="memberId">The unique identifier of the member.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMemberOutput> GetMemberAsync(string networkId, string memberId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2304,12 +2304,12 @@ namespace MyNS
 		/// UpdateMember networks/{networkId}/members/{memberId}
 		/// </summary>
 		/// <param name="networkId">The unique identifier of the Managed Blockchain network to which the member belongs.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="memberId">The unique identifier of the member.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMemberOutput> UpdateMemberAsync(string networkId, string memberId, UpdateMemberPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2352,16 +2352,16 @@ namespace MyNS
 		/// DeleteNode networks/{networkId}/nodes/{nodeId}
 		/// </summary>
 		/// <param name="networkId"><p>The unique identifier of the network that the node is on.</p> <p>Ethereum public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p> <code>n-ethereum-mainnet</code> </p> </li> <li> <p> <code>n-ethereum-goerli</code> </p> </li> <li> <p> <code>n-ethereum-rinkeby</code> </p> </li> </ul>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="memberId"><p>The unique identifier of the member that owns this node.</p> <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="nodeId">The unique identifier of the node.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteNodeOutput> DeleteNodeAsync(string networkId, string memberId, string nodeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2397,16 +2397,16 @@ namespace MyNS
 		/// GetNode networks/{networkId}/nodes/{nodeId}
 		/// </summary>
 		/// <param name="networkId">The unique identifier of the network that the node is on.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="memberId"><p>The unique identifier of the member that owns the node.</p> <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="nodeId">The unique identifier of the node.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetNodeOutput> GetNodeAsync(string networkId, string memberId, string nodeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2442,12 +2442,12 @@ namespace MyNS
 		/// UpdateNode networks/{networkId}/nodes/{nodeId}
 		/// </summary>
 		/// <param name="networkId">The unique identifier of the network that the node is on.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="nodeId">The unique identifier of the node.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateNodeOutput> UpdateNodeAsync(string networkId, string nodeId, UpdateNodePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2490,8 +2490,8 @@ namespace MyNS
 		/// GetNetwork networks/{networkId}
 		/// </summary>
 		/// <param name="networkId">The unique identifier of the network to get information about.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetNetworkOutput> GetNetworkAsync(string networkId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2527,12 +2527,12 @@ namespace MyNS
 		/// GetProposal networks/{networkId}/proposals/{proposalId}
 		/// </summary>
 		/// <param name="networkId">The unique identifier of the network for which the proposal is made.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="proposalId">The unique identifier of the proposal.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProposalOutput> GetProposalAsync(string networkId, string proposalId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2610,12 +2610,12 @@ namespace MyNS
 		/// ListProposalVotes networks/{networkId}/proposals/{proposalId}/votes
 		/// </summary>
 		/// <param name="networkId"> The unique identifier of the network. 
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="proposalId"> The unique identifier of the proposal. 
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="maxResults"> The maximum number of votes to return. 
 		/// Minimum: 1
@@ -2660,12 +2660,12 @@ namespace MyNS
 		/// VoteOnProposal networks/{networkId}/proposals/{proposalId}/votes
 		/// </summary>
 		/// <param name="networkId"> The unique identifier of the network. 
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <param name="proposalId"> The unique identifier of the proposal. 
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<VoteOnProposalOutput> VoteOnProposalAsync(string networkId, string proposalId, VoteOnProposalPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2708,8 +2708,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2745,8 +2745,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2789,8 +2789,8 @@ namespace MyNS
 		/// RejectInvitation invitations/{invitationId}
 		/// </summary>
 		/// <param name="invitationId">The unique identifier of the invitation to reject.
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<RejectInvitationOutput> RejectInvitationAsync(string invitationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2826,8 +2826,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <param name="tagKeys">The tag keys.
 		/// Minimum items: 0
@@ -2869,8 +2869,8 @@ namespace MyNS
 		/// <summary>
 		/// This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2899,8 +2899,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2911,8 +2911,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique identifier of the invitation that is sent to the member to join the network.
 		/// Required
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2957,8 +2957,8 @@ namespace MyNS
 		/// <summary>
 		/// This is a unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the Amazon Web Services CLI. 
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2969,8 +2969,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the network.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2999,8 +2999,8 @@ namespace MyNS
 		/// <summary>
 		/// The version of the blockchain framework that the network uses.
 		/// Required
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3079,8 +3079,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3090,8 +3090,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The unique identifier of the member that owns this node.</p> <p>Applies only to Hyperledger Fabric.</p>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3135,8 +3135,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time. This identifier is required only if you make a service request directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3147,8 +3147,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique identifier of the member that is creating the proposal. This identifier is especially useful for identifying the member making the proposal when multiple members exist in a single Amazon Web Services account.
 		/// Required
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -3211,8 +3211,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The unique identifier of the member that owns the node.</p> <p>Applies only to Hyperledger Fabric.</p>
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3239,8 +3239,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique identifier of the member casting the vote. 
 		/// Required
-		/// Max length: 32
 		/// Min length: 1
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]

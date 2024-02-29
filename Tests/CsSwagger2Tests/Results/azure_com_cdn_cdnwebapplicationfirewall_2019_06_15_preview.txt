@@ -752,8 +752,8 @@ namespace MyNS
 		/// Policies_List subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/CdnWebApplicationFirewallPolicies
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-02.</param>
@@ -786,8 +786,8 @@ namespace MyNS
 		/// Policies_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/CdnWebApplicationFirewallPolicies/{policyName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <param name="policyName">The name of the CdnWebApplicationFirewallPolicy.
 		/// Max length: 128
@@ -823,8 +823,8 @@ namespace MyNS
 		/// Policies_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/CdnWebApplicationFirewallPolicies/{policyName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <param name="policyName">The name of the CdnWebApplicationFirewallPolicy.
 		/// Max length: 128
@@ -868,8 +868,8 @@ namespace MyNS
 		/// Policies_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/CdnWebApplicationFirewallPolicies/{policyName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <param name="policyName">The name of the CdnWebApplicationFirewallPolicy.
 		/// Max length: 128
@@ -899,8 +899,8 @@ namespace MyNS
 		/// Policies_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/CdnWebApplicationFirewallPolicies/{policyName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
-		/// Max length: 80
 		/// Min length: 1
+		/// Max length: 80
 		// </param>
 		/// <param name="policyName">The name of the CdnWebApplicationFirewallPolicy.
 		/// Max length: 128

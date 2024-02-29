@@ -329,8 +329,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name for checking availability.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		/// Pattern: ^[a-z][a-z0-9]*$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -833,8 +833,8 @@ namespace MyNS
 		/// Servers_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -867,12 +867,12 @@ namespace MyNS
 		/// Servers_GetDetails subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the Analysis Services server. It must be a minimum of 3 characters, and a maximum of 63.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -905,12 +905,12 @@ namespace MyNS
 		/// Servers_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the Analysis Services server. It must be a minimum of 3 characters, and a maximum of 63.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -951,12 +951,12 @@ namespace MyNS
 		/// Servers_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the Analysis Services server. It must be at least 3 characters in length, and no more than 63.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -983,12 +983,12 @@ namespace MyNS
 		/// Servers_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the Analysis Services server. It must be at least 3 characters in length, and no more than 63.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1029,12 +1029,12 @@ namespace MyNS
 		/// Servers_DissociateGateway subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}/dissociateGateway
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the Analysis Services server. It must be at least 3 characters in length, and no more than 63.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1061,12 +1061,12 @@ namespace MyNS
 		/// Servers_ListGatewayStatus subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}/listGatewayStatus
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the Analysis Services server.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1099,12 +1099,12 @@ namespace MyNS
 		/// Servers_Resume subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}/resume
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the Analysis Services server. It must be at least 3 characters in length, and no more than 63.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1131,12 +1131,12 @@ namespace MyNS
 		/// Servers_ListSkusForExisting subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}/skus
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the Analysis Services server. It must be at least 3 characters in length, and no more than 63.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -1169,12 +1169,12 @@ namespace MyNS
 		/// Servers_Suspend subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}/suspend
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="serverName">The name of the Analysis Services server. It must be at least 3 characters in length, and no more than 63.
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		// </param>
 		/// <param name="api_version">The client API version.</param>
 		/// <param name="subscriptionId">A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>

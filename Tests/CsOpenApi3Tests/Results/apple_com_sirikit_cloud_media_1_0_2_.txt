@@ -849,8 +849,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="identifier")]
@@ -1013,8 +1013,8 @@ namespace MyNS
 		public ExtensionConfigMedia Media { get; set; }
 		
 		/// <summary>
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="url")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1099,8 +1099,8 @@ namespace MyNS
 		public string Hdr { get; set; }
 		
 		/// <summary>
-		/// Max length: 4000
 		/// Min length: 1
+		/// Max length: 4000
 		/// </summary>
 		[System.ComponentModel.DefaultValue("/queues/playMedia")]
 		[System.Runtime.Serialization.DataMember(Name="url")]
@@ -1116,8 +1116,8 @@ namespace MyNS
 		public string Hdr { get; set; }
 		
 		/// <summary>
-		/// Max length: 4000
 		/// Min length: 1
+		/// Max length: 4000
 		/// </summary>
 		[System.ComponentModel.DefaultValue("/queues/updateActivity")]
 		[System.Runtime.Serialization.DataMember(Name="url")]
@@ -1135,8 +1135,8 @@ namespace MyNS
 		public string Hdr { get; set; }
 		
 		/// <summary>
-		/// Max length: 2000
 		/// Min length: 0
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="url")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1293,8 +1293,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="identifier")]
@@ -1335,8 +1335,8 @@ namespace MyNS
 		public string ActivityIdentifier { get; set; }
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="contentIdentifier")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1350,8 +1350,8 @@ namespace MyNS
 		public System.Nullable<System.Double> PlaybackSpeed { get; set; }
 		
 		/// <summary>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="queueIdentifier")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1489,8 +1489,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="playlistName")]
@@ -2491,8 +2491,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="identifier")]
@@ -2504,8 +2504,8 @@ namespace MyNS
 		public QueueInsertPointer InsertPointer { get; set; }
 		
 		/// <summary>
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextContentUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2519,8 +2519,8 @@ namespace MyNS
 		public System.Nullable<System.Double> PrerollSeconds { get; set; }
 		
 		/// <summary>
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="previousContentUrl")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2561,8 +2561,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="contentIdentifier")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2631,8 +2631,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="afterIdentifier")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

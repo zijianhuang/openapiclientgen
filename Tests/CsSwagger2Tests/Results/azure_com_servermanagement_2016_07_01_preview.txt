@@ -1124,8 +1124,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="gatewayName">The gateway name (256 characters maximum)
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="expand">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <returns>The operation completed successfully.</returns>
@@ -1162,8 +1162,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="gatewayName">The gateway name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="requestBody">Parameters supplied to the CreateOrUpdate operation.</param>
 		/// <returns>The operation completed successfully.</returns>
@@ -1207,8 +1207,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="gatewayName">The gateway name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>The object exists and was deleted successfully.</returns>
 		public async Task Gateway_DeleteAsync(string subscriptionId, string api_version, string resourceGroupName, string gatewayName)
@@ -1238,8 +1238,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="gatewayName">The gateway name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="requestBody">Parameters supplied to the Update operation.</param>
 		/// <returns>Update completed successfully.</returns>
@@ -1283,8 +1283,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="gatewayName">The gateway name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>The operation completed successfully.</returns>
 		public async Task<GatewayProfile> Gateway_GetProfileAsync(string subscriptionId, string api_version, string resourceGroupName, string gatewayName)
@@ -1320,8 +1320,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="gatewayName">The gateway name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>The operation completed successfully.</returns>
 		public async Task Gateway_RegenerateProfileAsync(string subscriptionId, string api_version, string resourceGroupName, string gatewayName)
@@ -1351,8 +1351,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="gatewayName">The gateway name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>The operation completed successfully.</returns>
 		public async Task Gateway_UpgradeAsync(string subscriptionId, string api_version, string resourceGroupName, string gatewayName)
@@ -1415,8 +1415,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>The object exists and was deleted successfully.</returns>
 		public async Task<NodeResource> Node_GetAsync(string subscriptionId, string api_version, string resourceGroupName, string nodeName)
@@ -1452,8 +1452,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="requestBody">Parameters supplied to the CreateOrUpdate operation.</param>
 		/// <returns>The operation completed successfully.</returns>
@@ -1497,8 +1497,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>The object exists and was deleted successfully.</returns>
 		public async Task Node_DeleteAsync(string subscriptionId, string api_version, string resourceGroupName, string nodeName)
@@ -1528,8 +1528,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="requestBody">Parameters supplied to the CreateOrUpdate operation.</param>
 		/// <returns>The operation completed successfully.</returns>
@@ -1573,8 +1573,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="session">The sessionId from the user.</param>
 		/// <returns>The operation completed successfully.</returns>
@@ -1611,8 +1611,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="session">The sessionId from the user.</param>
 		/// <param name="requestBody">Parameters supplied to the CreateOrUpdate operation.</param>
@@ -1657,8 +1657,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="session">The sessionId from the user.</param>
 		/// <returns>The operation completed successfully.</returns>
@@ -1689,8 +1689,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="session">The sessionId from the user.</param>
 		/// <returns>The operation completed successfully.</returns>
@@ -1727,8 +1727,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="session">The sessionId from the user.</param>
 		/// <param name="pssession">The PowerShell sessionId from the user.</param>
@@ -1767,8 +1767,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="session">The sessionId from the user.</param>
 		/// <param name="pssession">The PowerShell sessionId from the user.</param>
@@ -1806,8 +1806,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="session">The sessionId from the user.</param>
 		/// <param name="pssession">The PowerShell sessionId from the user.</param>
@@ -1845,8 +1845,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="session">The sessionId from the user.</param>
 		/// <param name="pssession">The PowerShell sessionId from the user.</param>
@@ -1884,8 +1884,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="session">The sessionId from the user.</param>
 		/// <param name="pssession">The PowerShell sessionId from the user.</param>
@@ -1931,8 +1931,8 @@ namespace MyNS
 		/// Min length: 3
 		// </param>
 		/// <param name="nodeName">The node name (256 characters maximum).
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="session">The sessionId from the user.</param>
 		/// <param name="pssession">The PowerShell sessionId from the user.</param>

@@ -715,8 +715,8 @@ namespace MyNS
 		/// Diagnostics_ListHostingEnvironmentDetectorResponses subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/detectors
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="name">Site Name</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -751,8 +751,8 @@ namespace MyNS
 		/// Diagnostics_GetHostingEnvironmentDetectorResponse subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{name}/detectors/{detectorName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="name">App Service Environment Name</param>
 		/// <param name="detectorName">Detector Resource Name</param>
@@ -791,8 +791,8 @@ namespace MyNS
 		/// Diagnostics_ListSiteDetectorResponses subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/detectors
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -827,8 +827,8 @@ namespace MyNS
 		/// Diagnostics_GetSiteDetectorResponse subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/detectors/{detectorName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="detectorName">Detector Resource Name</param>
@@ -867,8 +867,8 @@ namespace MyNS
 		/// Diagnostics_ListSiteDiagnosticCategories subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -903,8 +903,8 @@ namespace MyNS
 		/// Diagnostics_GetSiteDiagnosticCategory subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="diagnosticCategory">Diagnostic Category</param>
@@ -940,8 +940,8 @@ namespace MyNS
 		/// Diagnostics_ListSiteAnalyses subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}/analyses
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="diagnosticCategory">Diagnostic Category</param>
@@ -977,8 +977,8 @@ namespace MyNS
 		/// Diagnostics_GetSiteAnalysis subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}/analyses/{analysisName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="diagnosticCategory">Diagnostic Category</param>
@@ -1015,8 +1015,8 @@ namespace MyNS
 		/// Diagnostics_ExecuteSiteAnalysis subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}/analyses/{analysisName}/execute
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="diagnosticCategory">Category Name</param>
@@ -1056,8 +1056,8 @@ namespace MyNS
 		/// Diagnostics_ListSiteDetectors subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}/detectors
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="diagnosticCategory">Diagnostic Category</param>
@@ -1093,8 +1093,8 @@ namespace MyNS
 		/// Diagnostics_GetSiteDetector subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}/detectors/{detectorName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="diagnosticCategory">Diagnostic Category</param>
@@ -1131,8 +1131,8 @@ namespace MyNS
 		/// Diagnostics_ExecuteSiteDetector subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/diagnostics/{diagnosticCategory}/detectors/{detectorName}/execute
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="detectorName">Detector Resource Name</param>
@@ -1172,8 +1172,8 @@ namespace MyNS
 		/// Diagnostics_ListSiteDetectorResponsesSlot subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/detectors
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="slot">Slot Name</param>
@@ -1209,8 +1209,8 @@ namespace MyNS
 		/// Diagnostics_GetSiteDetectorResponseSlot subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/detectors/{detectorName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="detectorName">Detector Resource Name</param>
@@ -1250,8 +1250,8 @@ namespace MyNS
 		/// Diagnostics_ListSiteDiagnosticCategoriesSlot subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="slot">Slot Name</param>
@@ -1287,8 +1287,8 @@ namespace MyNS
 		/// Diagnostics_GetSiteDiagnosticCategorySlot subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="diagnosticCategory">Diagnostic Category</param>
@@ -1325,8 +1325,8 @@ namespace MyNS
 		/// Diagnostics_ListSiteAnalysesSlot subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}/analyses
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="diagnosticCategory">Diagnostic Category</param>
@@ -1363,8 +1363,8 @@ namespace MyNS
 		/// Diagnostics_GetSiteAnalysisSlot subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}/analyses/{analysisName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="diagnosticCategory">Diagnostic Category</param>
@@ -1402,8 +1402,8 @@ namespace MyNS
 		/// Diagnostics_ExecuteSiteAnalysisSlot subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}/analyses/{analysisName}/execute
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="diagnosticCategory">Category Name</param>
@@ -1444,8 +1444,8 @@ namespace MyNS
 		/// Diagnostics_ListSiteDetectorsSlot subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}/detectors
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="diagnosticCategory">Diagnostic Category</param>
@@ -1482,8 +1482,8 @@ namespace MyNS
 		/// Diagnostics_GetSiteDetectorSlot subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}/detectors/{detectorName}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="diagnosticCategory">Diagnostic Category</param>
@@ -1521,8 +1521,8 @@ namespace MyNS
 		/// Diagnostics_ExecuteSiteDetectorSlot subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slot}/diagnostics/{diagnosticCategory}/detectors/{detectorName}/execute
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site Name</param>
 		/// <param name="detectorName">Detector Resource Name</param>

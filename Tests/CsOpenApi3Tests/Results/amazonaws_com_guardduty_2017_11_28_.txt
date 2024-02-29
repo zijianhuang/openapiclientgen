@@ -5835,8 +5835,8 @@ namespace MyNS
 		/// AcceptAdministratorInvitation detector/{detectorId}/administrator
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AcceptAdministratorInvitationResponse> AcceptAdministratorInvitationAsync(string detectorId, AcceptAdministratorInvitationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5879,8 +5879,8 @@ namespace MyNS
 		/// GetAdministratorAccount detector/{detectorId}/administrator
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAdministratorAccountResponse> GetAdministratorAccountAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5916,8 +5916,8 @@ namespace MyNS
 		/// AcceptInvitation detector/{detectorId}/master
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AcceptInvitationResponse> AcceptInvitationAsync(string detectorId, AcceptInvitationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5960,8 +5960,8 @@ namespace MyNS
 		/// GetMasterAccount detector/{detectorId}/master
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMasterAccountResponse> GetMasterAccountAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5997,8 +5997,8 @@ namespace MyNS
 		/// ArchiveFindings detector/{detectorId}/findings/archive
 		/// </summary>
 		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose findings you want to archive.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ArchiveFindingsResponse> ArchiveFindingsAsync(string detectorId, ArchiveFindingsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6121,8 +6121,8 @@ namespace MyNS
 		/// CreateFilter detector/{detectorId}/filter
 		/// </summary>
 		/// <param name="detectorId">The ID of the detector belonging to the GuardDuty account that you want to create a filter for.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateFilterResponse> CreateFilterAsync(string detectorId, CreateFilterPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6165,8 +6165,8 @@ namespace MyNS
 		/// ListFilters detector/{detectorId}/filter
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that the filter is associated with.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
 		/// Minimum: 1
@@ -6209,8 +6209,8 @@ namespace MyNS
 		/// CreateIPSet detector/{detectorId}/ipset
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account that you want to create an IPSet for.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateIPSetResponse> CreateIPSetAsync(string detectorId, CreateIPSetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6253,8 +6253,8 @@ namespace MyNS
 		/// ListIPSets detector/{detectorId}/ipset
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that the IPSet is associated with.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
 		/// Minimum: 1
@@ -6297,8 +6297,8 @@ namespace MyNS
 		/// CreateMembers detector/{detectorId}/member
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account that you want to associate member accounts with.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateMembersResponse> CreateMembersAsync(string detectorId, CreateMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6341,8 +6341,8 @@ namespace MyNS
 		/// ListMembers detector/{detectorId}/member
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector the member is associated with.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
 		/// Minimum: 1
@@ -6386,8 +6386,8 @@ namespace MyNS
 		/// CreatePublishingDestination detector/{detectorId}/publishingDestination
 		/// </summary>
 		/// <param name="detectorId">The ID of the GuardDuty detector associated with the publishing destination.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreatePublishingDestinationResponse> CreatePublishingDestinationAsync(string detectorId, CreatePublishingDestinationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6430,8 +6430,8 @@ namespace MyNS
 		/// ListPublishingDestinations detector/{detectorId}/publishingDestination
 		/// </summary>
 		/// <param name="detectorId">The ID of the detector to retrieve publishing destinations for.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return in the response.
 		/// Minimum: 1
@@ -6474,8 +6474,8 @@ namespace MyNS
 		/// CreateSampleFindings detector/{detectorId}/findings/create
 		/// </summary>
 		/// <param name="detectorId">The ID of the detector to create sample findings for.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateSampleFindingsResponse> CreateSampleFindingsAsync(string detectorId, CreateSampleFindingsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6518,8 +6518,8 @@ namespace MyNS
 		/// CreateThreatIntelSet detector/{detectorId}/threatintelset
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateThreatIntelSetResponse> CreateThreatIntelSetAsync(string detectorId, CreateThreatIntelSetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6562,8 +6562,8 @@ namespace MyNS
 		/// ListThreatIntelSets detector/{detectorId}/threatintelset
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that the threatIntelSet is associated with.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
 		/// Minimum: 1
@@ -6646,8 +6646,8 @@ namespace MyNS
 		/// DeleteDetector detector/{detectorId}
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that you want to delete.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDetectorResponse> DeleteDetectorAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6683,8 +6683,8 @@ namespace MyNS
 		/// GetDetector detector/{detectorId}
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that you want to get.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDetectorResponse> GetDetectorAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6720,8 +6720,8 @@ namespace MyNS
 		/// UpdateDetector detector/{detectorId}
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector to update.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDetectorResponse> UpdateDetectorAsync(string detectorId, UpdateDetectorPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6764,8 +6764,8 @@ namespace MyNS
 		/// DeleteFilter detector/{detectorId}/filter/{filterName}
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that the filter is associated with.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="filterName">The name of the filter that you want to delete.</param>
 		/// <returns>Success</returns>
@@ -6802,8 +6802,8 @@ namespace MyNS
 		/// GetFilter detector/{detectorId}/filter/{filterName}
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that the filter is associated with.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="filterName">The name of the filter you want to get.</param>
 		/// <returns>Success</returns>
@@ -6840,8 +6840,8 @@ namespace MyNS
 		/// UpdateFilter detector/{detectorId}/filter/{filterName}
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="filterName">The name of the filter.</param>
 		/// <returns>Success</returns>
@@ -6885,8 +6885,8 @@ namespace MyNS
 		/// DeleteIPSet detector/{detectorId}/ipset/{ipSetId}
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector associated with the IPSet.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="ipSetId">The unique ID of the IPSet to delete.</param>
 		/// <returns>Success</returns>
@@ -6923,8 +6923,8 @@ namespace MyNS
 		/// GetIPSet detector/{detectorId}/ipset/{ipSetId}
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that the IPSet is associated with.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="ipSetId">The unique ID of the IPSet to retrieve.</param>
 		/// <returns>Success</returns>
@@ -6961,8 +6961,8 @@ namespace MyNS
 		/// UpdateIPSet detector/{detectorId}/ipset/{ipSetId}
 		/// </summary>
 		/// <param name="detectorId">The detectorID that specifies the GuardDuty service whose IPSet you want to update.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="ipSetId">The unique ID that specifies the IPSet that you want to update.</param>
 		/// <returns>Success</returns>
@@ -7046,8 +7046,8 @@ namespace MyNS
 		/// DeleteMembers detector/{detectorId}/member/delete
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account whose members you want to delete.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteMembersResponse> DeleteMembersAsync(string detectorId, DeleteMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7090,8 +7090,8 @@ namespace MyNS
 		/// DeletePublishingDestination detector/{detectorId}/publishingDestination/{destinationId}
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector associated with the publishing destination to delete.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="destinationId">The ID of the publishing destination to delete.</param>
 		/// <returns>Success</returns>
@@ -7128,8 +7128,8 @@ namespace MyNS
 		/// DescribePublishingDestination detector/{detectorId}/publishingDestination/{destinationId}
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector associated with the publishing destination to retrieve.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="destinationId">The ID of the publishing destination to retrieve.</param>
 		/// <returns>Success</returns>
@@ -7166,8 +7166,8 @@ namespace MyNS
 		/// UpdatePublishingDestination detector/{detectorId}/publishingDestination/{destinationId}
 		/// </summary>
 		/// <param name="detectorId">The ID of the detector associated with the publishing destinations to update.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="destinationId">The ID of the publishing destination to update.</param>
 		/// <returns>Success</returns>
@@ -7211,8 +7211,8 @@ namespace MyNS
 		/// DeleteThreatIntelSet detector/{detectorId}/threatintelset/{threatIntelSetId}
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that the threatIntelSet is associated with.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="threatIntelSetId">The unique ID of the threatIntelSet that you want to delete.</param>
 		/// <returns>Success</returns>
@@ -7249,8 +7249,8 @@ namespace MyNS
 		/// GetThreatIntelSet detector/{detectorId}/threatintelset/{threatIntelSetId}
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that the threatIntelSet is associated with.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="threatIntelSetId">The unique ID of the threatIntelSet that you want to get.</param>
 		/// <returns>Success</returns>
@@ -7287,8 +7287,8 @@ namespace MyNS
 		/// UpdateThreatIntelSet detector/{detectorId}/threatintelset/{threatIntelSetId}
 		/// </summary>
 		/// <param name="detectorId">The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="threatIntelSetId">The unique ID that specifies the ThreatIntelSet that you want to update.</param>
 		/// <returns>Success</returns>
@@ -7332,8 +7332,8 @@ namespace MyNS
 		/// DescribeMalwareScans detector/{detectorId}/malware-scans
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that the request is associated with.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -7378,8 +7378,8 @@ namespace MyNS
 		/// DescribeOrganizationConfiguration detector/{detectorId}/admin
 		/// </summary>
 		/// <param name="detectorId">The ID of the detector to retrieve information about the delegated administrator from.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="maxResults">You can use this parameter to indicate the maximum number of items that you want in the response.
 		/// Minimum: 1
@@ -7422,8 +7422,8 @@ namespace MyNS
 		/// UpdateOrganizationConfiguration detector/{detectorId}/admin
 		/// </summary>
 		/// <param name="detectorId">The ID of the detector that configures the delegated administrator.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateOrganizationConfigurationResponse> UpdateOrganizationConfigurationAsync(string detectorId, UpdateOrganizationConfigurationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7506,8 +7506,8 @@ namespace MyNS
 		/// DisassociateFromAdministratorAccount detector/{detectorId}/administrator/disassociate
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateFromAdministratorAccountResponse> DisassociateFromAdministratorAccountAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7538,8 +7538,8 @@ namespace MyNS
 		/// DisassociateFromMasterAccount detector/{detectorId}/master/disassociate
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateFromMasterAccountResponse> DisassociateFromMasterAccountAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7570,8 +7570,8 @@ namespace MyNS
 		/// DisassociateMembers detector/{detectorId}/member/disassociate
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateMembersResponse> DisassociateMembersAsync(string detectorId, DisassociateMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7654,8 +7654,8 @@ namespace MyNS
 		/// GetCoverageStatistics detector/{detectorId}/coverage/statistics
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the GuardDuty detector associated to the coverage statistics.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCoverageStatisticsResponse> GetCoverageStatisticsAsync(string detectorId, GetCoverageStatisticsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7698,8 +7698,8 @@ namespace MyNS
 		/// GetFindings detector/{detectorId}/findings/get
 		/// </summary>
 		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFindingsResponse> GetFindingsAsync(string detectorId, GetFindingsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7742,8 +7742,8 @@ namespace MyNS
 		/// GetFindingsStatistics detector/{detectorId}/findings/statistics
 		/// </summary>
 		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFindingsStatisticsResponse> GetFindingsStatisticsAsync(string detectorId, GetFindingsStatisticsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7819,8 +7819,8 @@ namespace MyNS
 		/// GetMalwareScanSettings detector/{detectorId}/malware-scan-settings
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that the scan setting is associated with.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMalwareScanSettingsResponse> GetMalwareScanSettingsAsync(string detectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7856,8 +7856,8 @@ namespace MyNS
 		/// UpdateMalwareScanSettings detector/{detectorId}/malware-scan-settings
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMalwareScanSettingsResponse> UpdateMalwareScanSettingsAsync(string detectorId, UpdateMalwareScanSettingsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7900,8 +7900,8 @@ namespace MyNS
 		/// GetMemberDetectors detector/{detectorId}/member/detector/get
 		/// </summary>
 		/// <param name="detectorId">The detector ID for the administrator account.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMemberDetectorsResponse> GetMemberDetectorsAsync(string detectorId, GetMemberDetectorsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7944,8 +7944,8 @@ namespace MyNS
 		/// GetMembers detector/{detectorId}/member/get
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account whose members you want to retrieve.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMembersResponse> GetMembersAsync(string detectorId, GetMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -7988,8 +7988,8 @@ namespace MyNS
 		/// GetRemainingFreeTrialDays detector/{detectorId}/freeTrial/daysRemaining
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty member account.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRemainingFreeTrialDaysResponse> GetRemainingFreeTrialDaysAsync(string detectorId, GetRemainingFreeTrialDaysPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8032,8 +8032,8 @@ namespace MyNS
 		/// GetUsageStatistics detector/{detectorId}/usage/statistics
 		/// </summary>
 		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -8078,8 +8078,8 @@ namespace MyNS
 		/// InviteMembers detector/{detectorId}/member/invite
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty account that you want to invite members with.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<InviteMembersResponse> InviteMembersAsync(string detectorId, InviteMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8122,8 +8122,8 @@ namespace MyNS
 		/// ListCoverage detector/{detectorId}/coverage
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector whose coverage details you want to retrieve.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -8168,8 +8168,8 @@ namespace MyNS
 		/// ListFindings detector/{detectorId}/findings
 		/// </summary>
 		/// <param name="detectorId">The ID of the detector that specifies the GuardDuty service whose findings you want to list.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -8402,8 +8402,8 @@ namespace MyNS
 		/// StartMonitoringMembers detector/{detectorId}/member/start
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartMonitoringMembersResponse> StartMonitoringMembersAsync(string detectorId, StartMonitoringMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8446,8 +8446,8 @@ namespace MyNS
 		/// StopMonitoringMembers detector/{detectorId}/member/stop
 		/// </summary>
 		/// <param name="detectorId">The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopMonitoringMembersResponse> StopMonitoringMembersAsync(string detectorId, StopMonitoringMembersPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8490,8 +8490,8 @@ namespace MyNS
 		/// UnarchiveFindings detector/{detectorId}/findings/unarchive
 		/// </summary>
 		/// <param name="detectorId">The ID of the detector associated with the findings to unarchive.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UnarchiveFindingsResponse> UnarchiveFindingsAsync(string detectorId, UnarchiveFindingsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8565,8 +8565,8 @@ namespace MyNS
 		/// UpdateFindingsFeedback detector/{detectorId}/findings/feedback
 		/// </summary>
 		/// <param name="detectorId">The ID of the detector associated with the findings to update feedback for.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateFindingsFeedbackResponse> UpdateFindingsFeedbackAsync(string detectorId, UpdateFindingsFeedbackPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8609,8 +8609,8 @@ namespace MyNS
 		/// UpdateMemberDetectors detector/{detectorId}/member/detector/update
 		/// </summary>
 		/// <param name="detectorId">The detector ID of the administrator account.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMemberDetectorsResponse> UpdateMemberDetectorsAsync(string detectorId, UpdateMemberDetectorsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8718,8 +8718,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The idempotency token for the create request.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8770,8 +8770,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.
 		/// Required
-		/// Max length: 64
 		/// Min length: 3
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -8781,8 +8781,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
-		/// Max length: 512
 		/// Min length: 0
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8791,8 +8791,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Specifies the action that is to be applied to the findings that match the filter.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="action")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -8818,8 +8818,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The idempotency token for the create request.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8846,8 +8846,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The user-friendly name to identify the IPSet.</p> <p> Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).</p>
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -8858,8 +8858,8 @@ namespace MyNS
 		/// <summary>
 		/// The format of the file that contains the IPSet.
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="format")]
@@ -8870,8 +8870,8 @@ namespace MyNS
 		/// <summary>
 		/// The URI of the file that contains the IPSet. 
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="location")]
@@ -8889,8 +8889,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The idempotency token for the create request.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8926,8 +8926,8 @@ namespace MyNS
 		/// <summary>
 		/// The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="destinationType")]
@@ -8945,8 +8945,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The idempotency token for the request.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -8984,8 +8984,8 @@ namespace MyNS
 		/// <summary>
 		/// A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -8996,8 +8996,8 @@ namespace MyNS
 		/// <summary>
 		/// The format of the file that contains the ThreatIntelSet.
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="format")]
@@ -9008,8 +9008,8 @@ namespace MyNS
 		/// <summary>
 		/// The URI of the file that contains the ThreatIntelSet. 
 		/// Required
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="location")]
@@ -9027,8 +9027,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The idempotency token for the create request.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -9104,8 +9104,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
-		/// Max length: 512
 		/// Min length: 0
+		/// Max length: 512
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -9114,8 +9114,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Specifies the action that is to be applied to the findings that match the filter.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="action")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -9150,8 +9150,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique ID that specifies the IPSet that you want to update.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -9160,8 +9160,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The updated URI of the file that contains the IPSet. 
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="location")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -9232,8 +9232,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique ID that specifies the ThreatIntelSet that you want to update.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -9242,8 +9242,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The updated URI of the file that contains the ThreateIntelSet.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="location")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

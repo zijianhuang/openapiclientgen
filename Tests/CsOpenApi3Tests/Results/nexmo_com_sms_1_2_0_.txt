@@ -346,8 +346,8 @@ namespace MyNS
 		/// <summary>
 		/// Your API key
 		/// Required
-		/// Max length: 8
 		/// Min length: 8
+		/// Max length: 8
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="api_key")]
@@ -357,8 +357,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Your API secret. Required unless `sig` is provided
-		/// Max length: 32
 		/// Min length: 6
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="api_secret")]
 		[System.ComponentModel.DataAnnotations.MinLength(6)]
@@ -417,8 +417,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The hash of the request parameters in alphabetical order, a timestamp and the signature secret. See [Signing Requests](/concepts/guides/signing-messages) for more details.
-		/// Max length: 60
 		/// Min length: 16
+		/// Max length: 60
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sig")]
 		[System.ComponentModel.DataAnnotations.MinLength(16)]
@@ -440,8 +440,8 @@ namespace MyNS
 		/// <summary>
 		/// The number that the message should be sent to. Numbers are specified in E.164 format.
 		/// Required
-		/// Max length: 15
 		/// Min length: 7
+		/// Max length: 15
 		/// Pattern: \d{7,15}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

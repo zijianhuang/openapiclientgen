@@ -1156,12 +1156,12 @@ namespace MyNS
 		/// CreateRoute meshes/{meshName}/virtualRouter/{virtualRouterName}/routes
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh in which to create the route.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router in which to create the route.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateRouteOutput> CreateRouteAsync(string meshName, string virtualRouterName, CreateRoutePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1215,16 +1215,16 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="meshName">The name of the service mesh in which to list routes.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="nextToken">The <code>nextToken</code> value returned from a previous paginated
 		///         <code>ListRoutes</code> request where <code>limit</code> was used and the
 		///         results exceeded the value of that parameter. Pagination continues from the end of the
 		///         previous results that returned the <code>nextToken</code> value.</param>
 		/// <param name="virtualRouterName">The name of the virtual router in which to list routes.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRoutesOutput> ListRoutesAsync(int limit, string meshName, string nextToken, string virtualRouterName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1278,8 +1278,8 @@ namespace MyNS
 		/// CreateVirtualNode meshes/{meshName}/virtualNodes
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh in which to create the virtual node.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateVirtualNodeOutput> CreateVirtualNodeAsync(string meshName, CreateVirtualNodePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1333,8 +1333,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="meshName">The name of the service mesh in which to list virtual nodes.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="nextToken">The <code>nextToken</code> value returned from a previous paginated
 		///         <code>ListVirtualNodes</code> request where <code>limit</code> was used and the
@@ -1377,8 +1377,8 @@ namespace MyNS
 		/// CreateVirtualRouter meshes/{meshName}/virtualRouters
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh in which to create the virtual router.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateVirtualRouterOutput> CreateVirtualRouterAsync(string meshName, CreateVirtualRouterPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1432,8 +1432,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="meshName">The name of the service mesh in which to list virtual routers.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="nextToken">The <code>nextToken</code> value returned from a previous paginated
 		///         <code>ListVirtualRouters</code> request where <code>limit</code> was used and the
@@ -1475,8 +1475,8 @@ namespace MyNS
 		/// DeleteMesh meshes/{meshName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteMeshOutput> DeleteMeshAsync(string meshName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1512,8 +1512,8 @@ namespace MyNS
 		/// DescribeMesh meshes/{meshName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to describe.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeMeshOutput> DescribeMeshAsync(string meshName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1549,16 +1549,16 @@ namespace MyNS
 		/// DeleteRoute meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh in which to delete the route.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="routeName">The name of the route to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router in which to delete the route.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteRouteOutput> DeleteRouteAsync(string meshName, string routeName, string virtualRouterName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1594,16 +1594,16 @@ namespace MyNS
 		/// DescribeRoute meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh in which the route resides.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="routeName">The name of the route to describe.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router with which the route is associated.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeRouteOutput> DescribeRouteAsync(string meshName, string routeName, string virtualRouterName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1639,16 +1639,16 @@ namespace MyNS
 		/// UpdateRoute meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh in which the route resides.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="routeName">The name of the route to update.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router with which the route is associated.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRouteOutput> UpdateRouteAsync(string meshName, string routeName, string virtualRouterName, UpdateRoutePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1691,12 +1691,12 @@ namespace MyNS
 		/// DeleteVirtualNode meshes/{meshName}/virtualNodes/{virtualNodeName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh in which to delete the virtual node.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="virtualNodeName">The name of the virtual node to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteVirtualNodeOutput> DeleteVirtualNodeAsync(string meshName, string virtualNodeName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1732,12 +1732,12 @@ namespace MyNS
 		/// DescribeVirtualNode meshes/{meshName}/virtualNodes/{virtualNodeName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh in which the virtual node resides.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="virtualNodeName">The name of the virtual node to describe.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeVirtualNodeOutput> DescribeVirtualNodeAsync(string meshName, string virtualNodeName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1773,12 +1773,12 @@ namespace MyNS
 		/// UpdateVirtualNode meshes/{meshName}/virtualNodes/{virtualNodeName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh in which the virtual node resides.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="virtualNodeName">The name of the virtual node to update.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateVirtualNodeOutput> UpdateVirtualNodeAsync(string meshName, string virtualNodeName, UpdateVirtualNodePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1823,12 +1823,12 @@ namespace MyNS
 		/// DeleteVirtualRouter meshes/{meshName}/virtualRouters/{virtualRouterName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh in which to delete the virtual router.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteVirtualRouterOutput> DeleteVirtualRouterAsync(string meshName, string virtualRouterName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1864,12 +1864,12 @@ namespace MyNS
 		/// DescribeVirtualRouter meshes/{meshName}/virtualRouters/{virtualRouterName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh in which the virtual router resides.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router to describe.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeVirtualRouterOutput> DescribeVirtualRouterAsync(string meshName, string virtualRouterName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1905,12 +1905,12 @@ namespace MyNS
 		/// UpdateVirtualRouter meshes/{meshName}/virtualRouters/{virtualRouterName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh in which the virtual router resides.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router to update.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateVirtualRouterOutput> UpdateVirtualRouterAsync(string meshName, string virtualRouterName, UpdateVirtualRouterPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1962,8 +1962,8 @@ namespace MyNS
 		/// <summary>
 		/// The name to use for the service mesh.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="meshName")]
@@ -1985,8 +1985,8 @@ namespace MyNS
 		/// <summary>
 		/// The name to use for the route.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="routeName")]
@@ -2031,8 +2031,8 @@ namespace MyNS
 		/// <summary>
 		/// The name to use for the virtual node.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="virtualNodeName")]
@@ -2075,8 +2075,8 @@ namespace MyNS
 		/// <summary>
 		/// The name to use for the virtual router.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="virtualRouterName")]

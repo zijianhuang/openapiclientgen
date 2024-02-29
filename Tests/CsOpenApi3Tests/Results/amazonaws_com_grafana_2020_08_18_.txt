@@ -1561,8 +1561,8 @@ namespace MyNS
 		/// DeleteWorkspaceApiKey workspaces/{workspaceId}/apikeys/{keyName}
 		/// </summary>
 		/// <param name="keyName">The name of the API key to delete.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="workspaceId">The ID of the workspace to delete.</param>
 		/// <returns>Success</returns>
@@ -1742,8 +1742,8 @@ namespace MyNS
 		/// ListPermissions workspaces/{workspaceId}/permissions
 		/// </summary>
 		/// <param name="groupId">(Optional) Limits the results to only the group that matches this ID.
-		/// Max length: 47
 		/// Min length: 1
+		/// Max length: 47
 		// </param>
 		/// <param name="maxResults">The maximum number of results to include in the response.
 		/// Minimum: 1
@@ -1751,8 +1751,8 @@ namespace MyNS
 		// </param>
 		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.</param>
 		/// <param name="userId">(Optional) Limits the results to only the user that matches this ID.
-		/// Max length: 47
 		/// Min length: 1
+		/// Max length: 47
 		// </param>
 		/// <param name="userType">(Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.</param>
 		/// <param name="workspaceId">The ID of the workspace to list permissions for. This parameter is required.</param>
@@ -2005,8 +2005,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.
-		/// Max length: 65536
 		/// Min length: 2
+		/// Max length: 65536
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="configuration")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -2015,8 +2015,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To get a list of supported version, use the <code>ListVersions</code> operation.</p>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="grafanaVersion")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2031,8 +2031,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="organizationRoleName")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2073,8 +2073,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>A description for the workspace. This is used only to help you identify this workspace.</p> <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspaceDescription")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2103,8 +2103,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspaceRoleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2138,8 +2138,8 @@ namespace MyNS
 		/// <summary>
 		/// Specifies the name of the key. Keynames must be unique to the workspace.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="keyName")]
@@ -2184,8 +2184,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of an IAM role that already exists to use to access resources through Organizations. This can only be used with a workspace that has the <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="organizationRoleName")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2230,8 +2230,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the workspace. This is used only to help you identify this workspace.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspaceDescription")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2260,8 +2260,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such as data sources and notification channels. If this workspace has <code>permissionType</code> <code>CUSTOMER_MANAGED</code>, then this role is required.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="workspaceRoleArn")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2332,8 +2332,8 @@ namespace MyNS
 		/// <summary>
 		/// The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.
 		/// Required
-		/// Max length: 65536
 		/// Min length: 2
+		/// Max length: 65536
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="configuration")]
@@ -2343,8 +2343,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>Specifies the version of Grafana to support in the new workspace.</p> <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p> <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="grafanaVersion")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

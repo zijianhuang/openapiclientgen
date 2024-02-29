@@ -1042,8 +1042,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListScansResponse> ListScansAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1156,12 +1156,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="scanName">The name of the scan you want to retrieve findings from.
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		// </param>
 		/// <param name="status">The status of the findings you want to get. Pass either <code>Open</code>, <code>Closed</code>, or <code>All</code>.</param>
 		/// <returns>Success</returns>
@@ -1233,8 +1233,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="runId">UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the <code>CreateScan</code> operation. Defaults to the latest scan run if missing.</param>
 		/// <param name="scanName">The name of the scan you want to view details about.
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetScanResponse> GetScanAsync(string runId, string scanName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1275,8 +1275,8 @@ namespace MyNS
 		/// Maximum: 1000
 		// </param>
 		/// <param name="nextToken">A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="startDate">The start date of the interval which you want to retrieve metrics from.</param>
 		/// <returns>Success</returns>
@@ -1313,8 +1313,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the <code>ScanName</code> object. You can retrieve this ARN by calling <code>ListScans</code> or <code>GetScan</code>.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1350,8 +1350,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the <code>ScanName</code> object. You can retrieve this ARN by calling <code>ListScans</code> or <code>GetScan</code>.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1387,8 +1387,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The ARN of the <code>ScanName</code> object. You can retrieve this ARN by calling <code>ListScans</code> or <code>GetScan</code>.
-		/// Max length: 300
 		/// Min length: 1
+		/// Max length: 300
 		// </param>
 		/// <param name="tagKeys">A list of keys for each tag you want to remove from a scan.
 		/// Minimum items: 0
@@ -1484,8 +1484,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The idempotency token for the request. Amazon CodeGuru Security uses this value to prevent the accidental creation of duplicate scans if there are failures and retries.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[\S]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -1505,8 +1505,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified, it will be auto generated. 
 		/// Required
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		/// Pattern: ^[a-zA-Z0-9-_$:.]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1542,8 +1542,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the scan that will use the uploaded resource. CodeGuru Security uses the unique scan name to track revisions across multiple scans of the same resource. Use this <code>scanName</code> when you call <code>CreateScan</code> on the code resource you upload to this URL.
 		/// Required
-		/// Max length: 140
 		/// Min length: 1
+		/// Max length: 140
 		/// Pattern: ^[a-zA-Z0-9-_$:.]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

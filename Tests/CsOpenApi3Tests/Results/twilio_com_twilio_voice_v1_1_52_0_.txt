@@ -30,8 +30,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The call sid
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^CA[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -54,8 +54,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the BYOC Trunk resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -72,8 +72,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Connection Policy that Twilio will use when routing traffic to your communications infrastructure.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^NY[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="connection_policy_sid")]
@@ -102,8 +102,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the SIP Domain that should be used in the `From` header of originating calls sent to your SIP infrastructure. If your SIP infrastructure allows users to "call back" an incoming call, configure this with a [SIP Domain](https://www.twilio.com/docs/voice/api/sending-sip) to ensure proper routing. If not configured, the from domain will default to "sip.twilio.com".
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^SD[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="from_domain_sid")]
@@ -114,8 +114,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that that we created to identify the BYOC Trunk resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^BY[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -199,8 +199,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Connection Policy resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -235,8 +235,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Connection Policy resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^NY[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -259,8 +259,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Target resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -271,8 +271,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Connection Policy that owns the Target.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^NY[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="connection_policy_sid")]
@@ -313,8 +313,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Target resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^NE[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -523,8 +523,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the IP Record resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -565,8 +565,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the IP Record resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -601,8 +601,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Twilio-provided string that uniquely identifies the IP Record resource to map from.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IL[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="ip_record_sid")]
@@ -613,8 +613,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the IP Record resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^IB[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -625,8 +625,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the SIP Domain that the IP Record is mapped to.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^SD[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sip_domain_sid")]
@@ -667,8 +667,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="Date">The date of the Call in UTC.</param>
 		/// <param name="Sid">The Twilio-provided Call SID that uniquely identifies the Call resource to delete
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteArchivedCallAsync(System.DateOnly Date, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -736,8 +736,8 @@ namespace MyNS
 		/// DeleteByocTrunk v1/ByocTrunks/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the BYOC Trunk resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteByocTrunkAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -765,8 +765,8 @@ namespace MyNS
 		/// FetchByocTrunk v1/ByocTrunks/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the BYOC Trunk resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Voicev1byoc_trunk> FetchByocTrunkAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -841,8 +841,8 @@ namespace MyNS
 		/// ListConnectionPolicyTarget v1/ConnectionPolicies/{ConnectionPolicySid}/Targets
 		/// </summary>
 		/// <param name="ConnectionPolicySid">The SID of the Connection Policy from which to read the Targets.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -885,12 +885,12 @@ namespace MyNS
 		/// DeleteConnectionPolicyTarget v1/ConnectionPolicies/{ConnectionPolicySid}/Targets/{Sid}
 		/// </summary>
 		/// <param name="ConnectionPolicySid">The SID of the Connection Policy that owns the Target.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The unique string that we created to identify the Target resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteConnectionPolicyTargetAsync(string ConnectionPolicySid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -918,12 +918,12 @@ namespace MyNS
 		/// FetchConnectionPolicyTarget v1/ConnectionPolicies/{ConnectionPolicySid}/Targets/{Sid}
 		/// </summary>
 		/// <param name="ConnectionPolicySid">The SID of the Connection Policy that owns the Target.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The unique string that we created to identify the Target resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Voicev1connection_policyconnection_policy_target> FetchConnectionPolicyTargetAsync(string ConnectionPolicySid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -958,8 +958,8 @@ namespace MyNS
 		/// DeleteConnectionPolicy v1/ConnectionPolicies/{Sid}
 		/// </summary>
 		/// <param name="Sid">The unique string that we created to identify the Connection Policy resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteConnectionPolicyAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -987,8 +987,8 @@ namespace MyNS
 		/// FetchConnectionPolicy v1/ConnectionPolicies/{Sid}
 		/// </summary>
 		/// <param name="Sid">The unique string that we created to identify the Connection Policy resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Voicev1connection_policy> FetchConnectionPolicyAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1186,8 +1186,8 @@ namespace MyNS
 		/// DeleteIpRecord v1/IpRecords/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the IP Record resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteIpRecordAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1215,8 +1215,8 @@ namespace MyNS
 		/// FetchIpRecord v1/IpRecords/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the IP Record resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Voicev1ip_record> FetchIpRecordAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1324,8 +1324,8 @@ namespace MyNS
 		/// DeleteSourceIpMapping v1/SourceIpMappings/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the IP Record resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteSourceIpMappingAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1353,8 +1353,8 @@ namespace MyNS
 		/// FetchSourceIpMapping v1/SourceIpMappings/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the IP Record resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Voicev1source_ip_mapping> FetchSourceIpMappingAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

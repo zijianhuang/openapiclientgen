@@ -2164,8 +2164,8 @@ namespace MyNS
 		/// DeleteReplicationSet deleteReplicationSet#arn
 		/// </summary>
 		/// <param name="arn">The Amazon Resource Name (ARN) of the replication set you're deleting.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		public async Task DeleteReplicationSetAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2295,8 +2295,8 @@ namespace MyNS
 		/// GetIncidentRecord getIncidentRecord#arn
 		/// </summary>
 		/// <param name="arn">The Amazon Resource Name (ARN) of the incident record.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetIncidentRecordOutput> GetIncidentRecordAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2332,8 +2332,8 @@ namespace MyNS
 		/// GetReplicationSet getReplicationSet#arn
 		/// </summary>
 		/// <param name="arn">The Amazon Resource Name (ARN) of the replication set you want to retrieve.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReplicationSetOutput> GetReplicationSetAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2369,8 +2369,8 @@ namespace MyNS
 		/// GetResourcePolicies getResourcePolicies#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the response plan with the attached resource policy. 
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -2415,8 +2415,8 @@ namespace MyNS
 		/// GetResponsePlan getResponsePlan#arn
 		/// </summary>
 		/// <param name="arn">The Amazon Resource Name (ARN) of the response plan.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetResponsePlanOutput> GetResponsePlanAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2452,12 +2452,12 @@ namespace MyNS
 		/// GetTimelineEvent getTimelineEvent#eventId&incidentRecordArn
 		/// </summary>
 		/// <param name="eventId">The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.
-		/// Max length: 50
 		/// Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <param name="incidentRecordArn">The Amazon Resource Name (ARN) of the incident that includes the timeline event.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTimelineEventOutput> GetTimelineEventAsync(string eventId, string incidentRecordArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3081,8 +3081,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that ensures that the operation is called only once with the specified details.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3125,8 +3125,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token ensuring that the operation is called only once with the specified details.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3135,8 +3135,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The long format of the response plan name. This field can contain spaces.
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="displayName")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3174,8 +3174,8 @@ namespace MyNS
 		/// <summary>
 		/// The short format name of the response plan. Can't include spaces.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// Pattern: ^[a-zA-Z0-9-_]*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3229,8 +3229,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that ensures that a client calls the action only once with the specified details.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3240,8 +3240,8 @@ namespace MyNS
 		/// <summary>
 		/// A short description of the event.
 		/// Required
-		/// Max length: 12000
 		/// Min length: 0
+		/// Max length: 12000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="eventData")]
@@ -3270,8 +3270,8 @@ namespace MyNS
 		/// <summary>
 		/// The type of event. You can create timeline events of type <code>Custom Event</code>.
 		/// Required
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="eventType")]
@@ -3282,8 +3282,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the incident record that the action adds the incident to.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3300,8 +3300,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the incident record you are deleting.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3318,8 +3318,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the resource policy you're deleting.
 		/// Required
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="policyId")]
@@ -3330,8 +3330,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the resource you're deleting the policy from.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3348,8 +3348,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the response plan.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3366,8 +3366,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
 		/// Required
-		/// Max length: 50
 		/// Min length: 0
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="eventId")]
@@ -3378,8 +3378,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the incident that includes the timeline event.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3404,8 +3404,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token to continue to the next page of results.
-		/// Max length: 2000
 		/// Min length: 0
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3437,8 +3437,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token to continue to the next page of results.
-		/// Max length: 2000
 		/// Min length: 0
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3452,8 +3452,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the incident record containing the listed related items.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3474,8 +3474,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token to continue to the next page of results.
-		/// Max length: 2000
 		/// Min length: 0
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3497,8 +3497,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token to continue to the next page of results.
-		/// Max length: 2000
 		/// Min length: 0
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3520,8 +3520,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token to continue to the next page of results.
-		/// Max length: 2000
 		/// Min length: 0
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3557,8 +3557,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the incident that includes the timeline event.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3579,8 +3579,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The pagination token to continue to the next page of results.
-		/// Max length: 2000
 		/// Min length: 0
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3606,8 +3606,8 @@ namespace MyNS
 		/// <summary>
 		/// Details of the resource policy.
 		/// Required
-		/// Max length: 4000
 		/// Min length: 0
+		/// Max length: 4000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="policy")]
@@ -3618,8 +3618,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the response plan to add the resource policy to.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3635,8 +3635,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token ensuring that the operation is called only once with the specified details.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3665,8 +3665,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. 
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3678,8 +3678,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Provide a title for the incident. Providing a title overwrites the title provided by the response plan. 
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3715,8 +3715,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the replication set to update.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3728,8 +3728,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that ensures that the operation is called only once with the specified details.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3751,8 +3751,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the incident record you are updating.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3770,8 +3770,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that ensures that a client calls the operation only once with the specified details.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3805,8 +3805,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A longer description of what occurred during the incident.
-		/// Max length: 8000
 		/// Min length: 0
+		/// Max length: 8000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="summary")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3815,8 +3815,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A brief description of the incident.
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="title")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3839,8 +3839,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that ensures that a client calls the operation only once with the specified details.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3850,8 +3850,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the incident record that contains the related items that you update.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3898,8 +3898,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the replication set you're updating.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3911,8 +3911,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that ensures that the operation is called only once with the specified details.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3936,8 +3936,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the response plan.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3955,8 +3955,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token ensuring that the operation is called only once with the specified details.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3965,8 +3965,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The long format name of the response plan. The display name can't contain spaces.
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="displayName")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3985,8 +3985,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The string Incident Manager uses to prevent duplicate incidents from being created by the same incident in the same account.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="incidentTemplateDedupeString")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4014,8 +4014,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A brief summary of the incident. This typically contains what has happened, what's currently happening, and next steps.
-		/// Max length: 8000
 		/// Min length: 0
+		/// Max length: 8000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="incidentTemplateSummary")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4030,8 +4030,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The short format name of the incident. The title can't contain spaces.
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="incidentTemplateTitle")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4064,8 +4064,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A token that ensures that a client calls the operation only once with the specified details.
-		/// Max length: 128
 		/// Min length: 0
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4074,8 +4074,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A short description of the event.
-		/// Max length: 12000
 		/// Min length: 0
+		/// Max length: 12000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="eventData")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4085,8 +4085,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
 		/// Required
-		/// Max length: 50
 		/// Min length: 0
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="eventId")]
@@ -4112,8 +4112,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The type of event. You can update events of type <code>Custom Event</code>.
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="eventType")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4123,8 +4123,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the incident that includes the timeline event.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// Pattern: ^arn:aws(-cn|-us-gov)?:[a-z0-9-]*:[a-z0-9-]*:([0-9]{12})?:.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

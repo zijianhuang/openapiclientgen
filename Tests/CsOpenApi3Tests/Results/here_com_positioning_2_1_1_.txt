@@ -256,8 +256,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Device firmware version information
-		/// Max length: 150
 		/// Min length: 1
+		/// Max length: 150
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="firmware")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -267,8 +267,8 @@ namespace MyNS
 		/// <summary>
 		/// Manufacturer of the device (hardware)
 		/// Required
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="manufacturer")]
@@ -279,8 +279,8 @@ namespace MyNS
 		/// <summary>
 		/// Model of the device (hardware)
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="model")]
@@ -291,8 +291,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the client software accessing the HERE API
 		/// Required
-		/// Max length: 50
 		/// Min length: 3
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -302,8 +302,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Software platform information of the device, for example operating system name and version.
-		/// Max length: 50
 		/// Min length: 3
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="platform")]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -313,8 +313,8 @@ namespace MyNS
 		/// <summary>
 		/// Version of the client software in format X.Y.Z, where X [0..255] is a major, Y [0..255] is a minor, and Z [0..65535] is a build version number. Increase the version/build number for each release of the client.
 		/// Required
-		/// Max length: 13
 		/// Min length: 3
+		/// Max length: 13
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="version")]

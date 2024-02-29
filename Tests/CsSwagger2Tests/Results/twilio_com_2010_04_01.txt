@@ -692,8 +692,8 @@ namespace MyNS
 		public string From { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="parent_call_sid")]
 		[System.ComponentModel.DataAnnotations.MinLength(34)]
@@ -707,8 +707,8 @@ namespace MyNS
 		public string Price { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
 		[System.ComponentModel.DataAnnotations.MinLength(34)]
@@ -843,8 +843,8 @@ namespace MyNS
 		public string From { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="parent_call_sid")]
 		[System.ComponentModel.DataAnnotations.MinLength(34)]
@@ -870,8 +870,8 @@ namespace MyNS
 		public string Price_unit { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
 		[System.ComponentModel.DataAnnotations.MinLength(34)]
@@ -3110,8 +3110,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The two-letter state or province abbreviation of this phone number.
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="region")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -3188,8 +3188,8 @@ namespace MyNS
 		public System.Nullable<System.Int32> Max_size { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
 		[System.ComponentModel.DataAnnotations.MinLength(34)]
@@ -3268,8 +3268,8 @@ namespace MyNS
 		public System.Nullable<System.Int32> Max_size { get; set; }
 		
 		/// <summary>
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
 		[System.ComponentModel.DataAnnotations.MinLength(34)]
@@ -4231,8 +4231,8 @@ namespace MyNS
 		/// Accounts_AccountSidAvailablePhoneNumbers_IsoCountryCodeLocal_mediaTypeExtensionGet Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/Local{mediaTypeExtension}
 		/// </summary>
 		/// <param name="IsoCountryCode">ISO 3166-1 alpha-2.
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="mediaTypeExtension">By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		///</param>
@@ -4266,8 +4266,8 @@ namespace MyNS
 		/// Accounts_AccountSidAvailablePhoneNumbers_IsoCountryCodeMobile_mediaTypeExtensionGet Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/Mobile{mediaTypeExtension}
 		/// </summary>
 		/// <param name="IsoCountryCode">ISO 3166-1 alpha-2.
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="mediaTypeExtension">By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		///</param>
@@ -4305,8 +4305,8 @@ namespace MyNS
 		/// Accounts_AccountSidAvailablePhoneNumbers_IsoCountryCodeTollFree_mediaTypeExtensionGet Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/TollFree{mediaTypeExtension}
 		/// </summary>
 		/// <param name="IsoCountryCode">ISO 3166-1 alpha-2.
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="mediaTypeExtension">By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		///</param>
@@ -7299,8 +7299,8 @@ namespace MyNS
 		/// <param name="mediaTypeExtension">By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		///</param>
 		/// <param name="AccountSid">A 34 character string that uniquely identifies this account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>The request was successful and the response body contains the representation
 		///requested.
@@ -7334,8 +7334,8 @@ namespace MyNS
 		/// <param name="mediaTypeExtension">By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		///</param>
 		/// <param name="AccountSid">A 34 character string that uniquely identifies this account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>The request was successful, we updated the resource and the response
 		///body contains the representation.
@@ -7364,8 +7364,8 @@ namespace MyNS
 		/// <param name="mediaTypeExtension">By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		///</param>
 		/// <param name="AccountSid">A 34 character string that uniquely identifies this account.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>The request was successful, we updated the resource and the response
 		///body contains the representation.

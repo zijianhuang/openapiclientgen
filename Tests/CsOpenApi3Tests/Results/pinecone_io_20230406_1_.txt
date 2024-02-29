@@ -62,8 +62,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique name of an index.
 		/// Required
-		/// Max length: 45
 		/// Min length: 1
+		/// Max length: 45
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="source")]
@@ -261,8 +261,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique name of an index.
-		/// Max length: 45
 		/// Min length: 1
+		/// Max length: 45
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -493,8 +493,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique name of an index.
 		/// Required
-		/// Max length: 45
 		/// Min length: 1
+		/// Max length: 45
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]

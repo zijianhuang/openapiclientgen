@@ -2585,8 +2585,8 @@ namespace MyNS
 		/// CreateBotVersion bots/{name}/versions
 		/// </summary>
 		/// <param name="name">The name of the bot that you want to create a new version of. The name is case sensitive. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		public async Task CreateBotVersionAsync(string name, CreateBotVersionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2622,8 +2622,8 @@ namespace MyNS
 		/// CreateIntentVersion intents/{name}/versions
 		/// </summary>
 		/// <param name="name">The name of the intent that you want to create a new version of. The name is case sensitive. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		public async Task CreateIntentVersionAsync(string name, CreateIntentVersionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2659,8 +2659,8 @@ namespace MyNS
 		/// CreateSlotTypeVersion slottypes/{name}/versions
 		/// </summary>
 		/// <param name="name">The name of the slot type that you want to create a new version for. The name is case sensitive. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		public async Task CreateSlotTypeVersionAsync(string name, CreateSlotTypeVersionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2696,8 +2696,8 @@ namespace MyNS
 		/// DeleteBot bots/{name}
 		/// </summary>
 		/// <param name="name">The name of the bot. The name is case sensitive. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		public async Task DeleteBotAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2726,12 +2726,12 @@ namespace MyNS
 		/// DeleteBotAlias bots/{botName}/aliases/{name}
 		/// </summary>
 		/// <param name="name">The name of the alias to delete. The name is case sensitive. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="botName">The name of the bot that the alias points to.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		public async Task DeleteBotAliasAsync(string name, string botName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2760,12 +2760,12 @@ namespace MyNS
 		/// GetBotAlias bots/{botName}/aliases/{name}
 		/// </summary>
 		/// <param name="name">The name of the bot alias. The name is case sensitive.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="botName">The name of the bot.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetBotAliasResponse> GetBotAliasAsync(string name, string botName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2801,12 +2801,12 @@ namespace MyNS
 		/// PutBotAlias bots/{botName}/aliases/{name}
 		/// </summary>
 		/// <param name="name">The name of the alias. The name is <i>not</i> case sensitive.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="botName">The name of the bot.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutBotAliasResponse> PutBotAliasAsync(string name, string botName, PutBotAliasPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2849,16 +2849,16 @@ namespace MyNS
 		/// DeleteBotChannelAssociation bots/{botName}/aliases/{aliasName}/channels/{name}
 		/// </summary>
 		/// <param name="name">The name of the association. The name is case sensitive. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="botName">The name of the Amazon Lex bot.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="aliasName">An alias that points to the specific version of the Amazon Lex bot to which this association is being made.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		public async Task DeleteBotChannelAssociationAsync(string name, string botName, string aliasName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2887,16 +2887,16 @@ namespace MyNS
 		/// GetBotChannelAssociation bots/{botName}/aliases/{aliasName}/channels/{name}
 		/// </summary>
 		/// <param name="name">The name of the association between the bot and the channel. The name is case sensitive. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="botName">The name of the Amazon Lex bot.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="aliasName">An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetBotChannelAssociationResponse> GetBotChannelAssociationAsync(string name, string botName, string aliasName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2932,12 +2932,12 @@ namespace MyNS
 		/// DeleteBotVersion bots/{name}/versions/{version}
 		/// </summary>
 		/// <param name="name">The name of the bot.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="version">The version of the bot to delete. You cannot delete the <code>$LATEST</code> version of the bot. To delete the <code>$LATEST</code> version, use the <a>DeleteBot</a> operation.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task DeleteBotVersionAsync(string name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2966,8 +2966,8 @@ namespace MyNS
 		/// DeleteIntent intents/{name}
 		/// </summary>
 		/// <param name="name">The name of the intent. The name is case sensitive. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		public async Task DeleteIntentAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2996,12 +2996,12 @@ namespace MyNS
 		/// DeleteIntentVersion intents/{name}/versions/{version}
 		/// </summary>
 		/// <param name="name">The name of the intent.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="version">The version of the intent to delete. You cannot delete the <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code> version, use the <a>DeleteIntent</a> operation.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task DeleteIntentVersionAsync(string name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3030,12 +3030,12 @@ namespace MyNS
 		/// GetIntent intents/{name}/versions/{version}
 		/// </summary>
 		/// <param name="name">The name of the intent. The name is case sensitive. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="version">The version of the intent.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetIntentResponse> GetIntentAsync(string name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3071,8 +3071,8 @@ namespace MyNS
 		/// DeleteSlotType slottypes/{name}
 		/// </summary>
 		/// <param name="name">The name of the slot type. The name is case sensitive. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		public async Task DeleteSlotTypeAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3101,12 +3101,12 @@ namespace MyNS
 		/// DeleteSlotTypeVersion slottypes/{name}/version/{version}
 		/// </summary>
 		/// <param name="name">The name of the slot type.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="version">The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To delete the <code>$LATEST</code> version, use the <a>DeleteSlotType</a> operation.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		public async Task DeleteSlotTypeVersionAsync(string name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3135,12 +3135,12 @@ namespace MyNS
 		/// DeleteUtterances bots/{botName}/utterances/{userId}
 		/// </summary>
 		/// <param name="botName">The name of the bot that stored the utterances.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="userId"> The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the utterance.
-		/// Max length: 100
 		/// Min length: 2
+		/// Max length: 100
 		// </param>
 		public async Task DeleteUtterancesAsync(string botName, string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3169,8 +3169,8 @@ namespace MyNS
 		/// GetBot bots/{name}/versions/{versionoralias}
 		/// </summary>
 		/// <param name="name">The name of the bot. The name is case sensitive. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="versionoralias">The version or alias of the bot.</param>
 		/// <returns>Success</returns>
@@ -3207,8 +3207,8 @@ namespace MyNS
 		/// GetBotAliases bots/{botName}/aliases/
 		/// </summary>
 		/// <param name="botName">The name of the bot.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="nextToken">A pagination token for fetching the next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. </param>
 		/// <param name="maxResults">The maximum number of aliases to return in the response. The default is 50. . 
@@ -3216,8 +3216,8 @@ namespace MyNS
 		/// Maximum: 50
 		// </param>
 		/// <param name="nameContains">Substring to match in bot alias names. An alias will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetBotAliasesResponse> GetBotAliasesAsync(string botName, string nextToken, int maxResults, string nameContains, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3253,12 +3253,12 @@ namespace MyNS
 		/// GetBotChannelAssociations bots/{botName}/aliases/{aliasName}/channels/
 		/// </summary>
 		/// <param name="botName">The name of the Amazon Lex bot in the association.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="aliasName">An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. </param>
 		/// <param name="maxResults">The maximum number of associations to return in the response. The default is 50. 
@@ -3266,8 +3266,8 @@ namespace MyNS
 		/// Maximum: 50
 		// </param>
 		/// <param name="nameContains">Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetBotChannelAssociationsResponse> GetBotChannelAssociationsAsync(string botName, string aliasName, string nextToken, int maxResults, string nameContains, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3303,8 +3303,8 @@ namespace MyNS
 		/// GetBotVersions bots/{name}/versions/
 		/// </summary>
 		/// <param name="name">The name of the bot for which versions should be returned.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="nextToken">A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </param>
 		/// <param name="maxResults">The maximum number of bot versions to return in the response. The default is 10.
@@ -3350,8 +3350,8 @@ namespace MyNS
 		/// Maximum: 50
 		// </param>
 		/// <param name="nameContains">Substring to match in bot names. A bot will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetBotsResponse> GetBotsAsync(string nextToken, int maxResults, string nameContains, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3501,12 +3501,12 @@ namespace MyNS
 		/// GetExport exports/#name&version&resourceType&exportType
 		/// </summary>
 		/// <param name="name">The name of the bot to export.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="version">The version of the bot to export.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="resourceType">The type of resource to export. </param>
 		/// <param name="exportType">The format of the exported data.</param>
@@ -3578,8 +3578,8 @@ namespace MyNS
 		/// GetIntentVersions intents/{name}/versions/
 		/// </summary>
 		/// <param name="name">The name of the intent for which versions should be returned.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </param>
 		/// <param name="maxResults">The maximum number of intent versions to return in the response. The default is 10.
@@ -3625,8 +3625,8 @@ namespace MyNS
 		/// Maximum: 50
 		// </param>
 		/// <param name="nameContains">Substring to match in intent names. An intent will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetIntentsResponse> GetIntentsAsync(string nextToken, int maxResults, string nameContains, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3662,8 +3662,8 @@ namespace MyNS
 		/// GetMigration migrations/{migrationId}
 		/// </summary>
 		/// <param name="migrationId">The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMigrationResponse> GetMigrationAsync(string migrationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3701,8 +3701,8 @@ namespace MyNS
 		/// <param name="sortByAttribute">The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.</param>
 		/// <param name="sortByOrder">The order so sort the list.</param>
 		/// <param name="v1BotNameContains">Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="migrationStatusEquals">Filters the list to contain only migrations in the specified state.</param>
 		/// <param name="maxResults">The maximum number of migrations to return in the response. The default is 10.
@@ -3777,12 +3777,12 @@ namespace MyNS
 		/// GetSlotType slottypes/{name}/versions/{version}
 		/// </summary>
 		/// <param name="name">The name of the slot type. The name is case sensitive. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="version">The version of the slot type. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSlotTypeResponse> GetSlotTypeAsync(string name, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3818,8 +3818,8 @@ namespace MyNS
 		/// GetSlotTypeVersions slottypes/{name}/versions/
 		/// </summary>
 		/// <param name="name">The name of the slot type for which versions should be returned.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="nextToken">A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. </param>
 		/// <param name="maxResults">The maximum number of slot type versions to return in the response. The default is 10.
@@ -3865,8 +3865,8 @@ namespace MyNS
 		/// Maximum: 50
 		// </param>
 		/// <param name="nameContains">Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSlotTypesResponse> GetSlotTypesAsync(string nextToken, int maxResults, string nameContains, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3902,8 +3902,8 @@ namespace MyNS
 		/// GetUtterancesView bots/{botname}/utterances#view=aggregation&bot_versions&status_type
 		/// </summary>
 		/// <param name="botname">The name of the bot for which utterance information should be returned.
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <param name="bot_versions">An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.
 		/// Minimum items: 1
@@ -3944,8 +3944,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource to get a list of tags for.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3981,8 +3981,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4018,8 +4018,8 @@ namespace MyNS
 		/// PutBot bots/{name}/versions/$LATEST
 		/// </summary>
 		/// <param name="name">The name of the bot. The name is <i>not</i> case sensitive. 
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutBotResponse> PutBotAsync(string name, PutBotPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4062,8 +4062,8 @@ namespace MyNS
 		/// PutIntent intents/{name}/versions/$LATEST
 		/// </summary>
 		/// <param name="name"><p>The name of the intent. The name is <i>not</i> case sensitive. </p> <p>The name can't match a built-in intent name, or a built-in intent name with "AMAZON." removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>, you can't create a custom intent called <code>HelpIntent</code>.</p> <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutIntentResponse> PutIntentAsync(string name, PutIntentPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4106,8 +4106,8 @@ namespace MyNS
 		/// PutSlotType slottypes/{name}/versions/$LATEST
 		/// </summary>
 		/// <param name="name"><p>The name of the slot type. The name is <i>not</i> case sensitive. </p> <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p> <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutSlotTypeResponse> PutSlotTypeAsync(string name, PutSlotTypePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4183,8 +4183,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource to remove the tags from.
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <param name="tagKeys">A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.
 		/// Minimum items: 0
@@ -4248,8 +4248,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the alias.
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4259,8 +4259,8 @@ namespace MyNS
 		/// <summary>
 		/// The version of the bot.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: \$LATEST|[0-9]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4395,8 +4395,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.
 		/// Required
-		/// Max length: 50
 		/// Min length: 2
+		/// Max length: 50
 		/// Pattern: ^([A-Za-z]_?)+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4409,8 +4409,8 @@ namespace MyNS
 		/// <summary>
 		/// The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: \$LATEST|[0-9]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4423,8 +4423,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to. </p> <ul> <li> <p>If the Amazon Lex V2 bot doesn't exist, you must use the <code>CREATE_NEW</code> migration strategy.</p> </li> <li> <p>If the Amazon Lex V2 bot exists, you must use the <code>UPDATE_EXISTING</code> migration strategy to change the contents of the Amazon Lex V2 bot.</p> </li> </ul>
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^([0-9a-zA-Z][_-]?)+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4437,8 +4437,8 @@ namespace MyNS
 		/// <summary>
 		/// The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:[\w\-]+:iam::[\d]{12}:role/.+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -4485,8 +4485,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the bot.
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4666,8 +4666,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the intent.
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4856,8 +4856,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the slot type.
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4894,8 +4894,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="parentSlotTypeSignature")]

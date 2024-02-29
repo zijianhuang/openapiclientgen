@@ -24,8 +24,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the MediaProcessor resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -72,8 +72,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string generated to identify the MediaProcessor resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZX[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -152,8 +152,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the MediaRecording resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -197,8 +197,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the MediaProcessor resource which produced the MediaRecording.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZX[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="processor_sid")]
@@ -215,8 +215,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string generated to identify the MediaRecording resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^KV[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -227,8 +227,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the resource that generated the original media track(s) of the MediaRecording.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^[a-zA-Z]{2}[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="source_sid")]
@@ -298,8 +298,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the PlayerStreamer resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -337,8 +337,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string generated to identify the PlayerStreamer resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^VJ[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -420,8 +420,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created this resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -444,8 +444,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string generated to identify the PlayerStreamer resource that this PlaybackGrant authorizes views for.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^VJ[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -673,8 +673,8 @@ namespace MyNS
 		/// FetchMediaProcessor v1/MediaProcessors/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the MediaProcessor resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Mediav1media_processor> FetchMediaProcessorAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -712,12 +712,12 @@ namespace MyNS
 		/// <param name="Order">The sort order of the list by `date_created`. Can be: `asc` (ascending) or `desc` (descending) with `desc` as the default.</param>
 		/// <param name="Status">Status to filter by, with possible values `processing`, `completed`, `deleted`, or `failed`.</param>
 		/// <param name="ProcessorSid">SID of a MediaProcessor to filter by.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="SourceSid">SID of a MediaRecording source to filter by.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -761,8 +761,8 @@ namespace MyNS
 		/// DeleteMediaRecording v1/MediaRecordings/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the MediaRecording resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteMediaRecordingAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -791,8 +791,8 @@ namespace MyNS
 		/// FetchMediaRecording v1/MediaRecordings/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the MediaRecording resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Mediav1media_recording> FetchMediaRecordingAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -871,8 +871,8 @@ namespace MyNS
 		/// FetchPlayerStreamer v1/PlayerStreamers/{Sid}
 		/// </summary>
 		/// <param name="Sid">The SID of the PlayerStreamer resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Mediav1player_streamer> FetchPlayerStreamerAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -908,8 +908,8 @@ namespace MyNS
 		/// FetchPlayerStreamerPlaybackGrant v1/PlayerStreamers/{Sid}/PlaybackGrant
 		/// </summary>
 		/// <param name="Sid">The SID of the PlayerStreamer resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Mediav1player_streamerplayer_streamer_playback_grant> FetchPlayerStreamerPlaybackGrantAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

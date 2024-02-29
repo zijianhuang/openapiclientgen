@@ -1168,8 +1168,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
 		/// <param name="accountName">The name of Cognitive Services account.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -1216,8 +1216,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
 		/// <param name="accountName">The name of Cognitive Services account.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -1259,8 +1259,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
 		/// <param name="accountName">The name of Cognitive Services account.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -1288,8 +1288,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
 		/// <param name="accountName">The name of Cognitive Services account.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -1331,8 +1331,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
 		/// <param name="accountName">The name of Cognitive Services account.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -1370,8 +1370,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
 		/// <param name="accountName">The name of Cognitive Services account.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -1412,8 +1412,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
 		/// <param name="accountName">The name of Cognitive Services account.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
@@ -1460,8 +1460,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription.</param>
 		/// <param name="accountName">The name of Cognitive Services account.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. Current version is 2017-04-18</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>

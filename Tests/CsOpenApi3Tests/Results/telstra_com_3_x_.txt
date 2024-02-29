@@ -25,8 +25,8 @@ namespace MyNS
 		/// <summary>
 		/// Unique code of the error
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="code")]
@@ -36,8 +36,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The field that caused the error
-		/// Max length: 99999
 		/// Min length: 1
+		/// Max length: 99999
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="field")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -47,8 +47,8 @@ namespace MyNS
 		/// <summary>
 		/// The reason for the error
 		/// Required
-		/// Max length: 99999
 		/// Min length: 1
+		/// Max length: 99999
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="issue")]
@@ -58,8 +58,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// URI for detailed information related to this error for the developer.
-		/// Max length: 99999
 		/// Min length: 1
+		/// Max length: 99999
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="link")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -75,8 +75,8 @@ namespace MyNS
 		/// <summary>
 		/// Suggest practical actions for this particular issue.
 		/// Required
-		/// Max length: 99999
 		/// Min length: 1
+		/// Max length: 99999
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="suggested_action")]
@@ -86,8 +86,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The value of the field that caused the error
-		/// Max length: 99999
 		/// Min length: 1
+		/// Max length: 99999
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="value")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -152,8 +152,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The time you submitted the message to the queue for sending.
-		/// Max length: 24
 		/// Min length: 24
+		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="createTimestamp")]
 		[System.ComponentModel.DataAnnotations.MinLength(24)]
@@ -176,8 +176,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// This will be either "privateNumber", one of your Virtual Numbers or your senderName.
-		/// Max length: 13
 		/// Min length: 1
+		/// Max length: 13
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="from")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -186,8 +186,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The content of the message.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageContent")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -196,8 +196,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Use this UUID with our other endpoints to fetch, update or delete the message.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageId")]
 		[System.ComponentModel.DataAnnotations.MinLength(36)]
@@ -226,8 +226,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The time the message was received by the recipient's device.
-		/// Max length: 24
 		/// Min length: 24
+		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="receivedTimestamp")]
 		[System.ComponentModel.DataAnnotations.MinLength(24)]
@@ -245,8 +245,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The time the message is scheduled to send.
-		/// Max length: 24
 		/// Min length: 10
+		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheduleSend")]
 		[System.ComponentModel.DataAnnotations.MinLength(10)]
@@ -255,8 +255,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The time the message was sent from the server.
-		/// Max length: 24
 		/// Min length: 24
+		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sentTimestamp")]
 		[System.ComponentModel.DataAnnotations.MinLength(24)]
@@ -287,8 +287,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The recipient's mobile number.
-		/// Max length: 16
 		/// Min length: 5
+		/// Max length: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="to")]
 		[System.ComponentModel.DataAnnotations.MinLength(5)]
@@ -317,8 +317,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the multimedia file.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fileName")]
@@ -329,8 +329,8 @@ namespace MyNS
 		/// <summary>
 		/// The type of multimedia content (image, audio or video) followed by the type (e.g. jpeg, png, text).
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="type")]
@@ -374,8 +374,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// This will be either "privateNumber", one of your Virtual Numbers or your senderName.
-		/// Max length: 13
 		/// Min length: 1
+		/// Max length: 13
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="from")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -384,8 +384,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The content of the message.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageContent")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -420,8 +420,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The time (in Central Standard Time) the message is scheduled to send.
-		/// Max length: 24
 		/// Min length: 10
+		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheduleSend")]
 		[System.ComponentModel.DataAnnotations.MinLength(10)]
@@ -470,8 +470,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// This will be either "privateNumber", one of your Virtual Numbers or your senderName.
-		/// Max length: 13
 		/// Min length: 1
+		/// Max length: 13
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="from")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -480,8 +480,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The content of the message.
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageContent")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -490,8 +490,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Use this UUID with our other endpoints to fetch, update or delete the message.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageId")]
 		[System.ComponentModel.DataAnnotations.MinLength(36)]
@@ -529,8 +529,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The time the message is scheduled to send.
-		/// Max length: 24
 		/// Min length: 10
+		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheduleSend")]
 		[System.ComponentModel.DataAnnotations.MinLength(10)]
@@ -561,8 +561,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The recipient's mobile number.
-		/// Max length: 16
 		/// Min length: 5
+		/// Max length: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="to")]
 		[System.ComponentModel.DataAnnotations.MinLength(5)]
@@ -578,8 +578,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the multimedia file.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="fileName")]
@@ -591,8 +591,8 @@ namespace MyNS
 		/// The base64 encoded content. You can use [this online tool](https://elmah.io/tools/base64-image-encoder/) to encode an image, or [Base64 Guru](https://base64.guru/) to encode a video or audio file.
 		///
 		/// Required
-		/// Max length: 999999
 		/// Min length: 1
+		/// Max length: 999999
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="payload")]
@@ -603,8 +603,8 @@ namespace MyNS
 		/// <summary>
 		/// the type of multimedia content file you're sending (image, audio or video) followed by the file type. Use the format "multimedia type/file type", e.g. "image/PNG" or "audio/MP3". Supported file types:JPEG, BMP, GIF87a, GIF89a, PNG, MP3, WAV, MPEG, MPG, MP4, 3GP and US-ASCII.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="type")]
@@ -620,8 +620,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The date and time we received the optout request.
-		/// Max length: 24
 		/// Min length: 24
+		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="createTimestamp")]
 		[System.ComponentModel.DataAnnotations.MinLength(24)]
@@ -630,8 +630,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The mobile number that sent the optout request.
-		/// Max length: 16
 		/// Min length: 5
+		/// Max length: 16
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="optoutNumber")]
 		[System.ComponentModel.DataAnnotations.MinLength(5)]
@@ -646,8 +646,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The last time the Virtual Number was used to send a message.
-		/// Max length: 24
 		/// Min length: 24
+		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="lastUse")]
 		[System.ComponentModel.DataAnnotations.MinLength(24)]
@@ -674,8 +674,8 @@ namespace MyNS
 		/// <summary>
 		/// The Virtual Number assigned to your account.
 		///
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="virtualNumber")]
 		[System.ComponentModel.DataAnnotations.MinLength(10)]
@@ -703,8 +703,8 @@ namespace MyNS
 		///* senderName: Choose a unique alphanumeric string of up to 11 characters (paid feature).
 		///
 		/// Required
-		/// Max length: 13
 		/// Min length: 1
+		/// Max length: 13
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="from")]
@@ -717,8 +717,8 @@ namespace MyNS
 		///
 		///Note: either messageContent or multimedia are required, or you can use both field if you want to send multimedia with text.
 		///
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageContent")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -763,8 +763,8 @@ namespace MyNS
 		///
 		///You can schedule a message up to 10 days into the future. If you specify a timestamp outside of this limit, the API will return a FIELD_INVALID error.
 		///
-		/// Max length: 24
 		/// Min length: 10
+		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheduleSend")]
 		[System.ComponentModel.DataAnnotations.MinLength(10)]
@@ -840,8 +840,8 @@ namespace MyNS
 		///* senderName: Choose a unique alphanumeric string of up to 11 characters (paid feature).
 		///
 		/// Required
-		/// Max length: 13
 		/// Min length: 1
+		/// Max length: 13
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="from")]
@@ -854,8 +854,8 @@ namespace MyNS
 		///
 		///Note: either messageContent or multimedia are required, or you can use both field if you want to send multimedia with text.
 		///
-		/// Max length: 1600
 		/// Min length: 1
+		/// Max length: 1600
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="messageContent")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -900,8 +900,8 @@ namespace MyNS
 		///
 		///You can schedule a message up to 10 days into the future. If you specify a timestamp outside of this limit, the API will return a FIELD_INVALID error.
 		///
-		/// Max length: 24
 		/// Min length: 10
+		/// Max length: 24
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheduleSend")]
 		[System.ComponentModel.DataAnnotations.MinLength(10)]
@@ -951,8 +951,8 @@ namespace MyNS
 		///Use a string for a single recipient, and an array of strings for multiple recipients, e.g. "to": ["0412345678", "+441234567890"]. If you're using the Free Trial, you can include up to 5 recipient numbers in the array. If you're using a paid plan, you can bulk send up to 500 messages at once.
 		///
 		/// Required
-		/// Max length: 16
 		/// Min length: 5
+		/// Max length: 16
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="to")]
@@ -1315,8 +1315,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="messageId">When you sent the original message, this is the UUID that was returned in the call response. Use this ID to fetch, update or delete a message with the appropriate endpoints.
 		///
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		public async Task DeleteMessageByIdAsync(string messageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1350,8 +1350,8 @@ namespace MyNS
 		///
 		///Incoming messages are also assigned a messageId. Use this ID with GET/ messages/{messageId} to fetch the message later.
 		///
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>A 200 response means the call has been successful.
 		///</returns>
@@ -1391,8 +1391,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="messageId">When you sent the original message, this is the UUID that was returned in the call response. Use this ID to fetch, update or delete a message with the appropriate endpoints.
 		///
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		public async Task UpdateMessageTagsAsync(string messageId, MessageTags requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1431,8 +1431,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="messageId">When you sent the original message, this is the UUID that was returned in the call response. Use this ID to fetch, update or delete a message with the appropriate endpoints.
 		///
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>A 200 response means the call has been successful.
 		///</returns>
@@ -1554,8 +1554,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="reportId">Use the reportId returned in the POST /reports/{reportType} response.
 		///
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		// </param>
 		/// <returns>A 200 OK response means the call has been successful. Your download link (reportUrl) will be returned in the response.
 		///</returns>
@@ -1680,8 +1680,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="virtual_number">Write the Virtual Number here, using national format (e.g. 0412345678).
 		///
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		// </param>
 		public async Task DeleteNumberAsync(string virtual_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1712,8 +1712,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="virtual_number">Write the Virtual Number here, using national format (e.g. 0412345678).
 		///
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		// </param>
 		/// <returns>A 200 OK response means your request has been successful.
 		///</returns>
@@ -1755,8 +1755,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="virtual_number">Write the Virtual Number here, using national format (e.g. 0412345678).
 		///
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		// </param>
 		/// <returns>A 200 OK response means metadata for the Virtual Number has been successfully updated.
 		///</returns>
@@ -1815,8 +1815,8 @@ namespace MyNS
 		// </param>
 		/// <param name="virtual_number">Write the Virtual Number here, using national format (e.g. 0412345678).
 		///
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<string> GetRecipientOptoutsAsync(int limit, int offset, string virtual_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1925,8 +1925,8 @@ namespace MyNS
 		///Your endDate must be a date in the past, and less than three months from your startDate. Use ISO format(yyyy-mm-dd).
 		///
 		/// Required
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="endDate")]
@@ -1966,8 +1966,8 @@ namespace MyNS
 		///Use ISO format(yyyy-mm-dd), e.g. 2019-08-24.
 		///
 		/// Required
-		/// Max length: 10
 		/// Min length: 10
+		/// Max length: 10
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="startDate")]
@@ -1982,8 +1982,8 @@ namespace MyNS
 		/// <summary>
 		/// The UUID assigned to your report.
 		///
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="reportId")]
 		[System.ComponentModel.DataAnnotations.MinLength(36)]

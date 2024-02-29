@@ -3725,8 +3725,8 @@ namespace MyNS
 		/// AssociateTrackerConsumer tracking/v0/trackers/{TrackerName}/consumers
 		/// </summary>
 		/// <param name="TrackerName">The name of the tracker resource to be associated with a geofence collection.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateTrackerConsumerResponse> AssociateTrackerConsumerAsync(string TrackerName, AssociateTrackerConsumerPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3769,8 +3769,8 @@ namespace MyNS
 		/// BatchDeleteDevicePositionHistory tracking/v0/trackers/{TrackerName}/delete-positions
 		/// </summary>
 		/// <param name="TrackerName">The name of the tracker resource to delete the device position history from.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDeleteDevicePositionHistoryResponse> BatchDeleteDevicePositionHistoryAsync(string TrackerName, BatchDeleteDevicePositionHistoryPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3813,8 +3813,8 @@ namespace MyNS
 		/// BatchDeleteGeofence geofencing/v0/collections/{CollectionName}/delete-geofences
 		/// </summary>
 		/// <param name="CollectionName">The geofence collection storing the geofences to be deleted.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDeleteGeofenceResponse> BatchDeleteGeofenceAsync(string CollectionName, BatchDeleteGeofencePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3857,8 +3857,8 @@ namespace MyNS
 		/// BatchEvaluateGeofences geofencing/v0/collections/{CollectionName}/positions
 		/// </summary>
 		/// <param name="CollectionName">The geofence collection used in evaluating the position of devices against its geofences.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchEvaluateGeofencesResponse> BatchEvaluateGeofencesAsync(string CollectionName, BatchEvaluateGeofencesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3944,8 +3944,8 @@ namespace MyNS
 		/// BatchPutGeofence geofencing/v0/collections/{CollectionName}/put-geofences
 		/// </summary>
 		/// <param name="CollectionName">The geofence collection storing the geofences.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchPutGeofenceResponse> BatchPutGeofenceAsync(string CollectionName, BatchPutGeofencePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3988,8 +3988,8 @@ namespace MyNS
 		/// BatchUpdateDevicePosition tracking/v0/trackers/{TrackerName}/positions
 		/// </summary>
 		/// <param name="TrackerName">The name of the tracker resource to update.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchUpdateDevicePositionResponse> BatchUpdateDevicePositionAsync(string TrackerName, BatchUpdateDevicePositionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4032,12 +4032,12 @@ namespace MyNS
 		/// CalculateRoute routes/v0/calculators/{CalculatorName}/calculate/route
 		/// </summary>
 		/// <param name="CalculatorName">The name of the route calculator resource that you want to use to calculate the route. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CalculateRouteResponse> CalculateRouteAsync(string CalculatorName, string key, CalculateRoutePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4080,12 +4080,12 @@ namespace MyNS
 		/// CalculateRouteMatrix routes/v0/calculators/{CalculatorName}/calculate/route-matrix
 		/// </summary>
 		/// <param name="CalculatorName">The name of the route calculator resource that you want to use to calculate the route matrix. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CalculateRouteMatrixResponse> CalculateRouteMatrixAsync(string CalculatorName, string key, CalculateRouteMatrixPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4368,8 +4368,8 @@ namespace MyNS
 		/// DeleteGeofenceCollection geofencing/v0/collections/{CollectionName}
 		/// </summary>
 		/// <param name="CollectionName">The name of the geofence collection to be deleted.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteGeofenceCollectionResponse> DeleteGeofenceCollectionAsync(string CollectionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4405,8 +4405,8 @@ namespace MyNS
 		/// DescribeGeofenceCollection geofencing/v0/collections/{CollectionName}
 		/// </summary>
 		/// <param name="CollectionName">The name of the geofence collection.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeGeofenceCollectionResponse> DescribeGeofenceCollectionAsync(string CollectionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4442,8 +4442,8 @@ namespace MyNS
 		/// UpdateGeofenceCollection geofencing/v0/collections/{CollectionName}
 		/// </summary>
 		/// <param name="CollectionName">The name of the geofence collection to update.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateGeofenceCollectionResponse> UpdateGeofenceCollectionAsync(string CollectionName, UpdateGeofenceCollectionPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4486,8 +4486,8 @@ namespace MyNS
 		/// DeleteKey metadata/v0/keys/{KeyName}
 		/// </summary>
 		/// <param name="KeyName">The name of the API key to delete.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteKeyResponse> DeleteKeyAsync(string KeyName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4523,8 +4523,8 @@ namespace MyNS
 		/// DescribeKey metadata/v0/keys/{KeyName}
 		/// </summary>
 		/// <param name="KeyName">The name of the API key resource.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeKeyResponse> DescribeKeyAsync(string KeyName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4560,8 +4560,8 @@ namespace MyNS
 		/// UpdateKey metadata/v0/keys/{KeyName}
 		/// </summary>
 		/// <param name="KeyName">The name of the API key resource to update.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateKeyResponse> UpdateKeyAsync(string KeyName, UpdateKeyPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4604,8 +4604,8 @@ namespace MyNS
 		/// DeleteMap maps/v0/maps/{MapName}
 		/// </summary>
 		/// <param name="MapName">The name of the map resource to be deleted.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteMapResponse> DeleteMapAsync(string MapName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4641,8 +4641,8 @@ namespace MyNS
 		/// DescribeMap maps/v0/maps/{MapName}
 		/// </summary>
 		/// <param name="MapName">The name of the map resource.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeMapResponse> DescribeMapAsync(string MapName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4678,8 +4678,8 @@ namespace MyNS
 		/// UpdateMap maps/v0/maps/{MapName}
 		/// </summary>
 		/// <param name="MapName">The name of the map resource to update.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMapResponse> UpdateMapAsync(string MapName, UpdateMapPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4722,8 +4722,8 @@ namespace MyNS
 		/// DeletePlaceIndex places/v0/indexes/{IndexName}
 		/// </summary>
 		/// <param name="IndexName">The name of the place index resource to be deleted.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePlaceIndexResponse> DeletePlaceIndexAsync(string IndexName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4759,8 +4759,8 @@ namespace MyNS
 		/// DescribePlaceIndex places/v0/indexes/{IndexName}
 		/// </summary>
 		/// <param name="IndexName">The name of the place index resource.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePlaceIndexResponse> DescribePlaceIndexAsync(string IndexName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4796,8 +4796,8 @@ namespace MyNS
 		/// UpdatePlaceIndex places/v0/indexes/{IndexName}
 		/// </summary>
 		/// <param name="IndexName">The name of the place index resource to update.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePlaceIndexResponse> UpdatePlaceIndexAsync(string IndexName, UpdatePlaceIndexPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4840,8 +4840,8 @@ namespace MyNS
 		/// DeleteRouteCalculator routes/v0/calculators/{CalculatorName}
 		/// </summary>
 		/// <param name="CalculatorName">The name of the route calculator resource to be deleted.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteRouteCalculatorResponse> DeleteRouteCalculatorAsync(string CalculatorName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4877,8 +4877,8 @@ namespace MyNS
 		/// DescribeRouteCalculator routes/v0/calculators/{CalculatorName}
 		/// </summary>
 		/// <param name="CalculatorName">The name of the route calculator resource.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeRouteCalculatorResponse> DescribeRouteCalculatorAsync(string CalculatorName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4914,8 +4914,8 @@ namespace MyNS
 		/// UpdateRouteCalculator routes/v0/calculators/{CalculatorName}
 		/// </summary>
 		/// <param name="CalculatorName">The name of the route calculator resource to update.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRouteCalculatorResponse> UpdateRouteCalculatorAsync(string CalculatorName, UpdateRouteCalculatorPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4958,8 +4958,8 @@ namespace MyNS
 		/// DeleteTracker tracking/v0/trackers/{TrackerName}
 		/// </summary>
 		/// <param name="TrackerName">The name of the tracker resource to be deleted.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteTrackerResponse> DeleteTrackerAsync(string TrackerName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4995,8 +4995,8 @@ namespace MyNS
 		/// DescribeTracker tracking/v0/trackers/{TrackerName}
 		/// </summary>
 		/// <param name="TrackerName">The name of the tracker resource.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTrackerResponse> DescribeTrackerAsync(string TrackerName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5032,8 +5032,8 @@ namespace MyNS
 		/// UpdateTracker tracking/v0/trackers/{TrackerName}
 		/// </summary>
 		/// <param name="TrackerName">The name of the tracker resource to update.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateTrackerResponse> UpdateTrackerAsync(string TrackerName, UpdateTrackerPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5076,12 +5076,12 @@ namespace MyNS
 		/// DisassociateTrackerConsumer tracking/v0/trackers/{TrackerName}/consumers/{ConsumerArn}
 		/// </summary>
 		/// <param name="ConsumerArn"><p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all Amazon Web Services. </p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li> </ul>
-		/// Max length: 1600
 		/// Min length: 0
+		/// Max length: 1600
 		// </param>
 		/// <param name="TrackerName">The name of the tracker resource to be dissociated from the consumer.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateTrackerConsumerResponse> DisassociateTrackerConsumerAsync(string ConsumerArn, string TrackerName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5117,12 +5117,12 @@ namespace MyNS
 		/// GetDevicePosition tracking/v0/trackers/{TrackerName}/devices/{DeviceId}/positions/latest
 		/// </summary>
 		/// <param name="DeviceId">The device whose position you want to retrieve.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TrackerName">The tracker resource receiving the position update.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDevicePositionResponse> GetDevicePositionAsync(string DeviceId, string TrackerName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5158,12 +5158,12 @@ namespace MyNS
 		/// GetDevicePositionHistory tracking/v0/trackers/{TrackerName}/devices/{DeviceId}/list-positions
 		/// </summary>
 		/// <param name="DeviceId">The device whose position history you want to retrieve.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="TrackerName">The tracker resource receiving the request for the device position history.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -5208,12 +5208,12 @@ namespace MyNS
 		/// GetGeofence geofencing/v0/collections/{CollectionName}/geofences/{GeofenceId}
 		/// </summary>
 		/// <param name="CollectionName">The geofence collection storing the target geofence.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="GeofenceId">The geofence you're retrieving details for.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetGeofenceResponse> GetGeofenceAsync(string CollectionName, string GeofenceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5249,12 +5249,12 @@ namespace MyNS
 		/// PutGeofence geofencing/v0/collections/{CollectionName}/geofences/{GeofenceId}
 		/// </summary>
 		/// <param name="CollectionName">The geofence collection to store the geofence in.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="GeofenceId">An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutGeofenceResponse> PutGeofenceAsync(string CollectionName, string GeofenceId, PutGeofencePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5299,12 +5299,12 @@ namespace MyNS
 		/// <param name="FontStack"><p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li> <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li> <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> | <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li> </ul> <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans Bold</code> </p> </li> </ul> <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight, VectorOpenDataStandardDark, VectorOpenDataVisualizationLight, VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> | <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed Bold</code> | <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic Bold</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans Arabic Regular</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans Regular,Noto Sans Arabic Condensed Regular</code> | <code>Amazon Ember Medium,Noto Sans Medium,Noto Sans Arabic Medium</code> </p> </li> </ul> <note> <p>The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p> </note></param>
 		/// <param name="FontUnicodeRange">A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</param>
 		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <param name="MapName">The map resource associated with the glyph ﬁle.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMapGlyphsResponse> GetMapGlyphsAsync(string FontStack, string FontUnicodeRange, string key, string MapName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5341,12 +5341,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="FileName"><p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p> <ul> <li> <p> <code>sprites.png</code> </p> </li> <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li> </ul> <p>For the JSON document containing image offsets. Use the following ﬁle names:</p> <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li> </ul></param>
 		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <param name="MapName">The map resource associated with the sprite ﬁle.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMapSpritesResponse> GetMapSpritesAsync(string FileName, string key, string MapName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5382,12 +5382,12 @@ namespace MyNS
 		/// GetMapStyleDescriptor maps/v0/maps/{MapName}/style-descriptor
 		/// </summary>
 		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <param name="MapName">The map resource to retrieve the style descriptor from.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMapStyleDescriptorResponse> GetMapStyleDescriptorAsync(string key, string MapName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5423,12 +5423,12 @@ namespace MyNS
 		/// GetMapTile maps/v0/maps/{MapName}/tiles/{Z}/{X}/{Y}
 		/// </summary>
 		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <param name="MapName">The map resource to retrieve the map tiles from.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="X">The X axis value for the map tile.</param>
 		/// <param name="Y">The Y axis value for the map tile. </param>
@@ -5467,16 +5467,16 @@ namespace MyNS
 		/// GetPlace places/v0/indexes/{IndexName}/places/{PlaceId}
 		/// </summary>
 		/// <param name="IndexName">The name of the place index resource that you want to use for the search.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <param name="language"><p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p> <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p> <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p> <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-		/// Max length: 35
 		/// Min length: 2
+		/// Max length: 35
 		// </param>
 		/// <param name="PlaceId">The identifier of the place to find.</param>
 		/// <returns>Success</returns>
@@ -5513,8 +5513,8 @@ namespace MyNS
 		/// ListDevicePositions tracking/v0/trackers/{TrackerName}/list-positions
 		/// </summary>
 		/// <param name="TrackerName">The tracker resource containing the requested devices.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -5601,8 +5601,8 @@ namespace MyNS
 		/// ListGeofences geofencing/v0/collections/{CollectionName}/list-geofences
 		/// </summary>
 		/// <param name="CollectionName">The name of the geofence collection storing the list of geofences.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -5815,8 +5815,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn"><p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li> </ul>
-		/// Max length: 1600
 		/// Min length: 0
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5852,8 +5852,8 @@ namespace MyNS
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
 		/// <param name="ResourceArn"><p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li> </ul>
-		/// Max length: 1600
 		/// Min length: 0
+		/// Max length: 1600
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5896,8 +5896,8 @@ namespace MyNS
 		/// ListTrackerConsumers tracking/v0/trackers/{TrackerName}/list-consumers
 		/// </summary>
 		/// <param name="TrackerName">The tracker resource whose associated geofence collections you want to list.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -5984,12 +5984,12 @@ namespace MyNS
 		/// SearchPlaceIndexForPosition places/v0/indexes/{IndexName}/search/position
 		/// </summary>
 		/// <param name="IndexName">The name of the place index resource you want to use for the search.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<SearchPlaceIndexForPositionResponse> SearchPlaceIndexForPositionAsync(string IndexName, string key, SearchPlaceIndexForPositionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6032,12 +6032,12 @@ namespace MyNS
 		/// SearchPlaceIndexForSuggestions places/v0/indexes/{IndexName}/search/suggestions
 		/// </summary>
 		/// <param name="IndexName">The name of the place index resource you want to use for the search.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<SearchPlaceIndexForSuggestionsResponse> SearchPlaceIndexForSuggestionsAsync(string IndexName, string key, SearchPlaceIndexForSuggestionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6080,12 +6080,12 @@ namespace MyNS
 		/// SearchPlaceIndexForText places/v0/indexes/{IndexName}/search/text
 		/// </summary>
 		/// <param name="IndexName">The name of the place index resource you want to use for the search.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		// </param>
 		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<SearchPlaceIndexForTextResponse> SearchPlaceIndexForTextAsync(string IndexName, string key, SearchPlaceIndexForTextPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6128,8 +6128,8 @@ namespace MyNS
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
 		/// <param name="ResourceArn"><p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li> </ul>
-		/// Max length: 1600
 		/// Min length: 0
+		/// Max length: 1600
 		// </param>
 		/// <param name="tagKeys">The list of tag keys to remove from the specified resource.
 		/// Minimum items: 1
@@ -6171,8 +6171,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li> </ul>
 		/// Required
-		/// Max length: 1600
 		/// Min length: 0
+		/// Max length: 1600
 		/// Pattern: ^arn(:[a-z0-9]+([.-][a-z0-9]+)*){2}(:([a-z0-9]+([.-][a-z0-9]+)*)?){2}:([^/].*)?$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6481,8 +6481,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A custom name for the geofence collection.</p> <p>Requirements:</p> <ul> <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li> <li> <p>Must be a unique geofence collection name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p> </li> </ul>
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^[-._\w]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6494,8 +6494,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional description for the geofence collection.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6504,8 +6504,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. 
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6536,8 +6536,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional description for the API key resource.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6553,8 +6553,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>A custom name for the API key resource.</p> <p>Requirements:</p> <ul> <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li> <li> <p>Must be a unique API key name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li> </ul>
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^[-._\w]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6611,8 +6611,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional description for the map resource.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6622,8 +6622,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p> </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li> </ul>
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^[-._\w]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6675,8 +6675,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The optional description for the place index resource.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6686,8 +6686,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index resource name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li> </ul>
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^[-._\w]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6723,8 +6723,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name of the route calculator resource. </p> <p>Requirements:</p> <ul> <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores (_).</p> </li> <li> <p>Must be a unique Route calculator resource name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li> </ul>
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^[-._\w]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6744,8 +6744,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The optional description for the route calculator resource.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6770,8 +6770,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional description for the tracker resource.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6786,8 +6786,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -6821,8 +6821,8 @@ namespace MyNS
 		/// <summary>
 		/// <p>The name for the tracker resource.</p> <p>Requirements:</p> <ul> <li> <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p> </li> <li> <p>Must be a unique tracker resource name.</p> </li> <li> <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p> </li> </ul>
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^[-._\w]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6838,8 +6838,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Updates the description for the geofence collection.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6864,8 +6864,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Updates the description for the API key resource.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6921,8 +6921,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Updates the description for the map resource.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6954,8 +6954,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Updates the description for the place index resource.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -6981,8 +6981,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Updates the description for the route calculator resource.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7001,8 +7001,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Updates the description for the tracker resource.
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7054,8 +7054,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7111,8 +7111,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p> <p>Default value: <code>null</code> </p>
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7134,8 +7134,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7157,8 +7157,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7186,8 +7186,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7216,8 +7216,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p> <p>Default value: <code>null</code> </p>
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7239,8 +7239,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p> <p>Default value: <code>null</code> </p>
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7262,8 +7262,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.</p> <p>Default Value: <code>null</code> </p>
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7297,8 +7297,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7320,8 +7320,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page. </p> <p>Default value: <code>null</code> </p>
-		/// Max length: 2000
 		/// Min length: 1
+		/// Max length: 2000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7334,8 +7334,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p> <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p> <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p> <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-		/// Max length: 35
 		/// Min length: 2
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -7409,8 +7409,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p> <p>This setting affects the languages used in the results. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p> <p>For an example, we'll use the Greek language. You search for <code>Athens, Gr</code> to get suggestions with the <code>language</code> parameter set to <code>en</code>. The results found will most likely be returned as <code>Athens, Greece</code>.</p> <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα, Ελλάδα</code>.</p> <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-		/// Max length: 35
 		/// Min length: 2
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -7429,8 +7429,8 @@ namespace MyNS
 		/// <summary>
 		/// The free-form partial text to use to generate place suggestions. For example, <code>eiffel tow</code>.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -7484,8 +7484,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p> <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p> <p>For an example, we'll use the Greek language. You search for <code>Athens, Greece</code>, with the <code>language</code> parameter set to <code>en</code>. The result found will most likely be returned as <code>Athens</code>.</p> <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the result found will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
-		/// Max length: 35
 		/// Min length: 2
+		/// Max length: 35
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -7504,8 +7504,8 @@ namespace MyNS
 		/// <summary>
 		/// The address, name, city, or region to be used in the search in free-form text format. For example, <code>123 Any Street</code>.
 		/// Required
-		/// Max length: 200
 		/// Min length: 1
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]

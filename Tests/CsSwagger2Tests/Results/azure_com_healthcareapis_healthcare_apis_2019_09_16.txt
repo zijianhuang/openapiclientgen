@@ -703,8 +703,8 @@ namespace MyNS
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The name of the resource group that contains the service instance.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <returns>This is a synchronous operation. The body contains a JSON-serialized array of the metadata from all the service instances in the resource group.</returns>
 		public async Task<ServicesDescriptionListResult> Services_ListByResourceGroupAsync(string api_version, string subscriptionId, string resourceGroupName)
@@ -737,12 +737,12 @@ namespace MyNS
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The name of the resource group that contains the service instance.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceName">The name of the service instance.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <returns>The body contains all of the properties of the service instance.</returns>
 		public async Task<ServicesDescription> Services_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string resourceName)
@@ -775,12 +775,12 @@ namespace MyNS
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The name of the resource group that contains the service instance.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceName">The name of the service instance.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="requestBody">The service instance metadata.</param>
 		/// <returns>Updated - Put request accepted and an existing resource is being updated; the operation will complete asynchronously.</returns>
@@ -821,12 +821,12 @@ namespace MyNS
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The name of the resource group that contains the service instance.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceName">The name of the service instance.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		public async Task Services_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string resourceName)
 		{
@@ -852,12 +852,12 @@ namespace MyNS
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">The subscription identifier.</param>
 		/// <param name="resourceGroupName">The name of the resource group that contains the service instance.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="resourceName">The name of the service instance.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="requestBody">The service instance metadata and security metadata.</param>
 		/// <returns>The tags for the resource were updated successfully.</returns>

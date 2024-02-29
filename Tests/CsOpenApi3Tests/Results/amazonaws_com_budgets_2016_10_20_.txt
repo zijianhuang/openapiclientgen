@@ -530,8 +530,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -544,8 +544,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -571,8 +571,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -585,8 +585,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -958,8 +958,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -972,8 +972,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1010,8 +1010,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1129,8 +1129,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1143,8 +1143,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1296,8 +1296,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1310,8 +1310,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1337,8 +1337,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1351,8 +1351,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1384,8 +1384,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A generic string.
-		/// Max length: 2147483647
 		/// Min length: 0
+		/// Max length: 2147483647
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1466,8 +1466,8 @@ namespace MyNS
 		/// <summary>
 		///  A generic string.
 		/// Required
-		/// Max length: 2147483647
 		/// Min length: 0
+		/// Max length: 2147483647
 		/// Pattern: .*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1493,8 +1493,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1507,8 +1507,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1542,8 +1542,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A generic string.
-		/// Max length: 2147483647
 		/// Min length: 0
+		/// Max length: 2147483647
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1573,8 +1573,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A generic string.
-		/// Max length: 2147483647
 		/// Min length: 0
+		/// Max length: 2147483647
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1592,8 +1592,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1614,8 +1614,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A generic string.
-		/// Max length: 2147483647
 		/// Min length: 0
+		/// Max length: 2147483647
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1639,8 +1639,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A generic string.
-		/// Max length: 2147483647
 		/// Min length: 0
+		/// Max length: 2147483647
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1658,8 +1658,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1672,8 +1672,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1694,8 +1694,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A generic string.
-		/// Max length: 2147483647
 		/// Min length: 0
+		/// Max length: 2147483647
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1715,8 +1715,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A generic string.
-		/// Max length: 2147483647
 		/// Min length: 0
+		/// Max length: 2147483647
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1742,8 +1742,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1761,8 +1761,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1777,8 +1777,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A generic string.
-		/// Max length: 2147483647
 		/// Min length: 0
+		/// Max length: 2147483647
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1804,8 +1804,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A generic string.
-		/// Max length: 2147483647
 		/// Min length: 0
+		/// Max length: 2147483647
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1825,8 +1825,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1883,8 +1883,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1897,8 +1897,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1922,8 +1922,8 @@ namespace MyNS
 		
 		/// <summary>
 		///  A generic string.
-		/// Max length: 2147483647
 		/// Min length: 0
+		/// Max length: 2147483647
 		/// Pattern: .*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2073,8 +2073,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2087,8 +2087,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2140,8 +2140,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2154,8 +2154,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2220,8 +2220,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2234,8 +2234,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2268,8 +2268,8 @@ namespace MyNS
 		/// <summary>
 		/// The account ID of the user. It's a 12-digit number.
 		/// Required
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		/// Pattern: \d{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2282,8 +2282,8 @@ namespace MyNS
 		/// <summary>
 		///  A string that represents the budget name. The ":" and "\" characters, and the "/action/" substring, aren't allowed.
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^(?![^:\\]*/action/)[^:\\]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

@@ -25,8 +25,8 @@ namespace MyNS
 		/// <summary>
 		/// Destination ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -39,8 +39,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the destination's identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -139,8 +139,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -153,8 +153,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the site's identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -187,8 +187,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -201,8 +201,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the workers identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -229,8 +229,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -275,8 +275,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker fleet.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -289,8 +289,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the worker fleet's identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -347,8 +347,8 @@ namespace MyNS
 		/// <summary>
 		/// Destination ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -361,8 +361,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the destination's identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -373,8 +373,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -385,8 +385,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -422,8 +422,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON document containing additional fixed properties regarding the destination
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -439,8 +439,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -453,8 +453,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the site's identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -465,8 +465,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -477,8 +477,8 @@ namespace MyNS
 		/// <summary>
 		/// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
 		/// Required
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// Pattern: [a-zA-Z]{2}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -490,8 +490,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A high-level description of the site.
-		/// Max length: 140
 		/// Min length: 0
+		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -523,8 +523,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -537,8 +537,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the workers identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -549,8 +549,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker fleet.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -563,8 +563,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -593,8 +593,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -604,8 +604,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -614,8 +614,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -652,8 +652,8 @@ namespace MyNS
 		/// <summary>
 		/// The worker ID defined by the vendor FMS.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="vendorWorkerId")]
@@ -663,8 +663,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The worker IP address defined by the vendor FMS.
-		/// Max length: 45
 		/// Min length: 1
+		/// Max length: 45
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorWorkerIpAddress")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -673,8 +673,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured vendor properties that are transient and may change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorAdditionalTransientProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -683,8 +683,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured vendor properties that are fixed and won't change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorAdditionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -724,8 +724,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the worker fleet's identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -736,8 +736,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker fleet.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -750,8 +750,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -762,8 +762,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -791,8 +791,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing additional fixed properties regarding the worker fleet
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -807,8 +807,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: .*[a-zA-Z0-9_.-/+=]*.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -835,8 +835,8 @@ namespace MyNS
 		/// <summary>
 		/// Destination ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -849,8 +849,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the destination's identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -861,8 +861,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -873,8 +873,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -910,8 +910,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON document containing additional fixed properties regarding the destination
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -926,8 +926,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: .*[a-zA-Z0-9_.-/+=]*.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -954,8 +954,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -975,8 +975,8 @@ namespace MyNS
 		/// <summary>
 		/// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
 		/// Required
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// Pattern: [a-zA-Z]{2}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1002,8 +1002,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: .*[a-zA-Z0-9_.-/+=]*.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -1030,8 +1030,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker fleet.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1044,8 +1044,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the worker fleet's identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -1056,8 +1056,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1068,8 +1068,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1097,8 +1097,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing additional fixed properties regarding the worker fleet
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1113,8 +1113,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: .*[a-zA-Z0-9_.-/+=]*.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="nextToken")]
@@ -1141,8 +1141,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1155,8 +1155,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the workers identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -1167,8 +1167,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker fleet.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1197,8 +1197,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1209,8 +1209,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1222,8 +1222,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1232,8 +1232,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1267,8 +1267,8 @@ namespace MyNS
 		/// <summary>
 		/// Destination ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1281,8 +1281,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the destination's identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -1293,8 +1293,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1320,8 +1320,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON document containing additional fixed properties regarding the destination
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1337,8 +1337,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1351,8 +1351,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the site's identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -1363,8 +1363,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1374,8 +1374,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// Pattern: [a-zA-Z]{2}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="countryCode")]
@@ -1386,8 +1386,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A high-level description of the site.
-		/// Max length: 140
 		/// Min length: 0
+		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1411,8 +1411,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1425,8 +1425,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the workers identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -1437,8 +1437,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker fleet.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1459,8 +1459,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1470,8 +1470,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1480,8 +1480,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1515,8 +1515,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker fleet.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1529,8 +1529,8 @@ namespace MyNS
 		/// <summary>
 		/// Filters access by the worker fleet's identifier
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="id")]
@@ -1541,8 +1541,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1560,8 +1560,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing additional fixed properties regarding the worker fleet
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1595,8 +1595,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -1608,8 +1608,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1620,8 +1620,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1636,8 +1636,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON document containing additional fixed properties regarding the destination
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1652,8 +1652,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -1665,8 +1665,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1677,8 +1677,8 @@ namespace MyNS
 		/// <summary>
 		/// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
 		/// Required
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// Pattern: [a-zA-Z]{2}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1690,8 +1690,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A high-level description of the site.
-		/// Max length: 140
 		/// Min length: 0
+		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1706,8 +1706,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -1719,8 +1719,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1731,8 +1731,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1744,8 +1744,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing additional fixed properties regarding the worker fleet
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1760,8 +1760,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -1773,8 +1773,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1785,8 +1785,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker fleet.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1798,8 +1798,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1808,8 +1808,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1843,8 +1843,8 @@ namespace MyNS
 		/// <summary>
 		/// Destination ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1863,8 +1863,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1883,8 +1883,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker fleet.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1903,8 +1903,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1971,8 +1971,8 @@ namespace MyNS
 		/// <summary>
 		/// Destination ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1984,8 +1984,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Human friendly name of the resource.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2000,8 +2000,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON document containing additional fixed properties regarding the destination
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2017,8 +2017,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2030,8 +2030,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Human friendly name of the resource.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2040,8 +2040,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// Pattern: [a-zA-Z]{2}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="countryCode")]
@@ -2052,8 +2052,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A high-level description of the site.
-		/// Max length: 140
 		/// Min length: 0
+		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2069,8 +2069,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker fleet.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2082,8 +2082,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Human friendly name of the resource.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2092,8 +2092,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing additional fixed properties regarding the worker fleet
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2109,8 +2109,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2122,8 +2122,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Human friendly name of the resource.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2132,8 +2132,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2142,8 +2142,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2512,8 +2512,8 @@ namespace MyNS
 		/// Grants permission to get a destination
 		/// GetDestination getDestination#id
 		/// </summary>
-		/// <param name="id">Max length: 1011
-		/// Min length: 1
+		/// <param name="id">Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDestinationResponse> GetDestinationAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2548,8 +2548,8 @@ namespace MyNS
 		/// Grants permission to get a site
 		/// GetSite getSite#id
 		/// </summary>
-		/// <param name="id">Max length: 1011
-		/// Min length: 1
+		/// <param name="id">Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSiteResponse> GetSiteAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2584,8 +2584,8 @@ namespace MyNS
 		/// Grants permission to get a worker
 		/// GetWorker getWorker#id
 		/// </summary>
-		/// <param name="id">Max length: 1011
-		/// Min length: 1
+		/// <param name="id">Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWorkerResponse> GetWorkerAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2620,8 +2620,8 @@ namespace MyNS
 		/// Grants permission to get a worker fleet
 		/// GetWorkerFleet getWorkerFleet#id
 		/// </summary>
-		/// <param name="id">Max length: 1011
-		/// Min length: 1
+		/// <param name="id">Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWorkerFleetResponse> GetWorkerFleetAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2656,14 +2656,14 @@ namespace MyNS
 		/// Grants permission to list destinations
 		/// ListDestinations listDestinations#site
 		/// </summary>
-		/// <param name="site">Max length: 1011
-		/// Min length: 1
+		/// <param name="site">Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <param name="maxResults">Minimum: 1
 		/// Maximum: 1000
 		// </param>
-		/// <param name="nextToken">Max length: 2048
-		/// Min length: 1
+		/// <param name="nextToken">Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDestinationsResponse> ListDestinationsAsync(string site, int maxResults, string nextToken, CreateDestinationResponseState state, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2701,8 +2701,8 @@ namespace MyNS
 		/// <param name="maxResults">Minimum: 1
 		/// Maximum: 25
 		// </param>
-		/// <param name="nextToken">Max length: 2048
-		/// Min length: 1
+		/// <param name="nextToken">Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSitesResponse> ListSitesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2737,14 +2737,14 @@ namespace MyNS
 		/// Grants permission to list worker fleets
 		/// ListWorkerFleets listWorkerFleets#site
 		/// </summary>
-		/// <param name="site">Max length: 1011
-		/// Min length: 1
+		/// <param name="site">Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <param name="maxResults">Minimum: 1
 		/// Maximum: 25
 		// </param>
-		/// <param name="nextToken">Max length: 2048
-		/// Min length: 1
+		/// <param name="nextToken">Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListWorkerFleetsResponse> ListWorkerFleetsAsync(string site, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2779,17 +2779,17 @@ namespace MyNS
 		/// Grants permission to list workers
 		/// ListWorkers listWorkers#site
 		/// </summary>
-		/// <param name="site">Max length: 1011
-		/// Min length: 1
+		/// <param name="site">Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <param name="maxResults">Minimum: 1
 		/// Maximum: 25
 		// </param>
-		/// <param name="nextToken">Max length: 2048
-		/// Min length: 1
+		/// <param name="nextToken">Min length: 1
+		/// Max length: 2048
 		// </param>
-		/// <param name="fleet">Max length: 1011
-		/// Min length: 1
+		/// <param name="fleet">Min length: 1
+		/// Max length: 1011
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListWorkersResponse> ListWorkersAsync(string site, int maxResults, string nextToken, string fleet, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2986,8 +2986,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -2999,8 +2999,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -3011,8 +3011,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3030,8 +3030,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON document containing additional fixed properties regarding the destination
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3044,8 +3044,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3057,8 +3057,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -3069,8 +3069,8 @@ namespace MyNS
 		/// <summary>
 		/// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
 		/// Required
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// Pattern: [a-zA-Z]{2}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3082,8 +3082,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A high-level description of the site.
-		/// Max length: 140
 		/// Min length: 0
+		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3096,8 +3096,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3109,8 +3109,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -3121,8 +3121,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker fleet.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3134,8 +3134,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3144,8 +3144,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3176,8 +3176,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The worker ID defined by the vendor FMS.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorWorkerId")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3186,8 +3186,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The worker IP address defined by the vendor FMS.
-		/// Max length: 45
 		/// Min length: 1
+		/// Max length: 45
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorWorkerIpAddress")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3196,8 +3196,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured vendor properties that are transient and may change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorAdditionalTransientProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3206,8 +3206,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured vendor properties that are fixed and won't change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorAdditionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3234,8 +3234,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Token used for detecting replayed requests. Replayed requests will not be performed multiple times.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [!-~]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3247,8 +3247,8 @@ namespace MyNS
 		/// <summary>
 		/// Human friendly name of the resource.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -3259,8 +3259,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3272,8 +3272,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing additional fixed properties regarding the worker fleet
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3287,8 +3287,8 @@ namespace MyNS
 		/// <summary>
 		/// Destination ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3305,8 +3305,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3323,8 +3323,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3341,8 +3341,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker fleet.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3359,8 +3359,8 @@ namespace MyNS
 		/// <summary>
 		/// Destination ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$|^arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/destination/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3372,8 +3372,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Human friendly name of the resource.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3388,8 +3388,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON document containing additional fixed properties regarding the destination
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3403,8 +3403,8 @@ namespace MyNS
 		/// <summary>
 		/// Site ARN.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3416,8 +3416,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Human friendly name of the resource.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3426,8 +3426,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// Pattern: [a-zA-Z]{2}
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="countryCode")]
@@ -3438,8 +3438,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A high-level description of the site.
-		/// Max length: 140
 		/// Min length: 0
+		/// Max length: 140
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -3453,8 +3453,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3466,8 +3466,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Human friendly name of the resource.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3476,8 +3476,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalTransientProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3486,8 +3486,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured worker properties that are fixed and won't change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3518,8 +3518,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The worker ID defined by the vendor FMS.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorWorkerId")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3528,8 +3528,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The worker IP address defined by the vendor FMS.
-		/// Max length: 45
 		/// Min length: 1
+		/// Max length: 45
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorWorkerIpAddress")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3538,8 +3538,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured vendor properties that are transient and may change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorAdditionalTransientProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3548,8 +3548,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing unstructured vendor properties that are fixed and won't change during regular operation.
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="vendorAdditionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3577,8 +3577,8 @@ namespace MyNS
 		/// <summary>
 		/// Full ARN of the worker fleet.
 		/// Required
-		/// Max length: 1011
 		/// Min length: 1
+		/// Max length: 1011
 		/// Pattern: arn:aws:iotroborunner:[\w-]+:\w+:site/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/worker-fleet/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3590,8 +3590,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Human friendly name of the resource.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3600,8 +3600,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// JSON blob containing additional fixed properties regarding the worker fleet
-		/// Max length: 131072
 		/// Min length: 1
+		/// Max length: 131072
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="additionalFixedProperties")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

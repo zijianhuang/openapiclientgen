@@ -175,8 +175,8 @@ namespace MyNS
 		/// Recommendations_ListHistoryForHostingEnvironment subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendationHistory
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="hostingEnvironmentName">Name of the hosting environment.</param>
 		/// <param name="expiredOnly">Specify <code>false</code> to return all recommendations. The default is <code>true</code>, which returns only expired recommendations.</param>
@@ -213,8 +213,8 @@ namespace MyNS
 		/// Recommendations_ListRecommendedRulesForHostingEnvironment subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="hostingEnvironmentName">Name of the app.</param>
 		/// <param name="featured">Specify <code>true</code> to return only the most critical recommendations. The default is <code>false</code>, which returns all recommendations.</param>
@@ -251,8 +251,8 @@ namespace MyNS
 		/// Recommendations_DisableAllForHostingEnvironment subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations/disable
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="environmentName">Name of the app.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -280,8 +280,8 @@ namespace MyNS
 		/// Recommendations_ResetAllFiltersForHostingEnvironment subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations/reset
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="environmentName">Name of the app.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -309,8 +309,8 @@ namespace MyNS
 		/// Recommendations_GetRuleDetailsByHostingEnvironment subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations/{name}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="hostingEnvironmentName">Name of the hosting environment.</param>
 		/// <param name="name">Name of the recommendation.</param>
@@ -348,8 +348,8 @@ namespace MyNS
 		/// Recommendations_DisableRecommendationForHostingEnvironment subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations/{name}/disable
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="environmentName">Site name</param>
 		/// <param name="name">Rule name</param>
@@ -379,8 +379,8 @@ namespace MyNS
 		/// Recommendations_ListHistoryForWebApp subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendationHistory
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Name of the app.</param>
 		/// <param name="expiredOnly">Specify <code>false</code> to return all recommendations. The default is <code>true</code>, which returns only expired recommendations.</param>
@@ -417,8 +417,8 @@ namespace MyNS
 		/// Recommendations_ListRecommendedRulesForWebApp subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Name of the app.</param>
 		/// <param name="featured">Specify <code>true</code> to return only the most critical recommendations. The default is <code>false</code>, which returns all recommendations.</param>
@@ -455,8 +455,8 @@ namespace MyNS
 		/// Recommendations_DisableAllForWebApp subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Name of the app.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -484,8 +484,8 @@ namespace MyNS
 		/// Recommendations_ResetAllFiltersForWebApp subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Name of the app.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -513,8 +513,8 @@ namespace MyNS
 		/// Recommendations_GetRuleDetailsByWebApp subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/{name}
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Name of the app.</param>
 		/// <param name="name">Name of the recommendation.</param>
@@ -552,8 +552,8 @@ namespace MyNS
 		/// Recommendations_DisableRecommendationForSite subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/{name}/disable
 		/// </summary>
 		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="siteName">Site name</param>
 		/// <param name="name">Rule name</param>

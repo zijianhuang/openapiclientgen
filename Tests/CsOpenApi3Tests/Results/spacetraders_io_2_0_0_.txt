@@ -1755,8 +1755,8 @@ namespace MyNS
 		/// <summary>
 		/// How other agents will see your ships and information.
 		/// Required
-		/// Max length: 14
 		/// Min length: 3
+		/// Max length: 14
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="symbol")]

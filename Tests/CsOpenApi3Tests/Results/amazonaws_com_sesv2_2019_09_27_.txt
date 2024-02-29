@@ -5396,8 +5396,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="PolicyName"><p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateEmailIdentityPolicyResponse> CreateEmailIdentityPolicyAsync(string EmailIdentity, string PolicyName, CreateEmailIdentityPolicyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5443,8 +5443,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="PolicyName"><p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteEmailIdentityPolicyResponse> DeleteEmailIdentityPolicyAsync(string EmailIdentity, string PolicyName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5483,8 +5483,8 @@ namespace MyNS
 		/// Min length: 1
 		// </param>
 		/// <param name="PolicyName"><p>The name of the policy.</p> <p>The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.</p>
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateEmailIdentityPolicyResponse> UpdateEmailIdentityPolicyAsync(string EmailIdentity, string PolicyName, UpdateEmailIdentityPolicyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -8833,8 +8833,8 @@ namespace MyNS
 		/// <summary>
 		/// The URL of your website. This information helps us better understand the type of content that you plan to send.
 		/// Required
-		/// Max length: 1000
 		/// Min length: 1
+		/// Max length: 1000
 		/// Pattern: ^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -8853,8 +8853,8 @@ namespace MyNS
 		/// <summary>
 		/// A description of the types of email that you plan to send.
 		/// Required
-		/// Max length: 5000
 		/// Min length: 1
+		/// Max length: 5000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]

@@ -826,8 +826,8 @@ namespace MyNS
 		/// <summary>
 		/// The hex number of the color
 		/// Required
-		/// Max length: 7
 		/// Min length: 7
+		/// Max length: 7
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="hex")]
@@ -2124,8 +2124,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Character prefixed to comment strings
-		/// Max length: 1
 		/// Min length: 0
+		/// Max length: 1
 		/// </summary>
 		[System.ComponentModel.DefaultValue("#")]
 		[System.Runtime.Serialization.DataMember(Name="commentPrefix")]
@@ -2141,8 +2141,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Separator between cells; the default is ,
-		/// Max length: 1
 		/// Min length: 1
+		/// Max length: 1
 		/// </summary>
 		[System.ComponentModel.DefaultValue(",")]
 		[System.Runtime.Serialization.DataMember(Name="delimiter")]

@@ -427,8 +427,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Name of the resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

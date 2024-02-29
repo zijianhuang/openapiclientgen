@@ -114,8 +114,8 @@ namespace MyNS
 		/// <summary>
 		/// The phone number to connect to
 		/// Required
-		/// Max length: 15
 		/// Min length: 7
+		/// Max length: 15
 		/// Pattern: \d{7,15}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -266,8 +266,8 @@ namespace MyNS
 		/// <summary>
 		/// The phone number to connect to
 		/// Required
-		/// Max length: 15
 		/// Min length: 7
+		/// Max length: 15
 		/// Pattern: \d{7,15}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -304,8 +304,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SIP URI to connect to
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uri")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -367,8 +367,8 @@ namespace MyNS
 		public string Type { get; set; }
 		
 		/// <summary>
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="uri")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

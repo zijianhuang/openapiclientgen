@@ -568,8 +568,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <returns>OK -- Returns a list of deployment scripts.</returns>
@@ -602,12 +602,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="scriptName">Name of the deployment script.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <returns>OK -- Returns information about the deployment script.</returns>
@@ -640,12 +640,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="scriptName">Name of the deployment script.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <param name="requestBody">Deployment script supplied to the operation.</param>
@@ -686,12 +686,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="scriptName">Name of the deployment script.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <returns>OK -- Deployment script deleted.</returns>
@@ -718,12 +718,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="scriptName">Name of the deployment script.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <param name="requestBody">Deployment script resource with the tags to be updated.</param>
@@ -764,12 +764,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="scriptName">Name of the deployment script.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <returns>OK -- Returns deployment script logs if available.</returns>
@@ -802,12 +802,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="scriptName">Name of the deployment script.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <returns>OK -- Returns deployment script logs if available.</returns>

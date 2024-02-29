@@ -116,8 +116,8 @@ namespace MyNS
 		public System.Nullable<System.Decimal> AvailableQty { get; set; }
 		
 		/// <summary>
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="barcode")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -196,8 +196,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -236,8 +236,8 @@ namespace MyNS
 		public System.Nullable<System.Decimal> SellingPrice { get; set; }
 		
 		/// <summary>
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="tags")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]

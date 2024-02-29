@@ -2440,8 +2440,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -2475,8 +2475,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">A name for the Batch account which must be unique within the region. Batch account names must be between 3 and 24 characters in length and must use only numbers and lowercase letters. This name is used as part of the DNS name that is used to access the Batch service in the region in which the account is created. For example: http://accountname.region.batch.azure.com/.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -2518,8 +2518,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -2547,8 +2547,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -2590,8 +2590,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="maxresults">The maximum number of items to return in the response.</param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
@@ -2626,12 +2626,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="applicationName">The name of the application. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -2665,12 +2665,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="applicationName">The name of the application. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -2712,12 +2712,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="applicationName">The name of the application. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -2745,12 +2745,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="applicationName">The name of the application. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -2792,12 +2792,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="applicationName">The name of the application. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="maxresults">The maximum number of items to return in the response.</param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
@@ -2832,16 +2832,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="applicationName">The name of the application. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="versionName">The version of the application.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -2875,16 +2875,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="applicationName">The name of the application. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="versionName">The version of the application.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -2926,16 +2926,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="applicationName">The name of the application. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="versionName">The version of the application.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -2963,16 +2963,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="applicationName">The name of the application. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="versionName">The version of the application.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3014,8 +3014,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="maxresults">The maximum number of items to return in the response.</param>
 		/// <param name="select">Comma separated list of properties that should be returned. e.g. "properties/provisioningState". Only top level properties under properties/ are valid for selection.</param>
@@ -3052,12 +3052,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="certificateName">The identifier for the certificate. This must be made up of algorithm and thumbprint separated by a dash, and must match the certificate data in the request. For example SHA1-a3d1c5.
-		/// Max length: 45
 		/// Min length: 5
+		/// Max length: 45
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3091,12 +3091,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="certificateName">The identifier for the certificate. This must be made up of algorithm and thumbprint separated by a dash, and must match the certificate data in the request. For example SHA1-a3d1c5.
-		/// Max length: 45
 		/// Min length: 5
+		/// Max length: 45
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3138,12 +3138,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="certificateName">The identifier for the certificate. This must be made up of algorithm and thumbprint separated by a dash, and must match the certificate data in the request. For example SHA1-a3d1c5.
-		/// Max length: 45
 		/// Min length: 5
+		/// Max length: 45
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3171,12 +3171,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="certificateName">The identifier for the certificate. This must be made up of algorithm and thumbprint separated by a dash, and must match the certificate data in the request. For example SHA1-a3d1c5.
-		/// Max length: 45
 		/// Min length: 5
+		/// Max length: 45
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3219,12 +3219,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="certificateName">The identifier for the certificate. This must be made up of algorithm and thumbprint separated by a dash, and must match the certificate data in the request. For example SHA1-a3d1c5.
-		/// Max length: 45
 		/// Min length: 5
+		/// Max length: 45
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3259,8 +3259,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3294,8 +3294,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="maxresults">The maximum number of items to return in the response.</param>
 		/// <param name="select">Comma separated list of properties that should be returned. e.g. "properties/provisioningState". Only top level properties under properties/ are valid for selection.</param>
@@ -3344,12 +3344,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="poolName">The pool name. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3383,12 +3383,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="poolName">The pool name. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3430,12 +3430,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="poolName">The pool name. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3463,12 +3463,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="poolName">The pool name. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3510,12 +3510,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="poolName">The pool name. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3550,12 +3550,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="poolName">The pool name. This must be unique within the account.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3589,8 +3589,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>
@@ -3632,8 +3632,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group that contains the Batch account.</param>
 		/// <param name="accountName">The name of the Batch account.
-		/// Max length: 24
 		/// Min length: 3
+		/// Max length: 24
 		// </param>
 		/// <param name="api_version">The API version to be used with the HTTP request.</param>
 		/// <param name="subscriptionId">The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)</param>

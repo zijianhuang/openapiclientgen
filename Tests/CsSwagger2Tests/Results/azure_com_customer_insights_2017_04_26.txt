@@ -3847,8 +3847,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="hubName">The name of the Hub.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -4022,8 +4022,8 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="hubName">The name of the hub.</param>
 		/// <param name="authorizationPolicyName">The name of the policy.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -4197,8 +4197,8 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="hubName">The name of the hub.</param>
 		/// <param name="connectorName">The name of the connector.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -4336,8 +4336,8 @@ namespace MyNS
 		/// <param name="hubName">The name of the hub.</param>
 		/// <param name="connectorName">The name of the connector.</param>
 		/// <param name="mappingName">The name of the connector mapping.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -4555,8 +4555,8 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="hubName">The name of the hub.</param>
 		/// <param name="interactionName">The name of the interaction.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -4697,8 +4697,8 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="hubName">The name of the hub.</param>
 		/// <param name="kpiName">The name of the KPI.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -4859,8 +4859,8 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="hubName">The name of the hub.</param>
 		/// <param name="linkName">The name of the link.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -4995,8 +4995,8 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="hubName">The name of the hub.</param>
 		/// <param name="predictionName">The name of the Prediction.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -5234,8 +5234,8 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="hubName">The name of the hub.</param>
 		/// <param name="profileName">The name of the profile.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -5404,8 +5404,8 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="hubName">The name of the hub.</param>
 		/// <param name="relationshipLinkName">The name of the relationship link.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -5540,8 +5540,8 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="hubName">The name of the hub.</param>
 		/// <param name="relationshipName">The name of the Relationship.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -5676,8 +5676,8 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="hubName">The name of the hub.</param>
 		/// <param name="assignmentName">The assignment name
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
@@ -5846,8 +5846,8 @@ namespace MyNS
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="hubName">The name of the hub.</param>
 		/// <param name="viewName">The name of the view.
-		/// Max length: 512
 		/// Min length: 1
+		/// Max length: 512
 		// </param>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>

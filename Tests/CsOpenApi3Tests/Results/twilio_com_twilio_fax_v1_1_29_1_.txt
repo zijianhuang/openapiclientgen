@@ -24,8 +24,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Account that created the resource
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -78,8 +78,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the FaxMedia resource that is associated with the Fax
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ME[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="media_sid")]
@@ -120,8 +120,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that identifies the resource
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^FX[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -222,8 +222,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Account that created the resource
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -252,8 +252,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the fax the FaxMedia resource is associated with
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^FX[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="fax_sid")]
@@ -264,8 +264,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that identifies the resource
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ME[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -346,8 +346,8 @@ namespace MyNS
 		/// ListFaxMedia v1/Faxes/{FaxSid}/Media
 		/// </summary>
 		/// <param name="FaxSid">The SID of the fax with the FaxMedia resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -387,12 +387,12 @@ namespace MyNS
 		/// DeleteFaxMedia v1/Faxes/{FaxSid}/Media/{Sid}
 		/// </summary>
 		/// <param name="FaxSid">The SID of the fax with the FaxMedia resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the FaxMedia resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteFaxMediaAsync(string FaxSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -421,12 +421,12 @@ namespace MyNS
 		/// FetchFaxMedia v1/Faxes/{FaxSid}/Media/{Sid}
 		/// </summary>
 		/// <param name="FaxSid">The SID of the fax with the FaxMedia resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the FaxMedia resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Faxv1faxfax_media> FetchFaxMediaAsync(string FaxSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -462,8 +462,8 @@ namespace MyNS
 		/// DeleteFax v1/Faxes/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Fax resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteFaxAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -492,8 +492,8 @@ namespace MyNS
 		/// FetchFax v1/Faxes/{Sid}
 		/// </summary>
 		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Fax resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Faxv1fax> FetchFaxAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

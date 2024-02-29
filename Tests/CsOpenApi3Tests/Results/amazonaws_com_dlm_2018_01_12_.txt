@@ -969,8 +969,8 @@ namespace MyNS
 		/// DeleteLifecyclePolicy policies/{policyId}/
 		/// </summary>
 		/// <param name="policyId">The identifier of the lifecycle policy.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteLifecyclePolicyResponse> DeleteLifecyclePolicyAsync(string policyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1006,8 +1006,8 @@ namespace MyNS
 		/// GetLifecyclePolicy policies/{policyId}/
 		/// </summary>
 		/// <param name="policyId">The identifier of the lifecycle policy.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetLifecyclePolicyResponse> GetLifecyclePolicyAsync(string policyId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1043,8 +1043,8 @@ namespace MyNS
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1080,8 +1080,8 @@ namespace MyNS
 		/// TagResource tags/{resourceArn}
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1124,8 +1124,8 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		// </param>
 		/// <param name="tagKeys">The tag keys.
 		/// Minimum items: 1
@@ -1165,8 +1165,8 @@ namespace MyNS
 		/// UpdateLifecyclePolicy policies/{policyId}
 		/// </summary>
 		/// <param name="policyId">The identifier of the lifecycle policy.
-		/// Max length: 64
 		/// Min length: 0
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateLifecyclePolicyResponse> UpdateLifecyclePolicyAsync(string policyId, UpdateLifecyclePolicyPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1211,8 +1211,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.
 		/// Required
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// Pattern: arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1225,8 +1225,8 @@ namespace MyNS
 		/// <summary>
 		/// A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.
 		/// Required
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// Pattern: [0-9A-Za-z _-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1304,8 +1304,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.
-		/// Max length: 2048
 		/// Min length: 0
+		/// Max length: 2048
 		/// Pattern: arn:aws(-[a-z]{1,3}){0,2}:iam::\d+:role/.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1322,8 +1322,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the lifecycle policy.
-		/// Max length: 500
 		/// Min length: 0
+		/// Max length: 500
 		/// Pattern: [0-9A-Za-z _-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]

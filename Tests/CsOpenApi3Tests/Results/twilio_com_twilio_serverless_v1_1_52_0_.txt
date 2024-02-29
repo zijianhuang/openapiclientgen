@@ -129,8 +129,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -177,8 +177,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Service resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -213,8 +213,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Asset resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -249,8 +249,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Service that the Asset resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -261,8 +261,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Asset resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -285,8 +285,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Asset Version resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -297,8 +297,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Asset resource that is the parent of the Asset Version.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="asset_sid")]
@@ -321,8 +321,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Service that the Asset Version resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -333,8 +333,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Asset Version resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZN[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -376,8 +376,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Build resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -424,8 +424,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Service that the Build resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -436,8 +436,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Build resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZB[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -463,8 +463,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Build resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -475,8 +475,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Service that the Build resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -487,8 +487,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Build resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZB[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -514,8 +514,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Environment resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -526,8 +526,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the build deployed in the environment.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZB[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="build_sid")]
@@ -568,8 +568,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Service that the Environment resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -580,8 +580,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Environment resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZE[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -610,8 +610,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Deployment resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -622,8 +622,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Build for the deployment.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZB[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="build_sid")]
@@ -646,8 +646,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Environment for the Deployment.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZE[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="environment_sid")]
@@ -658,8 +658,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Service that the Deployment resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -670,8 +670,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Deployment resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZD[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -694,8 +694,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Log resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -706,8 +706,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the build that corresponds to the log.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZB[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="build_sid")]
@@ -724,8 +724,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the deployment that corresponds to the log.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZD[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="deployment_sid")]
@@ -736,8 +736,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the environment in which the log occurred.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZE[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="environment_sid")]
@@ -748,8 +748,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the function whose invocation produced the log.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="function_sid")]
@@ -769,8 +769,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the request associated with the log.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^RQ[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="request_sid")]
@@ -781,8 +781,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Service that the Log resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -793,8 +793,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Log resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^NO[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -817,8 +817,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Variable resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -841,8 +841,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Environment in which the Variable exists.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZE[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="environment_sid")]
@@ -859,8 +859,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Service that the Variable resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -871,8 +871,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Variable resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZV[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -901,8 +901,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Function resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -937,8 +937,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Service that the Function resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -949,8 +949,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Function resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -973,8 +973,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Function Version resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -991,8 +991,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Function resource that is the parent of the Function Version resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="function_sid")]
@@ -1012,8 +1012,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Service that the Function Version resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -1024,8 +1024,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Function Version resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZN[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -1067,8 +1067,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Function Version resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^AC[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account_sid")]
@@ -1085,8 +1085,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Function that is the parent of the Function Version.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZH[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="function_sid")]
@@ -1097,8 +1097,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The SID of the Service that the Function Version resource is associated with.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZS[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="service_sid")]
@@ -1109,8 +1109,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique string that we created to identify the Function Version resource.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		/// Pattern: ^ZN[0-9a-fA-F]{32}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sid")]
@@ -1231,8 +1231,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Asset Version resource from.</param>
 		/// <param name="AssetSid">The SID of the Asset resource that is the parent of the Asset Version resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1277,12 +1277,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Asset Version resource from.</param>
 		/// <param name="AssetSid">The SID of the Asset resource that is the parent of the Asset Version resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Asset Version resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1serviceassetasset_version> FetchAssetVersionAsync(string ServiceSid, string AssetSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1319,8 +1319,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to delete the Asset resource from.</param>
 		/// <param name="Sid">The SID that identifies the Asset resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteAssetAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1350,8 +1350,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Asset resource from.</param>
 		/// <param name="Sid">The SID that identifies the Asset resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1serviceasset> FetchAssetAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1430,8 +1430,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to delete the Build resource from.</param>
 		/// <param name="Sid">The SID of the Build resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteBuildAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1461,8 +1461,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Build resource from.</param>
 		/// <param name="Sid">The SID of the Build resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1servicebuild> FetchBuildAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1499,8 +1499,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Build resource from.</param>
 		/// <param name="Sid">The SID of the Build resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1servicebuildbuild_status> FetchBuildStatusAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1579,8 +1579,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Deployment resources from.</param>
 		/// <param name="EnvironmentSid">The SID of the Environment used by the Deployment resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1625,12 +1625,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Deployment resource from.</param>
 		/// <param name="EnvironmentSid">The SID of the Environment used by the Deployment to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID that identifies the Deployment resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1serviceenvironmentdeployment> FetchDeploymentAsync(string ServiceSid, string EnvironmentSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1667,12 +1667,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Log resource from.</param>
 		/// <param name="EnvironmentSid">The SID of the environment with the Log resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="FunctionSid">The SID of the function whose invocation produced the Log resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="StartDate">The date/time (in GMT, ISO 8601) after which the Log resources must have been created. Defaults to 1 day prior to current date/time.</param>
 		/// <param name="EndDate">The date/time (in GMT, ISO 8601) before which the Log resources must have been created. Defaults to current date/time.</param>
@@ -1719,12 +1719,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Log resource from.</param>
 		/// <param name="EnvironmentSid">The SID of the environment with the Log resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Log resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1serviceenvironmentlog> FetchLogAsync(string ServiceSid, string EnvironmentSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1761,8 +1761,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Variable resources from.</param>
 		/// <param name="EnvironmentSid">The SID of the Environment with the Variable resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -1807,12 +1807,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to delete the Variable resource from.</param>
 		/// <param name="EnvironmentSid">The SID of the Environment with the Variables to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Variable resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteVariableAsync(string ServiceSid, string EnvironmentSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1842,12 +1842,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Variable resource from.</param>
 		/// <param name="EnvironmentSid">The SID of the Environment with the Variable resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Variable resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1serviceenvironmentvariable> FetchVariableAsync(string ServiceSid, string EnvironmentSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1884,8 +1884,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to delete the Environment resource from.</param>
 		/// <param name="Sid">The SID of the Environment resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteEnvironmentAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1915,8 +1915,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Environment resource from.</param>
 		/// <param name="Sid">The SID of the Environment resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1serviceenvironment> FetchEnvironmentAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1995,8 +1995,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to read the Function Version resources from.</param>
 		/// <param name="FunctionSid">The SID of the function that is the parent of the Function Version resources to read.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
 		/// Minimum: 1
@@ -2041,12 +2041,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Function Version resource from.</param>
 		/// <param name="FunctionSid">The SID of the function that is the parent of the Function Version resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Function Version resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1servicefunctionfunction_version> FetchFunctionVersionAsync(string ServiceSid, string FunctionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2083,12 +2083,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Function Version content from.</param>
 		/// <param name="FunctionSid">The SID of the Function that is the parent of the Function Version content to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <param name="Sid">The SID of the Function Version content to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1servicefunctionfunction_versionfunction_version_content> FetchFunctionVersionContentAsync(string ServiceSid, string FunctionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2125,8 +2125,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to delete the Function resource from.</param>
 		/// <param name="Sid">The SID of the Function resource to delete.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		public async Task DeleteFunctionAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2156,8 +2156,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="ServiceSid">The SID of the Service to fetch the Function resource from.</param>
 		/// <param name="Sid">The SID of the Function resource to fetch.
-		/// Max length: 34
 		/// Min length: 34
+		/// Max length: 34
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Serverlessv1servicefunction> FetchFunctionAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

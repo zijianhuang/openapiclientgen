@@ -2034,8 +2034,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description for the discoverer.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2045,8 +2045,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the event bus.
 		/// Required
-		/// Max length: 1600
 		/// Min length: 20
+		/// Max length: 1600
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2072,8 +2072,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the registry to be created.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2092,8 +2092,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the registry to update.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2107,8 +2107,8 @@ namespace MyNS
 		/// <summary>
 		/// The source of the schema definition.
 		/// Required
-		/// Max length: 100000
 		/// Min length: 1
+		/// Max length: 100000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -2118,8 +2118,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the schema.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2146,8 +2146,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the client token.
-		/// Max length: 36
 		/// Min length: 0
+		/// Max length: 36
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2156,8 +2156,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The source of the schema definition.
-		/// Max length: 100000
 		/// Min length: 1
+		/// Max length: 100000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -2166,8 +2166,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the schema.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2186,8 +2186,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the discoverer to update.
-		/// Max length: 256
 		/// Min length: 0
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]

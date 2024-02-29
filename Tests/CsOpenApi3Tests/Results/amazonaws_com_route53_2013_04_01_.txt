@@ -4465,8 +4465,8 @@ namespace MyNS
 		/// Max length: 32
 		// </param>
 		/// <param name="Name">A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers, letters, and underscores (_). <code>Name</code> must be unique for each key-signing key in the same hosted zone.
-		/// Max length: 128
 		/// Min length: 3
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task ActivateKeySigningKeyAsync(string HostedZoneId, string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4790,8 +4790,8 @@ namespace MyNS
 		/// Max length: 32
 		// </param>
 		/// <param name="Name">A string used to identify a key-signing key (KSK).
-		/// Max length: 128
 		/// Min length: 3
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeactivateKeySigningKeyAsync(string HostedZoneId, string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4939,8 +4939,8 @@ namespace MyNS
 		/// Max length: 32
 		// </param>
 		/// <param name="Name">A string used to identify a key-signing key (KSK).
-		/// Max length: 128
 		/// Min length: 3
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteKeySigningKeyAsync(string HostedZoneId, string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4970,8 +4970,8 @@ namespace MyNS
 		/// DeleteQueryLoggingConfig 2013-04-01/queryloggingconfig/{Id}
 		/// </summary>
 		/// <param name="Id">The ID of the configuration that you want to delete. 
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteQueryLoggingConfigAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5001,8 +5001,8 @@ namespace MyNS
 		/// GetQueryLoggingConfig 2013-04-01/queryloggingconfig/{Id}
 		/// </summary>
 		/// <param name="Id">The ID of the configuration for DNS query logging that you want to get information about.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetQueryLoggingConfigAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5092,8 +5092,8 @@ namespace MyNS
 		/// DeleteTrafficPolicy 2013-04-01/trafficpolicy/{Id}/{Version}
 		/// </summary>
 		/// <param name="Id">The ID of the traffic policy that you want to delete.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="Version">The version number of the traffic policy that you want to delete.
 		/// Minimum: 1
@@ -5127,8 +5127,8 @@ namespace MyNS
 		/// GetTrafficPolicy 2013-04-01/trafficpolicy/{Id}/{Version}
 		/// </summary>
 		/// <param name="Id">The ID of the traffic policy that you want to get information about.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="Version">The version number of the traffic policy that you want to get information about.
 		/// Minimum: 1
@@ -5162,8 +5162,8 @@ namespace MyNS
 		/// DeleteTrafficPolicyInstance 2013-04-01/trafficpolicyinstance/{Id}
 		/// </summary>
 		/// <param name="Id"><p>The ID of the traffic policy instance that you want to delete. </p> <important> <p>When you delete a traffic policy instance, Amazon Route 53 also deletes all of the resource record sets that were created when you created the traffic policy instance.</p> </important>
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteTrafficPolicyInstanceAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5193,8 +5193,8 @@ namespace MyNS
 		/// GetTrafficPolicyInstance 2013-04-01/trafficpolicyinstance/{Id}
 		/// </summary>
 		/// <param name="Id">The ID of the traffic policy instance that you want to get information about.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetTrafficPolicyInstanceAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5302,8 +5302,8 @@ namespace MyNS
 		/// GetChange 2013-04-01/change/{Id}
 		/// </summary>
 		/// <param name="Id">The ID of the change batch request. The value that you specify here is the value that <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when you submitted the request.
-		/// Max length: 6500
 		/// Min length: 1
+		/// Max length: 6500
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetChangeAsync(string Id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5390,16 +5390,16 @@ namespace MyNS
 		/// GetGeoLocation 2013-04-01/geolocation
 		/// </summary>
 		/// <param name="continentcode"><p>For geolocation resource record sets, a two-letter abbreviation that identifies a continent. Amazon Route 53 supports the following continent codes:</p> <ul> <li> <p> <b>AF</b>: Africa</p> </li> <li> <p> <b>AN</b>: Antarctica</p> </li> <li> <p> <b>AS</b>: Asia</p> </li> <li> <p> <b>EU</b>: Europe</p> </li> <li> <p> <b>OC</b>: Oceania</p> </li> <li> <p> <b>NA</b>: North America</p> </li> <li> <p> <b>SA</b>: South America</p> </li> </ul>
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="countrycode">Amazon Route 53 uses the two-letter country codes that are specified in <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1 alpha-2</a>.
-		/// Max length: 2
 		/// Min length: 1
+		/// Max length: 2
 		// </param>
 		/// <param name="subdivisioncode">The code for the subdivision, such as a particular state within the United States. For a list of US state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service website. For a list of all supported subdivision codes, use the <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html">ListGeoLocations</a> API.
-		/// Max length: 3
 		/// Min length: 1
+		/// Max length: 3
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetGeoLocationAsync(string continentcode, string countrycode, string subdivisioncode, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5633,8 +5633,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="CidrCollectionId">The UUID of the CIDR collection.</param>
 		/// <param name="location">The name of the CIDR collection location.
-		/// Max length: 16
 		/// Min length: 1
+		/// Max length: 16
 		// </param>
 		/// <param name="nexttoken">An opaque pagination token to indicate where the service is to begin enumerating results.
 		/// Max length: 1024
@@ -5670,16 +5670,16 @@ namespace MyNS
 		/// ListGeoLocations 2013-04-01/geolocations
 		/// </summary>
 		/// <param name="startcontinentcode"><p>The code for the continent with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is true, and if <code>NextContinentCode</code> from the previous response has a value, enter that value in <code>startcontinentcode</code> to return the next page of results.</p> <p>Include <code>startcontinentcode</code> only if you want to list continents. Don't include <code>startcontinentcode</code> when you're listing countries or countries with their subdivisions.</p>
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <param name="startcountrycode">The code for the country with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextCountryCode</code> from the previous response has a value, enter that value in <code>startcountrycode</code> to return the next page of results.
-		/// Max length: 2
 		/// Min length: 1
+		/// Max length: 2
 		// </param>
 		/// <param name="startsubdivisioncode"><p>The code for the state of the United States with which you want to start listing locations that Amazon Route 53 supports for geolocation. If Route 53 has already returned a page or more of results, if <code>IsTruncated</code> is <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous response has a value, enter that value in <code>startsubdivisioncode</code> to return the next page of results.</p> <p>To list subdivisions (U.S. states), you must include both <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
-		/// Max length: 3
 		/// Min length: 1
+		/// Max length: 3
 		// </param>
 		/// <param name="maxitems">(Optional) The maximum number of geolocations to be included in the response body for this request. If more than <code>maxitems</code> geolocations remain to be listed, then the value of the <code>IsTruncated</code> element in the response is <code>true</code>.</param>
 		/// <returns>Success</returns>
@@ -5747,8 +5747,8 @@ namespace MyNS
 		/// Max length: 1024
 		// </param>
 		/// <param name="vpcregion">For the Amazon VPC that you specified for <code>VPCId</code>, the Amazon Web Services Region that you created the VPC in. 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="maxitems">(Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53 will return if you submit another request.</param>
 		/// <param name="nexttoken"><p>If the previous response included a <code>NextToken</code> element, the specified VPC is associated with more hosted zones. To get more hosted zones, submit another <code>ListHostedZonesByVPC</code> request. </p> <p>For the value of <code>NextToken</code>, specify the value of <code>NextToken</code> from the previous response.</p> <p>If the previous response didn't include a <code>NextToken</code> element, there are no more hosted zones to get.</p>
@@ -5789,8 +5789,8 @@ namespace MyNS
 		// </param>
 		/// <param name="type"><p>The type of resource record set to begin the record listing from.</p> <p>Valid values for basic resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>NS</code> | <code>PTR</code> | <code>SOA</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for weighted, latency, geolocation, and failover resource record sets: <code>A</code> | <code>AAAA</code> | <code>CAA</code> | <code>CNAME</code> | <code>MX</code> | <code>NAPTR</code> | <code>PTR</code> | <code>SPF</code> | <code>SRV</code> | <code>TXT</code> </p> <p>Values for alias resource record sets: </p> <ul> <li> <p> <b>API Gateway custom regional API or edge-optimized API</b>: A</p> </li> <li> <p> <b>CloudFront distribution</b>: A or AAAA</p> </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized subdomain</b>: A</p> </li> <li> <p> <b>Elastic Load Balancing load balancer</b>: A | AAAA</p> </li> <li> <p> <b>S3 bucket</b>: A</p> </li> <li> <p> <b>VPC interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another resource record set in this hosted zone:</b> The type of the resource record set that the alias references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without specifying <code>name</code> returns an <code>InvalidInput</code> error.</p></param>
 		/// <param name="identifier"> <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given DNS name and type, specify the value of <code>NextRecordIdentifier</code> from the previous response to get the next resource record set that has the current DNS name and type.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="maxitems">(Optional) The maximum number of resource records sets to include in the response body for this request. If the response includes more than <code>maxitems</code> resource record sets, the value of the <code>IsTruncated</code> element in the response is <code>true</code>, and the values of the <code>NextRecordName</code> and <code>NextRecordType</code> elements in the response identify the first resource record set in the next group of <code>maxitems</code> resource record sets.</param>
 		/// <param name="MaxItems">Pagination limit</param>
@@ -5825,8 +5825,8 @@ namespace MyNS
 		/// ListTrafficPolicies 2013-04-01/trafficpolicies
 		/// </summary>
 		/// <param name="trafficpolicyid"><p>(Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include the <code>TrafficPolicyIdMarker</code> parameter.</p> <p>If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code> returns only the first <code>MaxItems</code> traffic policies. To get the next group of policies, submit another request to <code>ListTrafficPolicies</code>. For the value of <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code> that was returned in the previous response.</p>
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="maxitems">(Optional) The maximum number of traffic policies that you want Amazon Route 53 to return in response to this request. If you have more than <code>MaxItems</code> traffic policies, the value of <code>IsTruncated</code> in the response is <code>true</code>, and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy that Route 53 will return if you submit another request.</param>
 		/// <returns>Success</returns>
@@ -5927,8 +5927,8 @@ namespace MyNS
 		/// ListTrafficPolicyInstancesByPolicy 2013-04-01/trafficpolicyinstances/trafficpolicy#id&version
 		/// </summary>
 		/// <param name="id">The ID of the traffic policy for which you want to list traffic policy instances.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="version">The version of the traffic policy for which you want to list traffic policy instances. The version must be associated with the traffic policy that is specified by <code>TrafficPolicyId</code>.
 		/// Minimum: 1
@@ -5970,8 +5970,8 @@ namespace MyNS
 		/// ListTrafficPolicyVersions 2013-04-01/trafficpolicies/{Id}/versions
 		/// </summary>
 		/// <param name="Id">Specify the value of <code>Id</code> of the traffic policy for which you want to list all versions.
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		// </param>
 		/// <param name="trafficpolicyversion"><p>For your first request to <code>ListTrafficPolicyVersions</code>, don't include the <code>TrafficPolicyVersionMarker</code> parameter.</p> <p>If you have more traffic policy versions than the value of <code>MaxItems</code>, <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code> versions. To get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code> request. For the value of <code>TrafficPolicyVersionMarker</code>, specify the value of <code>TrafficPolicyVersionMarker</code> in the previous response.</p>
 		/// Max length: 4
@@ -6018,8 +6018,8 @@ namespace MyNS
 		/// Max length: 45
 		// </param>
 		/// <param name="edns0clientsubnetmask"><p>If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally specify the number of bits of the IP address that you want the checking tool to include in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code> and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64 bits for IPv6 addresses.</p> <p>The range of valid values depends on whether <code>edns0clientsubnetip</code> is an IPv4 or an IPv6 address:</p> <ul> <li> <p> <b>IPv4</b>: Specify a value between 0 and 32</p> </li> <li> <p> <b>IPv6</b>: Specify a value between 0 and 128</p> </li> </ul>
-		/// Max length: 3
 		/// Min length: 0
+		/// Max length: 3
 		// </param>
 		/// <returns>Success</returns>
 		public async Task TestDNSAnswerAsync(string hostedzoneid, string recordname, RRType recordtype, string resolverip, string edns0clientsubnetip, string edns0clientsubnetmask, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

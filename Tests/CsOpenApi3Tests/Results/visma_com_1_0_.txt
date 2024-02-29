@@ -192,8 +192,8 @@ namespace MyNS
 		public System.Nullable<System.DateTimeOffset> LastUpdatedDateTime { get; set; }
 		
 		/// <summary>
-		/// Max length: 1000
 		/// Min length: 0
+		/// Max length: 1000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="location")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1106,8 +1106,8 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsActive { get; set; }
 		
 		/// <summary>
-		/// Max length: 25
 		/// Min length: 0
+		/// Max length: 25
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kvkNumber")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -2606,8 +2606,8 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsInternal { get; set; }
 		
 		/// <summary>
-		/// Max length: 25
 		/// Min length: 0
+		/// Max length: 25
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kvkNumber")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5246,8 +5246,8 @@ namespace MyNS
 		public System.Nullable<System.Boolean> IsVatRegistered { get; set; }
 		
 		/// <summary>
-		/// Max length: 25
 		/// Min length: 0
+		/// Max length: 25
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="kvkNumber")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -5406,8 +5406,8 @@ namespace MyNS
 		public System.Nullable<OrganizationSettingsModelProjectNameDisplaySetting> ProjectNameDisplaySetting { get; set; }
 		
 		/// <summary>
-		/// Max length: 20
 		/// Min length: 0
+		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="purchaseOrderNumberPrefix")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -9432,8 +9432,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -9550,8 +9550,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 50
 		/// Min length: 0
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -9763,8 +9763,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -9816,8 +9816,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -9882,8 +9882,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 200
 		/// Min length: 0
+		/// Max length: 200
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -11857,8 +11857,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="firstName")]
@@ -11874,8 +11874,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="lastName")]
@@ -12211,8 +12211,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 10
 		/// Min length: 0
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="code")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -12242,8 +12242,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 10
 		/// Min length: 0
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="code")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -19409,8 +19409,8 @@ namespace MyNS
 		/// Countries_GetCountryByCode2 v1/localization/countries/{code2}
 		/// </summary>
 		/// <param name="code2">Optional: ISO Alpha-2 code used to get a country.
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		// </param>
 		/// <returns>Country</returns>
 		public async Task<CountryModel[]> Countries_GetCountryByCode2Async(string code2, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19446,8 +19446,8 @@ namespace MyNS
 		/// Countries_GetCountryByCode3 v1/localization/countries/{code3}
 		/// </summary>
 		/// <param name="code3">Optional: ISO Alpha-3 code used to get a country.
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		// </param>
 		/// <returns>Country</returns>
 		public async Task<CountryModel[]> Countries_GetCountryByCode3Async(string code3, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

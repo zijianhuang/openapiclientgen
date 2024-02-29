@@ -90,13 +90,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
 		/// <param name="resourceGroupName">Name of an Azure resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="accountName">Cosmos DB database account name.
-		/// Max length: 50
 		/// Min length: 3
+		/// Max length: 50
 		// </param>
 		/// <returns>Successfully retrieved private link resources.</returns>
 		public async Task<PrivateLinkResourceListResult> PrivateLinkResources_ListByDatabaseAccountAsync(string subscriptionId, string resourceGroupName, string api_version, string accountName)
@@ -128,13 +128,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
 		/// <param name="resourceGroupName">Name of an Azure resource group.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="accountName">Cosmos DB database account name.
-		/// Max length: 50
 		/// Min length: 3
+		/// Max length: 50
 		// </param>
 		/// <param name="groupName">The name of the private link resource.</param>
 		/// <returns>Successfully retrieved a specified private link resource.</returns>

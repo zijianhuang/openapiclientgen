@@ -1009,8 +1009,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ISO3166 country code to use this identifier for in case of consumerTaxMode.
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="country")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1019,8 +1019,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The county/state inside the country code to use this identifier for in case of consumerTaxMode.
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="county")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1041,8 +1041,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The scheme of the identifier.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheme")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1051,8 +1051,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The superscheme of the identifier.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="superscheme")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1068,8 +1068,8 @@ namespace MyNS
 		/// <summary>
 		/// The ISO3166 country code to use this identifier for in case of consumerTaxMode.
 		/// Required
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -1079,8 +1079,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The county/state inside the country code to use this identifier for in case of consumerTaxMode. Leave empty to create an additional tax identifier for the entire country. For India, use the two last characters of ISO 3166-2:IN (https://en.wikipedia.org/wiki/States_and_union_territories_of_India).
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="county")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1098,8 +1098,8 @@ namespace MyNS
 		/// <summary>
 		/// The scheme of the identifier.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="scheme")]
@@ -1110,8 +1110,8 @@ namespace MyNS
 		/// <summary>
 		/// The superscheme of the identifier. Should always be "iso6523-actorid-upis".
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="superscheme")]
@@ -1121,8 +1121,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_password")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1131,8 +1131,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_username")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1155,8 +1155,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_password")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1165,8 +1165,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_username")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1181,8 +1181,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The email address to send the received document to
-		/// Max length: 128
 		/// Min length: 5
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
 		[System.ComponentModel.DataAnnotations.MinLength(5)]
@@ -1253,8 +1253,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The email address to send the received document to
-		/// Max length: 128
 		/// Min length: 5
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
 		[System.ComponentModel.DataAnnotations.MinLength(5)]
@@ -1295,8 +1295,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The email address to send the received document to
-		/// Max length: 128
 		/// Min length: 5
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
 		[System.ComponentModel.DataAnnotations.MinLength(5)]
@@ -1564,8 +1564,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URL the CorpPass system will redirect to in case of a failure to perform identity verfication.
-		/// Max length: 255
 		/// Min length: 11
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="client_redirect_fail_url")]
 		[System.ComponentModel.DataAnnotations.MinLength(11)]
@@ -1574,8 +1574,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URL the CorpPass system will redirect to in case of successful identity verfication.
-		/// Max length: 255
 		/// Min length: 11
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="client_redirect_success_url")]
 		[System.ComponentModel.DataAnnotations.MinLength(11)]
@@ -1584,8 +1584,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The CorpPass redirect URL.
-		/// Max length: 255
 		/// Min length: 11
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="corppass_url")]
 		[System.ComponentModel.DataAnnotations.MinLength(11)]
@@ -1606,8 +1606,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The email of the person who is going to perform the CorpPass process.
-		/// Max length: 128
 		/// Min length: 2
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="signer_email")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1616,8 +1616,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the person who is going to perform the CorpPass process.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="signer_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1679,8 +1679,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URL the CorpPass system will redirect to in case of a failure to perform identity verfication. Mandatory for flow_type="corppass_flow_redirect"
-		/// Max length: 255
 		/// Min length: 11
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="client_redirect_fail_url")]
 		[System.ComponentModel.DataAnnotations.MinLength(11)]
@@ -1689,8 +1689,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The URL the CorpPass system will redirect to in case of successful identity verfication. Mandatory for flow_type="corppass_flow_redirect"
-		/// Max length: 255
 		/// Min length: 11
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="client_redirect_success_url")]
 		[System.ComponentModel.DataAnnotations.MinLength(11)]
@@ -1713,8 +1713,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The email of the person who is going to perform the CorpPass process. Mandatory for flow_type="corppass_flow_email"
-		/// Max length: 128
 		/// Min length: 2
+		/// Max length: 128
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="signer_email")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -1723,8 +1723,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the person who is going to perform the CorpPass process. Mandatory for flow_type="corppass_flow_email"
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="signer_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -3838,8 +3838,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description for this line.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3872,8 +3872,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A short name for this line.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -11613,8 +11613,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A guid that you generated for this DocumentSubmission to achieve idempotency. If you submit multiple documents with the same idempotencyGuid, only the first one will be processed and any subsequent ones will trigger an HTTP 422 Unprocessable Entity response.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="idempotencyGuid")]
 		[System.ComponentModel.DataAnnotations.MinLength(36)]
@@ -20393,8 +20393,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A guid that you generated for this InvoiceSubmission to achieve idempotency. If you submit multiple documents with the same idempotencyGuid, only the first one will be processed.
-		/// Max length: 36
 		/// Min length: 36
+		/// Max length: 36
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="idempotencyGuid")]
 		[System.ComponentModel.DataAnnotations.MinLength(36)]
@@ -20598,8 +20598,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="identifier")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -20608,8 +20608,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="scheme")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -20618,8 +20618,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The superscheme of the identifier. Should always be "iso6523-actorid-upis".
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="superscheme")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -20641,8 +20641,8 @@ namespace MyNS
 		/// <summary>
 		/// The city.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
@@ -20669,8 +20669,8 @@ namespace MyNS
 		/// <summary>
 		/// The first address line.
 		/// Required
-		/// Max length: 192
 		/// Min length: 2
+		/// Max length: 192
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="line1")]
@@ -20689,8 +20689,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the company.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="party_name")]
@@ -20717,8 +20717,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_password")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -20727,8 +20727,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_username")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -20738,8 +20738,8 @@ namespace MyNS
 		/// <summary>
 		/// The zipcode.
 		/// Required
-		/// Max length: 32
 		/// Min length: 2
+		/// Max length: 32
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="zip")]
@@ -20761,8 +20761,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The city.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="city")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -20791,8 +20791,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The first address line.
-		/// Max length: 192
 		/// Min length: 2
+		/// Max length: 192
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="line1")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -20809,8 +20809,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the company.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="party_name")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -20842,8 +20842,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_password")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -20852,8 +20852,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="third_party_username")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -20862,8 +20862,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The zipcode.
-		/// Max length: 32
 		/// Min length: 2
+		/// Max length: 32
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="zip")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]
@@ -20915,8 +20915,8 @@ namespace MyNS
 		/// <summary>
 		/// The identifier.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="identifier")]
@@ -20927,8 +20927,8 @@ namespace MyNS
 		/// <summary>
 		/// The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="scheme")]
@@ -20939,8 +20939,8 @@ namespace MyNS
 		/// <summary>
 		/// The superscheme of the identifier. Should always be "iso6523-actorid-upis".
 		/// Required
-		/// Max length: 64
 		/// Min length: 2
+		/// Max length: 64
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="superscheme")]
@@ -22033,8 +22033,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The identifier.
-		/// Max length: 20
 		/// Min length: 2
+		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="identifier")]
 		[System.ComponentModel.DataAnnotations.MinLength(2)]

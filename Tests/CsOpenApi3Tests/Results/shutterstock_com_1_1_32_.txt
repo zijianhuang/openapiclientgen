@@ -3060,8 +3060,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 100000
 		/// Min length: 1
+		/// Max length: 100000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -6471,8 +6471,8 @@ namespace MyNS
 		/// <summary>
 		/// Plain text to extract keywords from
 		/// Required
-		/// Max length: 100000
 		/// Min length: 1
+		/// Max length: 100000
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="text")]
@@ -6727,8 +6727,8 @@ namespace MyNS
 		public UpdateCatalogCollectionCover_asset Cover_asset { get; set; }
 		
 		/// <summary>
-		/// Max length: 100000
 		/// Min length: 1
+		/// Max length: 100000
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

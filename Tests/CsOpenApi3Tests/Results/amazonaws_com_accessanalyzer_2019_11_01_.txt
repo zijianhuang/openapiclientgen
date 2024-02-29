@@ -3002,8 +3002,8 @@ namespace MyNS
 		/// CreateArchiveRule analyzer/{analyzerName}/archive-rule
 		/// </summary>
 		/// <param name="analyzerName">The name of the created analyzer.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task CreateArchiveRuleAsync(string analyzerName, CreateArchiveRulePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3040,8 +3040,8 @@ namespace MyNS
 		/// ListArchiveRules analyzer/{analyzerName}/archive-rule
 		/// </summary>
 		/// <param name="analyzerName">The name of the analyzer to retrieve rules from.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="nextToken">A token used for pagination of results returned.</param>
 		/// <param name="maxResults">The maximum number of results to return in the request.</param>
@@ -3079,8 +3079,8 @@ namespace MyNS
 		/// DeleteAnalyzer analyzer/{analyzerName}
 		/// </summary>
 		/// <param name="analyzerName">The name of the analyzer to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="clientToken">A client token.</param>
 		/// <returns>Success</returns>
@@ -3111,8 +3111,8 @@ namespace MyNS
 		/// GetAnalyzer analyzer/{analyzerName}
 		/// </summary>
 		/// <param name="analyzerName">The name of the analyzer retrieved.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAnalyzerResponse> GetAnalyzerAsync(string analyzerName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3148,12 +3148,12 @@ namespace MyNS
 		/// DeleteArchiveRule analyzer/{analyzerName}/archive-rule/{ruleName}
 		/// </summary>
 		/// <param name="analyzerName">The name of the analyzer that associated with the archive rule to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="ruleName">The name of the rule to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="clientToken">A client token.</param>
 		/// <returns>Success</returns>
@@ -3184,12 +3184,12 @@ namespace MyNS
 		/// GetArchiveRule analyzer/{analyzerName}/archive-rule/{ruleName}
 		/// </summary>
 		/// <param name="analyzerName">The name of the analyzer to retrieve rules from.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="ruleName">The name of the rule to retrieve.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetArchiveRuleResponse> GetArchiveRuleAsync(string analyzerName, string ruleName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3225,12 +3225,12 @@ namespace MyNS
 		/// UpdateArchiveRule analyzer/{analyzerName}/archive-rule/{ruleName}
 		/// </summary>
 		/// <param name="analyzerName">The name of the analyzer to update the archive rules for.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="ruleName">The name of the rule to update.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateArchiveRuleAsync(string analyzerName, string ruleName, UpdateArchiveRulePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3845,8 +3845,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the rule to apply.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [A-Za-z][A-Za-z0-9_.-]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3897,8 +3897,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the analyzer to create.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [A-Za-z][A-Za-z0-9_.-]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3941,8 +3941,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the rule to create.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: [A-Za-z][A-Za-z0-9_.-]*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

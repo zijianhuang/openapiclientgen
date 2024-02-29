@@ -1778,8 +1778,8 @@ namespace MyNS
 		/// CreateApplication environments/{EnvironmentIdentifier}/applications
 		/// </summary>
 		/// <param name="EnvironmentIdentifier">The unique identifier of the environment.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateApplicationResponse> CreateApplicationAsync(string EnvironmentIdentifier, CreateApplicationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1822,16 +1822,16 @@ namespace MyNS
 		/// ListApplications environments/{EnvironmentIdentifier}/applications
 		/// </summary>
 		/// <param name="EnvironmentIdentifier">The ID of the environment. 
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1913,8 +1913,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1952,12 +1952,12 @@ namespace MyNS
 		/// CreateRoute environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes
 		/// </summary>
 		/// <param name="ApplicationIdentifier">The ID of the application within which the route is being created.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="EnvironmentIdentifier">The ID of the environment in which the route is created.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateRouteResponse> CreateRouteAsync(string ApplicationIdentifier, string EnvironmentIdentifier, CreateRoutePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2000,20 +2000,20 @@ namespace MyNS
 		/// ListRoutes environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes
 		/// </summary>
 		/// <param name="ApplicationIdentifier">The ID of the application. 
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="EnvironmentIdentifier">The ID of the environment. 
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -2051,12 +2051,12 @@ namespace MyNS
 		/// CreateService environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/services
 		/// </summary>
 		/// <param name="ApplicationIdentifier">The ID of the application which the service is created.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="EnvironmentIdentifier">The ID of the environment in which the service is created.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateServiceResponse> CreateServiceAsync(string ApplicationIdentifier, string EnvironmentIdentifier, CreateServicePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2099,20 +2099,20 @@ namespace MyNS
 		/// ListServices environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/services
 		/// </summary>
 		/// <param name="ApplicationIdentifier">The ID of the application. 
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="EnvironmentIdentifier">The ID of the environment. 
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -2150,12 +2150,12 @@ namespace MyNS
 		/// DeleteApplication environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}
 		/// </summary>
 		/// <param name="ApplicationIdentifier">The ID of the application.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="EnvironmentIdentifier">The ID of the environment. 
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteApplicationResponse> DeleteApplicationAsync(string ApplicationIdentifier, string EnvironmentIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2191,12 +2191,12 @@ namespace MyNS
 		/// GetApplication environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}
 		/// </summary>
 		/// <param name="ApplicationIdentifier">The ID of the application.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="EnvironmentIdentifier">The ID of the environment. 
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetApplicationResponse> GetApplicationAsync(string ApplicationIdentifier, string EnvironmentIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2232,8 +2232,8 @@ namespace MyNS
 		/// DeleteEnvironment environments/{EnvironmentIdentifier}
 		/// </summary>
 		/// <param name="EnvironmentIdentifier">The ID of the environment. 
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteEnvironmentResponse> DeleteEnvironmentAsync(string EnvironmentIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2269,8 +2269,8 @@ namespace MyNS
 		/// GetEnvironment environments/{EnvironmentIdentifier}
 		/// </summary>
 		/// <param name="EnvironmentIdentifier">The ID of the environment.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEnvironmentResponse> GetEnvironmentAsync(string EnvironmentIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2306,8 +2306,8 @@ namespace MyNS
 		/// DeleteResourcePolicy resourcepolicy/{Identifier}
 		/// </summary>
 		/// <param name="Identifier">Amazon Resource Name (ARN) of the resource associated with the policy. 
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(string Identifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2343,8 +2343,8 @@ namespace MyNS
 		/// GetResourcePolicy resourcepolicy/{Identifier}
 		/// </summary>
 		/// <param name="Identifier">The Amazon Resource Name (ARN) of the resource associated with the policy. 
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetResourcePolicyResponse> GetResourcePolicyAsync(string Identifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2380,16 +2380,16 @@ namespace MyNS
 		/// DeleteRoute environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes/{RouteIdentifier}
 		/// </summary>
 		/// <param name="ApplicationIdentifier">The ID of the application to delete the route from.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="EnvironmentIdentifier">The ID of the environment to delete the route from.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="RouteIdentifier">The ID of the route to delete.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteRouteResponse> DeleteRouteAsync(string ApplicationIdentifier, string EnvironmentIdentifier, string RouteIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2425,16 +2425,16 @@ namespace MyNS
 		/// GetRoute environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes/{RouteIdentifier}
 		/// </summary>
 		/// <param name="ApplicationIdentifier">The ID of the application. 
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="EnvironmentIdentifier">The ID of the environment.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="RouteIdentifier">The ID of the route.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRouteResponse> GetRouteAsync(string ApplicationIdentifier, string EnvironmentIdentifier, string RouteIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2470,16 +2470,16 @@ namespace MyNS
 		/// UpdateRoute environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes/{RouteIdentifier}
 		/// </summary>
 		/// <param name="ApplicationIdentifier"> The ID of the application within which the route is being updated. 
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="EnvironmentIdentifier"> The ID of the environment in which the route is being updated. 
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="RouteIdentifier"> The unique identifier of the route to update. 
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRouteResponse> UpdateRouteAsync(string ApplicationIdentifier, string EnvironmentIdentifier, string RouteIdentifier, UpdateRoutePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2522,16 +2522,16 @@ namespace MyNS
 		/// DeleteService environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/services/{ServiceIdentifier}
 		/// </summary>
 		/// <param name="ApplicationIdentifier"><p>Deletes a Refactor Spaces service.</p> <note> <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p> </note>
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="EnvironmentIdentifier">The ID of the environment that the service is in.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="ServiceIdentifier">The ID of the service to delete.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteServiceResponse> DeleteServiceAsync(string ApplicationIdentifier, string EnvironmentIdentifier, string ServiceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2567,16 +2567,16 @@ namespace MyNS
 		/// GetService environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/services/{ServiceIdentifier}
 		/// </summary>
 		/// <param name="ApplicationIdentifier">The ID of the application.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="EnvironmentIdentifier">The ID of the environment.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="ServiceIdentifier">The ID of the service.
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServiceResponse> GetServiceAsync(string ApplicationIdentifier, string EnvironmentIdentifier, string ServiceIdentifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2612,16 +2612,16 @@ namespace MyNS
 		/// ListEnvironmentVpcs environments/{EnvironmentIdentifier}/vpcs
 		/// </summary>
 		/// <param name="EnvironmentIdentifier">The ID of the environment. 
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		// </param>
 		/// <param name="maxResults">The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
 		/// Minimum: 1
 		/// Maximum: 100
 		// </param>
 		/// <param name="nextToken">The token for the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -2816,8 +2816,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[\x20-\x7E]{1,64}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2829,8 +2829,8 @@ namespace MyNS
 		/// <summary>
 		/// The name to use for the application. 
 		/// Required
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		/// Pattern: ^(?!app-)[a-zA-Z0-9]+[a-zA-Z0-9-_ ]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2857,8 +2857,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the virtual private cloud (VPC).
 		/// Required
-		/// Max length: 21
 		/// Min length: 12
+		/// Max length: 21
 		/// Pattern: ^vpc-[-a-f0-9]{8}([-a-f0-9]{9})?$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2884,8 +2884,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[\x20-\x7E]{1,64}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2896,8 +2896,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the environment.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[a-zA-Z0-9-_\s\.\!\*\#\@\']+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2909,8 +2909,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the environment.
 		/// Required
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		/// Pattern: ^(?!env-)[a-zA-Z0-9]+[a-zA-Z0-9-_ ]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -2940,8 +2940,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[\x20-\x7E]{1,64}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -2967,8 +2967,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.
 		/// Required
-		/// Max length: 14
 		/// Min length: 14
+		/// Max length: 14
 		/// Pattern: ^svc-[0-9A-Za-z]{10}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3022,8 +3022,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[\x20-\x7E]{1,64}$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3034,8 +3034,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the service.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: ^[a-zA-Z0-9-_\s\.\!\*\#\@\']+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3061,8 +3061,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the service.
 		/// Required
-		/// Max length: 63
 		/// Min length: 3
+		/// Max length: 63
 		/// Pattern: ^(?!svc-)[a-zA-Z0-9]+[a-zA-Z0-9-_ ]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3086,8 +3086,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ID of the VPC.
-		/// Max length: 21
 		/// Min length: 12
+		/// Max length: 21
 		/// Pattern: ^vpc-[-a-f0-9]{8}([-a-f0-9]{9})?$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3144,8 +3144,8 @@ namespace MyNS
 		/// <summary>
 		/// A JSON-formatted string for an Amazon Web Services resource-based policy. 
 		/// Required
-		/// Max length: 300000
 		/// Min length: 1
+		/// Max length: 300000
 		/// Pattern: ^.*\S.*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3158,8 +3158,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the resource to which the policy is being attached. 
 		/// Required
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:aws:refactor-spaces:[a-zA-Z0-9\-]+:\w{12}:[a-zA-Z_0-9+=,.@\-_/]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

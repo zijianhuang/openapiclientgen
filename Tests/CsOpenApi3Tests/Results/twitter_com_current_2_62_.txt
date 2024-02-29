@@ -1399,8 +1399,8 @@ namespace MyNS
 		/// <summary>
 		/// The text of a poll choice.
 		/// Required
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="label")]
@@ -4586,8 +4586,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4596,8 +4596,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Required
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -4803,8 +4803,8 @@ namespace MyNS
 	{
 		
 		/// <summary>
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4812,8 +4812,8 @@ namespace MyNS
 		public string Description { get; set; }
 		
 		/// <summary>
-		/// Max length: 25
 		/// Min length: 1
+		/// Max length: 25
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -7270,8 +7270,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
-		/// Max length: 19
 		/// Min length: 1
+		/// Max length: 19
 		// </param>
 		/// <param name="user_fields">A comma separated list of User fields to display.
 		/// Minimum items: 1
@@ -7322,8 +7322,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
-		/// Max length: 19
 		/// Min length: 1
+		/// Max length: 19
 		// </param>
 		/// <param name="user_fields">A comma separated list of User fields to display.
 		/// Minimum items: 1
@@ -7640,8 +7640,8 @@ namespace MyNS
 		/// SearchSpaces 2/spaces/search
 		/// </summary>
 		/// <param name="query">The search query.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		// </param>
 		/// <param name="state">The state of Spaces to search for.</param>
 		/// <param name="max_results">The number of results to return.
@@ -7984,8 +7984,8 @@ namespace MyNS
 		/// TweetCountsFullArchiveSearch 2/tweets/counts/all
 		/// </summary>
 		/// <param name="query">One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp (from most recent 7 days) from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute).</param>
@@ -8036,8 +8036,8 @@ namespace MyNS
 		/// TweetCountsRecentSearch 2/tweets/counts/recent
 		/// </summary>
 		/// <param name="query">One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp (from most recent 7 days) from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute).</param>
@@ -8308,8 +8308,8 @@ namespace MyNS
 		/// TweetsFullarchiveSearch 2/tweets/search/all
 		/// </summary>
 		/// <param name="query">One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute).</param>
@@ -8395,8 +8395,8 @@ namespace MyNS
 		/// TweetsRecentSearch 2/tweets/search/recent
 		/// </summary>
 		/// <param name="query">One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.
-		/// Max length: 4096
 		/// Min length: 1
+		/// Max length: 4096
 		// </param>
 		/// <param name="start_time">YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).</param>
 		/// <param name="end_time">YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute).</param>
@@ -8545,8 +8545,8 @@ namespace MyNS
 		/// Maximum: 1000
 		// </param>
 		/// <param name="pagination_token">This value is populated by passing the 'next_token' returned in a request to paginate through results.
-		/// Max length: 16
 		/// Min length: 16
+		/// Max length: 16
 		// </param>
 		/// <returns>The request has succeeded.</returns>
 		public async Task<RulesLookupResponse> GetRulesAsync(string[] ids, int max_results, string pagination_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -9425,8 +9425,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
-		/// Max length: 19
 		/// Min length: 1
+		/// Max length: 19
 		// </param>
 		/// <param name="list_fields">A comma separated list of List fields to display.
 		/// Minimum items: 1
@@ -9837,8 +9837,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
-		/// Max length: 19
 		/// Min length: 1
+		/// Max length: 19
 		// </param>
 		/// <param name="list_fields">A comma separated list of List fields to display.
 		/// Minimum items: 1
@@ -9953,8 +9953,8 @@ namespace MyNS
 		/// Maximum: 1000
 		// </param>
 		/// <param name="pagination_token">This parameter is used to get the next 'page' of results.
-		/// Max length: 19
 		/// Min length: 1
+		/// Max length: 19
 		// </param>
 		/// <param name="user_fields">A comma separated list of User fields to display.
 		/// Minimum items: 1
@@ -10047,8 +10047,8 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="pagination_token">This parameter is used to get a specified 'page' of results.
-		/// Max length: 19
 		/// Min length: 1
+		/// Max length: 19
 		// </param>
 		/// <param name="list_fields">A comma separated list of List fields to display.
 		/// Minimum items: 1

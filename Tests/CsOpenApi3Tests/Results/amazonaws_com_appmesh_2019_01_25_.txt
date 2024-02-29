@@ -4822,16 +4822,16 @@ namespace MyNS
 		/// CreateGatewayRoute v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to create the gateway route in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualGatewayName">The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateGatewayRouteOutput> CreateGatewayRouteAsync(string meshName, string meshOwner, string virtualGatewayName, CreateGatewayRoutePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4878,17 +4878,17 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="meshName">The name of the service mesh to list gateway routes in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="nextToken">The <code>nextToken</code> value returned from a previous paginated <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</param>
 		/// <param name="virtualGatewayName">The name of the virtual gateway to list gateway routes in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListGatewayRoutesOutput> ListGatewayRoutesAsync(int limit, string meshName, string meshOwner, string nextToken, string virtualGatewayName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5002,16 +5002,16 @@ namespace MyNS
 		/// CreateRoute v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to create the route in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateRouteOutput> CreateRouteAsync(string meshName, string meshOwner, string virtualRouterName, CreateRoutePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5058,17 +5058,17 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="meshName">The name of the service mesh to list routes in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="nextToken">The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</param>
 		/// <param name="virtualRouterName">The name of the virtual router to list routes in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRoutesOutput> ListRoutesAsync(int limit, string meshName, string meshOwner, string nextToken, string virtualRouterName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5104,12 +5104,12 @@ namespace MyNS
 		/// CreateVirtualGateway v20190125/meshes/{meshName}/virtualGateways
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to create the virtual gateway in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateVirtualGatewayOutput> CreateVirtualGatewayAsync(string meshName, string meshOwner, CreateVirtualGatewayPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5156,12 +5156,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="meshName">The name of the service mesh to list virtual gateways in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="nextToken">The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualGateways</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</param>
 		/// <returns>Success</returns>
@@ -5198,12 +5198,12 @@ namespace MyNS
 		/// CreateVirtualNode v20190125/meshes/{meshName}/virtualNodes
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to create the virtual node in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateVirtualNodeOutput> CreateVirtualNodeAsync(string meshName, string meshOwner, CreateVirtualNodePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5250,12 +5250,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="meshName">The name of the service mesh to list virtual nodes in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="nextToken">The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</param>
 		/// <returns>Success</returns>
@@ -5292,12 +5292,12 @@ namespace MyNS
 		/// CreateVirtualRouter v20190125/meshes/{meshName}/virtualRouters
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to create the virtual router in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateVirtualRouterOutput> CreateVirtualRouterAsync(string meshName, string meshOwner, CreateVirtualRouterPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5344,12 +5344,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="meshName">The name of the service mesh to list virtual routers in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="nextToken">The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</param>
 		/// <returns>Success</returns>
@@ -5386,12 +5386,12 @@ namespace MyNS
 		/// CreateVirtualService v20190125/meshes/{meshName}/virtualServices
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to create the virtual service in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateVirtualServiceOutput> CreateVirtualServiceAsync(string meshName, string meshOwner, CreateVirtualServicePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5438,12 +5438,12 @@ namespace MyNS
 		/// Maximum: 100
 		// </param>
 		/// <param name="meshName">The name of the service mesh to list virtual services in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="nextToken">The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualServices</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</param>
 		/// <returns>Success</returns>
@@ -5480,20 +5480,20 @@ namespace MyNS
 		/// DeleteGatewayRoute v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName}
 		/// </summary>
 		/// <param name="gatewayRouteName">The name of the gateway route to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshName">The name of the service mesh to delete the gateway route from.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualGatewayName">The name of the virtual gateway to delete the route from.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteGatewayRouteOutput> DeleteGatewayRouteAsync(string gatewayRouteName, string meshName, string meshOwner, string virtualGatewayName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5529,20 +5529,20 @@ namespace MyNS
 		/// DescribeGatewayRoute v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName}
 		/// </summary>
 		/// <param name="gatewayRouteName">The name of the gateway route to describe.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshName">The name of the service mesh that the gateway route resides in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualGatewayName">The name of the virtual gateway that the gateway route is associated with.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeGatewayRouteOutput> DescribeGatewayRouteAsync(string gatewayRouteName, string meshName, string meshOwner, string virtualGatewayName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5578,20 +5578,20 @@ namespace MyNS
 		/// UpdateGatewayRoute v20190125/meshes/{meshName}/virtualGateway/{virtualGatewayName}/gatewayRoutes/{gatewayRouteName}
 		/// </summary>
 		/// <param name="gatewayRouteName">The name of the gateway route to update.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshName">The name of the service mesh that the gateway route resides in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualGatewayName">The name of the virtual gateway that the gateway route is associated with.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateGatewayRouteOutput> UpdateGatewayRouteAsync(string gatewayRouteName, string meshName, string meshOwner, string virtualGatewayName, UpdateGatewayRoutePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5634,8 +5634,8 @@ namespace MyNS
 		/// DeleteMesh v20190125/meshes/{meshName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteMeshOutput> DeleteMeshAsync(string meshName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5671,12 +5671,12 @@ namespace MyNS
 		/// DescribeMesh v20190125/meshes/{meshName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to describe.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeMeshOutput> DescribeMeshAsync(string meshName, string meshOwner, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5712,8 +5712,8 @@ namespace MyNS
 		/// UpdateMesh v20190125/meshes/{meshName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to update.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMeshOutput> UpdateMeshAsync(string meshName, UpdateMeshPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5756,20 +5756,20 @@ namespace MyNS
 		/// DeleteRoute v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to delete the route in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="routeName">The name of the route to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router to delete the route in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteRouteOutput> DeleteRouteAsync(string meshName, string meshOwner, string routeName, string virtualRouterName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5805,20 +5805,20 @@ namespace MyNS
 		/// DescribeRoute v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh that the route resides in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="routeName">The name of the route to describe.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router that the route is associated with.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeRouteOutput> DescribeRouteAsync(string meshName, string meshOwner, string routeName, string virtualRouterName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5854,20 +5854,20 @@ namespace MyNS
 		/// UpdateRoute v20190125/meshes/{meshName}/virtualRouter/{virtualRouterName}/routes/{routeName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh that the route resides in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="routeName">The name of the route to update.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router that the route is associated with.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRouteOutput> UpdateRouteAsync(string meshName, string meshOwner, string routeName, string virtualRouterName, UpdateRoutePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5910,16 +5910,16 @@ namespace MyNS
 		/// DeleteVirtualGateway v20190125/meshes/{meshName}/virtualGateways/{virtualGatewayName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to delete the virtual gateway from.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualGatewayName">The name of the virtual gateway to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteVirtualGatewayOutput> DeleteVirtualGatewayAsync(string meshName, string meshOwner, string virtualGatewayName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5955,16 +5955,16 @@ namespace MyNS
 		/// DescribeVirtualGateway v20190125/meshes/{meshName}/virtualGateways/{virtualGatewayName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh that the gateway route resides in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualGatewayName">The name of the virtual gateway to describe.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeVirtualGatewayOutput> DescribeVirtualGatewayAsync(string meshName, string meshOwner, string virtualGatewayName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6000,16 +6000,16 @@ namespace MyNS
 		/// UpdateVirtualGateway v20190125/meshes/{meshName}/virtualGateways/{virtualGatewayName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh that the virtual gateway resides in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualGatewayName">The name of the virtual gateway to update.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateVirtualGatewayOutput> UpdateVirtualGatewayAsync(string meshName, string meshOwner, string virtualGatewayName, UpdateVirtualGatewayPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6052,16 +6052,16 @@ namespace MyNS
 		/// DeleteVirtualNode v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to delete the virtual node in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualNodeName">The name of the virtual node to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteVirtualNodeOutput> DeleteVirtualNodeAsync(string meshName, string meshOwner, string virtualNodeName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6097,16 +6097,16 @@ namespace MyNS
 		/// DescribeVirtualNode v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh that the virtual node resides in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualNodeName">The name of the virtual node to describe.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeVirtualNodeOutput> DescribeVirtualNodeAsync(string meshName, string meshOwner, string virtualNodeName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6142,16 +6142,16 @@ namespace MyNS
 		/// UpdateVirtualNode v20190125/meshes/{meshName}/virtualNodes/{virtualNodeName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh that the virtual node resides in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualNodeName">The name of the virtual node to update.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateVirtualNodeOutput> UpdateVirtualNodeAsync(string meshName, string meshOwner, string virtualNodeName, UpdateVirtualNodePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6194,16 +6194,16 @@ namespace MyNS
 		/// DeleteVirtualRouter v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to delete the virtual router in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router to delete.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteVirtualRouterOutput> DeleteVirtualRouterAsync(string meshName, string meshOwner, string virtualRouterName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6239,16 +6239,16 @@ namespace MyNS
 		/// DescribeVirtualRouter v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh that the virtual router resides in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router to describe.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeVirtualRouterOutput> DescribeVirtualRouterAsync(string meshName, string meshOwner, string virtualRouterName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6284,16 +6284,16 @@ namespace MyNS
 		/// UpdateVirtualRouter v20190125/meshes/{meshName}/virtualRouters/{virtualRouterName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh that the virtual router resides in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualRouterName">The name of the virtual router to update.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateVirtualRouterOutput> UpdateVirtualRouterAsync(string meshName, string meshOwner, string virtualRouterName, UpdateVirtualRouterPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6336,12 +6336,12 @@ namespace MyNS
 		/// DeleteVirtualService v20190125/meshes/{meshName}/virtualServices/{virtualServiceName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh to delete the virtual service in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualServiceName">The name of the virtual service to delete.</param>
 		/// <returns>Success</returns>
@@ -6378,12 +6378,12 @@ namespace MyNS
 		/// DescribeVirtualService v20190125/meshes/{meshName}/virtualServices/{virtualServiceName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh that the virtual service resides in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualServiceName">The name of the virtual service to describe.</param>
 		/// <returns>Success</returns>
@@ -6420,12 +6420,12 @@ namespace MyNS
 		/// UpdateVirtualService v20190125/meshes/{meshName}/virtualServices/{virtualServiceName}
 		/// </summary>
 		/// <param name="meshName">The name of the service mesh that the virtual service resides in.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <param name="meshOwner">The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.
-		/// Max length: 12
 		/// Min length: 12
+		/// Max length: 12
 		// </param>
 		/// <param name="virtualServiceName">The name of the virtual service to update.</param>
 		/// <returns>Success</returns>
@@ -6598,8 +6598,8 @@ namespace MyNS
 		/// <summary>
 		/// The name to use for the gateway route.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="gatewayRouteName")]
@@ -6654,8 +6654,8 @@ namespace MyNS
 		/// <summary>
 		/// The name to use for the service mesh.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="meshName")]
@@ -6705,8 +6705,8 @@ namespace MyNS
 		/// <summary>
 		/// The name to use for the route.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="routeName")]
@@ -6782,8 +6782,8 @@ namespace MyNS
 		/// <summary>
 		/// The name to use for the virtual gateway.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="virtualGatewayName")]
@@ -6838,8 +6838,8 @@ namespace MyNS
 		/// <summary>
 		/// The name to use for the virtual node.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="virtualNodeName")]
@@ -6897,8 +6897,8 @@ namespace MyNS
 		/// <summary>
 		/// The name to use for the virtual router.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="virtualRouterName")]

@@ -696,12 +696,12 @@ namespace MyNS
 		/// CancelChangeSet CancelChangeSet#catalog&changeSetId
 		/// </summary>
 		/// <param name="catalog">Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="changeSetId">Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelChangeSetResponse> CancelChangeSetAsync(string catalog, string changeSetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -732,8 +732,8 @@ namespace MyNS
 		/// DeleteResourcePolicy DeleteResourcePolicy#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -769,12 +769,12 @@ namespace MyNS
 		/// DescribeChangeSet DescribeChangeSet#catalog&changeSetId
 		/// </summary>
 		/// <param name="catalog">Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="changeSetId">Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChangeSetResponse> DescribeChangeSetAsync(string catalog, string changeSetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -810,12 +810,12 @@ namespace MyNS
 		/// DescribeEntity DescribeEntity#catalog&entityId
 		/// </summary>
 		/// <param name="catalog">Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> 
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <param name="entityId">Required. The unique ID of the entity to describe.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeEntityResponse> DescribeEntityAsync(string catalog, string entityId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -851,8 +851,8 @@ namespace MyNS
 		/// GetResourcePolicy GetResourcePolicy#resourceArn
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetResourcePolicyResponse> GetResourcePolicyAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1174,8 +1174,8 @@ namespace MyNS
 		/// <summary>
 		/// The catalog related to the request. Fixed value: <code>AWSMarketplace</code> 
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1212,8 +1212,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The token value retrieved from a previous call to access the next page of results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: ^[\w+=.:@\-\/]$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1239,8 +1239,8 @@ namespace MyNS
 		/// <summary>
 		/// The catalog related to the request. Fixed value: <code>AWSMarketplace</code> 
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1253,8 +1253,8 @@ namespace MyNS
 		/// <summary>
 		/// The type of entities to retrieve.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^[a-zA-Z]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1282,8 +1282,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The value of the next token, if it exists. Null if there are no more results.
-		/// Max length: 2048
 		/// Min length: 1
+		/// Max length: 2048
 		/// Pattern: ^[\w+=.:@\-\/]$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1321,8 +1321,8 @@ namespace MyNS
 		/// <summary>
 		/// Required. The Amazon Resource Name (ARN) associated with the resource you want to list tags on.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1339,8 +1339,8 @@ namespace MyNS
 		/// <summary>
 		/// The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy. 
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1353,8 +1353,8 @@ namespace MyNS
 		/// <summary>
 		/// The policy document to set; formatted in JSON.
 		/// Required
-		/// Max length: 10240
 		/// Min length: 1
+		/// Max length: 10240
 		/// Pattern: ^[\u0009\u000A\u000D\u0020-\u00FF]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1371,8 +1371,8 @@ namespace MyNS
 		/// <summary>
 		/// The catalog related to the request. Fixed value: <code>AWSMarketplace</code> 
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[a-zA-Z]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1396,8 +1396,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. 
-		/// Max length: 100
 		/// Min length: 1
+		/// Max length: 100
 		/// Pattern: ^[\w\s+=.:@-]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1408,8 +1408,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A unique token to identify the request to ensure idempotency.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: ^[!-~]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -1435,8 +1435,8 @@ namespace MyNS
 		/// <summary>
 		/// Required. The Amazon Resource Name (ARN) associated with the resource you want to tag.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -1465,8 +1465,8 @@ namespace MyNS
 		/// <summary>
 		/// Required. The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

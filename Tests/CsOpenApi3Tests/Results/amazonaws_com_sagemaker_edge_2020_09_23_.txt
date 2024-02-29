@@ -481,8 +481,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique name of the device you want to get the configuration of active deployments from.
 		/// Required
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		/// Pattern: ^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -495,8 +495,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the fleet that the device belongs to.
 		/// Required
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		/// Pattern: ^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -513,8 +513,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique name of the device you want to get the registration status from.
 		/// Required
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		/// Pattern: ^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -527,8 +527,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the fleet that the device belongs to.
 		/// Required
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		/// Pattern: ^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -557,8 +557,8 @@ namespace MyNS
 		/// <summary>
 		/// Returns the version of the agent.
 		/// Required
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		/// Pattern: [a-zA-Z0-9\ \_\.]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -571,8 +571,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique name of the device.
 		/// Required
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		/// Pattern: ^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -585,8 +585,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the fleet that the device belongs to.
 		/// Required
-		/// Max length: 63
 		/// Min length: 1
+		/// Max length: 63
 		/// Pattern: ^[a-zA-Z0-9](-*_*[a-zA-Z0-9])*$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

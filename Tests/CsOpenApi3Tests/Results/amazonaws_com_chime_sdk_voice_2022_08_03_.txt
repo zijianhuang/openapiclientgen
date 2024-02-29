@@ -3561,8 +3561,8 @@ namespace MyNS
 		/// CreateProxySession voice-connectors/{voiceConnectorId}/proxy-sessions
 		/// </summary>
 		/// <param name="voiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task CreateProxySessionAsync(string voiceConnectorId, CreateProxySessionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3598,8 +3598,8 @@ namespace MyNS
 		/// ListProxySessions voice-connectors/{voiceConnectorId}/proxy-sessions
 		/// </summary>
 		/// <param name="voiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="status">The proxy session status.</param>
 		/// <param name="next_token">The token used to retrieve the next page of results.
@@ -4184,12 +4184,12 @@ namespace MyNS
 		/// DeleteProxySession voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		/// </summary>
 		/// <param name="voiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="proxySessionId">The proxy session ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteProxySessionAsync(string voiceConnectorId, string proxySessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4218,12 +4218,12 @@ namespace MyNS
 		/// GetProxySession voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		/// </summary>
 		/// <param name="voiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="proxySessionId">The proxy session ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProxySessionResponse> GetProxySessionAsync(string voiceConnectorId, string proxySessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4259,12 +4259,12 @@ namespace MyNS
 		/// UpdateProxySession voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		/// </summary>
 		/// <param name="voiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="proxySessionId">The proxy session ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task UpdateProxySessionAsync(string voiceConnectorId, string proxySessionId, UpdateProxySessionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4898,8 +4898,8 @@ namespace MyNS
 		/// DeleteVoiceConnectorProxy voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		/// </summary>
 		/// <param name="voiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task DeleteVoiceConnectorProxyAsync(string voiceConnectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4928,8 +4928,8 @@ namespace MyNS
 		/// GetVoiceConnectorProxy voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		/// </summary>
 		/// <param name="voiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetVoiceConnectorProxyResponse> GetVoiceConnectorProxyAsync(string voiceConnectorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4965,8 +4965,8 @@ namespace MyNS
 		/// PutVoiceConnectorProxy voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		/// </summary>
 		/// <param name="voiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutVoiceConnectorProxyResponse> PutVoiceConnectorProxyAsync(string voiceConnectorId, PutVoiceConnectorProxyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5247,8 +5247,8 @@ namespace MyNS
 		/// DeleteVoiceProfile voice-profiles/{VoiceProfileId}
 		/// </summary>
 		/// <param name="VoiceProfileId">The voice profile ID.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		public async Task DeleteVoiceProfileAsync(string VoiceProfileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5277,8 +5277,8 @@ namespace MyNS
 		/// GetVoiceProfile voice-profiles/{VoiceProfileId}
 		/// </summary>
 		/// <param name="VoiceProfileId">The voice profile ID.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetVoiceProfileResponse> GetVoiceProfileAsync(string VoiceProfileId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5314,8 +5314,8 @@ namespace MyNS
 		/// UpdateVoiceProfile voice-profiles/{VoiceProfileId}
 		/// </summary>
 		/// <param name="VoiceProfileId">The profile ID.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateVoiceProfileResponse> UpdateVoiceProfileAsync(string VoiceProfileId, UpdateVoiceProfilePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5358,8 +5358,8 @@ namespace MyNS
 		/// DeleteVoiceProfileDomain voice-profile-domains/{VoiceProfileDomainId}
 		/// </summary>
 		/// <param name="VoiceProfileDomainId">The voice profile domain ID.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		public async Task DeleteVoiceProfileDomainAsync(string VoiceProfileDomainId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5388,8 +5388,8 @@ namespace MyNS
 		/// GetVoiceProfileDomain voice-profile-domains/{VoiceProfileDomainId}
 		/// </summary>
 		/// <param name="VoiceProfileDomainId">The voice profile domain ID.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetVoiceProfileDomainResponse> GetVoiceProfileDomainAsync(string VoiceProfileDomainId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5425,8 +5425,8 @@ namespace MyNS
 		/// UpdateVoiceProfileDomain voice-profile-domains/{VoiceProfileDomainId}
 		/// </summary>
 		/// <param name="VoiceProfileDomainId">The domain ID.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateVoiceProfileDomainResponse> UpdateVoiceProfileDomainAsync(string VoiceProfileDomainId, UpdateVoiceProfileDomainPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5867,12 +5867,12 @@ namespace MyNS
 		/// GetSpeakerSearchTask voice-connectors/{VoiceConnectorId}/speaker-search-tasks/{SpeakerSearchTaskId}
 		/// </summary>
 		/// <param name="VoiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="SpeakerSearchTaskId">The ID of the speaker search task.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSpeakerSearchTaskResponse> GetSpeakerSearchTaskAsync(string VoiceConnectorId, string SpeakerSearchTaskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6017,12 +6017,12 @@ namespace MyNS
 		/// GetVoiceToneAnalysisTask voice-connectors/{VoiceConnectorId}/voice-tone-analysis-tasks/{VoiceToneAnalysisTaskId}#isCaller
 		/// </summary>
 		/// <param name="VoiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="VoiceToneAnalysisTaskId">The ID of the voice tone anlysis task.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="isCaller">Specifies whether the voice being analyzed is the caller (originator) or the callee (responder).</param>
 		/// <returns>Success</returns>
@@ -6170,8 +6170,8 @@ namespace MyNS
 		/// ListTagsForResource tags#arn
 		/// </summary>
 		/// <param name="arn">The resource ARN.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6241,8 +6241,8 @@ namespace MyNS
 		/// ListVoiceProfiles voice-profiles#voice-profile-domain-id
 		/// </summary>
 		/// <param name="voice_profile_domain_id">The ID of the voice profile domain.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <param name="next_token">The token used to retrieve the next page of results.</param>
 		/// <param name="max_results">The maximum number of results in the request.
@@ -6352,8 +6352,8 @@ namespace MyNS
 		/// <param name="country">Confines a search to just the phone numbers associated with the specified country.</param>
 		/// <param name="state">Confines a search to just the phone numbers associated with the specified state.</param>
 		/// <param name="toll_free_prefix">Confines a search to just the phone numbers associated with the specified toll-free prefix.
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		// </param>
 		/// <param name="phone_number_type">Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.</param>
 		/// <param name="max_results">The maximum number of results to return.
@@ -6397,8 +6397,8 @@ namespace MyNS
 		/// StartSpeakerSearchTask voice-connectors/{VoiceConnectorId}/speaker-search-tasks
 		/// </summary>
 		/// <param name="VoiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task StartSpeakerSearchTaskAsync(string VoiceConnectorId, StartSpeakerSearchTaskPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6434,8 +6434,8 @@ namespace MyNS
 		/// StartVoiceToneAnalysisTask voice-connectors/{VoiceConnectorId}/voice-tone-analysis-tasks
 		/// </summary>
 		/// <param name="VoiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		public async Task StartVoiceToneAnalysisTaskAsync(string VoiceConnectorId, StartVoiceToneAnalysisTaskPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6471,12 +6471,12 @@ namespace MyNS
 		/// StopSpeakerSearchTask voice-connectors/{VoiceConnectorId}/speaker-search-tasks/{SpeakerSearchTaskId}#operation=stop
 		/// </summary>
 		/// <param name="VoiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="SpeakerSearchTaskId">The speaker search task ID.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		public async Task StopSpeakerSearchTaskAsync(string VoiceConnectorId, string SpeakerSearchTaskId, StopSpeakerSearchTaskOperation operation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6500,12 +6500,12 @@ namespace MyNS
 		/// StopVoiceToneAnalysisTask voice-connectors/{VoiceConnectorId}/voice-tone-analysis-tasks/{VoiceToneAnalysisTaskId}#operation=stop
 		/// </summary>
 		/// <param name="VoiceConnectorId">The Voice Connector ID.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="VoiceToneAnalysisTaskId">The ID of the voice tone analysis task.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		public async Task StopVoiceToneAnalysisTaskAsync(string VoiceConnectorId, string VoiceToneAnalysisTaskId, StopSpeakerSearchTaskOperation operation, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6851,8 +6851,8 @@ namespace MyNS
 		/// <summary>
 		/// The SIP media application's name.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9 _.-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6927,8 +6927,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the SIP rule.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9 _.-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -6979,8 +6979,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Voice Connector.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9 _.-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7058,8 +7058,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Voice Connector group.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9 _.-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7082,8 +7082,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the speaker search task.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7100,8 +7100,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the voice profile domain.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9 _.-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7113,8 +7113,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A description of the voice profile domain.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7198,8 +7198,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The new name for the specified SIP media application.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9 _.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -7225,8 +7225,8 @@ namespace MyNS
 		/// <summary>
 		/// The new name for the specified SIP rule.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9 _.-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7259,8 +7259,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Voice Connector.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9 _.-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7304,8 +7304,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the Voice Connector group.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9 _.-]+
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7468,8 +7468,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the speaker search task.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7485,8 +7485,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the voice profile domain.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: [a-zA-Z0-9 _.-]+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -7497,8 +7497,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The description of the voice profile domain.
-		/// Max length: 1024
 		/// Min length: 0
+		/// Max length: 1024
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -7671,8 +7671,8 @@ namespace MyNS
 		/// <summary>
 		/// The transaction ID of the call being analyzed.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7685,8 +7685,8 @@ namespace MyNS
 		/// <summary>
 		/// The ID of the voice profile domain that will store the voice profile.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7717,8 +7717,8 @@ namespace MyNS
 		/// <summary>
 		/// The transaction ID.
 		/// Required
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7775,8 +7775,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the resource being tagged. 
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -7812,8 +7812,8 @@ namespace MyNS
 		/// <summary>
 		/// The ARN of the resource having its tags removed.
 		/// Required
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		/// Pattern: ^arn[\/\:\-\_\.a-zA-Z0-9]+$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

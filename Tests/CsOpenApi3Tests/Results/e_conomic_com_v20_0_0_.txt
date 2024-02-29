@@ -63,8 +63,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the activity.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -191,8 +191,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the activity group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: true</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -363,8 +363,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the cost type.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: true</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -447,8 +447,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the cost type group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: true</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -532,8 +532,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Employee's email address.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		/// Max length: 50
 		/// Min length: 0
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="email")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -551,8 +551,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the employee.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -579,8 +579,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Employee's telephone number.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		/// Max length: 20
 		/// Min length: 0
+		/// Max length: 20
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="phone")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -617,8 +617,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the employee group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -945,8 +945,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Text describing the project.<p class='filter'>Filterable: not filterable</p><p class='sort'>Sortable: false</p>
-		/// Max length: 2500
 		/// Min length: 0
+		/// Max length: 2500
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1010,8 +1010,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the project.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1175,8 +1175,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the customer.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: true</p>
 		/// Required
-		/// Max length: 255
 		/// Min length: 0
+		/// Max length: 255
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1230,8 +1230,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Employee's home address.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="address")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1256,8 +1256,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Employee's city of residence.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		/// Max length: 50
 		/// Min length: 0
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="city")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1317,8 +1317,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the employee.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1363,8 +1363,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Employee's zip code.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin</p><p class='sort'>Sortable: false</p>
-		/// Max length: 50
 		/// Min length: 0
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="zipCode")]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -1401,8 +1401,8 @@ namespace MyNS
 		/// <summary>
 		/// Name of the employee group.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1517,8 +1517,8 @@ namespace MyNS
 		/// <summary>
 		/// The project group name.<p class='filter'>Filterable: eq, ne, lt, lte, gt, gte, in, nin, like</p><p class='sort'>Sortable: false</p>
 		/// Required
-		/// Max length: 100
 		/// Min length: 0
+		/// Max length: 100
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -1891,8 +1891,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Activities in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllActivities activities
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ActivityCursorResults> GetAllActivitiesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2146,8 +2146,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Activity Groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllActivityGroups activitygroups
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ActivityGroupCursorResults> GetAllActivityGroupsAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2325,8 +2325,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Cost Type Groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllCostTypeGroups costtypegroups
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CostTypeGroupCursorResults> GetAllCostTypeGroupsAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2470,8 +2470,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Cost Types in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllCostTypes costtypes
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CostTypeCursorResults> GetAllCostTypesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2615,8 +2615,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Employee groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllEmployeeGroups employeegroups
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<EmployeeGroupCursorResults> GetAllEmployeeGroupsAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2855,8 +2855,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Employees in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllEmployees employees
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<EmployeeCursorResults> GetAllEmployeesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3095,8 +3095,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Mileage entry prices in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllMileageEntryPrices mileageprices
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<MileagePricesCursorResults> GetAllMileageEntryPricesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3206,8 +3206,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Mileage entries in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllMileageEntries mileages
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<MileageCursorResults> GetAllMileageEntriesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3480,8 +3480,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Project Activities in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjectActivities project-activities
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectActivityCursorResults> GetAllProjectActivitiesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3720,8 +3720,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Project Customers in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjectCustomers project-customers
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectCustomerCursorResults> GetAllProjectCustomersAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3865,8 +3865,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Project employee groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjectEmployeeGroups project-employeegroups
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectEmployeeGroupCursorResults> GetAllProjectEmployeeGroupsAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4105,8 +4105,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Project employees in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjectEmployees project-employees
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectEmployeeCursorResults> GetAllProjectEmployeesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4345,8 +4345,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Project Groups in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjectGroups projectgroups
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectGroupCursorResults> GetAllProjectGroupsAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4524,8 +4524,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Projects in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjects projects
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectCursorResults> GetAllProjectsAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4802,8 +4802,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Project Statuses in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllProjectStatuses projectstatuses
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ProjectStatusCursorResults> GetAllProjectStatusesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4947,8 +4947,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Time entries in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllTimeEntries timeentries
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TimeEntryCursorResults> GetAllTimeEntriesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5221,8 +5221,8 @@ namespace MyNS
 		/// Use this endpoint to retrieve all Time entry prices in bulk.  Max number of items returned in a single call is 1000. Use the continuation cursor parameter to set the continuation cursor for retrieval of next set of data. [pagination instructions](#section/Retrieving-data/Pagination)
 		/// GetAllTimeEntryPrices timeentryprices
 		/// </summary>
-		/// <param name="Cursor">Max length: 50
-		/// Min length: 0
+		/// <param name="Cursor">Min length: 0
+		/// Max length: 50
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<TimeEntryPricesCursorResults> GetAllTimeEntryPricesAsync(string Cursor, string Filter, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

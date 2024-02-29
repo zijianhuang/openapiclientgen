@@ -80,8 +80,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Url from which the preview file can be downloaded.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="preview_img_url")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -96,8 +96,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Crops the image according to the specified mechanism. If you specify the size "WidthexHeight", the image will be cropped centered. If coordinates "x1,y1,x2,y2" are given, the image is cropped according to the coordinates. The image will be cropped to the size of the stories if "faces" are specified as. Example Centered: "crop": "200x300". Example Region: "crop": "200,300,150,300". Example Faces: "crop": "faces".
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="crop")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -128,8 +128,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Changes the size of the image according to the specified size. Example: "resize": "200x300".
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="resize")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -404,8 +404,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Url from which the result file can be downloaded.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="result_file_url")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

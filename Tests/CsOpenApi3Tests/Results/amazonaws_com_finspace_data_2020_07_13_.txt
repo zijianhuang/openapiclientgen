@@ -1825,12 +1825,12 @@ namespace MyNS
 		/// AssociateUserToPermissionGroup permission-group/{permissionGroupId}/users/{userId}
 		/// </summary>
 		/// <param name="permissionGroupId">The unique identifier for the permission group.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <param name="userId">The unique identifier for the user.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateUserToPermissionGroupResponse> AssociateUserToPermissionGroupAsync(string permissionGroupId, string userId, AssociateUserToPermissionGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1873,16 +1873,16 @@ namespace MyNS
 		/// DisassociateUserFromPermissionGroup permission-group/{permissionGroupId}/users/{userId}
 		/// </summary>
 		/// <param name="permissionGroupId">The unique identifier for the permission group.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <param name="userId">The unique identifier for the user.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <param name="clientToken">A token that ensures idempotency. This token expires in 10 minutes.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateUserFromPermissionGroupResponse> DisassociateUserFromPermissionGroupAsync(string permissionGroupId, string userId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1918,8 +1918,8 @@ namespace MyNS
 		/// CreateChangeset datasets/{datasetId}/changesetsv2
 		/// </summary>
 		/// <param name="datasetId">The unique identifier for the FinSpace Dataset where the Changeset will be created. 
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateChangesetResponse> CreateChangesetAsync(string datasetId, CreateChangesetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1962,8 +1962,8 @@ namespace MyNS
 		/// ListChangesets datasets/{datasetId}/changesetsv2
 		/// </summary>
 		/// <param name="datasetId">The unique identifier for the FinSpace Dataset to which the Changeset belongs.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <param name="maxResults">The maximum number of results per page.
 		/// Minimum: 1
@@ -2004,8 +2004,8 @@ namespace MyNS
 		/// CreateDataView datasets/{datasetId}/dataviewsv2
 		/// </summary>
 		/// <param name="datasetId">The unique Dataset identifier that is used to create a Dataview.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDataViewResponse> CreateDataViewAsync(string datasetId, CreateDataViewPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2048,8 +2048,8 @@ namespace MyNS
 		/// ListDataViews datasets/{datasetId}/dataviewsv2
 		/// </summary>
 		/// <param name="datasetId">The unique identifier of the Dataset for which to retrieve Dataviews.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <param name="nextToken">A token that indicates where a results page should begin.</param>
 		/// <param name="maxResults">The maximum number of results per page.
@@ -2248,12 +2248,12 @@ namespace MyNS
 		/// DeleteDataset datasetsv2/{datasetId}
 		/// </summary>
 		/// <param name="clientToken">A token that ensures idempotency. This token expires in 10 minutes.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <param name="datasetId">The unique identifier of the Dataset to be deleted.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDatasetResponse> DeleteDatasetAsync(string clientToken, string datasetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2289,8 +2289,8 @@ namespace MyNS
 		/// GetDataset datasetsv2/{datasetId}
 		/// </summary>
 		/// <param name="datasetId">The unique identifier for a Dataset.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDatasetResponse> GetDatasetAsync(string datasetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2326,8 +2326,8 @@ namespace MyNS
 		/// UpdateDataset datasetsv2/{datasetId}
 		/// </summary>
 		/// <param name="datasetId">The unique identifier for the Dataset to update.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDatasetResponse> UpdateDatasetAsync(string datasetId, UpdateDatasetPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2370,12 +2370,12 @@ namespace MyNS
 		/// DeletePermissionGroup permission-group/{permissionGroupId}
 		/// </summary>
 		/// <param name="permissionGroupId">The unique identifier for the permission group that you want to delete.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <param name="clientToken">A token that ensures idempotency. This token expires in 10 minutes.
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePermissionGroupResponse> DeletePermissionGroupAsync(string permissionGroupId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2411,8 +2411,8 @@ namespace MyNS
 		/// GetPermissionGroup permission-group/{permissionGroupId}
 		/// </summary>
 		/// <param name="permissionGroupId">The unique identifier for the permission group.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPermissionGroupResponse> GetPermissionGroupAsync(string permissionGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2448,8 +2448,8 @@ namespace MyNS
 		/// UpdatePermissionGroup permission-group/{permissionGroupId}
 		/// </summary>
 		/// <param name="permissionGroupId">The unique identifier for the permission group to update.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePermissionGroupResponse> UpdatePermissionGroupAsync(string permissionGroupId, UpdatePermissionGroupPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2492,8 +2492,8 @@ namespace MyNS
 		/// DisableUser user/{userId}/disable
 		/// </summary>
 		/// <param name="userId">The unique identifier for the user account that you want to disable.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisableUserResponse> DisableUserAsync(string userId, DisableUserPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2536,8 +2536,8 @@ namespace MyNS
 		/// EnableUser user/{userId}/enable
 		/// </summary>
 		/// <param name="userId">The unique identifier for the user account that you want to enable.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<EnableUserResponse> EnableUserAsync(string userId, EnableUserPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2580,12 +2580,12 @@ namespace MyNS
 		/// GetChangeset datasets/{datasetId}/changesetsv2/{changesetId}
 		/// </summary>
 		/// <param name="datasetId">The unique identifier for the FinSpace Dataset where the Changeset is created.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <param name="changesetId">The unique identifier of the Changeset for which to get data.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetChangesetResponse> GetChangesetAsync(string datasetId, string changesetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2621,12 +2621,12 @@ namespace MyNS
 		/// UpdateChangeset datasets/{datasetId}/changesetsv2/{changesetId}
 		/// </summary>
 		/// <param name="datasetId">The unique identifier for the FinSpace Dataset in which the Changeset is created.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <param name="changesetId">The unique identifier for the Changeset to update.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChangesetResponse> UpdateChangesetAsync(string datasetId, string changesetId, UpdateChangesetPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2669,12 +2669,12 @@ namespace MyNS
 		/// GetDataView datasets/{datasetId}/dataviewsv2/{dataviewId}
 		/// </summary>
 		/// <param name="dataviewId">The unique identifier for the Dataview.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <param name="datasetId">The unique identifier for the Dataset used in the Dataview.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDataViewResponse> GetDataViewAsync(string dataviewId, string datasetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2710,12 +2710,12 @@ namespace MyNS
 		/// GetExternalDataViewAccessDetails datasets/{datasetId}/dataviewsv2/{dataviewId}/external-access-details
 		/// </summary>
 		/// <param name="dataviewId">The unique identifier for the Dataview that you want to access.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <param name="datasetId">The unique identifier for the Dataset.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetExternalDataViewAccessDetailsResponse> GetExternalDataViewAccessDetailsAsync(string dataviewId, string datasetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2750,8 +2750,8 @@ namespace MyNS
 		/// Maximum: 720
 		// </param>
 		/// <param name="environmentId">The FinSpace environment identifier.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProgrammaticAccessCredentialsResponse> GetProgrammaticAccessCredentialsAsync(int durationInMinutes, string environmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2787,8 +2787,8 @@ namespace MyNS
 		/// GetUser user/{userId}
 		/// </summary>
 		/// <param name="userId">The unique identifier of the user to get data for.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetUserResponse> GetUserAsync(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2824,8 +2824,8 @@ namespace MyNS
 		/// UpdateUser user/{userId}
 		/// </summary>
 		/// <param name="userId">The unique identifier for the user account to update.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateUserResponse> UpdateUserAsync(string userId, UpdateUserPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2946,8 +2946,8 @@ namespace MyNS
 		/// ListPermissionGroupsByUser user/{userId}/permission-groups#maxResults
 		/// </summary>
 		/// <param name="userId">The unique identifier for the user.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <param name="nextToken">A token that indicates where a results page should begin.</param>
 		/// <param name="maxResults">The maximum number of results per page.
@@ -3026,8 +3026,8 @@ namespace MyNS
 		/// ListUsersByPermissionGroup permission-group/{permissionGroupId}/users#maxResults
 		/// </summary>
 		/// <param name="permissionGroupId">The unique identifier for the permission group.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <param name="nextToken">A token that indicates where a results page should begin.</param>
 		/// <param name="maxResults">The maximum number of results per page.
@@ -3068,8 +3068,8 @@ namespace MyNS
 		/// ResetUserPassword user/{userId}/password
 		/// </summary>
 		/// <param name="userId">The unique identifier of the user that a temporary password is requested for.
-		/// Max length: 26
 		/// Min length: 1
+		/// Max length: 26
 		// </param>
 		/// <returns>Success</returns>
 		public async Task<ResetUserPasswordResponse> ResetUserPasswordAsync(string userId, ResetUserPasswordPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3113,8 +3113,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Idempotence Token for API operations
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3129,8 +3129,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Idempotence Token for API operations
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3169,8 +3169,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Idempotence Token for API operations
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3230,8 +3230,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Idempotence Token for API operations
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3243,8 +3243,8 @@ namespace MyNS
 		/// <summary>
 		/// Title for a given Dataset
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3288,8 +3288,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique resource identifier for a Dataset.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^alias\/\S+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="alias")]
@@ -3341,8 +3341,8 @@ namespace MyNS
 		/// <summary>
 		/// The name of the permission group.
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3354,8 +3354,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A brief description for the permission group.
-		/// Max length: 4000
 		/// Min length: 1
+		/// Max length: 4000
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -3374,8 +3374,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Idempotence Token for API operations
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3391,8 +3391,8 @@ namespace MyNS
 		/// <summary>
 		/// The email address of the user that you want to register. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.
 		/// Required
-		/// Max length: 320
 		/// Min length: 4
+		/// Max length: 320
 		/// Pattern: [A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3412,8 +3412,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The first name of the user that you want to register.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="firstName")]
@@ -3424,8 +3424,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The last name of the user that you want to register.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="lastName")]
@@ -3442,8 +3442,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="apiAccessPrincipalArn")]
@@ -3454,8 +3454,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Idempotence Token for API operations
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3470,8 +3470,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Idempotence Token for API operations
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3483,8 +3483,8 @@ namespace MyNS
 		/// <summary>
 		/// Title for a given Dataset
 		/// Required
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -3514,8 +3514,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique resource identifier for a Dataset.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: ^alias\/\S+
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="alias")]
@@ -3543,8 +3543,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The name of the permission group.
-		/// Max length: 255
 		/// Min length: 1
+		/// Max length: 255
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -3555,8 +3555,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// A brief description for the permission group.
-		/// Max length: 4000
 		/// Min length: 1
+		/// Max length: 4000
 		/// Pattern: [\s\S]*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -3573,8 +3573,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Idempotence Token for API operations
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3589,8 +3589,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Idempotence Token for API operations
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3605,8 +3605,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Idempotence Token for API operations
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3621,8 +3621,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Idempotence Token for API operations
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3659,8 +3659,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The first name of the user.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="firstName")]
@@ -3671,8 +3671,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The last name of the user.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="lastName")]
@@ -3689,8 +3689,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.
-		/// Max length: 2048
 		/// Min length: 20
+		/// Max length: 2048
 		/// Pattern: ^arn:aws[a-z\-]*:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="apiAccessPrincipalArn")]
@@ -3701,8 +3701,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Idempotence Token for API operations
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]
@@ -3727,8 +3727,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Idempotence Token for API operations
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// Pattern: .*\S.*
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="clientToken")]

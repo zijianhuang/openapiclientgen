@@ -4227,8 +4227,8 @@ namespace MyNS
 		/// DeleteAccessPoint v20180820/accesspoint/{name}#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>The name of the access point you want to delete.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>. For example, to access the access point <code>reports-ap</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteAccessPointAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4258,8 +4258,8 @@ namespace MyNS
 		/// GetAccessPoint v20180820/accesspoint/{name}#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>The name of the access point whose configuration information you want to retrieve.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>. For example, to access the access point <code>reports-ap</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetAccessPointAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4289,8 +4289,8 @@ namespace MyNS
 		/// DeleteAccessPointForObjectLambda v20180820/accesspointforobjectlambda/{name}#x-amz-account-id
 		/// </summary>
 		/// <param name="name">The name of the access point you want to delete.
-		/// Max length: 45
 		/// Min length: 3
+		/// Max length: 45
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteAccessPointForObjectLambdaAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4320,8 +4320,8 @@ namespace MyNS
 		/// GetAccessPointForObjectLambda v20180820/accesspointforobjectlambda/{name}#x-amz-account-id
 		/// </summary>
 		/// <param name="name">The name of the Object Lambda Access Point.
-		/// Max length: 45
 		/// Min length: 3
+		/// Max length: 45
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetAccessPointForObjectLambdaAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4352,8 +4352,8 @@ namespace MyNS
 		/// </summary>
 		/// <param name="jobStatuses">The <code>List Jobs</code> request returns jobs that match the statuses listed in this element.</param>
 		/// <param name="nextToken">A pagination token to request the next page of results. Use the token that Amazon S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code> from the previous <code>List Jobs</code> request.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="maxResults">The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code> response. If there are more jobs than this number, the response will include a pagination token in the <code>NextToken</code> field to enable you to retrieve the next page of results.
 		/// Minimum: 0
@@ -4389,8 +4389,8 @@ namespace MyNS
 		/// DeleteAccessPointPolicy v20180820/accesspoint/{name}/policy#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>The name of the access point whose policy you want to delete.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>. For example, to access the access point <code>reports-ap</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteAccessPointPolicyAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4420,8 +4420,8 @@ namespace MyNS
 		/// GetAccessPointPolicy v20180820/accesspoint/{name}/policy#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>The name of the access point whose policy you want to retrieve.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>. For example, to access the access point <code>reports-ap</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetAccessPointPolicyAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4451,8 +4451,8 @@ namespace MyNS
 		/// DeleteAccessPointPolicyForObjectLambda v20180820/accesspointforobjectlambda/{name}/policy#x-amz-account-id
 		/// </summary>
 		/// <param name="name">The name of the Object Lambda Access Point you want to delete the policy for.
-		/// Max length: 45
 		/// Min length: 3
+		/// Max length: 45
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteAccessPointPolicyForObjectLambdaAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4482,8 +4482,8 @@ namespace MyNS
 		/// GetAccessPointPolicyForObjectLambda v20180820/accesspointforobjectlambda/{name}/policy#x-amz-account-id
 		/// </summary>
 		/// <param name="name">The name of the Object Lambda Access Point.
-		/// Max length: 45
 		/// Min length: 3
+		/// Max length: 45
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetAccessPointPolicyForObjectLambdaAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4513,8 +4513,8 @@ namespace MyNS
 		/// DeleteBucket v20180820/bucket/{name}#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>Specifies the bucket being deleted.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteBucketAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4544,8 +4544,8 @@ namespace MyNS
 		/// GetBucket v20180820/bucket/{name}#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>Specifies the bucket.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetBucketAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4575,8 +4575,8 @@ namespace MyNS
 		/// DeleteBucketLifecycleConfiguration v20180820/bucket/{name}/lifecycleconfiguration#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>Specifies the bucket.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteBucketLifecycleConfigurationAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4606,8 +4606,8 @@ namespace MyNS
 		/// GetBucketLifecycleConfiguration v20180820/bucket/{name}/lifecycleconfiguration#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>The Amazon Resource Name (ARN) of the bucket.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetBucketLifecycleConfigurationAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4637,8 +4637,8 @@ namespace MyNS
 		/// DeleteBucketPolicy v20180820/bucket/{name}/policy#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>Specifies the bucket.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteBucketPolicyAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4668,8 +4668,8 @@ namespace MyNS
 		/// GetBucketPolicy v20180820/bucket/{name}/policy#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>Specifies the bucket.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetBucketPolicyAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4699,8 +4699,8 @@ namespace MyNS
 		/// DeleteBucketReplication v20180820/bucket/{name}/replication#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>Specifies the S3 on Outposts bucket to delete the replication configuration for.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteBucketReplicationAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4730,8 +4730,8 @@ namespace MyNS
 		/// GetBucketReplication v20180820/bucket/{name}/replication#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>Specifies the bucket to get the replication information for.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetBucketReplicationAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4761,8 +4761,8 @@ namespace MyNS
 		/// DeleteBucketTagging v20180820/bucket/{name}/tagging#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>The bucket ARN that has the tag set to be removed.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		public async Task DeleteBucketTaggingAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4791,8 +4791,8 @@ namespace MyNS
 		/// GetBucketTagging v20180820/bucket/{name}/tagging#x-amz-account-id
 		/// </summary>
 		/// <param name="name"><p>Specifies the bucket.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetBucketTaggingAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4822,8 +4822,8 @@ namespace MyNS
 		/// DeleteJobTagging v20180820/jobs/{id}/tagging#x-amz-account-id
 		/// </summary>
 		/// <param name="id">The ID for the S3 Batch Operations job whose tags you want to delete.
-		/// Max length: 36
 		/// Min length: 5
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteJobTaggingAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4853,8 +4853,8 @@ namespace MyNS
 		/// GetJobTagging v20180820/jobs/{id}/tagging#x-amz-account-id
 		/// </summary>
 		/// <param name="id">The ID for the S3 Batch Operations job whose tags you want to retrieve.
-		/// Max length: 36
 		/// Min length: 5
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetJobTaggingAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4938,8 +4938,8 @@ namespace MyNS
 		/// DeleteStorageLensConfiguration v20180820/storagelens/{storagelensid}#x-amz-account-id
 		/// </summary>
 		/// <param name="storagelensid">The ID of the S3 Storage Lens configuration.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteStorageLensConfigurationAsync(string storagelensid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4969,8 +4969,8 @@ namespace MyNS
 		/// GetStorageLensConfiguration v20180820/storagelens/{storagelensid}#x-amz-account-id
 		/// </summary>
 		/// <param name="storagelensid">The ID of the Amazon S3 Storage Lens configuration.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetStorageLensConfigurationAsync(string storagelensid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5000,8 +5000,8 @@ namespace MyNS
 		/// DeleteStorageLensConfigurationTagging v20180820/storagelens/{storagelensid}/tagging#x-amz-account-id
 		/// </summary>
 		/// <param name="storagelensid">The ID of the S3 Storage Lens configuration.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteStorageLensConfigurationTaggingAsync(string storagelensid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5031,8 +5031,8 @@ namespace MyNS
 		/// GetStorageLensConfigurationTagging v20180820/storagelens/{storagelensid}/tagging#x-amz-account-id
 		/// </summary>
 		/// <param name="storagelensid">The ID of the Amazon S3 Storage Lens configuration.
-		/// Max length: 64
 		/// Min length: 1
+		/// Max length: 64
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetStorageLensConfigurationTaggingAsync(string storagelensid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5062,8 +5062,8 @@ namespace MyNS
 		/// DescribeJob v20180820/jobs/{id}#x-amz-account-id
 		/// </summary>
 		/// <param name="id">The ID for the job whose information you want to retrieve.
-		/// Max length: 36
 		/// Min length: 5
+		/// Max length: 36
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DescribeJobAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5093,8 +5093,8 @@ namespace MyNS
 		/// DescribeMultiRegionAccessPointOperation v20180820/async-requests/mrap/{request_token}#x-amz-account-id
 		/// </summary>
 		/// <param name="request_token">The request token associated with the request you want to know about. This request token is returned as part of the response when you make an asynchronous request. You provide this token to query about the status of the asynchronous action.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <returns>Success</returns>
 		public async Task DescribeMultiRegionAccessPointOperationAsync(string request_token, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5124,8 +5124,8 @@ namespace MyNS
 		/// GetAccessPointConfigurationForObjectLambda v20180820/accesspointforobjectlambda/{name}/configuration#x-amz-account-id
 		/// </summary>
 		/// <param name="name">The name of the Object Lambda Access Point you want to return the configuration for.
-		/// Max length: 45
 		/// Min length: 3
+		/// Max length: 45
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetAccessPointConfigurationForObjectLambdaAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5155,8 +5155,8 @@ namespace MyNS
 		/// GetAccessPointPolicyStatus v20180820/accesspoint/{name}/policyStatus#x-amz-account-id
 		/// </summary>
 		/// <param name="name">The name of the access point whose policy status you want to retrieve.
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetAccessPointPolicyStatusAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5186,8 +5186,8 @@ namespace MyNS
 		/// GetAccessPointPolicyStatusForObjectLambda v20180820/accesspointforobjectlambda/{name}/policyStatus#x-amz-account-id
 		/// </summary>
 		/// <param name="name">The name of the Object Lambda Access Point.
-		/// Max length: 45
 		/// Min length: 3
+		/// Max length: 45
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetAccessPointPolicyStatusForObjectLambdaAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5217,8 +5217,8 @@ namespace MyNS
 		/// GetBucketVersioning v20180820/bucket/{name}/versioning#x-amz-account-id
 		/// </summary>
 		/// <param name="name">The S3 on Outposts bucket to return the versioning state for.
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <returns>Success</returns>
 		public async Task GetBucketVersioningAsync(string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5368,12 +5368,12 @@ namespace MyNS
 		/// ListAccessPoints v20180820/accesspoint#x-amz-account-id
 		/// </summary>
 		/// <param name="bucket"><p>The name of the bucket whose associated access points you want to list.</p> <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>. For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded. </p>
-		/// Max length: 255
 		/// Min length: 3
+		/// Max length: 255
 		// </param>
 		/// <param name="nextToken">A continuation token. If a previous call to <code>ListAccessPoints</code> returned a continuation token in the <code>NextToken</code> field, then providing that value here causes Amazon S3 to retrieve the next page of results.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="maxResults">The maximum number of access points that you want to include in the list. If the specified bucket has more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.
 		/// Minimum: 0
@@ -5409,8 +5409,8 @@ namespace MyNS
 		/// ListAccessPointsForObjectLambda v20180820/accesspointforobjectlambda#x-amz-account-id
 		/// </summary>
 		/// <param name="nextToken">If the list has more access points than can be returned in one call to this API, this field contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="maxResults">The maximum number of access points that you want to include in the list. The response may contain fewer access points but will never contain more. If there are more than this number of access points, then the response will include a continuation token in the <code>NextToken</code> field that you can use to retrieve the next page of access points.
 		/// Minimum: 0
@@ -5446,8 +5446,8 @@ namespace MyNS
 		/// ListMultiRegionAccessPoints v20180820/mrap/instances#x-amz-account-id
 		/// </summary>
 		/// <param name="nextToken">Not currently used. Do not use this parameter.
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="maxResults">Not currently used. Do not use this parameter.
 		/// Minimum: 0
@@ -5483,8 +5483,8 @@ namespace MyNS
 		/// ListRegionalBuckets v20180820/bucket#x-amz-account-id
 		/// </summary>
 		/// <param name="nextToken"><p/>
-		/// Max length: 1024
 		/// Min length: 1
+		/// Max length: 1024
 		// </param>
 		/// <param name="maxResults"><p/>
 		/// Minimum: 0
@@ -5549,8 +5549,8 @@ namespace MyNS
 		/// UpdateJobPriority v20180820/jobs/{id}/priority#x-amz-account-id&priority
 		/// </summary>
 		/// <param name="id">The ID for the job whose priority you want to update.
-		/// Max length: 36
 		/// Min length: 5
+		/// Max length: 36
 		// </param>
 		/// <param name="priority">The priority you want to assign to this job.
 		/// Minimum: 0
@@ -5579,13 +5579,13 @@ namespace MyNS
 		/// UpdateJobStatus v20180820/jobs/{id}/status#x-amz-account-id&requestedJobStatus
 		/// </summary>
 		/// <param name="id">The ID of the job whose status you want to update.
-		/// Max length: 36
 		/// Min length: 5
+		/// Max length: 36
 		// </param>
 		/// <param name="requestedJobStatus">The status that you want to move the specified job to.</param>
 		/// <param name="statusUpdateReason">A description of the reason why you want to change the specified job's status. This field can be any string up to the maximum length.
-		/// Max length: 256
 		/// Min length: 1
+		/// Max length: 256
 		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateJobStatusAsync(string id, RequestedJobStatus requestedJobStatus, string statusUpdateReason, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

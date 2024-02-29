@@ -62,8 +62,8 @@ namespace MyNS
 		/// <summary>
 		/// Resource Id for the updated resource.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="http://openbanking.org.uk/rid")]
@@ -84,8 +84,8 @@ namespace MyNS
 		/// <summary>
 		/// Resource Type for the updated resource.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="http://openbanking.org.uk/rty")]
@@ -96,8 +96,8 @@ namespace MyNS
 		/// <summary>
 		/// Subject type for the updated resource. 
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="subject_type")]
@@ -125,8 +125,8 @@ namespace MyNS
 		/// <summary>
 		/// Resource version.
 		/// Required
-		/// Max length: 10
 		/// Min length: 1
+		/// Max length: 10
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="version")]
@@ -146,8 +146,8 @@ namespace MyNS
 		/// <summary>
 		/// Audience.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="aud")]
@@ -184,8 +184,8 @@ namespace MyNS
 		/// <summary>
 		/// JWT ID.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="jti")]
@@ -214,8 +214,8 @@ namespace MyNS
 		/// <summary>
 		/// Transaction Identifier.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="txn")]

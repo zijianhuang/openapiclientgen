@@ -431,8 +431,8 @@ namespace MyNS
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="filter">OData filter. Optional.</param>
 		/// <param name="select">OData select. Optional.</param>
@@ -469,8 +469,8 @@ namespace MyNS
 		/// <param name="subscriptionId">Azure subscription ID</param>
 		/// <param name="ascLocation">The location where ASC stores the data of the subscription. can be retrieved from Get locations</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <param name="filter">OData filter. Optional.</param>
 		/// <param name="select">OData select. Optional.</param>
@@ -508,8 +508,8 @@ namespace MyNS
 		/// <param name="ascLocation">The location where ASC stores the data of the subscription. can be retrieved from Get locations</param>
 		/// <param name="alertName">Name of the alert object</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		/// <returns>OK</returns>
 		public async Task<Alert> Alerts_GetResourceGroupLevelAlertsAsync(string api_version, string subscriptionId, string ascLocation, string alertName, string resourceGroupName)
@@ -544,8 +544,8 @@ namespace MyNS
 		/// <param name="ascLocation">The location where ASC stores the data of the subscription. can be retrieved from Get locations</param>
 		/// <param name="alertName">Name of the alert object</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		public async Task Alerts_UpdateResourceGroupLevelAlertStateToDismissAsync(string api_version, string subscriptionId, string ascLocation, string alertName, string resourceGroupName)
 		{
@@ -573,8 +573,8 @@ namespace MyNS
 		/// <param name="ascLocation">The location where ASC stores the data of the subscription. can be retrieved from Get locations</param>
 		/// <param name="alertName">Name of the alert object</param>
 		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
-		/// Max length: 90
 		/// Min length: 1
+		/// Max length: 90
 		// </param>
 		public async Task Alerts_UpdateResourceGroupLevelAlertStateToReactivateAsync(string api_version, string subscriptionId, string ascLocation, string alertName, string resourceGroupName)
 		{

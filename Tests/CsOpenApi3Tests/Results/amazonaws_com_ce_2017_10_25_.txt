@@ -329,8 +329,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique name of the Cost Category.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -537,8 +537,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique name of the Cost Category.
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -566,8 +566,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The default value for the cost category.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -601,8 +601,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The default value for the cost category.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -863,8 +863,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique name of the Cost Category.
 		/// Required
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
@@ -895,8 +895,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The default value for the cost category.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -1602,8 +1602,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique name of the Cost Category.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -3168,8 +3168,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The period of time that you want the usage and costs for.
-		/// Max length: 25
 		/// Min length: 20
+		/// Max length: 25
 		/// Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3180,8 +3180,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The period of time that you want the usage and costs for.
-		/// Max length: 25
 		/// Min length: 20
+		/// Max length: 25
 		/// Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -3268,8 +3268,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The period of time that you want the usage and costs for.
-		/// Max length: 25
 		/// Min length: 20
+		/// Max length: 25
 		/// Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
@@ -4096,8 +4096,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The unique name of the Cost Category.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4121,8 +4121,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The default value for the cost category.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -4535,8 +4535,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The default value for the cost category.
-		/// Max length: 50
 		/// Min length: 1
+		/// Max length: 50
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]

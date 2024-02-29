@@ -16619,8 +16619,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// Last 4 digits of unique number of ID.
-		/// Max length: 4
 		/// Min length: 4
+		/// Max length: 4
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="last_4_digits")]
 		[System.ComponentModel.DataAnnotations.MinLength(4)]
@@ -18169,8 +18169,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The International Bank Account Number (IBAN) for the payer's account. Where possible, the end user will be able to set up payment consent using only the specified bank account if provided.
-		/// Max length: 34
 		/// Min length: 15
+		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iban")]
 		[System.ComponentModel.DataAnnotations.MinLength(15)]
@@ -18200,8 +18200,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The International Bank Account Number (IBAN) for the payer's account. Where possible, the end user will be able to send payments only from the specified bank account if provided.
-		/// Max length: 34
 		/// Min length: 15
+		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iban")]
 		[System.ComponentModel.DataAnnotations.MinLength(15)]
@@ -30531,8 +30531,8 @@ namespace MyNS
 		/// <summary>
 		/// The account's mask. Should be a string of 2-4 alphanumeric characters. This allows you to model a mask which does not match the account number (such as with a virtual account number).
 		/// Required
-		/// Max length: 4
 		/// Min length: 2
+		/// Max length: 4
 		/// Pattern: ^[A-Za-z0-9]{2,4}$
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -30693,8 +30693,8 @@ namespace MyNS
 		/// <summary>
 		/// The Business Identifier Code, also known as SWIFT code, for this bank account.
 		/// Required
-		/// Max length: 11
 		/// Min length: 8
+		/// Max length: 11
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="bic")]
@@ -30705,8 +30705,8 @@ namespace MyNS
 		/// <summary>
 		/// International Bank Account Number (IBAN).
 		/// Required
-		/// Max length: 34
 		/// Min length: 15
+		/// Max length: 34
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="iban")]
@@ -32131,8 +32131,8 @@ namespace MyNS
 		/// <summary>
 		/// The ISO-4217 currency code of the payment. For standing orders and payment consents, `"GBP"` must be used.
 		/// Required
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="currency")]
@@ -32185,8 +32185,8 @@ namespace MyNS
 		/// <summary>
 		/// The ISO-4217 currency code of the payment. For standing orders and payment consents, `"GBP"` must be used.
 		/// Required
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="currency")]
@@ -32395,8 +32395,8 @@ namespace MyNS
 		/// <summary>
 		/// The city where the recipient is located. Maximum of 35 characters.
 		/// Required
-		/// Max length: 35
 		/// Min length: 1
+		/// Max length: 35
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="city")]
@@ -32407,8 +32407,8 @@ namespace MyNS
 		/// <summary>
 		/// The ISO 3166-1 alpha-2 country code where the recipient is located.
 		/// Required
-		/// Max length: 2
 		/// Min length: 2
+		/// Max length: 2
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="country")]
@@ -32419,8 +32419,8 @@ namespace MyNS
 		/// <summary>
 		/// The postal code where the recipient is located. Maximum of 16 characters.
 		/// Required
-		/// Max length: 16
 		/// Min length: 1
+		/// Max length: 16
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="postal_code")]
@@ -32632,8 +32632,8 @@ namespace MyNS
 		/// <summary>
 		/// A reference for the payment consent. This must be an alphanumeric string with at most 18 characters and must not contain any special characters.
 		/// Required
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="reference")]
@@ -32774,8 +32774,8 @@ namespace MyNS
 		///
 		///The API supports idempotency for safely retrying requests without accidentally performing the same operation twice. If a request to execute a consent payment fails due to a network connection error, you can retry the request with the same idempotency key to guarantee that only a single payment is created. If the request was successfully processed, it will prevent any payment that uses the same idempotency key, and was received within 24 hours of the first request, from being processed.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
@@ -33221,8 +33221,8 @@ namespace MyNS
 		///In order to track settlement via Payment Confirmation, each payment must have a unique reference. If the reference provided through the API is not unique, Plaid will adjust it.
 		///Both the originally provided and automatically adjusted references (if any) can be found in the `reference` and `adjusted_reference` fields, respectively.
 		/// Required
-		/// Max length: 18
 		/// Min length: 1
+		/// Max length: 18
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="reference")]
@@ -33447,8 +33447,8 @@ namespace MyNS
 		///
 		///The API supports idempotency for safely retrying requests without accidentally performing the same operation twice. If a request to execute a wallet transaction fails due to a network connection error, then after a minimum delay of one minute, you can retry the request with the same idempotency key to guarantee that only a single wallet transaction is created. If the request was successfully processed, it will prevent any transaction that uses the same idempotency key, and was received within 24 hours of the first request, from being processed.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
@@ -33467,8 +33467,8 @@ namespace MyNS
 		/// <summary>
 		/// A reference for the refund. This must be an alphanumeric string with 6 to 18 characters and must not contain any special characters or spaces.
 		/// Required
-		/// Max length: 18
 		/// Min length: 6
+		/// Max length: 18
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="reference")]
@@ -33769,8 +33769,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The International Bank Account Number (IBAN) for the recipient. If BACS data is not provided, an IBAN is required.
-		/// Max length: 34
 		/// Min length: 15
+		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iban")]
 		[System.ComponentModel.DataAnnotations.MinLength(15)]
@@ -35075,8 +35075,8 @@ namespace MyNS
 		/// <summary>
 		/// Must be the same as the `client_transaction_id` supplied when calling `/signal/evaluate`
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_transaction_id")]
@@ -35248,8 +35248,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique ID that you would like to use to refer to this transaction. For your convenience mapping your internal data, you could use your internal ID/identifier for this transaction. The max length for this field is 36 characters.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_transaction_id")]
@@ -35894,8 +35894,8 @@ namespace MyNS
 		/// <summary>
 		/// Must be the same as the `client_transaction_id` supplied when calling `/processor/signal/evaluate`
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_transaction_id")]
@@ -36348,8 +36348,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The account number of the account. Maximum of 10 characters.
-		/// Max length: 10
 		/// Min length: 1
+		/// Max length: 10
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="account")]
 		[System.ComponentModel.DataAnnotations.MinLength(1)]
@@ -36358,8 +36358,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// The 6-character sort code of the account.
-		/// Max length: 6
 		/// Min length: 6
+		/// Max length: 6
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="sort_code")]
 		[System.ComponentModel.DataAnnotations.MinLength(6)]
@@ -38964,8 +38964,8 @@ namespace MyNS
 		/// <summary>
 		/// Must be the same as the `client_transaction_id` supplied when calling `/signal/evaluate`
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_transaction_id")]
@@ -39100,8 +39100,8 @@ namespace MyNS
 		/// <summary>
 		/// The unique ID that you would like to use to refer to this transaction. For your convenience mapping your internal data, you could use your internal ID/identifier for this transaction. The max length for this field is 36 characters.
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_transaction_id")]
@@ -39339,8 +39339,8 @@ namespace MyNS
 		/// <summary>
 		/// Must be the same as the `client_transaction_id` supplied when calling `/signal/evaluate`
 		/// Required
-		/// Max length: 36
 		/// Min length: 1
+		/// Max length: 36
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_transaction_id")]
@@ -44086,8 +44086,8 @@ namespace MyNS
 		/// <summary>
 		/// A description for the underlying transfer. Maximum of 8 characters.
 		/// Required
-		/// Max length: 8
 		/// Min length: 1
+		/// Max length: 8
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="description")]
@@ -46460,8 +46460,8 @@ namespace MyNS
 		/// <summary>
 		/// A unique ID representing the end user. Maximum of 128 characters. Typically this will be a user ID number from your application. Personally identifiable information, such as an email address or phone number, should not be used in the `client_user_id`.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="client_user_id")]
@@ -46953,8 +46953,8 @@ namespace MyNS
 		/// <summary>
 		/// An ISO-4217 currency code, used with e-wallets and transactions.
 		/// Required
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="iso_currency_code")]
@@ -47080,8 +47080,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An ISO-4217 currency code, used with e-wallets and transactions.
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iso_currency_code")]
 		[System.ComponentModel.DataAnnotations.MinLength(3)]
@@ -47245,8 +47245,8 @@ namespace MyNS
 		/// <summary>
 		/// An ISO-4217 currency code, used with e-wallets and transactions.
 		/// Required
-		/// Max length: 3
 		/// Min length: 3
+		/// Max length: 3
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="iso_currency_code")]
@@ -47323,8 +47323,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// International Bank Account Number (IBAN).
-		/// Max length: 34
 		/// Min length: 15
+		/// Max length: 34
 		/// </summary>
 		[System.Runtime.Serialization.DataMember(Name="iban")]
 		[System.ComponentModel.DataAnnotations.MinLength(15)]
@@ -47398,8 +47398,8 @@ namespace MyNS
 		///
 		///The API supports idempotency for safely retrying requests without accidentally performing the same operation twice. If a request to execute a wallet transaction fails due to a network connection error, then after a minimum delay of one minute, you can retry the request with the same idempotency key to guarantee that only a single wallet transaction is created. If the request was successfully processed, it will prevent any transaction that uses the same idempotency key, and was received within 24 hours of the first request, from being processed.
 		/// Required
-		/// Max length: 128
 		/// Min length: 1
+		/// Max length: 128
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="idempotency_key")]
@@ -47411,8 +47411,8 @@ namespace MyNS
 		/// A reference for the transaction. This must be an alphanumeric string with 6 to 18 characters and must not contain any special characters or spaces.
 		///Ensure that the `reference` field is unique for each transaction.
 		/// Required
-		/// Max length: 18
 		/// Min length: 6
+		/// Max length: 18
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="reference")]

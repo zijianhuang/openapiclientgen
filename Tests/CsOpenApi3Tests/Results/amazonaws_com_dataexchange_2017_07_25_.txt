@@ -4002,8 +4002,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional comment about the revision.
-		/// Max length: 16384
 		/// Min length: 0
+		/// Max length: 16384
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4067,8 +4067,8 @@ namespace MyNS
 		
 		/// <summary>
 		/// An optional comment about the revision.
-		/// Max length: 16384
 		/// Min length: 0
+		/// Max length: 16384
 		/// </summary>
 		[System.Runtime.Serialization.DataMember()]
 		[System.ComponentModel.DataAnnotations.MinLength(0)]
@@ -4100,8 +4100,8 @@ namespace MyNS
 		/// <summary>
 		/// A required comment to inform subscribers of the reason their access to the revision was revoked.
 		/// Required
-		/// Max length: 512
 		/// Min length: 10
+		/// Max length: 512
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember()]
